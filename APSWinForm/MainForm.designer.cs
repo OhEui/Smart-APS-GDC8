@@ -32,19 +32,6 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.메뉴ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.자원관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.공장관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.설비관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.업체관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.품목관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.품목관리ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.bOMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.자재단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.영업단가관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.SidePanel1 = new System.Windows.Forms.Panel();
             this.panelSubMenu4 = new System.Windows.Forms.Panel();
@@ -63,23 +50,30 @@ namespace APSWinForm
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnSubMenu1 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.엑셀불러오기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.엑셀내보내기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.결과정보열기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.SidePanel1.SuspendLayout();
             this.panelSubMenu4.SuspendLayout();
             this.SubPanel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(211)))), ((int)(((byte)(83)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.메뉴ToolStripMenuItem,
-            this.자원관리ToolStripMenuItem,
-            this.품목관리ToolStripMenuItem,
-            this.단가관리ToolStripMenuItem});
+            this.메뉴ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1226, 24);
@@ -88,105 +82,16 @@ namespace APSWinForm
             // 
             // 메뉴ToolStripMenuItem
             // 
+            this.메뉴ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.엑셀불러오기ToolStripMenuItem,
+            this.엑셀내보내기ToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.결과정보열기ToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.종료ToolStripMenuItem});
             this.메뉴ToolStripMenuItem.Name = "메뉴ToolStripMenuItem";
             this.메뉴ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.메뉴ToolStripMenuItem.Text = "메뉴";
-            // 
-            // 자원관리ToolStripMenuItem
-            // 
-            this.자원관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.공장관리ToolStripMenuItem,
-            this.설비관리ToolStripMenuItem,
-            this.업체관리ToolStripMenuItem,
-            this.bORToolStripMenuItem});
-            this.자원관리ToolStripMenuItem.Name = "자원관리ToolStripMenuItem";
-            this.자원관리ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.자원관리ToolStripMenuItem.Text = "자원관리";
-            // 
-            // 공장관리ToolStripMenuItem
-            // 
-            this.공장관리ToolStripMenuItem.Name = "공장관리ToolStripMenuItem";
-            this.공장관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.공장관리ToolStripMenuItem.Text = "공장관리";
-            // 
-            // 설비관리ToolStripMenuItem
-            // 
-            this.설비관리ToolStripMenuItem.Name = "설비관리ToolStripMenuItem";
-            this.설비관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.설비관리ToolStripMenuItem.Text = "설비관리";
-            // 
-            // 업체관리ToolStripMenuItem
-            // 
-            this.업체관리ToolStripMenuItem.Name = "업체관리ToolStripMenuItem";
-            this.업체관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.업체관리ToolStripMenuItem.Text = "업체관리";
-            // 
-            // bORToolStripMenuItem
-            // 
-            this.bORToolStripMenuItem.Name = "bORToolStripMenuItem";
-            this.bORToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.bORToolStripMenuItem.Text = "BOR";
-            // 
-            // 품목관리ToolStripMenuItem
-            // 
-            this.품목관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.품목관리ToolStripMenuItem1,
-            this.bOMToolStripMenuItem});
-            this.품목관리ToolStripMenuItem.Name = "품목관리ToolStripMenuItem";
-            this.품목관리ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.품목관리ToolStripMenuItem.Text = "품목관리";
-            // 
-            // 품목관리ToolStripMenuItem1
-            // 
-            this.품목관리ToolStripMenuItem1.Name = "품목관리ToolStripMenuItem1";
-            this.품목관리ToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
-            this.품목관리ToolStripMenuItem1.Text = "품목관리";
-            // 
-            // bOMToolStripMenuItem
-            // 
-            this.bOMToolStripMenuItem.Name = "bOMToolStripMenuItem";
-            this.bOMToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.bOMToolStripMenuItem.Text = "BOM";
-            // 
-            // 단가관리ToolStripMenuItem
-            // 
-            this.단가관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.자재단가관리ToolStripMenuItem,
-            this.영업단가관리ToolStripMenuItem});
-            this.단가관리ToolStripMenuItem.Name = "단가관리ToolStripMenuItem";
-            this.단가관리ToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.단가관리ToolStripMenuItem.Text = "단가 관리";
-            // 
-            // 자재단가관리ToolStripMenuItem
-            // 
-            this.자재단가관리ToolStripMenuItem.Name = "자재단가관리ToolStripMenuItem";
-            this.자재단가관리ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.자재단가관리ToolStripMenuItem.Text = "자재단가관리";
-            // 
-            // 영업단가관리ToolStripMenuItem
-            // 
-            this.영업단가관리ToolStripMenuItem.Name = "영업단가관리ToolStripMenuItem";
-            this.영업단가관리ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.영업단가관리ToolStripMenuItem.Text = "영업단가관리";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1226, 25);
-            this.toolStrip1.TabIndex = 6;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolStripLabel1.LinkColor = System.Drawing.Color.White;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(88, 22);
-            this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // panelSideMenu
             // 
@@ -195,11 +100,11 @@ namespace APSWinForm
             this.panelSideMenu.Controls.Add(this.SidePanel1);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.ForeColor = System.Drawing.Color.Blue;
-            this.panelSideMenu.Location = new System.Drawing.Point(0, 49);
+            this.panelSideMenu.Location = new System.Drawing.Point(0, 24);
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Padding = new System.Windows.Forms.Padding(10);
-            this.panelSideMenu.Size = new System.Drawing.Size(220, 644);
-            this.panelSideMenu.TabIndex = 7;
+            this.panelSideMenu.Size = new System.Drawing.Size(220, 669);
+            this.panelSideMenu.TabIndex = 12;
             // 
             // SidePanel1
             // 
@@ -209,11 +114,12 @@ namespace APSWinForm
             this.SidePanel1.Controls.Add(this.btnSubMenu4);
             this.SidePanel1.Controls.Add(this.SubPanel1);
             this.SidePanel1.Controls.Add(this.btnSubMenu1);
+            this.SidePanel1.Controls.Add(this.menuStrip2);
             this.SidePanel1.Controls.Add(this.button22);
             this.SidePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SidePanel1.Location = new System.Drawing.Point(10, 10);
             this.SidePanel1.Name = "SidePanel1";
-            this.SidePanel1.Size = new System.Drawing.Size(200, 624);
+            this.SidePanel1.Size = new System.Drawing.Size(200, 649);
             this.SidePanel1.TabIndex = 1;
             // 
             // panelSubMenu4
@@ -497,28 +403,106 @@ namespace APSWinForm
             this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button22.UseVisualStyleBackColor = false;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabControl1.Location = new System.Drawing.Point(220, 24);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1006, 20);
+            this.tabControl1.TabIndex = 13;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(998, 0);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(997, 0);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.AutoSize = false;
+            this.menuStrip2.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip2.Location = new System.Drawing.Point(17, 353);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(46, 42);
+            this.menuStrip2.TabIndex = 21;
+            this.menuStrip2.Text = "menuStrip2";
+            this.menuStrip2.ItemAdded += new System.Windows.Forms.ToolStripItemEventHandler(this.menuStrip2_ItemAdded);
+            // 
+            // 엑셀불러오기ToolStripMenuItem
+            // 
+            this.엑셀불러오기ToolStripMenuItem.Name = "엑셀불러오기ToolStripMenuItem";
+            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.엑셀불러오기ToolStripMenuItem.Text = "엑셀 불러오기";
+            // 
+            // 엑셀내보내기ToolStripMenuItem
+            // 
+            this.엑셀내보내기ToolStripMenuItem.Name = "엑셀내보내기ToolStripMenuItem";
+            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.엑셀내보내기ToolStripMenuItem.Text = "엑셀 내보내기";
+            // 
+            // 결과정보열기ToolStripMenuItem
+            // 
+            this.결과정보열기ToolStripMenuItem.Name = "결과정보열기ToolStripMenuItem";
+            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.결과정보열기ToolStripMenuItem.Text = "결과 정보 열기";
+            // 
+            // 종료ToolStripMenuItem
+            // 
+            this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.종료ToolStripMenuItem.Text = "종료";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1226, 693);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panelSideMenu);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip2;
             this.Name = "MainForm";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.panelSideMenu.ResumeLayout(false);
             this.SidePanel1.ResumeLayout(false);
             this.panelSubMenu4.ResumeLayout(false);
             this.SubPanel1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,18 +512,6 @@ namespace APSWinForm
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 메뉴ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 자원관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 공장관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 설비관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 업체관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bORToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 품목관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 품목관리ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem bOMToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 단가관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 자재단가관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 영업단가관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel SidePanel1;
         private System.Windows.Forms.Panel panelSubMenu4;
@@ -558,6 +530,15 @@ namespace APSWinForm
         private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.Button btnSubMenu1;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem 엑셀불러오기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 엑셀내보내기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem 결과정보열기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem 종료ToolStripMenuItem;
     }
 }
