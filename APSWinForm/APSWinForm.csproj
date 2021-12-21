@@ -91,5 +91,11 @@
   <ItemGroup>
     <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\APSVO\APSVO.csproj">
+      <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
+      <Name>APSVO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
