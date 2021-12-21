@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-    public partial class BaseForm : Form
+    public partial class BaseFormSample : Form
     {
-        public BaseForm()
+        public BaseFormSample()
         {
             InitializeComponent();
-            
         }
 
     }

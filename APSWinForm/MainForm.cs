@@ -19,7 +19,7 @@ namespace APSWinForm
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            new BaseForm() { MdiParent = this }.Show();
+            new BaseFormSample() { MdiParent = this }.Show();
             tabControl1.Visible = false;
         }
 
