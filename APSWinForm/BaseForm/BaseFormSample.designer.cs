@@ -291,6 +291,7 @@ namespace APSWinForm
             this.button7.TabIndex = 28;
             this.button7.Text = "검색";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // comboBox4
             // 
@@ -597,6 +598,7 @@ namespace APSWinForm
             this.MinimumSize = new System.Drawing.Size(724, 677);
             this.Name = "BaseFormSample";
             this.Text = "Form4";
+            this.Load += new System.EventHandler(this.BaseFormSample_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

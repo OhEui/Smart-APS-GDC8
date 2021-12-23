@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace APSVO
 {
-    public class Class1
+    public class SampleVO
     {
+        public int ID { get; set; }
+        public String Name { get; set; }
     }
 }
