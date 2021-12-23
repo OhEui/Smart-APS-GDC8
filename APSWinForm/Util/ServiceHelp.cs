@@ -8,6 +8,9 @@ using APSVO;
 
 namespace APSWinForm
 {
+    /// <summary>
+    /// Web API 사용을 위한 유틸리티입니다
+    /// </summary>
     public class ServiceHelp : IDisposable
     {
         HttpClient client = new HttpClient();
@@ -15,7 +18,17 @@ namespace APSWinForm
         public string BaseServiceUrl { get; set; }
 
         /// <summary>
-        /// 해당 API 주소를 사용하기 위한 ServiceHelp를 생성합니다.
+        /// Web API 사용을 위한 ServiceHelp 인스턴스를 생성합니다. <br/>
+        /// <br/>
+        /// API 주소: ApiAddress/routePrefix/ <br/>
+        /// ApiAddress는 App.config에 저장되어 있습니다. <br/>
+        /// <br/>
+        /// <br/>
+        /// 예시<br/>
+        /// ApiAddress: https:localhost::44309<br/>
+        /// routePrefix: api/Sample<br/>
+        /// => <br/>
+        /// API 주소: https:localhost::44309/api/Sample
         /// </summary>
         /// <param name="routePrefix"></param>
         public ServiceHelp(string routePrefix)
@@ -94,14 +107,14 @@ namespace APSWinForm
             }
         }
 
-        public async Task<WebMessage<T>> PostAsync<T>(string path, T t)
+        public async Task<WebMessage<T>> PostAsync<T>(string path, T value)
         {
             path = BaseServiceUrl + path;
 
             WebMessage<T> result = null;
             try
             {
-                using (HttpResponseMessage response = await client.PostAsJsonAsync(path, t))
+                using (HttpResponseMessage response = await client.PostAsJsonAsync(path, value))
                 {
                     if (response.IsSuccessStatusCode)
                     {
@@ -116,7 +129,7 @@ namespace APSWinForm
             }
         }
 
-        public async Task<WebMessage> PostAsyncNone<T>(string path, T t)
+        public async Task<WebMessage> PostAsyncNone<T>(string path, T value)
         {
             path = BaseServiceUrl + path;
             //https://localhost:44337/api/User/SaveUser
@@ -124,7 +137,7 @@ namespace APSWinForm
             WebMessage result = null;
             try
             {                
-                using (HttpResponseMessage response = await client.PostAsJsonAsync(path, t))
+                using (HttpResponseMessage response = await client.PostAsJsonAsync(path, value))
                 {
                     if (response.IsSuccessStatusCode)
                     {
