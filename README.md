@@ -1,6 +1,7 @@
 ### 클라이언트
 1. api 주소로 serviceHelp 생성
-2. serviceHelp의 메서드를 이용해서 VO 형태로 받아오거나  (비동기)
+2. serviceHelp의 메서드를 이용
+	- 메서드에서 비동기, 제너릭을 사용함 => VO 사용가능
 
 ### 서버
 1. Models 폴더에 클래스를 생성 (DAC) -> DAC 코드 작성
