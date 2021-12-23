@@ -16,7 +16,7 @@ namespace APSWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BaseFormSample());
+            Application.Run(new MainForm());
         }
     }
 }

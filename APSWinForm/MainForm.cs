@@ -19,13 +19,17 @@ namespace APSWinForm
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            new BaseFormSample() { MdiParent = this }.Show();
             tabControl1.Visible = false;
         }
 
         private void menuStrip2_ItemAdded(object sender, ToolStripItemEventArgs e)
         {
             e.Item.Visible = false;
+        }
+
+        private void 샘플ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new BaseFormSample() { MdiParent = this }.Show();
         }
     }
 }

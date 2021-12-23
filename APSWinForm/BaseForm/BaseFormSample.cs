@@ -24,6 +24,7 @@ namespace APSWinForm
         private void BaseFormSample_Load(object sender, EventArgs e)
         {
             dataGridView1.Columns.Clear();
+            LoadDataAsync();
         }
 
         private async void LoadDataAsync()
@@ -38,7 +39,7 @@ namespace APSWinForm
 
         private void button7_Click(object sender, EventArgs e)
         {
-            LoadDataAsync();
+            //LoadDataAsync();
         }
     }
 }
