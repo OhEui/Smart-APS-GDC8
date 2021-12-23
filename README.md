@@ -3,6 +3,8 @@
 2. serviceHelp의 메서드를 이용
 	- 메서드에서 비동기, 제너릭을 사용함 => VO 사용가능
 
+BaseForm/BaseFormSample.cs에 Sample 코드 추가 중
+
 ### 서버
 1. Models 폴더에 클래스를 생성 (DAC) -> DAC 코드 작성
 2. Controllers 폴더 오른쪽 클릭 -> 생성 -> 컨트롤러 -> Web API -> [Web API 2 컨트롤러 - 비어 있음] 클릭
