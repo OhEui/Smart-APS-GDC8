@@ -19,3 +19,5 @@
 postman으로 http://team2aps.azurewebsites.net/api/Sample/List (POST) 호출
 
 WinForm 실행 후 상단 메뉴의 샘플 클릭
+
+![sample](https://user-images.githubusercontent.com/75368967/147208276-884b21be-d642-47b3-ba7e-69b065823ce2.png)
