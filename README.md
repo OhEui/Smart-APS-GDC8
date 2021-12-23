@@ -13,3 +13,9 @@
 5. 솔루션 빌드
 6. 솔루션 탐색기 -  APSServer - Connected Services 클릭
 7. 게시 클릭 -> 서버에 수정본 올라감
+
+### 샘플 실행
+
+postman으로 http://team2aps.azurewebsites.net/api/Sample/List (POST) 호출
+
+WinForm 실행 후 상단 메뉴의 샘플 클릭
