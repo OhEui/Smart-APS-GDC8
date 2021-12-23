@@ -23,7 +23,7 @@ namespace APSWinForm
 
         private void BaseFormSample_Load(object sender, EventArgs e)
         {
-            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Clear(); // 샘플 컬럼 삭제용
             LoadDataAsync();
         }
 
@@ -32,7 +32,9 @@ namespace APSWinForm
             List<SampleVO> list = null;
             string path = "List";
 
-            list = await srv.GetListAsync(path, list);
+            var message = await srv.PostAsync(path, list);
+            
+            list = message.Data;
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = list;
         }

@@ -14,6 +14,10 @@ namespace APSWinForm
 
         public string BaseServiceUrl { get; set; }
 
+        /// <summary>
+        /// 해당 API 주소를 사용하기 위한 ServiceHelp를 생성합니다.
+        /// </summary>
+        /// <param name="routePrefix"></param>
         public ServiceHelp(string routePrefix)
         {
             BaseServiceUrl = $"{ConfigurationManager.AppSettings["ApiAddress"]}/{routePrefix}/";

@@ -14,13 +14,28 @@ namespace APSServer.Controllers
     public class SampleController : ApiController
     {
         // https://localhost:44309/api/Sample/List
-        [HttpGet]
+        [HttpPost]
         [Route("List")]
-        public List<SampleVO> GetList()
+        public WebMessage<List<SampleVO>> GetList()
         {
+            var msg = new WebMessage<List<SampleVO>>();
+
             using (SampleDAC dac = new SampleDAC()) 
             {
-                return dac.GetSampleList();
+                var data = dac.GetSampleList();
+                if (data != null)
+                {
+                    msg.IsSuccess = true;
+                    msg.ResultMessage = "Success";
+                    msg.Data = data;
+                }
+                else 
+                {
+                    msg.IsSuccess = false;
+                    msg.ResultMessage = "Fail";
+                    msg.Data = null;
+                }
+                return msg;
             }
         }
 
