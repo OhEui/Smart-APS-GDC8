@@ -26,7 +26,7 @@ namespace APSServer.Controllers
                 if (data != null)
                 {
                     msg.IsSuccess = true;
-                    msg.ResultMessage = "Success";
+                    msg.ResultMessage = "Hello";
                     msg.Data = data;
                 }
                 else 
