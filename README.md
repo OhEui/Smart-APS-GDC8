@@ -13,8 +13,12 @@ BaseForm/BaseFormSample.cs에 Sample 코드 추가 중
 	- Controller 단어는 지우면 안 됨
 4. 컨트롤러 코드 작성 (SampleController 참고)
 5. 솔루션 빌드
-6. 솔루션 탐색기 -  APSServer - Connected Services 클릭
-7. 게시 클릭 -> 서버에 수정본 올라감
+6. commit - push
+7. https://github.com/enterpro75/GDC8-Team2/actions 에 가서 서버배포 작업 진행 상태를 볼 수 있음 (평균 2분 소요)
+
+azure 서버 대신 로컬에서 테스트 하고 싶으면 APSWinForm 프로젝트의 App.config - ApiAddress를 로컬 주소로 바꾸고
+테스트 할 때 PSServer와 APSWinForm을 같이 켜면 됨
+
 
 ### 샘플 실행
 
