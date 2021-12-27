@@ -47,26 +47,26 @@ namespace APSWinForm
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -74,10 +74,10 @@ namespace APSWinForm
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -168,7 +168,7 @@ namespace APSWinForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(35, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 18);
@@ -235,6 +235,17 @@ namespace APSWinForm
             this.panel1.Size = new System.Drawing.Size(708, 38);
             this.panel1.TabIndex = 39;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(679, 8);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(23, 24);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 59;
+            this.pictureBox6.TabStop = false;
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.panel7);
@@ -283,33 +294,95 @@ namespace APSWinForm
             this.panel9.Size = new System.Drawing.Size(688, 136);
             this.panel9.TabIndex = 42;
             // 
-            // label2
+            // button3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(30, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 14);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "ㆍSTD_STEP_NAME";
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(581, 75);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(74, 30);
+            this.button3.TabIndex = 54;
+            this.button3.Text = "초기화";
+            this.button3.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // comboBox3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(294, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 14);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "ㆍSTD_STEP_NAME";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(421, 56);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 20);
+            this.comboBox3.TabIndex = 53;
             // 
-            // comboBox4
+            // textBox3
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(421, 27);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 20);
-            this.comboBox4.TabIndex = 44;
+            this.textBox3.Location = new System.Drawing.Point(157, 56);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(121, 21);
+            this.textBox3.TabIndex = 52;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(157, 88);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(121, 21);
+            this.textBox2.TabIndex = 48;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(157, 27);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(121, 21);
+            this.textBox8.TabIndex = 43;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(294, 59);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(121, 14);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "ㆍSTD_STEP_NAME";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(30, 59);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(121, 14);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "ㆍSTD_STEP_NAME";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(421, 88);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 20);
+            this.comboBox2.TabIndex = 49;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(294, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 14);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "ㆍSTD_STEP_NAME";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(30, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(121, 14);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "ㆍSTD_STEP_NAME";
             // 
             // button7
             // 
@@ -324,95 +397,33 @@ namespace APSWinForm
             this.button7.Text = "검색";
             this.button7.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // comboBox4
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(30, 91);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 14);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "ㆍSTD_STEP_NAME";
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(421, 27);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 20);
+            this.comboBox4.TabIndex = 44;
             // 
-            // label6
+            // label3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(294, 91);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 14);
-            this.label6.TabIndex = 47;
-            this.label6.Text = "ㆍSTD_STEP_NAME";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(294, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 14);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "ㆍSTD_STEP_NAME";
             // 
-            // comboBox2
+            // label2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(421, 88);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 49;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(30, 59);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 14);
-            this.label9.TabIndex = 50;
-            this.label9.Text = "ㆍSTD_STEP_NAME";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(294, 59);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(121, 14);
-            this.label8.TabIndex = 51;
-            this.label8.Text = "ㆍSTD_STEP_NAME";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(157, 27);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(121, 21);
-            this.textBox8.TabIndex = 43;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(157, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 21);
-            this.textBox2.TabIndex = 48;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(157, 56);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 21);
-            this.textBox3.TabIndex = 52;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(421, 56);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 20);
-            this.comboBox3.TabIndex = 53;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(581, 75);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 30);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "초기화";
-            this.button3.UseVisualStyleBackColor = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(30, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(121, 14);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "ㆍSTD_STEP_NAME";
             // 
             // panel2
             // 
@@ -426,17 +437,6 @@ namespace APSWinForm
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.panel2.Size = new System.Drawing.Size(708, 156);
             this.panel2.TabIndex = 40;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(679, 8);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(23, 24);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 59;
-            this.pictureBox6.TabStop = false;
             // 
             // BaseFormSample
             // 
@@ -462,11 +462,11 @@ namespace APSWinForm
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
