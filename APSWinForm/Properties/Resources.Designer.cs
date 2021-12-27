@@ -115,7 +115,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   설비배치 정보과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   작업조건과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string EQP_ARRANGE {
             get {
@@ -205,7 +205,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   작업 ID과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   프로세스 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string PROCESS_ID {
             get {
@@ -358,7 +358,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   공정목표시간과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   공정간격시간과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string TACT_TIME {
             get {

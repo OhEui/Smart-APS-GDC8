@@ -136,7 +136,7 @@
     <value>기한</value>
   </data>
   <data name="EQP_ARRANGE" xml:space="preserve">
-    <value>설비배치 정보</value>
+    <value>작업조건</value>
   </data>
   <data name="EQP_GROUP" xml:space="preserve">
     <value>설비그룹</value>
@@ -163,7 +163,7 @@
     <value>생산단위크기</value>
   </data>
   <data name="PROCESS_ID" xml:space="preserve">
-    <value>작업 ID</value>
+    <value>프로세스 ID</value>
   </data>
   <data name="PROC_TIME" xml:space="preserve">
     <value>공정소요시간</value>
@@ -217,7 +217,7 @@
     <value>공정수율</value>
   </data>
   <data name="TACT_TIME" xml:space="preserve">
-    <value>공정목표시간</value>
+    <value>공정간격시간</value>
   </data>
   <data name="TIME" xml:space="preserve">
     <value>소요시간</value>
