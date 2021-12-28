@@ -6,11 +6,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APSServer
+namespace APSDAC
 {
     public static class Helper
     {
-        
+        //DataReader => List<VO>로 변환해서 반환하는 메서드
         public static List<T> DataReaderMapToList<T>(IDataReader dr)
         {
             try
@@ -38,6 +38,8 @@ namespace APSServer
             }
             catch (Exception err)
             {
+                //select 한 컬럼의 타입과 VO클래스의 속성타입이 맞지 않을경우
+                //select 한 컬러명과 VO클래스의 속성명이 다른 경우
                 string msg = err.Message;
                 return null;
             }
@@ -55,6 +57,7 @@ namespace APSServer
             }
         }
 
+        //DataTable => List<VO>로 변환해서 반환하는 메서드
         public static List<T> DataTableMapToList<T>(DataTable table) where T : class, new()
         {
             try

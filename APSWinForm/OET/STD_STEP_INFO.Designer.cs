@@ -35,6 +35,10 @@ namespace APSWinForm.OET
 			this.button3 = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
+			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.label9 = new System.Windows.Forms.Label();
+			this.textBox8 = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -55,16 +59,13 @@ namespace APSWinForm.OET
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.label9 = new System.Windows.Forms.Label();
-			this.textBox8 = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.STD_STEP_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.STD_STEP_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.STEP_TAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.STEP_YIELD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.STEP_SETUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
 			this.panel6.SuspendLayout();
@@ -140,6 +141,40 @@ namespace APSWinForm.OET
 			this.panel9.Name = "panel9";
 			this.panel9.Size = new System.Drawing.Size(668, 136);
 			this.panel9.TabIndex = 42;
+			// 
+			// textBox3
+			// 
+			this.textBox3.Location = new System.Drawing.Point(171, 82);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.Size = new System.Drawing.Size(121, 21);
+			this.textBox3.TabIndex = 58;
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label9.Location = new System.Drawing.Point(44, 85);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(91, 14);
+			this.label9.TabIndex = 57;
+			this.label9.Text = "ㆍ표준공정이름";
+			// 
+			// textBox8
+			// 
+			this.textBox8.Location = new System.Drawing.Point(171, 41);
+			this.textBox8.Name = "textBox8";
+			this.textBox8.Size = new System.Drawing.Size(121, 21);
+			this.textBox8.TabIndex = 56;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label2.Location = new System.Drawing.Point(44, 44);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(79, 14);
+			this.label2.TabIndex = 55;
+			this.label2.Text = "ㆍ표준공정ID";
 			// 
 			// panel6
 			// 
@@ -324,50 +359,18 @@ namespace APSWinForm.OET
 			this.panel1.Size = new System.Drawing.Size(708, 38);
 			this.panel1.TabIndex = 45;
 			// 
-			// textBox3
-			// 
-			this.textBox3.Location = new System.Drawing.Point(171, 82);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(121, 21);
-			this.textBox3.TabIndex = 58;
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label9.Location = new System.Drawing.Point(44, 85);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(91, 14);
-			this.label9.TabIndex = 57;
-			this.label9.Text = "ㆍ표준공정이름";
-			// 
-			// textBox8
-			// 
-			this.textBox8.Location = new System.Drawing.Point(171, 41);
-			this.textBox8.Name = "textBox8";
-			this.textBox8.Size = new System.Drawing.Size(121, 21);
-			this.textBox8.TabIndex = 56;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label2.Location = new System.Drawing.Point(44, 44);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(79, 14);
-			this.label2.TabIndex = 55;
-			this.label2.Text = "ㆍ표준공정ID";
-			// 
 			// dataGridView2
 			// 
 			this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(230)))), ((int)(((byte)(228)))));
 			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STD_STEP_ID,
-            this.STD_STEP_NAME,
-            this.STEP_TAT,
-            this.STEP_YIELD,
-            this.STEP_SETUP});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
 			this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView2.Location = new System.Drawing.Point(10, 194);
 			this.dataGridView2.Name = "dataGridView2";
@@ -375,30 +378,35 @@ namespace APSWinForm.OET
 			this.dataGridView2.Size = new System.Drawing.Size(688, 434);
 			this.dataGridView2.TabIndex = 51;
 			// 
-			// STD_STEP_ID
+			// dataGridViewTextBoxColumn1
 			// 
-			this.STD_STEP_ID.HeaderText = "표준공정ID";
-			this.STD_STEP_ID.Name = "STD_STEP_ID";
+			this.dataGridViewTextBoxColumn1.HeaderText = "DEMAND_VER";
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
 			// 
-			// STD_STEP_NAME
+			// dataGridViewTextBoxColumn2
 			// 
-			this.STD_STEP_NAME.HeaderText = "표준공정이름";
-			this.STD_STEP_NAME.Name = "STD_STEP_NAME";
+			this.dataGridViewTextBoxColumn2.HeaderText = "DEMAND_ID";
+			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
 			// 
-			// STEP_TAT
+			// dataGridViewTextBoxColumn3
 			// 
-			this.STEP_TAT.HeaderText = "공정소요시간";
-			this.STEP_TAT.Name = "STEP_TAT";
+			this.dataGridViewTextBoxColumn3.HeaderText = "PRODUCT_ID";
+			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
 			// 
-			// STEP_YIELD
+			// dataGridViewTextBoxColumn4
 			// 
-			this.STEP_YIELD.HeaderText = "공정수율";
-			this.STEP_YIELD.Name = "STEP_YIELD";
+			this.dataGridViewTextBoxColumn4.HeaderText = "CUSTOMER_ID";
+			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
 			// 
-			// STEP_SETUP
+			// dataGridViewTextBoxColumn5
 			// 
-			this.STEP_SETUP.HeaderText = "공정준비시간";
-			this.STEP_SETUP.Name = "STEP_SETUP";
+			this.dataGridViewTextBoxColumn5.HeaderText = "DUE_DATE";
+			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+			// 
+			// dataGridViewTextBoxColumn6
+			// 
+			this.dataGridViewTextBoxColumn6.HeaderText = "DEMAND_QTY";
+			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
 			// 
 			// STD_STEP_INFO
 			// 
@@ -463,11 +471,12 @@ namespace APSWinForm.OET
 		public System.Windows.Forms.Label label9;
 		public System.Windows.Forms.TextBox textBox8;
 		public System.Windows.Forms.Label label2;
-		private System.Windows.Forms.DataGridView dataGridView2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn STD_STEP_ID;
-		private System.Windows.Forms.DataGridViewTextBoxColumn STD_STEP_NAME;
-		private System.Windows.Forms.DataGridViewTextBoxColumn STEP_TAT;
-		private System.Windows.Forms.DataGridViewTextBoxColumn STEP_YIELD;
-		private System.Windows.Forms.DataGridViewTextBoxColumn STEP_SETUP;
+		public System.Windows.Forms.DataGridView dataGridView2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
 	}
 }
