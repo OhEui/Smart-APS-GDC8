@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="User\UserInfo.cs" />
+    <Compile Include="User\UserLogin.cs" />
     <Compile Include="SampleVO.cs" />
     <Compile Include="WebMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
