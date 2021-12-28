@@ -81,6 +81,60 @@
     <Compile Include="MainForm.designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OET\EQPARR_REG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\EQPARR_REG.Designer.cs">
+      <DependentUpon>EQPARR_REG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OET\EQR_ARRANGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\EQR_ARRANGE.Designer.cs">
+      <DependentUpon>EQR_ARRANGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OET\EQUIPMENT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\EQUIPMENT.Designer.cs">
+      <DependentUpon>EQUIPMENT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OET\EQUIPMENT_REG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\EQUIPMENT_REG.Designer.cs">
+      <DependentUpon>EQUIPMENT_REG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OET\MenuAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\MenuAuth.Designer.cs">
+      <DependentUpon>MenuAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OET\SETUP_REG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\SETUP_REG.Designer.cs">
+      <DependentUpon>SETUP_REG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OET\SETUP_TIME.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\SETUP_TIME.Designer.cs">
+      <DependentUpon>SETUP_TIME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OET\UserManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\UserManage.Designer.cs">
+      <DependentUpon>UserManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OET\UserReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\UserReg.designer.cs">
+      <DependentUpon>UserReg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\ServiceHelp.cs" />
@@ -95,6 +149,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\EQPARR_REG.resx">
+      <DependentUpon>EQPARR_REG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\EQR_ARRANGE.resx">
+      <DependentUpon>EQR_ARRANGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\EQUIPMENT.resx">
+      <DependentUpon>EQUIPMENT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\EQUIPMENT_REG.resx">
+      <DependentUpon>EQUIPMENT_REG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\MenuAuth.resx">
+      <DependentUpon>MenuAuth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\SETUP_REG.resx">
+      <DependentUpon>SETUP_REG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\SETUP_TIME.resx">
+      <DependentUpon>SETUP_TIME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\UserManage.resx">
+      <DependentUpon>UserManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\UserReg.resx">
+      <DependentUpon>UserReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -129,5 +210,6 @@
       <Name>APSVO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

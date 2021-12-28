@@ -472,8 +472,6 @@ namespace APSWinForm
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -483,32 +481,33 @@ namespace APSWinForm
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
         protected System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         protected System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        protected System.Windows.Forms.ComboBox comboBox3;
+        protected System.Windows.Forms.TextBox textBox3;
+        protected System.Windows.Forms.TextBox textBox2;
+        protected System.Windows.Forms.TextBox textBox8;
+        protected System.Windows.Forms.Label label8;
+        protected System.Windows.Forms.Label label9;
+        protected System.Windows.Forms.ComboBox comboBox2;
+        protected System.Windows.Forms.Label label6;
+        protected System.Windows.Forms.Label label7;
+        protected System.Windows.Forms.ComboBox comboBox4;
+        protected System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Label label2;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        protected System.Windows.Forms.PictureBox pictureBox1;
+        protected System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.PictureBox pictureBox2;
+        protected System.Windows.Forms.PictureBox pictureBox3;
+        protected System.Windows.Forms.PictureBox pictureBox4;
+        protected System.Windows.Forms.PictureBox pictureBox5;
+        protected System.Windows.Forms.Panel panel9;
+        protected System.Windows.Forms.PictureBox pictureBox6;
     }
 }
