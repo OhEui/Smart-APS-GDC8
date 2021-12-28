@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace APSDAC
 {
-	class STD_STEP_DAC : IDisposable
+	public class STD_STEP_DAC : IDisposable
 	{
 		SqlConnection conn = null;
 
@@ -26,7 +26,7 @@ namespace APSDAC
 			conn.Close();
 		}
 
-		public List<STD_STEP_VO> getList()
+		public List<STD_STEP_VO> getStepInfoList()
 		{
 			string sql = "select STD_STEP_ID, STD_STEP_NAME, STEP_TAT, STEP_YIELD, STEP_SETUP from STD_STEP_INFO";
 

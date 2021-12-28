@@ -8,10 +8,10 @@ namespace APSVO
 {
 	public class STD_STEP_VO
 	{
-		public string STD_STEP_ID;
-		public string STD_STEP_NAME;
-		public string STEP_TAT;
-		public string STEP_YIELD;
-		public string STEP_SETUP;
+		public string STD_STEP_ID { get; set; }
+		public string STD_STEP_NAME { get; set; }
+		public int STEP_TAT { get; set; }
+		public int STEP_YIELD { get; set; }
+		public int STEP_SETUP { get; set; }
 	}
 }

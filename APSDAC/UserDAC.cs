@@ -233,31 +233,31 @@ where User_ID=@Cur_ID and User_PWD=@Cur_PWD";
             return msg;
         }
 
-        public WebMessage WithDraw(string id, string password)
-        {
-            WebMessage msg = new WebMessage();
+//        public WebMessage WithDraw(string id, string password)
+//        {
+//            WebMessage msg = new WebMessage();
 
-            string sql = @"
-update UserInfo Set Deleted=1 where User_ID=@ID and User_PWD=@Password";
+//            string sql = @"
+//update UserInfo Set Deleted=1 where User_ID=@ID and User_PWD=@Password";
 
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-                cmd.Parameters.AddWithValue("@ID", id);
-                cmd.Parameters.AddWithValue("@Password", password);
+//            using (SqlCommand cmd = new SqlCommand(sql, conn))
+//            {
+//                cmd.Parameters.AddWithValue("@ID", id);
+//                cmd.Parameters.AddWithValue("@Password", password);
 
-                int iResult = cmd.ExecuteNonQuery();
-                if (iResult > 0)
-                {
-                    msg.IsSuccess = true;
-                    msg.ResultMessage = "회원탈퇴를 하였습니다.";
-                }
-                else
-                {
-                    msg.IsSuccess = false;
-                    msg.ResultMessage = "회원탈퇴 중 오류가 발생하였습니다.";
-                }
-            }
-        }
+//                int iResult = cmd.ExecuteNonQuery();
+//                if (iResult > 0)
+//                {
+//                    msg.IsSuccess = true;
+//                    msg.ResultMessage = "회원탈퇴를 하였습니다.";
+//                }
+//                else
+//                {
+//                    msg.IsSuccess = false;
+//                    msg.ResultMessage = "회원탈퇴 중 오류가 발생하였습니다.";
+//                }
+//            }
+//        }
 
         ///////////////////////////////////////////////////////////////////////////////////////
         public WebMessage<UserLogin> LoginTest(string id, string password)

@@ -1,5 +1,5 @@
 ﻿
-namespace APSWinForm.OET
+namespace APSWinForm
 {
 	partial class STD_STEP_INFO
 	{
@@ -30,14 +30,14 @@ namespace APSWinForm.OET
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(STD_STEP_INFO));
-			this.button7 = new System.Windows.Forms.Button();
+			this.btnSearch = new System.Windows.Forms.Button();
 			this.panel8 = new System.Windows.Forms.Panel();
-			this.button3 = new System.Windows.Forms.Button();
+			this.btnInit = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
-			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.txtStepName = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.textBox8 = new System.Windows.Forms.TextBox();
+			this.txtStepID = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
@@ -59,13 +59,7 @@ namespace APSWinForm.OET
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgvStepInfoList = new System.Windows.Forms.DataGridView();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
 			this.panel6.SuspendLayout();
@@ -77,21 +71,22 @@ namespace APSWinForm.OET
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvStepInfoList)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// button7
+			// btnSearch
 			// 
-			this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-			this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button7.ForeColor = System.Drawing.Color.White;
-			this.button7.Location = new System.Drawing.Point(561, 35);
-			this.button7.Name = "button7";
-			this.button7.Size = new System.Drawing.Size(74, 30);
-			this.button7.TabIndex = 45;
-			this.button7.Text = "검색";
-			this.button7.UseVisualStyleBackColor = false;
+			this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
+			this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.btnSearch.ForeColor = System.Drawing.Color.White;
+			this.btnSearch.Location = new System.Drawing.Point(561, 35);
+			this.btnSearch.Name = "btnSearch";
+			this.btnSearch.Size = new System.Drawing.Size(74, 30);
+			this.btnSearch.TabIndex = 45;
+			this.btnSearch.Text = "검색";
+			this.btnSearch.UseVisualStyleBackColor = false;
+			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 			// 
 			// panel8
 			// 
@@ -101,18 +96,18 @@ namespace APSWinForm.OET
 			this.panel8.Size = new System.Drawing.Size(10, 136);
 			this.panel8.TabIndex = 41;
 			// 
-			// button3
+			// btnInit
 			// 
-			this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button3.ForeColor = System.Drawing.Color.White;
-			this.button3.Location = new System.Drawing.Point(561, 75);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(74, 30);
-			this.button3.TabIndex = 54;
-			this.button3.Text = "초기화";
-			this.button3.UseVisualStyleBackColor = false;
+			this.btnInit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.btnInit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
+			this.btnInit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.btnInit.ForeColor = System.Drawing.Color.White;
+			this.btnInit.Location = new System.Drawing.Point(561, 75);
+			this.btnInit.Name = "btnInit";
+			this.btnInit.Size = new System.Drawing.Size(74, 30);
+			this.btnInit.TabIndex = 54;
+			this.btnInit.Text = "초기화";
+			this.btnInit.UseVisualStyleBackColor = false;
 			// 
 			// panel2
 			// 
@@ -130,24 +125,24 @@ namespace APSWinForm.OET
 			// panel9
 			// 
 			this.panel9.BackColor = System.Drawing.Color.White;
-			this.panel9.Controls.Add(this.textBox3);
+			this.panel9.Controls.Add(this.txtStepName);
 			this.panel9.Controls.Add(this.label9);
-			this.panel9.Controls.Add(this.textBox8);
+			this.panel9.Controls.Add(this.txtStepID);
 			this.panel9.Controls.Add(this.label2);
-			this.panel9.Controls.Add(this.button3);
-			this.panel9.Controls.Add(this.button7);
+			this.panel9.Controls.Add(this.btnInit);
+			this.panel9.Controls.Add(this.btnSearch);
 			this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel9.Location = new System.Drawing.Point(10, 10);
 			this.panel9.Name = "panel9";
 			this.panel9.Size = new System.Drawing.Size(668, 136);
 			this.panel9.TabIndex = 42;
 			// 
-			// textBox3
+			// txtStepName
 			// 
-			this.textBox3.Location = new System.Drawing.Point(171, 82);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(121, 21);
-			this.textBox3.TabIndex = 58;
+			this.txtStepName.Location = new System.Drawing.Point(171, 82);
+			this.txtStepName.Name = "txtStepName";
+			this.txtStepName.Size = new System.Drawing.Size(121, 21);
+			this.txtStepName.TabIndex = 58;
 			// 
 			// label9
 			// 
@@ -159,12 +154,12 @@ namespace APSWinForm.OET
 			this.label9.TabIndex = 57;
 			this.label9.Text = "ㆍ표준공정이름";
 			// 
-			// textBox8
+			// txtStepID
 			// 
-			this.textBox8.Location = new System.Drawing.Point(171, 41);
-			this.textBox8.Name = "textBox8";
-			this.textBox8.Size = new System.Drawing.Size(121, 21);
-			this.textBox8.TabIndex = 56;
+			this.txtStepID.Location = new System.Drawing.Point(171, 41);
+			this.txtStepID.Name = "txtStepID";
+			this.txtStepID.Size = new System.Drawing.Size(121, 21);
+			this.txtStepID.TabIndex = 56;
 			// 
 			// label2
 			// 
@@ -359,61 +354,24 @@ namespace APSWinForm.OET
 			this.panel1.Size = new System.Drawing.Size(708, 38);
 			this.panel1.TabIndex = 45;
 			// 
-			// dataGridView2
+			// dgvStepInfoList
 			// 
-			this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(230)))), ((int)(((byte)(228)))));
-			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-			this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridView2.Location = new System.Drawing.Point(10, 194);
-			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.RowTemplate.Height = 23;
-			this.dataGridView2.Size = new System.Drawing.Size(688, 434);
-			this.dataGridView2.TabIndex = 51;
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this.dataGridViewTextBoxColumn1.HeaderText = "DEMAND_VER";
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			// 
-			// dataGridViewTextBoxColumn2
-			// 
-			this.dataGridViewTextBoxColumn2.HeaderText = "DEMAND_ID";
-			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			// 
-			// dataGridViewTextBoxColumn3
-			// 
-			this.dataGridViewTextBoxColumn3.HeaderText = "PRODUCT_ID";
-			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			// 
-			// dataGridViewTextBoxColumn4
-			// 
-			this.dataGridViewTextBoxColumn4.HeaderText = "CUSTOMER_ID";
-			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-			// 
-			// dataGridViewTextBoxColumn5
-			// 
-			this.dataGridViewTextBoxColumn5.HeaderText = "DUE_DATE";
-			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-			// 
-			// dataGridViewTextBoxColumn6
-			// 
-			this.dataGridViewTextBoxColumn6.HeaderText = "DEMAND_QTY";
-			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+			this.dgvStepInfoList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgvStepInfoList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(230)))), ((int)(((byte)(228)))));
+			this.dgvStepInfoList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvStepInfoList.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgvStepInfoList.Location = new System.Drawing.Point(10, 194);
+			this.dgvStepInfoList.Name = "dgvStepInfoList";
+			this.dgvStepInfoList.RowTemplate.Height = 23;
+			this.dgvStepInfoList.Size = new System.Drawing.Size(688, 434);
+			this.dgvStepInfoList.TabIndex = 51;
 			// 
 			// STD_STEP_INFO
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(708, 638);
-			this.Controls.Add(this.dataGridView2);
+			this.Controls.Add(this.dgvStepInfoList);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.panel5);
@@ -423,6 +381,7 @@ namespace APSWinForm.OET
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "STD_STEP_INFO";
 			this.Text = "STD_STEP_INFO";
+			this.Load += new System.EventHandler(this.STD_STEP_INFO_Load);
 			this.panel2.ResumeLayout(false);
 			this.panel9.ResumeLayout(false);
 			this.panel9.PerformLayout();
@@ -436,15 +395,15 @@ namespace APSWinForm.OET
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvStepInfoList)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-		protected System.Windows.Forms.Button button7;
+		protected System.Windows.Forms.Button btnSearch;
 		private System.Windows.Forms.Panel panel8;
-		protected System.Windows.Forms.Button button3;
+		protected System.Windows.Forms.Button btnInit;
 		protected System.Windows.Forms.Panel panel2;
 		protected System.Windows.Forms.Panel panel9;
 		private System.Windows.Forms.Panel panel6;
@@ -467,16 +426,10 @@ namespace APSWinForm.OET
 		protected System.Windows.Forms.Label label1;
 		protected System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Panel panel1;
-		public System.Windows.Forms.TextBox textBox3;
+		public System.Windows.Forms.TextBox txtStepName;
 		public System.Windows.Forms.Label label9;
-		public System.Windows.Forms.TextBox textBox8;
+		public System.Windows.Forms.TextBox txtStepID;
 		public System.Windows.Forms.Label label2;
-		public System.Windows.Forms.DataGridView dataGridView2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+		public System.Windows.Forms.DataGridView dgvStepInfoList;
 	}
 }
