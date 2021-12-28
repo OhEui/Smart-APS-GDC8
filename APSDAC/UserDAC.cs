@@ -102,12 +102,20 @@ namespace APSDAC
             };
         }
 
-        public WebMessage UpdateUserInfo(UserInfo info)
+        public WebMessage<UserLogin> UpdateUserInfo(UserInfo info)
         {
-            return new WebMessage()
+            return new WebMessage<UserLogin>()
             {
                 IsSuccess = true,
-                ResultMessage = "회원정보를 수정하였습니다."
+                ResultMessage = "회원정보를 수정하였습니다.",
+                Data = new UserLogin()
+                {
+                    User_ID = "test",
+                    User_NO = 1,
+                    User_Name = "홍길동",
+                    Dept_ID = 1,
+                    Dept_Name = "영업부"
+                }
             };
         }
 
