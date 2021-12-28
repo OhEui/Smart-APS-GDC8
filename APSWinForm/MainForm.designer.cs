@@ -111,35 +111,35 @@ namespace APSWinForm
             // 엑셀불러오기ToolStripMenuItem
             // 
             this.엑셀불러오기ToolStripMenuItem.Name = "엑셀불러오기ToolStripMenuItem";
-            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.엑셀불러오기ToolStripMenuItem.Text = "엑셀 불러오기";
             // 
             // 엑셀내보내기ToolStripMenuItem
             // 
             this.엑셀내보내기ToolStripMenuItem.Name = "엑셀내보내기ToolStripMenuItem";
-            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.엑셀내보내기ToolStripMenuItem.Text = "엑셀 내보내기";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // 결과정보열기ToolStripMenuItem
             // 
             this.결과정보열기ToolStripMenuItem.Name = "결과정보열기ToolStripMenuItem";
-            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.결과정보열기ToolStripMenuItem.Text = "결과 정보 열기";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.종료ToolStripMenuItem.Text = "종료";
             // 
             // 샘플ToolStripMenuItem
@@ -201,7 +201,7 @@ namespace APSWinForm
             this.button19.Dock = System.Windows.Forms.DockStyle.Top;
             this.button19.FlatAppearance.BorderSize = 0;
             this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
             this.button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button19.Location = new System.Drawing.Point(0, 75);
@@ -219,7 +219,7 @@ namespace APSWinForm
             this.button20.Dock = System.Windows.Forms.DockStyle.Top;
             this.button20.FlatAppearance.BorderSize = 0;
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button20.Location = new System.Drawing.Point(0, 50);
@@ -237,7 +237,7 @@ namespace APSWinForm
             this.button21.Dock = System.Windows.Forms.DockStyle.Top;
             this.button21.FlatAppearance.BorderSize = 0;
             this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button21.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
             this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button21.Location = new System.Drawing.Point(0, 25);
@@ -255,7 +255,7 @@ namespace APSWinForm
             this.button23.Dock = System.Windows.Forms.DockStyle.Top;
             this.button23.FlatAppearance.BorderSize = 0;
             this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button23.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button23.ImageKey = "(없음)";
@@ -274,7 +274,7 @@ namespace APSWinForm
             this.button9.Dock = System.Windows.Forms.DockStyle.Top;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button9.Location = new System.Drawing.Point(0, 426);
@@ -322,7 +322,7 @@ namespace APSWinForm
             this.button17.Dock = System.Windows.Forms.DockStyle.Top;
             this.button17.FlatAppearance.BorderSize = 0;
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
             this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button17.Location = new System.Drawing.Point(0, 25);
@@ -340,7 +340,7 @@ namespace APSWinForm
             this.button18.Dock = System.Windows.Forms.DockStyle.Top;
             this.button18.FlatAppearance.BorderSize = 0;
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.button18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button18.ImageKey = "(없음)";
@@ -359,7 +359,7 @@ namespace APSWinForm
             this.button7.Dock = System.Windows.Forms.DockStyle.Top;
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button7.Location = new System.Drawing.Point(0, 343);
@@ -389,7 +389,7 @@ namespace APSWinForm
             this.button12.Dock = System.Windows.Forms.DockStyle.Top;
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button12.Location = new System.Drawing.Point(0, 50);
@@ -407,7 +407,7 @@ namespace APSWinForm
             this.button13.Dock = System.Windows.Forms.DockStyle.Top;
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button13.Location = new System.Drawing.Point(0, 25);
@@ -425,7 +425,7 @@ namespace APSWinForm
             this.button14.Dock = System.Windows.Forms.DockStyle.Top;
             this.button14.FlatAppearance.BorderSize = 0;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button14.Location = new System.Drawing.Point(0, 0);
@@ -443,7 +443,7 @@ namespace APSWinForm
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button6.Location = new System.Drawing.Point(0, 232);
@@ -478,7 +478,7 @@ namespace APSWinForm
             this.btnTime.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTime.FlatAppearance.BorderSize = 0;
             this.btnTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTime.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnTime.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTime.Location = new System.Drawing.Point(0, 175);
@@ -496,7 +496,7 @@ namespace APSWinForm
             this.btnARR.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnARR.FlatAppearance.BorderSize = 0;
             this.btnARR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnARR.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnARR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnARR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
             this.btnARR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnARR.Location = new System.Drawing.Point(0, 150);
@@ -504,7 +504,7 @@ namespace APSWinForm
             this.btnARR.Padding = new System.Windows.Forms.Padding(25, 0, 43, 0);
             this.btnARR.Size = new System.Drawing.Size(228, 25);
             this.btnARR.TabIndex = 6;
-            this.btnARR.Text = "└ 설비배치정보관리";
+            this.btnARR.Text = "└ 작업조건정보관리";
             this.btnARR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnARR.UseVisualStyleBackColor = false;
             // 
@@ -514,7 +514,7 @@ namespace APSWinForm
             this.btnEquipment.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEquipment.FlatAppearance.BorderSize = 0;
             this.btnEquipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEquipment.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEquipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnEquipment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnEquipment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEquipment.Location = new System.Drawing.Point(0, 125);
@@ -532,7 +532,7 @@ namespace APSWinForm
             this.btnRoute.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRoute.FlatAppearance.BorderSize = 0;
             this.btnRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoute.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRoute.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRoute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
             this.btnRoute.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoute.Location = new System.Drawing.Point(0, 100);
@@ -550,7 +550,7 @@ namespace APSWinForm
             this.btnSTD.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSTD.FlatAppearance.BorderSize = 0;
             this.btnSTD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSTD.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSTD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnSTD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSTD.Location = new System.Drawing.Point(0, 75);
@@ -568,7 +568,7 @@ namespace APSWinForm
             this.btnLine.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLine.FlatAppearance.BorderSize = 0;
             this.btnLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLine.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
             this.btnLine.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLine.Location = new System.Drawing.Point(0, 50);
@@ -586,7 +586,7 @@ namespace APSWinForm
             this.btnDemand.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDemand.FlatAppearance.BorderSize = 0;
             this.btnDemand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDemand.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDemand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDemand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnDemand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDemand.Location = new System.Drawing.Point(0, 25);
@@ -604,7 +604,7 @@ namespace APSWinForm
             this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProduct.FlatAppearance.BorderSize = 0;
             this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
             this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProduct.ImageKey = "(없음)";
@@ -623,7 +623,7 @@ namespace APSWinForm
             this.btnSubMenu1.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubMenu1.FlatAppearance.BorderSize = 0;
             this.btnSubMenu1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubMenu1.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSubMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSubMenu1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
             this.btnSubMenu1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnSubMenu1.Location = new System.Drawing.Point(0, 0);
@@ -690,7 +690,7 @@ namespace APSWinForm
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1218, 0);
+            this.tabPage2.Size = new System.Drawing.Size(970, 0);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -707,7 +707,7 @@ namespace APSWinForm
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "MainForm";
-            this.Text = "Form2";
+            this.Text = "APS";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
