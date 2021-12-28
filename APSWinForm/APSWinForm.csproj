@@ -123,6 +123,30 @@
     <Compile Include="OET\SETUP_TIME.Designer.cs">
       <DependentUpon>SETUP_TIME.cs</DependentUpon>
     </Compile>
+    <Compile Include="OET\STDSTEP_REG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\STDSTEP_REG.Designer.cs">
+      <DependentUpon>STDSTEP_REG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OET\STD_STEP_INFO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\STD_STEP_INFO.Designer.cs">
+      <DependentUpon>STD_STEP_INFO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OET\STEPROUTE_REG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\STEPROUTE_REG.Designer.cs">
+      <DependentUpon>STEPROUTE_REG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OET\STEP_ROUTE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\STEP_ROUTE.Designer.cs">
+      <DependentUpon>STEP_ROUTE.cs</DependentUpon>
+    </Compile>
     <Compile Include="OET\UserManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +194,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OET\SETUP_TIME.resx">
       <DependentUpon>SETUP_TIME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\STDSTEP_REG.resx">
+      <DependentUpon>STDSTEP_REG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\STD_STEP_INFO.resx">
+      <DependentUpon>STD_STEP_INFO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\STEPROUTE_REG.resx">
+      <DependentUpon>STEPROUTE_REG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\STEP_ROUTE.resx">
+      <DependentUpon>STEP_ROUTE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OET\UserManage.resx">
       <DependentUpon>UserManage.cs</DependentUpon>
