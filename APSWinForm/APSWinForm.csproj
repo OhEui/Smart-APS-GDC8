@@ -244,6 +244,9 @@
     <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\APSDAC\APSDAC.csproj">
       <Project>{c3c6f97f-8c6f-4e7a-8024-2552316b7f31}</Project>
       <Name>APSDAC</Name>
@@ -252,9 +255,6 @@
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
       <Name>APSVO</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

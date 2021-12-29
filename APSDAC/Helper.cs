@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +9,6 @@ namespace APSDAC
 {
     public static class Helper
     {
-        //DataReader => List<VO>로 변환해서 반환하는 메서드
         /// <summary>
         /// DataReader => List<VO>로 변환해서 반환하는 메서드
         /// </summary>
@@ -26,6 +24,7 @@ namespace APSDAC
                 while (dr.Read())
                 {
                     obj = Activator.CreateInstance<T>();
+                    foreach (System.Reflection.PropertyInfo prop in obj.GetType().GetProperties())
                     {
                         //프로퍼티는 존재하는데, reader안에 조회된 컬럼이 없는 경우
                         //reader에 조회된 컬럼은 있는데, 프로퍼티는 정의되지 않은 경우
@@ -50,6 +49,12 @@ namespace APSDAC
             }
         }
 
+        /// <summary>
+        /// DataTable => List<VO>로 변환해서 반환하는 메서드
+        /// </summary>
+        /// <typeparam name="T">DTO or VO class</typeparam>
+        /// <param name="table">Get Data From DB</param>
+        /// <returns></returns>
         public static List<T> DataTableMapToList<T>(DataTable table) where T : class, new()
         {
             try
@@ -62,6 +67,7 @@ namespace APSDAC
                     {
                         try
                         {
+                            System.Reflection.PropertyInfo propertyInfo = obj.GetType().GetProperty(prop.Name);
                             propertyInfo.SetValue(obj, Convert.ChangeType(row[prop.Name], propertyInfo.PropertyType), null);
                         }
                         catch

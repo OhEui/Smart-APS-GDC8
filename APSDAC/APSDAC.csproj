@@ -47,7 +47,6 @@
     <Compile Include="Helper.cs" />
     <Compile Include="STD_STEP_DAC.cs" />
     <Compile Include="EQUIPDAC.cs" />
-    <Compile Include="Helper.cs" />
     <Compile Include="UserDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using APSVO;
+using APSDAC;
 
 namespace APSWinForm
 {
@@ -15,16 +16,13 @@ namespace APSWinForm
     {
         List<EQUIPVO> list;
 
-        public class EQUIPVO
+
+        public List<EQUIPVO> GetAllEquipment()
         {
-            public string SITE_ID { get; set; }
-            public string LINE_ID { get; set; }
-            public string EQP_ID { get; set; }
-            public string EQP_MODEL { get; set; }
-            public string EQP_GROUP { get; set; }
+            EQUIPDAC dac = new EQUIPDAC();
+            return dac.GetAllEquipment();
         }
 
-        
         public EQUIPMENT()
         {
             InitializeComponent();
@@ -45,9 +43,10 @@ namespace APSWinForm
                 DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정모델명", "EQP_MODEL", colWidth: 100);
                 DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정처리그룹", "EQP_GROUP", colWidth: 100);
 
-                
-             
-            
+            dgvEQP.DataSource = list = GetAllEquipment();
+
+
+
         }
     }
 }
