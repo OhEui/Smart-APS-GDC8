@@ -35,9 +35,7 @@ namespace APSWinForm
 			this.btnInit = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
-			this.txtStepName = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.txtStepID = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
@@ -60,6 +58,8 @@ namespace APSWinForm
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvStepInfoList = new System.Windows.Forms.DataGridView();
+			this.txtStepID = new APSWinForm.CapitalTextBox();
+			this.txtStepName = new APSWinForm.CapitalTextBox();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
 			this.panel6.SuspendLayout();
@@ -108,6 +108,7 @@ namespace APSWinForm
 			this.btnInit.TabIndex = 54;
 			this.btnInit.Text = "초기화";
 			this.btnInit.UseVisualStyleBackColor = false;
+			this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
 			// 
 			// panel2
 			// 
@@ -126,8 +127,8 @@ namespace APSWinForm
 			// 
 			this.panel9.BackColor = System.Drawing.Color.White;
 			this.panel9.Controls.Add(this.txtStepName);
-			this.panel9.Controls.Add(this.label9);
 			this.panel9.Controls.Add(this.txtStepID);
+			this.panel9.Controls.Add(this.label9);
 			this.panel9.Controls.Add(this.label2);
 			this.panel9.Controls.Add(this.btnInit);
 			this.panel9.Controls.Add(this.btnSearch);
@@ -136,13 +137,6 @@ namespace APSWinForm
 			this.panel9.Name = "panel9";
 			this.panel9.Size = new System.Drawing.Size(668, 136);
 			this.panel9.TabIndex = 42;
-			// 
-			// txtStepName
-			// 
-			this.txtStepName.Location = new System.Drawing.Point(171, 82);
-			this.txtStepName.Name = "txtStepName";
-			this.txtStepName.Size = new System.Drawing.Size(121, 21);
-			this.txtStepName.TabIndex = 58;
 			// 
 			// label9
 			// 
@@ -153,13 +147,6 @@ namespace APSWinForm
 			this.label9.Size = new System.Drawing.Size(91, 14);
 			this.label9.TabIndex = 57;
 			this.label9.Text = "ㆍ표준공정이름";
-			// 
-			// txtStepID
-			// 
-			this.txtStepID.Location = new System.Drawing.Point(171, 41);
-			this.txtStepID.Name = "txtStepID";
-			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 56;
 			// 
 			// label2
 			// 
@@ -284,6 +271,7 @@ namespace APSWinForm
 			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox5.TabIndex = 58;
 			this.pictureBox5.TabStop = false;
+			this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
 			// 
 			// pictureBox4
 			// 
@@ -366,6 +354,24 @@ namespace APSWinForm
 			this.dgvStepInfoList.Size = new System.Drawing.Size(688, 434);
 			this.dgvStepInfoList.TabIndex = 51;
 			// 
+			// txtStepID
+			// 
+			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepID.Location = new System.Drawing.Point(171, 42);
+			this.txtStepID.Name = "txtStepID";
+			this.txtStepID.Size = new System.Drawing.Size(121, 21);
+			this.txtStepID.TabIndex = 59;
+			// 
+			// txtStepName
+			// 
+			this.txtStepName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepName.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepName.Location = new System.Drawing.Point(171, 83);
+			this.txtStepName.Name = "txtStepName";
+			this.txtStepName.Size = new System.Drawing.Size(121, 21);
+			this.txtStepName.TabIndex = 60;
+			// 
 			// STD_STEP_INFO
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -426,10 +432,10 @@ namespace APSWinForm
 		protected System.Windows.Forms.Label label1;
 		protected System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Panel panel1;
-		public System.Windows.Forms.TextBox txtStepName;
 		public System.Windows.Forms.Label label9;
-		public System.Windows.Forms.TextBox txtStepID;
 		public System.Windows.Forms.Label label2;
 		public System.Windows.Forms.DataGridView dgvStepInfoList;
+		private CapitalTextBox txtStepID;
+		private CapitalTextBox txtStepName;
 	}
 }

@@ -32,7 +32,7 @@ namespace APSWinForm
 
 
 			LoadData();
-			dgvStepInfoList.DataSource = stepList;
+			
 		}
 
 		public void LoadData()
@@ -41,6 +41,9 @@ namespace APSWinForm
 			{
 				stepList = dac.getStepInfoList();
 			}
+
+			dgvStepInfoList.DataSource = null;
+			dgvStepInfoList.DataSource = stepList;
 		}
 
 		private void btnSearch_Click(object sender, EventArgs e)
@@ -53,7 +56,26 @@ namespace APSWinForm
 			}
 
 			dgvStepInfoList.DataSource = null;
-			dgvStepInfoList.DataSource = stepList.FindAll(p => p.STD_STEP_ID.Contains(txtStepID.Text) || p.STD_STEP_NAME.Contains(txtStepName.Text));
+			dgvStepInfoList.DataSource = stepList.FindAll(p => p.STD_STEP_ID.Contains(txtStepID.Text.ToUpper()) || p.STD_STEP_NAME.Contains(txtStepName.Text.ToUpper()));
+		}
+
+		private void btnInit_Click(object sender, EventArgs e)
+		{
+			txtStepID.Text = txtStepName.Text = null;
+
+			LoadData();
+			
+		}
+
+		private void pictureBox5_Click(object sender, EventArgs e)
+		{
+			STDSTEP_REG reg = new STDSTEP_REG();
+
+			if (reg.ShowDialog() == DialogResult.OK)
+			{
+				LoadData();
+			}
+			else return;
 		}
 	}
 }
