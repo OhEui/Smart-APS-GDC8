@@ -13,7 +13,7 @@ namespace APSServer.Controllers
     public class UserController : ApiController
     {
         [HttpPost]
-        [Route("Login")]
+        [Route("LoginTest")]
         public WebMessage<UserLogin> GetList(string id, string password)
         {
             var msg = new WebMessage<UserLogin>();

@@ -40,18 +40,18 @@ namespace APSWinForm
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.txtLine = new System.Windows.Forms.TextBox();
+            this.txtSite = new System.Windows.Forms.TextBox();
             this.cboEQPgroup = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dgvEQP = new System.Windows.Forms.DataGridView();
-            this.txtSite = new System.Windows.Forms.TextBox();
-            this.txtLine = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -178,13 +178,27 @@ namespace APSWinForm
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.label4);
             this.panel9.Controls.Add(this.label5);
-            this.panel9.Controls.Add(this.button3);
-            this.panel9.Controls.Add(this.button7);
+            this.panel9.Controls.Add(this.btnReset);
+            this.panel9.Controls.Add(this.btnSearch);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(780, 136);
             this.panel9.TabIndex = 42;
+            // 
+            // txtLine
+            // 
+            this.txtLine.Location = new System.Drawing.Point(176, 58);
+            this.txtLine.Name = "txtLine";
+            this.txtLine.Size = new System.Drawing.Size(121, 21);
+            this.txtLine.TabIndex = 169;
+            // 
+            // txtSite
+            // 
+            this.txtSite.Location = new System.Drawing.Point(176, 23);
+            this.txtSite.Name = "txtSite";
+            this.txtSite.Size = new System.Drawing.Size(121, 21);
+            this.txtSite.TabIndex = 168;
             // 
             // cboEQPgroup
             // 
@@ -224,31 +238,33 @@ namespace APSWinForm
             this.label5.TabIndex = 162;
             this.label5.Text = "ㆍ사이트ID";
             // 
-            // button3
+            // btnReset
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(673, 75);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 30);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "초기화";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(673, 75);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(74, 30);
+            this.btnReset.TabIndex = 54;
+            this.btnReset.Text = "초기화";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // button7
+            // btnSearch
             // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(673, 35);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(74, 30);
-            this.button7.TabIndex = 45;
-            this.button7.Text = "검색";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(673, 35);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(74, 30);
+            this.btnSearch.TabIndex = 45;
+            this.btnSearch.Text = "검색";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel8
             // 
@@ -285,20 +301,6 @@ namespace APSWinForm
             this.dgvEQP.RowTemplate.Height = 23;
             this.dgvEQP.Size = new System.Drawing.Size(800, 472);
             this.dgvEQP.TabIndex = 45;
-            // 
-            // txtSite
-            // 
-            this.txtSite.Location = new System.Drawing.Point(176, 23);
-            this.txtSite.Name = "txtSite";
-            this.txtSite.Size = new System.Drawing.Size(121, 21);
-            this.txtSite.TabIndex = 168;
-            // 
-            // txtLine
-            // 
-            this.txtLine.Location = new System.Drawing.Point(176, 58);
-            this.txtLine.Name = "txtLine";
-            this.txtLine.Size = new System.Drawing.Size(121, 21);
-            this.txtLine.TabIndex = 169;
             // 
             // EQUIPMENT
             // 
@@ -340,8 +342,8 @@ namespace APSWinForm
         protected System.Windows.Forms.PictureBox pictureBox1;
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Panel panel9;
-        protected System.Windows.Forms.Button button3;
-        protected System.Windows.Forms.Button button7;
+        protected System.Windows.Forms.Button btnReset;
+        protected System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;

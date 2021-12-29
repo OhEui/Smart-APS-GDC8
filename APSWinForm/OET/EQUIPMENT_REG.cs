@@ -16,5 +16,10 @@ namespace APSWinForm
         {
             InitializeComponent();
         }
+
+        private void EQUIPMENT_REG_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

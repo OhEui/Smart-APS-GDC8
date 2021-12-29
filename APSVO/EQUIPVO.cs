@@ -35,5 +35,15 @@ namespace APSVO
             public int TIME { get; set; }
 
         }
+    public class EqpGroupVO
+    {
+        public string STD_STEP_ID { get; set; }
+        public string STD_STEP_NAME { get; set; }
+        public int STEP_TAT { get; set; }
+       
+
+    }
+
     
+
 }

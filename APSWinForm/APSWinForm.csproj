@@ -261,9 +261,7 @@
   <ItemGroup>
     <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\APSDAC\APSDAC.csproj">
       <Project>{c3c6f97f-8c6f-4e7a-8024-2552316b7f31}</Project>

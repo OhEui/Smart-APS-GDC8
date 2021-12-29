@@ -54,6 +54,17 @@ namespace APSDAC
 
         }
 
+        public List<EqpGroupVO> GetEqpGroup()
+        {
+            string sql = "select STD_STEP_ID, STD_STEP_NAME, STEP_TAT from STD_STEP_INFO";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                return Helper.DataReaderMapToList<EqpGroupVO>(cmd.ExecuteReader());
+
+            }
+
+        }
+
     }
 }
 
