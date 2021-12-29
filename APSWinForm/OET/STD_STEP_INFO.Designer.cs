@@ -1,5 +1,5 @@
 ﻿
-namespace APSWinForm.OET
+namespace APSWinForm
 {
 	partial class STD_STEP_INFO
 	{

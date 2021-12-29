@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace APSWinForm.OET
+namespace APSWinForm
 {
     public partial class EQPARR_REG : Form
     {

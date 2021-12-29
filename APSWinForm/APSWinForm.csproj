@@ -69,10 +69,10 @@
     <Compile Include="BaseForm\BaseFormSample.designer.cs">
       <DependentUpon>BaseFormSample.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmpopup.cs">
+    <Compile Include="BaseForm\frmpopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmpopup.Designer.cs">
+    <Compile Include="BaseForm\frmpopup.Designer.cs">
       <DependentUpon>frmpopup.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -169,7 +169,7 @@
     <EmbeddedResource Include="BaseForm\BaseFormSample.resx">
       <DependentUpon>BaseFormSample.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmpopup.resx">
+    <EmbeddedResource Include="BaseForm\frmpopup.resx">
       <DependentUpon>frmpopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
