@@ -24,4 +24,5 @@ namespace APSVO
         public int? User_NO { get; set; }
         public bool User_IsAdmin { get; set; }
     }
+
 }

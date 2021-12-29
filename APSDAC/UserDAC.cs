@@ -176,7 +176,7 @@ values (@User_ID, @User_Name, @User_PWD, @User_Email, @User_phone, @User_Birth, 
             return msg;
         }
 
-        public WebMessage ResetPasswort(string id, string email) 
+        public WebMessage ResetPassword(string id, string email) 
         {
             // 임시비밀번호 생성 -> DB에 저장 -> 이메일 전송
             // DAC: DB에 저장

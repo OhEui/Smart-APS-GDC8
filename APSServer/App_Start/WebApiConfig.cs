@@ -16,6 +16,7 @@ namespace APSServer
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
+                //routeTemplate: "api/{controller}/"
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
