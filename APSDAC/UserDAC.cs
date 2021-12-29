@@ -257,6 +257,7 @@ update UserInfo Set Deleted=1 where User_ID=@ID and User_PWD=@Password";
                     msg.ResultMessage = "회원탈퇴 중 오류가 발생하였습니다.";
                 }
             }
+            return msg;
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////
