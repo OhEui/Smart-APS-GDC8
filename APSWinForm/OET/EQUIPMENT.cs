@@ -138,7 +138,7 @@ namespace APSWinForm
             }
             else
             {
-                MessageBox.Show("수정할 BOR을 선택해주세요");
+                MessageBox.Show("수정할 설비를 선택해주세요");
             }
         }
     }
