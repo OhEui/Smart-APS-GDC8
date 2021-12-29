@@ -42,12 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="OET\EQUIPDAC.cs" />
-    <Compile Include="OET\Helper.cs" />
+    <Compile Include="UserDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\APSServer\APSServer.csproj">
+      <Project>{C52A3F47-36AF-4459-BC02-E3C6690EFB3E}</Project>
+      <Name>APSServer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\APSVO\APSVO.csproj">
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
       <Name>APSVO</Name>

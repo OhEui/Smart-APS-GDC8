@@ -20,6 +20,7 @@ namespace APSWinForm
         private void MainForm_Load(object sender, EventArgs e)
         {
             tabControl1.Visible = false;
+            //샘플ToolStripMenuItem.Visible = false;
         }
 
         private void menuStrip2_ItemAdded(object sender, ToolStripItemEventArgs e)

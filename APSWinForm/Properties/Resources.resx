@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,114 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CUSTOMER_ID" xml:space="preserve">
+    <value>고객 ID</value>
+  </data>
+  <data name="DEMAND" xml:space="preserve">
+    <value>수요정보</value>
+  </data>
+  <data name="DEMAND_ID" xml:space="preserve">
+    <value>수요 ID</value>
+  </data>
+  <data name="DEMAND_QTY" xml:space="preserve">
+    <value>수량</value>
+  </data>
+  <data name="DEMAND_VER" xml:space="preserve">
+    <value>수요버전</value>
+  </data>
+  <data name="DUE_DATE" xml:space="preserve">
+    <value>기한</value>
+  </data>
+  <data name="EQP_ARRANGE" xml:space="preserve">
+    <value>작업조건</value>
+  </data>
+  <data name="EQP_GROUP" xml:space="preserve">
+    <value>설비그룹</value>
+  </data>
+  <data name="EQP_ID" xml:space="preserve">
+    <value>설비 ID</value>
+  </data>
+  <data name="EQP_MODEL" xml:space="preserve">
+    <value>모델명</value>
+  </data>
+  <data name="EQUIPMENT" xml:space="preserve">
+    <value>설비정보</value>
+  </data>
+  <data name="LINE_ID" xml:space="preserve">
+    <value>라인 ID</value>
+  </data>
+  <data name="LINE_INFO" xml:space="preserve">
+    <value>라인정보</value>
+  </data>
+  <data name="LINE_NAME" xml:space="preserve">
+    <value>라인이름</value>
+  </data>
+  <data name="LOT_SIZE" xml:space="preserve">
+    <value>생산단위크기</value>
+  </data>
+  <data name="PROCESS_ID" xml:space="preserve">
+    <value>프로세스 ID</value>
+  </data>
+  <data name="PROC_TIME" xml:space="preserve">
+    <value>공정소요시간</value>
+  </data>
+  <data name="PRODUCT" xml:space="preserve">
+    <value>제품정보</value>
+  </data>
+  <data name="PRODUCT_ID" xml:space="preserve">
+    <value>제품 ID</value>
+  </data>
+  <data name="PRODUCT_NAME" xml:space="preserve">
+    <value>제품이름</value>
+  </data>
+  <data name="PRODUCT_TYPE" xml:space="preserve">
+    <value>제품타입</value>
+  </data>
+  <data name="SETUP_TIME" xml:space="preserve">
+    <value>교체준비시간</value>
+  </data>
+  <data name="SITE_ID" xml:space="preserve">
+    <value>현장 ID</value>
+  </data>
+  <data name="STD_STEP_ID" xml:space="preserve">
+    <value>표준공정 ID</value>
+  </data>
+  <data name="STD_STEP_INFO" xml:space="preserve">
+    <value>표준공정 정보</value>
+  </data>
+  <data name="STD_STEP_NAME" xml:space="preserve">
+    <value>표준공정이름</value>
+  </data>
+  <data name="STEP_ID" xml:space="preserve">
+    <value>공정 ID</value>
+  </data>
+  <data name="STEP_ROUTE" xml:space="preserve">
+    <value>공정순서</value>
+  </data>
+  <data name="STEP_SEQ" xml:space="preserve">
+    <value>공정순서</value>
+  </data>
+  <data name="STEP_SETUP" xml:space="preserve">
+    <value>공정준비시간</value>
+  </data>
+  <data name="STEP_TAT" xml:space="preserve">
+    <value>공정소요시간</value>
+  </data>
+  <data name="STEP_TYPE" xml:space="preserve">
+    <value>공정타입</value>
+  </data>
+  <data name="STEP_YIELD" xml:space="preserve">
+    <value>공정수율</value>
+  </data>
+  <data name="TACT_TIME" xml:space="preserve">
+    <value>공정간격시간</value>
+  </data>
+  <data name="TIME" xml:space="preserve">
+    <value>소요시간</value>
+  </data>
 </root>
