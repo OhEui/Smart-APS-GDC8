@@ -14,13 +14,19 @@ namespace APSWinForm
 {
     public partial class EQUIPMENT : Form
     {
-        List<EQUIPVO> list;
+        List<EQUIPVO> EQPlist;
 
 
         public List<EQUIPVO> GetAllEquipment()
         {
             EQUIPDAC dac = new EQUIPDAC();
             return dac.GetAllEquipment();
+        }
+
+        public List<EqpGroupVO> GetEqpGroup()
+        {
+            EQUIPDAC dac = new EQUIPDAC();
+            return dac.GetEqpGroup();
         }
 
         public EQUIPMENT()
@@ -36,17 +42,43 @@ namespace APSWinForm
 
         private void DataLoad()
         {
-            
-                DataGridViewUtil.AddGridTextColumn(dgvEQP, "사이트ID", "SITE_ID", colWidth: 105);
-                DataGridViewUtil.AddGridTextColumn(dgvEQP, "라인ID", "LINE_ID", colWidth: 105);
-                DataGridViewUtil.AddGridTextColumn(dgvEQP, "설비ID", "EQP_ID", colWidth: 105);
-                DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정모델명", "EQP_MODEL", colWidth: 100);
-                DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정처리그룹", "EQP_GROUP", colWidth: 100);
 
-            dgvEQP.DataSource = list = GetAllEquipment();
-
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, "사이트ID", "SITE_ID", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, "라인ID", "LINE_ID", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, "설비ID", "EQP_ID", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정모델명", "EQP_MODEL", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정처리그룹", "EQP_GROUP", colWidth: 100);
+            List<EqpGroupVO> list = new List<EqpGroupVO>();
 
 
+            dgvEQP.DataSource = EQPlist = GetAllEquipment();
+            CommonUtil.ComboBinding(cboEQPgroup, GetEqpGroup(), "STD_STEP_ID", "STD_STEP_NAME", "선택");
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSite.Text) && string.IsNullOrWhiteSpace(txtLine.Text) && (cboEQPgroup.Text=="선택"))
+            {
+                MessageBox.Show("검색어를 입력해주세요.");
+                txtSite.Focus();
+                return;
+            }
+            getSearchEqpList();
+        }
+        private void getSearchEqpList()  // 검색함수
+        {
+            dgvEQP.DataSource = null;
+            dgvEQP.DataSource = EQPlist.FindAll(p => p.SITE_ID.Contains(txtSite.Text) && p.LINE_ID.Contains(txtLine.Text) && p.EQP_GROUP.Contains(cboEQPgroup.Text));
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            dgvEQP.DataSource = null;
+            txtLine.Clear();
+            txtSite.Clear();
+            cboEQPgroup.SelectedIndex = 0;
+            DataLoad();
         }
     }
 }
