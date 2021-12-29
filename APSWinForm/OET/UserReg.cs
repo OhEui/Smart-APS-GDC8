@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Template1
+namespace APSWinForm
 {
     public partial class UserReg : Form
     {
