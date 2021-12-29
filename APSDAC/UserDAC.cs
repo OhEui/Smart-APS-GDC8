@@ -79,6 +79,7 @@ where u.User_ID = @ID and u.User_PWD = @Password and u.Delete = 0";
         public WebMessage Logout(UserLogin data)
         {
             // 세션, 쿠키등이 있으면 해제 작업을 함
+            // 로그아웃은 DAC 부분에서는 작업할 내용이 없음 (API 부분에서 전부 처리)
 
             return new WebMessage() 
             {
@@ -178,6 +179,9 @@ values (@User_ID, @User_Name, @User_PWD, @User_Email, @User_phone, @User_Birth, 
         public WebMessage ResetPasswort(string id, string email) 
         {
             // 임시비밀번호 생성 -> DB에 저장 -> 이메일 전송
+            // DAC: DB에 저장
+            // API: 임시 비밀번호 생성 -> DAC 호출 -> 이메일 전송
+
             return new WebMessage()
             {
                 IsSuccess = true,
