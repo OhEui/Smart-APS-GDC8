@@ -31,12 +31,6 @@ namespace APSWinForm
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseFormSample));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -67,6 +61,12 @@ namespace APSWinForm
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -97,36 +97,6 @@ namespace APSWinForm
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(688, 434);
             this.dataGridView1.TabIndex = 44;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "DEMAND_VER";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "DEMAND_ID";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "PRODUCT_ID";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "CUSTOMER_ID";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "DUE_DATE";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "DEMAND_QTY";
-            this.Column6.Name = "Column6";
             // 
             // panel5
             // 
@@ -438,6 +408,36 @@ namespace APSWinForm
             this.panel2.Size = new System.Drawing.Size(708, 156);
             this.panel2.TabIndex = 40;
             // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "DEMAND_QTY";
+            this.Column6.Name = "Column6";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "DUE_DATE";
+            this.Column5.Name = "Column5";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "CUSTOMER_ID";
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "PRODUCT_ID";
+            this.Column3.Name = "Column3";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "DEMAND_ID";
+            this.Column2.Name = "Column2";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "DEMAND_VER";
+            this.Column1.Name = "Column1";
+            // 
             // BaseFormSample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -472,12 +472,6 @@ namespace APSWinForm
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
@@ -509,5 +503,11 @@ namespace APSWinForm
         protected System.Windows.Forms.PictureBox pictureBox5;
         protected System.Windows.Forms.Panel panel9;
         protected System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

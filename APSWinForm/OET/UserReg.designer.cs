@@ -1,5 +1,5 @@
 ﻿
-namespace Template1
+namespace APSWinForm
 {
     partial class UserReg
     {

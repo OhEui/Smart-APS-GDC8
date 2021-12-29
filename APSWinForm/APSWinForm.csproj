@@ -87,11 +87,11 @@
     <Compile Include="OET\EQPARR_REG.Designer.cs">
       <DependentUpon>EQPARR_REG.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\EQR_ARRANGE.cs">
+    <Compile Include="OET\EQP_ARRANGE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\EQR_ARRANGE.Designer.cs">
-      <DependentUpon>EQR_ARRANGE.cs</DependentUpon>
+    <Compile Include="OET\EQP_ARRANGE.Designer.cs">
+      <DependentUpon>EQP_ARRANGE.cs</DependentUpon>
     </Compile>
     <Compile Include="OET\EQUIPMENT.cs">
       <SubType>Form</SubType>
@@ -180,8 +180,8 @@
     <EmbeddedResource Include="OET\EQPARR_REG.resx">
       <DependentUpon>EQPARR_REG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\EQR_ARRANGE.resx">
-      <DependentUpon>EQR_ARRANGE.cs</DependentUpon>
+    <EmbeddedResource Include="OET\EQP_ARRANGE.resx">
+      <DependentUpon>EQP_ARRANGE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OET\EQUIPMENT.resx">
       <DependentUpon>EQUIPMENT.cs</DependentUpon>
@@ -244,11 +244,17 @@
     <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\APSDAC\APSDAC.csproj">
+      <Project>{c3c6f97f-8c6f-4e7a-8024-2552316b7f31}</Project>
+      <Name>APSDAC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\APSVO\APSVO.csproj">
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
       <Name>APSVO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
