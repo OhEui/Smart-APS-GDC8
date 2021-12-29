@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APSDAC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,19 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using APSDAC;
-using APSVO;
+
 
 namespace APSWinForm
 {
     public partial class EQUIPMENT : Form
     {
         List<EQUIPVO> list;
-        public List<EQUIPVO> GetAllEquipment()
+
+        public class EQUIPVO
         {
-            EQUIPDAC dac = new EQUIPDAC();
-            return dac.GetAllEquipment();
+            public string SITE_ID { get; set; }
+            public string LINE_ID { get; set; }
+            public string EQP_ID { get; set; }
+            public string EQP_MODEL { get; set; }
+            public string EQP_GROUP { get; set; }
         }
+
+        
         public EQUIPMENT()
         {
             InitializeComponent();
@@ -41,7 +47,7 @@ namespace APSWinForm
                 DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정처리그룹", "EQP_GROUP", colWidth: 100);
 
                 
-                dgvEQP.DataSource = list = GetAllEquipment();
+             
             
         }
     }

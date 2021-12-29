@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APSDAC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,24 +8,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using APSDAC;
-using APSVO;
+
 
 namespace APSWinForm
 {
     public partial class EQP_ARRANGE : Form
     {
         List<EqpArrangeVO> list;
+
+        public class EqpArrangeVO
+        {
+            public string PRODUCT_ID { get; set; }
+            public string PROCESS_ID { get; set; }
+            public string STEP_ID { get; set; }
+            public string EQP_ID { get; set; }
+            public int TACT_TIME { get; set; }
+            public int PROC_TIME { get; set; }
+
+
+        }
+
         public EQP_ARRANGE()
         {
             InitializeComponent();
         }
         
-        public List<EqpArrangeVO> GetEqipmentARR()
-        {
-            EQUIPDAC dac = new EQUIPDAC();
-            return dac.GetEqipmentARR();
-        }
+        
 
         private void EQP_ARRANGE_Load(object sender, EventArgs e)
         {
@@ -42,8 +51,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "프로세스처리시간", "PROC_TIME", colWidth: 130);
 
             
-            dataGridView1.DataSource = list = GetEqipmentARR();
-
+           
             
         }
 
