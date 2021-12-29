@@ -58,8 +58,8 @@ namespace APSWinForm
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvStepInfoList = new System.Windows.Forms.DataGridView();
-			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.txtStepName = new APSWinForm.CapitalTextBox();
+			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
 			this.panel6.SuspendLayout();
@@ -142,7 +142,7 @@ namespace APSWinForm
 			// 
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label9.Location = new System.Drawing.Point(44, 85);
+			this.label9.Location = new System.Drawing.Point(45, 83);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(91, 14);
 			this.label9.TabIndex = 57;
@@ -152,7 +152,7 @@ namespace APSWinForm
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label2.Location = new System.Drawing.Point(44, 44);
+			this.label2.Location = new System.Drawing.Point(45, 42);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(79, 14);
 			this.label2.TabIndex = 55;
@@ -260,6 +260,7 @@ namespace APSWinForm
 			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox6.TabIndex = 59;
 			this.pictureBox6.TabStop = false;
+			this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
 			// 
 			// pictureBox5
 			// 
@@ -283,6 +284,7 @@ namespace APSWinForm
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox4.TabIndex = 57;
 			this.pictureBox4.TabStop = false;
+			this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
 			// 
 			// pictureBox3
 			// 
@@ -344,7 +346,6 @@ namespace APSWinForm
 			// 
 			// dgvStepInfoList
 			// 
-			this.dgvStepInfoList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvStepInfoList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(230)))), ((int)(((byte)(228)))));
 			this.dgvStepInfoList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvStepInfoList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -354,23 +355,23 @@ namespace APSWinForm
 			this.dgvStepInfoList.Size = new System.Drawing.Size(688, 434);
 			this.dgvStepInfoList.TabIndex = 51;
 			// 
-			// txtStepID
-			// 
-			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepID.Location = new System.Drawing.Point(171, 42);
-			this.txtStepID.Name = "txtStepID";
-			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 59;
-			// 
 			// txtStepName
 			// 
 			this.txtStepName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtStepName.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepName.Location = new System.Drawing.Point(171, 83);
+			this.txtStepName.Location = new System.Drawing.Point(172, 81);
 			this.txtStepName.Name = "txtStepName";
 			this.txtStepName.Size = new System.Drawing.Size(121, 21);
 			this.txtStepName.TabIndex = 60;
+			// 
+			// txtStepID
+			// 
+			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepID.Location = new System.Drawing.Point(172, 40);
+			this.txtStepID.Name = "txtStepID";
+			this.txtStepID.Size = new System.Drawing.Size(121, 21);
+			this.txtStepID.TabIndex = 59;
 			// 
 			// STD_STEP_INFO
 			// 

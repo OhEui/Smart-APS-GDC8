@@ -58,5 +58,17 @@ namespace APSDAC
 			//string sql = "";
 
 		}
+
+		public bool deleteStepInfoList(string stepID)
+		{
+			string sql = "delete from STD_STEP_INFO where STD_STEP_ID = @STD_STEP_ID";
+
+			using (SqlCommand cmd = new SqlCommand(sql, conn))
+			{
+				cmd.Parameters.AddWithValue("@STD_STEP_ID", stepID);
+
+				return cmd.ExecuteNonQuery() > 0;
+			}
+		}
 	}
 }
