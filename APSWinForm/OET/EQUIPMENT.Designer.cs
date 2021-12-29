@@ -1,5 +1,5 @@
 ﻿
-namespace APSWinForm.OET
+namespace APSWinForm
 {
     partial class EQUIPMENT
     {
@@ -40,18 +40,18 @@ namespace APSWinForm.OET
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.cboEQPgroup = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.dgvEQP = new System.Windows.Forms.DataGridView();
+            this.txtSite = new System.Windows.Forms.TextBox();
+            this.txtLine = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -62,7 +62,7 @@ namespace APSWinForm.OET
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEQP)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -172,10 +172,10 @@ namespace APSWinForm.OET
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Controls.Add(this.comboBox5);
+            this.panel9.Controls.Add(this.txtLine);
+            this.panel9.Controls.Add(this.txtSite);
+            this.panel9.Controls.Add(this.cboEQPgroup);
             this.panel9.Controls.Add(this.label9);
-            this.panel9.Controls.Add(this.comboBox2);
-            this.panel9.Controls.Add(this.comboBox1);
             this.panel9.Controls.Add(this.label4);
             this.panel9.Controls.Add(this.label5);
             this.panel9.Controls.Add(this.button3);
@@ -185,6 +185,44 @@ namespace APSWinForm.OET
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(780, 136);
             this.panel9.TabIndex = 42;
+            // 
+            // cboEQPgroup
+            // 
+            this.cboEQPgroup.FormattingEnabled = true;
+            this.cboEQPgroup.Location = new System.Drawing.Point(176, 90);
+            this.cboEQPgroup.Name = "cboEQPgroup";
+            this.cboEQPgroup.Size = new System.Drawing.Size(121, 20);
+            this.cboEQPgroup.TabIndex = 167;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(51, 90);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(91, 14);
+            this.label9.TabIndex = 166;
+            this.label9.Text = "ㆍ설비처리그룹";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(50, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 14);
+            this.label4.TabIndex = 163;
+            this.label4.Text = "ㆍ라인ID";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(50, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 14);
+            this.label5.TabIndex = 162;
+            this.label5.Text = "ㆍ사이트ID";
             // 
             // button3
             // 
@@ -237,81 +275,42 @@ namespace APSWinForm.OET
             this.panel7.Size = new System.Drawing.Size(10, 136);
             this.panel7.TabIndex = 40;
             // 
-            // dataGridView1
+            // dgvEQP
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(230)))), ((int)(((byte)(228)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 194);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 472);
-            this.dataGridView1.TabIndex = 45;
+            this.dgvEQP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(230)))), ((int)(((byte)(228)))));
+            this.dgvEQP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEQP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEQP.Location = new System.Drawing.Point(0, 194);
+            this.dgvEQP.Name = "dgvEQP";
+            this.dgvEQP.RowTemplate.Height = 23;
+            this.dgvEQP.Size = new System.Drawing.Size(800, 472);
+            this.dgvEQP.TabIndex = 45;
             // 
-            // comboBox5
+            // txtSite
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(176, 85);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 20);
-            this.comboBox5.TabIndex = 167;
+            this.txtSite.Location = new System.Drawing.Point(176, 23);
+            this.txtSite.Name = "txtSite";
+            this.txtSite.Size = new System.Drawing.Size(121, 21);
+            this.txtSite.TabIndex = 168;
             // 
-            // label9
+            // txtLine
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(51, 90);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 14);
-            this.label9.TabIndex = 166;
-            this.label9.Text = "ㆍ설비ID";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(176, 25);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 165;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(176, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 164;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(50, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 14);
-            this.label4.TabIndex = 163;
-            this.label4.Text = "ㆍ라인ID";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(50, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 14);
-            this.label5.TabIndex = 162;
-            this.label5.Text = "ㆍ사이트ID";
+            this.txtLine.Location = new System.Drawing.Point(176, 58);
+            this.txtLine.Name = "txtLine";
+            this.txtLine.Size = new System.Drawing.Size(121, 21);
+            this.txtLine.TabIndex = 169;
             // 
             // EQUIPMENT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 666);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvEQP);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EQUIPMENT";
             this.Text = "EQUIPMENT";
+            this.Load += new System.EventHandler(this.EQUIPMENT_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -324,7 +323,7 @@ namespace APSWinForm.OET
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEQP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -346,12 +345,12 @@ namespace APSWinForm.OET
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cboEQPgroup;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dgvEQP;
+        private System.Windows.Forms.TextBox txtLine;
+        private System.Windows.Forms.TextBox txtSite;
     }
 }

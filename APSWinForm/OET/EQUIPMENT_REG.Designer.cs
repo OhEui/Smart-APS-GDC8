@@ -1,5 +1,5 @@
 ﻿
-namespace APSWinForm.OET
+namespace APSWinForm
 {
     partial class EQUIPMENT_REG
     {
@@ -36,7 +36,6 @@ namespace APSWinForm.OET
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,9 +46,10 @@ namespace APSWinForm.OET
             this.button7 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,7 +60,7 @@ namespace APSWinForm.OET
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(198, 195);
+            this.comboBox1.Location = new System.Drawing.Point(193, 194);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 169;
@@ -69,7 +69,7 @@ namespace APSWinForm.OET
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(65, 201);
+            this.label4.Location = new System.Drawing.Point(60, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 14);
             this.label4.TabIndex = 168;
@@ -78,7 +78,7 @@ namespace APSWinForm.OET
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(198, 117);
+            this.comboBox2.Location = new System.Drawing.Point(193, 155);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 20);
             this.comboBox2.TabIndex = 167;
@@ -87,7 +87,7 @@ namespace APSWinForm.OET
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(67, 119);
+            this.label5.Location = new System.Drawing.Point(60, 157);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 14);
             this.label5.TabIndex = 166;
@@ -96,7 +96,7 @@ namespace APSWinForm.OET
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(198, 72);
+            this.comboBox3.Location = new System.Drawing.Point(193, 114);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 20);
             this.comboBox3.TabIndex = 165;
@@ -105,25 +105,17 @@ namespace APSWinForm.OET
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(65, 78);
+            this.label8.Location = new System.Drawing.Point(60, 120);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 14);
             this.label8.TabIndex = 164;
             this.label8.Text = "ㆍ사이트ID";
             // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(200, 153);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(119, 20);
-            this.comboBox5.TabIndex = 161;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(67, 159);
+            this.label9.Location = new System.Drawing.Point(60, 84);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 14);
             this.label9.TabIndex = 159;
@@ -155,7 +147,7 @@ namespace APSWinForm.OET
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 483);
+            this.panel7.Size = new System.Drawing.Size(10, 466);
             this.panel7.TabIndex = 40;
             // 
             // panel8
@@ -164,7 +156,7 @@ namespace APSWinForm.OET
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel8.Location = new System.Drawing.Point(385, 10);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 483);
+            this.panel8.Size = new System.Drawing.Size(10, 466);
             this.panel8.TabIndex = 41;
             // 
             // panel6
@@ -173,7 +165,7 @@ namespace APSWinForm.OET
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 10);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 483);
+            this.panel6.Size = new System.Drawing.Size(10, 466);
             this.panel6.TabIndex = 39;
             // 
             // button3
@@ -182,7 +174,7 @@ namespace APSWinForm.OET
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(198, 355);
+            this.button3.Location = new System.Drawing.Point(193, 346);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 36);
             this.button3.TabIndex = 54;
@@ -195,7 +187,7 @@ namespace APSWinForm.OET
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(70, 355);
+            this.button7.Location = new System.Drawing.Point(65, 346);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(102, 36);
             this.button7.TabIndex = 45;
@@ -212,12 +204,13 @@ namespace APSWinForm.OET
             this.panel2.Location = new System.Drawing.Point(0, 38);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.panel2.Size = new System.Drawing.Size(395, 503);
+            this.panel2.Size = new System.Drawing.Size(395, 486);
             this.panel2.TabIndex = 49;
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.panel9.Controls.Add(this.textBox1);
             this.panel9.Controls.Add(this.comboBox4);
             this.panel9.Controls.Add(this.label2);
             this.panel9.Controls.Add(this.comboBox1);
@@ -226,15 +219,32 @@ namespace APSWinForm.OET
             this.panel9.Controls.Add(this.label5);
             this.panel9.Controls.Add(this.comboBox3);
             this.panel9.Controls.Add(this.label8);
-            this.panel9.Controls.Add(this.comboBox5);
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.button3);
             this.panel9.Controls.Add(this.button7);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(375, 483);
+            this.panel9.Size = new System.Drawing.Size(375, 466);
             this.panel9.TabIndex = 42;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(193, 237);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 20);
+            this.comboBox4.TabIndex = 171;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(60, 243);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 14);
+            this.label2.TabIndex = 170;
+            this.label2.Text = "ㆍ설비처리그룹";
             // 
             // panel1
             // 
@@ -247,33 +257,22 @@ namespace APSWinForm.OET
             this.panel1.Size = new System.Drawing.Size(395, 38);
             this.panel1.TabIndex = 48;
             // 
-            // comboBox4
+            // textBox1
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(198, 238);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 20);
-            this.comboBox4.TabIndex = 171;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(65, 244);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 14);
-            this.label2.TabIndex = 170;
-            this.label2.Text = "ㆍ설비처리그룹";
+            this.textBox1.Location = new System.Drawing.Point(193, 82);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(121, 21);
+            this.textBox1.TabIndex = 172;
             // 
             // EQUIPMENT_REG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 541);
+            this.ClientSize = new System.Drawing.Size(395, 524);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EQUIPMENT_REG";
-            this.Text = "EQUIPMEN_REG";
+            this.Text = "EQUIPMENT_REG";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -293,7 +292,6 @@ namespace APSWinForm.OET
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -307,5 +305,6 @@ namespace APSWinForm.OET
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

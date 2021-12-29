@@ -1,5 +1,5 @@
 ﻿
-namespace APSWinForm.OET
+namespace APSWinForm
 {
     partial class SETUP_TIME
     {
@@ -34,6 +34,10 @@ namespace APSWinForm.OET
             this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -46,10 +50,10 @@ namespace APSWinForm.OET
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -100,6 +104,10 @@ namespace APSWinForm.OET
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.comboBox4);
+            this.panel9.Controls.Add(this.label7);
+            this.panel9.Controls.Add(this.comboBox2);
+            this.panel9.Controls.Add(this.label5);
             this.panel9.Controls.Add(this.comboBox6);
             this.panel9.Controls.Add(this.comboBox7);
             this.panel9.Controls.Add(this.label3);
@@ -111,6 +119,42 @@ namespace APSWinForm.OET
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(780, 136);
             this.panel9.TabIndex = 42;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(163, 36);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(121, 20);
+            this.comboBox6.TabIndex = 182;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(429, 36);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(121, 20);
+            this.comboBox7.TabIndex = 181;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(360, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 14);
+            this.label3.TabIndex = 180;
+            this.label3.Text = "ㆍ라인ID";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(48, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 14);
+            this.label6.TabIndex = 179;
+            this.label6.Text = "ㆍ사이트ID";
             // 
             // panel6
             // 
@@ -244,41 +288,41 @@ namespace APSWinForm.OET
             this.panel1.Size = new System.Drawing.Size(800, 38);
             this.panel1.TabIndex = 48;
             // 
-            // comboBox6
+            // comboBox4
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(99, 61);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 20);
-            this.comboBox6.TabIndex = 182;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(429, 82);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 20);
+            this.comboBox4.TabIndex = 206;
             // 
-            // comboBox7
+            // label7
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(377, 61);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 20);
-            this.comboBox7.TabIndex = 181;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(360, 82);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 14);
+            this.label7.TabIndex = 205;
+            this.label7.Text = "ㆍ공정ID";
             // 
-            // label3
+            // comboBox2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(308, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 14);
-            this.label3.TabIndex = 180;
-            this.label3.Text = "ㆍ라인ID";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(163, 80);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 20);
+            this.comboBox2.TabIndex = 204;
             // 
-            // label6
+            // label5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(31, 64);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 14);
-            this.label6.TabIndex = 179;
-            this.label6.Text = "ㆍ사이트ID";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(48, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 14);
+            this.label5.TabIndex = 203;
+            this.label5.Text = "ㆍ설비처리그룹";
             // 
             // SETUP_TIME
             // 
@@ -290,6 +334,7 @@ namespace APSWinForm.OET
             this.Controls.Add(this.panel1);
             this.Name = "SETUP_TIME";
             this.Text = "SETUP_TIME";
+            this.Load += new System.EventHandler(this.SETUP_TIME_Load);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -329,5 +374,9 @@ namespace APSWinForm.OET
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label5;
     }
 }
