@@ -184,8 +184,9 @@ namespace APSWinForm
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 36);
             this.btnAdd.TabIndex = 45;
-            this.btnAdd.Text = "추가";
+            this.btnAdd.Text = "저장";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel2
             // 

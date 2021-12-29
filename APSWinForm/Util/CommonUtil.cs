@@ -70,7 +70,15 @@ namespace APSWinForm
             cbo.DataSource = codeList;
         }
 
+        public static void ComboBinding<T>(ComboBox combo, List<T> list, string Code, string CodeNm)
+        {
+            if (list == null)
+                list = new List<T>();
 
+            combo.DataSource = list;
+            combo.DisplayMember = CodeNm;
+            combo.ValueMember = Code;
+        }
 
         public static void ComboBinding<T>(ComboBox combo, List<T> list, string Code, string CodeNm, string blankText) where T : class, new()
         {

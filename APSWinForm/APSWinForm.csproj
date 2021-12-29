@@ -243,7 +243,9 @@
   <ItemGroup>
     <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\file_add_icon_128235.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\APSDAC\APSDAC.csproj">
       <Project>{c3c6f97f-8c6f-4e7a-8024-2552316b7f31}</Project>
@@ -253,6 +255,15 @@
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
       <Name>APSVO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium-icon-add-button-4904022.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium-icon-delete-button-3635112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-edit-1827933.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
