@@ -69,10 +69,10 @@
     <Compile Include="BaseForm\BaseFormSample.designer.cs">
       <DependentUpon>BaseFormSample.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmpopup.cs">
+    <Compile Include="BaseForm\frmpopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmpopup.Designer.cs">
+    <Compile Include="BaseForm\frmpopup.Designer.cs">
       <DependentUpon>frmpopup.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -161,6 +161,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\ExcelUtil.cs" />
     <Compile Include="Util\ServiceHelp.cs" />
@@ -170,7 +171,7 @@
     <EmbeddedResource Include="BaseForm\BaseFormSample.resx">
       <DependentUpon>BaseFormSample.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmpopup.resx">
+    <EmbeddedResource Include="BaseForm\frmpopup.resx">
       <DependentUpon>frmpopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -243,10 +244,6 @@
     <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\APSDAC\APSDAC.csproj">
-      <Project>{c3c6f97f-8c6f-4e7a-8024-2552316b7f31}</Project>
-      <Name>APSDAC</Name>
-    </ProjectReference>
     <ProjectReference Include="..\APSVO\APSVO.csproj">
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
       <Name>APSVO</Name>
