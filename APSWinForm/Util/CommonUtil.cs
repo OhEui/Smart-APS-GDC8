@@ -12,11 +12,7 @@ namespace APSWinForm
 {
     public static class CommonUtil
     {
-        /// <summary>
-        /// 입력받은 문자열을 int로 변환 불가능할 경우 null, 변환 가능하면 해당 값을 int로 반환합니다.
-        /// </summary>
-        /// <param name="txt"></param>
-        /// <returns></returns>
+        
         public static int? CvtIntorNull(string str)
         {
             if (!int.TryParse(str, out int result))
@@ -72,6 +68,30 @@ namespace APSWinForm
             cbo.DisplayMember = "CodeName";
             cbo.ValueMember = "Code";
             cbo.DataSource = codeList;
+        }
+
+        public static void ComboBinding<T>(ComboBox combo, List<T> list, string Code, string CodeNm)
+        {
+            if (list == null)
+                list = new List<T>();
+
+            combo.DataSource = list;
+            combo.DisplayMember = CodeNm;
+            combo.ValueMember = Code;
+        }
+
+        public static void ComboBinding<T>(ComboBox combo, List<T> list, string Code, string CodeNm, string blankText) where T : class, new()
+        {
+            if (list == null)
+                list = new List<T>();
+
+            T blankItem = new T();
+            blankItem.GetType().GetProperty(CodeNm).SetValue(blankItem, blankText);
+            list.Insert(0, blankItem);
+
+            combo.DataSource = list;
+            combo.DisplayMember = CodeNm;
+            combo.ValueMember = Code;
         }
 
 

@@ -160,6 +160,26 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_add_icon_128235 {
+            get {
+                object obj = ResourceManager.GetObject("file_add_icon_128235", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_edit_1827933 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-edit-1827933", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   라인 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string LINE_ID {
@@ -192,6 +212,26 @@ namespace APSWinForm.Properties {
         internal static string LOT_SIZE {
             get {
                 return ResourceManager.GetString("LOT_SIZE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap premium_icon_add_button_4904022 {
+            get {
+                object obj = ResourceManager.GetObject("premium-icon-add-button-4904022", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap premium_icon_delete_button_3635112 {
+            get {
+                object obj = ResourceManager.GetObject("premium-icon-delete-button-3635112", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

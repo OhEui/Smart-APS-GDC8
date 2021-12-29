@@ -75,11 +75,23 @@
     <Compile Include="BaseForm\frmpopup.Designer.cs">
       <DependentUpon>frmpopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CapitalTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CapitalTextBox.Designer.cs">
+      <DependentUpon>CapitalTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NumTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NumTextBox.Designer.cs">
+      <DependentUpon>NumTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="OET\EQPARR_REG.cs">
       <SubType>Form</SubType>
@@ -174,8 +186,14 @@
     <EmbeddedResource Include="BaseForm\frmpopup.resx">
       <DependentUpon>frmpopup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CapitalTextBox.resx">
+      <DependentUpon>CapitalTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NumTextBox.resx">
+      <DependentUpon>NumTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OET\EQPARR_REG.resx">
       <DependentUpon>EQPARR_REG.cs</DependentUpon>
@@ -244,7 +262,7 @@
     <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Service\" />
+    <None Include="Resources\file_add_icon_128235.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\APSDAC\APSDAC.csproj">
@@ -255,6 +273,15 @@
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
       <Name>APSVO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium-icon-add-button-4904022.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium-icon-delete-button-3635112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-edit-1827933.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
