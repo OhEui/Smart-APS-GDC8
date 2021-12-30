@@ -10,6 +10,7 @@ namespace APSServer
 {
     public static class Helper
     {
+        
         public static List<T> DataReaderMapToList<T>(IDataReader dr)
         {
             try
