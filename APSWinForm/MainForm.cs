@@ -35,9 +35,7 @@ namespace APSWinForm
 
         private void btnEquipment_Click(object sender, EventArgs e)
         {
-            EQUIPMENT frm = new EQUIPMENT();
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
+           
         }
     }
 }
