@@ -31,6 +31,7 @@ namespace APSWinForm
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EQUIPMENT));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_modify = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -51,7 +52,6 @@ namespace APSWinForm
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dgvEQP = new System.Windows.Forms.DataGridView();
-            this.btn_modify = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -77,6 +77,18 @@ namespace APSWinForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 53);
             this.panel1.TabIndex = 40;
+            // 
+            // btn_modify
+            // 
+            this.btn_modify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
+            this.btn_modify.BackgroundImage = global::APSWinForm.Properties.Resources.free_icon_edit_1827933;
+            this.btn_modify.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_modify.Location = new System.Drawing.Point(698, 8);
+            this.btn_modify.Name = "btn_modify";
+            this.btn_modify.Size = new System.Drawing.Size(45, 41);
+            this.btn_modify.TabIndex = 62;
+            this.btn_modify.UseVisualStyleBackColor = false;
+            this.btn_modify.Click += new System.EventHandler(this.btn_modify_Click);
             // 
             // btn_Delete
             // 
@@ -281,7 +293,7 @@ namespace APSWinForm
             // 
             // dgvEQP
             // 
-            this.dgvEQP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(230)))), ((int)(((byte)(228)))));
+            this.dgvEQP.BackgroundColor = System.Drawing.Color.White;
             this.dgvEQP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEQP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEQP.Location = new System.Drawing.Point(0, 209);
@@ -290,18 +302,6 @@ namespace APSWinForm
             this.dgvEQP.Size = new System.Drawing.Size(800, 457);
             this.dgvEQP.TabIndex = 45;
             this.dgvEQP.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEQP_CellDoubleClick);
-            // 
-            // btn_modify
-            // 
-            this.btn_modify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
-            this.btn_modify.BackgroundImage = global::APSWinForm.Properties.Resources.free_icon_edit_1827933;
-            this.btn_modify.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_modify.Location = new System.Drawing.Point(698, 8);
-            this.btn_modify.Name = "btn_modify";
-            this.btn_modify.Size = new System.Drawing.Size(45, 41);
-            this.btn_modify.TabIndex = 62;
-            this.btn_modify.UseVisualStyleBackColor = false;
-            this.btn_modify.Click += new System.EventHandler(this.btn_modify_Click);
             // 
             // EQUIPMENT
             // 
