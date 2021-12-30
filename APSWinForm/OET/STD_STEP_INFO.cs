@@ -14,6 +14,7 @@ namespace APSWinForm
 {
 	public partial class STD_STEP_INFO : Form
 	{
+		ServiceHelp srv = new ServiceHelp("");
 		List<STD_STEP_VO> stepList = null;
 
 		public STD_STEP_INFO()
@@ -33,12 +34,9 @@ namespace APSWinForm
 			LoadData();
 		}
 
-		public void LoadData()
+		public async void LoadData()
 		{
-			using (STD_STEP_DAC dac = new STD_STEP_DAC())
-			{
-				stepList = dac.getStepInfoList();
-			}
+			stepList = await srv.GetListAsync("api/StepInfo/getStepInfoList", stepList);
 
 			dgvStepInfoList.DataSource = null;
 			dgvStepInfoList.DataSource = stepList;

@@ -40,5 +40,14 @@ namespace APSServer.Controllers
             }
             return Ok(msg);
         }
+
+        //Post : https://localhost:44309/api/StepInfo/getStepInfoList
+        [HttpGet]
+        [Route("getStepInfoList")]
+        public List<STD_STEP_VO> getStepInfoList()
+		{
+            STEP_INFO_DAC db = new STEP_INFO_DAC();
+            return db.getStepInfoList();
+        }
     }
 }

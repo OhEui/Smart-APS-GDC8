@@ -26,7 +26,7 @@ namespace APSServer.Models
 		{
 			using(SqlCommand cmd = new SqlCommand())
 			{
-				cmd.Connection = new SqlConnection();
+				cmd.Connection = new SqlConnection(strConn);
 				cmd.CommandText = "SP_SaveStepInfo";
 				cmd.CommandType = CommandType.StoredProcedure;
 
@@ -42,6 +42,21 @@ namespace APSServer.Models
 				cmd.Connection.Close();
 
 				return (iRowAffect > 0);
+			}
+		}
+
+		public List<STD_STEP_VO> getStepInfoList()
+		{
+			using (SqlCommand cmd = new SqlCommand())
+			{
+				cmd.Connection = new SqlConnection(strConn);
+				cmd.CommandText = "select STD_STEP_ID, STD_STEP_NAME, STEP_TAT, STEP_YIELD, STEP_SETUP from STD_STEP_INFO";
+
+				cmd.Connection.Open();
+				List<STD_STEP_VO> list = Helper.DataReaderMapToList<STD_STEP_VO>(cmd.ExecuteReader());
+				cmd.Connection.Close();
+
+				return list;
 			}
 		}
 	}
