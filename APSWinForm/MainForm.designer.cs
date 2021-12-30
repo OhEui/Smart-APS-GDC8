@@ -525,6 +525,7 @@ namespace APSWinForm
             this.btnEquipment.Text = "└ 설비정보관리";
             this.btnEquipment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEquipment.UseVisualStyleBackColor = false;
+            this.btnEquipment.Click += new System.EventHandler(this.btnEquipment_Click);
             // 
             // btnRoute
             // 
