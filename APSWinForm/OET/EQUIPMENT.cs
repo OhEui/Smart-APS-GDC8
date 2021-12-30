@@ -124,10 +124,10 @@ namespace APSWinForm
             {
                 EQUIPVO vo = new EQUIPVO();
 
-                vo.SITE_ID = dgvEQP.Rows[temp.RowIndex].Cells[0].Value.ToString();
-                vo.LINE_ID = dgvEQP.Rows[temp.RowIndex].Cells[1].Value.ToString();
-                vo.EQP_ID = dgvEQP.Rows[temp.RowIndex].Cells[2].Value.ToString();
-                vo.EQP_MODEL = dgvEQP.Rows[temp.RowIndex].Cells[3].Value.ToString();
+                vo.EQP_ID = dgvEQP.Rows[temp.RowIndex].Cells[0].Value.ToString();
+                vo.EQP_MODEL = dgvEQP.Rows[temp.RowIndex].Cells[1].Value.ToString();
+                vo.SITE_ID = dgvEQP.Rows[temp.RowIndex].Cells[2].Value.ToString();
+                vo.LINE_ID = dgvEQP.Rows[temp.RowIndex].Cells[3].Value.ToString();
                 vo.EQP_GROUP = dgvEQP.Rows[temp.RowIndex].Cells[4].Value.ToString();
 
                 EQUIPMENT_REG frm = new EQUIPMENT_REG(vo);
