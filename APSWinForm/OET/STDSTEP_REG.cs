@@ -14,6 +14,7 @@ namespace APSWinForm
 {
 	public partial class STDSTEP_REG : Form
 	{
+		ServiceHelp srv = new ServiceHelp("");
 		List<STD_STEP_VO> stepList;
 		bool existStepID = false;
 
@@ -22,12 +23,23 @@ namespace APSWinForm
 			InitializeComponent();
 		}
 
-		private void STDSTEP_REG_Load(object sender, EventArgs e)
+		public STDSTEP_REG(STD_STEP_VO stepInfo)
 		{
-			using (STD_STEP_DAC dac = new STD_STEP_DAC())
-			{
-				stepList = dac.getStepInfoList();
-			}
+			InitializeComponent();
+
+			txtStepID.Text = stepInfo.STD_STEP_ID;
+			txtStepName.Text = stepInfo.STD_STEP_NAME;
+			txtStepSetup.Text = stepInfo.STEP_SETUP.ToString();
+			txtTAT.Text = stepInfo.STEP_TAT.ToString();
+			txtYield.Text = stepInfo.STEP_YIELD.ToString();
+
+			txtStepID.Enabled = false;
+			existStepID = true;
+		}
+
+		private async void STDSTEP_REG_Load(object sender, EventArgs e)
+		{
+			stepList = await srv.GetListAsync("api/StepInfo/getStepInfoList", stepList);
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
@@ -36,9 +48,12 @@ namespace APSWinForm
 			this.Close();
 		}
 
-		private void btnAdd_Click(object sender, EventArgs e)
+		private async void btnAdd_Click(object sender, EventArgs e)
 		{
-			isNotWhiteSpace();
+			if (!isNotWhiteSpace())
+			{
+				return;
+			}
 
 			STD_STEP_VO newStep = new STD_STEP_VO
 			{
@@ -46,32 +61,42 @@ namespace APSWinForm
 				STD_STEP_NAME = txtStepName.Text,
 				STEP_YIELD = Convert.ToInt32(txtYield.Text),
 				STEP_TAT = Convert.ToInt32(txtTAT.Text),
-				STEP_SETUP = Convert.ToInt32(txtStepSetup.Text)
+				STEP_SETUP = Convert.ToInt32(txtStepSetup.Text),
+				user_id = "test"
 			};
 
-			using (STD_STEP_DAC dac = new STD_STEP_DAC())
-			{
-				if (dac.insertStepInfoList(newStep))
-				{
-					DialogResult dlgResult = MessageBox.Show("추가가 완료되었습니다.\n계속하시겠습니까?", $"{Properties.Resources.STD_STEP_INFO} 추가", MessageBoxButtons.YesNo);
-					this.DialogResult = DialogResult.OK;
+			WebMessage msg = await srv.PostAsyncNone("api/StepInfo/saveStdStep", newStep);
 
-					if(dlgResult == DialogResult.OK)
-					{
-						txtStepID.Text = txtStepName.Text = txtStepSetup.Text = txtTAT.Text = txtYield.Text = "";
-						txtStepID.Focus();
-					}
-					else
-					{
-						this.Close();
-					}
-				}
-				else
-				{
-					MessageBox.Show("추가 중 오류가 발생했습니다.\n다시 시도하여 주세요.");
-					return;
-				}
+			if (msg.IsSuccess)
+			{
+				this.DialogResult = DialogResult.OK;
+				this.Close();
 			}
+			MessageBox.Show(msg.ResultMessage);
+
+			//using (STD_STEP_DAC dac = new STD_STEP_DAC())
+			//{
+			//	if (dac.insertStepInfoList(newStep))
+			//	{
+			//		DialogResult dlgResult = MessageBox.Show("추가가 완료되었습니다.\n계속하시겠습니까?", $"{Properties.Resources.STD_STEP_INFO} 추가", MessageBoxButtons.YesNo);
+			//		this.DialogResult = DialogResult.OK;
+
+			//		if(dlgResult == DialogResult.OK)
+			//		{
+			//			txtStepID.Text = txtStepName.Text = txtStepSetup.Text = txtTAT.Text = txtYield.Text = "";
+			//			txtStepID.Focus();
+			//		}
+			//		else
+			//		{
+			//			this.Close();
+			//		}
+			//	}
+			//	else
+			//	{
+			//		MessageBox.Show("추가 중 오류가 발생했습니다.\n다시 시도하여 주세요.");
+			//		return;
+			//	}
+			//}
 		}
 
 		private void capitalTextBox1_Leave(object sender, EventArgs e)
@@ -89,16 +114,17 @@ namespace APSWinForm
 				existStepID = true;
 		}
 
-		public void isNotWhiteSpace()
+		public bool isNotWhiteSpace()
 		{
 			//유효성 검사
 
-			if (!existStepID)
+			if (!existStepID || string.IsNullOrWhiteSpace(txtStepID.Text) || string.IsNullOrWhiteSpace(txtStepName.Text) || string.IsNullOrWhiteSpace(txtStepSetup.Text) ||
+				string.IsNullOrWhiteSpace(txtTAT.Text) || string.IsNullOrWhiteSpace(txtYield.Text))
 			{
 				txtStepID.Focus();
-				return;
+				return false;
 			}
-
+			else return true;
 			
 		}
 	}

@@ -77,6 +77,21 @@ namespace APSWinForm
 		private void pictureBox4_Click(object sender, EventArgs e)
 		{
 			//수정
+			string curStep = dgvStepInfoList["STD_STEP_ID", dgvStepInfoList.CurrentRow.Index].Value.ToString();
+			if(curStep == null)
+			{
+				MessageBox.Show("수정할 항목을 선택해주세요.");
+				return;
+			}
+			STD_STEP_VO stepInfo = stepList.Find(p => p.STD_STEP_ID == curStep);
+
+			STDSTEP_REG reg = new STDSTEP_REG(stepInfo);
+
+			if (reg.ShowDialog() == DialogResult.OK)
+			{
+				LoadData();
+			}
+			else return;
 		}
 
 		private void pictureBox6_Click(object sender, EventArgs e)
