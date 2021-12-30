@@ -15,7 +15,6 @@ namespace APSVO
         public string User_Email { get; set; }
         public string User_phone { get; set; }
         public DateTime User_Birth { get; set; }
-        public string User_Email { get; set; }
         public int Dept_ID { get; set; }
 
         // 비밀번호 확인 (DB에는 저장 안 됨)

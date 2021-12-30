@@ -64,7 +64,10 @@ namespace APSWinForm
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-           
+            frmPassWord frm = new frmPassWord();
+            frm.Show();
+
+
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

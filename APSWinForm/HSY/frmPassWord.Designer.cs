@@ -115,7 +115,7 @@ namespace APSWinForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(112, 156);
+            this.label2.Location = new System.Drawing.Point(115, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 21);
             this.label2.TabIndex = 6;
@@ -125,7 +125,7 @@ namespace APSWinForm
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(95, 220);
+            this.label3.Location = new System.Drawing.Point(98, 220);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 21);
             this.label3.TabIndex = 7;
@@ -135,7 +135,7 @@ namespace APSWinForm
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(68, 284);
+            this.label4.Location = new System.Drawing.Point(71, 284);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 21);
             this.label4.TabIndex = 8;
@@ -145,7 +145,7 @@ namespace APSWinForm
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox1.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(143, 152);
+            this.textBox1.Location = new System.Drawing.Point(146, 152);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(155, 28);
             this.textBox1.TabIndex = 9;
@@ -155,7 +155,7 @@ namespace APSWinForm
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox2.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(143, 216);
+            this.textBox2.Location = new System.Drawing.Point(146, 216);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(155, 28);
             this.textBox2.TabIndex = 10;
@@ -165,7 +165,7 @@ namespace APSWinForm
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox3.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(143, 280);
+            this.textBox3.Location = new System.Drawing.Point(146, 280);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(155, 28);
             this.textBox3.TabIndex = 11;
