@@ -48,7 +48,7 @@ namespace APSWinForm
 
         private void DataLoad()
         {
-
+            DataGridViewUtil.SetInitGridView(dgvEQP);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "설비ID", "EQP_ID", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정모델명", "EQP_MODEL", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "사이트ID", "SITE_ID", colWidth: 105);
@@ -82,7 +82,7 @@ namespace APSWinForm
             txtLine.Clear();
             txtSite.Clear();
             cboEQPgroup.SelectedIndex = 0;
-            DataLoad();
+            dgvEQP.DataSource = EQPlist = GetAllEquipment();
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace APSWinForm
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
             dgvEQP.DataSource = null;
-            DataLoad();
+            dgvEQP.DataSource = EQPlist = GetAllEquipment();
         }
 
         DataGridViewCellEventArgs temp;
@@ -115,7 +115,7 @@ namespace APSWinForm
                 MessageBox.Show("삭제할 설비를 선택해주세요");
             }
             dgvEQP.DataSource = null;
-            DataLoad();
+            dgvEQP.DataSource = EQPlist = GetAllEquipment();
         }
 
         private void btn_modify_Click(object sender, EventArgs e)
@@ -124,17 +124,17 @@ namespace APSWinForm
             {
                 EQUIPVO vo = new EQUIPVO();
 
-                vo.SITE_ID = dgvEQP.Rows[temp.RowIndex].Cells[0].Value.ToString();
-                vo.LINE_ID = dgvEQP.Rows[temp.RowIndex].Cells[1].Value.ToString();
-                vo.EQP_ID = dgvEQP.Rows[temp.RowIndex].Cells[2].Value.ToString();
-                vo.EQP_MODEL = dgvEQP.Rows[temp.RowIndex].Cells[3].Value.ToString();
+                vo.EQP_ID = dgvEQP.Rows[temp.RowIndex].Cells[0].Value.ToString();
+                vo.EQP_MODEL = dgvEQP.Rows[temp.RowIndex].Cells[1].Value.ToString();
+                vo.SITE_ID = dgvEQP.Rows[temp.RowIndex].Cells[2].Value.ToString();
+                vo.LINE_ID = dgvEQP.Rows[temp.RowIndex].Cells[3].Value.ToString();
                 vo.EQP_GROUP = dgvEQP.Rows[temp.RowIndex].Cells[4].Value.ToString();
 
                 EQUIPMENT_REG frm = new EQUIPMENT_REG(vo);
                 frm.StartPosition = FormStartPosition.CenterParent;
                 frm.ShowDialog();
                 dgvEQP.DataSource = null;
-                DataLoad();
+                dgvEQP.DataSource = EQPlist = GetAllEquipment();
             }
             else
             {
