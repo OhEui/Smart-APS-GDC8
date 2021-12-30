@@ -21,6 +21,7 @@ namespace APSWinForm
         {
             tabControl1.Visible = false;
             //샘플ToolStripMenuItem.Visible = false;
+            new EQUIPMENT() { MdiParent = this }.Show();
         }
 
         private void menuStrip2_ItemAdded(object sender, ToolStripItemEventArgs e)
