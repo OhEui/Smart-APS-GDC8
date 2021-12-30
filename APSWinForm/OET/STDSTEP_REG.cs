@@ -53,7 +53,7 @@ namespace APSWinForm
 			{
 				if (dac.insertStepInfoList(newStep))
 				{
-					DialogResult dlgResult = MessageBox.Show("추가가 완료되었습니다.\n계속하시겠습니까?","표준 공정 정보 추가", MessageBoxButtons.YesNo);
+					DialogResult dlgResult = MessageBox.Show("추가가 완료되었습니다.\n계속하시겠습니까?", $"{Properties.Resources.STD_STEP_INFO} 추가", MessageBoxButtons.YesNo);
 					this.DialogResult = DialogResult.OK;
 
 					if(dlgResult == DialogResult.OK)
