@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace APSDAC
 {
@@ -252,7 +253,66 @@ namespace APSDAC
                 ResultMessage = "회원가입에 성공하였습니다."
             };
         }
+
+        //winform 회원가입
+        public int Insert(UserInfo uer)
+        {
+            string sql = @"insert into UserInfo(User_ID, User_Name, User_PWD, User_phone, User_Birth, User_Email)
+                                    values(@User_ID, @User_Name, @User_PWD, @User_phone, @User_Birth, @User_Email)";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@User_ID", uer.User_ID);
+                cmd.Parameters.AddWithValue("@User_Name", uer.User_Name);
+                cmd.Parameters.AddWithValue("@User_PWD", uer.User_PWD);
+                cmd.Parameters.AddWithValue("@User_phone", uer.User_phone);
+                cmd.Parameters.AddWithValue("@User_Birth", uer.User_Birth);
+                cmd.Parameters.AddWithValue("@User_Email", uer.User_Email);
+
+
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return -1;
+            }
+        }
+
+        //winform 로그인
+        public UserInfo Login(string uID)
+        {
+            string sql = "select User_ID, User_PWD from UserInfo where User_ID=@User_ID";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@User_ID", uID);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                UserInfo loginUser = new UserInfo();
+                loginUser.User_ID = reader["User_ID"].ToString();
+                loginUser.User_PWD = reader["User_PWD"].ToString();
+
+                return loginUser;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        // 아이디가 있으면 True 아이디가 없으면 False
+        public bool IDCheck(string id) 
+        {
+            string sql = "SELECT Count(*) FROM UserInfo WHERE User_ID=@User_ID;";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@User_ID", id);
+            int result = Convert.ToInt32(cmd.ExecuteScalar());
+
+            return (result > 0);
+        }
     }
-
-
 }

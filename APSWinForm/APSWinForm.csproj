@@ -69,11 +69,53 @@
     <Compile Include="BaseForm\BaseFormSample.designer.cs">
       <DependentUpon>BaseFormSample.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSY\frmDEMAND.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSY\frmDEMAND.Designer.cs">
+      <DependentUpon>frmDEMAND.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSY\frmIDCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSY\frmIDCheck.Designer.cs">
+      <DependentUpon>frmIDCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSY\frmJoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSY\frmJoin.designer.cs">
+      <DependentUpon>frmJoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSY\frmLineInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSY\frmLineInfo.Designer.cs">
+      <DependentUpon>frmLineInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSY\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSY\frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSY\frmPassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSY\frmPassWord.Designer.cs">
+      <DependentUpon>frmPassWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmpopup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmpopup.Designer.cs">
       <DependentUpon>frmpopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSY\frmPRODUCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSY\frmPRODUCT.Designer.cs">
+      <DependentUpon>frmPRODUCT.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -145,8 +187,26 @@
     <EmbeddedResource Include="BaseForm\BaseFormSample.resx">
       <DependentUpon>BaseFormSample.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HSY\frmDEMAND.resx">
+      <DependentUpon>frmDEMAND.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSY\frmJoin.resx">
+      <DependentUpon>frmJoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSY\frmLineInfo.resx">
+      <DependentUpon>frmLineInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSY\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSY\frmPassWord.resx">
+      <DependentUpon>frmPassWord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmpopup.resx">
       <DependentUpon>frmpopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSY\frmPRODUCT.resx">
+      <DependentUpon>frmPRODUCT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -205,6 +265,10 @@
     <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\APSDAC\APSDAC.csproj">
+      <Project>{c3c6f97f-8c6f-4e7a-8024-2552316b7f31}</Project>
+      <Name>APSDAC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\APSVO\APSVO.csproj">
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
       <Name>APSVO</Name>
