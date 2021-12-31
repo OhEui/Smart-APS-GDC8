@@ -52,6 +52,7 @@ namespace APSWinForm
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dgvEQP = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -172,6 +173,7 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.button1);
             this.panel9.Controls.Add(this.txtLine);
             this.panel9.Controls.Add(this.txtSite);
             this.panel9.Controls.Add(this.cboEQPgroup);
@@ -303,6 +305,20 @@ namespace APSWinForm
             this.dgvEQP.TabIndex = 45;
             this.dgvEQP.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEQP_CellDoubleClick);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(506, 74);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 30);
+            this.button1.TabIndex = 170;
+            this.button1.Text = "검색";
+            this.button1.UseVisualStyleBackColor = false;
+            
+            // 
             // EQUIPMENT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -352,5 +368,6 @@ namespace APSWinForm
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_modify;
+        protected System.Windows.Forms.Button button1;
     }
 }

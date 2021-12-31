@@ -15,13 +15,10 @@ namespace APSWinForm
     public partial class EQUIPMENT : Form
     {
         List<EQUIPVO> EQPlist;
-
-
-        public List<EQUIPVO> GetAllEquipment()
-        {
-            EQUIPDAC dac = new EQUIPDAC();
-            return dac.GetAllEquipment();
-        }
+        ServiceHelp srv = new ServiceHelp("");
+        
+        
+       
         
 
         public List<EqpGroupVO> GetEqpGroup()
@@ -46,6 +43,13 @@ namespace APSWinForm
 
         }
 
+        private async void dgvLoad()
+        {
+            dgvEQP.DataSource = null;
+            EQPlist = await srv.GetListAsync("api/EQUIPMENT/GetEquipments", EQPlist);
+            dgvEQP.DataSource = EQPlist;
+        }
+
         private void DataLoad()
         {
             DataGridViewUtil.SetInitGridView(dgvEQP);
@@ -55,7 +59,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "라인ID", "LINE_ID", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정처리그룹", "EQP_GROUP", colWidth: 100);
 
-            dgvEQP.DataSource = EQPlist = GetAllEquipment();
+            dgvLoad();
             CommonUtil.ComboBinding(cboEQPgroup, GetEqpGroup(), "STD_STEP_ID", "STD_STEP_NAME", "선택");
 
         }
@@ -70,7 +74,7 @@ namespace APSWinForm
             }
             getSearchEqpList();
         }
-        private void getSearchEqpList()  // 검색함수
+        private  void getSearchEqpList()  // 검색함수
         {
             dgvEQP.DataSource = null;
             dgvEQP.DataSource = EQPlist.FindAll(p => p.SITE_ID.Contains(txtSite.Text) && p.LINE_ID.Contains(txtLine.Text) && p.EQP_GROUP.Contains(cboEQPgroup.Text));
@@ -82,7 +86,7 @@ namespace APSWinForm
             txtLine.Clear();
             txtSite.Clear();
             cboEQPgroup.SelectedIndex = 0;
-            dgvEQP.DataSource = EQPlist = GetAllEquipment();
+            dgvLoad();
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -90,8 +94,7 @@ namespace APSWinForm
             EQUIPMENT_REG frm = new EQUIPMENT_REG();
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
-            dgvEQP.DataSource = null;
-            dgvEQP.DataSource = EQPlist = GetAllEquipment();
+            dgvLoad();
         }
 
         DataGridViewCellEventArgs temp;
@@ -114,8 +117,7 @@ namespace APSWinForm
             {
                 MessageBox.Show("삭제할 설비를 선택해주세요");
             }
-            dgvEQP.DataSource = null;
-            dgvEQP.DataSource = EQPlist = GetAllEquipment();
+            dgvLoad();
         }
 
         private void btn_modify_Click(object sender, EventArgs e)
@@ -133,14 +135,15 @@ namespace APSWinForm
                 EQUIPMENT_REG frm = new EQUIPMENT_REG(vo);
                 frm.StartPosition = FormStartPosition.CenterParent;
                 frm.ShowDialog();
-                dgvEQP.DataSource = null;
-                dgvEQP.DataSource = EQPlist = GetAllEquipment();
+                dgvLoad();
             }
             else
             {
                 MessageBox.Show("수정할 설비를 선택해주세요");
             }
         }
+
+        
     }
   
 }
