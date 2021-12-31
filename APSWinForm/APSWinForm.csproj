@@ -243,9 +243,6 @@
     <EmbeddedResource Include="HSY\frmPassWord.resx">
       <DependentUpon>frmPassWord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSY\frmPRODUCT.resx">
-      <DependentUpon>frmPRODUCT.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -46,7 +46,7 @@ namespace APSServer.Models
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = "select PRODUCT_ID, PRODUCT_TYPE, PRODUCT_NAME, PROCESS_ID, LOT_SIZE from PRODUCT";
+                cmd.CommandText = "select PRODUCT_ID, PRODUCT_TYPE, PRODUCT_NAME, PROCESS_ID, LOT_SIZE from Product";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Connection.Open();
@@ -54,6 +54,45 @@ namespace APSServer.Models
                 cmd.Connection.Close();
 
                 return list;
+            }
+        }
+
+        public ProductVO GetDetail(string id) // 특정
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "select  PRODUCT_ID, PRODUCT_TYPE, PRODUCT_NAME, PROCESS_ID, LOT_SIZE from Product where PRODUCT_ID=@PRODUCT_ID";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@PRODUCT_ID", id);
+
+                cmd.Connection.Open();
+                List<ProductVO> list = Helper.DataReaderMapToList<ProductVO>(cmd.ExecuteReader());
+                cmd.Connection.Close();
+
+                if (list != null && list.Count > 0)
+                    return list[0];
+                else
+                    return null;
+            }
+        }
+
+        public bool DeleteProduct(string id) //삭제
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "delete from PRODUCT where PRODUCT_ID=@PRODUCT_ID";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@PRODUCT_ID", id);
+
+                cmd.Connection.Open();
+                int iRowAffect = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
+                return (iRowAffect > 0);
             }
         }
 

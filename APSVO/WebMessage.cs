@@ -15,4 +15,11 @@ namespace APSVO
     {
         public T Data { get; set; }
     }
+
+    public class Message<T>
+    {
+        public bool IsSuccess { get; set; }
+        public string ResultMsg { get; set; }
+        public T Data { get; set; }
+    }
 }
