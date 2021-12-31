@@ -489,6 +489,7 @@ namespace APSWinForm
             this.btnTime.Text = "└ 교체준비시간관리";
             this.btnTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTime.UseVisualStyleBackColor = false;
+            this.btnTime.Click += new System.EventHandler(this.btnTime_Click);
             // 
             // btnARR
             // 
@@ -507,6 +508,7 @@ namespace APSWinForm
             this.btnARR.Text = "└ 작업조건정보관리";
             this.btnARR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnARR.UseVisualStyleBackColor = false;
+            this.btnARR.Click += new System.EventHandler(this.btnARR_Click);
             // 
             // btnEquipment
             // 
@@ -544,6 +546,7 @@ namespace APSWinForm
             this.btnRoute.Text = "└ 공정순서관리";
             this.btnRoute.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoute.UseVisualStyleBackColor = false;
+            this.btnRoute.Click += new System.EventHandler(this.btnRoute_Click);
             // 
             // btnSTD
             // 
@@ -562,6 +565,7 @@ namespace APSWinForm
             this.btnSTD.Text = "└ 표준공정정보관리";
             this.btnSTD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSTD.UseVisualStyleBackColor = false;
+            this.btnSTD.Click += new System.EventHandler(this.btnSTD_Click);
             // 
             // btnLine
             // 
@@ -598,6 +602,7 @@ namespace APSWinForm
             this.btnDemand.Text = "└ 수요정보관리";
             this.btnDemand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDemand.UseVisualStyleBackColor = false;
+            this.btnDemand.Click += new System.EventHandler(this.btnDemand_Click);
             // 
             // btnProduct
             // 
@@ -617,6 +622,7 @@ namespace APSWinForm
             this.btnProduct.Text = "└ 제품정보관리";
             this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProduct.UseVisualStyleBackColor = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // btnSubMenu1
             // 

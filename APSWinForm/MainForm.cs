@@ -21,6 +21,7 @@ namespace APSWinForm
         {
             tabControl1.Visible = false;
             //샘플ToolStripMenuItem.Visible = false;
+            new EQUIPMENT() { MdiParent = this }.Show();
         }
 
         private void menuStrip2_ItemAdded(object sender, ToolStripItemEventArgs e)
@@ -33,9 +34,39 @@ namespace APSWinForm
             new BaseFormSample() { MdiParent = this }.Show();
         }
 
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDemand_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnEquipment_Click(object sender, EventArgs e)
         {
-           
+            new EQUIPMENT() { MdiParent = this }.Show();
+        }
+
+        private void btnARR_Click(object sender, EventArgs e)
+        {
+             new EQP_ARRANGE() { MdiParent = this }.Show();
+        }
+
+        private void btnSTD_Click(object sender, EventArgs e)
+        {
+            new STD_STEP_INFO() { MdiParent = this }.Show();
+        }
+
+        private void btnRoute_Click(object sender, EventArgs e)
+        {
+            new STEP_ROUTE() { MdiParent = this }.Show();
+        }
+
+        private void btnTime_Click(object sender, EventArgs e)
+        {
+            new SETUP_TIME() { MdiParent = this }.Show();
         }
     }
 }

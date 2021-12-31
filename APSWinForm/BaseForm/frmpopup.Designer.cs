@@ -132,7 +132,7 @@ namespace APSWinForm
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.button3.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(191, 316);
+            this.button3.Location = new System.Drawing.Point(191, 317);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 36);
             this.button3.TabIndex = 54;
@@ -222,7 +222,7 @@ namespace APSWinForm
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
             this.button7.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(63, 316);
+            this.button7.Location = new System.Drawing.Point(63, 317);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(102, 36);
             this.button7.TabIndex = 45;

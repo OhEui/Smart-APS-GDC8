@@ -34,6 +34,10 @@ namespace APSWinForm
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.panel9 = new System.Windows.Forms.Panel();
+			this.txtStepName = new APSWinForm.CapitalTextBox();
+			this.txtStepID = new APSWinForm.CapitalTextBox();
+			this.txtStepSetup = new APSWinForm.NumTextBox();
+			this.txtTAT = new APSWinForm.NumTextBox();
 			this.lblStepIDExist = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.txtYield = new System.Windows.Forms.TextBox();
@@ -48,10 +52,6 @@ namespace APSWinForm
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.txtStepName = new APSWinForm.CapitalTextBox();
-			this.txtStepID = new APSWinForm.CapitalTextBox();
-			this.txtStepSetup = new APSWinForm.NumTextBox();
-			this.txtTAT = new APSWinForm.NumTextBox();
 			this.panel9.SuspendLayout();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,7 +92,7 @@ namespace APSWinForm
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(102, 36);
 			this.btnAdd.TabIndex = 45;
-			this.btnAdd.Text = "추가";
+			this.btnAdd.Text = "저장";
 			this.btnAdd.UseVisualStyleBackColor = false;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
@@ -118,6 +118,39 @@ namespace APSWinForm
 			this.panel9.Name = "panel9";
 			this.panel9.Size = new System.Drawing.Size(353, 421);
 			this.panel9.TabIndex = 42;
+			// 
+			// txtStepName
+			// 
+			this.txtStepName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepName.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepName.Location = new System.Drawing.Point(162, 145);
+			this.txtStepName.Name = "txtStepName";
+			this.txtStepName.Size = new System.Drawing.Size(121, 21);
+			this.txtStepName.TabIndex = 72;
+			// 
+			// txtStepID
+			// 
+			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepID.Location = new System.Drawing.Point(162, 87);
+			this.txtStepID.Name = "txtStepID";
+			this.txtStepID.Size = new System.Drawing.Size(121, 21);
+			this.txtStepID.TabIndex = 71;
+			this.txtStepID.Leave += new System.EventHandler(this.capitalTextBox1_Leave);
+			// 
+			// txtStepSetup
+			// 
+			this.txtStepSetup.Location = new System.Drawing.Point(162, 290);
+			this.txtStepSetup.Name = "txtStepSetup";
+			this.txtStepSetup.Size = new System.Drawing.Size(121, 21);
+			this.txtStepSetup.TabIndex = 70;
+			// 
+			// txtTAT
+			// 
+			this.txtTAT.Location = new System.Drawing.Point(162, 195);
+			this.txtTAT.Name = "txtTAT";
+			this.txtTAT.Size = new System.Drawing.Size(86, 21);
+			this.txtTAT.TabIndex = 69;
 			// 
 			// lblStepIDExist
 			// 
@@ -258,39 +291,6 @@ namespace APSWinForm
 			this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
 			this.panel2.Size = new System.Drawing.Size(373, 441);
 			this.panel2.TabIndex = 49;
-			// 
-			// txtStepName
-			// 
-			this.txtStepName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtStepName.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepName.Location = new System.Drawing.Point(162, 145);
-			this.txtStepName.Name = "txtStepName";
-			this.txtStepName.Size = new System.Drawing.Size(121, 21);
-			this.txtStepName.TabIndex = 72;
-			// 
-			// txtStepID
-			// 
-			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepID.Location = new System.Drawing.Point(162, 87);
-			this.txtStepID.Name = "txtStepID";
-			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 71;
-			this.txtStepID.Leave += new System.EventHandler(this.capitalTextBox1_Leave);
-			// 
-			// txtStepSetup
-			// 
-			this.txtStepSetup.Location = new System.Drawing.Point(162, 290);
-			this.txtStepSetup.Name = "txtStepSetup";
-			this.txtStepSetup.Size = new System.Drawing.Size(121, 21);
-			this.txtStepSetup.TabIndex = 70;
-			// 
-			// txtTAT
-			// 
-			this.txtTAT.Location = new System.Drawing.Point(162, 195);
-			this.txtTAT.Name = "txtTAT";
-			this.txtTAT.Size = new System.Drawing.Size(86, 21);
-			this.txtTAT.TabIndex = 69;
 			// 
 			// STDSTEP_REG
 			// 
