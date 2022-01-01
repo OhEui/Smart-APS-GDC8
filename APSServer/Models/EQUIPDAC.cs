@@ -86,27 +86,24 @@ namespace APSServer.Models
 
         }
 
-        public void InsertEquip(EQUIPVO vo)
+        public bool InsertEquip(EQUIPVO vo)
         {
-            string sql = @"insert into EQUIPMENT(EQP_ID,SITE_ID,LINE_ID,EQP_MODEL,EQP_GROUP) values(@EQP_ID,@SITE_ID,@LINE_ID,@EQP_MODEL,@EQP_GROUP)";
-
+            string sql = @"insert into EQUIPMENT(EQP_ID,SITE_ID,LINE_ID,EQP_MODEL,EQP_GROUP) 
+                            values(@EQP_ID,@SITE_ID,@LINE_ID,@EQP_MODEL,@EQP_GROUP)";
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
-
                 cmd.Parameters.AddWithValue("@EQP_ID", vo.EQP_ID);
                 cmd.Parameters.AddWithValue("@SITE_ID", vo.SITE_ID);
                 cmd.Parameters.AddWithValue("@LINE_ID", vo.LINE_ID);
                 cmd.Parameters.AddWithValue("@EQP_MODEL", vo.EQP_MODEL);
                 cmd.Parameters.AddWithValue("@EQP_GROUP", vo.EQP_GROUP);
 
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                List<EQUIPVO> list = Helper.DataReaderMapToList<EQUIPVO>(reader);
-
-
+                return cmd.ExecuteNonQuery() > 0;
             }
         }
+
+       
         public bool DeleteEquip(string id)
         {
 

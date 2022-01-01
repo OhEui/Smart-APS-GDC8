@@ -14,23 +14,19 @@ namespace APSWinForm
 {
     public partial class EQUIPMENT : Form
     {
-        List<EQUIPVO> EQPlist;
+        List<EQUIPVO> EQPlist = null;
+        List<STD_STEP_VO> stepList = null;
         ServiceHelp srv = new ServiceHelp("");
-        
-        
-       
+
+
+
         
 
-        public List<EqpGroupVO> GetEqpGroup()
-        {
-            EQUIPDAC dac = new EQUIPDAC();
-            return dac.GetEqpGroup();
-        }
-        public void DeleteEquip(string id)
-        {
-            EQUIPDAC dac = new EQUIPDAC();
-            dac.DeleteEquip(id);
-        }
+        //public void DeleteEquip(string id)
+        //{
+        //    EQUIPDAC dac = new EQUIPDAC();
+        //    dac.DeleteEquip(id);
+        //}
 
         public EQUIPMENT()
         {
@@ -39,14 +35,22 @@ namespace APSWinForm
 
         private void EQUIPMENT_Load(object sender, EventArgs e)
         {
+            combobinding();
             DataLoad();
+
+        }
+
+        private async void combobinding()
+        {
+            stepList = await srv.GetListAsync("api/StepInfo/getStepInfoList", stepList);
+            CommonUtil.ComboBinding(cboEQPgroup, stepList, "STD_STEP_ID", "STD_STEP_NAME", "선택");
 
         }
 
         private async void dgvLoad()
         {
             dgvEQP.DataSource = null;
-            EQPlist = await srv.GetListAsync("api/EQUIPMENT/GetEquipments", EQPlist);
+            EQPlist = await srv.GetListAsync("api/EQUIPMENT/EQPlist", EQPlist);
             dgvEQP.DataSource = EQPlist;
         }
 
@@ -60,7 +64,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정처리그룹", "EQP_GROUP", colWidth: 100);
 
             dgvLoad();
-            CommonUtil.ComboBinding(cboEQPgroup, GetEqpGroup(), "STD_STEP_ID", "STD_STEP_NAME", "선택");
+            
 
         }
 
@@ -105,19 +109,19 @@ namespace APSWinForm
         private void btn_Delete_Click(object sender, EventArgs e)
         {
 
-            if (temp != null)
-            {
-                if (MessageBox.Show("정말 삭제하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
+            //if (temp != null)
+            //{
+            //    if (MessageBox.Show("정말 삭제하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //    {
 
-                    DeleteEquip(Convert.ToString(dgvEQP.Rows[temp.RowIndex].Cells[0].Value));
-                }
-            }
-            else
-            {
-                MessageBox.Show("삭제할 설비를 선택해주세요");
-            }
-            dgvLoad();
+            //        DeleteEquip(Convert.ToString(dgvEQP.Rows[temp.RowIndex].Cells[0].Value));
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("삭제할 설비를 선택해주세요");
+            //}
+            //dgvLoad();
         }
 
         private void btn_modify_Click(object sender, EventArgs e)
