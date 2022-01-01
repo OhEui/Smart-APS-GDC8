@@ -21,6 +21,11 @@ namespace APSWinForm
 			InitializeComponent();
 		}
 
+		public STEPROUTE_REG(StepRouteVO stepRoute)
+		{
+			InitializeComponent();
+		}
+
 		private async void STEPROUTE_REG_Load(object sender, EventArgs e)
 		{
 			DataGridViewUtil.SetInitGridView(dgvStepRoute);

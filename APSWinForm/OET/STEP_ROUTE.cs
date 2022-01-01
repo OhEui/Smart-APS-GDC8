@@ -94,15 +94,20 @@ namespace APSWinForm
 				MessageBox.Show("수정할 항목을 선택해주세요.");
 				return;
 			}
-			StepRouteVO stepInfo = stepRouteList.Find(p => p.PROCESS_ID == curStep);
+			StepRouteVO stepRoute = stepRouteList.Find(p => p.PROCESS_ID == curStep);
 
-			STEPROUTE_REG reg = new STEPROUTE_REG();
+			STEPROUTE_REG reg = new STEPROUTE_REG(stepRoute);
 
 			if (reg.ShowDialog() == DialogResult.OK)
 			{
 				LoadData();
 			}
 			else return;
+		}
+
+		private void pictureBox6_Click(object sender, EventArgs e)
+		{
+			//삭제
 		}
 	}
 }

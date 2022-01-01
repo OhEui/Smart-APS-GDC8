@@ -300,7 +300,7 @@ namespace APSWinForm
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel2);
 			this.Name = "STDSTEP_REG";
-			this.Text = "STDSTEP_REG";
+			this.Text = "표준 공정 정보";
 			this.Load += new System.EventHandler(this.STDSTEP_REG_Load);
 			this.panel9.ResumeLayout(false);
 			this.panel9.PerformLayout();
