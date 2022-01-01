@@ -124,7 +124,7 @@ namespace APSServer.Models
 
 
 
-        public void UpdateEquip(EQUIPVO Evo)
+        public bool UpdateEquip(EQUIPVO Evo)
         {
 
             string sql = @"update EQUIPMENT set EQP_ID=@EQP_ID,SITE_ID=@SITE_ID,LINE_ID=@LINE_ID,EQP_MODEL=@EQP_MODEL,EQP_GROUP=@EQP_GROUP where EQP_ID=@EQP_ID ;";
@@ -140,8 +140,7 @@ namespace APSServer.Models
                 cmd.Parameters.AddWithValue("@EQP_GROUP", Evo.EQP_GROUP);
 
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                List<EQUIPVO> list = Helper.DataReaderMapToList<EQUIPVO>(reader);
+                return cmd.ExecuteNonQuery() > 0;
 
 
             }
