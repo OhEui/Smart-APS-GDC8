@@ -30,13 +30,14 @@ namespace APSWinForm
 			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STEP_TAT, "STEP_TAT", align:DataGridViewContentAlignment.MiddleCenter, colWidth: 120);
 			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STEP_YIELD, "STEP_YIELD", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 115);
 			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STEP_SETUP, "STEP_SETUP", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 120);
+			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STEP_SETUP, "user_id", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 120);
 
 			LoadData();
 		}
 
 		public async void LoadData()
 		{
-			stepList = await srv.GetListAsync("api/StepInfo/getStepInfoList", stepList);
+			stepList = await srv.GetListAsync("api/Step/getStepInfoList", stepList);
 
 			dgvStepInfoList.DataSource = null;
 			dgvStepInfoList.DataSource = stepList;

@@ -39,7 +39,7 @@ namespace APSWinForm
 
 		private async void STDSTEP_REG_Load(object sender, EventArgs e)
 		{
-			stepList = await srv.GetListAsync("api/StepInfo/getStepInfoList", stepList);
+			stepList = await srv.GetListAsync("api/Step/getStepInfoList", stepList);
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace APSWinForm
 				user_id = "test"
 			};
 
-			WebMessage msg = await srv.PostAsyncNone("api/StepInfo/saveStdStep", newStep);
+			WebMessage msg = await srv.PostAsyncNone("api/Step/saveStdStep", newStep);
 
 			if (msg.IsSuccess)
 			{
