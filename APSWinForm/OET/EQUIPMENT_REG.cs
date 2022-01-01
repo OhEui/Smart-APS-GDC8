@@ -38,7 +38,7 @@ namespace APSWinForm
 
         public async void Combobinding()
         {
-            UpdateEquip = await srv.GetListAsync("api/EQUIPMENT/EQPnew", UpdateEquip);
+            
             eqpgroup = await srv.GetListAsync("api/StepInfo/getStepInfoList", eqpgroup);
             Lineinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Lineinfo);
             CommonUtil.ComboBinding(cboEqpGroup, eqpgroup, "STD_STEP_NAME", "STD_STEP_NAME");
@@ -85,7 +85,8 @@ namespace APSWinForm
                     vo.LINE_ID = cboLineID.Text.Trim();
                     vo.SITE_ID = cboSiteID.Text.Trim();
 
-                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", vo);
+                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPUpdate", vo);
+                    
 
                     if (msg.IsSuccess)
                     {
@@ -103,9 +104,8 @@ namespace APSWinForm
                     newvo.LINE_ID = cboLineID.Text.Trim();
                     newvo.SITE_ID = cboSiteID.Text.Trim();
 
-                    
+                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", newvo);
 
-                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPUpdate", newvo);
 
                     if (msg.IsSuccess)
                     {
