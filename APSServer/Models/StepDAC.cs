@@ -53,7 +53,9 @@ namespace APSServer.Models
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(strConn);
-				cmd.CommandText = @"select STD_STEP_ID, STD_STEP_NAME, STEP_TAT, STEP_YIELD, STEP_SETUP, isnull(mod_id, '') as user_id 
+//				cmd.CommandText = @"select STD_STEP_ID, STD_STEP_NAME, STEP_TAT, STEP_YIELD, STEP_SETUP, isnull(mod_id, '') as user_id 
+//from STD_STEP_INFO";
+				cmd.CommandText = @"select STD_STEP_ID, STD_STEP_NAME, STEP_TAT, STEP_YIELD, STEP_SETUP, mod_id as user_id 
 from STD_STEP_INFO";
 
 				cmd.Connection.Open();
@@ -94,11 +96,49 @@ from STD_STEP_INFO";
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(strConn);
-				cmd.CommandText = @"select PROCESS_ID, STEP_ID, STEP_SEQ, STD_STEP_ID, STEP_TYPE, mod_id as user_id
+				cmd.CommandText = @"select PROCESS_ID, STEP_ID, STEP_SEQ, STD_STEP_ID, isnull(STEP_TYPE, '') as STEP_TYPE, mod_id as user_id
 from STEP_ROUTE";
 
 				cmd.Connection.Open();
 				List<StepRouteVO> list = Helper.DataReaderMapToList<StepRouteVO>(cmd.ExecuteReader());
+				cmd.Connection.Close();
+
+				return list;
+			}
+		}
+
+		public List<ComboItemVO> getStepType()
+		{
+			using (SqlCommand cmd = new SqlCommand())
+			{
+				cmd.Connection = new SqlConnection(strConn);
+				cmd.CommandText = @"select distinct isnull(STEP_TYPE, '') as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
+from STEP_ROUTE order by code desc";
+
+				cmd.Connection.Open();
+				List<ComboItemVO> list = Helper.DataReaderMapToList<ComboItemVO>(cmd.ExecuteReader());
+				cmd.Connection.Close();
+
+				return list;
+			}
+		}
+
+		public List<ComboItemVO> getComboItem()
+		{
+			using (SqlCommand cmd = new SqlCommand())
+			{
+				cmd.Connection = new SqlConnection(strConn);
+				cmd.CommandText = @"select distinct isnull(STEP_TYPE, '') as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
+from STEP_ROUTE
+union 
+select STD_STEP_ID as Code, STD_STEP_ID  as CodeName, 'STD_STEP_ID' as category
+from STD_STEP_INFO
+union
+select PROCESS_ID as Code, PROCESS_ID  as CodeName, 'PROCESS_ID' as category
+from STEP_ROUTE";
+
+				cmd.Connection.Open();
+				List<ComboItemVO> list = Helper.DataReaderMapToList<ComboItemVO>(cmd.ExecuteReader());
 				cmd.Connection.Close();
 
 				return list;

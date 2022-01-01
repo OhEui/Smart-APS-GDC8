@@ -30,11 +30,12 @@ namespace APSWinForm
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(STEP_ROUTE));
-			this.button7 = new System.Windows.Forms.Button();
+			this.btnSearch = new System.Windows.Forms.Button();
 			this.panel8 = new System.Windows.Forms.Panel();
-			this.button3 = new System.Windows.Forms.Button();
+			this.btnInit = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
+			this.label3 = new System.Windows.Forms.Label();
 			this.txtStepID = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.txtProcessID = new System.Windows.Forms.TextBox();
@@ -53,8 +54,7 @@ namespace APSWinForm
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvStepRoute = new System.Windows.Forms.DataGridView();
-			this.label3 = new System.Windows.Forms.Label();
-			this.txtStepType = new System.Windows.Forms.TextBox();
+			this.cboStepType = new System.Windows.Forms.ComboBox();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
 			this.panel6.SuspendLayout();
@@ -68,18 +68,19 @@ namespace APSWinForm
 			((System.ComponentModel.ISupportInitialize)(this.dgvStepRoute)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// button7
+			// btnSearch
 			// 
-			this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-			this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button7.ForeColor = System.Drawing.Color.White;
-			this.button7.Location = new System.Drawing.Point(561, 35);
-			this.button7.Name = "button7";
-			this.button7.Size = new System.Drawing.Size(74, 30);
-			this.button7.TabIndex = 45;
-			this.button7.Text = "검색";
-			this.button7.UseVisualStyleBackColor = false;
+			this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
+			this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.btnSearch.ForeColor = System.Drawing.Color.White;
+			this.btnSearch.Location = new System.Drawing.Point(561, 35);
+			this.btnSearch.Name = "btnSearch";
+			this.btnSearch.Size = new System.Drawing.Size(74, 30);
+			this.btnSearch.TabIndex = 45;
+			this.btnSearch.Text = "검색";
+			this.btnSearch.UseVisualStyleBackColor = false;
+			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 			// 
 			// panel8
 			// 
@@ -89,18 +90,18 @@ namespace APSWinForm
 			this.panel8.Size = new System.Drawing.Size(10, 136);
 			this.panel8.TabIndex = 41;
 			// 
-			// button3
+			// btnInit
 			// 
-			this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.button3.ForeColor = System.Drawing.Color.White;
-			this.button3.Location = new System.Drawing.Point(561, 75);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(74, 30);
-			this.button3.TabIndex = 54;
-			this.button3.Text = "초기화";
-			this.button3.UseVisualStyleBackColor = false;
+			this.btnInit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.btnInit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
+			this.btnInit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.btnInit.ForeColor = System.Drawing.Color.White;
+			this.btnInit.Location = new System.Drawing.Point(561, 75);
+			this.btnInit.Name = "btnInit";
+			this.btnInit.Size = new System.Drawing.Size(74, 30);
+			this.btnInit.TabIndex = 54;
+			this.btnInit.Text = "초기화";
+			this.btnInit.UseVisualStyleBackColor = false;
 			// 
 			// panel2
 			// 
@@ -118,19 +119,29 @@ namespace APSWinForm
 			// panel9
 			// 
 			this.panel9.BackColor = System.Drawing.Color.White;
-			this.panel9.Controls.Add(this.txtStepType);
+			this.panel9.Controls.Add(this.cboStepType);
 			this.panel9.Controls.Add(this.label3);
 			this.panel9.Controls.Add(this.txtStepID);
 			this.panel9.Controls.Add(this.label9);
 			this.panel9.Controls.Add(this.txtProcessID);
 			this.panel9.Controls.Add(this.label2);
-			this.panel9.Controls.Add(this.button3);
-			this.panel9.Controls.Add(this.button7);
+			this.panel9.Controls.Add(this.btnInit);
+			this.panel9.Controls.Add(this.btnSearch);
 			this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel9.Location = new System.Drawing.Point(10, 10);
 			this.panel9.Name = "panel9";
 			this.panel9.Size = new System.Drawing.Size(668, 136);
 			this.panel9.TabIndex = 42;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label3.Location = new System.Drawing.Point(307, 44);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(67, 14);
+			this.label3.TabIndex = 59;
+			this.label3.Text = "ㆍ공정타입";
 			// 
 			// txtStepID
 			// 
@@ -231,6 +242,7 @@ namespace APSWinForm
 			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox5.TabIndex = 58;
 			this.pictureBox5.TabStop = false;
+			this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
 			// 
 			// pictureBox4
 			// 
@@ -242,6 +254,7 @@ namespace APSWinForm
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox4.TabIndex = 57;
 			this.pictureBox4.TabStop = false;
+			this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
 			// 
 			// pictureBox3
 			// 
@@ -312,22 +325,13 @@ namespace APSWinForm
 			this.dgvStepRoute.Size = new System.Drawing.Size(688, 434);
 			this.dgvStepRoute.TabIndex = 52;
 			// 
-			// label3
+			// cboStepType
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label3.Location = new System.Drawing.Point(307, 44);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(67, 14);
-			this.label3.TabIndex = 59;
-			this.label3.Text = "ㆍ공정타입";
-			// 
-			// txtStepType
-			// 
-			this.txtStepType.Location = new System.Drawing.Point(402, 41);
-			this.txtStepType.Name = "txtStepType";
-			this.txtStepType.Size = new System.Drawing.Size(121, 21);
-			this.txtStepType.TabIndex = 60;
+			this.cboStepType.FormattingEnabled = true;
+			this.cboStepType.Location = new System.Drawing.Point(406, 41);
+			this.cboStepType.Name = "cboStepType";
+			this.cboStepType.Size = new System.Drawing.Size(108, 20);
+			this.cboStepType.TabIndex = 60;
 			// 
 			// STEP_ROUTE
 			// 
@@ -362,9 +366,9 @@ namespace APSWinForm
 		}
 
 		#endregion
-		protected System.Windows.Forms.Button button7;
+		protected System.Windows.Forms.Button btnSearch;
 		private System.Windows.Forms.Panel panel8;
-		protected System.Windows.Forms.Button button3;
+		protected System.Windows.Forms.Button btnInit;
 		protected System.Windows.Forms.Panel panel2;
 		protected System.Windows.Forms.Panel panel9;
 		private System.Windows.Forms.Panel panel6;
@@ -385,7 +389,7 @@ namespace APSWinForm
 		public System.Windows.Forms.TextBox txtProcessID;
 		public System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DataGridView dgvStepRoute;
-		public System.Windows.Forms.TextBox txtStepType;
 		public System.Windows.Forms.Label label3;
+		private System.Windows.Forms.ComboBox cboStepType;
 	}
 }
