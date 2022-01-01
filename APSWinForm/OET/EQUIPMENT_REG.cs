@@ -14,7 +14,11 @@ namespace APSWinForm
 {
     public partial class EQUIPMENT_REG : Form
     {
+        ServiceHelp srv = new ServiceHelp("");
         EQUIPVO EQPvo;
+        List<STD_STEP_VO> eqpgroup;
+        List<LineVO> Lineinfo;
+        List<EQUIPVO> UpdateEquip;
         public EQUIPMENT_REG()
         {
             InitializeComponent();
@@ -25,38 +29,30 @@ namespace APSWinForm
             this.EQPvo = vo;
         }
 
-        public List<EqpGroupVO> GetEqpGroup()
-        {
-            EQUIPDAC dac = new EQUIPDAC();
-            return dac.GetEqpGroup();
-        }
+        
+        //public void UpdateEquip(EQUIPVO vo)
+        //{
+        //    EQUIPDAC dac = new EQUIPDAC();
+        //    dac.UpdateEquip(vo);
+        //}
 
-        public List<LineVO> GetLineInfo()
+        public async void Combobinding()
         {
-            EQUIPDAC dac = new EQUIPDAC();
-            return dac.GetLineInfo();
-        }
-
-        public void InsertEquip(EQUIPVO vo)
-        {
-            EQUIPDAC dac = new EQUIPDAC();
-            dac.InsertEquip(vo);
-        }
-
-        public void UpdateEquip(EQUIPVO vo)
-        {
-            EQUIPDAC dac = new EQUIPDAC();
-            dac.UpdateEquip(vo);
-        }
-
-        private void EQUIPMENT_REG_Load(object sender, EventArgs e)
-        {
-            CommonUtil.ComboBinding(cboEqpGroup, GetEqpGroup(), "STD_STEP_NAME", "STD_STEP_NAME");
-            CommonUtil.ComboBinding(cboLineID, GetLineInfo(), "LINE_ID", "LINE_ID");
-            CommonUtil.ComboBinding(cboSiteID, GetLineInfo(), "SITE_ID", "SITE_ID");
+            
+            eqpgroup = await srv.GetListAsync("api/StepInfo/getStepInfoList", eqpgroup);
+            Lineinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Lineinfo);
+            CommonUtil.ComboBinding(cboEqpGroup, eqpgroup, "STD_STEP_NAME", "STD_STEP_NAME");
+            CommonUtil.ComboBinding(cboLineID, Lineinfo, "LINE_ID", "LINE_ID");
+            CommonUtil.ComboBinding(cboSiteID, Lineinfo, "SITE_ID", "SITE_ID");
             cboEqpGroup.Text = "";
             cboLineID.Text = "";
             cboSiteID.Text = "";
+        }
+
+
+        private  void EQUIPMENT_REG_Load(object sender, EventArgs e)
+        {
+            Combobinding();
 
             if (EQPvo != null)
             {
@@ -69,7 +65,7 @@ namespace APSWinForm
 
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private async void btnAdd_Click(object sender, EventArgs e)
         {
             EQUIPVO newvo = new EQUIPVO();
 
@@ -89,10 +85,16 @@ namespace APSWinForm
                     vo.LINE_ID = cboLineID.Text.Trim();
                     vo.SITE_ID = cboSiteID.Text.Trim();
 
-                    UpdateEquip(vo);
-
-                    MessageBox.Show("성공적으로 수정되었습니다");
+                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPUpdate", vo);
                     
+
+                    if (msg.IsSuccess)
+                    {
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    MessageBox.Show(msg.ResultMessage);
+
                 }
                 else
                 {
@@ -102,10 +104,15 @@ namespace APSWinForm
                     newvo.LINE_ID = cboLineID.Text.Trim();
                     newvo.SITE_ID = cboSiteID.Text.Trim();
 
-                    InsertEquip(newvo);
+                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", newvo);
 
-                    MessageBox.Show("성공적으로 등록되었습니다");
-                    
+
+                    if (msg.IsSuccess)
+                    {
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    MessageBox.Show(msg.ResultMessage);
                 }
                 this.Close();
             }

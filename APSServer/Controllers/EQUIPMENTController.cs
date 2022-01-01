@@ -14,25 +14,73 @@ namespace APSServer.Controllers
     
     {
 
-        //GET : https://localhost:44309/api/EQUIPMENT/GetEquipments
+        //GET : https://localhost:44309/api/EQUIPMENT/EQPlist
         [HttpGet]
-        [Route("GetEquipments")]
+        [Route("EQPlist")]
         public List<EQUIPVO> GetAllEquipment()
         {
-
             EQUIPDAC dac = new EQUIPDAC();
             return dac.GetAllEquipment();
         }
 
+        //GET : https://localhost:44309/api/EQUIPMENT/Linelist
+        [HttpGet]
+        [Route("Linelist")]
+        public List<LineVO> GetLineInfo()
+        {
+
+            EQUIPDAC dac = new EQUIPDAC();
+            return dac.GetLineInfo();
+        }
+
         
 
-
-
-        public void InsertEquip(EQUIPVO vo)
+        //Post : https://localhost:44309/api/EQUIPMENT/EQPnew
+        [HttpPost]
+        [Route("EQPnew")]
+        public IHttpActionResult InsertEqp(EQUIPVO vo)
         {
-            EQUIPDAC dac = new EQUIPDAC();
-            dac.InsertEquip(vo);
+            WebMessage msg = new WebMessage();
+            EQUIPDAC db = new EQUIPDAC();
+            bool result = db.InsertEquip(vo);
+
+            if (result)
+            {
+                msg.IsSuccess = true;
+                msg.ResultMessage = "성공적으로 등록되었습니다.";
+            }
+            else
+            {
+                msg.IsSuccess = false;
+                msg.ResultMessage = "저장 중 오류가 발생했습니다.";
+            }
+            return Ok(msg);
         }
+
+        //Post : https://localhost:44309/api/EQUIPMENT/EQPUpdate
+        [HttpPost]
+        [Route("EQPUpdate")]
+        public IHttpActionResult UpdateEqp(EQUIPVO Evo)
+        {
+            WebMessage msg = new WebMessage();
+            EQUIPDAC db = new EQUIPDAC();
+            bool result = db.UpdateEquip(Evo);
+
+            if (result)
+            {
+                msg.IsSuccess = true;
+                msg.ResultMessage = "성공적으로 수정되었습니다.";
+            }
+            else
+            {
+                msg.IsSuccess = false;
+                msg.ResultMessage = "저장 중 오류가 발생했습니다.";
+            }
+            return Ok(msg);
+        }
+
+
+
 
         public void UpdateEquip(EQUIPVO vo)
         {

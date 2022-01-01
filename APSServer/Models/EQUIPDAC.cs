@@ -86,27 +86,24 @@ namespace APSServer.Models
 
         }
 
-        public void InsertEquip(EQUIPVO vo)
+        public bool InsertEquip(EQUIPVO vo)
         {
-            string sql = @"insert into EQUIPMENT(EQP_ID,SITE_ID,LINE_ID,EQP_MODEL,EQP_GROUP) values(@EQP_ID,@SITE_ID,@LINE_ID,@EQP_MODEL,@EQP_GROUP)";
-
+            string sql = @"insert into EQUIPMENT(EQP_ID,SITE_ID,LINE_ID,EQP_MODEL,EQP_GROUP) 
+                            values(@EQP_ID,@SITE_ID,@LINE_ID,@EQP_MODEL,@EQP_GROUP)";
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
-
                 cmd.Parameters.AddWithValue("@EQP_ID", vo.EQP_ID);
                 cmd.Parameters.AddWithValue("@SITE_ID", vo.SITE_ID);
                 cmd.Parameters.AddWithValue("@LINE_ID", vo.LINE_ID);
                 cmd.Parameters.AddWithValue("@EQP_MODEL", vo.EQP_MODEL);
                 cmd.Parameters.AddWithValue("@EQP_GROUP", vo.EQP_GROUP);
 
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                List<EQUIPVO> list = Helper.DataReaderMapToList<EQUIPVO>(reader);
-
-
+                return cmd.ExecuteNonQuery() > 0;
             }
         }
+
+       
         public bool DeleteEquip(string id)
         {
 
@@ -127,7 +124,7 @@ namespace APSServer.Models
 
 
 
-        public void UpdateEquip(EQUIPVO Evo)
+        public bool UpdateEquip(EQUIPVO Evo)
         {
 
             string sql = @"update EQUIPMENT set EQP_ID=@EQP_ID,SITE_ID=@SITE_ID,LINE_ID=@LINE_ID,EQP_MODEL=@EQP_MODEL,EQP_GROUP=@EQP_GROUP where EQP_ID=@EQP_ID ;";
@@ -143,8 +140,7 @@ namespace APSServer.Models
                 cmd.Parameters.AddWithValue("@EQP_GROUP", Evo.EQP_GROUP);
 
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                List<EQUIPVO> list = Helper.DataReaderMapToList<EQUIPVO>(reader);
+                return cmd.ExecuteNonQuery() > 0;
 
 
             }
