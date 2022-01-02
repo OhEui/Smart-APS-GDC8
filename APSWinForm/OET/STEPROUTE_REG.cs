@@ -24,6 +24,8 @@ namespace APSWinForm
 		public STEPROUTE_REG(StepRouteVO stepRoute)
 		{
 			InitializeComponent();
+
+
 		}
 
 		private async void STEPROUTE_REG_Load(object sender, EventArgs e)
@@ -66,5 +68,9 @@ namespace APSWinForm
 			}
 		}
 
+		private void btnAdd_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

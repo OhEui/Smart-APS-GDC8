@@ -37,25 +37,25 @@ namespace APSWinForm
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
+			this.btnDelete = new System.Windows.Forms.Button();
+			this.btnAdd = new System.Windows.Forms.Button();
+			this.txtStepSeq = new APSWinForm.NumTextBox();
+			this.cboProcessID = new System.Windows.Forms.ComboBox();
+			this.txtStepID = new APSWinForm.CapitalTextBox();
+			this.txtProcessID = new System.Windows.Forms.TextBox();
+			this.cboStdStep = new System.Windows.Forms.ComboBox();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.dgvStepRoute = new System.Windows.Forms.DataGridView();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
+			this.cboStepType = new System.Windows.Forms.ComboBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.btnSave = new System.Windows.Forms.Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
-			this.cboStepType = new System.Windows.Forms.ComboBox();
-			this.cboStdStep = new System.Windows.Forms.ComboBox();
-			this.txtProcessID = new System.Windows.Forms.TextBox();
-			this.cboProcessID = new System.Windows.Forms.ComboBox();
-			this.txtStepSeq = new APSWinForm.NumTextBox();
-			this.txtStepID = new APSWinForm.CapitalTextBox();
-			this.btnDelete = new System.Windows.Forms.Button();
-			this.btnAdd = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel2.SuspendLayout();
@@ -151,6 +151,79 @@ namespace APSWinForm
 			this.panel9.Size = new System.Drawing.Size(892, 417);
 			this.panel9.TabIndex = 42;
 			// 
+			// btnDelete
+			// 
+			this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
+			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.btnDelete.ForeColor = System.Drawing.Color.White;
+			this.btnDelete.Location = new System.Drawing.Point(728, 320);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(102, 36);
+			this.btnDelete.TabIndex = 79;
+			this.btnDelete.Text = "삭제";
+			this.btnDelete.UseVisualStyleBackColor = false;
+			// 
+			// btnAdd
+			// 
+			this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
+			this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.btnAdd.ForeColor = System.Drawing.Color.White;
+			this.btnAdd.Location = new System.Drawing.Point(600, 320);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(102, 36);
+			this.btnAdd.TabIndex = 78;
+			this.btnAdd.Text = "추가";
+			this.btnAdd.UseVisualStyleBackColor = false;
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+			// 
+			// txtStepSeq
+			// 
+			this.txtStepSeq.Location = new System.Drawing.Point(672, 175);
+			this.txtStepSeq.Name = "txtStepSeq";
+			this.txtStepSeq.Size = new System.Drawing.Size(121, 21);
+			this.txtStepSeq.TabIndex = 77;
+			// 
+			// cboProcessID
+			// 
+			this.cboProcessID.FormattingEnabled = true;
+			this.cboProcessID.Items.AddRange(new object[] {
+            "IN",
+            "OUT"});
+			this.cboProcessID.Location = new System.Drawing.Point(672, 95);
+			this.cboProcessID.Name = "cboProcessID";
+			this.cboProcessID.Size = new System.Drawing.Size(189, 20);
+			this.cboProcessID.TabIndex = 76;
+			this.cboProcessID.SelectedIndexChanged += new System.EventHandler(this.cboProcessID_SelectedIndexChanged);
+			// 
+			// txtStepID
+			// 
+			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepID.Location = new System.Drawing.Point(672, 133);
+			this.txtStepID.Name = "txtStepID";
+			this.txtStepID.Size = new System.Drawing.Size(121, 21);
+			this.txtStepID.TabIndex = 75;
+			// 
+			// txtProcessID
+			// 
+			this.txtProcessID.Location = new System.Drawing.Point(672, 68);
+			this.txtProcessID.Name = "txtProcessID";
+			this.txtProcessID.Size = new System.Drawing.Size(189, 21);
+			this.txtProcessID.TabIndex = 74;
+			// 
+			// cboStdStep
+			// 
+			this.cboStdStep.FormattingEnabled = true;
+			this.cboStdStep.Items.AddRange(new object[] {
+            "IN",
+            "OUT"});
+			this.cboStdStep.Location = new System.Drawing.Point(672, 217);
+			this.cboStdStep.Name = "cboStdStep";
+			this.cboStdStep.Size = new System.Drawing.Size(121, 20);
+			this.cboStdStep.TabIndex = 72;
+			// 
 			// panel4
 			// 
 			this.panel4.Controls.Add(this.dgvStepRoute);
@@ -199,6 +272,17 @@ namespace APSWinForm
 			this.label4.Size = new System.Drawing.Size(82, 14);
 			this.label4.TabIndex = 62;
 			this.label4.Text = "ㆍ표준공정 ID";
+			// 
+			// cboStepType
+			// 
+			this.cboStepType.FormattingEnabled = true;
+			this.cboStepType.Items.AddRange(new object[] {
+            "IN",
+            "OUT"});
+			this.cboStepType.Location = new System.Drawing.Point(672, 259);
+			this.cboStepType.Name = "cboStepType";
+			this.cboStepType.Size = new System.Drawing.Size(121, 20);
+			this.cboStepType.TabIndex = 61;
 			// 
 			// label10
 			// 
@@ -263,89 +347,6 @@ namespace APSWinForm
 			this.panel7.Name = "panel7";
 			this.panel7.Size = new System.Drawing.Size(10, 417);
 			this.panel7.TabIndex = 40;
-			// 
-			// cboStepType
-			// 
-			this.cboStepType.FormattingEnabled = true;
-			this.cboStepType.Items.AddRange(new object[] {
-            "IN",
-            "OUT"});
-			this.cboStepType.Location = new System.Drawing.Point(672, 259);
-			this.cboStepType.Name = "cboStepType";
-			this.cboStepType.Size = new System.Drawing.Size(121, 20);
-			this.cboStepType.TabIndex = 61;
-			// 
-			// cboStdStep
-			// 
-			this.cboStdStep.FormattingEnabled = true;
-			this.cboStdStep.Items.AddRange(new object[] {
-            "IN",
-            "OUT"});
-			this.cboStdStep.Location = new System.Drawing.Point(672, 217);
-			this.cboStdStep.Name = "cboStdStep";
-			this.cboStdStep.Size = new System.Drawing.Size(121, 20);
-			this.cboStdStep.TabIndex = 72;
-			// 
-			// txtProcessID
-			// 
-			this.txtProcessID.Location = new System.Drawing.Point(672, 68);
-			this.txtProcessID.Name = "txtProcessID";
-			this.txtProcessID.Size = new System.Drawing.Size(189, 21);
-			this.txtProcessID.TabIndex = 74;
-			// 
-			// cboProcessID
-			// 
-			this.cboProcessID.FormattingEnabled = true;
-			this.cboProcessID.Items.AddRange(new object[] {
-            "IN",
-            "OUT"});
-			this.cboProcessID.Location = new System.Drawing.Point(672, 95);
-			this.cboProcessID.Name = "cboProcessID";
-			this.cboProcessID.Size = new System.Drawing.Size(189, 20);
-			this.cboProcessID.TabIndex = 76;
-			this.cboProcessID.SelectedIndexChanged += new System.EventHandler(this.cboProcessID_SelectedIndexChanged);
-			// 
-			// txtStepSeq
-			// 
-			this.txtStepSeq.Location = new System.Drawing.Point(672, 175);
-			this.txtStepSeq.Name = "txtStepSeq";
-			this.txtStepSeq.Size = new System.Drawing.Size(121, 21);
-			this.txtStepSeq.TabIndex = 77;
-			// 
-			// txtStepID
-			// 
-			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepID.Location = new System.Drawing.Point(672, 133);
-			this.txtStepID.Name = "txtStepID";
-			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 75;
-			// 
-			// btnDelete
-			// 
-			this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.btnDelete.ForeColor = System.Drawing.Color.White;
-			this.btnDelete.Location = new System.Drawing.Point(728, 320);
-			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(102, 36);
-			this.btnDelete.TabIndex = 79;
-			this.btnDelete.Text = "삭제";
-			this.btnDelete.UseVisualStyleBackColor = false;
-			// 
-			// btnAdd
-			// 
-			this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-			this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.btnAdd.ForeColor = System.Drawing.Color.White;
-			this.btnAdd.Location = new System.Drawing.Point(600, 320);
-			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(102, 36);
-			this.btnAdd.TabIndex = 78;
-			this.btnAdd.Text = "추가";
-			this.btnAdd.UseVisualStyleBackColor = false;
 			// 
 			// STEPROUTE_REG
 			// 
