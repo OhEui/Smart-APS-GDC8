@@ -4,13 +4,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using APSServer.Filters;
 using APSServer.Models;
 using APSVO;
 
 namespace APSServer.Controllers
 {
-    [RoutePrefix("api/Sample")]
+    [RoutePrefix("api/Sample")][Authorize][UserAuthentication]
     public class SampleController : ApiController
     {
         // https://localhost:44309/api/Sample/List

@@ -7,7 +7,10 @@ using System.Security.Cryptography;
 
 namespace APSEncrypt
 {
-    public class SHA256
+    /// <summary>
+    /// 단방향 암호화를 지원하는 SHA256 클래스입니다.
+    /// </summary>
+    public static class SHA256
     {
         public static (string hash, string salt) GenerateSaltedHash(string password)
         {

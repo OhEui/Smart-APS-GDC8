@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 
 namespace APSEncrypt
 {
-    public class AES256
+    /// <summary>
+    /// 양방향 암호화를 지원하는 AES256 클래스입니다.
+    /// </summary>
+    public static class AES256
     {
         private const string KEY = "abcd1234!@#$";
 
@@ -17,7 +20,7 @@ namespace APSEncrypt
         /// </summary>
         /// <param name="clearText">문자열</param>
         /// <returns>암호화 된 문자열</returns>
-        public string Encrypt(string clearText)
+        public static string Encrypt(string clearText)
         {
             string EncryptionKey = KEY;
             byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
@@ -44,7 +47,7 @@ namespace APSEncrypt
         /// </summary>
         /// <param name="clearText">암호화 된 문자열</param>
         /// <returns>복호화 된 문자열</returns>
-        public string Decrypt(string cipherText)
+        public static string Decrypt(string cipherText)
         {
             string EncryptionKey = KEY;
             byte[] cipherBytes = Convert.FromBase64String(cipherText);

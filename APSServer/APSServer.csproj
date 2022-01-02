@@ -90,12 +90,18 @@
     <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="Controllers\StepController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Authentication\Filters\BasicAuthenticationAttribute.cs" />
+    <Compile Include="Authentication\Filters\HttpAuthenticationChallengeContextExtensions.cs" />
+    <Compile Include="Authentication\Filters\UserAuthenticationAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EQUIPDAC.cs" />
     <Compile Include="Models\Helper.cs" />
+    <Compile Include="Authentication\Principal\UserPrincipal.cs" />
     <Compile Include="Models\ProductDAC.cs" />
+    <Compile Include="Authentication\Results\AddChallengeOnUnauthorizedResult.cs" />
+    <Compile Include="Authentication\Results\AuthenticationFailureResult.cs" />
     <Compile Include="Models\SampleDAC.cs" />
     <Compile Include="Models\StepDAC.cs" />
     <Compile Include="Models\UserDAC.cs" />
