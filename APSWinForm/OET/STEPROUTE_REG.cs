@@ -15,6 +15,7 @@ namespace APSWinForm
 	{
 		ServiceHelp srv = new ServiceHelp("");
 		List<StepRouteVO> stepRouteList = null;
+		StepRouteVO modStepRoute = null;
 
 		public STEPROUTE_REG()
 		{
@@ -25,7 +26,7 @@ namespace APSWinForm
 		{
 			InitializeComponent();
 
-
+			modStepRoute = stepRoute;
 		}
 
 		private async void STEPROUTE_REG_Load(object sender, EventArgs e)
@@ -39,6 +40,20 @@ namespace APSWinForm
 
 			stepRouteList = await srv.GetListAsync("api/Step/getStepRouteList", stepRouteList);
 			SetComboBox();
+
+			//수정 시 콤보박스 변경
+			modLoadSet();
+		}
+
+		private void modLoadSet()
+		{
+			if (modStepRoute == null) return;
+
+			txtStepID.Text = modStepRoute.STEP_ID;
+			txtStepSeq.Text = modStepRoute.STEP_SEQ.ToString();
+			cboProcessID.SelectedValue = modStepRoute.PROCESS_ID;
+			cboStepType.SelectedValue = modStepRoute.STEP_TYPE;
+			cboStdStep.SelectedValue = modStepRoute.STD_STEP_ID;
 		}
 
 		private async void SetComboBox()
@@ -46,8 +61,8 @@ namespace APSWinForm
 			List<ComboItemVO> list = null;
 			list = await srv.GetListAsync("api/Step/getComboItem", list);
 
-			CommonUtil.ComboBinding(cboStepType, list, "STEP_TYPE", blankText: "선택");
 			CommonUtil.ComboBinding(cboProcessID, list, "PROCESS_ID", blankText: "직접입략");
+			CommonUtil.ComboBinding(cboStepType, list, "STEP_TYPE", blankText: "선택");
 			CommonUtil.ComboBinding(cboStdStep, list, "STD_STEP_ID", blankText: "선택");
 		}
 
@@ -68,9 +83,50 @@ namespace APSWinForm
 			}
 		}
 
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			this.DialogResult = DialogResult.Cancel;
+			this.Close();
+		}
+
 		private void btnAdd_Click(object sender, EventArgs e)
 		{
 
+		}
+
+		private async void btnSave_Click(object sender, EventArgs e)
+		{
+			if (!isNotNull()) return;
+
+			StepRouteVO newStep = new StepRouteVO
+			{
+				PROCESS_ID = txtProcessID.Text,
+				STEP_ID = txtStepID.Text,
+				STEP_SEQ = Convert.ToInt32(txtStepSeq.Text),
+				STD_STEP_ID = cboStdStep.SelectedValue.ToString(),
+				STEP_TYPE = cboStepType.SelectedValue.ToString(),
+				user_id = "Test"
+			};
+
+			WebMessage msg = await srv.PostAsyncNone("api/Step/saveStepRoute", newStep);
+
+			if (msg.IsSuccess)
+			{
+				this.DialogResult = DialogResult.OK;
+				this.Close();
+			}
+			MessageBox.Show(msg.ResultMessage);
+		}
+
+		private bool isNotNull()
+		{
+			//유효성검사
+			if (cboStdStep.SelectedIndex < 1 ||
+				cboStepType.SelectedIndex < 1 ||
+				string.IsNullOrWhiteSpace(txtProcessID.Text) ||
+				string.IsNullOrWhiteSpace(txtStepID.Text) ||
+				string.IsNullOrWhiteSpace(txtStepSeq.Text)) return false;
+			else return true;
 		}
 	}
 }

@@ -15,7 +15,7 @@ namespace APSServer.Models
 
         public SampleDAC()
         {
-            string strConn = WebConfigurationManager.ConnectionStrings["teamDB"].ConnectionString;
+            string strConn = APSEncrypt.AES256.Decrypt(WebConfigurationManager.ConnectionStrings["DBInfo"].ConnectionString);
             conn = new SqlConnection(strConn);
             conn.Open();
         }

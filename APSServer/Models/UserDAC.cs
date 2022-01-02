@@ -30,12 +30,13 @@ namespace APSServer.Models
             }
         }
 
-        public UserLogin Login(string id, string password)
+        public UserVerify Login(string id, string password)
         {
             string sql = @"
-select u.User_NO, u.User_ID, u.User_Name, u.Dept_ID, d.Dept_Name
+select u.User_NO, u.User_ID, u.User_Name, u.Dept_ID, d.Dept_Name, 
+u.User_PWD, u.Salt
 from UserInfo u left outer join Department d on u.Dept_ID = d.Dept_ID
-where u.User_ID = @ID and u.User_PWD = @Password and u.Deleted = 0";
+where u.User_ID = @ID and u.Deleted = 0";
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
@@ -44,12 +45,11 @@ where u.User_ID = @ID and u.User_PWD = @Password and u.Deleted = 0";
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    return Helper.DataReaderMapToList<UserLogin>(reader)?.FirstOrDefault();
+                    return Helper.DataReaderMapToList<UserVerify>(reader)?.FirstOrDefault();
                 }
             }
 
         }
-
 
         // public WebMessage Logout(UserLogin data);
 
@@ -133,11 +133,11 @@ values (@User_ID, @User_Name, @User_PWD, @User_Email, @User_phone, @User_Birth, 
             };
         }
 
-        public WebMessage<UserLogin> UpdateUserInfo(string curId, string curPassword, UserInfo newInfo)
+        public WebMessage<UserData> UpdateUserInfo(string curId, string curPassword, UserInfo newInfo)
         {
             // 현재 아이디, 비밀번호 확인 -> 정보 수정
 
-            WebMessage<UserLogin> msg = new WebMessage<UserLogin>();
+            WebMessage<UserData> msg = new WebMessage<UserData>();
 
             string sql = @"
 update UserInfo SET User_Name=@User_Name, User_PWD=@User_PWD, User_Email=@User_Email, 
@@ -168,7 +168,7 @@ where User_ID=@Cur_ID and User_PWD=@Cur_PWD";
                 {
                     msg.IsSuccess = true;
                     msg.ResultMessage = "회원정보를 수정하였습니다.";
-                    msg.Data = new UserLogin()
+                    msg.Data = new UserData()
                     {
                     };
                 }
