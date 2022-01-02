@@ -41,10 +41,10 @@ namespace APSDAC
           3순위 ResetPasswort, UpdateUserInfo, WithDraw
          */
 
-        public WebMessage<UserLogin> Login(string id, string password)
+        public WebMessage<UserData> Login(string id, string password)
         {
-            WebMessage<UserLogin> msg = new WebMessage<UserLogin>();
-            UserLogin login = null;
+            WebMessage<UserData> msg = new WebMessage<UserData>();
+            UserData login = null;
 
             string sql = @"
 select u.User_NO, u.User_ID, u.User_Name, u.Dept_ID, d.Dept_Name
@@ -58,7 +58,7 @@ where u.User_ID = @ID and u.User_PWD = @Password and u.Delete = 0";
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    login = Helper.DataReaderMapToList<UserLogin>(reader)?.FirstOrDefault();
+                    login = Helper.DataReaderMapToList<UserData>(reader)?.FirstOrDefault();
 
                     if (login != null)
                     {
@@ -77,7 +77,7 @@ where u.User_ID = @ID and u.User_PWD = @Password and u.Delete = 0";
             return msg;
         }
 
-        public WebMessage Logout(UserLogin data)
+        public WebMessage Logout(UserData data)
         {
             // 세션, 쿠키등이 있으면 해제 작업을 함
             // 로그아웃은 DAC 부분에서는 작업할 내용이 없음 (API 부분에서 전부 처리)
@@ -190,11 +190,11 @@ values (@User_ID, @User_Name, @User_PWD, @User_Email, @User_phone, @User_Birth, 
             };
         }
 
-        public WebMessage<UserLogin> UpdateUserInfo(string curId, string curPassword, UserInfo newInfo)
+        public WebMessage<UserData> UpdateUserInfo(string curId, string curPassword, UserInfo newInfo)
         {
             // 현재 아이디, 비밀번호 확인 -> 정보 수정
 
-            WebMessage<UserLogin> msg = new WebMessage<UserLogin>();
+            WebMessage<UserData> msg = new WebMessage<UserData>();
             string sql = @"
 update UserInfo SET User_Name=@User_Name, User_PWD=@User_PWD, User_Email=@User_Email, 
 User_phone=@User_phone, User_Birth=@User_Birth, Dept_ID=@Dept_ID
@@ -224,7 +224,7 @@ where User_ID=@Cur_ID and User_PWD=@Cur_PWD";
                 {
                     msg.IsSuccess = true;
                     msg.ResultMessage = "회원정보를 수정하였습니다.";
-                    msg.Data = new UserLogin()
+                    msg.Data = new UserData()
                     {
                     };
                 }
@@ -266,13 +266,13 @@ update UserInfo Set Deleted=1 where User_ID=@ID and User_PWD=@Password";
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////
-        public WebMessage<UserLogin> LoginTest(string id, string password)
+        public WebMessage<UserData> LoginTest(string id, string password)
         {
-            return new WebMessage<UserLogin>()
+            return new WebMessage<UserData>()
             {
                 IsSuccess = true,
                 ResultMessage = "로그인에 성공하였습니다.",
-                Data = new UserLogin()
+                Data = new UserData()
                 {
                     User_ID = "test",
                     User_NO = 1,
@@ -282,7 +282,7 @@ update UserInfo Set Deleted=1 where User_ID=@ID and User_PWD=@Password";
                 }
             };
         }
-        public WebMessage LogoutTest(UserLogin data)
+        public WebMessage LogoutTest(UserData data)
         {
             return new WebMessage()
             {

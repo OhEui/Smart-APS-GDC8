@@ -124,6 +124,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\APSEncrypt\APSEncrypt.csproj">
+      <Project>{0bee685f-05bd-4cc3-943b-7eb5bde1b7b6}</Project>
+      <Name>APSEncrypt</Name>
+    </ProjectReference>
     <ProjectReference Include="..\APSVO\APSVO.csproj">
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
       <Name>APSVO</Name>

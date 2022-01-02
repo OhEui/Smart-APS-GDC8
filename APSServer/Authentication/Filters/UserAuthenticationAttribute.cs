@@ -1,4 +1,5 @@
-﻿using APSServer.Models;
+﻿using APSEncrypt;
+using APSServer.Models;
 using APSServer.Principal;
 using System;
 using System.Collections.Generic;
@@ -24,14 +25,17 @@ namespace APSServer.Filters
                 {
                     return null;
                 }
+                if (!SHA256.VerifyPassword(password, data.User_PWD, data.Salt)) 
+                {
+                    return null;
+                }
 
                 // Create a ClaimsIdentity with all the claims for this user.
                 cancellationToken.ThrowIfCancellationRequested(); // Unfortunately, IClaimsIdenityFactory doesn't support CancellationTokens.
-                await Task.Delay(100);
-                return new UserPrincipal(data);
+
+                var principal = await Task.Run(() => new UserPrincipal(data));
+                return principal;
             }
-
-
         }
     }
 }
