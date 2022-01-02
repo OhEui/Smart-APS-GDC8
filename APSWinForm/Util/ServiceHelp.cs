@@ -36,8 +36,8 @@ namespace APSWinForm
             BaseServiceUrl = $"{ConfigurationManager.AppSettings["ApiAddress"]}/{routePrefix}/";
 
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "dGVzdDoxMjM0"); // TEST_CODE
         }
 
         public async Task<T> GetListAsync<T>(string path, T t)
