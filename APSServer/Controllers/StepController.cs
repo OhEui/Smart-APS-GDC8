@@ -87,5 +87,23 @@ namespace APSServer.Controllers
             StepDAC db = new StepDAC();
             return db.getStepRouteList();
         }
+
+        //GET : https://localhost:44309/api/Step/getStepType
+        [HttpGet]
+        [Route("getStepType")]
+        public List<ComboItemVO> getStepType()
+        {
+            StepDAC db = new StepDAC();
+            return db.getStepType();
+        }
+
+        //GET : https://localhost:44309/api/Step/getStepType
+        [HttpGet]
+        [Route("getComboItem")]
+        public List<ComboItemVO> getComboItem()
+        {
+            StepDAC db = new StepDAC();
+            return db.getComboItem();
+        }
     }
 }
