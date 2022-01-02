@@ -1,5 +1,5 @@
 ﻿
-namespace APSWinForm.BaseForm
+namespace APSWinForm
 {
     partial class frmBase
     {
@@ -78,14 +78,15 @@ namespace APSWinForm.BaseForm
             // 
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(22, 22);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripButton1,
             this.toolStripButton2,
             this.toolStripButton3,
             this.toolStripSeparator1,
-            this.toolStripButton4,
-            this.toolStripButton5});
+            this.toolStripButton5,
+            this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(708, 40);
@@ -153,7 +154,7 @@ namespace APSWinForm.BaseForm
             this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(23, 37);
+            this.toolStripButton5.Size = new System.Drawing.Size(26, 37);
             this.toolStripButton5.Text = "엑셀추가";
             // 
             // panel2
