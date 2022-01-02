@@ -1,5 +1,5 @@
 ﻿
-namespace APSWinForm.HSY
+namespace APSWinForm
 {
     partial class Form1
     {
