@@ -72,6 +72,12 @@
     <Compile Include="BaseForm\BaseFormSample.designer.cs">
       <DependentUpon>BaseFormSample.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForm\frmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\frmBase.Designer.cs">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForm\frmpopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\BaseFormSample.resx">
       <DependentUpon>BaseFormSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\frmBase.resx">
+      <DependentUpon>frmBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSY\frmDEMAND.resx">
       <DependentUpon>frmDEMAND.cs</DependentUpon>

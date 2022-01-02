@@ -25,12 +25,12 @@ namespace APSServer.Controllers
             if (result)
             {
                 msg.IsSuccess = true;
-                msg.ResultMessage = "성공적으로 저장";
+                msg.ResultMessage = "성공적으로 저장되었습니다.";
             }
             else
             {
                 msg.IsSuccess = true;
-                msg.ResultMessage = "저장 중 오류 발생";
+                msg.ResultMessage = "저장 중 오류 발생하였습니다.";
             }
             return Ok(msg);
         }
@@ -62,7 +62,7 @@ namespace APSServer.Controllers
             else
             {
                 msg.IsSuccess = false;
-                msg.ResultMsg = "해당하는 글정보가 없습니다.";
+                msg.ResultMsg = "해당하는 정보가 없습니다.";
                 msg.Data = null;
             }
             return Ok(msg);
