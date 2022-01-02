@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace APSWinForm
+namespace APSWinForm.BaseForm
 {
-    public partial class frmPRODUCT : Form
+    public partial class frmBase : Form
     {
-        public frmPRODUCT()
+        public frmBase()
         {
             InitializeComponent();
         }
