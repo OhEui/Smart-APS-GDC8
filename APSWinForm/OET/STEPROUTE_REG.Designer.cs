@@ -316,6 +316,7 @@ namespace APSWinForm
 			this.btnCancel.TabIndex = 54;
 			this.btnCancel.Text = "취소";
 			this.btnCancel.UseVisualStyleBackColor = false;
+			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 			// 
 			// btnSave
 			// 
@@ -329,6 +330,7 @@ namespace APSWinForm
 			this.btnSave.TabIndex = 45;
 			this.btnSave.Text = "저장";
 			this.btnSave.UseVisualStyleBackColor = false;
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
 			// panel6
 			// 
