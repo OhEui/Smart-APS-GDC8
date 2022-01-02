@@ -90,12 +90,18 @@
     <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="Controllers\StepController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Authentication\Filters\BasicAuthenticationAttribute.cs" />
+    <Compile Include="Authentication\Filters\HttpAuthenticationChallengeContextExtensions.cs" />
+    <Compile Include="Authentication\Filters\UserAuthenticationAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EQUIPDAC.cs" />
     <Compile Include="Models\Helper.cs" />
+    <Compile Include="Authentication\Principal\UserPrincipal.cs" />
     <Compile Include="Models\ProductDAC.cs" />
+    <Compile Include="Authentication\Results\AddChallengeOnUnauthorizedResult.cs" />
+    <Compile Include="Authentication\Results\AuthenticationFailureResult.cs" />
     <Compile Include="Models\SampleDAC.cs" />
     <Compile Include="Models\StepDAC.cs" />
     <Compile Include="Models\UserDAC.cs" />
@@ -118,6 +124,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\APSEncrypt\APSEncrypt.csproj">
+      <Project>{0bee685f-05bd-4cc3-943b-7eb5bde1b7b6}</Project>
+      <Name>APSEncrypt</Name>
+    </ProjectReference>
     <ProjectReference Include="..\APSVO\APSVO.csproj">
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
       <Name>APSVO</Name>

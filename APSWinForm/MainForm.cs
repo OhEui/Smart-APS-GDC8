@@ -36,7 +36,8 @@ namespace APSWinForm
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-
+            var test1 = APSEncrypt.SHA256.GenerateSaltedHash("1234");
+            var test2 = APSEncrypt.SHA256.VerifyPassword("1234", test1.hash, test1.salt);
         }
 
         private void btnDemand_Click(object sender, EventArgs e)

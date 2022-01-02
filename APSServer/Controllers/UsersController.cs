@@ -62,9 +62,9 @@ namespace APSServer.Controllers
 
         #region POST Method
         [HttpPost][Route("Login")]
-        public WebMessage<UserLogin> Login(ReqUserLogin req)
+        public WebMessage<UserData> Login(ReqUserLogin req)
         {
-            var msg = new WebMessage<UserLogin>();
+            var msg = new WebMessage<UserData>();
             string id = req.ID;
             string password = req.Password;
 
@@ -88,7 +88,7 @@ namespace APSServer.Controllers
         }
         
         [HttpPost][Route("Logout")]
-        public WebMessage Logout(UserLogin data) 
+        public WebMessage Logout(UserData data) 
         {
             // 쿠키, 세션 해제 작업을 함 (DB 접근 없음)
             throw new NotImplementedException();
@@ -114,7 +114,7 @@ namespace APSServer.Controllers
         }
 
         [HttpPost][Route("UpdateUserInfo")]
-        public WebMessage<UserLogin> UpdateUserInfo(ReqUserUpdateInfo req) 
+        public WebMessage<UserData> UpdateUserInfo(ReqUserUpdateInfo req) 
         {
             string curId = req.Cur_ID;
             string curPassword = req.Cur_PWD;
