@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-    public partial class frmPRODUCT : Form
+    public partial class frmBase : Form
     {
-        public frmPRODUCT()
+        public frmBase()
         {
             InitializeComponent();
         }
