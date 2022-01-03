@@ -42,7 +42,6 @@ namespace APSWinForm
 			this.txtStepSeq = new APSWinForm.NumTextBox();
 			this.cboProcessID = new System.Windows.Forms.ComboBox();
 			this.txtStepID = new APSWinForm.CapitalTextBox();
-			this.txtProcessID = new System.Windows.Forms.TextBox();
 			this.cboStdStep = new System.Windows.Forms.ComboBox();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.dgvStepRoute = new System.Windows.Forms.DataGridView();
@@ -134,7 +133,6 @@ namespace APSWinForm
 			this.panel9.Controls.Add(this.txtStepSeq);
 			this.panel9.Controls.Add(this.cboProcessID);
 			this.panel9.Controls.Add(this.txtStepID);
-			this.panel9.Controls.Add(this.txtProcessID);
 			this.panel9.Controls.Add(this.cboStdStep);
 			this.panel9.Controls.Add(this.panel4);
 			this.panel9.Controls.Add(this.label5);
@@ -180,18 +178,19 @@ namespace APSWinForm
 			// 
 			// txtStepSeq
 			// 
-			this.txtStepSeq.Location = new System.Drawing.Point(672, 175);
+			this.txtStepSeq.Location = new System.Drawing.Point(676, 163);
 			this.txtStepSeq.Name = "txtStepSeq";
 			this.txtStepSeq.Size = new System.Drawing.Size(121, 21);
 			this.txtStepSeq.TabIndex = 77;
 			// 
 			// cboProcessID
 			// 
+			this.cboProcessID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cboProcessID.FormattingEnabled = true;
 			this.cboProcessID.Items.AddRange(new object[] {
             "IN",
             "OUT"});
-			this.cboProcessID.Location = new System.Drawing.Point(672, 95);
+			this.cboProcessID.Location = new System.Drawing.Point(676, 76);
 			this.cboProcessID.Name = "cboProcessID";
 			this.cboProcessID.Size = new System.Drawing.Size(189, 20);
 			this.cboProcessID.TabIndex = 76;
@@ -201,25 +200,19 @@ namespace APSWinForm
 			// 
 			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepID.Location = new System.Drawing.Point(672, 133);
+			this.txtStepID.Location = new System.Drawing.Point(676, 119);
 			this.txtStepID.Name = "txtStepID";
 			this.txtStepID.Size = new System.Drawing.Size(121, 21);
 			this.txtStepID.TabIndex = 75;
 			// 
-			// txtProcessID
-			// 
-			this.txtProcessID.Location = new System.Drawing.Point(672, 68);
-			this.txtProcessID.Name = "txtProcessID";
-			this.txtProcessID.Size = new System.Drawing.Size(189, 21);
-			this.txtProcessID.TabIndex = 74;
-			// 
 			// cboStdStep
 			// 
+			this.cboStdStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cboStdStep.FormattingEnabled = true;
 			this.cboStdStep.Items.AddRange(new object[] {
             "IN",
             "OUT"});
-			this.cboStdStep.Location = new System.Drawing.Point(672, 217);
+			this.cboStdStep.Location = new System.Drawing.Point(676, 207);
 			this.cboStdStep.Name = "cboStdStep";
 			this.cboStdStep.Size = new System.Drawing.Size(121, 20);
 			this.cboStdStep.TabIndex = 72;
@@ -247,7 +240,7 @@ namespace APSWinForm
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label5.Location = new System.Drawing.Point(560, 135);
+			this.label5.Location = new System.Drawing.Point(564, 122);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(58, 14);
 			this.label5.TabIndex = 65;
@@ -257,7 +250,7 @@ namespace APSWinForm
 			// 
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label13.Location = new System.Drawing.Point(560, 70);
+			this.label13.Location = new System.Drawing.Point(564, 78);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(82, 14);
 			this.label13.TabIndex = 63;
@@ -267,7 +260,7 @@ namespace APSWinForm
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label4.Location = new System.Drawing.Point(560, 219);
+			this.label4.Location = new System.Drawing.Point(564, 210);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(82, 14);
 			this.label4.TabIndex = 62;
@@ -275,11 +268,12 @@ namespace APSWinForm
 			// 
 			// cboStepType
 			// 
+			this.cboStepType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cboStepType.FormattingEnabled = true;
 			this.cboStepType.Items.AddRange(new object[] {
             "IN",
             "OUT"});
-			this.cboStepType.Location = new System.Drawing.Point(672, 259);
+			this.cboStepType.Location = new System.Drawing.Point(676, 250);
 			this.cboStepType.Name = "cboStepType";
 			this.cboStepType.Size = new System.Drawing.Size(121, 20);
 			this.cboStepType.TabIndex = 61;
@@ -288,7 +282,7 @@ namespace APSWinForm
 			// 
 			this.label10.AutoSize = true;
 			this.label10.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label10.Location = new System.Drawing.Point(560, 262);
+			this.label10.Location = new System.Drawing.Point(564, 254);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(67, 14);
 			this.label10.TabIndex = 60;
@@ -298,7 +292,7 @@ namespace APSWinForm
 			// 
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label12.Location = new System.Drawing.Point(560, 177);
+			this.label12.Location = new System.Drawing.Point(564, 166);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(67, 14);
 			this.label12.TabIndex = 59;
@@ -397,7 +391,6 @@ namespace APSWinForm
 		private NumTextBox txtStepSeq;
 		protected System.Windows.Forms.ComboBox cboProcessID;
 		private CapitalTextBox txtStepID;
-		public System.Windows.Forms.TextBox txtProcessID;
 		protected System.Windows.Forms.ComboBox cboStdStep;
 		protected System.Windows.Forms.ComboBox cboStepType;
 		protected System.Windows.Forms.Button btnDelete;

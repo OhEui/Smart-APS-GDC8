@@ -61,7 +61,7 @@ namespace APSWinForm
 			List<ComboItemVO> list = null;
 			list = await srv.GetListAsync("api/Step/getComboItem", list);
 
-			CommonUtil.ComboBinding(cboProcessID, list, "PROCESS_ID", blankText: "직접입략");
+			CommonUtil.ComboBinding(cboProcessID, list, "PROCESS_ID", blankText: "선택");
 			CommonUtil.ComboBinding(cboStepType, list, "STEP_TYPE", blankText: "선택");
 			CommonUtil.ComboBinding(cboStdStep, list, "STD_STEP_ID", blankText: "선택");
 		}
@@ -70,12 +70,10 @@ namespace APSWinForm
 		{
 			if(cboProcessID.SelectedIndex < 1)
 			{
-				txtProcessID.Enabled = true;
+				return;
 			}
 			else
 			{
-				txtProcessID.Text = cboProcessID.SelectedValue.ToString();
-				txtProcessID.Enabled = false;
 
 				var list = stepRouteList.FindAll(p => p.PROCESS_ID == cboProcessID.SelectedValue.ToString());
 				dgvStepRoute.DataSource = null;
@@ -100,7 +98,7 @@ namespace APSWinForm
 
 			StepRouteVO newStep = new StepRouteVO
 			{
-				PROCESS_ID = txtProcessID.Text,
+				PROCESS_ID = cboProcessID.SelectedValue.ToString(),
 				STEP_ID = txtStepID.Text,
 				STEP_SEQ = Convert.ToInt32(txtStepSeq.Text),
 				STD_STEP_ID = cboStdStep.SelectedValue.ToString(),
@@ -123,7 +121,7 @@ namespace APSWinForm
 			//유효성검사
 			if (cboStdStep.SelectedIndex < 1 ||
 				cboStepType.SelectedIndex < 1 ||
-				string.IsNullOrWhiteSpace(txtProcessID.Text) ||
+				cboProcessID.SelectedIndex < 1 ||
 				string.IsNullOrWhiteSpace(txtStepID.Text) ||
 				string.IsNullOrWhiteSpace(txtStepSeq.Text)) return false;
 			else return true;
