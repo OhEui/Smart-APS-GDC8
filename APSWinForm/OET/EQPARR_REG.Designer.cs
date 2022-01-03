@@ -32,20 +32,20 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EQPARR_REG));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboStep = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboProduct = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboEQP = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numStep = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.cboProcess = new System.Windows.Forms.ComboBox();
+            this.numProcess = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -54,8 +54,8 @@ namespace APSWinForm
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numProcess)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -77,117 +77,135 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
-            this.panel9.Controls.Add(this.comboBox1);
+            this.panel9.Controls.Add(this.cboStep);
             this.panel9.Controls.Add(this.label4);
-            this.panel9.Controls.Add(this.comboBox2);
+            this.panel9.Controls.Add(this.cboProduct);
             this.panel9.Controls.Add(this.label5);
-            this.panel9.Controls.Add(this.comboBox3);
+            this.panel9.Controls.Add(this.cboEQP);
             this.panel9.Controls.Add(this.label8);
-            this.panel9.Controls.Add(this.numericUpDown1);
+            this.panel9.Controls.Add(this.numStep);
             this.panel9.Controls.Add(this.label7);
-            this.panel9.Controls.Add(this.comboBox5);
-            this.panel9.Controls.Add(this.numericUpDown2);
+            this.panel9.Controls.Add(this.cboProcess);
+            this.panel9.Controls.Add(this.numProcess);
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.label6);
-            this.panel9.Controls.Add(this.button3);
-            this.panel9.Controls.Add(this.button7);
+            this.panel9.Controls.Add(this.btnCancel);
+            this.panel9.Controls.Add(this.btnAdd);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(370, 427);
             this.panel9.TabIndex = 42;
             // 
-            // comboBox1
+            // cboStep
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(193, 181);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 169;
+            this.cboStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboStep.Enabled = false;
+            this.cboStep.FormattingEnabled = true;
+            this.cboStep.Location = new System.Drawing.Point(185, 181);
+            this.cboStep.Name = "cboStep";
+            this.cboStep.Size = new System.Drawing.Size(121, 20);
+            this.cboStep.TabIndex = 169;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(60, 187);
+            this.label4.Location = new System.Drawing.Point(52, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 14);
             this.label4.TabIndex = 168;
             this.label4.Text = "ㆍ공정ID";
             // 
-            // comboBox2
+            // cboProduct
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(193, 103);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 167;
+            this.cboProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboProduct.Enabled = false;
+            this.cboProduct.FormattingEnabled = true;
+            this.cboProduct.Location = new System.Drawing.Point(185, 103);
+            this.cboProduct.Name = "cboProduct";
+            this.cboProduct.Size = new System.Drawing.Size(121, 20);
+            this.cboProduct.TabIndex = 167;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(62, 105);
+            this.label5.Location = new System.Drawing.Point(54, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 14);
             this.label5.TabIndex = 166;
             this.label5.Text = "ㆍ제품ID";
             // 
-            // comboBox3
+            // cboEQP
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(193, 58);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 20);
-            this.comboBox3.TabIndex = 165;
+            this.cboEQP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboEQP.Enabled = false;
+            this.cboEQP.FormattingEnabled = true;
+            this.cboEQP.Location = new System.Drawing.Point(185, 58);
+            this.cboEQP.Name = "cboEQP";
+            this.cboEQP.Size = new System.Drawing.Size(121, 20);
+            this.cboEQP.TabIndex = 165;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(60, 64);
+            this.label8.Location = new System.Drawing.Point(52, 64);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 14);
             this.label8.TabIndex = 164;
             this.label8.Text = "ㆍ설비ID";
             // 
-            // numericUpDown1
+            // numStep
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(193, 220);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 21);
-            this.numericUpDown1.TabIndex = 163;
+            this.numStep.Location = new System.Drawing.Point(185, 220);
+            this.numStep.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.numStep.Name = "numStep";
+            this.numStep.Size = new System.Drawing.Size(120, 21);
+            this.numStep.TabIndex = 163;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(60, 227);
+            this.label7.Location = new System.Drawing.Point(52, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 14);
             this.label7.TabIndex = 162;
             this.label7.Text = "ㆍ공정간격시간";
             // 
-            // comboBox5
+            // cboProcess
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(195, 139);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(119, 20);
-            this.comboBox5.TabIndex = 161;
+            this.cboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboProcess.Enabled = false;
+            this.cboProcess.FormattingEnabled = true;
+            this.cboProcess.Location = new System.Drawing.Point(185, 139);
+            this.cboProcess.Name = "cboProcess";
+            this.cboProcess.Size = new System.Drawing.Size(119, 20);
+            this.cboProcess.TabIndex = 161;
             // 
-            // numericUpDown2
+            // numProcess
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(193, 260);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 21);
-            this.numericUpDown2.TabIndex = 160;
+            this.numProcess.Location = new System.Drawing.Point(185, 260);
+            this.numProcess.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.numProcess.Name = "numProcess";
+            this.numProcess.Size = new System.Drawing.Size(120, 21);
+            this.numProcess.TabIndex = 160;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(62, 145);
+            this.label9.Location = new System.Drawing.Point(54, 145);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 14);
             this.label9.TabIndex = 159;
@@ -197,37 +215,39 @@ namespace APSWinForm
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(60, 261);
+            this.label6.Location = new System.Drawing.Point(52, 261);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 14);
             this.label6.TabIndex = 158;
             this.label6.Text = "ㆍ프로세스처리시간";
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(193, 327);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 36);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "취소";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(193, 327);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(102, 36);
+            this.btnCancel.TabIndex = 54;
+            this.btnCancel.Text = "취소";
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btnAdd
             // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(65, 327);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(102, 36);
-            this.button7.TabIndex = 45;
-            this.button7.Text = "추가";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(65, 327);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(102, 36);
+            this.btnAdd.TabIndex = 45;
+            this.btnAdd.Text = "추가";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel8
             // 
@@ -296,11 +316,12 @@ namespace APSWinForm
             this.Controls.Add(this.panel1);
             this.Name = "EQPARR_REG";
             this.Text = "EQPARR_REG";
+            this.Load += new System.EventHandler(this.EQPARR_REG_Load);
             this.panel2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numProcess)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -312,24 +333,24 @@ namespace APSWinForm
         #endregion
         protected System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel9;
-        protected System.Windows.Forms.Button button3;
-        protected System.Windows.Forms.Button button7;
+        protected System.Windows.Forms.Button btnCancel;
+        protected System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboStep;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboProduct;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboEQP;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numStep;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.ComboBox cboProcess;
+        private System.Windows.Forms.NumericUpDown numProcess;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
     }

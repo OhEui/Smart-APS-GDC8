@@ -18,7 +18,7 @@ namespace APSWinForm
         EQUIPVO EQPvo;
         List<STD_STEP_VO> eqpgroup;
         List<LineVO> Lineinfo;
-        List<EQUIPVO> UpdateEquip;
+        
         public EQUIPMENT_REG()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace APSWinForm
         public async void Combobinding()
         {
             
-            eqpgroup = await srv.GetListAsync("api/StepInfo/getStepInfoList", eqpgroup);
+            eqpgroup = await srv.GetListAsync("api/Step/getStepInfoList", eqpgroup);
             Lineinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Lineinfo);
             CommonUtil.ComboBinding(cboEqpGroup, eqpgroup, "STD_STEP_NAME", "STD_STEP_NAME");
             CommonUtil.ComboBinding(cboLineID, Lineinfo, "LINE_ID", "LINE_ID");
