@@ -88,10 +88,10 @@ namespace APSWinForm
             // 
             // toolStripLabel1
             // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.toolStripLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(90, 37);
+            this.toolStripLabel1.Size = new System.Drawing.Size(79, 37);
             this.toolStripLabel1.Text = "제품정보";
             // 
             // toolStripButton1
@@ -151,6 +151,7 @@ namespace APSWinForm
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(26, 37);
             this.toolStripButton4.Text = "내려받기";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // panel5
             // 

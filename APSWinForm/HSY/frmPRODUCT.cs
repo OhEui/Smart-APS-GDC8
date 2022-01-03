@@ -14,7 +14,7 @@ namespace APSWinForm
 {
     public partial class frmPRODUCT : Form
     {
-        ServiceHelp srv = new ServiceHelp("");
+        ServiceHelp srv;
         List<ProductVO> productvo = null;
 
         public frmPRODUCT()
@@ -33,16 +33,18 @@ namespace APSWinForm
         private async void DataLode()
         {
             DataGridViewUtil.SetInitGridView(dgvPR);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "설비ID", "PRODUCT_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "공정모델명", "PRODUCT_TYPE", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "사이트ID", "PRODUCT_NAME", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "라인ID", "PROCESS_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "공정처리그룹", "LOT_SIZE", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품ID", "PRODUCT_ID", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품타입", "PRODUCT_TYPE", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품이름", "PRODUCT_NAME", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "프로세스ID", "PROCESS_ID", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "생산단위크기", "LOT_SIZE", colWidth: 100);
 
             LoadData();
         }
         private void frmPRODUCT_Load(object sender, EventArgs e)
         {
+            MainForm frm = MdiParent as MainForm;
+            srv = new ServiceHelp("", frm.AuthHeader);
             DataLode();
         }
 
@@ -84,6 +86,13 @@ namespace APSWinForm
                 LoadData();
             }
             else return;
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            bool bResult = ExcelUtil.ExportExcelToList(dgvPR.DataSource as List<ProductVO>, @".\product.xlsx", "");
+            if (bResult)
+                MessageBox.Show("저장하였습니다.");
         }
     }
 }

@@ -169,6 +169,7 @@ namespace APSWinForm
             this.txtPW.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.txtPW.Location = new System.Drawing.Point(503, 233);
             this.txtPW.Name = "txtPW";
+            this.txtPW.PasswordChar = '*';
             this.txtPW.Size = new System.Drawing.Size(229, 29);
             this.txtPW.TabIndex = 2;
             this.txtPW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
