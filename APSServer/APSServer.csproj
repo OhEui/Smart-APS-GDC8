@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Authentication\Filters\BearerAuthenticationAttribute.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\EQUIPMENTController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
