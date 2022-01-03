@@ -34,7 +34,7 @@ namespace APSDAC
             }
         }
 
-        public List<EqpArrangeVO> GetEqipmentARR()
+        public List<EqpArrangeVO> GetEquipmentARR()
         {
             string sql = "select PRODUCT_ID, PROCESS_ID, STEP_ID, EQP_ID, TACT_TIME,PROC_TIME from EQP_ARRANGE";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
