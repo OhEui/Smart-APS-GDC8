@@ -27,7 +27,7 @@ namespace APSWinForm
             tabControl1.Visible = false;
 
             // Login Test
-            //Login();
+            Login();
 
         }
 
@@ -59,7 +59,7 @@ namespace APSWinForm
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            //new product() { MdiParent = this }.Show();
+            new frmPRODUCT { MdiParent = this }.Show();
         }
 
         private void btnDemand_Click(object sender, EventArgs e)

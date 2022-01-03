@@ -38,6 +38,8 @@ namespace APSServer.Controllers
         //GET :  http://localhost:58802/api/Product/Products
         [HttpGet]
         [Route("Products")]
+        [UserAuthentication]
+        [Authorize]
         public List<ProductVO> GetAllProduct()
         {
             ProductDAC db = new ProductDAC();
