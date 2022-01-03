@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APSServer", "APSServer\APSS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APSEncrypt", "APSEncrypt\APSEncrypt.csproj", "{0BEE685F-05BD-4CC3-943B-7EB5BDE1B7B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APSLogger", "APSLogger\APSLogger.csproj", "{3647BCB9-BC2A-4BC1-AAD5-048C9A036A15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0BEE685F-05BD-4CC3-943B-7EB5BDE1B7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BEE685F-05BD-4CC3-943B-7EB5BDE1B7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BEE685F-05BD-4CC3-943B-7EB5BDE1B7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3647BCB9-BC2A-4BC1-AAD5-048C9A036A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3647BCB9-BC2A-4BC1-AAD5-048C9A036A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3647BCB9-BC2A-4BC1-AAD5-048C9A036A15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3647BCB9-BC2A-4BC1-AAD5-048C9A036A15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

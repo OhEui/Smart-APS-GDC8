@@ -42,7 +42,7 @@ namespace APSWinForm
 
         private async void combobinding()
         {
-            stepList = await srv.GetListAsync("api/StepInfo/getStepInfoList", stepList);
+            stepList = await srv.GetListAsync("api/Step/getStepInfoList", stepList);
             CommonUtil.ComboBinding(cboEQPgroup, stepList, "STD_STEP_ID", "STD_STEP_NAME", "선택");
 
         }
@@ -61,7 +61,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정모델명", "EQP_MODEL", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "사이트ID", "SITE_ID", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "라인ID", "LINE_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정처리그룹", "EQP_GROUP", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, "설비처리그룹", "EQP_GROUP", colWidth: 100);
 
             dgvLoad();
             

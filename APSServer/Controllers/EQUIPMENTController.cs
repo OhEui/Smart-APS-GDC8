@@ -33,7 +33,15 @@ namespace APSServer.Controllers
             return dac.GetLineInfo();
         }
 
+        //GET : https://localhost:44309/api/EQUIPMENT/ARRlist
+        [HttpGet]
+        [Route("ARRlist")]
         
+            public List<EqpArrangeVO> GetEquipmentARR()
+        {
+            EQUIPDAC dac = new EQUIPDAC();
+            return dac.GetEqipmentARR();
+        }
 
         //Post : https://localhost:44309/api/EQUIPMENT/EQPnew
         [HttpPost]
@@ -80,13 +88,53 @@ namespace APSServer.Controllers
         }
 
 
-
-
-        public void UpdateEquip(EQUIPVO vo)
+        //Post : https://localhost:44309/api/EQUIPMENT/EQPArrnew
+        [HttpPost]
+        [Route("EQPArrnew")]
+        public IHttpActionResult InsertEqpArr(EqpArrangeVO vo)
         {
-            EQUIPDAC dac = new EQUIPDAC();
-            dac.UpdateEquip(vo);
+            WebMessage msg = new WebMessage();
+            EQUIPDAC db = new EQUIPDAC();
+            bool result = db.InsertEquipArr(vo);
+
+            if (result)
+            {
+                msg.IsSuccess = true;
+                msg.ResultMessage = "성공적으로 등록되었습니다.";
+            }
+            else
+            {
+                msg.IsSuccess = false;
+                msg.ResultMessage = "저장 중 오류가 발생했습니다.";
+            }
+            return Ok(msg);
         }
+
+        //Post : https://localhost:44309/api/EQUIPMENT/EQPArrUpdate
+        [HttpPost]
+        [Route("EQPArrUpdate")]
+        public IHttpActionResult UpdateEqpArr(EqpArrangeVO Evo)
+        {
+            WebMessage msg = new WebMessage();
+            EQUIPDAC db = new EQUIPDAC();
+            bool result = db.UpdateEquipArr(Evo);
+
+            if (result)
+            {
+                msg.IsSuccess = true;
+                msg.ResultMessage = "성공적으로 수정되었습니다.";
+            }
+            else
+            {
+                msg.IsSuccess = false;
+                msg.ResultMessage = "저장 중 오류가 발생했습니다.";
+            }
+            return Ok(msg);
+        }
+
+
+
+       
     }
 
 }
