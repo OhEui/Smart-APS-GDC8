@@ -11,7 +11,7 @@ using System.Security.Principal;
 
 namespace APSServer
 {
-    public class Logger
+    public static class Logger
     {
         public static void APILogger(IPrincipal principal, HttpRequestMessage reqMessage)
         {
