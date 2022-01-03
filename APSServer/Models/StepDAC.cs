@@ -135,7 +135,7 @@ select STD_STEP_ID as Code, STD_STEP_ID  as CodeName, 'STD_STEP_ID' as category
 from STD_STEP_INFO
 union
 select PROCESS_ID as Code, PROCESS_ID  as CodeName, 'PROCESS_ID' as category
-from STEP_ROUTE";
+from PRODUCT";
 
 				cmd.Connection.Open();
 				List<ComboItemVO> list = Helper.DataReaderMapToList<ComboItemVO>(cmd.ExecuteReader());

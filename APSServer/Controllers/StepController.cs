@@ -97,7 +97,7 @@ namespace APSServer.Controllers
             return db.getStepType();
         }
 
-        //GET : https://localhost:44309/api/Step/getStepType
+        //GET : https://localhost:44309/api/Step/getComboItem
         [HttpGet]
         [Route("getComboItem")]
         public List<ComboItemVO> getComboItem()
