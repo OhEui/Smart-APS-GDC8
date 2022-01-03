@@ -30,7 +30,7 @@ namespace APSWinForm
             string id = txtID.Text;
             string password = txtPW.Text;
             string path = "Login";
-            ReqUserLogin data = new ReqUserLogin() { ID=id, Password=password};
+            ReqUserLogin reqData = new ReqUserLogin() { ID=id, Password=password };
 
             if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(password))
             {
@@ -38,19 +38,19 @@ namespace APSWinForm
                 return;
             }
 
-            WebMessage<UserVerify> message = await srv.PostAsync<ReqUserLogin, UserVerify>(path, data);
-            if (message != null) 
+            var response = await srv.PostAsync<ReqUserLogin, UserVerify>(path, reqData);
+            if (response != null) 
             {
-                MessageBox.Show(message.ResultMessage);
-                if (message.IsSuccess)
+                MessageBox.Show(response.ResultMessage);
+                if (response.IsSuccess)
                 {
                     if (ckLogin.Checked) // 로그인 OK 버튼 실행할 때 저장
                     {
                         Properties.Settings.Default.LoginIDSave = txtID.Text;
                         Properties.Settings.Default.Save();
                     }
-                    LoginUser = message.Data;
-                    AuthHeader = message.Data.AuthHeader;
+                    LoginUser = response.Data;
+                    AuthHeader = response.Data.AuthHeader;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
