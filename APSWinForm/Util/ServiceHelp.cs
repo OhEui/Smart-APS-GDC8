@@ -37,7 +37,11 @@ namespace APSWinForm
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "dGVzdDoxMjM0"); // TEST_CODE
+        }
+
+        public ServiceHelp(string routePrefix, string authorization) : this(routePrefix)
+        {
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authorization); // TEST_CODE
         }
 
         public async Task<T> GetListAsync<T>(string path, T t)
@@ -119,6 +123,29 @@ namespace APSWinForm
                     if (response.IsSuccessStatusCode)
                     {
                         result = JsonConvert.DeserializeObject<WebMessage<T>>(await response.Content.ReadAsStringAsync());
+                    }
+                }
+                return result;
+            }
+            catch
+            {
+                return result;
+            }
+        }
+
+
+        public async Task<WebMessage<TResponse>> PostAsync<TRequest, TResponse>(string path, TRequest value)
+        {
+            path = BaseServiceUrl + path;
+
+            WebMessage<TResponse> result = null;
+            try
+            {
+                using (HttpResponseMessage response = await client.PostAsJsonAsync(path, value))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        result = JsonConvert.DeserializeObject<WebMessage<TResponse>>(await response.Content.ReadAsStringAsync());
                     }
                 }
                 return result;

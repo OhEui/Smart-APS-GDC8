@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 
 namespace APSServer.Controllers
@@ -63,9 +64,9 @@ namespace APSServer.Controllers
 
         #region POST Method
         [HttpPost][Route("Login")]
-        public WebMessage<UserData> Login(ReqUserLogin req)
+        public WebMessage<UserVerify> Login(ReqUserLogin req)
         {
-            var msg = new WebMessage<UserData>();
+            var msg = new WebMessage<UserVerify>();
             string id = req.ID;
             string password = req.Password;
 
@@ -74,6 +75,9 @@ namespace APSServer.Controllers
                 var data = dac.Login(id, password);
                 if (data != null)
                 {
+                    byte[] bytes = Encoding.UTF8.GetBytes($"{id}:{password}");
+                    data.AuthHeader = Convert.ToBase64String(bytes);
+
                     msg.IsSuccess = true;
                     msg.ResultMessage = "로그인에 성공하였습니다.";
                     msg.Data = data;

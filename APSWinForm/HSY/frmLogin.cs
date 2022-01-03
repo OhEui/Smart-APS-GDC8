@@ -15,43 +15,45 @@ namespace APSWinForm
 {
     public partial class frmLogin : Form
     {
-        public UserInfo LoginUser { get; set; }
+        ServiceHelp srv = new ServiceHelp("api/User");
+       
+        public string AuthHeader { get; private set; }
+        public UserData LoginUser { get; private set; }
 
         public frmLogin()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtID.Text) || string.IsNullOrWhiteSpace(txtPW.Text))
+            string id = txtID.Text;
+            string password = txtPW.Text;
+            string path = "Login";
+            ReqUserLogin data = new ReqUserLogin() { ID=id, Password=password};
+
+            if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("아이디와 비밀번호를 입력하세요.");
                 return;
             }
 
-            UserDAC dac = new UserDAC();
-            UserInfo loginUser = dac.Login(txtID.Text);
-            dac.Dispose();
-            if (loginUser == null)
+            WebMessage<UserVerify> message = await srv.PostAsync<ReqUserLogin, UserVerify>(path, data);
+            if (message != null) 
             {
-                MessageBox.Show("등록된 아이디가 아닙니다. 회원가입을 해주십시오.");
-            }
-            else if (loginUser.User_PWD != txtPW.Text)
-            {
-                MessageBox.Show("비밀번호를 다시 입력하여 주십시오.");
-            }
-            else
-            {
-                if (ckLogin.Checked) // 로그인 OK 버튼 실행할 때 저장
+                MessageBox.Show(message.ResultMessage);
+                if (message.IsSuccess)
                 {
-                    Properties.Settings.Default.LoginIDSave = txtID.Text;
-                    Properties.Settings.Default.Save();
+                    if (ckLogin.Checked) // 로그인 OK 버튼 실행할 때 저장
+                    {
+                        Properties.Settings.Default.LoginIDSave = txtID.Text;
+                        Properties.Settings.Default.Save();
+                    }
+                    LoginUser = message.Data;
+                    AuthHeader = message.Data.AuthHeader;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
-
-                this.LoginUser = loginUser;
-                this.DialogResult = DialogResult.OK;
-                this.Close();
             }
         }
 

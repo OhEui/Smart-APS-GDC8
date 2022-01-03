@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APSVO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace APSWinForm
     public partial class MainForm : Form
     {
         // TODO 토큰 저장
+        public string AuthHeader { get; private set; }
+        public UserData LoginUser { get; private set; }
 
         public MainForm()
         {
@@ -24,10 +27,24 @@ namespace APSWinForm
             tabControl1.Visible = false;
 
             // Login Test
+            //Login();
+
+        }
+
+        private void Login()
+        {
             frmLogin login = new frmLogin();
             Hide();
-            login.ShowDialog();
-            Show();
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                AuthHeader = login.AuthHeader;
+                LoginUser = login.LoginUser;
+                Show();
+            }
+            else
+            {
+                Close();
+            }
         }
 
         private void menuStrip2_ItemAdded(object sender, ToolStripItemEventArgs e)
