@@ -262,7 +262,8 @@ namespace APSLogger
         private string GetLoggingFolder()
         {
             //return @".\Logs"; // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
-            return @"D:\Logs";
+            return $@"{AppDomain.CurrentDomain.BaseDirectory}Logs";
+            
             /*
              if (Directory.Exists(@"D:\"))
                 return @"D:\Logs";
