@@ -397,7 +397,7 @@ namespace APSWinForm
             this.button12.Padding = new System.Windows.Forms.Padding(25, 0, 55, 0);
             this.button12.Size = new System.Drawing.Size(228, 31);
             this.button12.TabIndex = 2;
-            this.button12.Text = "└ Utilization ";
+            this.button12.Text = "└ 가동률 분석";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button12.UseVisualStyleBackColor = false;
             // 
@@ -584,6 +584,7 @@ namespace APSWinForm
             this.btnLine.Text = "└ 라인정보관리";
             this.btnLine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLine.UseVisualStyleBackColor = false;
+            this.btnLine.Click += new System.EventHandler(this.btnLine_Click);
             // 
             // btnDemand
             // 
@@ -638,7 +639,7 @@ namespace APSWinForm
             this.btnSubMenu1.Padding = new System.Windows.Forms.Padding(0, 0, 45, 0);
             this.btnSubMenu1.Size = new System.Drawing.Size(228, 30);
             this.btnSubMenu1.TabIndex = 1;
-            this.btnSubMenu1.Text = " ㆍ공정설비관리";
+            this.btnSubMenu1.Text = " ㆍ기준정보관리";
             this.btnSubMenu1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnSubMenu1.UseVisualStyleBackColor = false;
             // 

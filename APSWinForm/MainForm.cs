@@ -12,6 +12,8 @@ namespace APSWinForm
 {
     public partial class MainForm : Form
     {
+        // TODO 토큰 저장
+
         public MainForm()
         {
             InitializeComponent();
@@ -20,8 +22,12 @@ namespace APSWinForm
         private void MainForm_Load(object sender, EventArgs e)
         {
             tabControl1.Visible = false;
-            //샘플ToolStripMenuItem.Visible = false;
-            new EQUIPMENT() { MdiParent = this }.Show();
+
+            // Login Test
+            frmLogin login = new frmLogin();
+            Hide();
+            login.ShowDialog();
+            Show();
         }
 
         private void menuStrip2_ItemAdded(object sender, ToolStripItemEventArgs e)
@@ -36,13 +42,12 @@ namespace APSWinForm
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            var test1 = APSEncrypt.SHA256.GenerateSaltedHash("1234");
-            var test2 = APSEncrypt.SHA256.VerifyPassword("1234", test1.hash, test1.salt);
+            //new product() { MdiParent = this }.Show();
         }
 
         private void btnDemand_Click(object sender, EventArgs e)
         {
-
+            new frmDEMAND() { MdiParent = this }.Show();
         }
 
         private void btnEquipment_Click(object sender, EventArgs e)
@@ -68,6 +73,11 @@ namespace APSWinForm
         private void btnTime_Click(object sender, EventArgs e)
         {
             new SETUP_TIME() { MdiParent = this }.Show();
+        }
+
+        private void btnLine_Click(object sender, EventArgs e)
+        {
+            new frmLineInfo() { MdiParent = this }.Show();
         }
     }
 }
