@@ -4,8 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Controllers;
 using APSServer.Filters;
 using APSServer.Models;
+using APSServer.Principal;
 using APSVO;
 
 namespace APSServer.Controllers
@@ -20,7 +22,9 @@ namespace APSServer.Controllers
         {
             var msg = new WebMessage<List<SampleVO>>();
 
-            using (SampleDAC dac = new SampleDAC()) 
+            //Logger.APILogger(RequestContext.Principal, Request);
+
+            using (SampleDAC dac = new SampleDAC())
             {
                 var data = dac.GetSampleList();
                 if (data != null)
@@ -29,7 +33,7 @@ namespace APSServer.Controllers
                     msg.ResultMessage = "Hello World";
                     msg.Data = data;
                 }
-                else 
+                else
                 {
                     msg.IsSuccess = false;
                     msg.ResultMessage = "Fail";
@@ -38,6 +42,5 @@ namespace APSServer.Controllers
                 return msg;
             }
         }
-
     }
 }

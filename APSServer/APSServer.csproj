@@ -85,9 +85,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\EQUIPMENTController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SampleController.cs" />
+    <Compile Include="Controllers\SetUpController.cs" />
     <Compile Include="Controllers\StepController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Authentication\Filters\BasicAuthenticationAttribute.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CommonDAC.cs" />
     <Compile Include="Models\EQUIPDAC.cs" />
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Authentication\Principal\UserPrincipal.cs" />
@@ -107,6 +110,7 @@
     <Compile Include="Models\UserDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Helper.cs" />
+    <Compile Include="Util\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -127,6 +131,10 @@
     <ProjectReference Include="..\APSEncrypt\APSEncrypt.csproj">
       <Project>{0bee685f-05bd-4cc3-943b-7eb5bde1b7b6}</Project>
       <Name>APSEncrypt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APSLogger\APSLogger.csproj">
+      <Project>{3647bcb9-bc2a-4bc1-aad5-048c9a036a15}</Project>
+      <Name>APSLogger</Name>
     </ProjectReference>
     <ProjectReference Include="..\APSVO\APSVO.csproj">
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>

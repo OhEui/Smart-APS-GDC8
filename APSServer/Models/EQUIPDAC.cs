@@ -103,24 +103,6 @@ namespace APSServer.Models
             }
         }
 
-       
-        public bool DeleteEquip(string id)
-        {
-
-            string sql = @"delete EQUIPMENT where EQP_ID=@EQP_ID";
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-                cmd.Parameters.AddWithValue("@EQP_ID", id);
-
-                cmd.Connection.Open();
-                int iRowAffect = cmd.ExecuteNonQuery();
-                cmd.Connection.Close();
-                return (iRowAffect > 0);
-            }
-
-
-
-        }
 
 
 
@@ -138,6 +120,73 @@ namespace APSServer.Models
                 cmd.Parameters.AddWithValue("@LINE_ID", Evo.LINE_ID);
                 cmd.Parameters.AddWithValue("@EQP_MODEL", Evo.EQP_MODEL);
                 cmd.Parameters.AddWithValue("@EQP_GROUP", Evo.EQP_GROUP);
+
+
+                return cmd.ExecuteNonQuery() > 0;
+
+
+            }
+
+
+
+        }
+
+        public bool DeleteEquip(string id)
+        {
+
+            string sql = @"delete EQUIPMENT where EQP_ID=@EQP_ID";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@EQP_ID", id);
+
+                cmd.Connection.Open();
+                int iRowAffect = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return (iRowAffect > 0);
+            }
+
+
+        }
+
+        public bool InsertEquipArr(EqpArrangeVO vo)
+        {
+            string sql = @"insert into EQP_ARRANGE(PRODUCT_ID,PROCESS_ID,STEP_ID,EQP_ID,TACT_TIME,PROC_TIME) 
+                            values(@PRODUCT_ID,@PROCESS_ID,@STEP_ID,@EQP_ID,@TACT_TIME,@PROC_TIME)";
+
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@PRODUCT_ID", vo.PRODUCT_ID);
+                cmd.Parameters.AddWithValue("@PROCESS_ID", vo.PROCESS_ID);
+                cmd.Parameters.AddWithValue("@STEP_ID", vo.STEP_ID);
+                cmd.Parameters.AddWithValue("@EQP_ID", vo.EQP_ID);
+                cmd.Parameters.AddWithValue("@TACT_TIME", vo.TACT_TIME);
+                cmd.Parameters.AddWithValue("@PROC_TIME", vo.PROC_TIME);
+
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+
+            
+        }
+
+
+
+
+        public bool UpdateEquipArr(EqpArrangeVO Evo)
+        {
+
+            string sql = @"update EQP_ARRANGE set PRODUCT_ID=@PRODUCT_ID,PROCESS_ID=@PROCESS_ID,STEP_ID=@STEP_ID,EQP_ID=@EQP_ID,TACT_TIME=@TACT_TIME,PROC_TIME=@PROC_TIME where EQP_ID=@EQP_ID ;";
+
+
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+
+                cmd.Parameters.AddWithValue("@PRODUCT_ID", Evo.PRODUCT_ID);
+                cmd.Parameters.AddWithValue("@PROCESS_ID", Evo.PROCESS_ID);
+                cmd.Parameters.AddWithValue("@STEP_ID", Evo.STEP_ID);
+                cmd.Parameters.AddWithValue("@EQP_ID", Evo.EQP_ID);
+                cmd.Parameters.AddWithValue("@TACT_TIME", Evo.TACT_TIME);
+                cmd.Parameters.AddWithValue("@PROC_TIME", Evo.PROC_TIME);
 
 
                 return cmd.ExecuteNonQuery() > 0;
