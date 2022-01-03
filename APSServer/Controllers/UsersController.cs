@@ -1,4 +1,5 @@
-﻿using APSServer.Models;
+﻿using APSServer.Filters;
+using APSServer.Models;
 using APSVO;
 using System;
 using System.Collections.Generic;
@@ -86,16 +87,9 @@ namespace APSServer.Controllers
                 return msg;
             }
         }
-        
-        [HttpPost][Route("Logout")]
-        public WebMessage Logout(UserData data) 
-        {
-            // 쿠키, 세션 해제 작업을 함 (DB 접근 없음)
-            throw new NotImplementedException();
-        }
 
-
-        [HttpPost][Route("SignUp")]
+        [HttpPost]
+        [Route("SignUp")]
         public WebMessage SignUp(UserInfo info)
         {
             //var msg = new WebMessage<UserLogin>();
@@ -105,15 +99,25 @@ namespace APSServer.Controllers
                 return res;
             }
         }
-
-        [HttpPost][Route("ResetPassword")]
-        public WebMessage ResetPassword(ReqUserResetPassword req) 
+        [HttpPost]
+        [Route("ResetPassword")]
+        public WebMessage ResetPassword(ReqUserResetPassword req)
         {
             // 랜덤 비밀번호 생성 - DB에 저장 - 이메일 전송
             throw new NotImplementedException();
         }
 
-        [HttpPost][Route("UpdateUserInfo")]
+
+        [HttpPost][Route("Logout")][UserAuthentication][Authorize]
+        public WebMessage Logout(UserData data) 
+        {
+            // 쿠키, 세션 해제 작업을 함 (DB 접근 없음)
+            throw new NotImplementedException();
+        }
+
+
+
+        [HttpPost][Route("UpdateUserInfo")][UserAuthentication][Authorize]
         public WebMessage<UserData> UpdateUserInfo(ReqUserUpdateInfo req) 
         {
             string curId = req.Cur_ID;
@@ -128,7 +132,7 @@ namespace APSServer.Controllers
 
         }
 
-        [HttpPost][Route("WithDraw")]
+        [HttpPost][Route("WithDraw")][UserAuthentication][Authorize]
         public WebMessage WithDraw(ReqUserLogin req) 
         {
             string curId = req.ID;
