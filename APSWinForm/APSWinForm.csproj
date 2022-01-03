@@ -81,12 +81,6 @@
     <Compile Include="BaseForm\frmpopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSY\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HSY\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="HSY\frmDEMAND.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +125,18 @@
     </Compile>
     <Compile Include="Controls\CapitalTextBox.Designer.cs">
       <DependentUpon>CapitalTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSY\frmPRODUCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSY\frmPRODUCT.Designer.cs">
+      <DependentUpon>frmPRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSY\Productpop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSY\Productpop.Designer.cs">
+      <DependentUpon>Productpop.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -237,6 +243,9 @@
     <EmbeddedResource Include="BaseForm\frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\frmpopup.resx">
+      <DependentUpon>frmpopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HSY\frmDEMAND.resx">
       <DependentUpon>frmDEMAND.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +260,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HSY\frmPassWord.resx">
       <DependentUpon>frmPassWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSY\frmPRODUCT.resx">
+      <DependentUpon>frmPRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSY\Productpop.resx">
+      <DependentUpon>Productpop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
