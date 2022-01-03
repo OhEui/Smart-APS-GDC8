@@ -63,6 +63,7 @@ namespace APSServer.Filters
             {
                 // Authentication was attempted and succeeded. Set Principal to the authenticated user.
                 context.Principal = principal;
+                //Logger.APILogger(principal, request); // API 실행 전 로그에 기록
             }
         }
 

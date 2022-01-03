@@ -28,7 +28,8 @@ namespace APSLogger
             logContinueDays = logDays;
             SetupLog4net(logLevel, loggerName);
         }
-
+        public LoggingUtility(string loggerName) : this(loggerName, Level.Debug, 30) { }
+		
         /// <summary>
         /// Log4net사용을 위한 설정
         /// </summary>
@@ -248,7 +249,6 @@ namespace APSLogger
         private void CheckAndCreateLoggingFolder()
         {
             string tempFolder = GetLoggingFolder();
-
             if (!Directory.Exists(tempFolder))
             {
                 Directory.CreateDirectory(tempFolder);
@@ -261,7 +261,14 @@ namespace APSLogger
         /// <returns></returns>
         private string GetLoggingFolder()
         {
-            return @".\Logs"; // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
+            //return @".\Logs"; // string.Format(@"\{0}\{1}\Logs", this.company, this.product);
+            return @"D:\Logs";
+            /*
+             if (Directory.Exists(@"D:\"))
+                return @"D:\Logs";
+            else
+                return @".\Logs";
+             */
         }
 
         /// <summary>
@@ -271,23 +278,6 @@ namespace APSLogger
         private string GetLoggingFilePath()
         {
             return string.Format(@"{0}\{1}", GetLoggingFolder(), this.logFileName);
-        }
-
-        static void Test(string[] args)
-        {
-            LoggingUtility Log = new LoggingUtility("Test", Level.Debug, 30);
-            
-            Log.WriteDebug("Debug 버튼클릭");
-            Log.WriteInfo("Info 버튼클릭");
-            Log.WriteWarn("Warn 버튼클릭");
-            Log.WriteError("Error 버튼클릭");
-            Log.WriteFatal("Fatal 버튼클릭");
-
-            string msg = "".PadRight(100, 'A');
-            for (int i = 0; i < 3000; i++)
-            {
-                Log.WriteInfo(msg);
-            }
         }
     }
 
