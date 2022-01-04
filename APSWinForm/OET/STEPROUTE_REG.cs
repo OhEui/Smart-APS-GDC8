@@ -78,7 +78,6 @@ namespace APSWinForm
 			}
 			else
 			{
-
 				var list = stepRouteList.FindAll(p => p.PROCESS_ID == cboProcessID.SelectedValue.ToString());
 				dgvStepRoute.DataSource = null;
 				dgvStepRoute.DataSource = list;
@@ -87,7 +86,7 @@ namespace APSWinForm
 
 		private void btnCancel_Click(object sender, EventArgs e)
 		{
-			this.DialogResult = DialogResult.Cancel;
+			this.DialogResult = DialogResult.OK;
 			this.Close();
 		}
 
@@ -97,7 +96,7 @@ namespace APSWinForm
 
 			if (!isNotNull()) return;
 
-			if (cboStepType.SelectedValue == null)
+			if (cboStepType.SelectedValue.ToString() == "--")
 			{
 				newStep = new StepRouteVO
 				{
@@ -122,16 +121,27 @@ namespace APSWinForm
 				};
 			}
 
-			
-
 			WebMessage msg = await srv.PostAsyncNone("api/Step/saveStepRoute", newStep);
 
 			if (msg.IsSuccess)
 			{
+				//this.DialogResult = DialogResult.OK;
+				stepRouteList = await srv.GetListAsync("api/Step/getStepRouteList", stepRouteList);
+			}
+
+			if(MessageBox.Show(msg.ResultMessage+"\n계속하시겠습니까?", "수정/추가", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				cboProcessID_SelectedIndexChanged(null, null);
+				cboStepType.SelectedIndex = 0;
+				cboStdStep.SelectedIndex = 0;
+				txtStepID.Text = "";
+				txtStepSeq.Text = "";
+			}
+			else
+			{
 				this.DialogResult = DialogResult.OK;
 				this.Close();
 			}
-			MessageBox.Show(msg.ResultMessage);
 		}
 
 		private bool isNotNull()
@@ -143,6 +153,14 @@ namespace APSWinForm
 				string.IsNullOrWhiteSpace(txtStepID.Text) ||
 				string.IsNullOrWhiteSpace(txtStepSeq.Text)) return false;
 			else return true;
+		}
+
+		private void dgvStepRoute_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			txtStepID.Text = dgvStepRoute["STEP_ID", e.RowIndex].Value.ToString();
+			txtStepSeq.Text = dgvStepRoute["STEP_SEQ", e.RowIndex].Value.ToString();
+			cboStdStep.SelectedValue = dgvStepRoute["STD_STEP_ID", e.RowIndex].Value.ToString();
+			cboStepType.SelectedValue = dgvStepRoute["STEP_TYPE", e.RowIndex].Value.ToString();
 		}
 	}
 }

@@ -110,7 +110,7 @@ from STD_STEP_INFO";
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(strConn);
-				cmd.CommandText = @"select PROCESS_ID, STEP_ID, STEP_SEQ, r.STD_STEP_ID as STD_STEP_ID, isnull(STEP_TYPE, '') as STEP_TYPE, i.STEP_TAT as STEP_TAT, r.mod_id as user_id
+				cmd.CommandText = @"select PROCESS_ID, STEP_ID, STEP_SEQ, r.STD_STEP_ID as STD_STEP_ID, isnull(STEP_TYPE, '--') as STEP_TYPE, i.STEP_TAT as STEP_TAT, r.mod_id as user_id
 				from STEP_ROUTE r left outer join STD_STEP_INFO i on r.STD_STEP_ID=i.STD_STEP_ID
 				order by PROCESS_ID, STEP_SEQ";
 				//				cmd.CommandText = @"select PROCESS_ID, STEP_ID, STEP_SEQ, r.STD_STEP_ID as STD_STEP_ID, STEP_TYPE, i.STEP_TAT as STEP_TAT, r.mod_id as user_id
@@ -132,7 +132,7 @@ from STD_STEP_INFO";
 				cmd.Connection = new SqlConnection(strConn);
 				//cmd.CommandText = @"select distinct isnull(STEP_TYPE, '') as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
 //from STEP_ROUTE order by code desc";
-				cmd.CommandText = @"select distinct isnull(STEP_TYPE, '') as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
+				cmd.CommandText = @"select distinct isnull(STEP_TYPE, '--') as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
 from STEP_ROUTE order by code desc";
 
 				cmd.Connection.Open();
@@ -148,7 +148,7 @@ from STEP_ROUTE order by code desc";
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(strConn);
-				cmd.CommandText = @"select distinct STEP_TYPE as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
+				cmd.CommandText = @"select distinct isnull(STEP_TYPE, '--') as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
 from STEP_ROUTE
 union 
 select STD_STEP_ID as Code, STD_STEP_ID  as CodeName, 'STD_STEP_ID' as category

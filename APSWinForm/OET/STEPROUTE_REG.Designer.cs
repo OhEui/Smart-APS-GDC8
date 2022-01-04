@@ -37,7 +37,9 @@ namespace APSWinForm
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
+			this.txtStepSeq = new APSWinForm.NumTextBox();
 			this.cboProcessID = new System.Windows.Forms.ComboBox();
+			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.cboStdStep = new System.Windows.Forms.ComboBox();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.dgvStepRoute = new System.Windows.Forms.DataGridView();
@@ -51,8 +53,6 @@ namespace APSWinForm
 			this.btnSave = new System.Windows.Forms.Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
-			this.txtStepSeq = new APSWinForm.NumTextBox();
-			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel2.SuspendLayout();
@@ -145,6 +145,13 @@ namespace APSWinForm
 			this.panel9.Size = new System.Drawing.Size(949, 417);
 			this.panel9.TabIndex = 42;
 			// 
+			// txtStepSeq
+			// 
+			this.txtStepSeq.Location = new System.Drawing.Point(725, 184);
+			this.txtStepSeq.Name = "txtStepSeq";
+			this.txtStepSeq.Size = new System.Drawing.Size(121, 21);
+			this.txtStepSeq.TabIndex = 77;
+			// 
 			// cboProcessID
 			// 
 			this.cboProcessID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -157,6 +164,15 @@ namespace APSWinForm
 			this.cboProcessID.Size = new System.Drawing.Size(189, 20);
 			this.cboProcessID.TabIndex = 76;
 			this.cboProcessID.SelectedIndexChanged += new System.EventHandler(this.cboProcessID_SelectedIndexChanged);
+			// 
+			// txtStepID
+			// 
+			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepID.Location = new System.Drawing.Point(725, 133);
+			this.txtStepID.Name = "txtStepID";
+			this.txtStepID.Size = new System.Drawing.Size(121, 21);
+			this.txtStepID.TabIndex = 75;
 			// 
 			// cboStdStep
 			// 
@@ -188,6 +204,7 @@ namespace APSWinForm
 			this.dgvStepRoute.RowTemplate.Height = 23;
 			this.dgvStepRoute.Size = new System.Drawing.Size(558, 387);
 			this.dgvStepRoute.TabIndex = 51;
+			this.dgvStepRoute.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStepRoute_CellDoubleClick);
 			// 
 			// label5
 			// 
@@ -296,22 +313,6 @@ namespace APSWinForm
 			this.panel7.Name = "panel7";
 			this.panel7.Size = new System.Drawing.Size(10, 417);
 			this.panel7.TabIndex = 40;
-			// 
-			// txtStepSeq
-			// 
-			this.txtStepSeq.Location = new System.Drawing.Point(725, 184);
-			this.txtStepSeq.Name = "txtStepSeq";
-			this.txtStepSeq.Size = new System.Drawing.Size(121, 21);
-			this.txtStepSeq.TabIndex = 77;
-			// 
-			// txtStepID
-			// 
-			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepID.Location = new System.Drawing.Point(725, 133);
-			this.txtStepID.Name = "txtStepID";
-			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 75;
 			// 
 			// STEPROUTE_REG
 			// 
