@@ -99,7 +99,7 @@ namespace APSWinForm
             // 
             // cboStep
             // 
-            this.cboStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStep.Enabled = false;
             this.cboStep.FormattingEnabled = true;
             this.cboStep.Location = new System.Drawing.Point(185, 181);
@@ -119,7 +119,7 @@ namespace APSWinForm
             // 
             // cboProduct
             // 
-            this.cboProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProduct.Enabled = false;
             this.cboProduct.FormattingEnabled = true;
             this.cboProduct.Location = new System.Drawing.Point(185, 103);
@@ -139,7 +139,7 @@ namespace APSWinForm
             // 
             // cboEQP
             // 
-            this.cboEQP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboEQP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEQP.Enabled = false;
             this.cboEQP.FormattingEnabled = true;
             this.cboEQP.Location = new System.Drawing.Point(185, 58);
@@ -181,7 +181,7 @@ namespace APSWinForm
             // 
             // cboProcess
             // 
-            this.cboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProcess.Enabled = false;
             this.cboProcess.FormattingEnabled = true;
             this.cboProcess.Location = new System.Drawing.Point(185, 139);
