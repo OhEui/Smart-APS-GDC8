@@ -24,8 +24,9 @@ namespace APSWinForm
 
 		protected void NumTextBox_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
-			{
+			//숫자만 입력되도록 필터링
+			if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == 46))
+			{//숫자, 백스페이스, 마침표 제외 나머지 처리
 				e.Handled = true;
 			}
 		}

@@ -13,7 +13,7 @@ namespace APSVO
 		public int STEP_SEQ { get; set; }
 		public string STD_STEP_ID { get; set; }
 		public string STEP_TYPE { get; set; }
+		public int STEP_TAT { get; set; }
 		public string user_id { get; set; }
-
 	}
 }
