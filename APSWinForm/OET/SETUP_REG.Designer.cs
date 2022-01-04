@@ -45,7 +45,7 @@ namespace APSWinForm
             this.cboLine = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -116,7 +116,7 @@ namespace APSWinForm
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.label10);
             this.panel9.Controls.Add(this.button3);
-            this.panel9.Controls.Add(this.button7);
+            this.panel9.Controls.Add(this.btnAdd);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
@@ -212,18 +212,19 @@ namespace APSWinForm
             this.label10.TabIndex = 190;
             this.label10.Text = "ㆍ사이트아이디";
             // 
-            // button7
+            // btnAdd
             // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(79, 330);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(102, 36);
-            this.button7.TabIndex = 45;
-            this.button7.Text = "추가";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(79, 330);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(102, 36);
+            this.btnAdd.TabIndex = 45;
+            this.btnAdd.Text = "등록";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel8
             // 
@@ -294,7 +295,7 @@ namespace APSWinForm
         protected System.Windows.Forms.Button button3;
         protected System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel9;
-        protected System.Windows.Forms.Button button7;
+        protected System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
