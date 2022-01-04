@@ -12,7 +12,7 @@ using APSVO;
 
 namespace APSServer.Controllers
 {
-    [RoutePrefix("api/Sample")][Authorize][UserAuthentication]
+    [RoutePrefix("api/Sample")][UserAuthentication][Authorize]
     public class SampleController : ApiController
     {
         // https://localhost:44309/api/Sample/List
@@ -22,7 +22,9 @@ namespace APSServer.Controllers
         {
             var msg = new WebMessage<List<SampleVO>>();
 
-            //Logger.APILogger(RequestContext.Principal, Request);
+            // APIController에서 로그인한 유저의 ID를 얻는법
+            // 컨트롤러에 [UserAuthentication][Authorize]가 적용되어 있어야 함
+            string userID = (RequestContext.Principal as UserPrincipal)?.User_ID ?? null;
 
             using (SampleDAC dac = new SampleDAC())
             {

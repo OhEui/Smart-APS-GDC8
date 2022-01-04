@@ -19,5 +19,7 @@ namespace APSVO
     {
         public string User_PWD { get; set; }
         public string Salt { get; set; }
+
+        public string AuthHeader { get; set; }
     }
 }

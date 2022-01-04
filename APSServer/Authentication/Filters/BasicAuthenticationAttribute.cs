@@ -53,7 +53,7 @@ namespace APSServer.Filters
             string password = userNameAndPasword.Item2;
 
             IPrincipal principal = await AuthenticateAsync(userName, password, cancellationToken);
-
+            //
             if (principal == null)
             {
                 // Authentication was attempted but failed. Set ErrorResult to indicate an error.
