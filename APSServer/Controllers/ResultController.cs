@@ -15,7 +15,7 @@ namespace APSServer.Controllers
     public class ResultController : ApiController
     {
         // https://localhost:44309/api/Result/EQPGantt
-        [HttpPost]
+        [HttpGet]
         [Route("EQPGantt")][UserAuthentication][Authorize]
         public IHttpActionResult GetEQPGanttData()
         {
