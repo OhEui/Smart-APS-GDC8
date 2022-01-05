@@ -63,9 +63,7 @@
 
         <div class="card">
             <div class="card-body">
-                <div class="chart">
-                    <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                </div>
+                <div id="chartdiv"></div>
             </div>
         </div>
     </div>
@@ -77,73 +75,205 @@
     <script>
         $(function () {
             $('.select2').select2()
-            /* ChartJS
-             * -------
-             * Here we will create a few charts using ChartJS
-             */
 
-            //--------------
-            //- AREA CHART -
-            //--------------
+            /**
+* ---------------------------------------
+* This demo was created using amCharts 5.
+*
+* For more information visit:
+* https://www.amcharts.com/
+*
+* Documentation is available at:
+* https://www.amcharts.com/docs/v5/
+* ---------------------------------------
+*/
 
-            // Get context with jQuery - using jQuery's .get() method.
-            var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+            // Create root element
+            // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+            var root = am5.Root.new("chartdiv");
+            root.dateFormatter.setAll({
+                dateFormat: "yyyy-MM-dd",
+                dateFields: ["valueX", "openValueX"]
+            });
 
-            var areaChartData = {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [
-                    {
-                        label: 'Digital Goods',
-                        backgroundColor: 'rgba(60,141,188,0.9)',
-                        borderColor: 'rgba(60,141,188,0.8)',
-                        pointRadius: false,
-                        pointColor: '#3b8bba',
-                        pointStrokeColor: 'rgba(60,141,188,1)',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(60,141,188,1)',
-                        data: [28, 48, 40, 19, 86, 27, 90]
-                    },
-                    {
-                        label: 'Electronics',
-                        backgroundColor: 'rgba(210, 214, 222, 1)',
-                        borderColor: 'rgba(210, 214, 222, 1)',
-                        pointRadius: false,
-                        pointColor: 'rgba(210, 214, 222, 1)',
-                        pointStrokeColor: '#c1c7d1',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data: [65, 59, 80, 81, 56, 55, 40]
-                    },
-                ]
-            }
 
-            var areaChartOptions = {
-                maintainAspectRatio: false,
-                responsive: true,
-                legend: {
-                    display: false
+            // Set themes
+            // https://www.amcharts.com/docs/v5/concepts/themes/
+            root.setThemes([
+                am5themes_Animated.new(root)
+            ]);
+
+
+            // Create chart
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/
+            var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                panX: false,
+                panY: false,
+                wheelX: "panX",
+                wheelY: "zoomX",
+                layout: root.verticalLayout
+            }));
+
+
+            // Add legend
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
+            var legend = chart.children.push(am5.Legend.new(root, {
+                centerX: am5.p50,
+                x: am5.p50
+            }))
+
+            var colors = chart.get("colors");
+
+            // Data
+            var data = [
+                {
+                    category: "John",
+                    fromDate: "2018-01-01 08:00",
+                    toDate: "2018-01-01 10:00",
+                    columnSettings: {
+                        fill: am5.Color.brighten(colors.getIndex(0), 0)
+                    }
                 },
-                scales: {
-                    xAxes: [{
-                        gridLines: {
-                            display: false,
-                        }
-                    }],
-                    yAxes: [{
-                        gridLines: {
-                            display: false,
-                        }
-                    }]
+                {
+                    category: "John",
+                    fromDate: "2018-01-01 12:00",
+                    toDate: "2018-01-01 15:00",
+                    columnSettings: {
+                        fill: am5.Color.brighten(colors.getIndex(0), 0.4)
+                    }
+                },
+                {
+                    category: "John",
+                    fromDate: "2018-01-01 15:30",
+                    toDate: "2018-01-01 21:30",
+                    columnSettings: {
+                        fill: am5.Color.brighten(colors.getIndex(0), 0.8)
+                    }
+                },
+
+                {
+                    category: "Jane",
+                    fromDate: "2018-01-01 09:00",
+                    toDate: "2018-01-01 12:00",
+                    columnSettings: {
+                        fill: am5.Color.brighten(colors.getIndex(2), 0)
+                    }
+                },
+                {
+                    category: "Jane",
+                    fromDate: "2018-01-01 13:00",
+                    toDate: "2018-01-01 17:00",
+                    columnSettings: {
+                        fill: am5.Color.brighten(colors.getIndex(2), 0.4)
+                    }
+                },
+
+                {
+                    category: "Peter",
+                    fromDate: "2018-01-01 11:00",
+                    toDate: "2018-01-01 16:00",
+                    columnSettings: {
+                        fill: am5.Color.brighten(colors.getIndex(4), 0)
+                    }
+                },
+                {
+                    category: "Peter",
+                    fromDate: "2018-01-01 16:00",
+                    toDate: "2018-01-01 19:00",
+                    columnSettings: {
+                        fill: am5.Color.brighten(colors.getIndex(4), 0.4)
+                    }
+                },
+
+                {
+                    category: "Melania",
+                    fromDate: "2018-01-01 16:00",
+                    toDate: "2018-01-01 20:00",
+                    columnSettings: {
+                        fill: am5.Color.brighten(colors.getIndex(6), 0)
+                    }
+                },
+                {
+                    category: "Melania",
+                    fromDate: "2018-01-01 20:30",
+                    toDate: "2018-01-02 00:00",
+                    columnSettings: {
+                        fill: am5.Color.brighten(colors.getIndex(6), 0.4)
+                    }
+                },
+
+                {
+                    category: "Donald",
+                    fromDate: "2018-01-01 13:00",
+                    toDate: "2018-01-02 00:00",
+                    columnSettings: {
+                        fill: am5.Color.brighten(colors.getIndex(8), 0)
+                    }
                 }
-            }
+            ];
 
-            // This will get the first returned node in the jQuery collection.
-            new Chart(areaChartCanvas, {
-                type: 'line',
-                data: areaChartData,
-                options: areaChartOptions
-            })
 
+            // Create axes
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+            var yAxis = chart.yAxes.push(
+                am5xy.CategoryAxis.new(root, {
+                    categoryField: "category",
+                    renderer: am5xy.AxisRendererY.new(root, { inversed: true }),
+                    tooltip: am5.Tooltip.new(root, {
+                        themeTags: ["axis"],
+                        animationDuration: 200
+                    })
+                })
+            );
+
+            yAxis.data.setAll([
+                { category: "John" },
+                { category: "Jane" },
+                { category: "Peter" },
+                { category: "Melania" },
+                { category: "Donald" }
+            ]);
+
+            var xAxis = chart.xAxes.push(
+                am5xy.DateAxis.new(root, {
+                    baseInterval: { timeUnit: "minute", count: 1 },
+                    renderer: am5xy.AxisRendererX.new(root, {})
+                })
+            );
+
+
+            // Add series
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+            var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+                xAxis: xAxis,
+                yAxis: yAxis,
+                openValueXField: "fromDate",
+                valueXField: "toDate",
+                categoryYField: "category",
+                sequencedInterpolation: true
+            }));
+
+            series.columns.template.setAll({
+                templateField: "columnSettings",
+                strokeOpacity: 0,
+                tooltipText: "{category}: {openValueX.formatDate('yyyy-MM-dd HH:mm')} - {valueX.formatDate('yyyy-MM-dd HH:mm')}"
+            });
+
+            series.data.processor = am5.DataProcessor.new(root, {
+                dateFields: ["fromDate", "toDate"],
+                dateFormat: "yyyy-MM-dd HH:mm"
+            });
+            series.data.setAll(data);
+
+            // Add scrollbars
+            chart.set("scrollbarX", am5.Scrollbar.new(root, {
+                orientation: "horizontal"
+            }));
+
+            // Make stuff animate on load
+            // https://www.amcharts.com/docs/v5/concepts/animations/
+            series.appear();
+            chart.appear(1000, 100);
 
         })
     </script>
