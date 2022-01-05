@@ -17,7 +17,7 @@ namespace APSWinForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new STEP_ROUTE());
+            Application.Run(new EQP_ARRANGE());
         }
     }
 }

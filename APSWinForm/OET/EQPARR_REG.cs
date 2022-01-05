@@ -32,6 +32,11 @@ namespace APSWinForm
 
         private void EQPARR_REG_Load(object sender, EventArgs e)
         {
+            Modify();
+        }
+
+        private void Modify()
+        {
             if (EQPArrvo != null)
             {
                 cboEQP.Text = EQPArrvo.EQP_ID;
@@ -41,7 +46,7 @@ namespace APSWinForm
                 numStep.Value = EQPArrvo.TACT_TIME;
                 numProcess.Value = EQPArrvo.PROC_TIME;
             }
-        }
+}
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
