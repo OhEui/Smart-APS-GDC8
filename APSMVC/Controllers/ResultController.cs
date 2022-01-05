@@ -12,8 +12,12 @@ namespace APSMVC.Controllers
      */
     public partial class ResultController : Controller
     {
-        // GET: Result
-        public ActionResult Index()
+        public ActionResult EQPGantt()
+        {
+            return View();
+        }
+
+        public ActionResult Utilization()
         {
             return View();
         }

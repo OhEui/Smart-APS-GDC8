@@ -12,6 +12,9 @@ namespace APSMVC.Controllers
     */
     public partial class ResultController : Controller
     {
-
+        public ActionResult LOTGantt()
+        {
+            return View();
+        }
     }
 }

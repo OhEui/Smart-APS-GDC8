@@ -1,0 +1,207 @@
+﻿
+@{
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+
+                <form action="test.html">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label>Condition</label>
+                                <div class="input-group input-group-lg">
+                                    <input type="search" class="form-control form-control-lg" style="height: 38px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label>Condition</label>
+                                <select class="select2" style="width: 100%;">
+                                    <option selected>codi</option>
+                                    <option>DESC</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label>Condition</label>
+                                <select class="select2" style="width: 100%;">
+                                    <option selected>codi</option>
+                                    <option>Date</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label>Condition</label>
+                                <select class="select2" style="width: 100%;">
+                                    <option selected>codi</option>
+                                    <option>Date</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-14 align-self-end">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-lg btn-default" style="width: 38px; height: 38px; padding-left: 9px;
+                        padding-top: 6px; margin-left: 6px">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="card">
+
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>EqpGroup</th>
+                            <th>20211201</th>
+                            <th>20211202</th>
+                            <th>20211203</th>
+                            <th>20211204</th>
+
+                            <th>20211205</th>
+                            <th>20211206</th>
+                            <th>20211207</th>
+                            <th>20211208</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>press</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                        </tr>
+                        <tr>
+                            <td>paint</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                        </tr>
+                        <tr>
+                            <td>finish</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                            <td>80.00%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="chart">
+                    <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts
+{
+    <script>
+        $(function () {
+            $('.select2').select2()
+            /* ChartJS
+             * -------
+             * Here we will create a few charts using ChartJS
+             */
+
+            //--------------
+            //- AREA CHART -
+            //--------------
+
+            // Get context with jQuery - using jQuery's .get() method.
+            var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+
+            var areaChartData = {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [
+                    {
+                        label: 'Digital Goods',
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: [28, 48, 40, 19, 86, 27, 90]
+                    },
+                    {
+                        label: 'Electronics',
+                        backgroundColor: 'rgba(210, 214, 222, 1)',
+                        borderColor: 'rgba(210, 214, 222, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: [65, 59, 80, 81, 56, 55, 40]
+                    },
+                ]
+            }
+
+            var areaChartOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            display: false,
+                        }
+                    }],
+                    yAxes: [{
+                        gridLines: {
+                            display: false,
+                        }
+                    }]
+                }
+            }
+
+            // This will get the first returned node in the jQuery collection.
+            new Chart(areaChartCanvas, {
+                type: 'line',
+                data: areaChartData,
+                options: areaChartOptions
+            })
+
+
+        })
+    </script>
+
+}
