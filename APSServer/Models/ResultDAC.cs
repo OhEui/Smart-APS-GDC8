@@ -51,8 +51,8 @@ from EQP_PLAN";
                 result.Add(new ChartData()
                 {
                     category = item.EQP_ID,
-                    fromDate = item.START_TIME.ToString("yyyy-mm-dd hh:mm:ss"),
-                    toDate = item.END_TIME.ToString("yyyy-mm-dd hh:mm:ss"),
+                    fromDate = item.START_TIME.ToString("yyyy-MM-dd hh:mm:ss"),
+                    toDate = item.END_TIME.ToString("yyyy-MM-dd hh:mm:ss"),
                     task = item.MACHINE_STATE == "SETUP" ? item.MACHINE_STATE : item.LOT_ID,
                     colorIdx = GetColorIdx(item.STEP_ID, item.MACHINE_STATE),
                     brighten = 0.4
