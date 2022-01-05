@@ -14,7 +14,6 @@ namespace APSWinForm
 {
     public partial class frmJoin : Form
     {
-        UserDAC dac = null;
         public UserInfo UserInfo
         {
             get
@@ -80,7 +79,7 @@ namespace APSWinForm
             //처리
 
             //입력받은 유저정보를 DB에 저장
-            
+            /*
             UserDAC dac = new UserDAC();
             int iResult = dac.Insert(UserInfo);
             dac.Dispose();
@@ -90,10 +89,13 @@ namespace APSWinForm
                 MessageBox.Show("유저가 추가되었습니다.");
                 this.Close();
             }
+            */
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            /*
             txtID.Text = txtID.Text.Replace(" ", "");
             bool check = dac.IDCheck(txtID.Text);
             if (!check)
@@ -105,6 +107,7 @@ namespace APSWinForm
             {
                 MessageBox.Show("중복된 아이디 입니다.");
             }
+            */
         }
     }
 }
