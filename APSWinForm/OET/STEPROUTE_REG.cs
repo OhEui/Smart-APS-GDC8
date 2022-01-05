@@ -43,8 +43,7 @@ namespace APSWinForm
 			stepRouteList = await srv.GetListAsync("api/Step/getStepRouteList", stepRouteList);
 			SetComboBox();
 
-			//수정 시 콤보박스 변경
-			modLoadSet();
+			
 		}
 
 		private void modLoadSet()
@@ -53,9 +52,7 @@ namespace APSWinForm
 
 			txtStepID.Text = modStepRoute.STEP_ID;
 			txtStepSeq.Text = modStepRoute.STEP_SEQ.ToString();
-			//cboProcessID.SelectedValue = modStepRoute.PROCESS_ID;
-			//cboProcessID.SelectedItem = modStepRoute.PROCESS_ID;
-			//cboProcessID.SelectedValue = cboProcessID.ValueMember.Equals(modStepRoute.PROCESS_ID);
+			cboProcessID.SelectedValue = modStepRoute.PROCESS_ID;
 			cboStepType.SelectedValue = modStepRoute.STEP_TYPE;
 			cboStdStep.SelectedValue = modStepRoute.STD_STEP_ID;
 		}
@@ -68,6 +65,9 @@ namespace APSWinForm
 			CommonUtil.ComboBinding(cboProcessID, list, "PROCESS_ID", blankText: "선택");
 			CommonUtil.ComboBinding(cboStepType, list, "STEP_TYPE", blankText: "선택");
 			CommonUtil.ComboBinding(cboStdStep, list, "STD_STEP_ID", blankText: "선택");
+
+			//수정 시 콤보박스 변경
+			modLoadSet();
 		}
 
 		private void cboProcessID_SelectedIndexChanged(object sender, EventArgs e)
