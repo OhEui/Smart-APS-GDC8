@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using APSVO;
+using System.Web.Configuration;
 
 namespace APSUtil.Http
 {
@@ -31,15 +32,22 @@ namespace APSUtil.Http
         /// API 주소: https:localhost::44309/api/Sample
         /// </summary>
         /// <param name="routePrefix"></param>
-        public ServiceHelp(string routePrefix)
+        public ServiceHelp(string routePrefix, bool IsWebClient = false)
         {
-            BaseServiceUrl = $"{ConfigurationManager.AppSettings["ApiAddress"]}/{routePrefix}/";
+            if (IsWebClient)
+            {
+                BaseServiceUrl = $"{WebConfigurationManager.AppSettings["ApiAddress"]}/{routePrefix}/";
+            }
+            else 
+            {
+                BaseServiceUrl = $"{ConfigurationManager.AppSettings["ApiAddress"]}/{routePrefix}/";
+            }
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public ServiceHelp(string routePrefix, string authorization) : this(routePrefix)
+        public ServiceHelp(string routePrefix, string authorization, bool IsWebClient = false) : this(routePrefix, IsWebClient)
         {
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authorization); // TEST_CODE
         }
