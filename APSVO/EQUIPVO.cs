@@ -14,7 +14,10 @@ namespace APSVO
             public string EQP_ID { get; set; }
             public string EQP_MODEL { get; set; }
             public string EQP_GROUP { get; set; }
-        }
+
+            public string user_id { get; set; }
+
+    }
         public class EqpArrangeVO
         {
             public string PRODUCT_ID { get; set; }
@@ -24,8 +27,8 @@ namespace APSVO
             public int TACT_TIME { get; set; }
             public int PROC_TIME { get; set; }
 
-
-        }
+        public string user_id { get; set; }
+    }
         public class SetupVO
         {
             public string SITE_ID { get; set; }
@@ -34,7 +37,9 @@ namespace APSVO
             public string STEP_ID { get; set; }
             public int TIME { get; set; }
 
-        }
+        public string user_id { get; set; }
+
+    }
         public class EqpGroupVO
         {
         public string STD_STEP_ID { get; set; }

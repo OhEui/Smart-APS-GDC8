@@ -15,10 +15,9 @@ namespace APSWinForm
     public partial class SETUP_REG : Form
     {
         SetupVO SetupVO;
-        List<SetupVO> SetupList;
         ServiceHelp srv = new ServiceHelp("");
-        List<STD_STEP_VO> eqpgroup;
         List<LineVO> Lineinfo;
+        List<ComboItemVO> list = null;
         public SETUP_REG()
         {
             InitializeComponent();
@@ -32,10 +31,11 @@ namespace APSWinForm
 
         private async void combobinding()
         {
-            eqpgroup = await srv.GetListAsync("api/Step/getStepInfoList", eqpgroup);
+            
             Lineinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Lineinfo);
-            CommonUtil.ComboBinding(cboGroup, eqpgroup, "STD_STEP_NAME", "STD_STEP_NAME");
-            CommonUtil.ComboBinding(cboStep, eqpgroup, "STD_STEP_ID", "STD_STEP_ID");
+            list = await srv.GetListAsync("api/Step/getComboItem", list);
+            CommonUtil.ComboBinding(cboGroup, list, "STD_STEP_ID");
+            CommonUtil.ComboBinding(cboStep, list, "STD_STEP_ID");
             CommonUtil.ComboBinding(cboLine, Lineinfo, "LINE_ID", "LINE_ID");
             CommonUtil.ComboBinding(cboSite, Lineinfo, "SITE_ID", "SITE_ID");
             Modify();
@@ -44,20 +44,26 @@ namespace APSWinForm
         {
             if (SetupVO != null)
             {
+                txtGroup.Visible = true;
+                txtLine.Visible = true;
+                txtSite.Visible = true;
+                txtStep.Visible = true;
                 cboLine.Text = SetupVO.LINE_ID;
                 cboSite.Text = SetupVO.SITE_ID;
                 cboGroup.Text = SetupVO.EQP_GROUP;
                 cboStep.Text = SetupVO.STEP_ID;
-                numTime.Text = SetupVO.SITE_ID;
+                txtLine.Text = SetupVO.LINE_ID;
+                txtSite.Text = SetupVO.SITE_ID;
+                txtStep.Text = SetupVO.STEP_ID;
+                txtGroup.Text = SetupVO.EQP_GROUP;
+                numTime.Text = Convert.ToString(SetupVO.TIME);
             }
         }
 
-            private void SETUP_REG_Load(object sender, EventArgs e)
-             {
+        private void SETUP_REG_Load(object sender, EventArgs e)
+        {
             combobinding();
-
-            
-            }
+        }
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
@@ -76,9 +82,9 @@ namespace APSWinForm
                     vo.LINE_ID = cboLine.Text.Trim();
                     vo.SITE_ID = cboSite.Text.Trim();
                     vo.EQP_GROUP = cboGroup.Text.Trim();
-                    vo.SITE_ID = cboStep.Text.Trim();
+                    vo.STEP_ID = cboStep.Text.Trim();
                     vo.TIME = Convert.ToInt32(numTime.Text.Trim());
-
+                    vo.user_id = "test";
                     WebMessage msg = await srv.PostAsyncNone("api/SETUP_TIME/SetupNew", vo);
 
 
@@ -92,15 +98,15 @@ namespace APSWinForm
                 }
                 else
                 {
-                    vo.LINE_ID = cboLine.Text.Trim();
-                    vo.SITE_ID = cboSite.Text.Trim();
-                    vo.EQP_GROUP = cboGroup.Text.Trim();
-                    vo.SITE_ID = cboStep.Text.Trim();
-                    vo.TIME = Convert.ToInt32(numTime.Text.Trim());
-
+                    newvo.LINE_ID = cboLine.Text.Trim();
+                    newvo.SITE_ID = cboSite.Text.Trim();
+                    newvo.EQP_GROUP = cboGroup.Text.Trim();
+                    newvo.STEP_ID = cboStep.Text.Trim();
+                    newvo.TIME = Convert.ToInt32(numTime.Text.Trim());
+                    newvo.user_id = "test";
                     WebMessage msg = await srv.PostAsyncNone("api/SETUP_TIME/SetupNew", newvo);
 
-
+                        
                     if (msg.IsSuccess)
                     {
                         this.DialogResult = DialogResult.OK;

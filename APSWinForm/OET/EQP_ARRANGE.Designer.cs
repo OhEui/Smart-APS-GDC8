@@ -41,17 +41,20 @@ namespace APSWinForm
             this.dgvEQP = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.cboProcess = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cboProduct = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cboEQP = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cboProduct = new System.Windows.Forms.ComboBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.cboProcess = new System.Windows.Forms.ComboBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.cboEQP = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
@@ -63,6 +66,9 @@ namespace APSWinForm
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -186,11 +192,11 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Controls.Add(this.cboProcess);
+            this.panel9.Controls.Add(this.panel5);
+            this.panel9.Controls.Add(this.panel4);
+            this.panel9.Controls.Add(this.panel3);
             this.panel9.Controls.Add(this.label2);
-            this.panel9.Controls.Add(this.cboProduct);
             this.panel9.Controls.Add(this.label3);
-            this.panel9.Controls.Add(this.cboEQP);
             this.panel9.Controls.Add(this.label10);
             this.panel9.Controls.Add(this.btnReset);
             this.panel9.Controls.Add(this.btnSearch);
@@ -199,14 +205,6 @@ namespace APSWinForm
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(780, 136);
             this.panel9.TabIndex = 42;
-            // 
-            // cboProcess
-            // 
-            this.cboProcess.FormattingEnabled = true;
-            this.cboProcess.Location = new System.Drawing.Point(189, 59);
-            this.cboProcess.Name = "cboProcess";
-            this.cboProcess.Size = new System.Drawing.Size(121, 20);
-            this.cboProcess.TabIndex = 157;
             // 
             // label2
             // 
@@ -218,14 +216,6 @@ namespace APSWinForm
             this.label2.TabIndex = 156;
             this.label2.Text = "ㆍ공정ID";
             // 
-            // cboProduct
-            // 
-            this.cboProduct.FormattingEnabled = true;
-            this.cboProduct.Location = new System.Drawing.Point(189, 19);
-            this.cboProduct.Name = "cboProduct";
-            this.cboProduct.Size = new System.Drawing.Size(121, 20);
-            this.cboProduct.TabIndex = 155;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -235,14 +225,6 @@ namespace APSWinForm
             this.label3.Size = new System.Drawing.Size(55, 14);
             this.label3.TabIndex = 154;
             this.label3.Text = "ㆍ제품ID";
-            // 
-            // cboEQP
-            // 
-            this.cboEQP.FormattingEnabled = true;
-            this.cboEQP.Location = new System.Drawing.Point(189, 99);
-            this.cboEQP.Name = "cboEQP";
-            this.cboEQP.Size = new System.Drawing.Size(121, 20);
-            this.cboEQP.TabIndex = 153;
             // 
             // label10
             // 
@@ -307,6 +289,66 @@ namespace APSWinForm
             this.panel7.Size = new System.Drawing.Size(10, 136);
             this.panel7.TabIndex = 40;
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.cboProduct);
+            this.panel3.Location = new System.Drawing.Point(147, 24);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(121, 20);
+            this.panel3.TabIndex = 171;
+            // 
+            // cboProduct
+            // 
+            this.cboProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboProduct.FormattingEnabled = true;
+            this.cboProduct.Location = new System.Drawing.Point(0, 0);
+            this.cboProduct.Name = "cboProduct";
+            this.cboProduct.Size = new System.Drawing.Size(119, 20);
+            this.cboProduct.TabIndex = 167;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.cboProcess);
+            this.panel4.Location = new System.Drawing.Point(147, 64);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(121, 20);
+            this.panel4.TabIndex = 171;
+            // 
+            // cboProcess
+            // 
+            this.cboProcess.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboProcess.FormattingEnabled = true;
+            this.cboProcess.Location = new System.Drawing.Point(0, 0);
+            this.cboProcess.Name = "cboProcess";
+            this.cboProcess.Size = new System.Drawing.Size(119, 20);
+            this.cboProcess.TabIndex = 167;
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.cboEQP);
+            this.panel5.Location = new System.Drawing.Point(148, 105);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(121, 20);
+            this.panel5.TabIndex = 171;
+            // 
+            // cboEQP
+            // 
+            this.cboEQP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboEQP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEQP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboEQP.FormattingEnabled = true;
+            this.cboEQP.Location = new System.Drawing.Point(0, 0);
+            this.cboEQP.Name = "cboEQP";
+            this.cboEQP.Size = new System.Drawing.Size(119, 20);
+            this.cboEQP.TabIndex = 167;
+            // 
             // EQP_ARRANGE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -331,6 +373,9 @@ namespace APSWinForm
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -353,11 +398,14 @@ namespace APSWinForm
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.ComboBox cboProcess;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cboProduct;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboEQP;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ComboBox cboEQP;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ComboBox cboProcess;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox cboProduct;
     }
 }

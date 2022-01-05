@@ -16,7 +16,7 @@ namespace APSWinForm
     {
         ServiceHelp srv = new ServiceHelp("");
         EQUIPVO EQPvo;
-        List<ComboItemVO> eqpgroup;
+        List<ComboItemVO> list;
         List<LineVO> Lineinfo;
         
         public EQUIPMENT_REG()
@@ -38,11 +38,16 @@ namespace APSWinForm
 
         public async void Combobinding()
         {
-            eqpgroup = await srv.GetListAsync("api/Common/CommonCode", eqpgroup);
+            list = await srv.GetListAsync("api/Common/CommonCode", list);
             Lineinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Lineinfo);
-            CommonUtil.ComboBinding(cboEqpGroup, eqpgroup, "STD_STEP_ID" , blankText:"선택");
-            CommonUtil.ComboBinding(cboLineID, Lineinfo, "LINE_ID", "LINE_ID","선택");
-            CommonUtil.ComboBinding(cboSiteID, Lineinfo, "SITE_ID", "SITE_ID","선택");
+            //Lineinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Lineinfo);
+            //Siteinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Siteinfo)
+            CommonUtil.ComboBinding(cboSiteID, Lineinfo, "SITE_ID", "SITE_ID");
+            CommonUtil.ComboBinding(cboLineID, Lineinfo, "LINE_ID", "LINE_ID");
+            CommonUtil.ComboBinding(cboEqpGroup, list, "STD_STEP_ID" , blankText:"선택");
+            //CommonUtil.ComboBinding(cboLineID, list, "LINE_ID", blankText: "선택");
+            //CommonUtil.ComboBinding(cboSiteID, list, "SITE_ID", blankText: "선택");
+
             Modify();
         }
 
@@ -85,9 +90,9 @@ namespace APSWinForm
                     vo.EQP_GROUP = cboEqpGroup.SelectedValue.ToString();
                     vo.LINE_ID = cboLineID.SelectedValue.ToString();
                     vo.SITE_ID = cboSiteID.SelectedValue.ToString();
+                    vo.user_id = "test";
+                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", vo);
 
-                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPUpdate", vo);
-                    
 
                     if (msg.IsSuccess)
                     {
@@ -104,6 +109,7 @@ namespace APSWinForm
                     newvo.EQP_GROUP = cboEqpGroup.SelectedValue.ToString();
                     newvo.LINE_ID = cboLineID.SelectedValue.ToString();
                     newvo.SITE_ID = cboSiteID.SelectedValue.ToString();
+                    newvo.user_id = "test";
 
                     WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", newvo);
 

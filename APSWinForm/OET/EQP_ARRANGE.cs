@@ -71,7 +71,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "설비ID", "EQP_ID", colWidth: 90);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정소요시간", "TACT_TIME", colWidth: 130);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "프로세스처리시간", "PROC_TIME", colWidth: 130);
-
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, "수정자", "user_id", colWidth: 130,visibility:false);
 
             dgvLoad();
 

@@ -44,7 +44,13 @@ select PRODUCT_ID as Code, PRODUCT_NAME  as CodeName, 'PRODUCT_ID' as category
 from PRODUCT
 union
 select PROCESS_ID as Code, PROCESS_ID  as CodeName, 'PROCESS_ID' as category
-from PRODUCT";
+from PRODUCT
+union
+select LINE_ID as Code, LINE_ID  as CodeName, 'LINE_ID' as category
+from LINE_INFO
+union
+select SITE_ID as Code, SITE_ID  as CodeName, 'SITE_ID' as category
+from LINE_INFO";
 
                 cmd.Connection.Open();
                 List<ComboItemVO> list = Helper.DataReaderMapToList<ComboItemVO>(cmd.ExecuteReader());

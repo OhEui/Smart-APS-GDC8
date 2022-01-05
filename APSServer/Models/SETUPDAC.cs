@@ -39,53 +39,32 @@ namespace APSServer.Models
             }
 
         }
-
         public bool InsertSetup(SetupVO vo)
         {
-            string sql = @"";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlCommand cmd = new SqlCommand())
             {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "SP_SaveSETUP";
+                cmd.CommandType = CommandType.StoredProcedure;
+
                 cmd.Parameters.AddWithValue("@SITE_ID", vo.SITE_ID);
                 cmd.Parameters.AddWithValue("@LINE_ID", vo.LINE_ID);
                 cmd.Parameters.AddWithValue("@EQP_GROUP", vo.EQP_GROUP);
                 cmd.Parameters.AddWithValue("@STEP_ID", vo.STEP_ID);
                 cmd.Parameters.AddWithValue("@TiME", vo.TIME);
-                
+                cmd.Parameters.AddWithValue("@user_id", vo.user_id);
+                cmd.Connection.Open();
+                int iRowAffect = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
 
-
-                return cmd.ExecuteNonQuery() > 0;
+                return (iRowAffect > 0);
             }
-
-    
         }
+        
 
 
 
-
-        public bool UpdateEquipArr(SetupVO Evo)
-        {
-
-            string sql = @"";
-
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-
-                cmd.Parameters.AddWithValue("@SITE_ID", Evo.SITE_ID);
-                cmd.Parameters.AddWithValue("@LINE_ID", Evo.LINE_ID);
-                cmd.Parameters.AddWithValue("@EQP_GROUP", Evo.EQP_GROUP);
-                cmd.Parameters.AddWithValue("@STEP_ID", Evo.STEP_ID);
-                cmd.Parameters.AddWithValue("@TiME", Evo.TIME);
-
-
-                return cmd.ExecuteNonQuery() > 0;
-
-
-            }
-
-
-
-        }
+        
+        
     }
 }

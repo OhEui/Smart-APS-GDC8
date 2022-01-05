@@ -16,8 +16,8 @@ namespace APSWinForm
     {
         List<SetupVO> SetupList;
         ServiceHelp srv = new ServiceHelp("");
-        List<STD_STEP_VO> eqpgroup;
         List<LineVO> Lineinfo;
+        List<ComboItemVO> list = null;
 
         //public List<SetupVO> GetSetup_time()
         //{
@@ -40,10 +40,11 @@ namespace APSWinForm
 
         private async void combobinding()
         {
-            eqpgroup = await srv.GetListAsync("api/Step/getStepInfoList", eqpgroup);
+            
             Lineinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Lineinfo);
-            CommonUtil.ComboBinding(cboGroup, eqpgroup, "STD_STEP_NAME", "STD_STEP_NAME");
-            CommonUtil.ComboBinding(cboStep, eqpgroup, "STD_STEP_ID", "STD_STEP_ID");
+            list = await srv.GetListAsync("api/Step/getComboItem", list);
+            CommonUtil.ComboBinding(cboGroup, list, "STD_STEP_ID");
+            CommonUtil.ComboBinding(cboStep, list, "STD_STEP_ID" );
             CommonUtil.ComboBinding(cboLine, Lineinfo, "LINE_ID", "LINE_ID");
             CommonUtil.ComboBinding(cboSite, Lineinfo, "SITE_ID", "SITE_ID");
 
@@ -63,7 +64,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvSetup, "설비처리그룹", "EQP_GROUP", colWidth: 110);
             DataGridViewUtil.AddGridTextColumn(dgvSetup, "공정ID", "STEP_ID", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvSetup, "소요시간", "TIME", colWidth: 100);
-
+            DataGridViewUtil.AddGridTextColumn(dgvSetup, "수정자", "user_id", colWidth: 100, visibility:false);
             dgvLoad();
         }
 
@@ -133,5 +134,7 @@ namespace APSWinForm
         {
             temp = e;
         }
+
+        
     }
 }

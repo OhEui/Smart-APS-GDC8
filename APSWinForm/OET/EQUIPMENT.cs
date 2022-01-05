@@ -38,13 +38,14 @@ namespace APSWinForm
             DataLoad();
 
         }
+        
 
         private async void combobinding()
         {
           
             
             list = await srv.GetListAsync("api/Common/CommonCode", list);
-            CommonUtil.ComboBinding(cboEQPgroup, list, "STD_STEP_ID", blankText: "선택");
+            CommonUtil.ComboBinding(cboEQPgroup, list, "STD_STEP_ID");
 
         }
 
@@ -63,7 +64,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "사이트ID", "SITE_ID", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "라인ID", "LINE_ID", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "설비처리그룹", "EQP_GROUP", colWidth: 100);
-
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, "수정자", "user_id", colWidth: 100,visibility:false);
             dgvLoad();
             
 
