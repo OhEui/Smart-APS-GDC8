@@ -1,5 +1,6 @@
 ﻿
 @{
+    
     ViewBag.Title = "EQP Gantt";
     Layout = "~/Views/_Layout.cshtml";
 }
@@ -132,7 +133,7 @@
                 return list
             }
             // Data
-            var RawData = JSON.parse(@ViewBag.Data);
+            var RawData = JSON.parse('@Html.Raw(@ViewBag.Data)');
             var data = getList(RawData)
 
 
@@ -151,12 +152,17 @@
                 })
             );
 
+
+            // TODO 
             yAxis.data.setAll([
-                { category: "John" },
-                { category: "Jane" },
-                { category: "Peter" },
-                { category: "Melania" },
-                { category: "Donald" }
+                { category: "EQP11" },
+                { category: "EQP12" },
+                { category: "EQP13" },
+                { category: "EQP21" },
+                { category: "EQP22" },
+                { category: "EQP31" },
+                { category: "EQP32" },
+                { category: "EQP33" }
             ]);
 
             var xAxis = chart.xAxes.push(
@@ -177,14 +183,16 @@
                 categoryYField: "category",
                 sequencedInterpolation: true
             }));
-
+            
             series.columns.template.setAll({
                 templateField: "columnSettings",
                 strokeOpacity: 0,
                 tooltipText: "{task}:\n[bold]{openValueX}[/] - [bold]{valueX}[/]"
             });
 
+            /*
             // https://www.amcharts.com/docs/v5/concepts/common-elements/bullets/
+
             series.bullets.push(function () {
                 return am5.Bullet.new(root, {
                     locationX: 0.5,
@@ -200,7 +208,7 @@
                         oversizedBehavior: "truncate",
                     })
                 });
-            });
+            });*/
 
             series.data.processor = am5.DataProcessor.new(root, {
                 dateFields: ["fromDate", "toDate"],

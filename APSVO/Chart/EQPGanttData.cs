@@ -10,7 +10,7 @@ namespace APSVO
     {
         public string EQP_ID { get; set; }
         public string MACHINE_STATE { get; set; }
-        public string STEP_ID { get; set; }
+        public string PROCESS_ID { get; set; }
         public string LOT_ID { get; set; }
         public DateTime START_TIME { get; set; }
         public DateTime END_TIME { get; set; }
