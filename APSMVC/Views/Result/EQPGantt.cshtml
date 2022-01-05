@@ -137,7 +137,7 @@
                     category: "John",
                     fromDate: "2018-01-01 08:00",
                     toDate: "2018-01-01 10:00",
-                    task: "LOT1",
+                    task: "LOT_Tumbler_STARBUCKS_1",
                     colorIdx: 0,
                     brighten: 0.4
                 },
@@ -270,15 +270,21 @@
                 tooltipText: "{task}:\n[bold]{openValueX}[/] - [bold]{valueX}[/]"
             });
 
+            // https://www.amcharts.com/docs/v5/concepts/common-elements/bullets/
             series.bullets.push(function () {
                 return am5.Bullet.new(root, {
                     locationX: 0.5,
                     locationY: 0.5,
+
+                    // https://www.amcharts.com/docs/v5/concepts/common-elements/labels/
                     sprite: am5.Label.new(root, {
                         text: "{task}",
+                        fontSize: 12,
                         centerX: am5.percent(50),
                         centerY: am5.percent(50),
-                        populateText: true
+                        populateText: true,
+                        oversizedBehavior: "truncate",
+                        maxWidth: 150
                     })
                 });
             });
