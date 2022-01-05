@@ -56,7 +56,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                         with font-awesome or any other icon font library -->
+                     with font-awesome or any other icon font library -->
                         <li class="nav-header">RESULTS</li>
                         <li class="nav-item">
                             <a href="./test.html" class="nav-link">
@@ -106,11 +106,6 @@
         <script src="../pages/dist/js/demo.js"></script>
         <!-- Select2 -->
         <script src="../pages/plugins/select2/js/select2.full.min.js"></script>
-
-        <script>
-  $(function () {
-    $('.select2').select2()
-  })
-        </script>
+        @RenderSection("Scripts", required: false)
 </body>
 </html>
