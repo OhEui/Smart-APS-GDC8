@@ -15,10 +15,10 @@ namespace APSServer.Controllers
         //GET : https://localhost:44309/api/Common/CommonCode
         [HttpGet]
         [Route("CommonCode")]
-        public List<CommonVO> GetCommonCode()
+        public List<ComboItemVO> GetComboItem()
         {
             CommonDAC dac = new CommonDAC();
-            return dac.GetCommonCode();
+            return dac.GetComboItem();
         }
 
         ////GET : https://localhost:44309/api/Common/GetCode

@@ -38,9 +38,9 @@ namespace APSWinForm
             CommonUtil.ComboBinding(cboStep, eqpgroup, "STD_STEP_ID", "STD_STEP_ID");
             CommonUtil.ComboBinding(cboLine, Lineinfo, "LINE_ID", "LINE_ID");
             CommonUtil.ComboBinding(cboSite, Lineinfo, "SITE_ID", "SITE_ID");
-
+            Modify();
         }
-        private void SETUP_REG_Load(object sender, EventArgs e)
+        private void Modify()
         {
             if (SetupVO != null)
             {
@@ -51,6 +51,13 @@ namespace APSWinForm
                 numTime.Text = SetupVO.SITE_ID;
             }
         }
+
+            private void SETUP_REG_Load(object sender, EventArgs e)
+             {
+            combobinding();
+
+            
+            }
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
@@ -72,7 +79,7 @@ namespace APSWinForm
                     vo.SITE_ID = cboStep.Text.Trim();
                     vo.TIME = Convert.ToInt32(numTime.Text.Trim());
 
-                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPUpdate", vo);
+                    WebMessage msg = await srv.PostAsyncNone("api/SETUP_TIME/SetupNew", vo);
 
 
                     if (msg.IsSuccess)
@@ -91,7 +98,7 @@ namespace APSWinForm
                     vo.SITE_ID = cboStep.Text.Trim();
                     vo.TIME = Convert.ToInt32(numTime.Text.Trim());
 
-                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", newvo);
+                    WebMessage msg = await srv.PostAsyncNone("api/SETUP_TIME/SetupNew", newvo);
 
 
                     if (msg.IsSuccess)

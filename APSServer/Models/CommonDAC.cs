@@ -32,30 +32,25 @@ namespace APSServer
         }
 
 
-        public List<CommonVO> GetCommonCode()
+        public List<ComboItemVO> GetComboItem()
         {
-            string sql = "select Code, Category, CodeName from vw_Common_Code ";
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlCommand cmd = new SqlCommand())
             {
-                return Helper.DataReaderMapToList<CommonVO>(cmd.ExecuteReader());
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = @"select STD_STEP_ID as Code, STD_STEP_ID  as CodeName, 'STD_STEP_ID' as category
+from STD_STEP_INFO
+union 
+select PRODUCT_ID as Code, PRODUCT_NAME  as CodeName, 'PRODUCT_ID' as category
+from PRODUCT
+union
+select PROCESS_ID as Code, PROCESS_ID  as CodeName, 'PROCESS_ID' as category
+from PRODUCT";
 
-            }
-        }
+                cmd.Connection.Open();
+                List<ComboItemVO> list = Helper.DataReaderMapToList<ComboItemVO>(cmd.ExecuteReader());
+                cmd.Connection.Close();
 
-        public List<ComboItemVO> GetCodeList(string[] categories)
-        {
-            string category = string.Join("','", categories);
-            string sql = $@"
-select Code, CodeName, Category 
-from vw_CommonCode
-where category in ('{category}')";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    return Helper.DataReaderMapToList<ComboItemVO>(reader);
-                }
+                return list;
             }
         }
     }

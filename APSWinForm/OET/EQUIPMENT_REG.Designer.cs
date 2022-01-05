@@ -221,6 +221,7 @@ namespace APSWinForm
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(375, 466);
             this.panel9.TabIndex = 42;
+            
             // 
             // txtEqpmodel
             // 

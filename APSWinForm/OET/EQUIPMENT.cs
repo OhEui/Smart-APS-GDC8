@@ -15,12 +15,11 @@ namespace APSWinForm
     public partial class EQUIPMENT : Form
     {
         List<EQUIPVO> EQPlist = null;
-        List<STD_STEP_VO> stepList = null;
         ServiceHelp srv = new ServiceHelp("");
+        List<ComboItemVO> list = null;
 
 
 
-        
 
         //public void DeleteEquip(string id)
         //{
@@ -42,8 +41,10 @@ namespace APSWinForm
 
         private async void combobinding()
         {
-            stepList = await srv.GetListAsync("api/Step/getStepInfoList", stepList);
-            CommonUtil.ComboBinding(cboEQPgroup, stepList, "STD_STEP_ID", "STD_STEP_NAME", "선택");
+          
+            
+            list = await srv.GetListAsync("api/Common/CommonCode", list);
+            CommonUtil.ComboBinding(cboEQPgroup, list, "STD_STEP_ID", blankText: "선택");
 
         }
 
