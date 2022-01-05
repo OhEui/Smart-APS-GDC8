@@ -75,24 +75,23 @@
     <script>
         $(function () {
             $('.select2').select2()
-
             /**
-* ---------------------------------------
-* This demo was created using amCharts 5.
-*
-* For more information visit:
-* https://www.amcharts.com/
-*
-* Documentation is available at:
-* https://www.amcharts.com/docs/v5/
-* ---------------------------------------
-*/
+             * ---------------------------------------
+             * This demo was created using amCharts 5.
+             *
+             * For more information visit:
+             * https://www.amcharts.com/
+             *
+             * Documentation is available at:
+             * https://www.amcharts.com/docs/v5/
+             * ---------------------------------------
+             */
 
             // Create root element
             // https://www.amcharts.com/docs/v5/getting-started/#Root_element
             var root = am5.Root.new("chartdiv");
             root.dateFormatter.setAll({
-                dateFormat: "yyyy-MM-dd",
+                dateFormat: "yyyy-MM-dd hh:mm:ss",
                 dateFields: ["valueX", "openValueX"]
             });
 
@@ -124,93 +123,105 @@
 
             var colors = chart.get("colors");
 
+            function getList(list) {
+                for (var data of list) {
+                    data.columnSettings = {
+                        fill: am5.Color.brighten(colors.getIndex(data.colorIdx), data.brighten)
+                    }
+                }
+                return list
+            }
             // Data
-            var data = [
+            var RawData = [
                 {
                     category: "John",
                     fromDate: "2018-01-01 08:00",
                     toDate: "2018-01-01 10:00",
-                    columnSettings: {
-                        fill: am5.Color.brighten(colors.getIndex(0), 0)
-                    }
+                    task: "LOT_Tumbler_STARBUCKS_1",
+                    colorIdx: 0,
+                    brighten: 0.4
                 },
                 {
                     category: "John",
                     fromDate: "2018-01-01 12:00",
                     toDate: "2018-01-01 15:00",
-                    columnSettings: {
-                        fill: am5.Color.brighten(colors.getIndex(0), 0.4)
-                    }
+                    task: "LOT2",
+                    colorIdx: 0,
+                    brighten: 0.4
                 },
                 {
                     category: "John",
                     fromDate: "2018-01-01 15:30",
                     toDate: "2018-01-01 21:30",
-                    columnSettings: {
-                        fill: am5.Color.brighten(colors.getIndex(0), 0.8)
-                    }
+                    task: "LOT3",
+                    colorIdx: 0,
+                    brighten: 0.4
                 },
 
                 {
                     category: "Jane",
                     fromDate: "2018-01-01 09:00",
                     toDate: "2018-01-01 12:00",
-                    columnSettings: {
-                        fill: am5.Color.brighten(colors.getIndex(2), 0)
-                    }
+                    task: "LOT4",
+                    colorIdx: 1,
+                    brighten: 0.4
                 },
                 {
                     category: "Jane",
                     fromDate: "2018-01-01 13:00",
                     toDate: "2018-01-01 17:00",
-                    columnSettings: {
-                        fill: am5.Color.brighten(colors.getIndex(2), 0.4)
-                    }
+                    task: "LOT5",
+                    colorIdx: 1,
+                    brighten: 0.4
                 },
 
                 {
                     category: "Peter",
                     fromDate: "2018-01-01 11:00",
                     toDate: "2018-01-01 16:00",
-                    columnSettings: {
-                        fill: am5.Color.brighten(colors.getIndex(4), 0)
-                    }
+                    task: "LOT6",
+                    colorIdx: 1,
+                    brighten: 0.4
                 },
                 {
                     category: "Peter",
                     fromDate: "2018-01-01 16:00",
                     toDate: "2018-01-01 19:00",
-                    columnSettings: {
-                        fill: am5.Color.brighten(colors.getIndex(4), 0.4)
-                    }
+                    task: "LOT7",
+                    colorIdx: 3,
+                    brighten: 0.4
                 },
 
                 {
                     category: "Melania",
                     fromDate: "2018-01-01 16:00",
                     toDate: "2018-01-01 20:00",
-                    columnSettings: {
-                        fill: am5.Color.brighten(colors.getIndex(6), 0)
-                    }
+                    task: "LOT8",
+                    colorIdx: 3,
+                    brighten: 0.4
                 },
                 {
                     category: "Melania",
                     fromDate: "2018-01-01 20:30",
                     toDate: "2018-01-02 00:00",
-                    columnSettings: {
-                        fill: am5.Color.brighten(colors.getIndex(6), 0.4)
-                    }
+                    task: "LOT9",
+                    colorIdx: 4,
+                    brighten: 0.4
                 },
 
                 {
                     category: "Donald",
                     fromDate: "2018-01-01 13:00",
                     toDate: "2018-01-02 00:00",
-                    columnSettings: {
-                        fill: am5.Color.brighten(colors.getIndex(8), 0)
-                    }
+                    task: "LOT10",
+                    colorIdx: 6,
+                    brighten: 0.4
                 }
             ];
+
+            var data = getList(RawData)
+
+
 
 
             // Create axes
@@ -256,7 +267,25 @@
             series.columns.template.setAll({
                 templateField: "columnSettings",
                 strokeOpacity: 0,
-                tooltipText: "{category}: {openValueX.formatDate('yyyy-MM-dd HH:mm')} - {valueX.formatDate('yyyy-MM-dd HH:mm')}"
+                tooltipText: "{task}:\n[bold]{openValueX}[/] - [bold]{valueX}[/]"
+            });
+
+            // https://www.amcharts.com/docs/v5/concepts/common-elements/bullets/
+            series.bullets.push(function () {
+                return am5.Bullet.new(root, {
+                    locationX: 0.5,
+                    locationY: 0.5,
+
+                    // https://www.amcharts.com/docs/v5/concepts/common-elements/labels/
+                    sprite: am5.Label.new(root, {
+                        text: "{task}",
+                        fontSize: 12,
+                        centerX: am5.percent(50),
+                        centerY: am5.percent(50),
+                        populateText: true,
+                        oversizedBehavior: "truncate",
+                    })
+                });
             });
 
             series.data.processor = am5.DataProcessor.new(root, {
@@ -274,7 +303,6 @@
             // https://www.amcharts.com/docs/v5/concepts/animations/
             series.appear();
             chart.appear(1000, 100);
-
         })
     </script>
 
