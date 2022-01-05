@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APSLogger", "APSLogger\APSL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APSMVC", "APSMVC\APSMVC.csproj", "{7746787A-5729-469A-BDF9-55CCE4F2A164}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APSUtil", "APSUtil\APSUtil.csproj", "{79342BF6-8059-4F29-B21E-846BB7F9CAD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{7746787A-5729-469A-BDF9-55CCE4F2A164}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7746787A-5729-469A-BDF9-55CCE4F2A164}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7746787A-5729-469A-BDF9-55CCE4F2A164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79342BF6-8059-4F29-B21E-846BB7F9CAD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79342BF6-8059-4F29-B21E-846BB7F9CAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79342BF6-8059-4F29-B21E-846BB7F9CAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79342BF6-8059-4F29-B21E-846BB7F9CAD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

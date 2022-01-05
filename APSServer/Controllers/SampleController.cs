@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Controllers;
+using System.Web.Http.Results;
 using APSServer.Filters;
 using APSServer.Models;
 using APSServer.Principal;
@@ -18,7 +19,7 @@ namespace APSServer.Controllers
         // https://localhost:44309/api/Sample/List
         [HttpPost]
         [Route("List")]
-        public WebMessage<List<SampleVO>> GetList()
+        public IHttpActionResult GetList()
         {
             var msg = new WebMessage<List<SampleVO>>();
 
@@ -34,14 +35,16 @@ namespace APSServer.Controllers
                     msg.IsSuccess = true;
                     msg.ResultMessage = "Hello World";
                     msg.Data = data;
+                    return Ok(msg);
                 }
                 else
                 {
                     msg.IsSuccess = false;
                     msg.ResultMessage = "Fail";
                     msg.Data = null;
+                    return Content(HttpStatusCode.NotFound, msg);
                 }
-                return msg;
+                
             }
         }
     }

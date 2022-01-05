@@ -89,6 +89,7 @@
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\EQUIPMENTController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="Controllers\SetUpController.cs" />
     <Compile Include="Controllers\StepController.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Models\ProductDAC.cs" />
     <Compile Include="Authentication\Results\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="Authentication\Results\AuthenticationFailureResult.cs" />
+    <Compile Include="Models\ResultDAC.cs" />
     <Compile Include="Models\SampleDAC.cs" />
     <Compile Include="Models\SETUPDAC.cs" />
     <Compile Include="Models\StepDAC.cs" />

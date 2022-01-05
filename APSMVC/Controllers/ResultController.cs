@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using APSUtil.Http;
 
 namespace APSMVC.Controllers
 {
@@ -12,8 +14,12 @@ namespace APSMVC.Controllers
      */
     public partial class ResultController : Controller
     {
-        public ActionResult EQPGantt()
+        public async Task<ActionResult> EQPGantt()
         {
+            ServiceHelp srv = new ServiceHelp("api/Result", "dGVzdDoxMjM0", true);
+            string result = await srv.GetJsonStringAsync("EQPGantt");
+
+            ViewBag.Data = result;
             return View();
         }
 

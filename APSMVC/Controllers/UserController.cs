@@ -9,7 +9,7 @@ namespace APSMVC.Controllers
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View();
         }
