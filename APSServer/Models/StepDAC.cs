@@ -25,6 +25,13 @@ namespace APSServer.Models
 
 		//==================================================================================
 		//STD_STEP_INFO
+
+		/// <summary>
+		/// STD_STEP_INFO 수정, 저장
+		/// </summary>
+		/// 이미 존재하는 STD_STEP_ID라면 Update, 존재하지 않으면 Insert
+		/// <param name="stepInfo"></param>
+		/// <returns></returns>
 		public bool saveStepInfoList(STD_STEP_VO stepInfo)
 		{
 			using(SqlCommand cmd = new SqlCommand())
@@ -80,8 +87,15 @@ from STD_STEP_INFO";
 				cmd.Parameters.AddWithValue("@STEP_ID", stepRoute.STEP_ID);
 				cmd.Parameters.AddWithValue("@STEP_SEQ", stepRoute.STEP_SEQ);
 				cmd.Parameters.AddWithValue("@STD_STEP_ID", stepRoute.STD_STEP_ID);
-				cmd.Parameters.AddWithValue("@STEP_TYPE", stepRoute.STEP_TYPE);
 				cmd.Parameters.AddWithValue("@user_id", stepRoute.user_id);
+				if(stepRoute.STEP_TYPE == null)
+				{
+					cmd.Parameters.AddWithValue("@STEP_TYPE", DBNull.Value);
+				}
+				else
+				{
+					cmd.Parameters.AddWithValue("@STEP_TYPE", stepRoute.STEP_TYPE);
+				}
 
 				cmd.Connection.Open();
 				int iRowAffect = cmd.ExecuteNonQuery();
@@ -96,8 +110,12 @@ from STD_STEP_INFO";
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(strConn);
-				cmd.CommandText = @"select PROCESS_ID, STEP_ID, STEP_SEQ, STD_STEP_ID, isnull(STEP_TYPE, '') as STEP_TYPE, mod_id as user_id
-from STEP_ROUTE";
+				cmd.CommandText = @"select PROCESS_ID, STEP_ID, STEP_SEQ, r.STD_STEP_ID as STD_STEP_ID, isnull(STEP_TYPE, '--') as STEP_TYPE, i.STEP_TAT as STEP_TAT, r.mod_id as user_id
+				from STEP_ROUTE r left outer join STD_STEP_INFO i on r.STD_STEP_ID=i.STD_STEP_ID
+				order by PROCESS_ID, STEP_SEQ";
+				//				cmd.CommandText = @"select PROCESS_ID, STEP_ID, STEP_SEQ, r.STD_STEP_ID as STD_STEP_ID, STEP_TYPE, i.STEP_TAT as STEP_TAT, r.mod_id as user_id
+				//from STEP_ROUTE r left outer join STD_STEP_INFO i on r.STD_STEP_ID=i.STD_STEP_ID
+				//order by PROCESS_ID, STEP_SEQ";
 
 				cmd.Connection.Open();
 				List<StepRouteVO> list = Helper.DataReaderMapToList<StepRouteVO>(cmd.ExecuteReader());
@@ -112,7 +130,9 @@ from STEP_ROUTE";
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(strConn);
-				cmd.CommandText = @"select distinct isnull(STEP_TYPE, '') as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
+				//cmd.CommandText = @"select distinct isnull(STEP_TYPE, '') as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
+//from STEP_ROUTE order by code desc";
+				cmd.CommandText = @"select distinct isnull(STEP_TYPE, '--') as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
 from STEP_ROUTE order by code desc";
 
 				cmd.Connection.Open();
@@ -128,7 +148,7 @@ from STEP_ROUTE order by code desc";
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(strConn);
-				cmd.CommandText = @"select distinct isnull(STEP_TYPE, '') as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
+				cmd.CommandText = @"select distinct isnull(STEP_TYPE, '--') as Code, isnull(STEP_TYPE, '--') as CodeName, 'STEP_TYPE' as category
 from STEP_ROUTE
 union 
 select STD_STEP_ID as Code, STD_STEP_ID  as CodeName, 'STD_STEP_ID' as category

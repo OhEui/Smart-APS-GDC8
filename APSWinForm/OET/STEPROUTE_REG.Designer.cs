@@ -37,8 +37,6 @@ namespace APSWinForm
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
-			this.btnDelete = new System.Windows.Forms.Button();
-			this.btnAdd = new System.Windows.Forms.Button();
 			this.txtStepSeq = new APSWinForm.NumTextBox();
 			this.cboProcessID = new System.Windows.Forms.ComboBox();
 			this.txtStepID = new APSWinForm.CapitalTextBox();
@@ -73,7 +71,7 @@ namespace APSWinForm
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(912, 38);
+			this.panel1.Size = new System.Drawing.Size(969, 38);
 			this.panel1.TabIndex = 46;
 			// 
 			// panel3
@@ -107,7 +105,7 @@ namespace APSWinForm
 			// 
 			this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(172)))), ((int)(((byte)(199)))));
 			this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panel8.Location = new System.Drawing.Point(902, 10);
+			this.panel8.Location = new System.Drawing.Point(959, 10);
 			this.panel8.Name = "panel8";
 			this.panel8.Size = new System.Drawing.Size(10, 417);
 			this.panel8.TabIndex = 41;
@@ -122,14 +120,12 @@ namespace APSWinForm
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
 			this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-			this.panel2.Size = new System.Drawing.Size(912, 437);
+			this.panel2.Size = new System.Drawing.Size(969, 437);
 			this.panel2.TabIndex = 47;
 			// 
 			// panel9
 			// 
 			this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
-			this.panel9.Controls.Add(this.btnDelete);
-			this.panel9.Controls.Add(this.btnAdd);
 			this.panel9.Controls.Add(this.txtStepSeq);
 			this.panel9.Controls.Add(this.cboProcessID);
 			this.panel9.Controls.Add(this.txtStepID);
@@ -146,39 +142,12 @@ namespace APSWinForm
 			this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel9.Location = new System.Drawing.Point(10, 10);
 			this.panel9.Name = "panel9";
-			this.panel9.Size = new System.Drawing.Size(892, 417);
+			this.panel9.Size = new System.Drawing.Size(949, 417);
 			this.panel9.TabIndex = 42;
-			// 
-			// btnDelete
-			// 
-			this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.btnDelete.ForeColor = System.Drawing.Color.White;
-			this.btnDelete.Location = new System.Drawing.Point(728, 320);
-			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(102, 36);
-			this.btnDelete.TabIndex = 79;
-			this.btnDelete.Text = "삭제";
-			this.btnDelete.UseVisualStyleBackColor = false;
-			// 
-			// btnAdd
-			// 
-			this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-			this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.btnAdd.ForeColor = System.Drawing.Color.White;
-			this.btnAdd.Location = new System.Drawing.Point(600, 320);
-			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(102, 36);
-			this.btnAdd.TabIndex = 78;
-			this.btnAdd.Text = "추가";
-			this.btnAdd.UseVisualStyleBackColor = false;
-			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
 			// txtStepSeq
 			// 
-			this.txtStepSeq.Location = new System.Drawing.Point(676, 163);
+			this.txtStepSeq.Location = new System.Drawing.Point(725, 184);
 			this.txtStepSeq.Name = "txtStepSeq";
 			this.txtStepSeq.Size = new System.Drawing.Size(121, 21);
 			this.txtStepSeq.TabIndex = 77;
@@ -190,7 +159,7 @@ namespace APSWinForm
 			this.cboProcessID.Items.AddRange(new object[] {
             "IN",
             "OUT"});
-			this.cboProcessID.Location = new System.Drawing.Point(676, 76);
+			this.cboProcessID.Location = new System.Drawing.Point(725, 82);
 			this.cboProcessID.Name = "cboProcessID";
 			this.cboProcessID.Size = new System.Drawing.Size(189, 20);
 			this.cboProcessID.TabIndex = 76;
@@ -200,7 +169,7 @@ namespace APSWinForm
 			// 
 			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepID.Location = new System.Drawing.Point(676, 119);
+			this.txtStepID.Location = new System.Drawing.Point(725, 133);
 			this.txtStepID.Name = "txtStepID";
 			this.txtStepID.Size = new System.Drawing.Size(121, 21);
 			this.txtStepID.TabIndex = 75;
@@ -212,7 +181,7 @@ namespace APSWinForm
 			this.cboStdStep.Items.AddRange(new object[] {
             "IN",
             "OUT"});
-			this.cboStdStep.Location = new System.Drawing.Point(676, 207);
+			this.cboStdStep.Location = new System.Drawing.Point(725, 235);
 			this.cboStdStep.Name = "cboStdStep";
 			this.cboStdStep.Size = new System.Drawing.Size(121, 20);
 			this.cboStdStep.TabIndex = 72;
@@ -222,7 +191,7 @@ namespace APSWinForm
 			this.panel4.Controls.Add(this.dgvStepRoute);
 			this.panel4.Location = new System.Drawing.Point(0, 28);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(512, 387);
+			this.panel4.Size = new System.Drawing.Size(558, 387);
 			this.panel4.TabIndex = 69;
 			// 
 			// dgvStepRoute
@@ -233,14 +202,15 @@ namespace APSWinForm
 			this.dgvStepRoute.Location = new System.Drawing.Point(0, 0);
 			this.dgvStepRoute.Name = "dgvStepRoute";
 			this.dgvStepRoute.RowTemplate.Height = 23;
-			this.dgvStepRoute.Size = new System.Drawing.Size(512, 387);
+			this.dgvStepRoute.Size = new System.Drawing.Size(558, 387);
 			this.dgvStepRoute.TabIndex = 51;
+			this.dgvStepRoute.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStepRoute_CellDoubleClick);
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label5.Location = new System.Drawing.Point(564, 122);
+			this.label5.Location = new System.Drawing.Point(613, 135);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(58, 14);
 			this.label5.TabIndex = 65;
@@ -250,7 +220,7 @@ namespace APSWinForm
 			// 
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label13.Location = new System.Drawing.Point(564, 78);
+			this.label13.Location = new System.Drawing.Point(613, 84);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(82, 14);
 			this.label13.TabIndex = 63;
@@ -260,7 +230,7 @@ namespace APSWinForm
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label4.Location = new System.Drawing.Point(564, 210);
+			this.label4.Location = new System.Drawing.Point(613, 237);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(82, 14);
 			this.label4.TabIndex = 62;
@@ -273,7 +243,7 @@ namespace APSWinForm
 			this.cboStepType.Items.AddRange(new object[] {
             "IN",
             "OUT"});
-			this.cboStepType.Location = new System.Drawing.Point(676, 250);
+			this.cboStepType.Location = new System.Drawing.Point(725, 286);
 			this.cboStepType.Name = "cboStepType";
 			this.cboStepType.Size = new System.Drawing.Size(121, 20);
 			this.cboStepType.TabIndex = 61;
@@ -282,7 +252,7 @@ namespace APSWinForm
 			// 
 			this.label10.AutoSize = true;
 			this.label10.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label10.Location = new System.Drawing.Point(564, 254);
+			this.label10.Location = new System.Drawing.Point(613, 288);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(67, 14);
 			this.label10.TabIndex = 60;
@@ -292,7 +262,7 @@ namespace APSWinForm
 			// 
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label12.Location = new System.Drawing.Point(564, 166);
+			this.label12.Location = new System.Drawing.Point(613, 186);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(67, 14);
 			this.label12.TabIndex = 59;
@@ -304,7 +274,7 @@ namespace APSWinForm
 			this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
 			this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.btnCancel.ForeColor = System.Drawing.Color.White;
-			this.btnCancel.Location = new System.Drawing.Point(728, 363);
+			this.btnCancel.Location = new System.Drawing.Point(774, 349);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(102, 36);
 			this.btnCancel.TabIndex = 54;
@@ -318,7 +288,7 @@ namespace APSWinForm
 			this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
 			this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.btnSave.ForeColor = System.Drawing.Color.White;
-			this.btnSave.Location = new System.Drawing.Point(600, 363);
+			this.btnSave.Location = new System.Drawing.Point(646, 349);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(102, 36);
 			this.btnSave.TabIndex = 45;
@@ -348,7 +318,7 @@ namespace APSWinForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(912, 437);
+			this.ClientSize = new System.Drawing.Size(969, 437);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel2);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -393,7 +363,5 @@ namespace APSWinForm
 		private CapitalTextBox txtStepID;
 		protected System.Windows.Forms.ComboBox cboStdStep;
 		protected System.Windows.Forms.ComboBox cboStepType;
-		protected System.Windows.Forms.Button btnDelete;
-		protected System.Windows.Forms.Button btnAdd;
 	}
 }
