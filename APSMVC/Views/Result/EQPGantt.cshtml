@@ -181,13 +181,21 @@
                 openValueXField: "fromDate",
                 valueXField: "toDate",
                 categoryYField: "category",
-                sequencedInterpolation: true
+                sequencedInterpolation: true,
+                stroke: am5.color(0x000000)
             }));
-            
+
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/column-series/
+            // https://www.amcharts.com/docs/v5/reference/iroundedrectanglesettings/#cornerRadiusTL_property
             series.columns.template.setAll({
                 templateField: "columnSettings",
-                strokeOpacity: 0,
-                tooltipText: "{task}:\n[bold]{openValueX}[/] - [bold]{valueX}[/]"
+                //strokeOpacity: 1,
+                tooltipText: "{task}:\n[bold]{openValueX}[/] - [bold]{valueX}[/]",
+                strokeWidth: 0.5,
+                cornerRadiusTL: 3,
+                cornerRadiusTR: 3,
+                cornerRadiusBL: 3,
+                cornerRadiusBR: 3
             });
 
             /*
