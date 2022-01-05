@@ -43,24 +43,24 @@ namespace APSWinForm
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.cboLineID = new System.Windows.Forms.ComboBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.cboSiteID = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cboEqpGroup = new System.Windows.Forms.ComboBox();
             this.txtEqpmodel = new System.Windows.Forms.TextBox();
             this.txtEqpID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cboEqpGroup = new System.Windows.Forms.ComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.cboSiteID = new System.Windows.Forms.ComboBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.cboLineID = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -212,6 +212,66 @@ namespace APSWinForm
             this.panel9.Size = new System.Drawing.Size(375, 466);
             this.panel9.TabIndex = 42;
             // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.cboLineID);
+            this.panel5.Location = new System.Drawing.Point(183, 246);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(121, 20);
+            this.panel5.TabIndex = 171;
+            // 
+            // cboLineID
+            // 
+            this.cboLineID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboLineID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLineID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboLineID.FormattingEnabled = true;
+            this.cboLineID.Location = new System.Drawing.Point(0, 0);
+            this.cboLineID.Name = "cboLineID";
+            this.cboLineID.Size = new System.Drawing.Size(119, 20);
+            this.cboLineID.TabIndex = 167;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.cboSiteID);
+            this.panel4.Location = new System.Drawing.Point(183, 210);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(121, 20);
+            this.panel4.TabIndex = 171;
+            // 
+            // cboSiteID
+            // 
+            this.cboSiteID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboSiteID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSiteID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboSiteID.FormattingEnabled = true;
+            this.cboSiteID.Location = new System.Drawing.Point(0, 0);
+            this.cboSiteID.Name = "cboSiteID";
+            this.cboSiteID.Size = new System.Drawing.Size(119, 20);
+            this.cboSiteID.TabIndex = 167;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.cboEqpGroup);
+            this.panel3.Location = new System.Drawing.Point(183, 172);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(121, 20);
+            this.panel3.TabIndex = 174;
+            // 
+            // cboEqpGroup
+            // 
+            this.cboEqpGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboEqpGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEqpGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboEqpGroup.FormattingEnabled = true;
+            this.cboEqpGroup.Location = new System.Drawing.Point(0, 0);
+            this.cboEqpGroup.Name = "cboEqpGroup";
+            this.cboEqpGroup.Size = new System.Drawing.Size(119, 20);
+            this.cboEqpGroup.TabIndex = 167;
+            // 
             // txtEqpmodel
             // 
             this.txtEqpmodel.Location = new System.Drawing.Point(183, 124);
@@ -247,66 +307,6 @@ namespace APSWinForm
             this.panel1.Size = new System.Drawing.Size(395, 38);
             this.panel1.TabIndex = 48;
             // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.cboEqpGroup);
-            this.panel3.Location = new System.Drawing.Point(183, 172);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(121, 20);
-            this.panel3.TabIndex = 174;
-            // 
-            // cboEqpGroup
-            // 
-            this.cboEqpGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboEqpGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEqpGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboEqpGroup.FormattingEnabled = true;
-            this.cboEqpGroup.Location = new System.Drawing.Point(0, 0);
-            this.cboEqpGroup.Name = "cboEqpGroup";
-            this.cboEqpGroup.Size = new System.Drawing.Size(119, 20);
-            this.cboEqpGroup.TabIndex = 167;
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.cboSiteID);
-            this.panel4.Location = new System.Drawing.Point(183, 210);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(121, 20);
-            this.panel4.TabIndex = 171;
-            // 
-            // cboSiteID
-            // 
-            this.cboSiteID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboSiteID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSiteID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboSiteID.FormattingEnabled = true;
-            this.cboSiteID.Location = new System.Drawing.Point(0, 0);
-            this.cboSiteID.Name = "cboSiteID";
-            this.cboSiteID.Size = new System.Drawing.Size(119, 20);
-            this.cboSiteID.TabIndex = 167;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.cboLineID);
-            this.panel5.Location = new System.Drawing.Point(183, 246);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(121, 20);
-            this.panel5.TabIndex = 171;
-            // 
-            // cboLineID
-            // 
-            this.cboLineID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboLineID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboLineID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboLineID.FormattingEnabled = true;
-            this.cboLineID.Location = new System.Drawing.Point(0, 0);
-            this.cboLineID.Name = "cboLineID";
-            this.cboLineID.Size = new System.Drawing.Size(119, 20);
-            this.cboLineID.TabIndex = 167;
-            // 
             // EQUIPMENT_REG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -322,11 +322,11 @@ namespace APSWinForm
             this.panel2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
