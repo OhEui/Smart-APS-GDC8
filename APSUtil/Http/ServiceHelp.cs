@@ -6,7 +6,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using APSVO;
 
-namespace APSWinForm
+namespace APSUtil.Http
 {
     /// <summary>
     /// Web API 사용을 위한 유틸리티입니다

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using APSUtil.Http;
 
 namespace APSMVC.Controllers
 {
@@ -14,6 +15,9 @@ namespace APSMVC.Controllers
     {
         public ActionResult EQPGantt()
         {
+            ServiceHelp srv = new ServiceHelp("api/Result", "dGVzdDoxMjM0");
+            string result = srv.GetJsonStringAsync("EQPGantt").Result;
+            ViewBag.Data = result;
             return View();
         }
 
