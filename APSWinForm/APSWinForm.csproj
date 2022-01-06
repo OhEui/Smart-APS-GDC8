@@ -354,10 +354,6 @@
     <None Include="Resources\file_add_icon_128235.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\APSDAC\APSDAC.csproj">
-      <Project>{c3c6f97f-8c6f-4e7a-8024-2552316b7f31}</Project>
-      <Name>APSDAC</Name>
-    </ProjectReference>
     <ProjectReference Include="..\APSEncrypt\APSEncrypt.csproj">
       <Project>{0bee685f-05bd-4cc3-943b-7eb5bde1b7b6}</Project>
       <Name>APSEncrypt</Name>
