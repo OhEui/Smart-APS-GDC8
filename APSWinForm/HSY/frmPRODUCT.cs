@@ -23,14 +23,14 @@ namespace APSWinForm
         }
 
         
-        private async Task LoadData()
+        private async void LoadData()
         {
             List<ProductVO> list = null;
             list = await srv.GetListAsync("api/Product/Products", list);
             dgvPR.DataSource = list;
         }
 
-        private async void DataLode()
+        private void DataLode()
         {
             DataGridViewUtil.SetInitGridView(dgvPR);
             DataGridViewUtil.AddGridTextColumn(dgvPR, "제품ID", "PRODUCT_ID", colWidth: 105);
@@ -39,7 +39,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvPR, "프로세스ID", "PROCESS_ID", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvPR, "생산단위크기", "LOT_SIZE", colWidth: 100);
 
-            await LoadData();
+            LoadData();
         }
         private void frmPRODUCT_Load(object sender, EventArgs e)
         {
@@ -49,13 +49,13 @@ namespace APSWinForm
         }
 
         //추가
-        private async void toolStripButton3_Click(object sender, EventArgs e)
+        private void toolStripButton3_Click(object sender, EventArgs e)
         {
             Productpop reg = new Productpop();
 
             if (reg.ShowDialog() == DialogResult.OK)
             {
-                await LoadData();
+                LoadData();
             }
             else return;
         }
@@ -68,7 +68,7 @@ namespace APSWinForm
         }
 
         //수정
-        private async void toolStripButton2_Click(object sender, EventArgs e)
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
             string prd = dgvPR["PRODUCT_ID", dgvPR.CurrentRow.Index].Value.ToString();
             if (prd == null)
@@ -83,7 +83,7 @@ namespace APSWinForm
 
             if (reg.ShowDialog() == DialogResult.OK)
             {
-                await LoadData();
+                LoadData();
             }
             else return;
         }
