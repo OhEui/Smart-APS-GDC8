@@ -14,7 +14,7 @@ namespace APSWinForm
     public partial class Productpop : Form
     {
         ServiceHelp srv = new ServiceHelp("");
-        ProductVO Prdvo;
+        // ProductVO Prdvo;
         List<ProductVO> prdList;
 
         //추가

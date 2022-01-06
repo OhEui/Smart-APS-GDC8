@@ -16,7 +16,7 @@ namespace APSWinForm
     {
         ServiceHelp srv = new ServiceHelp("");
         EqpArrangeVO EQPArrvo;
-        List<EqpArrangeVO> ARRList = null;
+        // List<EqpArrangeVO> ARRList = null;
         List<ComboItemVO> ProductList = null;
         List<ComboItemVO> ProcessList = null;
         List<EQUIPVO> EQPList = null;
