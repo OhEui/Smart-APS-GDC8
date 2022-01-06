@@ -97,28 +97,28 @@ namespace APSWinForm
 		private void pictureBox6_Click(object sender, EventArgs e)
 		{
 			//삭제
-			if (dgvStepInfoList.CurrentCell == null) return;
+			//if (dgvStepInfoList.CurrentCell == null) return;
 
-			string curStep = dgvStepInfoList["STD_STEP_ID", dgvStepInfoList.CurrentRow.Index].Value.ToString();
+			//string curStep = dgvStepInfoList["STD_STEP_ID", dgvStepInfoList.CurrentRow.Index].Value.ToString();
 
-			DialogResult msgResullt = MessageBox.Show($"{curStep} 항목을 삭제 하시겠습니까?", $"{Properties.Resources.STD_STEP_INFO} 삭제", MessageBoxButtons.OKCancel);
+			//DialogResult msgResullt = MessageBox.Show($"{curStep} 항목을 삭제 하시겠습니까?", $"{Properties.Resources.STD_STEP_INFO} 삭제", MessageBoxButtons.OKCancel);
 			
-			if (msgResullt == DialogResult.Cancel) return;
-			else
-			{
-				using (STD_STEP_DAC dac = new STD_STEP_DAC())
-				{
-					if (dac.deleteStepInfoList(curStep))
-					{
-						MessageBox.Show("삭제가 완료되었습니다.");
-					}
-					else
-					{
-						MessageBox.Show("삭제 중 오류가 발생했습니다.\n다시 시도하여 주세요.");
-						return;
-					}
-				}
-			}
+			//if (msgResullt == DialogResult.Cancel) return;
+			//else
+			//{
+			//	using (STD_STEP_DAC dac = new STD_STEP_DAC())
+			//	{
+			//		if (dac.deleteStepInfoList(curStep))
+			//		{
+			//			MessageBox.Show("삭제가 완료되었습니다.");
+			//		}
+			//		else
+			//		{
+			//			MessageBox.Show("삭제 중 오류가 발생했습니다.\n다시 시도하여 주세요.");
+			//			return;
+			//		}
+			//	}
+			//}
 
 			LoadData();
 		}
