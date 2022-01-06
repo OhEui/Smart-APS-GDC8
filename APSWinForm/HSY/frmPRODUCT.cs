@@ -30,7 +30,7 @@ namespace APSWinForm
             dgvPR.DataSource = list;
         }
 
-        private async void DataLode()
+        private void DataLode()
         {
             DataGridViewUtil.SetInitGridView(dgvPR);
             DataGridViewUtil.AddGridTextColumn(dgvPR, "제품ID", "PRODUCT_ID", colWidth: 105);
@@ -62,7 +62,7 @@ namespace APSWinForm
 
         
 
-        private async void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
             
         }
