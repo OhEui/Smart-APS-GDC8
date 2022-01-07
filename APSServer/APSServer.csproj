@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="APSEncrypt">
-      <HintPath>..\..\..\GDC8-Team2\APSEncrypt\bin\Debug\APSEncrypt.dll</HintPath>
+      <HintPath>..\APSEncrypt\bin\Debug\APSEncrypt.dll</HintPath>
     </Reference>
     <Reference Include="APSVO">
-      <HintPath>..\..\..\GDC8-Team2\APSVO\bin\Debug\APSVO.dll</HintPath>
+      <HintPath>..\APSVO\bin\Debug\APSVO.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -164,6 +164,7 @@
     <Compile Include="Models\CommonDAC.cs" />
     <Compile Include="Models\EQUIPDAC.cs" />
     <Compile Include="Models\Helper.cs" />
+    <Compile Include="Models\LOTDAC.cs" />
     <Compile Include="Models\ProductDAC.cs" />
     <Compile Include="Models\ResultDAC.cs" />
     <Compile Include="Models\SampleDAC.cs" />

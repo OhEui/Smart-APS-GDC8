@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Chart\ChartData.cs" />
     <Compile Include="Chart\EQPGanttData.cs" />
+    <Compile Include="Chart\LOTGanttData.cs" />
     <Compile Include="ComboItemVO.cs" />
     <Compile Include="CommonVO.cs" />
     <Compile Include="ProductVO.cs" />

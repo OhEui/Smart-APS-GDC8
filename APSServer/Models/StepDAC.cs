@@ -23,8 +23,7 @@ namespace APSServer.Models
 			throw new NotImplementedException();
 		}
 
-		//==================================================================================
-		//STD_STEP_INFO
+		#region STD_STEP_INFO
 
 		/// <summary>
 		/// STD_STEP_INFO 수정, 저장
@@ -73,8 +72,10 @@ from STD_STEP_INFO";
 			}
 		}
 
-		//==================================================================================
-		//STEP_ROUTE
+		#endregion
+
+
+		#region STEP_ROUTE
 		public bool saveStepRouteList(StepRouteVO stepRoute)
 		{
 			using (SqlCommand cmd = new SqlCommand())
@@ -164,5 +165,7 @@ from PRODUCT";
 				return list;
 			}
 		}
+
+		#endregion
 	}
 }
