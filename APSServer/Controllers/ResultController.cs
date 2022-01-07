@@ -1,6 +1,6 @@
-﻿using APSServer.Filters;
+﻿
 using APSServer.Models;
-using APSServer.Principal;
+
 using APSVO;
 using System;
 using System.Collections.Generic;
@@ -16,12 +16,11 @@ namespace APSServer.Controllers
     {
         // https://localhost:44309/api/Result/EQPGantt
         [HttpGet]
-        [Route("EQPGantt")][UserAuthentication][Authorize]
+        [Route("EQPGantt")][Authorize]
         public IHttpActionResult GetEQPGanttData()
         {
             // APIController에서 로그인한 유저의 ID를 얻는법
-            // 컨트롤러에 [UserAuthentication][Authorize]가 적용되어 있어야 함
-            string userID = (RequestContext.Principal as UserPrincipal)?.User_ID ?? null;
+            // 컨트롤러에 [Authorize]가 적용되어 있어야 함
 
             using (ResultDAC dac = new ResultDAC())
             {
