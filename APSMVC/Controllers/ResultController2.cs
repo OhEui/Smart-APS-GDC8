@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APSUtil.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +15,8 @@ namespace APSMVC.Controllers
     {
         public ActionResult LOTGantt()
         {
+            ServiceHelp srv = new ServiceHelp("");
+
             return View();
         }
     }

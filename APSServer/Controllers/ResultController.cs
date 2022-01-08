@@ -36,5 +36,14 @@ namespace APSServer.Controllers
                 }
             }
         }
+
+        //GET : https://localhost:44309/api/Result/getLOTList
+        [HttpGet]
+        [Route("getLOTList")]
+        public List<ChartData> getLOTList()
+        {
+            LOTDAC db = new LOTDAC();
+            return db.GetLOTList();
+        }
     }
 }
