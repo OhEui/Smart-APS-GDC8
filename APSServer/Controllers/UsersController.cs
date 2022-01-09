@@ -1,4 +1,4 @@
-﻿using APSServer.Filters;
+﻿
 using APSServer.Models;
 using APSVO;
 using System;
@@ -112,7 +112,7 @@ namespace APSServer.Controllers
         }
 
 
-        [HttpPost][Route("Logout")][UserAuthentication][Authorize]
+        [HttpPost][Route("Logout")][Authorize]
         public WebMessage Logout(UserData data) 
         {
             // 쿠키, 세션 해제 작업을 함 (DB 접근 없음)
@@ -121,7 +121,7 @@ namespace APSServer.Controllers
 
 
 
-        [HttpPost][Route("UpdateUserInfo")][UserAuthentication][Authorize]
+        [HttpPost][Route("UpdateUserInfo")][Authorize]
         public WebMessage<UserData> UpdateUserInfo(ReqUserUpdateInfo req) 
         {
             string curId = req.Cur_ID;
@@ -136,7 +136,7 @@ namespace APSServer.Controllers
 
         }
 
-        [HttpPost][Route("WithDraw")][UserAuthentication][Authorize]
+        [HttpPost][Route("WithDraw")][Authorize]
         public WebMessage WithDraw(ReqUserLogin req) 
         {
             string curId = req.ID;

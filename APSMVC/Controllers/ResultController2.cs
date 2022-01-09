@@ -1,6 +1,9 @@
-﻿using System;
+﻿using APSUtil.Http;
+using APSVO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,8 +15,13 @@ namespace APSMVC.Controllers
     */
     public partial class ResultController : Controller
     {
-        public ActionResult LOTGantt()
+        public async Task<ActionResult> LOTGantt()
         {
+            ServiceHelp srv = new ServiceHelp("");
+            List<ChartData> list = null;
+            list = await srv.GetListAsync("api/Result/getLOTList", list);
+
+            ViewBag.Data = list;
             return View();
         }
     }

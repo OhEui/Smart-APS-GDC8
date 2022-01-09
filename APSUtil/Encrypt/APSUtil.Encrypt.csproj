@@ -7,8 +7,8 @@
     <ProjectGuid>{0BEE685F-05BD-4CC3-943B-7EB5BDE1B7B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>APSEncrypt</RootNamespace>
-    <AssemblyName>APSEncrypt</AssemblyName>
+    <RootNamespace>APSUtil.Encrypt</RootNamespace>
+    <AssemblyName>APSUtil.Encrypt</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
