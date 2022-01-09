@@ -68,9 +68,9 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-        //GET : http://localhost:58802/api/Product/Deleteboard/{id}
+        //GET : http://localhost:58802/api/Product/Delete/{id}
         [HttpGet]
-        [Route("Deleteboard/{id}")]
+        [Route("Delete/{id}")]
         public IHttpActionResult DeleteProduct(string id)
         {
             ProductDAC db = new ProductDAC();

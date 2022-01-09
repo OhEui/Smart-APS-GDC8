@@ -47,6 +47,7 @@
     <Compile Include="STD_STEP_VO.cs" />
     <Compile Include="EQUIPVO.cs" />
     <Compile Include="StepRouteVO.cs" />
+    <Compile Include="DemandVO.cs" />
     <Compile Include="User\Request.cs" />
     <Compile Include="User\UserInfo.cs" />
     <Compile Include="User\UserData.cs" />

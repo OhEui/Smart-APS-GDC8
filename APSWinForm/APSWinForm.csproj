@@ -81,6 +81,18 @@
     <Compile Include="BaseForm\frmpopup.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controls\PeriodUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PeriodUserControl.designer.cs">
+      <DependentUpon>PeriodUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSY\DEMANDpop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSY\DEMANDpop.Designer.cs">
+      <DependentUpon>DEMANDpop.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSY\frmDEMAND.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +258,12 @@
     <EmbeddedResource Include="BaseForm\frmpopup.resx">
       <DependentUpon>frmpopup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PeriodUserControl.resx">
+      <DependentUpon>PeriodUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSY\DEMANDpop.resx">
+      <DependentUpon>DEMANDpop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HSY\frmDEMAND.resx">
       <DependentUpon>frmDEMAND.cs</DependentUpon>
     </EmbeddedResource>
@@ -365,5 +383,6 @@
   <ItemGroup>
     <None Include="Resources\free-icon-edit-1827933.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

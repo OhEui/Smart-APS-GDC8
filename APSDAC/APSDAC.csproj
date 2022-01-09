@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper.cs" />
-    <Compile Include="PRODUCTDAC.cs" />
     <Compile Include="STD_STEP_DAC.cs" />
     <Compile Include="EQUIPDAC.cs" />
     <Compile Include="UserDAC.cs" />
