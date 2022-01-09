@@ -334,6 +334,15 @@ namespace APSServer.Controllers
             return logins;
         }
 
+        [AllowAnonymous]
+        [Route("Login")]
+        public async Task<IHttpActionResult> Login(LoginBindingModel model) 
+        {
+            var request = new { username = model.ID, password = model.Password, grant_type = "password" };
+
+            return await new Task<IHttpActionResult>(() => throw new NotImplementedException()); 
+        }
+
         // POST api/Account/Register
         [AllowAnonymous]
         [Route("Register")]
@@ -349,9 +358,9 @@ namespace APSServer.Controllers
                 UserName = model.ID,
                 Name = model.Name,
                 Email = model.Email,
-                No = model.No,
+                EmpNo = 1,
                 Phone = model.Phone,
-                Birth = model.Birth
+                Birthday = model.Birthday
             };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);

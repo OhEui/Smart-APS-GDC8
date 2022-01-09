@@ -275,9 +275,9 @@
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\APSUtil\APSUtil.csproj">
+    <ProjectReference Include="..\APSUtil\Http\APSUtil.Http.csproj">
       <Project>{79342bf6-8059-4f29-b21e-846bb7f9cad4}</Project>
-      <Name>APSUtil</Name>
+      <Name>APSUtil.Http</Name>
     </ProjectReference>
     <ProjectReference Include="..\APSVO\APSVO.csproj">
       <Project>{0B74B488-1A0A-43EA-A635-AF727722BDC7}</Project>

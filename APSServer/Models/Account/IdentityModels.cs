@@ -20,9 +20,9 @@ namespace APSServer.Models
         #region custom property
         // id(UserName), password, email,dept(role) 제외
         public string Name { get; set; }
-        public int No { get; set; }
+        public int EmpNo { get; set; }
         public string Phone { get; set; }
-        public DateTime Birth { get; set; }
+        public DateTime Birthday { get; set; }
         #endregion
     }
 
@@ -41,11 +41,11 @@ namespace APSServer.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaims");
-            modelBuilder.Entity<IdentityUserRole>().ToTable("UserRoles");
-            modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogins");
-            modelBuilder.Entity<IdentityRole>().ToTable("Roles");
-            modelBuilder.Entity<ApplicationUser>().ToTable("Users");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("ASP_UserClaims");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("ASP_UserRoles");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("ASP_UserLogins");
+            modelBuilder.Entity<IdentityRole>().ToTable("ASP_Roles");
+            modelBuilder.Entity<ApplicationUser>().ToTable("ASP_Users");
          }
         public static ApplicationDbContext Create()
         {

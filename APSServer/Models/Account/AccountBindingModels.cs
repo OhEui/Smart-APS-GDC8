@@ -32,6 +32,15 @@ namespace APSServer.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class LoginBindingModel 
+    {
+        [Required]
+        public string ID { get; set; }
+
+        [Required]
+        public string Password { get; set; }
+    }
+
     public class RegisterBindingModel
     {
         [Required]
@@ -55,11 +64,11 @@ namespace APSServer.Models
         [Required]
         public string Name { get; set; }
 
-        public int No { get; set; }
+        //public int No { get; set; }
 
         public string Phone { get; set; }
 
-        public DateTime Birth { get; set; }
+        public DateTime Birthday { get; set; }
     }
 
     public class RegisterExternalBindingModel
