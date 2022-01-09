@@ -45,5 +45,15 @@ namespace APSServer.Controllers
             LOTDAC db = new LOTDAC();
             return db.GetLOTList();
         }
+
+
+        //GET : https://localhost:44309/api/Result/getLOTCategory
+        [HttpGet]
+        [Route("getLOTCategory")]
+        public List<LOTGanttCategory> getLOTCategory()
+        {
+            LOTDAC db = new LOTDAC();
+            return db.getLOTCategory();
+        }
     }
 }
