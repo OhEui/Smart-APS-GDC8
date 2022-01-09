@@ -45,12 +45,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="APSEncrypt">
-      <HintPath>..\APSEncrypt\bin\Debug\APSEncrypt.dll</HintPath>
-    </Reference>
-    <Reference Include="APSVO">
-      <HintPath>..\APSVO\bin\Debug\APSVO.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -192,6 +186,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\APSEncrypt\APSEncrypt.csproj">
+      <Project>{0bee685f-05bd-4cc3-943b-7eb5bde1b7b6}</Project>
+      <Name>APSEncrypt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APSVO\APSVO.csproj">
+      <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
+      <Name>APSVO</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
