@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using APSVO;
 using System.Web.Configuration;
+using System.Collections.Generic;
 
 namespace APSUtil.Http
 {
@@ -16,7 +17,10 @@ namespace APSUtil.Http
     {
         HttpClient client = new HttpClient();
 
+
         public string BaseServiceUrl { get; set; }
+
+        public System.Net.HttpStatusCode StatusCode { get; set; }
 
         /// <summary>
         /// Web API 사용을 위한 ServiceHelp 인스턴스를 생성합니다. <br/>
@@ -34,15 +38,16 @@ namespace APSUtil.Http
         /// <param name="routePrefix"></param>
         public ServiceHelp(string routePrefix, bool IsWebClient = false)
         {
+            string prefix = !string.IsNullOrWhiteSpace(routePrefix) ? $"{routePrefix}/" : string.Empty;
+
             if (IsWebClient)
             {
-                BaseServiceUrl = $"{WebConfigurationManager.AppSettings["ApiAddress"]}/{routePrefix}/";
+                BaseServiceUrl = $"{WebConfigurationManager.AppSettings["ApiAddress"]}/{prefix}";
             }
             else 
             {
-                BaseServiceUrl = $"{ConfigurationManager.AppSettings["ApiAddress"]}/{routePrefix}/";
+                BaseServiceUrl = $"{ConfigurationManager.AppSettings["ApiAddress"]}/{prefix}";
             }
-
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
@@ -162,7 +167,22 @@ namespace APSUtil.Http
                 return result;
             }
         }
+        public async Task<T> PostAsyncFormRequest<T>(string path, Dictionary<string, string> request) where T : class
+        {
+            path = BaseServiceUrl + path;
 
+            var response = await client.PostAsync(path, new FormUrlEncodedContent(request));
+            StatusCode = response.StatusCode;
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsAsync<T>().Result;
+            }
+            else 
+            {
+                return default;
+            }
+
+        }
 
         public async Task<WebMessage<TResponse>> PostAsync<TRequest, TResponse>(string path, TRequest value)
         {
