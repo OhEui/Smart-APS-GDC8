@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using APSVO;
+using APSUtil.Http;
 
 namespace APSWinForm
 {
@@ -37,6 +38,12 @@ namespace APSWinForm
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            if (TokenStorage.IsTokenStoraged) 
+            {
+                client.DefaultRequestHeaders.Authorization = 
+                    new AuthenticationHeaderValue("Bearer", TokenStorage.AccessToken); // TEST_CODE
+            }
         }
 
         public ServiceHelp(string routePrefix, string authorization) : this(routePrefix)

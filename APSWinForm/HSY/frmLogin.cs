@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using APSUtil.Http;
 using APSVO;
 using APSWinForm.Properties;
 
@@ -38,7 +38,7 @@ namespace APSWinForm
                 return;
             }
 
-            var response = await srv.PostAsync<ReqUserLogin, UserVerify>(path, reqData);
+            var response = await srv.PostAsync<ReqUserLogin, TokenModel>(path, reqData);
             if (response != null) 
             {
                 MessageBox.Show(response.ResultMessage);
@@ -49,8 +49,7 @@ namespace APSWinForm
                         Properties.Settings.Default.LoginIDSave = txtID.Text;
                         Properties.Settings.Default.Save();
                     }
-                    LoginUser = response.Data;
-                    AuthHeader = response.Data.AuthHeader;
+                    TokenStorage.AccessToken = response.Data.AccessToken;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }

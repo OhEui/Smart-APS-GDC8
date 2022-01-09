@@ -16,7 +16,7 @@ namespace APSMVC.Controllers
     {
         public async Task<ActionResult> EQPGantt()
         {
-            ServiceHelp srv = new ServiceHelp("api/Result", "dGVzdDoxMjM0", true);
+            ServiceHelp srv = new ServiceHelp("api/Result", true);
             string result = await srv.GetJsonStringAsync("EQPGantt");
 
             ViewBag.Data = result;

@@ -17,9 +17,7 @@ namespace APSUtil.Http
     {
         HttpClient client = new HttpClient();
 
-
         public string BaseServiceUrl { get; set; }
-
         public System.Net.HttpStatusCode StatusCode { get; set; }
 
         /// <summary>
@@ -36,25 +34,21 @@ namespace APSUtil.Http
         /// API 주소: https:localhost::44309/api/Sample
         /// </summary>
         /// <param name="routePrefix"></param>
-        public ServiceHelp(string routePrefix, bool IsWebClient = false)
+        public ServiceHelp(string routePrefix = "", bool IsWebClient = false, string authorization = "")
         {
-            string prefix = !string.IsNullOrWhiteSpace(routePrefix) ? $"{routePrefix}/" : string.Empty;
+            string prefix = !string.IsNullOrWhiteSpace(routePrefix) ? 
+                $"{routePrefix}/" : "";
+            string apiaddress = IsWebClient ? 
+                WebConfigurationManager.AppSettings["ApiAddress"] : ConfigurationManager.AppSettings["ApiAddress"];
 
-            if (IsWebClient)
-            {
-                BaseServiceUrl = $"{WebConfigurationManager.AppSettings["ApiAddress"]}/{prefix}";
-            }
-            else 
-            {
-                BaseServiceUrl = $"{ConfigurationManager.AppSettings["ApiAddress"]}/{prefix}";
-            }
+            BaseServiceUrl = $"{apiaddress.TrimEnd('/')}/{prefix}";
+
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        }
-
-        public ServiceHelp(string routePrefix, string authorization, bool IsWebClient = false) : this(routePrefix, IsWebClient)
-        {
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authorization); // TEST_CODE
+            if (!string.IsNullOrWhiteSpace(authorization))
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authorization);
+            }
         }
 
         public async Task<T> GetListAsync<T>(string path, T t)
@@ -173,6 +167,9 @@ namespace APSUtil.Http
 
             var response = await client.PostAsync(path, new FormUrlEncodedContent(request));
             StatusCode = response.StatusCode;
+
+            return response.Content.ReadAsAsync<T>().Result;
+            /*
             if (response.IsSuccessStatusCode)
             {
                 return response.Content.ReadAsAsync<T>().Result;
@@ -181,7 +178,7 @@ namespace APSUtil.Http
             {
                 return default;
             }
-
+            */
         }
 
         public async Task<WebMessage<TResponse>> PostAsync<TRequest, TResponse>(string path, TRequest value)

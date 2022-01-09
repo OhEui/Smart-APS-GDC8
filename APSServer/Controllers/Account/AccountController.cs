@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using APSUtil.Http;
-using WebApplication1.Models;
+
 
 namespace APSServer.Controllers
 {
@@ -346,7 +346,7 @@ namespace APSServer.Controllers
             { 
                 { "username", model.ID } ,{ "password" , model.Password }, { "grant_type" , "password" }
             };
-            TokenModel response = await service.PostAsyncFormRequest<TokenModel>("token", request);
+            Models.TokenModel response = await service.PostAsyncFormRequest<Models.TokenModel>("token", request);
             return Content(service.StatusCode, response);
         }
 

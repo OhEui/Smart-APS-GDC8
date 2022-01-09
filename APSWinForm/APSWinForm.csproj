@@ -349,6 +349,10 @@
       <Project>{0bee685f-05bd-4cc3-943b-7eb5bde1b7b6}</Project>
       <Name>APSUtil.Encrypt</Name>
     </ProjectReference>
+    <ProjectReference Include="..\APSUtil\Http\APSUtil.Http.csproj">
+      <Project>{79342bf6-8059-4f29-b21e-846bb7f9cad4}</Project>
+      <Name>APSUtil.Http</Name>
+    </ProjectReference>
     <ProjectReference Include="..\APSVO\APSVO.csproj">
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
       <Name>APSVO</Name>
