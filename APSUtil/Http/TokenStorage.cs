@@ -15,6 +15,8 @@ namespace APSUtil.Http
             set => _instance.Value._accessToken = value;
         }
 
+        public static bool IsTokenStoraged => _instance.IsValueCreated && !string.IsNullOrWhiteSpace(_instance.Value._accessToken);
+        
         public static void Clear()
         {
             if (_instance.IsValueCreated)
@@ -22,7 +24,5 @@ namespace APSUtil.Http
                 _instance.Value._accessToken = "";
             }
         }
-
-        public static bool IsTokenStoraged => !string.IsNullOrWhiteSpace(_instance.Value._accessToken);
     }
 }
