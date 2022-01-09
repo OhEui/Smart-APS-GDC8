@@ -87,7 +87,7 @@ namespace APSWinForm
             }
             getSearchEqpList();
         }
-        private void getSearchEqpList()  // 검색함수 보류
+        private void getSearchEqpList()  // 검색함수
         {
             dgvEQP.DataSource = null;
            
