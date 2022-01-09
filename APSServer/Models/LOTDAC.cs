@@ -64,5 +64,20 @@ order by LOT_ID";
 		{
 			throw new NotImplementedException();
 		}
-	}
+
+        public List<LOTGanttCategory> getLOTCategory()
+        {
+            string sql = "select distinct LOT_ID as category from EQP_PLAN order by LOT_ID";
+           
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+
+                cmd.Connection.Open();
+                List<LOTGanttCategory> list = Helper.DataReaderMapToList<LOTGanttCategory>(cmd.ExecuteReader());
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+    }
 }
