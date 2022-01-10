@@ -34,7 +34,7 @@ namespace APSUtil.Http
         /// API 주소: https:localhost::44309/api/Sample
         /// </summary>
         /// <param name="routePrefix"></param>
-        public ServiceHelp(bool IsWebClient = false, string authorization = "")
+        public ServiceHelp(bool IsWebClient = false)
         {
             string apiaddress = IsWebClient ? 
                 WebConfigurationManager.AppSettings["ApiAddress"] : ConfigurationManager.AppSettings["ApiAddress"];
@@ -43,9 +43,9 @@ namespace APSUtil.Http
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            if (!string.IsNullOrWhiteSpace(authorization))
+            if (TokenStorage.IsTokenStoraged)
             {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authorization);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", TokenStorage.AccessToken);
             }
         }
 
