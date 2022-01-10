@@ -37,7 +37,7 @@ namespace APSMVC.Controllers
                 resToken = await srv.PostAsync<ReqUserLogin, TokenModel>("api/Account/Login", reqData);
                 if (resToken != null && resToken.IsSuccess)
                 {
-                    _ = resToken.Data.AccessToken;
+                    Response.Cookies["access_token"].Value = resToken.Data.AccessToken;
                 }
                 else
                 {
