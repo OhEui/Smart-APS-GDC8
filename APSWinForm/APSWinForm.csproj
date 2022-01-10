@@ -254,7 +254,6 @@
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\ExcelUtil.cs" />
-    <Compile Include="Util\ServiceHelp.cs" />
     <Compile Include="Util\ucTabControl.cs">
       <SubType>Component</SubType>
     </Compile>

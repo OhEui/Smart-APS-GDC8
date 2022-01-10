@@ -17,7 +17,7 @@ namespace APSWinForm
         DataTable dtMenuAuth = null;
         int sel_menu_id = 0;
         List<MenuVO> list = null;
-        ServiceHelp srv = new ServiceHelp("");
+        
         
 
 
@@ -52,10 +52,7 @@ namespace APSWinForm
         }
 
 
-        private async void databinding()
-        {
-            list = await srv.GetListAsync("api/Menu/Menulist", list);
-        }
+       
         private void MenuBinding()
         {
 

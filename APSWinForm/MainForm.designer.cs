@@ -783,12 +783,6 @@ namespace APSWinForm
         private System.Windows.Forms.Button btnLine;
         private System.Windows.Forms.Button btnDemand;
         private System.Windows.Forms.Button btnProduct;
-        private System.Windows.Forms.Button btnSubMenu1;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ToolStripMenuItem 로그아웃ToolStripMenuItem;
     }
 }
