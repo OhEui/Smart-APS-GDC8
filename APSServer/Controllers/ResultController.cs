@@ -16,7 +16,7 @@ namespace APSServer.Controllers
     {
         // https://localhost:44309/api/Result/EQPGantt
         [HttpGet]
-        [Route("EQPGantt")][Authorize]
+        [Route("EQPGantt")]
         public IHttpActionResult GetEQPGanttData()
         {
             // APIController에서 로그인한 유저의 ID를 얻는법
