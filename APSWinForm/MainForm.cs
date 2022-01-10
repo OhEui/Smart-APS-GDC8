@@ -22,7 +22,7 @@ namespace APSWinForm
         private void MainForm_Load(object sender, EventArgs e)
         {
             tabControl1.Visible = false;
-            //lblName.Text = "";
+            lblName.Text = "";
             Login();
         }
 
@@ -32,7 +32,7 @@ namespace APSWinForm
             Hide();
             if (login.ShowDialog() == DialogResult.OK)
             {
-                //lblName.Text = UserInfoStorage.Current.Name;
+                lblName.Text = UserInfoStorage.Current.Name;
                 Show();
             }
             else
@@ -45,7 +45,7 @@ namespace APSWinForm
         {
             TokenStorage.Clear();
             UserInfoStorage.Clear();
-            //lblName.Text = "";
+            lblName.Text = "";
             Login();
         }
 
