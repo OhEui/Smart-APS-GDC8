@@ -14,7 +14,7 @@ namespace APSUtil.Http
         private TokenStorage() { }
 
         /// <summary>
-        /// 현재 저장되어 있는access_token 입니다.
+        /// 현재 저장되어 있는 access_token 입니다.
         /// </summary>
         public static string AccessToken
         {
