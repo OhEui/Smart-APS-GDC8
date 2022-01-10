@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APSUtil.Http;
 using APSVO;
 
 
@@ -15,7 +16,7 @@ namespace APSWinForm
     public partial class SETUP_REG : Form
     {
         SetupVO SetupVO;
-        ServiceHelp srv = new ServiceHelp("");
+        ServiceHelp srv = new ServiceHelp();
         List<LineVO> Lineinfo;
         List<ComboItemVO> list = null;
         public SETUP_REG()

@@ -13,4 +13,9 @@ namespace APSVO
 		public DateTime START_TIME { get; set; }
 		public DateTime END_TIME { get; set; }
 	}
+
+	public class LOTGanttCategory
+	{
+		public string category { get; set; }
+	}
 }

@@ -16,7 +16,7 @@ namespace APSServer.Controllers
     {
         // https://localhost:44309/api/Result/EQPGantt
         [HttpGet]
-        [Route("EQPGantt")][Authorize]
+        [Route("EQPGantt")]
         public IHttpActionResult GetEQPGanttData()
         {
             // APIController에서 로그인한 유저의 ID를 얻는법
@@ -44,6 +44,16 @@ namespace APSServer.Controllers
         {
             LOTDAC db = new LOTDAC();
             return db.GetLOTList();
+        }
+
+
+        //GET : https://localhost:44309/api/Result/getLOTCategory
+        [HttpGet]
+        [Route("getLOTCategory")]
+        public List<LOTGanttCategory> getLOTCategory()
+        {
+            LOTDAC db = new LOTDAC();
+            return db.getLOTCategory();
         }
     }
 }

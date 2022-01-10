@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using APSVO;
 using System.Web.Configuration;
+using System.Collections.Generic;
 
 namespace APSUtil.Http
 {
@@ -17,6 +18,7 @@ namespace APSUtil.Http
         HttpClient client = new HttpClient();
 
         public string BaseServiceUrl { get; set; }
+        public System.Net.HttpStatusCode StatusCode { get; set; }
 
         /// <summary>
         /// Web API 사용을 위한 ServiceHelp 인스턴스를 생성합니다. <br/>
@@ -32,24 +34,19 @@ namespace APSUtil.Http
         /// API 주소: https:localhost::44309/api/Sample
         /// </summary>
         /// <param name="routePrefix"></param>
-        public ServiceHelp(string routePrefix, bool IsWebClient = false)
+        public ServiceHelp(bool IsWebClient = false)
         {
-            if (IsWebClient)
-            {
-                BaseServiceUrl = $"{WebConfigurationManager.AppSettings["ApiAddress"]}/{routePrefix}/";
-            }
-            else 
-            {
-                BaseServiceUrl = $"{ConfigurationManager.AppSettings["ApiAddress"]}/{routePrefix}/";
-            }
+            string apiaddress = IsWebClient ? 
+                WebConfigurationManager.AppSettings["ApiAddress"] : ConfigurationManager.AppSettings["ApiAddress"];
+
+            BaseServiceUrl = $"{apiaddress.TrimEnd('/')}/";
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        }
-
-        public ServiceHelp(string routePrefix, string authorization, bool IsWebClient = false) : this(routePrefix, IsWebClient)
-        {
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authorization); // TEST_CODE
+            if (TokenStorage.IsTokenStoraged)
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", TokenStorage.AccessToken);
+            }
         }
 
         public async Task<T> GetListAsync<T>(string path, T t)
@@ -162,7 +159,25 @@ namespace APSUtil.Http
                 return result;
             }
         }
+        public async Task<T> PostAsyncFormRequest<T>(string path, Dictionary<string, string> request) where T : class
+        {
+            path = BaseServiceUrl + path;
 
+            var response = await client.PostAsync(path, new FormUrlEncodedContent(request));
+            StatusCode = response.StatusCode;
+
+            return response.Content.ReadAsAsync<T>().Result;
+            /*
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsAsync<T>().Result;
+            }
+            else 
+            {
+                return default;
+            }
+            */
+        }
 
         public async Task<WebMessage<TResponse>> PostAsync<TRequest, TResponse>(string path, TRequest value)
         {

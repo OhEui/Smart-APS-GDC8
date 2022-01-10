@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using APSWinForm;
 using APSVO;
-
+using APSUtil.Http;
 
 namespace APSWinForm
 {
     public partial class EQP_ARRANGE : Form
     {
         List<EqpArrangeVO> ARRList= null;
-        ServiceHelp srv = new ServiceHelp("");
+        ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> ProductList = null;
         List<ComboItemVO> ProcessList = null;
         List<EQUIPVO> EQPList = null;

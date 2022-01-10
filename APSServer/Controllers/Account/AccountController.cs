@@ -15,6 +15,8 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using APSUtil.Http;
+using APSVO;
 
 namespace APSServer.Controllers
 {
@@ -334,13 +336,25 @@ namespace APSServer.Controllers
             return logins;
         }
 
+        // POST api/Account/Login
         [AllowAnonymous]
         [Route("Login")]
         public async Task<IHttpActionResult> Login(LoginBindingModel model) 
         {
-            var request = new { username = model.ID, password = model.Password, grant_type = "password" };
+            ServiceHelp service = new ServiceHelp(true); 
+            var request = new Dictionary<string, string>() 
+            { 
+                { "username", model.ID } ,{ "password" , model.Password }, { "grant_type" , "password" }
+            };
+            Models.TokenModel response = await service.PostAsyncFormRequest<Models.TokenModel>("token", request);
 
-            return await new Task<IHttpActionResult>(() => throw new NotImplementedException()); 
+            WebMessage<Models.TokenModel> result = new WebMessage<Models.TokenModel>()
+            {
+                IsSuccess = true,
+                ResultMessage = "로그인에 성공하였습니다.",
+                Data = response 
+            };
+            return Content(service.StatusCode, result);
         }
 
         // POST api/Account/Register

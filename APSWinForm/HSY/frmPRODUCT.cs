@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APSUtil.Http;
 using APSVO;
 
 
@@ -44,7 +45,7 @@ namespace APSWinForm
         private void frmPRODUCT_Load(object sender, EventArgs e)
         {
             MainForm frm = MdiParent as MainForm;
-            srv = new ServiceHelp("", frm.AuthHeader);
+            srv = new ServiceHelp();
             DataLode();
         }
 
