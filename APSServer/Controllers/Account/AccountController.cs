@@ -341,7 +341,7 @@ namespace APSServer.Controllers
         [Route("Login")]
         public async Task<IHttpActionResult> Login(LoginBindingModel model) 
         {
-            ServiceHelp service = new ServiceHelp("", true);
+            ServiceHelp service = new ServiceHelp("", true); 
             var request = new Dictionary<string, string>() 
             { 
                 { "username", model.ID } ,{ "password" , model.Password }, { "grant_type" , "password" }
