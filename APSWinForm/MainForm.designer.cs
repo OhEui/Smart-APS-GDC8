@@ -54,25 +54,25 @@ namespace APSWinForm
             this.button18 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.SubPanel1 = new System.Windows.Forms.Panel();
-            this.btnTime = new System.Windows.Forms.Button();
-            this.btnARR = new System.Windows.Forms.Button();
-            this.btnEquipment = new System.Windows.Forms.Button();
-            this.btnRoute = new System.Windows.Forms.Button();
-            this.btnSTD = new System.Windows.Forms.Button();
-            this.btnLine = new System.Windows.Forms.Button();
-            this.btnDemand = new System.Windows.Forms.Button();
-            this.btnProduct = new System.Windows.Forms.Button();
             this.btnSubMenu1 = new System.Windows.Forms.Button();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.button22 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.btnDemand = new System.Windows.Forms.Button();
+            this.btnLine = new System.Windows.Forms.Button();
+            this.btnSTD = new System.Windows.Forms.Button();
+            this.btnRoute = new System.Windows.Forms.Button();
+            this.btnEquipment = new System.Windows.Forms.Button();
+            this.btnARR = new System.Windows.Forms.Button();
+            this.btnTime = new System.Windows.Forms.Button();
+            this.btnProduct = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.SidePanel1.SuspendLayout();
@@ -392,60 +392,6 @@ namespace APSWinForm
             this.panel1.Size = new System.Drawing.Size(228, 81);
             this.panel1.TabIndex = 23;
             // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(0, 50);
-            this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(25, 0, 55, 0);
-            this.button12.Size = new System.Drawing.Size(228, 31);
-            this.button12.TabIndex = 2;
-            this.button12.Text = "└ 가동률 분석";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(0, 25);
-            this.button13.Name = "button13";
-            this.button13.Padding = new System.Windows.Forms.Padding(25, 0, 30, 0);
-            this.button13.Size = new System.Drawing.Size(228, 25);
-            this.button13.TabIndex = 1;
-            this.button13.Text = "└ EQP 간트차트";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(0, 0);
-            this.button14.Name = "button14";
-            this.button14.Padding = new System.Windows.Forms.Padding(25, 0, 55, 0);
-            this.button14.Size = new System.Drawing.Size(228, 25);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "└ LOT 간트차트";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.UseVisualStyleBackColor = false;
-            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
@@ -480,159 +426,6 @@ namespace APSWinForm
             this.SubPanel1.Name = "SubPanel1";
             this.SubPanel1.Size = new System.Drawing.Size(228, 202);
             this.SubPanel1.TabIndex = 2;
-            // 
-            // btnTime
-            // 
-            this.btnTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.btnTime.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTime.FlatAppearance.BorderSize = 0;
-            this.btnTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btnTime.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTime.Location = new System.Drawing.Point(0, 175);
-            this.btnTime.Name = "btnTime";
-            this.btnTime.Padding = new System.Windows.Forms.Padding(25, 0, 30, 0);
-            this.btnTime.Size = new System.Drawing.Size(228, 27);
-            this.btnTime.TabIndex = 7;
-            this.btnTime.Text = "└ 교체준비시간관리";
-            this.btnTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTime.UseVisualStyleBackColor = false;
-            this.btnTime.Click += new System.EventHandler(this.btnTime_Click);
-            // 
-            // btnARR
-            // 
-            this.btnARR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.btnARR.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnARR.FlatAppearance.BorderSize = 0;
-            this.btnARR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnARR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnARR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
-            this.btnARR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnARR.Location = new System.Drawing.Point(0, 150);
-            this.btnARR.Name = "btnARR";
-            this.btnARR.Padding = new System.Windows.Forms.Padding(25, 0, 43, 0);
-            this.btnARR.Size = new System.Drawing.Size(228, 25);
-            this.btnARR.TabIndex = 6;
-            this.btnARR.Text = "└ 작업조건정보관리";
-            this.btnARR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnARR.UseVisualStyleBackColor = false;
-            this.btnARR.Click += new System.EventHandler(this.btnARR_Click);
-            // 
-            // btnEquipment
-            // 
-            this.btnEquipment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.btnEquipment.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEquipment.FlatAppearance.BorderSize = 0;
-            this.btnEquipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEquipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnEquipment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btnEquipment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEquipment.Location = new System.Drawing.Point(0, 125);
-            this.btnEquipment.Name = "btnEquipment";
-            this.btnEquipment.Padding = new System.Windows.Forms.Padding(25, 0, 30, 0);
-            this.btnEquipment.Size = new System.Drawing.Size(228, 25);
-            this.btnEquipment.TabIndex = 5;
-            this.btnEquipment.Text = "└ 설비정보관리";
-            this.btnEquipment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEquipment.UseVisualStyleBackColor = false;
-            this.btnEquipment.Click += new System.EventHandler(this.btnEquipment_Click);
-            // 
-            // btnRoute
-            // 
-            this.btnRoute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.btnRoute.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRoute.FlatAppearance.BorderSize = 0;
-            this.btnRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoute.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnRoute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
-            this.btnRoute.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRoute.Location = new System.Drawing.Point(0, 100);
-            this.btnRoute.Name = "btnRoute";
-            this.btnRoute.Padding = new System.Windows.Forms.Padding(25, 0, 30, 0);
-            this.btnRoute.Size = new System.Drawing.Size(228, 25);
-            this.btnRoute.TabIndex = 4;
-            this.btnRoute.Text = "└ 공정순서관리";
-            this.btnRoute.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRoute.UseVisualStyleBackColor = false;
-            this.btnRoute.Click += new System.EventHandler(this.btnRoute_Click);
-            // 
-            // btnSTD
-            // 
-            this.btnSTD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.btnSTD.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSTD.FlatAppearance.BorderSize = 0;
-            this.btnSTD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSTD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btnSTD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSTD.Location = new System.Drawing.Point(0, 75);
-            this.btnSTD.Name = "btnSTD";
-            this.btnSTD.Padding = new System.Windows.Forms.Padding(25, 0, 55, 0);
-            this.btnSTD.Size = new System.Drawing.Size(228, 25);
-            this.btnSTD.TabIndex = 3;
-            this.btnSTD.Text = "└ 표준공정정보관리";
-            this.btnSTD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSTD.UseVisualStyleBackColor = false;
-            this.btnSTD.Click += new System.EventHandler(this.btnSTD_Click);
-            // 
-            // btnLine
-            // 
-            this.btnLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.btnLine.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLine.FlatAppearance.BorderSize = 0;
-            this.btnLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
-            this.btnLine.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLine.Location = new System.Drawing.Point(0, 50);
-            this.btnLine.Name = "btnLine";
-            this.btnLine.Padding = new System.Windows.Forms.Padding(25, 0, 30, 0);
-            this.btnLine.Size = new System.Drawing.Size(228, 25);
-            this.btnLine.TabIndex = 2;
-            this.btnLine.Text = "└ 라인정보관리";
-            this.btnLine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLine.UseVisualStyleBackColor = false;
-            this.btnLine.Click += new System.EventHandler(this.btnLine_Click);
-            // 
-            // btnDemand
-            // 
-            this.btnDemand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.btnDemand.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDemand.FlatAppearance.BorderSize = 0;
-            this.btnDemand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDemand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDemand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btnDemand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDemand.Location = new System.Drawing.Point(0, 25);
-            this.btnDemand.Name = "btnDemand";
-            this.btnDemand.Padding = new System.Windows.Forms.Padding(25, 0, 55, 0);
-            this.btnDemand.Size = new System.Drawing.Size(228, 25);
-            this.btnDemand.TabIndex = 1;
-            this.btnDemand.Text = "└ 수요정보관리";
-            this.btnDemand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDemand.UseVisualStyleBackColor = false;
-            this.btnDemand.Click += new System.EventHandler(this.btnDemand_Click);
-            // 
-            // btnProduct
-            // 
-            this.btnProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProduct.FlatAppearance.BorderSize = 0;
-            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
-            this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduct.ImageKey = "(없음)";
-            this.btnProduct.Location = new System.Drawing.Point(0, 0);
-            this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Padding = new System.Windows.Forms.Padding(25, 0, 55, 0);
-            this.btnProduct.Size = new System.Drawing.Size(228, 25);
-            this.btnProduct.TabIndex = 0;
-            this.btnProduct.Text = "└ 제품정보관리";
-            this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduct.UseVisualStyleBackColor = false;
-            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // btnSubMenu1
             // 
@@ -712,6 +505,219 @@ namespace APSWinForm
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.Location = new System.Drawing.Point(0, 50);
+            this.button12.Name = "button12";
+            this.button12.Padding = new System.Windows.Forms.Padding(25, 0, 55, 0);
+            this.button12.Size = new System.Drawing.Size(228, 31);
+            this.button12.TabIndex = 2;
+            this.button12.Text = "└ 가동률 분석";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button13.Location = new System.Drawing.Point(0, 25);
+            this.button13.Name = "button13";
+            this.button13.Padding = new System.Windows.Forms.Padding(25, 0, 30, 0);
+            this.button13.Size = new System.Drawing.Size(228, 25);
+            this.button13.TabIndex = 1;
+            this.button13.Text = "└ EQP 간트차트";
+            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button13.UseVisualStyleBackColor = false;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
+            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button14.Location = new System.Drawing.Point(0, 0);
+            this.button14.Name = "button14";
+            this.button14.Padding = new System.Windows.Forms.Padding(25, 0, 55, 0);
+            this.button14.Size = new System.Drawing.Size(228, 25);
+            this.button14.TabIndex = 0;
+            this.button14.Text = "└ LOT 간트차트";
+            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // btnDemand
+            // 
+            this.btnDemand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.btnDemand.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDemand.FlatAppearance.BorderSize = 0;
+            this.btnDemand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDemand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDemand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnDemand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDemand.Location = new System.Drawing.Point(0, 25);
+            this.btnDemand.Name = "btnDemand";
+            this.btnDemand.Padding = new System.Windows.Forms.Padding(25, 0, 55, 0);
+            this.btnDemand.Size = new System.Drawing.Size(228, 25);
+            this.btnDemand.TabIndex = 1;
+            this.btnDemand.Text = "└ 수요정보관리";
+            this.btnDemand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDemand.UseVisualStyleBackColor = false;
+            this.btnDemand.Click += new System.EventHandler(this.btnDemand_Click);
+            // 
+            // btnLine
+            // 
+            this.btnLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.btnLine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLine.FlatAppearance.BorderSize = 0;
+            this.btnLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
+            this.btnLine.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLine.Location = new System.Drawing.Point(0, 50);
+            this.btnLine.Name = "btnLine";
+            this.btnLine.Padding = new System.Windows.Forms.Padding(25, 0, 30, 0);
+            this.btnLine.Size = new System.Drawing.Size(228, 25);
+            this.btnLine.TabIndex = 2;
+            this.btnLine.Text = "└ 라인정보관리";
+            this.btnLine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLine.UseVisualStyleBackColor = false;
+            this.btnLine.Click += new System.EventHandler(this.btnLine_Click);
+            // 
+            // btnSTD
+            // 
+            this.btnSTD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.btnSTD.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSTD.FlatAppearance.BorderSize = 0;
+            this.btnSTD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSTD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSTD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnSTD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSTD.Location = new System.Drawing.Point(0, 75);
+            this.btnSTD.Name = "btnSTD";
+            this.btnSTD.Padding = new System.Windows.Forms.Padding(25, 0, 55, 0);
+            this.btnSTD.Size = new System.Drawing.Size(228, 25);
+            this.btnSTD.TabIndex = 3;
+            this.btnSTD.Text = "└ 표준공정정보관리";
+            this.btnSTD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSTD.UseVisualStyleBackColor = false;
+            this.btnSTD.Click += new System.EventHandler(this.btnSTD_Click);
+            // 
+            // btnRoute
+            // 
+            this.btnRoute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.btnRoute.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRoute.FlatAppearance.BorderSize = 0;
+            this.btnRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRoute.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRoute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
+            this.btnRoute.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoute.Location = new System.Drawing.Point(0, 100);
+            this.btnRoute.Name = "btnRoute";
+            this.btnRoute.Padding = new System.Windows.Forms.Padding(25, 0, 30, 0);
+            this.btnRoute.Size = new System.Drawing.Size(228, 25);
+            this.btnRoute.TabIndex = 4;
+            this.btnRoute.Text = "└ 공정순서관리";
+            this.btnRoute.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRoute.UseVisualStyleBackColor = false;
+            this.btnRoute.Click += new System.EventHandler(this.btnRoute_Click);
+            // 
+            // btnEquipment
+            // 
+            this.btnEquipment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.btnEquipment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEquipment.FlatAppearance.BorderSize = 0;
+            this.btnEquipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEquipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEquipment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnEquipment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEquipment.Location = new System.Drawing.Point(0, 125);
+            this.btnEquipment.Name = "btnEquipment";
+            this.btnEquipment.Padding = new System.Windows.Forms.Padding(25, 0, 30, 0);
+            this.btnEquipment.Size = new System.Drawing.Size(228, 25);
+            this.btnEquipment.TabIndex = 5;
+            this.btnEquipment.Text = "└ 설비정보관리";
+            this.btnEquipment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEquipment.UseVisualStyleBackColor = false;
+            this.btnEquipment.Click += new System.EventHandler(this.btnEquipment_Click);
+            // 
+            // btnARR
+            // 
+            this.btnARR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.btnARR.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnARR.FlatAppearance.BorderSize = 0;
+            this.btnARR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnARR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnARR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
+            this.btnARR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnARR.Location = new System.Drawing.Point(0, 150);
+            this.btnARR.Name = "btnARR";
+            this.btnARR.Padding = new System.Windows.Forms.Padding(25, 0, 43, 0);
+            this.btnARR.Size = new System.Drawing.Size(228, 25);
+            this.btnARR.TabIndex = 6;
+            this.btnARR.Text = "└ 작업조건정보관리";
+            this.btnARR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnARR.UseVisualStyleBackColor = false;
+            this.btnARR.Click += new System.EventHandler(this.btnARR_Click);
+            // 
+            // btnTime
+            // 
+            this.btnTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.btnTime.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTime.FlatAppearance.BorderSize = 0;
+            this.btnTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.btnTime.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTime.Location = new System.Drawing.Point(0, 175);
+            this.btnTime.Name = "btnTime";
+            this.btnTime.Padding = new System.Windows.Forms.Padding(25, 0, 30, 0);
+            this.btnTime.Size = new System.Drawing.Size(228, 27);
+            this.btnTime.TabIndex = 7;
+            this.btnTime.Text = "└ 교체준비시간관리";
+            this.btnTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTime.UseVisualStyleBackColor = false;
+            this.btnTime.Click += new System.EventHandler(this.btnTime_Click);
+            // 
+            // btnProduct
+            // 
+            this.btnProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProduct.FlatAppearance.BorderSize = 0;
+            this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(49)))), ((int)(((byte)(111)))));
+            this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProduct.ImageKey = "(없음)";
+            this.btnProduct.Location = new System.Drawing.Point(0, 0);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Padding = new System.Windows.Forms.Padding(25, 0, 55, 0);
+            this.btnProduct.Size = new System.Drawing.Size(228, 25);
+            this.btnProduct.TabIndex = 0;
+            this.btnProduct.Text = "└ 제품정보관리";
+            this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProduct.UseVisualStyleBackColor = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            // 
+            // 로그아웃ToolStripMenuItem
+            // 
+            this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.로그아웃ToolStripMenuItem.Text = "로그아웃";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -765,11 +771,17 @@ namespace APSWinForm
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel SubPanel1;
+        private System.Windows.Forms.Button btnSubMenu1;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Panel SubPanel1;
         private System.Windows.Forms.Button btnTime;
         private System.Windows.Forms.Button btnARR;
         private System.Windows.Forms.Button btnEquipment;
@@ -778,12 +790,6 @@ namespace APSWinForm
         private System.Windows.Forms.Button btnLine;
         private System.Windows.Forms.Button btnDemand;
         private System.Windows.Forms.Button btnProduct;
-        private System.Windows.Forms.Button btnSubMenu1;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ToolStripMenuItem 로그아웃ToolStripMenuItem;
     }
 }
