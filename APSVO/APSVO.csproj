@@ -50,13 +50,13 @@
     <Compile Include="Chart\LOTGanttData.cs" />
     <Compile Include="ComboItemVO.cs" />
     <Compile Include="CommonVO.cs" />
+    <Compile Include="MenuVO.cs" />
     <Compile Include="ProductVO.cs" />
     <Compile Include="STD_STEP_VO.cs" />
     <Compile Include="EQUIPVO.cs" />
     <Compile Include="StepRouteVO.cs" />
     <Compile Include="User\Request.cs" />
     <Compile Include="User\UserInfo.cs" />
-    <Compile Include="User\UserData.cs" />
     <Compile Include="SampleVO.cs" />
     <Compile Include="WebMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

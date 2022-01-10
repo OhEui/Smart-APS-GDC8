@@ -34,21 +34,20 @@ namespace APSUtil.Http
         /// API 주소: https:localhost::44309/api/Sample
         /// </summary>
         /// <param name="routePrefix"></param>
-        public ServiceHelp(string routePrefix = "", bool IsWebClient = false, string authorization = "")
+        public ServiceHelp(bool IsWebClient = false)
         {
-            string prefix = !string.IsNullOrWhiteSpace(routePrefix) ? 
-                $"{routePrefix}/" : "";
             string apiaddress = IsWebClient ? 
                 WebConfigurationManager.AppSettings["ApiAddress"] : ConfigurationManager.AppSettings["ApiAddress"];
 
-            BaseServiceUrl = $"{apiaddress.TrimEnd('/')}/{prefix}";
+            BaseServiceUrl = $"{apiaddress.TrimEnd('/')}/";
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            if (!string.IsNullOrWhiteSpace(authorization))
+            if (TokenStorage.IsStoraged)
             {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authorization);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", TokenStorage.AccessToken);
             }
+
         }
 
         public async Task<T> GetListAsync<T>(string path, T t)
@@ -190,10 +189,7 @@ namespace APSUtil.Http
             {
                 using (HttpResponseMessage response = await client.PostAsJsonAsync(path, value))
                 {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        result = JsonConvert.DeserializeObject<WebMessage<TResponse>>(await response.Content.ReadAsStringAsync());
-                    }
+                    result = JsonConvert.DeserializeObject<WebMessage<TResponse>>(await response.Content.ReadAsStringAsync());
                 }
                 return result;
             }

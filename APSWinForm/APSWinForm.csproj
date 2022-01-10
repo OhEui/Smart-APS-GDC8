@@ -83,6 +83,12 @@
     <Compile Include="BaseForm\frmpopup.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMenuAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuAuth.Designer.cs">
+      <DependentUpon>frmMenuAuth.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSY\frmDEMAND.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,13 @@
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm1.Designer.cs">
+      <DependentUpon>MainForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuDAC.cs" />
     <Compile Include="OET\EQPARR_REG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,10 +245,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoStorage.cs" />
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\ExcelUtil.cs" />
-    <Compile Include="Util\ServiceHelp.cs" />
+    <Compile Include="Util\ucTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Util\ucTabControl.Designer.cs">
+      <DependentUpon>ucTabControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaseForm\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\frmpopup.resx">
       <DependentUpon>frmpopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuAuth.resx">
+      <DependentUpon>frmMenuAuth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSY\frmDEMAND.resx">
       <DependentUpon>frmDEMAND.cs</DependentUpon>
@@ -274,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\NumTextBox.resx">
       <DependentUpon>NumTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm1.resx">
+      <DependentUpon>MainForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OET\EQPARR_REG.resx">
       <DependentUpon>EQPARR_REG.cs</DependentUpon>
@@ -366,6 +391,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\free-icon-edit-1827933.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\close-grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\close-red.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

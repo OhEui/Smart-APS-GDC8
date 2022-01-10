@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using APSWinForm;
 using APSVO;
-
+using APSUtil.Http;
 
 namespace APSWinForm
 {
     public partial class EQP_ARRANGE : Form
     {
         List<EqpArrangeVO> ARRList= null;
-        ServiceHelp srv = new ServiceHelp("");
+        ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> ProductList = null;
         List<ComboItemVO> ProcessList = null;
         List<EQUIPVO> EQPList = null;
@@ -48,7 +48,7 @@ namespace APSWinForm
         {
             
             ProductList = await srv.GetListAsync("api/Common/CommonCode", ProductList);
-            ProcessList = await srv.GetListAsync("api/Common/CommonCode", ProcessList);
+            ProcessList = await srv.GetListAsync("api   /Common/CommonCode", ProcessList);
             EQPList = await srv.GetListAsync("api/EQUIPMENT/EQPlist", EQPList);
             CommonUtil.ComboBinding(cboProduct, ProductList, "PRODUCT_ID", blankText: "");
             CommonUtil.ComboBinding(cboProcess, ProcessList, "PROCESS_ID", blankText: "");

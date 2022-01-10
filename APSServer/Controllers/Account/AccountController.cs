@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using APSUtil.Http;
-
+using APSVO;
 
 namespace APSServer.Controllers
 {
@@ -70,19 +70,45 @@ namespace APSServer.Controllers
 
 
         // GET api/Account/UserInfo
-        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [Route("UserInfo")]
-        public UserInfoViewModel GetUserInfo()
+        public IHttpActionResult GetUserInfo()
         {
             ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
-
+            var result = GetCurrentUser();
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            else 
+            {
+                return Content(System.Net.HttpStatusCode.NotFound, result);
+            }
+            /*
             return new UserInfoViewModel
             {
                 Email = User.Identity.GetUserName(),
                 HasRegistered = externalLogin == null,
-                LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
+                LoginProvider = externalLogin?.LoginProvider
+            };
+            */
+        }
+
+        private UserInfo GetCurrentUser()
+        {
+            ApplicationUser newUser = UserManager.FindById(User.Identity.GetUserId());
+
+            return new UserInfo()
+            {
+                Email = newUser.Email,
+                EmpNo = newUser.EmpNo,
+                Name = newUser.Name,
+                Birthday = newUser.Birthday,
+                ID = newUser.UserName,
+                Phone = newUser.Phone
             };
         }
+
 
         // POST api/Account/Logout
         [Route("Logout")]
@@ -341,13 +367,24 @@ namespace APSServer.Controllers
         [Route("Login")]
         public async Task<IHttpActionResult> Login(LoginBindingModel model) 
         {
-            ServiceHelp service = new ServiceHelp("", true); 
+            ServiceHelp service = new ServiceHelp(true); 
             var request = new Dictionary<string, string>() 
             { 
                 { "username", model.ID } ,{ "password" , model.Password }, { "grant_type" , "password" }
             };
-            Models.TokenModel response = await service.PostAsyncFormRequest<Models.TokenModel>("token", request);
-            return Content(service.StatusCode, response);
+            TokenModel responseToken = await service.PostAsyncFormRequest<TokenModel>("token", request);
+
+            // UserInfo 조회하는 DAC 호출
+
+            bool isSuccess = responseToken.Error == null;
+
+            WebMessage<TokenModel> result = new WebMessage<TokenModel>()
+            {
+                IsSuccess = isSuccess,
+                ResultMessage = isSuccess ? "로그인에 성공하였습니다." : responseToken.ErrorDescription,
+                Data = responseToken
+            };
+            return Content(service.StatusCode, result);
         }
 
         // POST api/Account/Register

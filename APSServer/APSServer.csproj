@@ -140,32 +140,30 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
-    <Compile Include="Controllers\Account\ValuesController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\EQUIPMENTController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="Controllers\SetUpController.cs" />
     <Compile Include="Controllers\StepController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\AccountBindingModels.cs" />
     <Compile Include="Models\Account\AccountViewModels.cs" />
     <Compile Include="Models\Account\IdentityModels.cs" />
-    <Compile Include="Models\Account\TokenModel.cs" />
     <Compile Include="Models\CommonDAC.cs" />
     <Compile Include="Models\EQUIPDAC.cs" />
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\LOTDAC.cs" />
+    <Compile Include="Models\MenuDAC.cs" />
     <Compile Include="Models\ProductDAC.cs" />
     <Compile Include="Models\ResultDAC.cs" />
     <Compile Include="Models\SampleDAC.cs" />
     <Compile Include="Models\SETUPDAC.cs" />
     <Compile Include="Models\StepDAC.cs" />
-    <Compile Include="Models\UserDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
