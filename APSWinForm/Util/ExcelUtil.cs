@@ -55,6 +55,12 @@ namespace APSWinForm
 
         public static bool ExportExcelToList<T>(List<T> dataList, string saveFileName, string exceptColumns)
         {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "Excel Files(*.xls)|*.xls";
+            dlg.Title = "엑셀파일로 내보내기";
+
+            if (dlg.ShowDialog() != DialogResult.OK) return false;
+
             try
             {
                 Excel.Application xlApp = new Excel.Application();
@@ -93,7 +99,7 @@ namespace APSWinForm
                 xlWorkSheet.Columns.AutoFit();
                 //엑셀컬럼의 너비가 데이터길이에 따라서 자동조정
 
-                xlWorkBook.SaveAs(saveFileName, Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.SaveAs(dlg.FileName, Excel.XlFileFormat.xlWorkbookNormal);
                 xlWorkBook.Close(true);
                 xlApp.Quit();
 

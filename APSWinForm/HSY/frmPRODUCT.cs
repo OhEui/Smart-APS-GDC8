@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APSUtil.Http;
 using APSVO;
-using APSDAC;
+
 
 namespace APSWinForm
 {
     public partial class frmPRODUCT : Form
     {
-        ServiceHelp srv = new ServiceHelp("");
+        ServiceHelp srv = new ServiceHelp();
         List<ProductVO> list = null;
 
         public frmPRODUCT()
@@ -28,14 +29,16 @@ namespace APSWinForm
             dgvPR.DataSource = list;
         }
 
+        private void DataLode() { }
         private void frmPRODUCT_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(dgvPR);
             DataGridViewUtil.AddGridTextColumn(dgvPR, "제품ID", "PRODUCT_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품타입", "PRODUCT_TYPE", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품타입", "PRODUCT_TYPE", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvPR, "제품이름", "PRODUCT_NAME", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvPR, "프로세스ID", "PROCESS_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "생산단위크기", "LOT_SIZE", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "생산단위크기", "LOT_SIZE", colWidth: 100);
+            
 
             LoadData();
         }
@@ -43,6 +46,10 @@ namespace APSWinForm
         //검색
         private void button7_Click(object sender, EventArgs e)
         {
+            MainForm frm = MdiParent as MainForm;
+            srv = new ServiceHelp();
+            DataLode();
+        
             if (string.IsNullOrWhiteSpace(txtID.Text) && string.IsNullOrWhiteSpace(txtPID.Text))
             {
                 MessageBox.Show("검색어를 입력해주세요.");
@@ -85,13 +92,8 @@ namespace APSWinForm
             }
             ProductVO prodInfo = list.Find(p => p.PRODUCT_ID == prod);
             Productpop reg = new Productpop(prodInfo);
-
-            if (reg.ShowDialog() == DialogResult.OK)
-            {
-                LoadData();
-            }
-            else return;
         }
+        
 
         //삭제
         private async void toolStripButton1_Click(object sender, EventArgs e)
@@ -113,6 +115,13 @@ namespace APSWinForm
                 }
                 MessageBox.Show(msg.ResultMessage);
             }
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            bool bResult = ExcelUtil.ExportExcelToList(dgvPR.DataSource as List<ProductVO>, @".\product.xlsx", "");
+            if (bResult)
+                MessageBox.Show("저장하였습니다.");
         }
     }
 }

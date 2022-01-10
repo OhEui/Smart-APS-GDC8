@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APSUtil.Http;
 using APSVO;
-using APSDAC;
+
 
 namespace APSWinForm
 {
     public partial class EQUIPMENT : Form
     {
         List<EQUIPVO> EQPlist = null;
-        List<STD_STEP_VO> stepList = null;
-        ServiceHelp srv = new ServiceHelp("");
+        ServiceHelp srv = new ServiceHelp();
+        List<ComboItemVO> list = null;
 
 
 
-        
 
         //public void DeleteEquip(string id)
         //{
@@ -39,11 +39,14 @@ namespace APSWinForm
             DataLoad();
 
         }
+        
 
         private async void combobinding()
         {
-            stepList = await srv.GetListAsync("api/Step/getStepInfoList", stepList);
-            CommonUtil.ComboBinding(cboEQPgroup, stepList, "STD_STEP_ID", "STD_STEP_NAME", "선택");
+          
+            
+            list = await srv.GetListAsync("api/Common/CommonCode", list);
+            CommonUtil.ComboBinding(cboEQPgroup, list, "STD_STEP_ID");
 
         }
 
@@ -62,7 +65,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "사이트ID", "SITE_ID", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "라인ID", "LINE_ID", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "설비처리그룹", "EQP_GROUP", colWidth: 100);
-
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, "수정자", "user_id", colWidth: 100,visibility:false);
             dgvLoad();
             
 

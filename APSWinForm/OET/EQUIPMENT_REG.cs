@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APSUtil.Http;
 using APSVO;
-using APSDAC;
+
 
 namespace APSWinForm
 {
     public partial class EQUIPMENT_REG : Form
     {
-        ServiceHelp srv = new ServiceHelp("");
+        ServiceHelp srv = new ServiceHelp();
         EQUIPVO EQPvo;
-        List<STD_STEP_VO> eqpgroup;
+        List<ComboItemVO> list;
         List<LineVO> Lineinfo;
         
         public EQUIPMENT_REG()
@@ -38,31 +39,37 @@ namespace APSWinForm
 
         public async void Combobinding()
         {
-            
-            eqpgroup = await srv.GetListAsync("api/Step/getStepInfoList", eqpgroup);
+            list = await srv.GetListAsync("api/Common/CommonCode", list);
             Lineinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Lineinfo);
-            CommonUtil.ComboBinding(cboEqpGroup, eqpgroup, "STD_STEP_NAME", "STD_STEP_NAME");
-            CommonUtil.ComboBinding(cboLineID, Lineinfo, "LINE_ID", "LINE_ID");
+            //Lineinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Lineinfo);
+            //Siteinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Siteinfo)
             CommonUtil.ComboBinding(cboSiteID, Lineinfo, "SITE_ID", "SITE_ID");
-            cboEqpGroup.Text = "";
-            cboLineID.Text = "";
-            cboSiteID.Text = "";
+            CommonUtil.ComboBinding(cboLineID, Lineinfo, "LINE_ID", "LINE_ID");
+            CommonUtil.ComboBinding(cboEqpGroup, list, "STD_STEP_ID" , blankText:"선택");
+            //CommonUtil.ComboBinding(cboLineID, list, "LINE_ID", blankText: "선택");
+            //CommonUtil.ComboBinding(cboSiteID, list, "SITE_ID", blankText: "선택");
+
+            Modify();
         }
 
 
         private  void EQUIPMENT_REG_Load(object sender, EventArgs e)
         {
             Combobinding();
+            
+            
+        }
 
+        private void Modify()
+        {
             if (EQPvo != null)
             {
                 txtEqpID.Text = EQPvo.EQP_ID;
                 txtEqpmodel.Text = EQPvo.EQP_MODEL;
-                cboEqpGroup.Text = EQPvo.EQP_GROUP;
-                cboLineID.Text = EQPvo.LINE_ID;
-                cboSiteID.Text = EQPvo.SITE_ID;
+                cboEqpGroup.SelectedValue = EQPvo.EQP_GROUP;
+                cboLineID.SelectedValue = EQPvo.LINE_ID;
+                cboSiteID.SelectedValue = EQPvo.SITE_ID;
             }
-
         }
 
         private async void btnAdd_Click(object sender, EventArgs e)
@@ -81,12 +88,12 @@ namespace APSWinForm
                 {
                     vo.EQP_ID = txtEqpID.Text.Trim();
                     vo.EQP_MODEL = txtEqpmodel.Text.Trim();
-                    vo.EQP_GROUP = cboEqpGroup.Text.Trim();
-                    vo.LINE_ID = cboLineID.Text.Trim();
-                    vo.SITE_ID = cboSiteID.Text.Trim();
+                    vo.EQP_GROUP = cboEqpGroup.SelectedValue.ToString();
+                    vo.LINE_ID = cboLineID.SelectedValue.ToString();
+                    vo.SITE_ID = cboSiteID.SelectedValue.ToString();
+                    vo.user_id = "test";
+                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", vo);
 
-                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPUpdate", vo);
-                    
 
                     if (msg.IsSuccess)
                     {
@@ -100,9 +107,10 @@ namespace APSWinForm
                 {
                     newvo.EQP_ID = txtEqpID.Text.Trim();
                     newvo.EQP_MODEL = txtEqpmodel.Text.Trim();
-                    newvo.EQP_GROUP = cboEqpGroup.Text.Trim();
-                    newvo.LINE_ID = cboLineID.Text.Trim();
-                    newvo.SITE_ID = cboSiteID.Text.Trim();
+                    newvo.EQP_GROUP = cboEqpGroup.SelectedValue.ToString();
+                    newvo.LINE_ID = cboLineID.SelectedValue.ToString();
+                    newvo.SITE_ID = cboSiteID.SelectedValue.ToString();
+                    newvo.user_id = "test";
 
                     WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", newvo);
 

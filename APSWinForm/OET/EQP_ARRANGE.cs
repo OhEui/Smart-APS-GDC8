@@ -9,17 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using APSWinForm;
 using APSVO;
-using APSDAC;
+using APSUtil.Http;
 
 namespace APSWinForm
 {
     public partial class EQP_ARRANGE : Form
     {
         List<EqpArrangeVO> ARRList= null;
-        ServiceHelp srv = new ServiceHelp("");
-        List<ProductVO> ProductList = null;
-        List<ProductVO> ProcessList = null;
+        ServiceHelp srv = new ServiceHelp();
+        List<ComboItemVO> ProductList = null;
+        List<ComboItemVO> ProcessList = null;
         List<EQUIPVO> EQPList = null;
+        
 
         //public List<EqpArrangeVO> GetEquipmentARR()
         //{
@@ -45,12 +46,14 @@ namespace APSWinForm
 
         private async void combobinding()
         {
-            ProductList = await srv.GetListAsync("api/Product/Products", ProductList);
-            ProcessList = await srv.GetListAsync("api/Product/Products", ProcessList);
+            
+            ProductList = await srv.GetListAsync("api/Common/CommonCode", ProductList);
+            ProcessList = await srv.GetListAsync("api   /Common/CommonCode", ProcessList);
             EQPList = await srv.GetListAsync("api/EQUIPMENT/EQPlist", EQPList);
-            CommonUtil.ComboBinding(cboProduct, ProductList, "PRODUCT_ID", "PRODUCT_NAME", "");
-            CommonUtil.ComboBinding(cboProcess, ProcessList, "PRODUCT_ID", "PROCESS_ID", "");
+            CommonUtil.ComboBinding(cboProduct, ProductList, "PRODUCT_ID", blankText: "");
+            CommonUtil.ComboBinding(cboProcess, ProcessList, "PROCESS_ID", blankText: "");
             CommonUtil.ComboBinding(cboEQP, EQPList, "EQP_ID", "EQP_MODEL", "");
+
 
         }
 
@@ -68,7 +71,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "설비ID", "EQP_ID", colWidth: 90);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정소요시간", "TACT_TIME", colWidth: 130);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "프로세스처리시간", "PROC_TIME", colWidth: 130);
-
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, "수정자", "user_id", colWidth: 130,visibility:false);
 
             dgvLoad();
 
@@ -84,10 +87,14 @@ namespace APSWinForm
             }
             getSearchEqpList();
         }
-        private void getSearchEqpList()  // 검색함수 보류
+        private void getSearchEqpList()  // 검색함수
         {
             dgvEQP.DataSource = null;
-            dgvEQP.DataSource = ARRList.FindAll(p => p.PRODUCT_ID.Contains(cboProduct.Text) && p.PROCESS_ID.Contains(cboProcess.Text) && p.EQP_ID.Contains(cboEQP.Text));
+           
+            dgvEQP.DataSource = ARRList.FindAll(p => (p.PRODUCT_ID.Contains(cboProduct.Text) && p.PROCESS_ID.Contains(cboProcess.Text)) && (p.PROCESS_ID.Contains(cboProcess.Text) && p.EQP_ID.Contains(cboEQP.Text))
+                                                       && (p.PRODUCT_ID.Contains(cboProduct.Text) && p.EQP_ID.Contains(cboEQP.Text)));
+             
+        
         }
 
         private void btnReset_Click(object sender, EventArgs e)

@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APSUtil.Http;
 using APSVO;
-using APSDAC;
+
 
 namespace APSWinForm
 {
     public partial class EQPARR_REG : Form
     {
-        ServiceHelp srv = new ServiceHelp("");
+        ServiceHelp srv = new ServiceHelp();
         EqpArrangeVO EQPArrvo;
-
+        // List<EqpArrangeVO> ARRList = null;
+        List<ComboItemVO> ProductList = null;
+        List<ComboItemVO> ProcessList = null;
+        List<EQUIPVO> EQPList = null;
 
 
         public EQPARR_REG()
@@ -32,8 +36,34 @@ namespace APSWinForm
 
         private void EQPARR_REG_Load(object sender, EventArgs e)
         {
+            combobinding();
+        }
+
+        private async void combobinding()
+        {
+
+            ProductList = await srv.GetListAsync("api/Common/CommonCode", ProductList);
+            ProcessList = await srv.GetListAsync("api/Common/CommonCode", ProcessList);
+            EQPList = await srv.GetListAsync("api/EQUIPMENT/EQPlist", EQPList);
+            CommonUtil.ComboBinding(cboProduct, ProductList, "PRODUCT_ID", blankText: "");
+            CommonUtil.ComboBinding(cboProcess, ProcessList, "PROCESS_ID", blankText: "");
+            CommonUtil.ComboBinding(cboStep, ProcessList, "STD_STEP_ID", blankText: "");
+            CommonUtil.ComboBinding(cboEQP, EQPList, "EQP_ID", "EQP_MODEL", "");
+            Modify();
+
+        }
+        private void Modify()
+        {
             if (EQPArrvo != null)
             {
+                txtEQP.Visible = true;
+                txtProduct.Visible = true;
+                txtProcess.Visible = true;
+                txtStep.Visible = true;
+                txtEQP.Text = EQPArrvo.EQP_ID;
+                txtProduct.Text = EQPArrvo.PRODUCT_ID;
+                txtProcess.Text = EQPArrvo.PROCESS_ID;
+                txtStep.Text = EQPArrvo.STEP_ID;
                 cboEQP.Text = EQPArrvo.EQP_ID;
                 cboProduct.Text = EQPArrvo.PRODUCT_ID;
                 cboProcess.Text = EQPArrvo.PROCESS_ID;
@@ -41,7 +71,7 @@ namespace APSWinForm
                 numStep.Value = EQPArrvo.TACT_TIME;
                 numProcess.Value = EQPArrvo.PROC_TIME;
             }
-        }
+}
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
@@ -64,10 +94,11 @@ namespace APSWinForm
                     vo.STEP_ID = cboStep.Text.Trim();
                     vo.TACT_TIME = Convert.ToInt32(numStep.Text.Trim());
                     vo.PROC_TIME = Convert.ToInt32(numProcess.Text.Trim());
+                    vo.user_id = "test";
 
 
 
-                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPArrUpdate", vo);
+                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPArrnew", vo);
 
 
                     if (msg.IsSuccess)
@@ -80,13 +111,13 @@ namespace APSWinForm
                 }
                 else
                 {
-                    newvo.EQP_ID = cboEQP.Text.Trim();
-                    newvo.PRODUCT_ID = cboProduct.Text.Trim();
-                    newvo.PROCESS_ID = cboProcess.Text.Trim();
-                    newvo.STEP_ID = cboStep.Text.Trim();
+                    newvo.EQP_ID = txtEQP.Text.Trim();
+                    newvo.PRODUCT_ID = txtProduct.Text.Trim();
+                    newvo.PROCESS_ID = txtProcess.Text.Trim();
+                    newvo.STEP_ID = txtStep.Text.Trim();
                     newvo.TACT_TIME = Convert.ToInt32(numStep.Text.Trim());
                     newvo.PROC_TIME = Convert.ToInt32(numProcess.Text.Trim());
-
+                    newvo.user_id = "test";
                     WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPArrnew", newvo);
 
 

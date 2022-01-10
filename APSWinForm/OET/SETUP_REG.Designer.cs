@@ -45,11 +45,15 @@ namespace APSWinForm
             this.cboLine = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSite = new System.Windows.Forms.TextBox();
+            this.txtLine = new System.Windows.Forms.TextBox();
+            this.txtStep = new System.Windows.Forms.TextBox();
+            this.txtGroup = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -105,6 +109,10 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.panel9.Controls.Add(this.txtGroup);
+            this.panel9.Controls.Add(this.txtStep);
+            this.panel9.Controls.Add(this.txtLine);
+            this.panel9.Controls.Add(this.txtSite);
             this.panel9.Controls.Add(this.cboStep);
             this.panel9.Controls.Add(this.label7);
             this.panel9.Controls.Add(this.cboGroup);
@@ -116,7 +124,7 @@ namespace APSWinForm
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.label10);
             this.panel9.Controls.Add(this.button3);
-            this.panel9.Controls.Add(this.button7);
+            this.panel9.Controls.Add(this.btnAdd);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
@@ -162,6 +170,11 @@ namespace APSWinForm
             // numTime
             // 
             this.numTime.Location = new System.Drawing.Point(190, 238);
+            this.numTime.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numTime.Name = "numTime";
             this.numTime.Size = new System.Drawing.Size(120, 21);
             this.numTime.TabIndex = 198;
@@ -212,18 +225,19 @@ namespace APSWinForm
             this.label10.TabIndex = 190;
             this.label10.Text = "ㆍ사이트아이디";
             // 
-            // button7
+            // btnAdd
             // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(79, 330);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(102, 36);
-            this.button7.TabIndex = 45;
-            this.button7.Text = "추가";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(79, 330);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(102, 36);
+            this.btnAdd.TabIndex = 45;
+            this.btnAdd.Text = "등록";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel8
             // 
@@ -265,6 +279,42 @@ namespace APSWinForm
             this.panel1.Size = new System.Drawing.Size(404, 38);
             this.panel1.TabIndex = 44;
             // 
+            // txtSite
+            // 
+            this.txtSite.Location = new System.Drawing.Point(188, 62);
+            this.txtSite.Name = "txtSite";
+            this.txtSite.ReadOnly = true;
+            this.txtSite.Size = new System.Drawing.Size(121, 21);
+            this.txtSite.TabIndex = 203;
+            this.txtSite.Visible = false;
+            // 
+            // txtLine
+            // 
+            this.txtLine.Location = new System.Drawing.Point(188, 108);
+            this.txtLine.Name = "txtLine";
+            this.txtLine.ReadOnly = true;
+            this.txtLine.Size = new System.Drawing.Size(122, 21);
+            this.txtLine.TabIndex = 204;
+            this.txtLine.Visible = false;
+            // 
+            // txtStep
+            // 
+            this.txtStep.Location = new System.Drawing.Point(188, 152);
+            this.txtStep.Name = "txtStep";
+            this.txtStep.ReadOnly = true;
+            this.txtStep.Size = new System.Drawing.Size(122, 21);
+            this.txtStep.TabIndex = 205;
+            this.txtStep.Visible = false;
+            // 
+            // txtGroup
+            // 
+            this.txtGroup.Location = new System.Drawing.Point(188, 195);
+            this.txtGroup.Name = "txtGroup";
+            this.txtGroup.ReadOnly = true;
+            this.txtGroup.Size = new System.Drawing.Size(121, 21);
+            this.txtGroup.TabIndex = 206;
+            this.txtGroup.Visible = false;
+            // 
             // SETUP_REG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -294,7 +344,7 @@ namespace APSWinForm
         protected System.Windows.Forms.Button button3;
         protected System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel9;
-        protected System.Windows.Forms.Button button7;
+        protected System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -309,5 +359,9 @@ namespace APSWinForm
         private System.Windows.Forms.ComboBox cboLine;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtGroup;
+        private System.Windows.Forms.TextBox txtStep;
+        private System.Windows.Forms.TextBox txtLine;
+        private System.Windows.Forms.TextBox txtSite;
     }
 }

@@ -6,23 +6,27 @@ using System.Threading.Tasks;
 
 namespace APSVO
 {
-    public class UserInfo
+    public interface IUserInfo
     {
-        // 회원가입 시 입력하는 항목들
-        public string User_ID { get; set; }
-        public string User_PWD { get; set; }
-        public string User_Name { get; set; }
-        public string User_Email { get; set; }
-        public string User_phone { get; set; }
-        public DateTime User_Birth { get; set; }
-        public int Dept_ID { get; set; }
-
-        // 비밀번호 확인 (DB에는 저장 안 됨)
-        public string User_PWD_Repeat { get; set; } 
-
-        // 회원가입 시 입력하면 안되는 항목들
-        public int? User_NO { get; set; }
-        public bool User_IsAdmin { get; set; }
+        string Email { get; set; }
+        string ID { get; set; }
+        string Name { get; set; }
+        int EmpNo { get; set; }
+        string Phone { get; set; }
+        DateTime Birthday { get; set; }
     }
+
+    public class UserInfo : IUserInfo
+    {
+        public string Email { get; set; }
+        //public string Password { get; set; }
+        //public string ConfirmPassword { get; set; }
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public int EmpNo { get; set; }
+        public string Phone { get; set; }
+        public DateTime Birthday { get; set; }
+    }
+
 
 }

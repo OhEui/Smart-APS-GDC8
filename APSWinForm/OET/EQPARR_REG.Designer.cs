@@ -32,15 +32,11 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EQPARR_REG));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.cboStep = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cboProduct = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cboEQP = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.numStep = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.cboProcess = new System.Windows.Forms.ComboBox();
             this.numProcess = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,6 +48,14 @@ namespace APSWinForm
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboEQP = new System.Windows.Forms.ComboBox();
+            this.cboProduct = new System.Windows.Forms.ComboBox();
+            this.cboProcess = new System.Windows.Forms.ComboBox();
+            this.cboStep = new System.Windows.Forms.ComboBox();
+            this.txtEQP = new System.Windows.Forms.TextBox();
+            this.txtProduct = new System.Windows.Forms.TextBox();
+            this.txtProcess = new System.Windows.Forms.TextBox();
+            this.txtStep = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStep)).BeginInit();
@@ -77,15 +81,19 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.panel9.Controls.Add(this.txtStep);
+            this.panel9.Controls.Add(this.txtProcess);
+            this.panel9.Controls.Add(this.txtProduct);
+            this.panel9.Controls.Add(this.txtEQP);
             this.panel9.Controls.Add(this.cboStep);
-            this.panel9.Controls.Add(this.label4);
+            this.panel9.Controls.Add(this.cboProcess);
             this.panel9.Controls.Add(this.cboProduct);
-            this.panel9.Controls.Add(this.label5);
             this.panel9.Controls.Add(this.cboEQP);
+            this.panel9.Controls.Add(this.label4);
+            this.panel9.Controls.Add(this.label5);
             this.panel9.Controls.Add(this.label8);
             this.panel9.Controls.Add(this.numStep);
             this.panel9.Controls.Add(this.label7);
-            this.panel9.Controls.Add(this.cboProcess);
             this.panel9.Controls.Add(this.numProcess);
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.label6);
@@ -97,16 +105,6 @@ namespace APSWinForm
             this.panel9.Size = new System.Drawing.Size(370, 427);
             this.panel9.TabIndex = 42;
             // 
-            // cboStep
-            // 
-            this.cboStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cboStep.Enabled = false;
-            this.cboStep.FormattingEnabled = true;
-            this.cboStep.Location = new System.Drawing.Point(185, 181);
-            this.cboStep.Name = "cboStep";
-            this.cboStep.Size = new System.Drawing.Size(121, 20);
-            this.cboStep.TabIndex = 169;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -117,16 +115,6 @@ namespace APSWinForm
             this.label4.TabIndex = 168;
             this.label4.Text = "ㆍ공정ID";
             // 
-            // cboProduct
-            // 
-            this.cboProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cboProduct.Enabled = false;
-            this.cboProduct.FormattingEnabled = true;
-            this.cboProduct.Location = new System.Drawing.Point(185, 103);
-            this.cboProduct.Name = "cboProduct";
-            this.cboProduct.Size = new System.Drawing.Size(121, 20);
-            this.cboProduct.TabIndex = 167;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -136,16 +124,6 @@ namespace APSWinForm
             this.label5.Size = new System.Drawing.Size(55, 14);
             this.label5.TabIndex = 166;
             this.label5.Text = "ㆍ제품ID";
-            // 
-            // cboEQP
-            // 
-            this.cboEQP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cboEQP.Enabled = false;
-            this.cboEQP.FormattingEnabled = true;
-            this.cboEQP.Location = new System.Drawing.Point(185, 58);
-            this.cboEQP.Name = "cboEQP";
-            this.cboEQP.Size = new System.Drawing.Size(121, 20);
-            this.cboEQP.TabIndex = 165;
             // 
             // label8
             // 
@@ -166,7 +144,7 @@ namespace APSWinForm
             0,
             0});
             this.numStep.Name = "numStep";
-            this.numStep.Size = new System.Drawing.Size(120, 21);
+            this.numStep.Size = new System.Drawing.Size(129, 21);
             this.numStep.TabIndex = 163;
             // 
             // label7
@@ -179,16 +157,6 @@ namespace APSWinForm
             this.label7.TabIndex = 162;
             this.label7.Text = "ㆍ공정간격시간";
             // 
-            // cboProcess
-            // 
-            this.cboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cboProcess.Enabled = false;
-            this.cboProcess.FormattingEnabled = true;
-            this.cboProcess.Location = new System.Drawing.Point(185, 139);
-            this.cboProcess.Name = "cboProcess";
-            this.cboProcess.Size = new System.Drawing.Size(119, 20);
-            this.cboProcess.TabIndex = 161;
-            // 
             // numProcess
             // 
             this.numProcess.Location = new System.Drawing.Point(185, 260);
@@ -198,7 +166,7 @@ namespace APSWinForm
             0,
             0});
             this.numProcess.Name = "numProcess";
-            this.numProcess.Size = new System.Drawing.Size(120, 21);
+            this.numProcess.Size = new System.Drawing.Size(129, 21);
             this.numProcess.TabIndex = 160;
             // 
             // label9
@@ -307,6 +275,78 @@ namespace APSWinForm
             this.panel1.Size = new System.Drawing.Size(390, 38);
             this.panel1.TabIndex = 46;
             // 
+            // cboEQP
+            // 
+            this.cboEQP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEQP.FormattingEnabled = true;
+            this.cboEQP.Location = new System.Drawing.Point(185, 58);
+            this.cboEQP.Name = "cboEQP";
+            this.cboEQP.Size = new System.Drawing.Size(130, 20);
+            this.cboEQP.TabIndex = 174;
+            // 
+            // cboProduct
+            // 
+            this.cboProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProduct.FormattingEnabled = true;
+            this.cboProduct.Location = new System.Drawing.Point(184, 99);
+            this.cboProduct.Name = "cboProduct";
+            this.cboProduct.Size = new System.Drawing.Size(130, 20);
+            this.cboProduct.TabIndex = 175;
+            // 
+            // cboProcess
+            // 
+            this.cboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProcess.FormattingEnabled = true;
+            this.cboProcess.Location = new System.Drawing.Point(184, 139);
+            this.cboProcess.Name = "cboProcess";
+            this.cboProcess.Size = new System.Drawing.Size(130, 20);
+            this.cboProcess.TabIndex = 176;
+            // 
+            // cboStep
+            // 
+            this.cboStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStep.FormattingEnabled = true;
+            this.cboStep.Location = new System.Drawing.Point(184, 181);
+            this.cboStep.Name = "cboStep";
+            this.cboStep.Size = new System.Drawing.Size(130, 20);
+            this.cboStep.TabIndex = 177;
+            // 
+            // txtEQP
+            // 
+            this.txtEQP.Location = new System.Drawing.Point(185, 58);
+            this.txtEQP.Name = "txtEQP";
+            this.txtEQP.ReadOnly = true;
+            this.txtEQP.Size = new System.Drawing.Size(130, 21);
+            this.txtEQP.TabIndex = 178;
+            this.txtEQP.Visible = false;
+            // 
+            // txtProduct
+            // 
+            this.txtProduct.Location = new System.Drawing.Point(184, 98);
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.ReadOnly = true;
+            this.txtProduct.Size = new System.Drawing.Size(131, 21);
+            this.txtProduct.TabIndex = 179;
+            this.txtProduct.Visible = false;
+            // 
+            // txtProcess
+            // 
+            this.txtProcess.Location = new System.Drawing.Point(184, 139);
+            this.txtProcess.Name = "txtProcess";
+            this.txtProcess.ReadOnly = true;
+            this.txtProcess.Size = new System.Drawing.Size(130, 21);
+            this.txtProcess.TabIndex = 180;
+            this.txtProcess.Visible = false;
+            // 
+            // txtStep
+            // 
+            this.txtStep.Location = new System.Drawing.Point(184, 181);
+            this.txtStep.Name = "txtStep";
+            this.txtStep.ReadOnly = true;
+            this.txtStep.Size = new System.Drawing.Size(130, 21);
+            this.txtStep.TabIndex = 181;
+            this.txtStep.Visible = false;
+            // 
             // EQPARR_REG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -341,17 +381,21 @@ namespace APSWinForm
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cboStep;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboProduct;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cboEQP;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown numStep;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cboProcess;
         private System.Windows.Forms.NumericUpDown numProcess;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboStep;
+        private System.Windows.Forms.ComboBox cboProcess;
+        private System.Windows.Forms.ComboBox cboProduct;
+        private System.Windows.Forms.ComboBox cboEQP;
+        private System.Windows.Forms.TextBox txtStep;
+        private System.Windows.Forms.TextBox txtProcess;
+        private System.Windows.Forms.TextBox txtProduct;
+        private System.Windows.Forms.TextBox txtEQP;
     }
 }

@@ -10,7 +10,7 @@ using System.Configuration;
 
 namespace APSServer.Models
 {
-    public class EQUIPDAC :IDisposable
+    public class EQUIPDAC : IDisposable
     {
         SqlConnection conn = null;
         string strConn = string.Empty;
@@ -29,19 +29,19 @@ namespace APSServer.Models
                 conn = null;
             }
         }
-        
+
 
         public List<EQUIPVO> GetAllEquipment()
         {
-            
+
             string sql = @"select SITE_ID, LINE_ID, EQP_ID, EQP_MODEL, EQP_GROUP from EQUIPMENT";
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 return Helper.DataReaderMapToList<EQUIPVO>(cmd.ExecuteReader());
             }
-        
-           
+
+
         }
 
         public List<EqpArrangeVO> GetEqipmentARR()
@@ -86,50 +86,66 @@ namespace APSServer.Models
 
         }
 
+        //public bool InsertEquip(EQUIPVO vo)
+        //{
+        //    string sql = @"insert into EQUIPMENT(EQP_ID,SITE_ID,LINE_ID,EQP_MODEL,EQP_GROUP) 
+        //                    values(@EQP_ID,@SITE_ID,@LINE_ID,@EQP_MODEL,@EQP_GROUP)";
+
+        //    using (SqlCommand cmd = new SqlCommand(sql, conn))
+        //    {
+        //        cmd.Parameters.AddWithValue("@EQP_ID", vo.EQP_ID);
+        //        cmd.Parameters.AddWithValue("@SITE_ID", vo.SITE_ID);
+        //        cmd.Parameters.AddWithValue("@LINE_ID", vo.LINE_ID);
+        //        cmd.Parameters.AddWithValue("@EQP_MODEL", vo.EQP_MODEL);
+        //        cmd.Parameters.AddWithValue("@EQP_GROUP", vo.EQP_GROUP);
+
+        //        return cmd.ExecuteNonQuery() > 0;
+        //    }
+        //}
+
         public bool InsertEquip(EQUIPVO vo)
         {
-            string sql = @"insert into EQUIPMENT(EQP_ID,SITE_ID,LINE_ID,EQP_MODEL,EQP_GROUP) 
-                            values(@EQP_ID,@SITE_ID,@LINE_ID,@EQP_MODEL,@EQP_GROUP)";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlCommand cmd = new SqlCommand())
             {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "SP_SaveEQUIPMENT";
+                cmd.CommandType = CommandType.StoredProcedure;
+
                 cmd.Parameters.AddWithValue("@EQP_ID", vo.EQP_ID);
                 cmd.Parameters.AddWithValue("@SITE_ID", vo.SITE_ID);
                 cmd.Parameters.AddWithValue("@LINE_ID", vo.LINE_ID);
                 cmd.Parameters.AddWithValue("@EQP_MODEL", vo.EQP_MODEL);
                 cmd.Parameters.AddWithValue("@EQP_GROUP", vo.EQP_GROUP);
+                cmd.Parameters.AddWithValue("@user_id", vo.user_id);
+                cmd.Connection.Open();
+                int iRowAffect = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
 
-                return cmd.ExecuteNonQuery() > 0;
+                return (iRowAffect > 0);
             }
         }
 
 
+        //public bool UpdateEquip(EQUIPVO Evo)
+        //{
+
+        //    string sql = @"update EQUIPMENT set EQP_ID=@EQP_ID,SITE_ID=@SITE_ID,LINE_ID=@LINE_ID,EQP_MODEL=@EQP_MODEL,EQP_GROUP=@EQP_GROUP where EQP_ID=@EQP_ID ;";
 
 
-        public bool UpdateEquip(EQUIPVO Evo)
-        {
+        //    using (SqlCommand cmd = new SqlCommand(sql, conn))
+        //    {
 
-            string sql = @"update EQUIPMENT set EQP_ID=@EQP_ID,SITE_ID=@SITE_ID,LINE_ID=@LINE_ID,EQP_MODEL=@EQP_MODEL,EQP_GROUP=@EQP_GROUP where EQP_ID=@EQP_ID ;";
-
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-
-                cmd.Parameters.AddWithValue("@EQP_ID", Evo.EQP_ID);
-                cmd.Parameters.AddWithValue("@SITE_ID", Evo.SITE_ID);
-                cmd.Parameters.AddWithValue("@LINE_ID", Evo.LINE_ID);
-                cmd.Parameters.AddWithValue("@EQP_MODEL", Evo.EQP_MODEL);
-                cmd.Parameters.AddWithValue("@EQP_GROUP", Evo.EQP_GROUP);
+        //        cmd.Parameters.AddWithValue("@EQP_ID", Evo.EQP_ID);
+        //        cmd.Parameters.AddWithValue("@SITE_ID", Evo.SITE_ID);
+        //        cmd.Parameters.AddWithValue("@LINE_ID", Evo.LINE_ID);
+        //        cmd.Parameters.AddWithValue("@EQP_MODEL", Evo.EQP_MODEL);
+        //        cmd.Parameters.AddWithValue("@EQP_GROUP", Evo.EQP_GROUP);
 
 
-                return cmd.ExecuteNonQuery() > 0;
+        //        return cmd.ExecuteNonQuery() > 0;
+        //    }
+        //}
 
-
-            }
-
-
-
-        }
 
         public bool DeleteEquip(string id)
         {
@@ -147,55 +163,57 @@ namespace APSServer.Models
 
 
         }
+        //-------------------------------------------------------------------------------------------//
+
 
         public bool InsertEquipArr(EqpArrangeVO vo)
         {
-            string sql = @"insert into EQP_ARRANGE(PRODUCT_ID,PROCESS_ID,STEP_ID,EQP_ID,TACT_TIME,PROC_TIME) 
-                            values(@PRODUCT_ID,@PROCESS_ID,@STEP_ID,@EQP_ID,@TACT_TIME,@PROC_TIME)";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlCommand cmd = new SqlCommand())
             {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "SP_SaveEQPARR";
+                cmd.CommandType = CommandType.StoredProcedure;
+
                 cmd.Parameters.AddWithValue("@PRODUCT_ID", vo.PRODUCT_ID);
                 cmd.Parameters.AddWithValue("@PROCESS_ID", vo.PROCESS_ID);
                 cmd.Parameters.AddWithValue("@STEP_ID", vo.STEP_ID);
                 cmd.Parameters.AddWithValue("@EQP_ID", vo.EQP_ID);
                 cmd.Parameters.AddWithValue("@TACT_TIME", vo.TACT_TIME);
                 cmd.Parameters.AddWithValue("@PROC_TIME", vo.PROC_TIME);
+                cmd.Parameters.AddWithValue("@user_id", vo.user_id);
+                cmd.Connection.Open();
+                int iRowAffect = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
 
-
-                return cmd.ExecuteNonQuery() > 0;
+                return (iRowAffect > 0);
             }
-
-            
         }
 
 
 
+        //public bool UpdateEquipArr(EqpArrangeVO Evo)
+        //{
 
-        public bool UpdateEquipArr(EqpArrangeVO Evo)
-        {
-
-            string sql = @"update EQP_ARRANGE set PRODUCT_ID=@PRODUCT_ID,PROCESS_ID=@PROCESS_ID,STEP_ID=@STEP_ID,EQP_ID=@EQP_ID,TACT_TIME=@TACT_TIME,PROC_TIME=@PROC_TIME where EQP_ID=@EQP_ID ;";
-
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-
-                cmd.Parameters.AddWithValue("@PRODUCT_ID", Evo.PRODUCT_ID);
-                cmd.Parameters.AddWithValue("@PROCESS_ID", Evo.PROCESS_ID);
-                cmd.Parameters.AddWithValue("@STEP_ID", Evo.STEP_ID);
-                cmd.Parameters.AddWithValue("@EQP_ID", Evo.EQP_ID);
-                cmd.Parameters.AddWithValue("@TACT_TIME", Evo.TACT_TIME);
-                cmd.Parameters.AddWithValue("@PROC_TIME", Evo.PROC_TIME);
+        //    string sql = @"update EQP_ARRANGE set PRODUCT_ID=@PRODUCT_ID,PROCESS_ID=@PROCESS_ID,STEP_ID=@STEP_ID,EQP_ID=@EQP_ID,TACT_TIME=@TACT_TIME,PROC_TIME=@PROC_TIME where EQP_ID=@EQP_ID ;";
 
 
-                return cmd.ExecuteNonQuery() > 0;
+        //    using (SqlCommand cmd = new SqlCommand(sql, conn))
+        //    {
+
+        //        cmd.Parameters.AddWithValue("@PRODUCT_ID", Evo.PRODUCT_ID);
+        //        cmd.Parameters.AddWithValue("@PROCESS_ID", Evo.PROCESS_ID);
+        //        cmd.Parameters.AddWithValue("@STEP_ID", Evo.STEP_ID);
+        //        cmd.Parameters.AddWithValue("@EQP_ID", Evo.EQP_ID);
+        //        cmd.Parameters.AddWithValue("@TACT_TIME", Evo.TACT_TIME);
+        //        cmd.Parameters.AddWithValue("@PROC_TIME", Evo.PROC_TIME);
 
 
-            }
+        //        return cmd.ExecuteNonQuery() > 0;
 
 
+        //    }
 
-        }
-    }
+        //}
+
+    }   
 }

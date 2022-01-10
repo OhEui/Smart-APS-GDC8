@@ -44,8 +44,10 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -86,6 +88,12 @@
     </Compile>
     <Compile Include="Controls\PeriodUserControl.designer.cs">
       <DependentUpon>PeriodUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuAuth.Designer.cs">
+      <DependentUpon>frmMenuAuth.cs</DependentUpon>
     </Compile>
     <Compile Include="HSY\DEMANDpop.cs">
       <SubType>Form</SubType>
@@ -162,6 +170,13 @@
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm1.Designer.cs">
+      <DependentUpon>MainForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuDAC.cs" />
     <Compile Include="OET\EQPARR_REG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,10 +257,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoStorage.cs" />
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\ExcelUtil.cs" />
-    <Compile Include="Util\ServiceHelp.cs" />
+    <Compile Include="Util\ucTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Util\ucTabControl.Designer.cs">
+      <DependentUpon>ucTabControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaseForm\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PeriodUserControl.resx">
       <DependentUpon>PeriodUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuAuth.resx">
+      <DependentUpon>frmMenuAuth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSY\DEMANDpop.resx">
       <DependentUpon>DEMANDpop.cs</DependentUpon>
@@ -290,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\NumTextBox.resx">
       <DependentUpon>NumTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm1.resx">
+      <DependentUpon>MainForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OET\EQPARR_REG.resx">
       <DependentUpon>EQPARR_REG.cs</DependentUpon>
@@ -361,13 +388,13 @@
     <None Include="Resources\file_add_icon_128235.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\APSDAC\APSDAC.csproj">
-      <Project>{c3c6f97f-8c6f-4e7a-8024-2552316b7f31}</Project>
-      <Name>APSDAC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\APSEncrypt\APSEncrypt.csproj">
+    <ProjectReference Include="..\APSUtil\Encrypt\APSUtil.Encrypt.csproj">
       <Project>{0bee685f-05bd-4cc3-943b-7eb5bde1b7b6}</Project>
-      <Name>APSEncrypt</Name>
+      <Name>APSUtil.Encrypt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APSUtil\Http\APSUtil.Http.csproj">
+      <Project>{79342bf6-8059-4f29-b21e-846bb7f9cad4}</Project>
+      <Name>APSUtil.Http</Name>
     </ProjectReference>
     <ProjectReference Include="..\APSVO\APSVO.csproj">
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
@@ -383,6 +410,11 @@
   <ItemGroup>
     <None Include="Resources\free-icon-edit-1827933.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Properties\close-grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\close-red.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,28 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using APSVO;
-using APSDAC;
+
 
 namespace APSWinForm
 {
     public partial class frmJoin : Form
     {
-        UserDAC dac = null;
-        public UserInfo UserInfo
-        {
-            get
-            {
-                UserInfo uer = new UserInfo();
-                uer.User_ID = txtID.Text;
-                uer.User_PWD = txtPW.Text;
-                uer.User_Name = txtName.Text;
-                uer.User_phone = txtPhone.Text;
-                uer.User_Birth = DateTime.Parse(txtBirth.Text);
-                uer.User_Email = txtEmail.Text;
 
-                return uer;
-            }
-        }
 
         public frmJoin()
         {
@@ -80,7 +65,7 @@ namespace APSWinForm
             //처리
 
             //입력받은 유저정보를 DB에 저장
-            
+            /*
             UserDAC dac = new UserDAC();
             int iResult = dac.Insert(UserInfo);
             dac.Dispose();
@@ -90,10 +75,13 @@ namespace APSWinForm
                 MessageBox.Show("유저가 추가되었습니다.");
                 this.Close();
             }
+            */
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            /*
             txtID.Text = txtID.Text.Replace(" ", "");
             bool check = dac.IDCheck(txtID.Text);
             if (!check)
@@ -105,6 +93,7 @@ namespace APSWinForm
             {
                 MessageBox.Show("중복된 아이디 입니다.");
             }
+            */
         }
     }
 }

@@ -35,8 +35,8 @@ namespace APSWinForm
 			this.btnInit = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
+			this.cboStepType = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.txtStepID = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.txtProcessID = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@ namespace APSWinForm
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvStepRoute = new System.Windows.Forms.DataGridView();
-			this.cboStepType = new System.Windows.Forms.ComboBox();
+			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
 			this.panel6.SuspendLayout();
@@ -102,6 +102,7 @@ namespace APSWinForm
 			this.btnInit.TabIndex = 54;
 			this.btnInit.Text = "초기화";
 			this.btnInit.UseVisualStyleBackColor = false;
+			this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
 			// 
 			// panel2
 			// 
@@ -119,9 +120,9 @@ namespace APSWinForm
 			// panel9
 			// 
 			this.panel9.BackColor = System.Drawing.Color.White;
+			this.panel9.Controls.Add(this.txtStepID);
 			this.panel9.Controls.Add(this.cboStepType);
 			this.panel9.Controls.Add(this.label3);
-			this.panel9.Controls.Add(this.txtStepID);
 			this.panel9.Controls.Add(this.label9);
 			this.panel9.Controls.Add(this.txtProcessID);
 			this.panel9.Controls.Add(this.label2);
@@ -133,6 +134,15 @@ namespace APSWinForm
 			this.panel9.Size = new System.Drawing.Size(668, 136);
 			this.panel9.TabIndex = 42;
 			// 
+			// cboStepType
+			// 
+			this.cboStepType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboStepType.FormattingEnabled = true;
+			this.cboStepType.Location = new System.Drawing.Point(406, 41);
+			this.cboStepType.Name = "cboStepType";
+			this.cboStepType.Size = new System.Drawing.Size(108, 20);
+			this.cboStepType.TabIndex = 60;
+			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
@@ -142,13 +152,6 @@ namespace APSWinForm
 			this.label3.Size = new System.Drawing.Size(67, 14);
 			this.label3.TabIndex = 59;
 			this.label3.Text = "ㆍ공정타입";
-			// 
-			// txtStepID
-			// 
-			this.txtStepID.Location = new System.Drawing.Point(149, 82);
-			this.txtStepID.Name = "txtStepID";
-			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 58;
 			// 
 			// label9
 			// 
@@ -326,13 +329,14 @@ namespace APSWinForm
 			this.dgvStepRoute.Size = new System.Drawing.Size(688, 434);
 			this.dgvStepRoute.TabIndex = 52;
 			// 
-			// cboStepType
+			// txtStepID
 			// 
-			this.cboStepType.FormattingEnabled = true;
-			this.cboStepType.Location = new System.Drawing.Point(406, 41);
-			this.cboStepType.Name = "cboStepType";
-			this.cboStepType.Size = new System.Drawing.Size(108, 20);
-			this.cboStepType.TabIndex = 60;
+			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepID.Location = new System.Drawing.Point(149, 82);
+			this.txtStepID.Name = "txtStepID";
+			this.txtStepID.Size = new System.Drawing.Size(121, 21);
+			this.txtStepID.TabIndex = 61;
 			// 
 			// STEP_ROUTE
 			// 
@@ -385,12 +389,12 @@ namespace APSWinForm
 		protected System.Windows.Forms.Label label1;
 		protected System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Panel panel1;
-		public System.Windows.Forms.TextBox txtStepID;
 		public System.Windows.Forms.Label label9;
 		public System.Windows.Forms.TextBox txtProcessID;
 		public System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DataGridView dgvStepRoute;
 		public System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ComboBox cboStepType;
+		private CapitalTextBox txtStepID;
 	}
 }

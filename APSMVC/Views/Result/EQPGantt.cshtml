@@ -1,0 +1,239 @@
+﻿
+@{
+    
+    ViewBag.Title = "EQP Gantt";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+
+                <form action="#">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label>Condition</label>
+                                <div class="input-group input-group-lg">
+                                    <input type="search" class="form-control form-control-lg" style="height: 38px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label>Condition</label>
+                                <select class="select2" style="width: 100%;">
+                                    <option selected>codi</option>
+                                    <option>DESC</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label>Condition</label>
+                                <select class="select2" style="width: 100%;">
+                                    <option selected>codi</option>
+                                    <option>Date</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label>Condition</label>
+                                <select class="select2" style="width: 100%;">
+                                    <option selected>codi</option>
+                                    <option>Date</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-14 align-self-end">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-lg btn-default" style="width: 38px; height: 38px; padding-left: 9px;
+                        padding-top: 6px; margin-left: 6px">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-body">
+                <div id="chartdiv"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts
+{
+    <script>
+        $(function () {
+            $('.select2').select2()
+            /**
+             * ---------------------------------------
+             * This demo was created using amCharts 5.
+             *
+             * For more information visit:
+             * https://www.amcharts.com/
+             *
+             * Documentation is available at:
+             * https://www.amcharts.com/docs/v5/
+             * ---------------------------------------
+             */
+
+            // Create root element
+            // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+            var root = am5.Root.new("chartdiv");
+            root.dateFormatter.setAll({
+                dateFormat: "yyyy-MM-dd hh:mm:ss",
+                dateFields: ["valueX", "openValueX"]
+            });
+
+
+            // Set themes
+            // https://www.amcharts.com/docs/v5/concepts/themes/
+            root.setThemes([
+                am5themes_Animated.new(root)
+            ]);
+
+
+            // Create chart
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/
+            var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                panX: false,
+                panY: false,
+                wheelX: "panX",
+                wheelY: "zoomX",
+                layout: root.verticalLayout
+            }));
+
+
+            // Add legend
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
+            var legend = chart.children.push(am5.Legend.new(root, {
+                centerX: am5.p50,
+                x: am5.p50
+            }))
+
+            var colors = chart.get("colors");
+
+            function getList(list) {
+                for (var data of list) {
+                    data.columnSettings = {
+                        fill: am5.Color.brighten(colors.getIndex(data.colorIdx), data.brighten)
+                    }
+                }
+                return list
+            }
+            // Data
+            var RawData = JSON.parse('@Html.Raw(@ViewBag.Data)');
+            var data = getList(RawData)
+
+
+
+
+            // Create axes
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+            var yAxis = chart.yAxes.push(
+                am5xy.CategoryAxis.new(root, {
+                    categoryField: "category",
+                    renderer: am5xy.AxisRendererY.new(root, { inversed: true }),
+                    tooltip: am5.Tooltip.new(root, {
+                        themeTags: ["axis"],
+                        animationDuration: 200
+                    })
+                })
+            );
+
+
+            // TODO 
+            yAxis.data.setAll([
+                { category: "EQP11" },
+                { category: "EQP12" },
+                { category: "EQP13" },
+                { category: "EQP21" },
+                { category: "EQP22" },
+                { category: "EQP31" },
+                { category: "EQP32" },
+                { category: "EQP33" }
+            ]);
+
+            var xAxis = chart.xAxes.push(
+                am5xy.DateAxis.new(root, {
+                    baseInterval: { timeUnit: "minute", count: 1 },
+                    renderer: am5xy.AxisRendererX.new(root, {})
+                })
+            );
+
+
+            // Add series
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+            var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+                xAxis: xAxis,
+                yAxis: yAxis,
+                openValueXField: "fromDate",
+                valueXField: "toDate",
+                categoryYField: "category",
+                sequencedInterpolation: true,
+                stroke: am5.color(0x000000)
+            }));
+
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/column-series/
+            // https://www.amcharts.com/docs/v5/reference/iroundedrectanglesettings/#cornerRadiusTL_property
+            series.columns.template.setAll({
+                templateField: "columnSettings",
+                //strokeOpacity: 1,
+                tooltipText: "{task}:\n[bold]{openValueX}[/] - [bold]{valueX}[/]",
+                strokeWidth: 0.5,
+                cornerRadiusTL: 3,
+                cornerRadiusTR: 3,
+                cornerRadiusBL: 3,
+                cornerRadiusBR: 3
+            });
+
+            /*
+            // https://www.amcharts.com/docs/v5/concepts/common-elements/bullets/
+
+            series.bullets.push(function () {
+                return am5.Bullet.new(root, {
+                    locationX: 0.5,
+                    locationY: 0.5,
+
+                    // https://www.amcharts.com/docs/v5/concepts/common-elements/labels/
+                    sprite: am5.Label.new(root, {
+                        text: "{task}",
+                        fontSize: 12,
+                        centerX: am5.percent(50),
+                        centerY: am5.percent(50),
+                        populateText: true,
+                        oversizedBehavior: "truncate",
+                    })
+                });
+            });*/
+
+            series.data.processor = am5.DataProcessor.new(root, {
+                dateFields: ["fromDate", "toDate"],
+                dateFormat: "yyyy-MM-dd HH:mm"
+            });
+            series.data.setAll(data);
+
+            // Add scrollbars
+            chart.set("scrollbarX", am5.Scrollbar.new(root, {
+                orientation: "horizontal"
+            }));
+
+            // Make stuff animate on load
+            // https://www.amcharts.com/docs/v5/concepts/animations/
+            series.appear();
+            chart.appear(1000, 100);
+        })
+    </script>
+
+}

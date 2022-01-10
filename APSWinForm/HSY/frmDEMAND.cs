@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APSUtil.Http;
 using APSVO;
 
 namespace APSWinForm
 {
     public partial class frmDEMAND : Form
     {
-        ServiceHelp srv = new ServiceHelp("");
+        ServiceHelp srv = new ServiceHelp();
         List<DemandVO> list = null;
         public frmDEMAND()
         {

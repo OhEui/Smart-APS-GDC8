@@ -1,4 +1,5 @@
-﻿using APSDAC;
+﻿
+using APSUtil.Http;
 using APSVO;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace APSWinForm
 {
 	public partial class STDSTEP_REG : Form
 	{
-		ServiceHelp srv = new ServiceHelp("");
+		ServiceHelp srv = new ServiceHelp();
 		List<STD_STEP_VO> stepList;
 		bool existStepID = false;
 

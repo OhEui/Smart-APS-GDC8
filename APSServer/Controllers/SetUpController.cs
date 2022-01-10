@@ -17,8 +17,30 @@ namespace APSServer.Controllers
         [Route("SetupList")]
         public List<SetupVO> GetSetup_time()
         {
-            EQUIPDAC dac = new EQUIPDAC();
+            SETUPDAC dac = new SETUPDAC();
             return dac.GetSetup_time();
+        }
+
+        //Post : https://localhost:44309/api/SETUP_TIME/SetupNew
+        [HttpPost]
+        [Route("SetupNew")]
+        public IHttpActionResult InsertSetup(SetupVO vo)
+        {
+            WebMessage msg = new WebMessage();
+            SETUPDAC db = new SETUPDAC();
+            bool result = db.InsertSetup(vo);
+
+            if (result)
+            {
+                msg.IsSuccess = true;
+                msg.ResultMessage = "성공적으로 등록되었습니다.";
+            }
+            else
+            {
+                msg.IsSuccess = false;
+                msg.ResultMessage = "저장 중 오류가 발생했습니다.";
+            }
+            return Ok(msg);
         }
     }
 }
