@@ -14,21 +14,7 @@ namespace APSWinForm
 {
     public partial class frmJoin : Form
     {
-        public UserInfo UserInfo
-        {
-            get
-            {
-                UserInfo uer = new UserInfo();
-                uer.User_ID = txtID.Text;
-                uer.User_PWD = txtPW.Text;
-                uer.User_Name = txtName.Text;
-                uer.User_phone = txtPhone.Text;
-                uer.User_Birth = DateTime.Parse(txtBirth.Text);
-                uer.User_Email = txtEmail.Text;
 
-                return uer;
-            }
-        }
 
         public frmJoin()
         {

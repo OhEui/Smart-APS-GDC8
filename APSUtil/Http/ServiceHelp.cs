@@ -47,6 +47,7 @@ namespace APSUtil.Http
             {
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", TokenStorage.AccessToken);
             }
+
         }
 
         public async Task<T> GetListAsync<T>(string path, T t)
@@ -188,10 +189,7 @@ namespace APSUtil.Http
             {
                 using (HttpResponseMessage response = await client.PostAsJsonAsync(path, value))
                 {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        result = JsonConvert.DeserializeObject<WebMessage<TResponse>>(await response.Content.ReadAsStringAsync());
-                    }
+                    result = JsonConvert.DeserializeObject<WebMessage<TResponse>>(await response.Content.ReadAsStringAsync());
                 }
                 return result;
             }

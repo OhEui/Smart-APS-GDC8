@@ -56,7 +56,6 @@
     <Compile Include="StepRouteVO.cs" />
     <Compile Include="User\Request.cs" />
     <Compile Include="User\UserInfo.cs" />
-    <Compile Include="User\UserData.cs" />
     <Compile Include="SampleVO.cs" />
     <Compile Include="WebMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
