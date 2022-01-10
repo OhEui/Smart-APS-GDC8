@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using APSUtil.Http;
 using APSVO;
 
 namespace APSWinForm
@@ -25,14 +25,14 @@ namespace APSWinForm
             dataGridView1.Columns.Clear(); // 샘플 컬럼 삭제용
 
             MainForm frm = MdiParent as MainForm;
-            srv = new ServiceHelp("api/Sample", frm.AuthHeader);
+            srv = new ServiceHelp();
             LoadDataAsync();
         }
 
         private async void LoadDataAsync()
         {
             List<SampleVO> list = null;
-            string path = "List";
+            string path = "apㅑ/Sample/List";
 
             var message = await srv.PostAsync(path, list);
 

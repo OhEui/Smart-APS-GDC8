@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using APSUtil.Http;
-
+using APSVO;
 
 namespace APSServer.Controllers
 {
@@ -341,13 +341,20 @@ namespace APSServer.Controllers
         [Route("Login")]
         public async Task<IHttpActionResult> Login(LoginBindingModel model) 
         {
-            ServiceHelp service = new ServiceHelp("", true); 
+            ServiceHelp service = new ServiceHelp(true); 
             var request = new Dictionary<string, string>() 
             { 
                 { "username", model.ID } ,{ "password" , model.Password }, { "grant_type" , "password" }
             };
             Models.TokenModel response = await service.PostAsyncFormRequest<Models.TokenModel>("token", request);
-            return Content(service.StatusCode, response);
+
+            WebMessage<Models.TokenModel> result = new WebMessage<Models.TokenModel>()
+            {
+                IsSuccess = true,
+                ResultMessage = "로그인에 성공하였습니다.",
+                Data = response 
+            };
+            return Content(service.StatusCode, result);
         }
 
         // POST api/Account/Register

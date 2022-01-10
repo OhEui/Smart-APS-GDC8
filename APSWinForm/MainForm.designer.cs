@@ -72,6 +72,7 @@ namespace APSWinForm
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.로그아웃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.SidePanel1.SuspendLayout();
@@ -103,6 +104,7 @@ namespace APSWinForm
             this.toolStripSeparator1,
             this.결과정보열기ToolStripMenuItem,
             this.toolStripSeparator2,
+            this.로그아웃ToolStripMenuItem,
             this.종료ToolStripMenuItem});
             this.메뉴ToolStripMenuItem.Name = "메뉴ToolStripMenuItem";
             this.메뉴ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
@@ -111,35 +113,35 @@ namespace APSWinForm
             // 엑셀불러오기ToolStripMenuItem
             // 
             this.엑셀불러오기ToolStripMenuItem.Name = "엑셀불러오기ToolStripMenuItem";
-            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.엑셀불러오기ToolStripMenuItem.Text = "엑셀 불러오기";
             // 
             // 엑셀내보내기ToolStripMenuItem
             // 
             this.엑셀내보내기ToolStripMenuItem.Name = "엑셀내보내기ToolStripMenuItem";
-            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.엑셀내보내기ToolStripMenuItem.Text = "엑셀 내보내기";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // 결과정보열기ToolStripMenuItem
             // 
             this.결과정보열기ToolStripMenuItem.Name = "결과정보열기ToolStripMenuItem";
-            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.결과정보열기ToolStripMenuItem.Text = "결과 정보 열기";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.종료ToolStripMenuItem.Text = "종료";
             // 
             // 샘플ToolStripMenuItem
@@ -703,6 +705,12 @@ namespace APSWinForm
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // 로그아웃ToolStripMenuItem
+            // 
+            this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.로그아웃ToolStripMenuItem.Text = "로그아웃";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -775,5 +783,6 @@ namespace APSWinForm
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ToolStripMenuItem 로그아웃ToolStripMenuItem;
     }
 }

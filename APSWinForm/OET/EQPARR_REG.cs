@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APSUtil.Http;
 using APSVO;
 
 
@@ -14,7 +15,7 @@ namespace APSWinForm
 {
     public partial class EQPARR_REG : Form
     {
-        ServiceHelp srv = new ServiceHelp("");
+        ServiceHelp srv = new ServiceHelp();
         EqpArrangeVO EQPArrvo;
         // List<EqpArrangeVO> ARRList = null;
         List<ComboItemVO> ProductList = null;

@@ -4,7 +4,8 @@ namespace APSUtil.Http
 {
     public sealed class TokenStorage
     {
-        private static readonly Lazy<TokenStorage> _instance = new Lazy<TokenStorage>(isThreadSafe: true);
+        private static readonly Lazy<TokenStorage> _instance = 
+            new Lazy<TokenStorage>(()=>new TokenStorage(),isThreadSafe: true);
         private string _accessToken = "";
 
         private TokenStorage() { }

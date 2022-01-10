@@ -34,14 +34,12 @@ namespace APSUtil.Http
         /// API 주소: https:localhost::44309/api/Sample
         /// </summary>
         /// <param name="routePrefix"></param>
-        public ServiceHelp(string routePrefix = "", bool IsWebClient = false, string authorization = "")
+        public ServiceHelp(bool IsWebClient = false, string authorization = "")
         {
-            string prefix = !string.IsNullOrWhiteSpace(routePrefix) ? 
-                $"{routePrefix}/" : "";
             string apiaddress = IsWebClient ? 
                 WebConfigurationManager.AppSettings["ApiAddress"] : ConfigurationManager.AppSettings["ApiAddress"];
 
-            BaseServiceUrl = $"{apiaddress.TrimEnd('/')}/{prefix}";
+            BaseServiceUrl = $"{apiaddress.TrimEnd('/')}/";
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

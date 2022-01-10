@@ -17,7 +17,7 @@ namespace APSMVC.Controllers
     {
         public async Task<ActionResult> LOTGantt()
         {
-            ServiceHelp srv = new ServiceHelp("");
+            ServiceHelp srv = new ServiceHelp(true);
             //List<ChartData> list = null;
 
             string result = await srv.GetJsonStringAsync("api/Result/getLOTList");

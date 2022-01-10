@@ -15,7 +15,7 @@ namespace APSWinForm
 {
     public partial class frmLogin : Form
     {
-        ServiceHelp srv = new ServiceHelp("api/User");
+
        
         public string AuthHeader { get; private set; }
         public UserData LoginUser { get; private set; }
@@ -29,7 +29,8 @@ namespace APSWinForm
         {
             string id = txtID.Text;
             string password = txtPW.Text;
-            string path = "Login";
+            
+            ServiceHelp srv = new ServiceHelp();
             ReqUserLogin reqData = new ReqUserLogin() { ID=id, Password=password };
 
             if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(password))
@@ -38,7 +39,7 @@ namespace APSWinForm
                 return;
             }
 
-            var response = await srv.PostAsync<ReqUserLogin, TokenModel>(path, reqData);
+            var response = await srv.PostAsync<ReqUserLogin, TokenModel>("api/Account/Login", reqData);
             if (response != null) 
             {
                 MessageBox.Show(response.ResultMessage);

@@ -1,4 +1,5 @@
-﻿using APSVO;
+﻿using APSUtil.Http;
+using APSVO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace APSWinForm
 {
 	public partial class STEPROUTE_REG : Form
 	{
-		ServiceHelp srv = new ServiceHelp("");
+		ServiceHelp srv = new ServiceHelp();
 		List<StepRouteVO> stepRouteList = null;
 		StepRouteVO modStepRoute = null;
 
