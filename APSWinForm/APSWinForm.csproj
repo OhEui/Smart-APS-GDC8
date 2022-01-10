@@ -36,6 +36,12 @@
     <StartupObject>APSWinForm.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="BaseForm\frmpopup.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuAuth.Designer.cs">
+      <DependentUpon>frmMenuAuth.cs</DependentUpon>
     </Compile>
     <Compile Include="HSY\frmDEMAND.cs">
       <SubType>Form</SubType>
@@ -152,6 +164,13 @@
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm1.Designer.cs">
+      <DependentUpon>MainForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuDAC.cs" />
     <Compile Include="OET\EQPARR_REG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +255,12 @@
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\ExcelUtil.cs" />
     <Compile Include="Util\ServiceHelp.cs" />
+    <Compile Include="Util\ucTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Util\ucTabControl.Designer.cs">
+      <DependentUpon>ucTabControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaseForm\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\frmpopup.resx">
       <DependentUpon>frmpopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuAuth.resx">
+      <DependentUpon>frmMenuAuth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSY\frmDEMAND.resx">
       <DependentUpon>frmDEMAND.cs</DependentUpon>
@@ -274,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\NumTextBox.resx">
       <DependentUpon>NumTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm1.resx">
+      <DependentUpon>MainForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OET\EQPARR_REG.resx">
       <DependentUpon>EQPARR_REG.cs</DependentUpon>
@@ -362,6 +393,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\free-icon-edit-1827933.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\close-grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\close-red.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
