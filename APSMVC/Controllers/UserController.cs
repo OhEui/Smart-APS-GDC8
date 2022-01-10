@@ -18,6 +18,13 @@ namespace APSMVC.Controllers
         }
 
         [HttpPost]
+        public ActionResult LogOut()
+        {
+            TokenStorage.Clear();
+            return RedirectToAction("Login");
+        }
+
+        [HttpPost]
         public async Task<ActionResult> Auth(ReqUserLogin reqData) 
         {
             WebMessage<TokenModel> resToken;
@@ -35,9 +42,9 @@ namespace APSMVC.Controllers
                 }
                 else
                 {
-                    //MessageBox.Show(resToken?.ResultMessage ?? "로그인 중 문제가 발생하였습니다.");
-                    return Content(@"<script language='javascript' type='text/javascript'> 
-alert('로그인 중 문제가 발생하였습니다.'); 
+                    string msg = resToken?.ResultMessage ?? "로그인 중 문제가 발생하였습니다.";
+                    return Content($@"<script language='javascript' type='text/javascript'> 
+alert('{msg}'); 
 history.back();
 </script>");
                 }

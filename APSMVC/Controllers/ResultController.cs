@@ -16,6 +16,14 @@ namespace APSMVC.Controllers
     {
         public async Task<ActionResult> EQPGantt()
         {
+            if (!TokenStorage.IsStoraged) 
+            {
+                string msg = "로그인이 필요합니다";
+                return Content($@"<script language='javascript' type='text/javascript'> 
+alert('{msg}'); 
+history.back();
+</script>");
+            }
             ServiceHelp srv = new ServiceHelp(true);
             string result = await srv.GetJsonStringAsync("api/Result/EQPGantt");
 
