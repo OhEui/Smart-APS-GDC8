@@ -9,13 +9,25 @@ using APSVO;
 
 namespace APSServer.Models
 {
-    public class ProductDAC
+    public class ProductDAC : IDisposable
     {
         string strConn = string.Empty;
+        SqlConnection conn = null;
 
         public ProductDAC()
         {
             strConn = WebConfigurationManager.ConnectionStrings["teamDB"].ConnectionString;
+            conn = new SqlConnection(strConn);
+            conn.Open();
+        }
+
+        public void Dispose()
+        {
+            if (conn != null && conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+                conn = null;
+            }
         }
 
         public bool SaveProduct(ProductVO product) // 저장, 수정
@@ -84,7 +96,6 @@ namespace APSServer.Models
             {
                 cmd.Connection = new SqlConnection(strConn);
                 cmd.CommandText = "delete from PRODUCT where PRODUCT_ID=@PRODUCT_ID";
-                cmd.CommandType = CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@PRODUCT_ID", id);
 
@@ -96,5 +107,15 @@ namespace APSServer.Models
             }
         }
 
+        public List<CommonVO> GetCommonCode()
+        {
+            string sql = "select Code, Category, Name from Common_Code ";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                return Helper.DataReaderMapToList<CommonVO>(cmd.ExecuteReader());
+
+            }
+        }
     }
 }
+
