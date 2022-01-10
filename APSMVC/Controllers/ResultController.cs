@@ -26,6 +26,7 @@ history.back();
 </script>");
             }
             */
+            //var test = HttpContext.Authentication
             ServiceHelp srv = new ServiceHelp(true);
             string result = await srv.GetJsonStringAsync("api/Result/EQPGantt");
 
