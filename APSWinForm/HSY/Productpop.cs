@@ -22,7 +22,7 @@ namespace APSWinForm
         }
         public async void Combobinding()
         {
-            list = await srv.GetListAsync("api/Product/Products", list);
+            list = await srv.GetListAsync("api/Product/CommonCode", list);
             CommonUtil.ComboBinding(cboType, list, "PRODUCT_TYPE", "PRODUCT_TYPE");
             cboType.Text = "";
         }
@@ -53,14 +53,14 @@ namespace APSWinForm
                 LOT_SIZE = Convert.ToInt32(txtSize.Text)
             };
 
-            WebMessage wmsg = await srv.PostAsyncNone("api/Product/SaveProduct", productVO);
+            WebMessage msg = await srv.PostAsyncNone("api/Product/SaveProduct", productVO);
 
-            if (wmsg.IsSuccess)
+            if (msg.IsSuccess)
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            MessageBox.Show(wmsg.ResultMessage);
+            MessageBox.Show(msg.ResultMessage);
         }
 
      

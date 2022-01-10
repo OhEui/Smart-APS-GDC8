@@ -90,8 +90,13 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-
-
-
+        //GET : http://localhost:58802/api/Product/CommonCode
+        [HttpGet]
+        [Route("CommonCode")]
+        public List<CommonVO> GetCommonCode()
+        {
+            ProductDAC dac = new ProductDAC();
+            return dac.GetCommonCode();
+        }
     }
 }

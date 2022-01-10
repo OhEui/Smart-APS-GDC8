@@ -108,13 +108,23 @@ namespace APSWinForm
         
         private async void toolStripButton1_Click(object sender, EventArgs e)
         {
-            string demd = dgvDM["DEMAND_ID", dgvDM.CurrentRow.Index].Value.ToString();
-            if (MessageBox.Show($"{demd} 항목을 삭제 하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (dgvDM.SelectedRows.Count < 1)
             {
-                await srv.GetAsync($"api/Demand/Delete/{lblUserID.Text}");
+                MessageBox.Show("삭제할 제품을 선택하여 주세요.");
+                return;
             }
 
-            LoadData();
+            string DemdID = dgvDM.SelectedRows[0].Cells["DEMAND_ID"].Value.ToString();
+
+            if (MessageBox.Show("       정말 삭제하시겠습니까?", "수요정보삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                APSVO.WebMessage msg = await srv.GetAsync($"api/Demand/Delete/{DemdID}");
+                if (msg.IsSuccess)
+                {
+                    LoadData();
+                }
+                MessageBox.Show(msg.ResultMessage);
+            }
         }
 
         

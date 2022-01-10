@@ -211,7 +211,6 @@ namespace APSWinForm
             this.lblUserID.Name = "lblUserID";
             this.lblUserID.Size = new System.Drawing.Size(0, 12);
             this.lblUserID.TabIndex = 55;
-            this.lblUserID.Visible = false;
             // 
             // button3
             // 
@@ -310,7 +309,6 @@ namespace APSWinForm
             this.dgvPR.RowTemplate.Height = 23;
             this.dgvPR.Size = new System.Drawing.Size(676, 402);
             this.dgvPR.TabIndex = 55;
-            this.dgvPR.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPR_CellClick);
             // 
             // frmPRODUCT
             // 
