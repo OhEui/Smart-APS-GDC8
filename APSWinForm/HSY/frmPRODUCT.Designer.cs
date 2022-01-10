@@ -43,18 +43,13 @@ namespace APSWinForm
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.lblUserID = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtPID = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -103,6 +98,7 @@ namespace APSWinForm
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(26, 37);
             this.toolStripButton1.Text = "삭제";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -196,23 +192,26 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.lblUserID);
             this.panel9.Controls.Add(this.button3);
-            this.panel9.Controls.Add(this.comboBox3);
-            this.panel9.Controls.Add(this.textBox3);
-            this.panel9.Controls.Add(this.textBox2);
-            this.panel9.Controls.Add(this.textBox8);
-            this.panel9.Controls.Add(this.label8);
-            this.panel9.Controls.Add(this.label9);
-            this.panel9.Controls.Add(this.label7);
+            this.panel9.Controls.Add(this.txtID);
             this.panel9.Controls.Add(this.button7);
-            this.panel9.Controls.Add(this.comboBox4);
             this.panel9.Controls.Add(this.label3);
             this.panel9.Controls.Add(this.label2);
+            this.panel9.Controls.Add(this.txtPID);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(676, 136);
             this.panel9.TabIndex = 42;
+            // 
+            // lblUserID
+            // 
+            this.lblUserID.AutoSize = true;
+            this.lblUserID.Location = new System.Drawing.Point(99, 93);
+            this.lblUserID.Name = "lblUserID";
+            this.lblUserID.Size = new System.Drawing.Size(0, 12);
+            this.lblUserID.TabIndex = 55;
             // 
             // button3
             // 
@@ -226,65 +225,14 @@ namespace APSWinForm
             this.button3.TabIndex = 54;
             this.button3.Text = "초기화";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // comboBox3
+            // txtID
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(382, 79);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 20);
-            this.comboBox3.TabIndex = 53;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(124, 56);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 21);
-            this.textBox3.TabIndex = 52;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(124, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 21);
-            this.textBox2.TabIndex = 48;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(124, 27);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(121, 21);
-            this.textBox8.TabIndex = 43;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(285, 82);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 14);
-            this.label8.TabIndex = 51;
-            this.label8.Text = "ㆍ생산단위크기";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(51, 59);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 14);
-            this.label9.TabIndex = 50;
-            this.label9.Text = "ㆍ제품타입";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(51, 91);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 14);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "ㆍ제품이름";
+            this.txtID.Location = new System.Drawing.Point(120, 54);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(121, 21);
+            this.txtID.TabIndex = 43;
             // 
             // button7
             // 
@@ -300,19 +248,11 @@ namespace APSWinForm
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(382, 42);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 20);
-            this.comboBox4.TabIndex = 44;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(297, 45);
+            this.label3.Location = new System.Drawing.Point(298, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 14);
             this.label3.TabIndex = 42;
@@ -322,11 +262,18 @@ namespace APSWinForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(63, 30);
+            this.label2.Location = new System.Drawing.Point(59, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 14);
             this.label2.TabIndex = 41;
             this.label2.Text = "ㆍ제품ID";
+            // 
+            // txtPID
+            // 
+            this.txtPID.Location = new System.Drawing.Point(383, 54);
+            this.txtPID.Name = "txtPID";
+            this.txtPID.Size = new System.Drawing.Size(121, 21);
+            this.txtPID.TabIndex = 56;
             // 
             // panel8
             // 
@@ -405,20 +352,15 @@ namespace APSWinForm
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Panel panel9;
         protected System.Windows.Forms.Button button3;
-        protected System.Windows.Forms.ComboBox comboBox3;
-        protected System.Windows.Forms.TextBox textBox3;
-        protected System.Windows.Forms.TextBox textBox2;
-        protected System.Windows.Forms.TextBox textBox8;
-        protected System.Windows.Forms.Label label8;
-        protected System.Windows.Forms.Label label9;
-        protected System.Windows.Forms.Label label7;
+        protected System.Windows.Forms.TextBox txtID;
         protected System.Windows.Forms.Button button7;
-        protected System.Windows.Forms.ComboBox comboBox4;
         protected System.Windows.Forms.Label label3;
         protected System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.DataGridView dgvPR;
+        private System.Windows.Forms.Label lblUserID;
+        protected System.Windows.Forms.TextBox txtPID;
     }
 }

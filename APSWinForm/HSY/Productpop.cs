@@ -16,26 +16,47 @@ namespace APSWinForm
     {
         ServiceHelp srv = new ServiceHelp();
         // ProductVO Prdvo;
-        List<ProductVO> prdList;
+        List<ProductVO> list;
 
-        //추가
         public Productpop()
         {
             InitializeComponent();
         }
+        public async void Combobinding()
+        {
+            list = await srv.GetListAsync("api/Product/CommonCode", list);
+            CommonUtil.ComboBinding(cboType, list, "PRODUCT_TYPE", "PRODUCT_TYPE");
+            cboType.Text = "";
+        }
+
+        public Productpop(ProductVO prodInfo)
+        {
+            InitializeComponent();
+
+            txtID.Text = prodInfo.PRODUCT_ID;
+            cboType.Text = prodInfo.PRODUCT_TYPE;
+            txtName.Text = prodInfo.PRODUCT_NAME;
+            txtProcess.Text = prodInfo.PROCESS_ID;
+            txtSize.Text = prodInfo.LOT_SIZE.ToString();
+
+            txtID.Enabled = false;
+        }
+
 
         private async void button7_Click(object sender, EventArgs e)
         {
-            ProductVO product = new ProductVO
+            //수정
+            ProductVO productVO = new ProductVO
             {
                 PRODUCT_ID = txtID.Text,
-                PRODUCT_TYPE = txtType.Text,
+                PRODUCT_TYPE = cboType.Text,
                 PRODUCT_NAME = txtName.Text,
                 PROCESS_ID = txtProcess.Text,
-                LOT_SIZE = txtSize.Text.Length
+                LOT_SIZE = Convert.ToInt32(txtSize.Text)
             };
 
-            WebMessage msg = await srv.PostAsyncNone("api/Product/SaveProduct", product);
+            WebMessage msg = await srv.PostAsyncNone("api/Product/SaveProduct", productVO);
+
             if (msg.IsSuccess)
             {
                 this.DialogResult = DialogResult.OK;
@@ -44,24 +65,28 @@ namespace APSWinForm
             MessageBox.Show(msg.ResultMessage);
         }
 
-        //수정
-        public Productpop(ProductVO prodinfo)
-        {
-            InitializeComponent();
-
-            txtID.Text = prodinfo.PRODUCT_ID;
-            txtType.Text = prodinfo.PRODUCT_TYPE;
-            txtName.Text = prodinfo.PRODUCT_NAME;
-            txtProcess.Text = prodinfo.PROCESS_ID;
-            txtSize.Text = prodinfo.LOT_SIZE.ToString();
-
-
-            txtID.Enabled = false;
-        }
+     
 
         private async void Productpop_Load(object sender, EventArgs e)
         {
-            prdList = await srv.GetListAsync("api/Product/Products", prdList);
+            Combobinding();
+            list = await srv.GetListAsync("api/Product/Products", list);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void txtSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //숫자만 입력되도록 필터링
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }
