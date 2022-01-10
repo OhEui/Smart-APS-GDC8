@@ -95,6 +95,7 @@ namespace APSWinForm
             this.menuStrip1.Size = new System.Drawing.Size(1226, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemAdded += new System.Windows.Forms.ToolStripItemEventHandler(this.menuStrip2_ItemAdded);
             // 
             // 메뉴ToolStripMenuItem
             // 
@@ -408,6 +409,7 @@ namespace APSWinForm
             this.button12.Text = "└ 가동률 분석";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -426,6 +428,7 @@ namespace APSWinForm
             this.button13.Text = "└ EQP 간트차트";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -444,6 +447,7 @@ namespace APSWinForm
             this.button14.Text = "└ LOT 간트차트";
             this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button6
             // 
@@ -650,7 +654,6 @@ namespace APSWinForm
             this.btnSubMenu1.Text = " ㆍ기준정보관리";
             this.btnSubMenu1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnSubMenu1.UseVisualStyleBackColor = false;
-          
             // 
             // button22
             // 
@@ -723,6 +726,7 @@ namespace APSWinForm
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "APS";
             this.Load += new System.EventHandler(this.MainForm_Load);

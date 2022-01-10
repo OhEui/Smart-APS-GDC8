@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using APSUtil.Http;
+using System.Diagnostics;
 
 namespace APSWinForm
 {
@@ -34,6 +35,7 @@ namespace APSWinForm
             {
                 lblName.Text = UserInfoStorage.Current.Name;
                 Show();
+                MessageBox.Show(UserInfoStorage.Current.ToString());
             }
             else
             {
@@ -51,7 +53,9 @@ namespace APSWinForm
 
         private void menuStrip2_ItemAdded(object sender, ToolStripItemEventArgs e)
         {
-            e.Item.Visible = false;
+            Debug.WriteLine(e.Item.GetType().FullName);
+            if (e.Item.GetType().FullName == "System.Windows.Forms.MdiControlStrip+SystemMenuItem")
+                e.Item.Visible = false;
         }
 
         private void 샘플ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +106,21 @@ namespace APSWinForm
         private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Logout();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://localhost:44397/result/EQPgantt");
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://localhost:44397/result/LOTgantt");
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://localhost:44397/result/utilization");
         }
     }
 }
