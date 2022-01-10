@@ -72,6 +72,7 @@ namespace APSWinForm
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.SidePanel1.SuspendLayout();
@@ -112,41 +113,42 @@ namespace APSWinForm
             // 엑셀불러오기ToolStripMenuItem
             // 
             this.엑셀불러오기ToolStripMenuItem.Name = "엑셀불러오기ToolStripMenuItem";
-            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.엑셀불러오기ToolStripMenuItem.Text = "엑셀 불러오기";
             // 
             // 엑셀내보내기ToolStripMenuItem
             // 
             this.엑셀내보내기ToolStripMenuItem.Name = "엑셀내보내기ToolStripMenuItem";
-            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.엑셀내보내기ToolStripMenuItem.Text = "엑셀 내보내기";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // 결과정보열기ToolStripMenuItem
             // 
             this.결과정보열기ToolStripMenuItem.Name = "결과정보열기ToolStripMenuItem";
-            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.결과정보열기ToolStripMenuItem.Text = "결과 정보 열기";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // 로그아웃ToolStripMenuItem
             // 
             this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
-            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.로그아웃ToolStripMenuItem.Text = "로그아웃";
+            this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.종료ToolStripMenuItem.Text = "종료";
             // 
             // 샘플ToolStripMenuItem
@@ -649,6 +651,17 @@ namespace APSWinForm
             this.btnSubMenu1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnSubMenu1.UseVisualStyleBackColor = false;
             // 
+            // menuStrip2
+            // 
+            this.menuStrip2.AutoSize = false;
+            this.menuStrip2.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip2.Location = new System.Drawing.Point(17, 353);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(46, 42);
+            this.menuStrip2.TabIndex = 21;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
             // button22
             // 
             this.button22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(236)))), ((int)(((byte)(251)))));
@@ -698,12 +711,23 @@ namespace APSWinForm
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
+            this.lblName.Location = new System.Drawing.Point(915, 9);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(38, 12);
+            this.lblName.TabIndex = 18;
+            this.lblName.Text = "label1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1226, 693);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panelSideMenu);
             this.Controls.Add(this.menuStrip1);
@@ -770,5 +794,6 @@ namespace APSWinForm
         private System.Windows.Forms.Button btnDemand;
         private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.ToolStripMenuItem 로그아웃ToolStripMenuItem;
+        private System.Windows.Forms.Label lblName;
     }
 }

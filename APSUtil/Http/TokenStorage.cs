@@ -26,7 +26,7 @@ namespace APSUtil.Http
         /// <summary>
         /// access_token이 저장되어 있으면 true, 그렇지 않을 경우 false를 반환합니다.
         /// </summary>
-        public static bool IsTokenStoraged => _instance.IsValueCreated && !string.IsNullOrWhiteSpace(_instance.Value._accessToken);
+        public static bool IsStoraged => _instance.IsValueCreated && !string.IsNullOrWhiteSpace(_instance.Value._accessToken);
         
         /// <summary>
         /// 현재 저장되어있는 access_token을 삭제합니다.

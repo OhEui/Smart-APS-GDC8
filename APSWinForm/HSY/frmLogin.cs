@@ -15,11 +15,6 @@ namespace APSWinForm
 {
     public partial class frmLogin : Form
     {
-
-       
-        public string AuthHeader { get; private set; }
-        public UserData LoginUser { get; private set; }
-
         public frmLogin()
         {
             InitializeComponent();
@@ -30,8 +25,9 @@ namespace APSWinForm
             string id = txtID.Text;
             string password = txtPW.Text;
             
-            ServiceHelp srv = new ServiceHelp();
-            ReqUserLogin reqData = new ReqUserLogin() { ID=id, Password=password };
+            ReqUserLogin reqData = new ReqUserLogin() { ID = id, Password = password };
+            WebMessage<TokenModel> resToken;
+            UserInfo resUserInfo;
 
             if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(password))
             {
@@ -39,22 +35,44 @@ namespace APSWinForm
                 return;
             }
 
-            var response = await srv.PostAsync<ReqUserLogin, TokenModel>("api/Account/Login", reqData);
-            if (response != null) 
+            // access_token 가져오기
+            using (ServiceHelp srv = new ServiceHelp()) 
             {
-                MessageBox.Show(response.ResultMessage);
-                if (response.IsSuccess)
+                resToken = await srv.PostAsync<ReqUserLogin, TokenModel>("api/Account/Login", reqData);
+                if (resToken != null && resToken.IsSuccess)
                 {
                     if (ckLogin.Checked) // 로그인 OK 버튼 실행할 때 저장
                     {
                         Properties.Settings.Default.LoginIDSave = txtID.Text;
                         Properties.Settings.Default.Save();
                     }
-                    TokenStorage.AccessToken = response.Data.AccessToken;
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    TokenStorage.AccessToken = resToken.Data.AccessToken;
+                }
+                else
+                {
+                    MessageBox.Show(resToken?.ResultMessage ?? "로그인 중 문제가 발생하였습니다.");
+                    return;
                 }
             }
+
+            using (ServiceHelp srv = new ServiceHelp()) 
+            {
+                resUserInfo = await srv.GetListAsync("api/Account/UserInfo", new UserInfo());
+                if (resUserInfo != null)
+                {
+                    UserInfoStorage.Current = resUserInfo;
+                }
+                else
+                {
+                    MessageBox.Show("회원 정보를 불러오는 중 문제가 발생하였습니다.");
+                    return;
+                }
+
+            }
+            MessageBox.Show(resToken.ResultMessage);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -67,7 +85,7 @@ namespace APSWinForm
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPassWord frm = new frmPassWord();
-            frm.Show();
+            frm.ShowDialog();
 
 
         }
@@ -75,7 +93,7 @@ namespace APSWinForm
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmJoin frm = new frmJoin();
-            frm.Show();
+            frm.ShowDialog();
         }
     }
 }
