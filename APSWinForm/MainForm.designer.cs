@@ -650,17 +650,7 @@ namespace APSWinForm
             this.btnSubMenu1.Text = " ㆍ기준정보관리";
             this.btnSubMenu1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnSubMenu1.UseVisualStyleBackColor = false;
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.AutoSize = false;
-            this.menuStrip2.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip2.Location = new System.Drawing.Point(17, 353);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(46, 42);
-            this.menuStrip2.TabIndex = 21;
-            this.menuStrip2.Text = "menuStrip2";
+          
             // 
             // button22
             // 
