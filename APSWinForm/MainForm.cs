@@ -14,10 +14,6 @@ namespace APSWinForm
 {
     public partial class MainForm : Form
     {
-        // TODO 토큰 저장
-        public string AuthHeader { get; private set; }
-        public UserData LoginUser { get; private set; }
-
         public MainForm()
         {
             InitializeComponent();
@@ -27,9 +23,7 @@ namespace APSWinForm
         {
             tabControl1.Visible = false;
 
-            // Login Test
             Login();
-
         }
 
         private void Login()
@@ -38,14 +32,19 @@ namespace APSWinForm
             Hide();
             if (login.ShowDialog() == DialogResult.OK)
             {
-                AuthHeader = login.AuthHeader;
-                LoginUser = login.LoginUser;
                 Show();
             }
             else
             {
                 Close();
             }
+        }
+
+        private void Logout() 
+        {
+            TokenStorage.Clear();
+            UserInfoStorage.Clear();
+            Login();
         }
 
         private void menuStrip2_ItemAdded(object sender, ToolStripItemEventArgs e)
@@ -96,6 +95,11 @@ namespace APSWinForm
         private void btnLine_Click(object sender, EventArgs e)
         {
             new frmLineInfo() { MdiParent = this }.Show();
+        }
+
+        private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Logout();
         }
     }
 }

@@ -15,11 +15,6 @@ namespace APSWinForm
 {
     public partial class frmLogin : Form
     {
-
-       
-        public string AuthHeader { get; private set; }
-        public UserData LoginUser { get; private set; }
-
         public frmLogin()
         {
             InitializeComponent();
@@ -67,7 +62,7 @@ namespace APSWinForm
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmPassWord frm = new frmPassWord();
-            frm.Show();
+            frm.ShowDialog();
 
 
         }
@@ -75,7 +70,7 @@ namespace APSWinForm
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmJoin frm = new frmJoin();
-            frm.Show();
+            frm.ShowDialog();
         }
     }
 }

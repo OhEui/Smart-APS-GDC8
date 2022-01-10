@@ -37,6 +37,7 @@ namespace APSWinForm
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.결과정보열기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.로그아웃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.샘플ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSideMenu = new System.Windows.Forms.Panel();
@@ -72,7 +73,6 @@ namespace APSWinForm
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.로그아웃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.SidePanel1.SuspendLayout();
@@ -137,6 +137,13 @@ namespace APSWinForm
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // 로그아웃ToolStripMenuItem
+            // 
+            this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.로그아웃ToolStripMenuItem.Text = "로그아웃";
+            this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
             // 
             // 종료ToolStripMenuItem
             // 
@@ -704,12 +711,6 @@ namespace APSWinForm
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // 로그아웃ToolStripMenuItem
-            // 
-            this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
-            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.로그아웃ToolStripMenuItem.Text = "로그아웃";
             // 
             // MainForm
             // 

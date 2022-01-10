@@ -232,6 +232,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoStorage.cs" />
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\ExcelUtil.cs" />

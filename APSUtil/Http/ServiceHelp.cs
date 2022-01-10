@@ -43,7 +43,7 @@ namespace APSUtil.Http
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            if (TokenStorage.IsTokenStoraged)
+            if (TokenStorage.IsStoraged)
             {
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", TokenStorage.AccessToken);
             }
