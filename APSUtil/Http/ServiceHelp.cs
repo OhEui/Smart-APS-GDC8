@@ -34,7 +34,7 @@ namespace APSUtil.Http
         /// API 주소: https:localhost::44309/api/Sample
         /// </summary>
         /// <param name="routePrefix"></param>
-        public ServiceHelp(bool IsWebClient = false)
+        public ServiceHelp(bool IsWebClient = false, string webClientToken = null)
         {
             string apiaddress = IsWebClient ? 
                 WebConfigurationManager.AppSettings["ApiAddress"] : ConfigurationManager.AppSettings["ApiAddress"];
@@ -43,11 +43,14 @@ namespace APSUtil.Http
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            if (TokenStorage.IsStoraged)
+            if (!IsWebClient && TokenStorage.IsStoraged)
             {
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", TokenStorage.AccessToken);
             }
-
+            if (IsWebClient && !string.IsNullOrWhiteSpace(webClientToken)) 
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", webClientToken);
+            }
         }
 
         public async Task<T> GetListAsync<T>(string path, T t)

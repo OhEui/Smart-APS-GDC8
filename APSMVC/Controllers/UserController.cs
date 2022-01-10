@@ -20,7 +20,6 @@ namespace APSMVC.Controllers
         [HttpPost]
         public ActionResult LogOut()
         {
-            TokenStorage.Clear();
             return RedirectToAction("Login");
         }
 
@@ -38,7 +37,7 @@ namespace APSMVC.Controllers
                 resToken = await srv.PostAsync<ReqUserLogin, TokenModel>("api/Account/Login", reqData);
                 if (resToken != null && resToken.IsSuccess)
                 {
-                    TokenStorage.AccessToken = resToken.Data.AccessToken;
+                    _ = resToken.Data.AccessToken;
                 }
                 else
                 {
