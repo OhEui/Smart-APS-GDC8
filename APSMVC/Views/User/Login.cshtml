@@ -23,14 +23,14 @@
 </head>
 <body class="text-center">
 
-    @using (Html.BeginForm("Auth", "User", FormMethod.Post, new { @class = "form-signin" }))
-    {
+    <form class="form-signin">
+
         <img class="mb-4" src="../pages/assets/dist/svg/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
         <label for="inputEmail" class="sr-only">Email address</label>
-        @Html.TextBox("ID", null, new { @class = "form-control" });
+        <input type="text" id="inputID" class="form-control" placeholder="ID" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        @Html.Password("Password", null, new { @class = "form-control" });
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox mb-3">
             <label>
                 <input type="checkbox" value="remember-me"> Remember me
@@ -38,35 +38,39 @@
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
-    }
-    
+
+    </form>
+
+
     <!-- jQuery -->
     <script src="../../pages/plugins/jquery/jquery.min.js"></script>
     <script>
-        $('#form1').submit(() => {
-            event.preventDefault();
-
-            var loginData =
-            {
-                username: $("#inputID").val(),
-                password: $("#inputPassword").val(),
-                grant_type: 'password'
-            };
-            $.ajax({
-                type: 'POST',
-                url: 'https://localhost:44309/token',
-                data: loginData
-            }).done(function (data) {
-                $.ajaxSetup({
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', 'Bearer ' + data.access_token);
-                    }
+        $(() => {
+            $('.form-signin').submit(() => {
+                event.preventDefault();
+                alert('hello');
+                var loginData =
+                {
+                    id: $("#inputID").val(),
+                    password: $("#inputPassword").val()
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://localhost:44309/api/Account/Login',
+                    data: loginData
+                }).done(function (data) {
+                    $.ajaxSetup({
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader('Authorization', 'Bearer ' + data.Data.access_token);
+                        }
+                    });
+                    window.location.href = '/Result/Utilization'
+                }).fail(function (jaxhr, status) {
+                    alert('fail');
+                    alert(jaxhr.status);
                 });
-                window.location.href = '/Result/Utilization'
-                alert(data.access_token);
-            }).fail(function (jaxhr, status) {
-                alert(jaxhr.status);
-            })
+            });
+
         });
     </script>
 </body>
