@@ -230,7 +230,7 @@ namespace APSWinForm
             this.btnSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystem.Font = new System.Drawing.Font("210 맨발의청춘 L", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSystem.ForeColor = System.Drawing.Color.Silver;
-            this.btnSystem.Image = ((System.Drawing.Image)(resources.GetObject("btnSystem.Image")));
+            this.btnSystem.Image = global::APSWinForm.Properties.Resources.tools;
             this.btnSystem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSystem.Location = new System.Drawing.Point(0, 597);
             this.btnSystem.Name = "btnSystem";
@@ -253,7 +253,7 @@ namespace APSWinForm
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("210 맨발의청춘 L", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExit.ForeColor = System.Drawing.Color.Silver;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Image = global::APSWinForm.Properties.Resources.exit;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(0, 705);
             this.btnExit.Name = "btnExit";
@@ -325,7 +325,7 @@ namespace APSWinForm
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("210 맨발의청춘 L", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Silver;
-            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
+            this.btnExcel.Image = global::APSWinForm.Properties.Resources.xls;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcel.Location = new System.Drawing.Point(0, 489);
             this.btnExcel.Name = "btnExcel";
@@ -417,7 +417,7 @@ namespace APSWinForm
             this.btnResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResult.Font = new System.Drawing.Font("210 맨발의청춘 L", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnResult.ForeColor = System.Drawing.Color.Silver;
-            this.btnResult.Image = ((System.Drawing.Image)(resources.GetObject("btnResult.Image")));
+            this.btnResult.Image = global::APSWinForm.Properties.Resources.Chart;
             this.btnResult.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnResult.Location = new System.Drawing.Point(0, 351);
             this.btnResult.Name = "btnResult";
@@ -610,7 +610,7 @@ namespace APSWinForm
             this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInfo.Font = new System.Drawing.Font("210 맨발의청춘 L", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInfo.ForeColor = System.Drawing.Color.Silver;
-            this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
+            this.btnInfo.Image = global::APSWinForm.Properties.Resources.Manage;
             this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfo.Location = new System.Drawing.Point(0, 63);
             this.btnInfo.Name = "btnInfo";
@@ -626,7 +626,7 @@ namespace APSWinForm
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(59)))), ((int)(((byte)(64)))));
-            this.panelLogo.BackgroundImage = global::APSWinForm.Properties.Resources.My_project2;
+            this.panelLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelLogo.BackgroundImage")));
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);

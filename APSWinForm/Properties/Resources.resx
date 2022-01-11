@@ -142,6 +142,12 @@
   <data name="PRODUCT_ID" xml:space="preserve">
     <value>제품 ID</value>
   </data>
+  <data name="Chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_grey1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>close-grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DEMAND_VER" xml:space="preserve">
     <value>수요버전</value>
   </data>
@@ -153,6 +159,9 @@
   </data>
   <data name="PRODUCT" xml:space="preserve">
     <value>제품정보</value>
+  </data>
+  <data name="My_project2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\My project2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DEMAND_ID" xml:space="preserve">
     <value>수요 ID</value>
@@ -166,11 +175,8 @@
   <data name="EQUIPMENT" xml:space="preserve">
     <value>설비정보</value>
   </data>
-  <data name="PROC_TIME" xml:space="preserve">
-    <value>공정소요시간</value>
-  </data>
-  <data name="PRODUCT_TYPE" xml:space="preserve">
-    <value>제품타입</value>
+  <data name="tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>close-red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,14 +199,17 @@
   <data name="SITE_ID" xml:space="preserve">
     <value>현장 ID</value>
   </data>
-  <data name="close_grey1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>close-grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PRODUCT_TYPE" xml:space="preserve">
+    <value>제품타입</value>
   </data>
   <data name="close_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>close-grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EQP_GROUP" xml:space="preserve">
     <value>설비그룹</value>
+  </data>
+  <data name="Manage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Manage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TIME" xml:space="preserve">
     <value>소요시간</value>
@@ -217,8 +226,14 @@
   <data name="PRODUCT_NAME" xml:space="preserve">
     <value>제품이름</value>
   </data>
+  <data name="xls" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xls.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LINE_ID" xml:space="preserve">
     <value>라인 ID</value>
+  </data>
+  <data name="STEP_YIELD" xml:space="preserve">
+    <value>공정수율</value>
   </data>
   <data name="LINE_INFO" xml:space="preserve">
     <value>라인정보</value>
@@ -241,13 +256,13 @@
   <data name="SETUP_TIME" xml:space="preserve">
     <value>교체준비시간</value>
   </data>
-  <data name="STEP_YIELD" xml:space="preserve">
-    <value>공정수율</value>
+  <data name="PROC_TIME" xml:space="preserve">
+    <value>공정소요시간</value>
   </data>
   <data name="EQP_MODEL" xml:space="preserve">
     <value>모델명</value>
   </data>
-  <data name="My_project2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\My project2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
