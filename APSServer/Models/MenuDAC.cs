@@ -30,7 +30,7 @@ namespace APSServer.Models
             }
         }
 
-      
+
 //        public DataTable GetMenuList()
 //        {
 //            string sql = @"select menu_id, menu_name, menu_level, pnt_menu_id, program_name, menu_Img, menu_sort
@@ -49,8 +49,8 @@ namespace APSServer.Models
         {
 
             string sql = @"select menu_id, menu_name, menu_level, pnt_menu_id, program_name, menu_Img, menu_sort
-from Menu 
-order by pnt_menu_id, menu_sort";
+        from Menu 
+        order by pnt_menu_id, menu_sort";
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
@@ -105,6 +105,30 @@ insert into MenuAuth (menu_id, auth_id)
 
                 return (iCnt > 0);
             }
+        }
+
+        public DataTable GetUserMenuList(string useid)
+        {
+            string sql = @"select menu_id, menu_name, menu_level, pnt_menu_id, program_name, menu_Img, menu_sort
+from Menu
+where menu_id in (select menu_id
+					from Userinfo U inner join MenuAuth A on U.auth_id = A.auth_id 
+					where U.user_id = @useid)
+union 
+select distinct P.menu_id, P.menu_name, P.menu_level, P.pnt_menu_id, P.program_name, P.menu_Img, P.menu_sort
+from Menu P inner join Menu C on P.menu_id = C.pnt_menu_id
+where c.menu_id in (select menu_id
+					from Userinfo U inner join MenuAuth A on U.auth_id = A.auth_id 
+					where U.user_id = @useid)";
+
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.SelectCommand.Parameters.AddWithValue("@useid", useid);
+
+                da.Fill(dt);
+            }
+            return dt;
         }
     }
 }

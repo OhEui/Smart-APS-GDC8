@@ -49,7 +49,12 @@ namespace APSUtil.Http
             }
             if (IsWebClient && !string.IsNullOrWhiteSpace(webClientToken)) 
             {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", webClientToken);
+                string token;
+                if (webClientToken.StartsWith("Bearer"))
+                    token = webClientToken.Split(' ')[1];
+                else
+                    token = webClientToken;
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             }
         }
 

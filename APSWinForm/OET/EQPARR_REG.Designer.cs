@@ -32,6 +32,14 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EQPARR_REG));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.txtStep = new System.Windows.Forms.TextBox();
+            this.txtProcess = new System.Windows.Forms.TextBox();
+            this.txtProduct = new System.Windows.Forms.TextBox();
+            this.txtEQP = new System.Windows.Forms.TextBox();
+            this.cboStep = new System.Windows.Forms.ComboBox();
+            this.cboProcess = new System.Windows.Forms.ComboBox();
+            this.cboProduct = new System.Windows.Forms.ComboBox();
+            this.cboEQP = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,14 +56,6 @@ namespace APSWinForm
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboEQP = new System.Windows.Forms.ComboBox();
-            this.cboProduct = new System.Windows.Forms.ComboBox();
-            this.cboProcess = new System.Windows.Forms.ComboBox();
-            this.cboStep = new System.Windows.Forms.ComboBox();
-            this.txtEQP = new System.Windows.Forms.TextBox();
-            this.txtProduct = new System.Windows.Forms.TextBox();
-            this.txtProcess = new System.Windows.Forms.TextBox();
-            this.txtStep = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStep)).BeginInit();
@@ -104,6 +104,78 @@ namespace APSWinForm
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(370, 427);
             this.panel9.TabIndex = 42;
+            // 
+            // txtStep
+            // 
+            this.txtStep.Location = new System.Drawing.Point(184, 181);
+            this.txtStep.Name = "txtStep";
+            this.txtStep.ReadOnly = true;
+            this.txtStep.Size = new System.Drawing.Size(130, 21);
+            this.txtStep.TabIndex = 181;
+            this.txtStep.Visible = false;
+            // 
+            // txtProcess
+            // 
+            this.txtProcess.Location = new System.Drawing.Point(184, 139);
+            this.txtProcess.Name = "txtProcess";
+            this.txtProcess.ReadOnly = true;
+            this.txtProcess.Size = new System.Drawing.Size(130, 21);
+            this.txtProcess.TabIndex = 180;
+            this.txtProcess.Visible = false;
+            // 
+            // txtProduct
+            // 
+            this.txtProduct.Location = new System.Drawing.Point(184, 98);
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.ReadOnly = true;
+            this.txtProduct.Size = new System.Drawing.Size(131, 21);
+            this.txtProduct.TabIndex = 179;
+            this.txtProduct.Visible = false;
+            // 
+            // txtEQP
+            // 
+            this.txtEQP.Location = new System.Drawing.Point(184, 58);
+            this.txtEQP.Name = "txtEQP";
+            this.txtEQP.ReadOnly = true;
+            this.txtEQP.Size = new System.Drawing.Size(130, 21);
+            this.txtEQP.TabIndex = 178;
+            this.txtEQP.Visible = false;
+            // 
+            // cboStep
+            // 
+            this.cboStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStep.FormattingEnabled = true;
+            this.cboStep.Location = new System.Drawing.Point(184, 181);
+            this.cboStep.Name = "cboStep";
+            this.cboStep.Size = new System.Drawing.Size(130, 20);
+            this.cboStep.TabIndex = 177;
+            // 
+            // cboProcess
+            // 
+            this.cboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProcess.FormattingEnabled = true;
+            this.cboProcess.Location = new System.Drawing.Point(184, 139);
+            this.cboProcess.Name = "cboProcess";
+            this.cboProcess.Size = new System.Drawing.Size(130, 20);
+            this.cboProcess.TabIndex = 176;
+            // 
+            // cboProduct
+            // 
+            this.cboProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProduct.FormattingEnabled = true;
+            this.cboProduct.Location = new System.Drawing.Point(184, 99);
+            this.cboProduct.Name = "cboProduct";
+            this.cboProduct.Size = new System.Drawing.Size(130, 20);
+            this.cboProduct.TabIndex = 175;
+            // 
+            // cboEQP
+            // 
+            this.cboEQP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEQP.FormattingEnabled = true;
+            this.cboEQP.Location = new System.Drawing.Point(185, 58);
+            this.cboEQP.Name = "cboEQP";
+            this.cboEQP.Size = new System.Drawing.Size(130, 20);
+            this.cboEQP.TabIndex = 174;
             // 
             // label4
             // 
@@ -274,78 +346,6 @@ namespace APSWinForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(390, 38);
             this.panel1.TabIndex = 46;
-            // 
-            // cboEQP
-            // 
-            this.cboEQP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEQP.FormattingEnabled = true;
-            this.cboEQP.Location = new System.Drawing.Point(185, 58);
-            this.cboEQP.Name = "cboEQP";
-            this.cboEQP.Size = new System.Drawing.Size(130, 20);
-            this.cboEQP.TabIndex = 174;
-            // 
-            // cboProduct
-            // 
-            this.cboProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboProduct.FormattingEnabled = true;
-            this.cboProduct.Location = new System.Drawing.Point(184, 99);
-            this.cboProduct.Name = "cboProduct";
-            this.cboProduct.Size = new System.Drawing.Size(130, 20);
-            this.cboProduct.TabIndex = 175;
-            // 
-            // cboProcess
-            // 
-            this.cboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboProcess.FormattingEnabled = true;
-            this.cboProcess.Location = new System.Drawing.Point(184, 139);
-            this.cboProcess.Name = "cboProcess";
-            this.cboProcess.Size = new System.Drawing.Size(130, 20);
-            this.cboProcess.TabIndex = 176;
-            // 
-            // cboStep
-            // 
-            this.cboStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboStep.FormattingEnabled = true;
-            this.cboStep.Location = new System.Drawing.Point(184, 181);
-            this.cboStep.Name = "cboStep";
-            this.cboStep.Size = new System.Drawing.Size(130, 20);
-            this.cboStep.TabIndex = 177;
-            // 
-            // txtEQP
-            // 
-            this.txtEQP.Location = new System.Drawing.Point(185, 58);
-            this.txtEQP.Name = "txtEQP";
-            this.txtEQP.ReadOnly = true;
-            this.txtEQP.Size = new System.Drawing.Size(130, 21);
-            this.txtEQP.TabIndex = 178;
-            this.txtEQP.Visible = false;
-            // 
-            // txtProduct
-            // 
-            this.txtProduct.Location = new System.Drawing.Point(184, 98);
-            this.txtProduct.Name = "txtProduct";
-            this.txtProduct.ReadOnly = true;
-            this.txtProduct.Size = new System.Drawing.Size(131, 21);
-            this.txtProduct.TabIndex = 179;
-            this.txtProduct.Visible = false;
-            // 
-            // txtProcess
-            // 
-            this.txtProcess.Location = new System.Drawing.Point(184, 139);
-            this.txtProcess.Name = "txtProcess";
-            this.txtProcess.ReadOnly = true;
-            this.txtProcess.Size = new System.Drawing.Size(130, 21);
-            this.txtProcess.TabIndex = 180;
-            this.txtProcess.Visible = false;
-            // 
-            // txtStep
-            // 
-            this.txtStep.Location = new System.Drawing.Point(184, 181);
-            this.txtStep.Name = "txtStep";
-            this.txtStep.ReadOnly = true;
-            this.txtStep.Size = new System.Drawing.Size(130, 21);
-            this.txtStep.TabIndex = 181;
-            this.txtStep.Visible = false;
             // 
             // EQPARR_REG
             // 

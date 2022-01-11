@@ -444,5 +444,15 @@ namespace APSWinForm.Properties {
                 return ResourceManager.GetString("TIME", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap vms {
+            get {
+                object obj = ResourceManager.GetObject("vms", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
