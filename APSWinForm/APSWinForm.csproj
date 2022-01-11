@@ -267,6 +267,9 @@
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\ExcelUtil.cs" />
+    <Compile Include="Util\TabControlZ.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Util\ucTabControl.cs">
       <SubType>Component</SubType>
     </Compile>

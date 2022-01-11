@@ -66,17 +66,14 @@ namespace APSWinForm
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblName = new System.Windows.Forms.Label();
+            this.tabControl1 = new TabControlZ.TabControlZ();
             this.menuStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.panelSystemSubMenu.SuspendLayout();
             this.panelExcelSubMenu.SuspendLayout();
             this.panelResultSubMenu.SuspendLayout();
             this.panelInfoSubMenu.SuspendLayout();
-            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -109,30 +106,30 @@ namespace APSWinForm
             // 엑셀불러오기ToolStripMenuItem
             // 
             this.엑셀불러오기ToolStripMenuItem.Name = "엑셀불러오기ToolStripMenuItem";
-            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.엑셀불러오기ToolStripMenuItem.Text = "엑셀 불러오기";
             // 
             // 엑셀내보내기ToolStripMenuItem
             // 
             this.엑셀내보내기ToolStripMenuItem.Name = "엑셀내보내기ToolStripMenuItem";
-            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.엑셀내보내기ToolStripMenuItem.Text = "엑셀 내보내기";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // 결과정보열기ToolStripMenuItem
             // 
             this.결과정보열기ToolStripMenuItem.Name = "결과정보열기ToolStripMenuItem";
-            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.결과정보열기ToolStripMenuItem.Text = "결과 정보 열기";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // 로그아웃ToolStripMenuItem
             // 
@@ -144,7 +141,7 @@ namespace APSWinForm
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.종료ToolStripMenuItem.Text = "종료";
             // 
             // 샘플ToolStripMenuItem
@@ -597,6 +594,7 @@ namespace APSWinForm
             this.btnProduct.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnProduct.Size = new System.Drawing.Size(213, 30);
             this.btnProduct.TabIndex = 0;
+            this.btnProduct.Tag = "frmPRODUCT";
             this.btnProduct.Text = "제품정보관리";
             this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProduct.UseVisualStyleBackColor = true;
@@ -636,37 +634,6 @@ namespace APSWinForm
             this.panelLogo.Size = new System.Drawing.Size(213, 63);
             this.panelLogo.TabIndex = 0;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControl1.Location = new System.Drawing.Point(230, 24);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(703, 24);
-            this.tabControl1.TabIndex = 8;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(695, 0);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(695, 0);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
@@ -677,13 +644,33 @@ namespace APSWinForm
             this.lblName.TabIndex = 19;
             this.lblName.Text = "label1";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.ActiveTabEndColor = System.Drawing.Color.DarkOrange;
+            this.tabControl1.ActiveTabStartColor = System.Drawing.Color.Yellow;
+            this.tabControl1.CloseButtonColor = System.Drawing.Color.Red;
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.GradientAngle = 90;
+            this.tabControl1.Location = new System.Drawing.Point(230, 24);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.NonActiveTabEndColor = System.Drawing.Color.DarkBlue;
+            this.tabControl1.NonActiveTabStartColor = System.Drawing.Color.LightGreen;
+            this.tabControl1.Padding = new System.Drawing.Point(22, 4);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(703, 743);
+            this.tabControl1.TabIndex = 20;
+            this.tabControl1.TextColor = System.Drawing.Color.Navy;
+            this.tabControl1.Transparent1 = 150;
+            this.tabControl1.Transparent2 = 150;
+            // 
             // MainForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 767);
-            this.Controls.Add(this.lblName);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.panelSideMenu);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -697,7 +684,6 @@ namespace APSWinForm
             this.panelExcelSubMenu.ResumeLayout(false);
             this.panelResultSubMenu.ResumeLayout(false);
             this.panelInfoSubMenu.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -740,10 +726,8 @@ namespace APSWinForm
         private System.Windows.Forms.Button btnDemand;
         private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.Button btnInfo;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Label lblName;
+        private TabControlZ.TabControlZ tabControl1;
     }
 }

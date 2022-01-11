@@ -58,9 +58,10 @@ namespace APSWinForm
         private void MainForm2_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            tabControl1.Visible = false;
+            tabControl1.Visible = true;
             lblName.Text = "";
             //Login();
+           
         }
 
         private void Login()
@@ -106,13 +107,13 @@ namespace APSWinForm
         #region InfoSubMenu
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            new frmPRODUCT { MdiParent = this }.Show();
+            CreateTabPages("장비관리", new frmPRODUCT());
             hideInfoSubMenu();
         }
 
         private void btnDemand_Click(object sender, EventArgs e)
         {
-            new frmDEMAND() { MdiParent = this }.Show();
+            CreateTabPages("요구", new frmDEMAND());
             hideInfoSubMenu();
         }
 
@@ -184,6 +185,7 @@ namespace APSWinForm
         {
             showSubMenu(panelExcelSubMenu);
         }
+
         #region ExcelSubMenu
 
         private void btnExcelin_Click(object sender, EventArgs e)
@@ -219,6 +221,43 @@ namespace APSWinForm
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+
+        private void CreateTabPages(string text, Form OpenForm)
+        {
+            string first;
+            foreach (TabPage childForm in this.tabControl1.TabPages)
+            {
+                if (childForm.Text == text)
+                {
+                    tabControl1.SelectedTab = childForm;
+                    return;
+                }
+            }
+            TabPage myTabPage = new TabPage();
+            myTabPage = new TabPage();
+            myTabPage.Text = text;
+            myTabPage.ImageIndex = 0;
+
+            first = OpenForm.ToString();
+            myTabPage.Tag = first.ToString();
+
+            tabControl1.Controls.Add(myTabPage);
+
+
+            myTabPage.Focus();
+
+            OpenForm.TopLevel = false;
+            OpenForm.Parent = this;
+            myTabPage.Controls.Add(OpenForm);
+            //창이 열리면서 최대화
+
+            OpenForm.Dock = DockStyle.Fill;
+            OpenForm.FormBorderStyle = FormBorderStyle.None;
+            OpenForm.Show();
+
+            tabControl1.SelectedTab = myTabPage;
         }
 
         private Form activeForm = null;
