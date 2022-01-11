@@ -81,7 +81,7 @@ namespace APSWinForm
             }
             getSearchEqpList();
         }
-        private  void getSearchEqpList()  // 검색함수
+        private void getSearchEqpList()  // 검색함수
         {
             dgvEQP.DataSource = null;
             dgvEQP.DataSource = EQPlist.FindAll(p => p.SITE_ID.Contains(txtSite.Text) && p.LINE_ID.Contains(txtLine.Text) && p.EQP_GROUP.Contains(cboEQPgroup.Text));

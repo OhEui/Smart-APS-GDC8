@@ -68,7 +68,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/result/EQPgantt" class="nav-link">
+                            <a id="LoadEqpGantt" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     EQP Gantt
@@ -111,6 +111,23 @@
         <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
         <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
+        <script>
+            $(() => {
+                $('#LoadEqpGantt').on("click", () => {
+                    $.ajaxSetup['before']
+                    $.ajax({
+                        type: 'GET',
+                        url: 'https://localhost:44397/Result/EqpGantt'
+                    }).done(function (data) {
+                        $('#').html(data);
+                    }).fail(function (jaxhr, status) {
+                        alert('fail');
+                        alert(jaxhr.status);
+                    });
+                });
+
+            });
+        </script>
         @RenderSection("Scripts", required: false)
 </body>
 </html>

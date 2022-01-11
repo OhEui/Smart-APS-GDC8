@@ -26,8 +26,9 @@ history.back();
 </script>");
             }
             */
-            //var test = HttpContext.Authentication
-            ServiceHelp srv = new ServiceHelp(true);
+            var test = HttpContext.Request.Headers["Authorization"];
+            
+            ServiceHelp srv = new ServiceHelp(true, test);
             string result = await srv.GetJsonStringAsync("api/Result/EQPGantt");
 
             ViewBag.Data = result;

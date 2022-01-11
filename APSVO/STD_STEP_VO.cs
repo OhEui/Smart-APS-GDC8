@@ -11,7 +11,7 @@ namespace APSVO
 		public string STD_STEP_ID { get; set; }
 		public string STD_STEP_NAME { get; set; }
 		public int STEP_TAT { get; set; }
-		public int STEP_YIELD { get; set; }
+		public float STEP_YIELD { get; set; }
 		public int STEP_SETUP { get; set; }
 		public string user_id { get; set; }
 	}

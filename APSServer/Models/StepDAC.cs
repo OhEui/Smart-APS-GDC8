@@ -59,8 +59,6 @@ namespace APSServer.Models
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(strConn);
-//				cmd.CommandText = @"select STD_STEP_ID, STD_STEP_NAME, STEP_TAT, STEP_YIELD, STEP_SETUP, isnull(mod_id, '') as user_id 
-//from STD_STEP_INFO";
 				cmd.CommandText = @"select STD_STEP_ID, STD_STEP_NAME, STEP_TAT, STEP_YIELD, STEP_SETUP, mod_id as user_id 
 from STD_STEP_INFO";
 

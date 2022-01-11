@@ -1,4 +1,6 @@
-﻿using System;
+﻿using APSUtil.Http;
+using APSVO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +16,11 @@ namespace APSWinForm
     public partial class MainForm1 : Form
     {
         string userID;
-        DataTable dtMenu;
+        //DataTable dtMenu;
         Button btnInit;
+        List<MenuVO> Menulist = null;
+        ServiceHelp srv = new ServiceHelp();
+        private string btnName;
 
         public MainForm1()
         {
@@ -33,10 +38,9 @@ namespace APSWinForm
         {
 
             //아이디로 접근할 수 있는 메뉴 동적 바인딩
-            MenuDAC db = new MenuDAC();
+            //MenuDAC db = new MenuDAC();
             userID = "test";
-            dtMenu = db.GetUserMenuList(this.userID);
-
+            //dtMenu = db.GetUserMenuList(this.userID);
             DrawMenuStrip();
             DrawMenuPanel();
 
@@ -44,16 +48,26 @@ namespace APSWinForm
 
         }
 
-        private void DrawMenuPanel()
+        private async void DrawMenuPanel()
         {
-            DataView dv1 = new DataView(dtMenu);
-            dv1.RowFilter = "menu_level = 1";
-            dv1.Sort = "menu_sort";
-            for (int i = 0; i < dv1.Count; i++)
+
+            Menulist = await srv.GetListAsync("api/Menu/Menulist", Menulist);
+            // DataTable dtMenu = db.GetMenuList();
+
+            var list = (from Menu in Menulist
+                        where Menu.MENU_LEVEL == 1
+                        orderby Menu.MENU_SORT
+                        select Menu
+                         ).ToList();
+
+            //DataView dv1 = new DataView(dtMenu);
+            //dv1.RowFilter = "menu_level = 1";
+            //dv1.Sort = "menu_sort";
+            for (int i = 0; i < list.Count; i++)
             {
                 Button p_menu = new Button();
-                p_menu.Name = $"p_btn{dv1[i]["menu_id"].ToString()}";
-                p_menu.Text = dv1[i]["menu_name"].ToString();
+                p_menu.Name = $"p_btn{list[i].MENU_ID}";
+                p_menu.Text = list[i].MENU_NAME;
                 p_menu.Dock = DockStyle.Top;
                 p_menu.Location = new Point(0, 0);
                 p_menu.Margin = new Padding(0);
@@ -71,7 +85,7 @@ namespace APSWinForm
 
             panel1 = new Panel();
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(3, (dv1.Count * 40));
+            panel1.Location = new Point(3, (list.Count * 40));
             panel1.Name = "panel1";
             panel1.Size = new Size(193, 300);
             flowLayoutPanel1.Controls.Add(this.panel1);
@@ -90,27 +104,38 @@ namespace APSWinForm
             OpenCreateForm(e.Node.Tag.ToString(), e.Node.Text);
         }
 
-        private void DrawMenuStrip()
+        private async void DrawMenuStrip()
         {
-            DataView dv1 = new DataView(dtMenu);
-            dv1.RowFilter = "menu_level = 1";
-            dv1.Sort = "menu_sort";
-            for (int i = 0; i < dv1.Count; i++)
+            Menulist = await srv.GetListAsync("api/Menu/Menulist", Menulist);
+
+            var list = (from Menu in Menulist
+                        where Menu.MENU_LEVEL == 1
+                        orderby Menu.MENU_SORT
+                        select Menu
+                        ).ToList();
+            //DataView dv1 = new DataView(dtMenu);
+            //dv1.RowFilter = "menu_level = 1";
+            //dv1.Sort = "menu_sort";
+            for (int i = 0; i < list.Count; i++)
             {
                 ToolStripMenuItem p_menu = new ToolStripMenuItem();
-                p_menu.Name = $"p_menu{dv1[i]["menu_id"].ToString()}";
-                p_menu.Text = dv1[i]["menu_name"].ToString();
+                p_menu.Name = $"p_btn{list[i].MENU_ID}";
+                p_menu.Text = list[i].MENU_NAME;
                 p_menu.Size = new Size(180, 22);
 
-                DataView dv2 = new DataView(dtMenu);
-                dv2.RowFilter = "menu_level = 2 and pnt_menu_id = " + dv1[i]["pnt_menu_id"].ToString();
-                dv2.Sort = "menu_sort";
-                for (int k = 0; k < dv2.Count; k++)
+                var list2 = (from Menu in Menulist
+                             where Menu.MENU_LEVEL == 2 && Menu.PNT_MENU_ID == list[i].MENU_ID
+                             orderby Menu.MENU_SORT
+                             select Menu).ToList();
+                //DataView dv2 = new DataView(dtMenu);
+                //dv2.RowFilter = "menu_level = 2 and pnt_menu_id = " + dv1[i]["pnt_menu_id"].ToString();
+                //dv2.Sort = "menu_sort";
+                for (int k = 0; k < list2.Count; k++)
                 {
                     ToolStripMenuItem c_menu = new ToolStripMenuItem();
-                    c_menu.Name = $"p_menu{dv2[k]["menu_id"].ToString()}";
-                    c_menu.Text = dv2[k]["menu_name"].ToString();
-                    c_menu.Tag = dv2[k]["program_name"].ToString();
+                    c_menu.Name = $"p_menu{list2[k].MENU_ID}";
+                    c_menu.Text = list2[k].MENU_NAME;
+                    c_menu.Tag = list2[k].PROGRAM_NAME;
                     c_menu.Size = new Size(180, 22);
                     c_menu.Click += Menu_Click;
                     p_menu.DropDownItems.Add(c_menu);
@@ -155,23 +180,32 @@ namespace APSWinForm
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            flowLayoutPanel1.Controls.SetChildIndex(panel1, Convert.ToInt32(btn.Tag) + 1);
-            flowLayoutPanel1.Invalidate();
+            //Menulist = await srv.GetListAsync("api/Menu/Menulist", Menulist);
+            //Button btn = (Button)sender;
+            //flowLayoutPanel1.Controls.SetChildIndex(panel1, Convert.ToInt32(btn.Tag) + 1);
+            //flowLayoutPanel1.Invalidate();
+            
+            //treeView1.Nodes.Clear();
+            //p_menu.Name = $"p_btn{list[i].MENU_ID}";
+            //btnName = Convert.ToString(btn.Name.Replace("p_btn", ""));
+            ////DataView dv2 = new DataView(dtMenu);
+            ////dv2.RowFilter = "menu_level = 2 and pnt_menu_id = " + btn.Name.Replace("p_btn", "");
+            ////dv2.RowFilter = "menu_level = 2 and pnt_menu_id = " + dv1[i]["pnt_menu_id"].ToString();
+            ////dv2.Sort = "menu_sort";
+            //var list2 = (from Menu in Menulist
+            //             where Menu.MENU_LEVEL == 2 && Menu.PNT_MENU_ID== 
+            //             //where Menu.MENU_LEVEL == 2 && Menu.PNT_MENU_ID == list[i].MENU_ID
+            //             orderby Menu.MENU_SORT
+            //             select Menu).ToList();
 
-            treeView1.Nodes.Clear();
-
-            DataView dv2 = new DataView(dtMenu);
-            dv2.RowFilter = "menu_level = 2 and pnt_menu_id = " + btn.Name.Replace("p_btn", "");
-            dv2.Sort = "menu_sort";
-            for (int k = 0; k < dv2.Count; k++)
-            {
-                TreeNode c_node = new TreeNode(dv2[k]["menu_name"].ToString());
-                c_node.Tag = dv2[k]["program_name"].ToString();
-                treeView1.Nodes.Add(c_node);
-            }
+            //for (int k = 0; k < list2.Count; k++)
+            //{
+            //    TreeNode c_node = new TreeNode(list2[k].MENUNAME);
+            //    c_node.Tag = list2[k]["program_name"].ToString();
+            //    treeView1.Nodes.Add(c_node);
+            //}
         }
 
         private void frnMain_MdiChildActivate(object sender, EventArgs e)

@@ -326,6 +326,7 @@ namespace APSWinForm
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EQUIPMENT";
+            this.Tag = "설비관리";
             this.Text = "EQUIPMENT";
             this.Load += new System.EventHandler(this.EQUIPMENT_Load);
             this.panel1.ResumeLayout(false);
