@@ -29,5 +29,14 @@ namespace APSServer.Controllers
         //    CommonDAC dac = new CommonDAC();
         //    return dac.GetCodeList(categories);
         //}
+
+        //GET : https://localhost:44309/api/Common/CommonCodes
+        [HttpGet]
+        [Route("CommonCodes")]
+        public List<ComboItemVO> GetComboItems()
+        {
+            CommonDAC dac = new CommonDAC();
+            return dac.GetComboItems();
+        }
     }
 }

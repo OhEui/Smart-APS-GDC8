@@ -106,16 +106,6 @@ namespace APSServer.Models
                 return (iRowAffect > 0);
             }
         }
-
-        public List<CommonVO> GetCommonCode()
-        {
-            string sql = "select Code, Category, Name from Common_Code ";
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-                return Helper.DataReaderMapToList<CommonVO>(cmd.ExecuteReader());
-
-            }
-        }
     }
 }
 
