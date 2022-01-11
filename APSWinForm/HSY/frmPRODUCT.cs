@@ -39,7 +39,6 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvPR, "프로세스ID", "PROCESS_ID", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvPR, "생산단위크기", "LOT_SIZE", colWidth: 100);
             
-
             LoadData();
         }
 
@@ -92,6 +91,12 @@ namespace APSWinForm
             }
             ProductVO prodInfo = list.Find(p => p.PRODUCT_ID == prod);
             Productpop reg = new Productpop(prodInfo);
+
+            if (reg.ShowDialog() == DialogResult.OK)
+            {
+                LoadData();
+            }
+            else return;
         }
         
 

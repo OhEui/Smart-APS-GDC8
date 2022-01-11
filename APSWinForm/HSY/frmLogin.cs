@@ -95,5 +95,7 @@ namespace APSWinForm
             frmJoin frm = new frmJoin();
             frm.ShowDialog();
         }
+
+      
     }
 }

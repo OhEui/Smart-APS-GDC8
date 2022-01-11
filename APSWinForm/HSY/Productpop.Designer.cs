@@ -32,7 +32,6 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productpop));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.cboType = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@ namespace APSWinForm
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cboType = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -73,7 +73,6 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
-            this.panel9.Controls.Add(this.cboType);
             this.panel9.Controls.Add(this.button2);
             this.panel9.Controls.Add(this.txtName);
             this.panel9.Controls.Add(this.txtID);
@@ -85,19 +84,12 @@ namespace APSWinForm
             this.panel9.Controls.Add(this.label2);
             this.panel9.Controls.Add(this.txtSize);
             this.panel9.Controls.Add(this.txtProcess);
+            this.panel9.Controls.Add(this.cboType);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(354, 330);
             this.panel9.TabIndex = 42;
-            // 
-            // cboType
-            // 
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(162, 81);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(121, 20);
-            this.cboType.TabIndex = 2;
             // 
             // button2
             // 
@@ -167,7 +159,7 @@ namespace APSWinForm
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 36);
             this.button1.TabIndex = 6;
-            this.button1.Text = "추가";
+            this.button1.Text = "등록";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -250,9 +242,9 @@ namespace APSWinForm
             this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(34, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 18);
+            this.label1.Size = new System.Drawing.Size(109, 18);
             this.label1.TabIndex = 1;
-            this.label1.Text = "제품추가/수정";
+            this.label1.Text = "제품 추가/수정";
             // 
             // pictureBox1
             // 
@@ -263,6 +255,16 @@ namespace APSWinForm
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // cboType
+            // 
+            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Location = new System.Drawing.Point(162, 81);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(121, 20);
+            this.cboType.TabIndex = 168;
             // 
             // Productpop
             // 
@@ -306,6 +308,6 @@ namespace APSWinForm
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSize;
         private System.Windows.Forms.TextBox txtProcess;
-        protected System.Windows.Forms.ComboBox cboType;
+        private System.Windows.Forms.ComboBox cboType;
     }
 }

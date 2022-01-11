@@ -17,6 +17,8 @@ namespace APSWinForm
         ServiceHelp srv = new ServiceHelp();
         // ProductVO Prdvo;
         List<ProductVO> list;
+        ProductVO Pdvo;
+        List<ComboItemVO> ProductList = null;
 
         public Productpop()
         {
@@ -24,10 +26,10 @@ namespace APSWinForm
         }
         public async void Combobinding()
         {
-            list = await srv.GetListAsync("api/Product/CommonCode", list);
-            CommonUtil.ComboBinding(cboType, list, "PRODUCT_TYPE", "PRODUCT_TYPE");
-            cboType.Text = "";
+            ProductList = await srv.GetListAsync("api/Common/CommonCodes", ProductList);
+            CommonUtil.ComboBinding(cboType, ProductList, "PRODUCT_TYPE", "PRODUCT_TYPE");
         }
+
 
         public Productpop(ProductVO prodInfo)
         {
@@ -41,11 +43,11 @@ namespace APSWinForm
 
             txtID.Enabled = false;
         }
+        
 
-
+        //수정
         private async void button7_Click(object sender, EventArgs e)
         {
-            //수정
             ProductVO productVO = new ProductVO
             {
                 PRODUCT_ID = txtID.Text,
@@ -65,19 +67,19 @@ namespace APSWinForm
             MessageBox.Show(msg.ResultMessage);
         }
 
-     
 
-        private async void Productpop_Load(object sender, EventArgs e)
+        private void Productpop_Load(object sender, EventArgs e)
         {
             Combobinding();
-            list = await srv.GetListAsync("api/Product/Products", list);
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
 
         private void txtSize_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -86,7 +88,6 @@ namespace APSWinForm
             {
                 e.Handled = true;
             }
-
         }
     }
 }

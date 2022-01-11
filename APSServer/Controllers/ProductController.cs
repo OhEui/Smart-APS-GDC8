@@ -13,7 +13,7 @@ namespace APSServer.Controllers
     [RoutePrefix("api/Product")]
     public class ProductController : ApiController
     {
-        //POST : http://localhost:58802/api/Product/SaveProduct
+        //POST : https://localhost:44309/api/Product/SaveProduct
 
         [HttpPost]
         [Route("SaveProduct")]
@@ -36,18 +36,18 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-        //GET :  http://localhost:58802/api/Product/Products
+        //GET :  https://localhost:44309/api/Product/Products
         [HttpGet]
         [Route("Products")]
         
-        [Authorize]
+        //[Authorize]
         public List<ProductVO> GetAllProduct()
         {
             ProductDAC db = new ProductDAC();
             return db.GetAllProduct();
         }
 
-        //GET : http://localhost:58802/api/Product/{id}
+        //GET : https://localhost:44309/api/Product/{id}
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult GetProductInfo(string id)
@@ -71,7 +71,7 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-        //GET : http://localhost:58802/api/Product/Delete/{id}
+        //GET : https://localhost:44309/api/Product/Delete/{id}
         [HttpGet]
         [Route("Delete/{id}")]
         public IHttpActionResult DeleteProduct(string id)
@@ -91,15 +91,6 @@ namespace APSServer.Controllers
                 msg.ResultMessage = "삭제 중 오류가 발생했습니다.";
             }
             return Ok(msg);
-        }
-
-        //GET : http://localhost:58802/api/Product/CommonCode
-        [HttpGet]
-        [Route("CommonCode")]
-        public List<CommonVO> GetCommonCode()
-        {
-            ProductDAC dac = new ProductDAC();
-            return dac.GetCommonCode();
         }
     }
 }
