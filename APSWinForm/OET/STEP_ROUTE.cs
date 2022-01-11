@@ -118,10 +118,31 @@ namespace APSWinForm
 			else return;
 		}
 
-		private void pictureBox6_Click(object sender, EventArgs e)
+		private async void pictureBox6_Click(object sender, EventArgs e)
 		{
 			//삭제
+			if (dgvStepRoute.CurrentCell == null) return;
+
+			string curProcID = dgvStepRoute["PROCESS_ID", dgvStepRoute.CurrentRow.Index].Value.ToString();
+			string curStepID = dgvStepRoute["STEP_ID", dgvStepRoute.CurrentRow.Index].Value.ToString();
+
+			StepRouteVO curStepRoute = stepRouteList.Find(p => p.PROCESS_ID == curProcID && p.STEP_ID == curStepID);
+
+			DialogResult msgResullt = MessageBox.Show($"{curProcID} / {curStepID} 항목을 삭제 하시겠습니까?", $"{Properties.Resources.STD_STEP_INFO} 삭제", MessageBoxButtons.OKCancel);
+
+			if (msgResullt == DialogResult.Cancel) return;
+			else
+			{
+				WebMessage msg = await srv.GetAsync($"api/Step/DelStepRoute/{curStepRoute}");
+
+				if (msg.IsSuccess)
+				{
+					LoadData();
+				}
+				MessageBox.Show(msg.ResultMessage);
+			}
 		}
+
 
 		private void btnInit_Click(object sender, EventArgs e)
 		{
@@ -129,8 +150,7 @@ namespace APSWinForm
 			txtStepID.Text = "";
 			cboStepType.SelectedIndex = 0;
 
-			dgvStepRoute.DataSource = null;
-			dgvStepRoute.DataSource = stepRouteList;
+			LoadData();
 		}
 	}
 }

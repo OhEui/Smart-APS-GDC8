@@ -72,12 +72,30 @@ from STD_STEP_INFO";
 			}
 		}
 
+		public bool deleteStepInfo(string stepID)
+		{
+			using (SqlCommand cmd = new SqlCommand())
+			{
+				cmd.Connection = new SqlConnection(strConn);
+				cmd.CommandText = "delete from STD_STEP_INFO where STD_STEP_ID = @STD_STEP_ID";
+
+				cmd.Parameters.AddWithValue("@STD_STEP_ID", stepID);
+
+				cmd.Connection.Open();
+				int result = cmd.ExecuteNonQuery();
+				cmd.Connection.Close();
+
+				return result > 0;
+			}
+		}
+
 		#endregion
 
 
 		#region STEP_ROUTE
 		public bool saveStepRouteList(StepRouteVO stepRoute)
 		{
+			//수정, 저장
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(strConn);
@@ -107,7 +125,7 @@ from STD_STEP_INFO";
 		}
 
 		public List<StepRouteVO> getStepRouteList()
-		{
+		{//조회
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(strConn);
@@ -123,6 +141,25 @@ from STD_STEP_INFO";
 				cmd.Connection.Close();
 
 				return list;
+			}
+		}
+
+		public bool deleteStepRoute(StepRouteVO stepRoute)
+		{
+			//삭제
+			using (SqlCommand cmd = new SqlCommand())
+			{
+				cmd.Connection = new SqlConnection(strConn);
+				cmd.CommandText = "delete from STEP_ROUTE where PROCESS_ID=@PROCESS_ID and STEP_ID=@STEP_ID";
+
+				cmd.Parameters.AddWithValue("@PROCESS_ID", stepRoute.PROCESS_ID);
+				cmd.Parameters.AddWithValue("@STEP_ID", stepRoute.STEP_ID);
+
+				cmd.Connection.Open();
+				int result = cmd.ExecuteNonQuery();
+				cmd.Connection.Close();
+
+				return result > 0;
 			}
 		}
 
