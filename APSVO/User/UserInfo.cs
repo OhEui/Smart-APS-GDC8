@@ -31,5 +31,14 @@ namespace APSVO
         
     }
 
+    public class  UserInfos
+    {
+       public int User_NO { get; set; }
+       public string User_ID { get; set; }
+       public string User_PWD { get; set; }
+       public string User_Name { get; set; }
+        public  int User_IsAdmin { get; set; }
+    }
+
 
 }

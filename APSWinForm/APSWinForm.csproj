@@ -207,6 +207,12 @@
     <Compile Include="OET\EQUIPMENT_REG.Designer.cs">
       <DependentUpon>EQUIPMENT_REG.cs</DependentUpon>
     </Compile>
+    <Compile Include="OET\frmUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OET\frmUserInfo.Designer.cs">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="OET\MenuAuth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OET\EQUIPMENT_REG.resx">
       <DependentUpon>EQUIPMENT_REG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OET\frmUserInfo.resx">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OET\MenuAuth.resx">
       <DependentUpon>MenuAuth.cs</DependentUpon>

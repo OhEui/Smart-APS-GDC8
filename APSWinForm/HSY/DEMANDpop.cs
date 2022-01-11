@@ -29,7 +29,7 @@ namespace APSWinForm
             txtID.Text = demdInfo.DEMAND_ID;
             txtVer.Text = demdInfo.DEMAND_VER;
             txtQTY.Text = demdInfo.DEMAND_QTY.ToString();
-            txtdate.Text = demdInfo.DUE_DATE;
+            txtdate.Text = demdInfo.DUE_DATE.ToString();
             cboCID.Text = demdInfo.CUSTOMER_ID;
             cboPID.Text = demdInfo.PRODUCT_ID;
 
@@ -54,7 +54,7 @@ namespace APSWinForm
                 DEMAND_ID = txtID.Text,
                 PRODUCT_ID = cboPID.Text,
                 CUSTOMER_ID = cboCID.Text,
-                DUE_DATE = txtdate.Text,
+                DUE_DATE = DateTime.Parse(txtdate.Text),
                 DEMAND_QTY = Convert.ToInt32(txtQTY.Text)
             };
 

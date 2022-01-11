@@ -32,6 +32,7 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DEMANDpop));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.txtdate = new System.Windows.Forms.MaskedTextBox();
             this.txtQTY = new System.Windows.Forms.TextBox();
             this.cboPID = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@ namespace APSWinForm
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtdate = new System.Windows.Forms.MaskedTextBox();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -94,6 +94,16 @@ namespace APSWinForm
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(355, 392);
             this.panel9.TabIndex = 42;
+            // 
+            // txtdate
+            // 
+            this.txtdate.Location = new System.Drawing.Point(149, 227);
+            this.txtdate.Mask = "0000-00-00";
+            this.txtdate.Name = "txtdate";
+            this.txtdate.Size = new System.Drawing.Size(121, 21);
+            this.txtdate.TabIndex = 145;
+            this.txtdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtdate.ValidatingType = typeof(System.DateTime);
             // 
             // txtQTY
             // 
@@ -281,16 +291,6 @@ namespace APSWinForm
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // txtdate
-            // 
-            this.txtdate.Location = new System.Drawing.Point(149, 227);
-            this.txtdate.Mask = "0000-00-00 90:00";
-            this.txtdate.Name = "txtdate";
-            this.txtdate.Size = new System.Drawing.Size(121, 21);
-            this.txtdate.TabIndex = 145;
-            this.txtdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtdate.ValidatingType = typeof(System.DateTime);
-            // 
             // DEMANDpop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -299,6 +299,7 @@ namespace APSWinForm
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "DEMANDpop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DEMANDpopup";
             this.Load += new System.EventHandler(this.DEMANDpop_Load);
             this.panel2.ResumeLayout(false);

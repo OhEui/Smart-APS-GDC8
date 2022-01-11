@@ -12,7 +12,7 @@ namespace APSVO
       public string DEMAND_ID { get; set; }
       public string PRODUCT_ID { get; set; }
       public string CUSTOMER_ID { get; set; }
-      public string DUE_DATE { get; set; }
+      public DateTime DUE_DATE { get; set; }
       public int DEMAND_QTY { get; set; }
     }
 }
