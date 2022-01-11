@@ -23,5 +23,19 @@ namespace APSServer.Controllers
             MenuDAC dac = new MenuDAC();
             return dac.GetMenuList();
         }
+
+        //public void GetMenuList()
+        //{
+        //    MenuDAC dac = new MenuDAC();
+        //    GetMenuList();
+        //}
+
+
+        //private void LoadData()
+        //{
+        //    MenuDAC dac = new MenuDAC();
+        //    return dac.GetUserMenuList();
+        //}
+
     }
 }

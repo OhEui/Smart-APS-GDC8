@@ -48,7 +48,7 @@ namespace APSWinForm
         {
             
             ProductList = await srv.GetListAsync("api/Common/CommonCode", ProductList);
-            ProcessList = await srv.GetListAsync("api   /Common/CommonCode", ProcessList);
+            ProcessList = await srv.GetListAsync("api/Common/CommonCode", ProcessList);
             EQPList = await srv.GetListAsync("api/EQUIPMENT/EQPlist", EQPList);
             CommonUtil.ComboBinding(cboProduct, ProductList, "PRODUCT_ID", blankText: "");
             CommonUtil.ComboBinding(cboProcess, ProcessList, "PROCESS_ID", blankText: "");

@@ -261,7 +261,7 @@ namespace APSWinForm
             // 
             // dgvSetup
             // 
-            this.dgvSetup.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(230)))), ((int)(((byte)(228)))));
+            this.dgvSetup.BackgroundColor = System.Drawing.Color.White;
             this.dgvSetup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSetup.Location = new System.Drawing.Point(0, 194);
