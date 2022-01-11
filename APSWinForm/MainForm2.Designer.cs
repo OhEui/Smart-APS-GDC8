@@ -106,42 +106,42 @@ namespace APSWinForm
             // 엑셀불러오기ToolStripMenuItem
             // 
             this.엑셀불러오기ToolStripMenuItem.Name = "엑셀불러오기ToolStripMenuItem";
-            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.엑셀불러오기ToolStripMenuItem.Text = "엑셀 불러오기";
             // 
             // 엑셀내보내기ToolStripMenuItem
             // 
             this.엑셀내보내기ToolStripMenuItem.Name = "엑셀내보내기ToolStripMenuItem";
-            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.엑셀내보내기ToolStripMenuItem.Text = "엑셀 내보내기";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // 결과정보열기ToolStripMenuItem
             // 
             this.결과정보열기ToolStripMenuItem.Name = "결과정보열기ToolStripMenuItem";
-            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.결과정보열기ToolStripMenuItem.Text = "결과 정보 열기";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // 로그아웃ToolStripMenuItem
             // 
             this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
-            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.로그아웃ToolStripMenuItem.Text = "로그아웃";
             this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.종료ToolStripMenuItem.Text = "종료";
             // 
             // 샘플ToolStripMenuItem
@@ -626,7 +626,7 @@ namespace APSWinForm
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(59)))), ((int)(((byte)(64)))));
-            this.panelLogo.BackgroundImage = global::APSWinForm.Properties.Resources.vms;
+            this.panelLogo.BackgroundImage = global::APSWinForm.Properties.Resources.My_project2;
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);

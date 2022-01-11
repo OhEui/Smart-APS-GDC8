@@ -248,6 +248,16 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap My_project2 {
+            get {
+                object obj = ResourceManager.GetObject("My_project2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap premium_icon_add_button_4904022 {
             get {
                 object obj = ResourceManager.GetObject("premium-icon-add-button-4904022", resourceCulture);

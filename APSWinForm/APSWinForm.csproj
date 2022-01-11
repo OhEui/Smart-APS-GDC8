@@ -414,6 +414,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\My project.png" />
+    <None Include="Resources\My project2.png" />
     <None Include="Resources\premium-icon-add-button-4904022.png" />
   </ItemGroup>
   <ItemGroup>
