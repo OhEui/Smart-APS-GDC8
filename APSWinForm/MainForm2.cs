@@ -107,49 +107,49 @@ namespace APSWinForm
         #region InfoSubMenu
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            CreateTabPages("장비관리", new frmPRODUCT());
+            CreateTabPages("제품정보", new frmPRODUCT());
             hideInfoSubMenu();
         }
 
         private void btnDemand_Click(object sender, EventArgs e)
         {
-            CreateTabPages("요구", new frmDEMAND());
+            CreateTabPages("수요정보", new frmDEMAND());
             hideInfoSubMenu();
         }
 
         private void btnLine_Click(object sender, EventArgs e)
         {
-            new frmLineInfo() { MdiParent = this }.Show();
+            CreateTabPages("라인정보", new frmLineInfo());
             hideInfoSubMenu();
         }
 
         private void btnStdStep_Click(object sender, EventArgs e)
         {
-            new STD_STEP_INFO() { MdiParent = this }.Show();
+            CreateTabPages("표준공정정보", new STD_STEP_INFO());
             hideInfoSubMenu();
         }
 
         private void btnRoute_Click(object sender, EventArgs e)
         {
-            new STEP_ROUTE() { MdiParent = this }.Show();
+            CreateTabPages("공정순서정보", new STEP_ROUTE());
             hideInfoSubMenu();
         }
 
         private void btnEquip_Click(object sender, EventArgs e)
         {
-            new EQUIPMENT() { MdiParent = this }.Show();
+            CreateTabPages("설비정보", new EQUIPMENT());
             hideInfoSubMenu();
         }
 
         private void btnARR_Click(object sender, EventArgs e)
         {
-            new EQP_ARRANGE() { MdiParent = this }.Show();
+            CreateTabPages("설비배치정보", new EQP_ARRANGE());
             hideInfoSubMenu();
         }
 
         private void btnSetup_Click(object sender, EventArgs e)
         {
-            new SETUP_TIME() { MdiParent = this }.Show();
+            CreateTabPages("교체준비시간관리", new SETUP_TIME());
             hideInfoSubMenu();
         }
 
@@ -214,13 +214,19 @@ namespace APSWinForm
 
         private void btnAuth_Click(object sender, EventArgs e)
         {
+            CreateTabPages("권한설정", new MenuAuth());
             hideSystemSubMenu();
         }
         #endregion
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("프로그램을 종료 하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DialogResult = DialogResult.OK;
+                Application.Exit();
+            }
+            
         }
 
 
@@ -260,23 +266,16 @@ namespace APSWinForm
             tabControl1.SelectedTab = myTabPage;
         }
 
+
+        
         private Form activeForm = null;
-        private void openChildForm(Form childForm)
-        {
-            //if (activeForm != null) activeForm.Close();
-            //activeForm = childForm;
-            //childForm.TopLevel = false;
-            //childForm.FormBorderStyle = FormBorderStyle.None;
-            //childForm.Dock = DockStyle.Fill;
-            //panelChildForm.Controls.Add(childForm);
-            //panelChildForm.Tag = childForm;
-            //childForm.BringToFront();
-            //childForm.Show();
-        }
+
 
         private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Logout();
         }
+
+        
     }
 }

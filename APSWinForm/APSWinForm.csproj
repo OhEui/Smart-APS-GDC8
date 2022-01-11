@@ -423,6 +423,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\My project.png" />
+    <None Include="Resources\My project2.png" />
     <None Include="Resources\premium-icon-add-button-4904022.png" />
   </ItemGroup>
   <ItemGroup>
@@ -439,6 +441,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\vms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Manage1.png" />
+    <None Include="Resources\Chart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

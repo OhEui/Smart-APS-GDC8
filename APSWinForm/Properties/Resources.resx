@@ -130,8 +130,8 @@
   <data name="STD_STEP_ID" xml:space="preserve">
     <value>표준공정 ID</value>
   </data>
-  <data name="PROCESS_ID" xml:space="preserve">
-    <value>프로세스 ID</value>
+  <data name="free-icon-edit-1827933" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-edit-1827933.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EQP_ARRANGE" xml:space="preserve">
     <value>작업조건</value>
@@ -142,8 +142,8 @@
   <data name="PRODUCT_ID" xml:space="preserve">
     <value>제품 ID</value>
   </data>
-  <data name="EQP_GROUP" xml:space="preserve">
-    <value>설비그룹</value>
+  <data name="Chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_grey1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>close-grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +160,8 @@
   <data name="PRODUCT" xml:space="preserve">
     <value>제품정보</value>
   </data>
-  <data name="free-icon-edit-1827933" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-edit-1827933.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="My_project2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\My project2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DEMAND_ID" xml:space="preserve">
     <value>수요 ID</value>
@@ -174,6 +174,9 @@
   </data>
   <data name="EQUIPMENT" xml:space="preserve">
     <value>설비정보</value>
+  </data>
+  <data name="tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>close-red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,17 +205,29 @@
   <data name="close_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>close-grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EQP_GROUP" xml:space="preserve">
+    <value>설비그룹</value>
+  </data>
+  <data name="Manage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Manage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TIME" xml:space="preserve">
     <value>소요시간</value>
   </data>
   <data name="file_add_icon_128235" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file_add_icon_128235.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="vms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="STEP_SETUP" xml:space="preserve">
     <value>공정준비시간</value>
   </data>
   <data name="PRODUCT_NAME" xml:space="preserve">
     <value>제품이름</value>
+  </data>
+  <data name="xls" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xls.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LINE_ID" xml:space="preserve">
     <value>라인 ID</value>
@@ -225,6 +240,9 @@
   </data>
   <data name="DEMAND" xml:space="preserve">
     <value>수요정보</value>
+  </data>
+  <data name="PROCESS_ID" xml:space="preserve">
+    <value>프로세스 ID</value>
   </data>
   <data name="DUE_DATE" xml:space="preserve">
     <value>기한</value>
@@ -244,7 +262,7 @@
   <data name="EQP_MODEL" xml:space="preserve">
     <value>모델명</value>
   </data>
-  <data name="vms" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
