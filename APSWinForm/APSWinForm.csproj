@@ -176,6 +176,12 @@
     <Compile Include="MainForm1.Designer.cs">
       <DependentUpon>MainForm1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm2.Designer.cs">
+      <DependentUpon>MainForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuDAC.cs" />
     <Compile Include="OET\EQPARR_REG.cs">
       <SubType>Form</SubType>
@@ -318,6 +324,9 @@
     <EmbeddedResource Include="MainForm1.resx">
       <DependentUpon>MainForm1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm2.resx">
+      <DependentUpon>MainForm2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OET\EQPARR_REG.resx">
       <DependentUpon>EQPARR_REG.cs</DependentUpon>
     </EmbeddedResource>
@@ -415,6 +424,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\close-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vms.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
