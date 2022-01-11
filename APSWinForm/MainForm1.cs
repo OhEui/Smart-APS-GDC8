@@ -42,62 +42,62 @@ namespace APSWinForm
             userID = "test";
             //dtMenu = db.GetUserMenuList(this.userID);
             DrawMenuStrip();
-            DrawMenuPanel();
+            //DrawMenuPanel();
 
-            btnInit.PerformClick();
+            //btnInit.PerformClick();
 
         }
 
-        private async void DrawMenuPanel()
-        {
+        //private async void DrawMenuPanel()
+        //{
 
-            Menulist = await srv.GetListAsync("api/Menu/Menulist", Menulist);
-            // DataTable dtMenu = db.GetMenuList();
+        //    Menulist = await srv.GetListAsync("api/Menu/Menulist", Menulist);
+        //    // DataTable dtMenu = db.GetMenuList();
 
-            var list = (from Menu in Menulist
-                        where Menu.MENU_LEVEL == 1
-                        orderby Menu.MENU_SORT
-                        select Menu
-                         ).ToList();
+        //    var list = (from Menu in Menulist
+        //                where Menu.MENU_LEVEL == 1
+        //                orderby Menu.MENU_SORT
+        //                select Menu
+        //                 ).ToList();
 
-            //DataView dv1 = new DataView(dtMenu);
-            //dv1.RowFilter = "menu_level = 1";
-            //dv1.Sort = "menu_sort";
-            for (int i = 0; i < list.Count; i++)
-            {
-                Button p_menu = new Button();
-                p_menu.Name = $"p_btn{list[i].MENU_ID}";
-                p_menu.Text = list[i].MENU_NAME;
-                p_menu.Dock = DockStyle.Top;
-                p_menu.Location = new Point(0, 0);
-                p_menu.Margin = new Padding(0);
-                p_menu.Size = new System.Drawing.Size(196, 36);
-                p_menu.Tag = i.ToString();
-                p_menu.Click += button1_Click;
+        //    //DataView dv1 = new DataView(dtMenu);
+        //    //dv1.RowFilter = "menu_level = 1";
+        //    //dv1.Sort = "menu_sort";
+        //    for (int i = 0; i < list.Count; i++)
+        //    {
+        //        Button p_menu = new Button();
+        //        p_menu.Name = $"p_btn{list[i].MENU_ID}";
+        //        p_menu.Text = list[i].MENU_NAME;
+        //        p_menu.Dock = DockStyle.Top;
+        //        p_menu.Location = new Point(0, 0);
+        //        p_menu.Margin = new Padding(0);
+        //        p_menu.Size = new System.Drawing.Size(196, 36);
+        //        p_menu.Tag = i.ToString();
+        //        p_menu.Click += button1_Click;
 
-                flowLayoutPanel1.Controls.Add(p_menu);
+        //        flowLayoutPanel1.Controls.Add(p_menu);
 
-                if (i == 0)
-                {
-                    btnInit = p_menu;
-                }
-            }
+        //        if (i == 0)
+        //        {
+        //            btnInit = p_menu;
+        //        }
+        //    }
 
-            panel1 = new Panel();
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(3, (list.Count * 40));
-            panel1.Name = "panel1";
-            panel1.Size = new Size(193, 300);
-            flowLayoutPanel1.Controls.Add(this.panel1);
+        //    panel1 = new Panel();
+        //    panel1.Dock = DockStyle.Bottom;
+        //    panel1.Location = new Point(3, (list.Count * 40));
+        //    panel1.Name = "panel1";
+        //    panel1.Size = new Size(193, 300);
+        //    flowLayoutPanel1.Controls.Add(this.panel1);
 
-            treeView1 = new TreeView();
-            treeView1.Dock = DockStyle.Fill;
-            treeView1.Location = new Point(0, 0);
-            treeView1.Name = "treeView1";
-            treeView1.Size = new System.Drawing.Size(193, 300);
-            treeView1.AfterSelect += TreeView1_AfterSelect;
-            panel1.Controls.Add(this.treeView1);
-        }
+        //    treeView1 = new TreeView();
+        //    treeView1.Dock = DockStyle.Fill;
+        //    treeView1.Location = new Point(0, 0);
+        //    treeView1.Name = "treeView1";
+        //    treeView1.Size = new System.Drawing.Size(193, 300);
+        //    treeView1.AfterSelect += TreeView1_AfterSelect;
+        //    panel1.Controls.Add(this.treeView1);
+        //}
 
         private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {

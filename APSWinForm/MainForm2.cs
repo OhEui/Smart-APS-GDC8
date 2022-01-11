@@ -214,6 +214,7 @@ namespace APSWinForm
 
         private void btnAuth_Click(object sender, EventArgs e)
         {
+            CreateTabPages("권한설정", new MenuAuth());
             hideSystemSubMenu();
         }
         #endregion
@@ -265,6 +266,8 @@ namespace APSWinForm
             tabControl1.SelectedTab = myTabPage;
         }
 
+
+        
         private Form activeForm = null;
 
 
@@ -272,5 +275,7 @@ namespace APSWinForm
         {
             Logout();
         }
+
+        
     }
 }
