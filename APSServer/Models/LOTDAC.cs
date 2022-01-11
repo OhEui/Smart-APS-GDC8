@@ -52,7 +52,8 @@ order by LOT_ID";
                     fromDate = item.START_TIME.ToString("yyyy-MM-dd HH:mm:ss"),
                     toDate = item.END_TIME.ToString("yyyy-MM-dd HH:mm:ss"),
                     task = item.PRODUCT_ID,
-                    colorIdx = GetColor(),
+                    //colorIdx = GetColor(),
+                    colorIdx = 1,
                     brighten = 0.4
                 });
 			}
@@ -67,17 +68,14 @@ order by LOT_ID";
 
         public List<LOTGanttCategory> getLOTCategory()
         {
+            List<LOTGanttCategory> list = new List<LOTGanttCategory>();
             string sql = "select distinct LOT_ID as category from EQP_PLAN order by LOT_ID";
            
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
-
-                cmd.Connection.Open();
-                List<LOTGanttCategory> list = Helper.DataReaderMapToList<LOTGanttCategory>(cmd.ExecuteReader());
-                cmd.Connection.Close();
-
-                return list;
+               list = Helper.DataReaderMapToList<LOTGanttCategory>(cmd.ExecuteReader());
             }
+            return list;
         }
     }
 }

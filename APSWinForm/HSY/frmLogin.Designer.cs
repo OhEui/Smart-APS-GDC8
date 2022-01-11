@@ -180,9 +180,9 @@ namespace APSWinForm
             this.lblTest.AutoSize = true;
             this.lblTest.Location = new System.Drawing.Point(689, 78);
             this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(111, 36);
+            this.lblTest.Size = new System.Drawing.Size(111, 60);
             this.lblTest.TabIndex = 26;
-            this.lblTest.Text = "테스트용 계정\r\nID: test\r\nPW: abcd1234!@#$";
+            this.lblTest.Text = "테스트용 계정\r\nID: test\r\nPW: abcd1234!@#$\r\nID: test2\r\nPW: qwerty1!";
             // 
             // frmLogin
             // 
