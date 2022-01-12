@@ -165,7 +165,7 @@ namespace APSWinForm
             this.panelSideMenu.Controls.Add(this.btnInfo);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelSideMenu.Font = new System.Drawing.Font("210 맨발의청춘 L", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.panelSideMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panelSideMenu.Location = new System.Drawing.Point(0, 24);
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(230, 743);
@@ -189,7 +189,7 @@ namespace APSWinForm
             this.btnAuth.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnAuth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnAuth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAuth.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAuth.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnAuth.ForeColor = System.Drawing.Color.Silver;
             this.btnAuth.Location = new System.Drawing.Point(0, 30);
             this.btnAuth.Name = "btnAuth";
@@ -208,7 +208,7 @@ namespace APSWinForm
             this.btnUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUser.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUser.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnUser.ForeColor = System.Drawing.Color.Silver;
             this.btnUser.Location = new System.Drawing.Point(0, 0);
             this.btnUser.Name = "btnUser";
@@ -228,7 +228,7 @@ namespace APSWinForm
             this.btnSystem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.btnSystem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSystem.Font = new System.Drawing.Font("210 맨발의청춘 L", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSystem.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSystem.ForeColor = System.Drawing.Color.Silver;
             this.btnSystem.Image = global::APSWinForm.Properties.Resources.tools;
             this.btnSystem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -251,7 +251,7 @@ namespace APSWinForm
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("210 맨발의청춘 L", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExit.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExit.ForeColor = System.Drawing.Color.Silver;
             this.btnExit.Image = global::APSWinForm.Properties.Resources.exit;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -284,7 +284,7 @@ namespace APSWinForm
             this.btnExcelOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnExcelOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnExcelOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcelOut.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcelOut.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcelOut.ForeColor = System.Drawing.Color.Silver;
             this.btnExcelOut.Location = new System.Drawing.Point(0, 30);
             this.btnExcelOut.Name = "btnExcelOut";
@@ -303,7 +303,7 @@ namespace APSWinForm
             this.btnExcelin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnExcelin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnExcelin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcelin.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcelin.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcelin.ForeColor = System.Drawing.Color.Silver;
             this.btnExcelin.Location = new System.Drawing.Point(0, 0);
             this.btnExcelin.Name = "btnExcelin";
@@ -323,7 +323,7 @@ namespace APSWinForm
             this.btnExcel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.btnExcel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Font = new System.Drawing.Font("210 맨발의청춘 L", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcel.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Silver;
             this.btnExcel.Image = global::APSWinForm.Properties.Resources.xls;
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -357,7 +357,7 @@ namespace APSWinForm
             this.btnUtil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnUtil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnUtil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUtil.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUtil.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnUtil.ForeColor = System.Drawing.Color.Silver;
             this.btnUtil.Location = new System.Drawing.Point(0, 60);
             this.btnUtil.Name = "btnUtil";
@@ -376,7 +376,7 @@ namespace APSWinForm
             this.btnEQPgant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnEQPgant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnEQPgant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEQPgant.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEQPgant.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnEQPgant.ForeColor = System.Drawing.Color.Silver;
             this.btnEQPgant.Location = new System.Drawing.Point(0, 30);
             this.btnEQPgant.Name = "btnEQPgant";
@@ -395,7 +395,7 @@ namespace APSWinForm
             this.btnLOT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnLOT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnLOT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLOT.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnLOT.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnLOT.ForeColor = System.Drawing.Color.Silver;
             this.btnLOT.Location = new System.Drawing.Point(0, 0);
             this.btnLOT.Name = "btnLOT";
@@ -415,7 +415,7 @@ namespace APSWinForm
             this.btnResult.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.btnResult.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResult.Font = new System.Drawing.Font("210 맨발의청춘 L", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnResult.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnResult.ForeColor = System.Drawing.Color.Silver;
             this.btnResult.Image = global::APSWinForm.Properties.Resources.Chart;
             this.btnResult.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -454,7 +454,7 @@ namespace APSWinForm
             this.btnSetup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnSetup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnSetup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetup.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSetup.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSetup.ForeColor = System.Drawing.Color.Silver;
             this.btnSetup.Location = new System.Drawing.Point(0, 210);
             this.btnSetup.Name = "btnSetup";
@@ -473,7 +473,7 @@ namespace APSWinForm
             this.btnARR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnARR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnARR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnARR.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnARR.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnARR.ForeColor = System.Drawing.Color.Silver;
             this.btnARR.Location = new System.Drawing.Point(0, 180);
             this.btnARR.Name = "btnARR";
@@ -492,7 +492,7 @@ namespace APSWinForm
             this.btnEquip.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnEquip.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnEquip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEquip.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEquip.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnEquip.ForeColor = System.Drawing.Color.Silver;
             this.btnEquip.Location = new System.Drawing.Point(0, 150);
             this.btnEquip.Name = "btnEquip";
@@ -511,7 +511,7 @@ namespace APSWinForm
             this.btnRoute.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnRoute.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoute.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRoute.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRoute.ForeColor = System.Drawing.Color.Silver;
             this.btnRoute.Location = new System.Drawing.Point(0, 120);
             this.btnRoute.Name = "btnRoute";
@@ -530,7 +530,7 @@ namespace APSWinForm
             this.btnStdStep.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnStdStep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnStdStep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStdStep.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnStdStep.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnStdStep.ForeColor = System.Drawing.Color.Silver;
             this.btnStdStep.Location = new System.Drawing.Point(0, 90);
             this.btnStdStep.Name = "btnStdStep";
@@ -549,7 +549,7 @@ namespace APSWinForm
             this.btnLine.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnLine.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLine.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnLine.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnLine.ForeColor = System.Drawing.Color.Silver;
             this.btnLine.Location = new System.Drawing.Point(0, 60);
             this.btnLine.Name = "btnLine";
@@ -568,7 +568,7 @@ namespace APSWinForm
             this.btnDemand.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnDemand.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnDemand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDemand.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDemand.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDemand.ForeColor = System.Drawing.Color.Silver;
             this.btnDemand.Location = new System.Drawing.Point(0, 30);
             this.btnDemand.Name = "btnDemand";
@@ -587,7 +587,7 @@ namespace APSWinForm
             this.btnProduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnProduct.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduct.Font = new System.Drawing.Font("210 맨발의청춘 L", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProduct.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProduct.ForeColor = System.Drawing.Color.Silver;
             this.btnProduct.Location = new System.Drawing.Point(0, 0);
             this.btnProduct.Name = "btnProduct";
@@ -608,7 +608,7 @@ namespace APSWinForm
             this.btnInfo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.btnInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfo.Font = new System.Drawing.Font("210 맨발의청춘 L", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInfo.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInfo.ForeColor = System.Drawing.Color.Silver;
             this.btnInfo.Image = global::APSWinForm.Properties.Resources.Manage;
             this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

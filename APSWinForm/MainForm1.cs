@@ -17,10 +17,10 @@ namespace APSWinForm
     {
         string userID;
         //DataTable dtMenu;
-        Button btnInit;
+        //Button btnInit;
         List<MenuVO> Menulist = null;
         ServiceHelp srv = new ServiceHelp();
-        private string btnName;
+        //private string btnName;
 
         public MainForm1()
         {
@@ -180,7 +180,7 @@ namespace APSWinForm
             }
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private  void button1_Click(object sender, EventArgs e)
         {
             //Menulist = await srv.GetListAsync("api/Menu/Menulist", Menulist);
             //Button btn = (Button)sender;

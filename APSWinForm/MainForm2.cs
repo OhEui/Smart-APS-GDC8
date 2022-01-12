@@ -16,6 +16,7 @@ namespace APSWinForm
     {
         public MainForm2()
         {
+            Font = new Font("ONE 모바일고딕 OTF Regular", 11F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(129)));
             InitializeComponent();
             hideSubMenu();
         }

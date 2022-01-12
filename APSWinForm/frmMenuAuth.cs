@@ -15,8 +15,8 @@ namespace APSWinForm
     public partial class frmMenuAuth : Form
     {
         //MenuDAC db = new MenuDAC();
-        DataTable dtMenuAuth = null;
-        int sel_menu_id = 0;
+        //DataTable dtMenuAuth = null;
+        //int sel_menu_id = 0;
         List<MenuVO> Menulist = null;
         ServiceHelp srv = new ServiceHelp();
 
