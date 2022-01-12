@@ -35,6 +35,7 @@ namespace APSWinForm
 			this.btnInit = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
+			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.cboStepType = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@ namespace APSWinForm
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvStepRoute = new System.Windows.Forms.DataGridView();
-			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
 			this.panel6.SuspendLayout();
@@ -133,6 +133,15 @@ namespace APSWinForm
 			this.panel9.Name = "panel9";
 			this.panel9.Size = new System.Drawing.Size(668, 136);
 			this.panel9.TabIndex = 42;
+			// 
+			// txtStepID
+			// 
+			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepID.Location = new System.Drawing.Point(149, 82);
+			this.txtStepID.Name = "txtStepID";
+			this.txtStepID.Size = new System.Drawing.Size(121, 21);
+			this.txtStepID.TabIndex = 61;
 			// 
 			// cboStepType
 			// 
@@ -320,7 +329,6 @@ namespace APSWinForm
 			// 
 			// dgvStepRoute
 			// 
-			this.dgvStepRoute.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvStepRoute.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvStepRoute.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgvStepRoute.Location = new System.Drawing.Point(10, 194);
@@ -328,15 +336,6 @@ namespace APSWinForm
 			this.dgvStepRoute.RowTemplate.Height = 23;
 			this.dgvStepRoute.Size = new System.Drawing.Size(688, 434);
 			this.dgvStepRoute.TabIndex = 52;
-			// 
-			// txtStepID
-			// 
-			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepID.Location = new System.Drawing.Point(149, 82);
-			this.txtStepID.Name = "txtStepID";
-			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 61;
 			// 
 			// STEP_ROUTE
 			// 
