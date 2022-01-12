@@ -25,12 +25,12 @@ namespace APSWinForm
 		private void STEP_ROUTE_Load(object sender, EventArgs e)
 		{
 			DataGridViewUtil.SetInitGridView(dgvStepRoute);
-			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.PROCESS_ID, "PROCESS_ID", colWidth: 145);
-			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.STEP_ID, "STEP_ID", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 145);
-			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.STEP_SEQ, "STEP_SEQ", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 120);
-			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.STD_STEP_ID, "STD_STEP_ID", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 145);
-			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.STEP_TYPE, "STEP_TYPE", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 120);
-			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.STEP_TAT, "STEP_TAT", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 120);
+			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.PROCESS_ID, "PROCESS_ID", align: DataGridViewContentAlignment.MiddleLeft, colWidth: 300);
+			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.STEP_ID, "STEP_ID", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 200);
+			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.STEP_SEQ, "STEP_SEQ", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 160);
+			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.STD_STEP_ID, "STD_STEP_ID", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 200);
+			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.STEP_TYPE, "STEP_TYPE", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 160);
+			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.STEP_TAT, "STEP_TAT", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 140);
 			
 			SetComboBox();
 			LoadData();
@@ -133,7 +133,9 @@ namespace APSWinForm
 			if (msgResullt == DialogResult.Cancel) return;
 			else
 			{
-				WebMessage msg = await srv.GetAsync($"api/Step/DelStepRoute/{curStepRoute}");
+				string paramStr = $"api/Step/DelStepRoute?PROCESS_ID={curProcID}&STEP_ID={curStepID}";
+				//WebMessage msg = await srv.GetAsync($"api/Step/DelStepRoute/{curStepRoute}");
+				WebMessage msg = await srv.GetAsync(paramStr);
 
 				if (msg.IsSuccess)
 				{
