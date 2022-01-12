@@ -62,11 +62,28 @@ namespace APSWinForm
             DataGridViewUtil.SetInitGridView(dgvAuth);
             DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한이름", "Auth_Name", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한기능", "auth_Desc", colWidth: 100);
-
             
 
             dgvLoad();
+        }
 
+        //https://milkoon1.tistory.com/17
+        private void dgvAuth_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+            {
+                foreach (DataGridViewRow row in dgvAuth.Rows)
+                {
+                    if (row.Index == e.RowIndex)
+                    {
+                        row.Cells["chk"].Value = !Convert.ToBoolean(row.Cells["chk"].EditedFormattedValue);
+                    }
+                    else
+                    {
+                        row.Cells["chk"].Value = false;
+                    }
+                }
+            }
 
         }
     }

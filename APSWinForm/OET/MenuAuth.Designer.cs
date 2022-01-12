@@ -286,6 +286,7 @@ namespace APSWinForm
             this.dgvAuth.RowTemplate.Height = 23;
             this.dgvAuth.Size = new System.Drawing.Size(359, 506);
             this.dgvAuth.TabIndex = 53;
+            this.dgvAuth.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuth_CellClick);
             // 
             // panel3
             // 

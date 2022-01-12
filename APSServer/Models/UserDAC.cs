@@ -39,7 +39,7 @@ namespace APSServer.Models
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = "select User_ID, User_Name, User_IsAdmin from UserInfo";
+                cmd.CommandText = "select User_ID, User_Name, user_auth from UserInfo";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Connection.Open();
