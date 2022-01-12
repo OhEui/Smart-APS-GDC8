@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\TokenModel.cs" />
+    <Compile Include="AuthVO.cs" />
     <Compile Include="Chart\ChartData.cs" />
     <Compile Include="Chart\EQPGanttData.cs" />
     <Compile Include="Chart\LOTGanttData.cs" />

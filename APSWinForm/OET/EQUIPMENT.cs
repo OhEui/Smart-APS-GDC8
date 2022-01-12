@@ -36,7 +36,7 @@ namespace APSWinForm
         private void EQUIPMENT_Load(object sender, EventArgs e)
         {
             combobinding();
-            DataLoad();
+                
 
         }
         
@@ -81,6 +81,7 @@ namespace APSWinForm
             }
             getSearchEqpList();
         }
+
         private void getSearchEqpList()  // 검색함수
         {
             dgvEQP.DataSource = null;

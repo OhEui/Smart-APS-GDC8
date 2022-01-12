@@ -33,5 +33,23 @@ namespace APSServer.Models
                 return list;
             }
         }
+
+        public List<UserVO> GetAllUser() //전체
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "select User_ID, User_Name, User_IsAdmin from UserInfo";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Connection.Open();
+                List<UserVO> list = Helper.DataReaderMapToList<UserVO>(cmd.ExecuteReader());
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
+
+
     }
 }

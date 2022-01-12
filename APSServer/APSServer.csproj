@@ -146,6 +146,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\DemandController.cs" />
     <Compile Include="Controllers\EQUIPMENTController.cs" />
@@ -162,6 +163,7 @@
     <Compile Include="Models\Account\AccountBindingModels.cs" />
     <Compile Include="Models\Account\AccountViewModels.cs" />
     <Compile Include="Models\Account\IdentityModels.cs" />
+    <Compile Include="Models\AuthDAC.cs" />
     <Compile Include="Models\CommonDAC.cs" />
     <Compile Include="Models\DemandDAC.cs" />
     <Compile Include="Models\EQUIPDAC.cs" />
