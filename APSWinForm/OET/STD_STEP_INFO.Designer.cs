@@ -35,6 +35,8 @@ namespace APSWinForm
 			this.btnInit = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
+			this.txtStepName = new APSWinForm.CapitalTextBox();
+			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel6 = new System.Windows.Forms.Panel();
@@ -58,8 +60,6 @@ namespace APSWinForm
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvStepInfoList = new System.Windows.Forms.DataGridView();
-			this.txtStepName = new APSWinForm.CapitalTextBox();
-			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
 			this.panel6.SuspendLayout();
@@ -137,6 +137,24 @@ namespace APSWinForm
 			this.panel9.Name = "panel9";
 			this.panel9.Size = new System.Drawing.Size(668, 136);
 			this.panel9.TabIndex = 42;
+			// 
+			// txtStepName
+			// 
+			this.txtStepName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepName.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepName.Location = new System.Drawing.Point(172, 81);
+			this.txtStepName.Name = "txtStepName";
+			this.txtStepName.Size = new System.Drawing.Size(121, 21);
+			this.txtStepName.TabIndex = 60;
+			// 
+			// txtStepID
+			// 
+			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepID.Location = new System.Drawing.Point(172, 40);
+			this.txtStepID.Name = "txtStepID";
+			this.txtStepID.Size = new System.Drawing.Size(121, 21);
+			this.txtStepID.TabIndex = 59;
 			// 
 			// label9
 			// 
@@ -354,24 +372,6 @@ namespace APSWinForm
 			this.dgvStepInfoList.RowTemplate.Height = 23;
 			this.dgvStepInfoList.Size = new System.Drawing.Size(688, 434);
 			this.dgvStepInfoList.TabIndex = 51;
-			// 
-			// txtStepName
-			// 
-			this.txtStepName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtStepName.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepName.Location = new System.Drawing.Point(172, 81);
-			this.txtStepName.Name = "txtStepName";
-			this.txtStepName.Size = new System.Drawing.Size(121, 21);
-			this.txtStepName.TabIndex = 60;
-			// 
-			// txtStepID
-			// 
-			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepID.Location = new System.Drawing.Point(172, 40);
-			this.txtStepID.Name = "txtStepID";
-			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 59;
 			// 
 			// STD_STEP_INFO
 			// 

@@ -15,7 +15,7 @@ namespace APSMVC.Controllers
     */
     public partial class ResultController : Controller
     {
-        public async Task<ActionResult> LOTGantt()
+        public async Task<ActionResult> GetLOTGantt()
         {
             ServiceHelp srv = new ServiceHelp(true);
             //List<ChartData> list = null;

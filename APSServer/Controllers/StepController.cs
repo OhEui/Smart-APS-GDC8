@@ -114,13 +114,13 @@ namespace APSServer.Controllers
 
         //GET:     https://localhost:44309/api/Step/DelStepInfo/stepID
         [HttpGet]
-        [Route("DelStepRoute/{stepRoute}")]
-        public IHttpActionResult deleteStepRoute(StepRouteVO stepRoute)
+        [Route("DelStepRoute")]
+        public IHttpActionResult deleteStepRoute(string PROCESS_ID, string STEP_ID)
         {
             WebMessage msg = new WebMessage();
 
             StepDAC db = new StepDAC();
-            bool result = db.deleteStepRoute(stepRoute);
+            bool result = db.deleteStepRoute(new StepRouteVO { PROCESS_ID= PROCESS_ID, STEP_ID= STEP_ID });
 
             if (result)
             {
