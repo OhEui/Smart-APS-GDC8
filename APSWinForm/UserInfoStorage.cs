@@ -38,6 +38,8 @@ namespace APSWinForm
         public string Phone { get => _info.Phone; set => _info.Phone = value; }
         public DateTime Birthday { get => _info.Birthday; set => _info.Birthday = value; }
 
+
+
         /// <summary>
         /// 현재 저장되어있는 로그인 유저정보를 삭제합니다.
         /// </summary>

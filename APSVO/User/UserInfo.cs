@@ -14,6 +14,7 @@ namespace APSVO
         int EmpNo { get; set; }
         string Phone { get; set; }
         DateTime Birthday { get; set; }
+
     }
 
     public class UserInfo : IUserInfo
@@ -38,6 +39,8 @@ namespace APSVO
        public string User_PWD { get; set; }
        public string User_Name { get; set; }
         public  int User_IsAdmin { get; set; }
+
+        public int user_auth { get; set; }
     }
 
 
