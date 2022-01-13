@@ -107,7 +107,7 @@ where s1.STEP_ID = 'PAINT' and s2.STEP_ID = 'FINISH' and s2.MACHINE_STATE='BUSY'
                 cmd.CommandText = @"select distinct PRODUCT_ID as Code, PRODUCT_ID as CodeName, 'PRODUCT_ID' as Category 
 from EQP_PLAN";
 
-                cmd.Connection.Open();
+                //cmd.Connection.Open();
                 List<ComboItemVO> list = Helper.DataReaderMapToList<ComboItemVO>(cmd.ExecuteReader());
                 cmd.Connection.Close();
 
