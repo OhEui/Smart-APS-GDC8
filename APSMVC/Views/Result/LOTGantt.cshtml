@@ -10,53 +10,39 @@
         <div class="card">
             <div class="card-body">
 
-                <form action="#">
-                    <div class="row">
-                        <div class="col-2">
-                            <div class="form-group">
-                                <label>LOT_ID</label>
-                                <div class="input-group input-group-lg">
-                                    <input type="search" class="form-control form-control-lg" style="height: 38px;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="form-group">
-                                <label>Condition</label>
-                                <select class="select2" style="width: 100%;">
-                                    <option selected>codi</option>
-                                    <option>DESC</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="form-group">
-                                <label>Condition</label>
-                                <select class="select2" style="width: 100%;">
-                                    <option selected>codi</option>
-                                    <option>Date</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="form-group">
-                                <label>Condition</label>
-                                <select class="select2" style="width: 100%;">
-                                    <option selected>codi</option>
-                                    <option>Date</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-14 align-self-end">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-lg btn-default" style="width: 38px; height: 38px; padding-left: 9px;
+				<form action="#">
+					@using (Html.BeginForm("GetLOTGantt","Result", FormMethod.Get, null))
+					{
+						<div class="row">
+							<div class="col-2">
+								<div class="form-group">
+									<label>LOT_ID</label>
+									<div class="input-group input-group-lg">
+										<input type="search" class="form-control form-control-lg" style="height: 38px;">
+									</div>
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="form-group">
+									<label>제품 ID</label>
+									<select class="select2" style="width: 100%;">
+										<option selected>codi</option>
+										<option>DESC</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-14 align-self-end">
+								<div class="form-group">
+									<button type="submit" class="btn btn-lg btn-default" style="width: 38px; height: 38px; padding-left: 9px;
                         padding-top: 6px; margin-left: 6px">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					}
+
+				</form>
 
             </div>
         </div>
