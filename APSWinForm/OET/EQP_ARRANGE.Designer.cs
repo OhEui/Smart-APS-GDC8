@@ -166,7 +166,7 @@ namespace APSWinForm
             // 
             // dgvEQP
             // 
-            this.dgvEQP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(230)))), ((int)(((byte)(228)))));
+            this.dgvEQP.BackgroundColor = System.Drawing.Color.White;
             this.dgvEQP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEQP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEQP.Location = new System.Drawing.Point(0, 194);
@@ -174,7 +174,7 @@ namespace APSWinForm
             this.dgvEQP.RowTemplate.Height = 23;
             this.dgvEQP.Size = new System.Drawing.Size(800, 442);
             this.dgvEQP.TabIndex = 47;
-            this.dgvEQP.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEQP_CellDoubleClick);
+            this.dgvEQP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEQP_CellClick);
             // 
             // panel2
             // 

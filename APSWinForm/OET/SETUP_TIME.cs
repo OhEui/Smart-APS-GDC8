@@ -130,7 +130,7 @@ namespace APSWinForm
         DataGridViewCellEventArgs temp;
 
         
-        private void dgvSetup_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvSetup_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             temp = e;
         }

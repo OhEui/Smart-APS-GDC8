@@ -7,19 +7,20 @@ using System.Web.Http;
 using APSVO;
 using APSServer.Models;
 
-namespace APSWinForm.Controllers
+namespace APSServer.Controllers
 {
-    [RoutePrefix("api/UserInfos")]
+    [RoutePrefix("api/UserInfo")]
     public class UserInfoController : ApiController
     {
-        //GET :  https://localhost:44309/api/UserInfos/AllList
+        //GET :  https://localhost:44309/api/UserInfo/AllList
         [HttpGet]
         [Route("AllList")]
 
-        public List<UserInfos> GetAllUserInfo()
+        public List<UserInfoVO> AllUserList()
         {
-            UserDAC db = new UserDAC();
-            return db.GetAllUserInfo();
+            UserDAC dac = new UserDAC();
+            return dac.AllUserList();
         }
     }
 }
+
