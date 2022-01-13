@@ -47,7 +47,7 @@
     <Compile Include="Account\TokenModel.cs" />
     <Compile Include="AuthVO.cs" />
     <Compile Include="Chart\ChartData.cs" />
-    <Compile Include="Chart\EQPGanttData.cs" />
+    <Compile Include="Chart\EQPGantt.cs" />
     <Compile Include="Chart\LOTGanttData.cs" />
     <Compile Include="ComboItemVO.cs" />
     <Compile Include="CommonVO.cs" />

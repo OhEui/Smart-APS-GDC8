@@ -31,7 +31,7 @@ namespace APSServer.Models
 
         public List<ChartData> GetEQPGanttData()
         {
-            List<EQPGanttData> data = new List<EQPGanttData>();
+            List<ResEQPGantt> data = new List<ResEQPGantt>();
             List<ChartData> result = new List<ChartData>();
 
             string sql = @"
@@ -42,7 +42,7 @@ from EQP_PLAN";
             {
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    data = Helper.DataReaderMapToList<EQPGanttData>(reader);
+                    data = Helper.DataReaderMapToList<ResEQPGantt>(reader);
                 }
             }
 
@@ -59,6 +59,32 @@ from EQP_PLAN";
                 });
             }
             return result;
+        }
+
+        public List<ComboItemVO> GetEQPGanttCommonData()
+        {
+            List<ComboItemVO> data = new List<ComboItemVO>();
+
+            // 설비그룹, 설비ID, 제품ID 가져오기 (equipment)
+            string sql = @"
+select distinct EQP_ID Code, EQP_ID CodeName, 'EQP_ID' Category 
+from EQP_PLAN
+union
+select distinct PRODUCT_ID Code, PRODUCT_ID CodeName, 'PRODUCT_ID' Category 
+from EQP_PLAN
+union
+select distinct eg.EQP_GROUP Code, eg.EQP_GROUP CodeName,'EQP_GROUP' Category 
+from EQP_PLAN ep join vw_EQP_GROUP eg on ep.STEP_ID = eg.STD_STEP_ID
+";
+
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    return data = Helper.DataReaderMapToList<ComboItemVO>(reader);
+                }
+            }
+
         }
 
         private int GetColorIdx(string step_id, string machine_state)

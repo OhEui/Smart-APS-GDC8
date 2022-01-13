@@ -102,6 +102,28 @@ namespace APSUtil.Http
             }
         }
 
+        public async Task<string> PostJsonStringAsync<T>(string path, T value)
+        {
+            path = BaseServiceUrl + path;
+
+            string result = null;
+            try
+            {
+                using (HttpResponseMessage response = await client.PostAsJsonAsync(path, value))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        result = await response.Content.ReadAsStringAsync();
+                    }
+                }
+                return result;
+            }
+            catch
+            {
+                return result;
+            }
+        }
+
         public async Task<T> GetAsync<T>(string path, T t)
         {
             path = BaseServiceUrl + path;

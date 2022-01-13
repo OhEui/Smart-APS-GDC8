@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace APSVO
 {
-    public class EQPGanttData
+    public class ReqEQPGantt 
+    {
+        public string[] EQP_ID { get; set; }
+        public string[] EQP_GROUP { get; set; }
+        public string[] PRODUCT_ID { get; set; }
+    }
+    public class ResEQPGantt
     {
         public string EQP_ID { get; set; }
         public string MACHINE_STATE { get; set; }
