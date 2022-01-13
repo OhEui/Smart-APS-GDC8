@@ -11,6 +11,8 @@ namespace APSVO
         public string[] EQP_ID { get; set; }
         public string[] EQP_GROUP { get; set; }
         public string[] PRODUCT_ID { get; set; }
+        public DateTime? Start_Date { get; set; }
+        public DateTime? End_Date { get; set; }
     }
     public class ResEQPGantt
     {

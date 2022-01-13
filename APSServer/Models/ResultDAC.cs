@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Configuration;
 
@@ -29,17 +30,42 @@ namespace APSServer.Models
             }
         }
 
-        public List<ChartData> GetEQPGanttData()
+        public List<ChartData> GetEQPGanttData(ReqEQPGantt req)
         {
             List<ResEQPGantt> data = new List<ResEQPGantt>();
             List<ChartData> result = new List<ChartData>();
 
-            string sql = @"
-select EQP_ID, START_TIME, END_TIME, LOT_ID, MACHINE_STATE, PROCESS_ID
-from EQP_PLAN";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            StringBuilder sb = new StringBuilder();
+            using (SqlCommand cmd = new SqlCommand())
             {
+                cmd.Connection = conn;
+                sb.AppendLine(@"select EQP_ID, START_TIME, END_TIME, LOT_ID, MACHINE_STATE, PROCESS_ID 
+from EQP_PLAN where 1=1");
+                if (req.EQP_ID != null)
+                {
+                    sb.AppendLine("and EQP_ID in (select * from STRING_SPLIT(@EQP_ID,','))");
+                    cmd.Parameters.AddWithValue("@EQP_ID", string.Join(",", req.EQP_ID));
+                }
+                if (req.EQP_GROUP != null)
+                {
+                    sb.AppendLine("and STEP_ID in (select * from STRING_SPLIT(@EQP_GROUP,','))");
+                    cmd.Parameters.AddWithValue("@EQP_GROUP", string.Join(",", req.EQP_GROUP));
+                }
+                if (req.PRODUCT_ID != null)
+                {
+                    sb.AppendLine("and PRODUCT_ID in (select * from STRING_SPLIT(@PRODUCT_ID,','))");
+                    cmd.Parameters.AddWithValue("@PRODUCT_ID", string.Join(",", req.PRODUCT_ID));
+                }
+                if (req.Start_Date != null && req.End_Date != null)
+                {
+                    sb.AppendLine("and START_TIME between @START and @END and END_TIME between @START and @END");
+                    DateTime start = req.Start_Date.Value.Date;
+                    DateTime end = req.End_Date.Value.Date.AddDays(1).AddMilliseconds(-1);
+                    cmd.Parameters.AddWithValue("@START", start);
+                    cmd.Parameters.AddWithValue("@END", end);
+                }
+                
+                cmd.CommandText = sb.ToString();
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     data = Helper.DataReaderMapToList<ResEQPGantt>(reader);
@@ -73,7 +99,7 @@ union
 select distinct PRODUCT_ID Code, PRODUCT_ID CodeName, 'PRODUCT_ID' Category 
 from EQP_PLAN
 union
-select distinct eg.EQP_GROUP Code, eg.EQP_GROUP CodeName,'EQP_GROUP' Category 
+select distinct ep.STEP_ID Code, eg.EQP_GROUP CodeName,'EQP_GROUP' Category 
 from EQP_PLAN ep join vw_EQP_GROUP eg on ep.STEP_ID = eg.STD_STEP_ID
 ";
 

@@ -19,20 +19,17 @@ namespace APSServer.Controllers
         [Route("EQPGantt/Data")]
         public IHttpActionResult GetEQPGanttChartData(ReqEQPGantt req)
         {
-            // APIController에서 로그인한 유저의 ID를 얻는법
-            // 컨트롤러에 [Authorize]가 적용되어 있어야 함
-
+            // 차트 데이터 가져오기
             using (ResultDAC dac = new ResultDAC())
             {
-                var data = dac.GetEQPGanttData();
+                var data = dac.GetEQPGanttData(req);
                 if (data != null)
                 {
                     return Ok(data);
                 }
                 else
                 {
-                    //return Content(HttpStatusCode.NotFound, msg); // WebMessage를 사용하는 경우
-                    return NotFound(); // WebMessage를 사용하지 않는 경우
+                    return NotFound();
                 }
             }
         }
