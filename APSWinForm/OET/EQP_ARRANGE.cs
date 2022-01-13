@@ -65,6 +65,7 @@ namespace APSWinForm
         }
         private void DataLoad()
         {
+            DataGridViewUtil.SetInitGridView(dgvEQP);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "품목ID", "PRODUCT_ID",colWidth: 130);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "프로세스ID", "PROCESS_ID", colWidth: 130);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정ID", "STEP_ID", colWidth: 90);
@@ -117,7 +118,7 @@ namespace APSWinForm
 
         DataGridViewCellEventArgs temp;
 
-        private void dgvEQP_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvEQP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             temp = e;
         }

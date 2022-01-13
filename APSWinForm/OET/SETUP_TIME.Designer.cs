@@ -269,7 +269,7 @@ namespace APSWinForm
             this.dgvSetup.RowTemplate.Height = 23;
             this.dgvSetup.Size = new System.Drawing.Size(800, 256);
             this.dgvSetup.TabIndex = 50;
-            this.dgvSetup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSetup_CellDoubleClick);
+            this.dgvSetup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSetup_CellClick);
             // 
             // pictureBox6
             // 

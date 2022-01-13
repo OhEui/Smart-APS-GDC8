@@ -36,7 +36,7 @@ namespace APSWinForm
         private void EQUIPMENT_Load(object sender, EventArgs e)
         {
             combobinding();
-                
+            DataLoad();
 
         }
         
@@ -106,10 +106,13 @@ namespace APSWinForm
         }
 
         DataGridViewCellEventArgs temp;
-        private void dgvEQP_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+
+        private void dgvEQP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             temp = e;
         }
+
         private void btn_Delete_Click(object sender, EventArgs e)
         {
 
@@ -151,7 +154,7 @@ namespace APSWinForm
             }
         }
 
-        
+       
     }
   
 }
