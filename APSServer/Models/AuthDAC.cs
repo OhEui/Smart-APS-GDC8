@@ -61,7 +61,7 @@ namespace APSServer.Models
         }
 
 
-        public bool SaveAuth(UserVO vo)
+        public bool SaveAuth(UserVOs vo)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -69,8 +69,8 @@ namespace APSServer.Models
                 cmd.CommandText = "SP_SaveAuth";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@User_ID", vo.User_ID);
-                cmd.Parameters.AddWithValue("@auth_id", vo.auth_id);
+                cmd.Parameters.AddWithValue("@Id", vo.Id);
+                cmd.Parameters.AddWithValue("@Auth_ID", vo.Auth_ID);
                 cmd.Connection.Open();
                 int iRowAffect = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();

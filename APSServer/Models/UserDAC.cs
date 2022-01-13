@@ -13,9 +13,22 @@ namespace APSServer.Models
     {
         string strConn = string.Empty;
 
+        SqlConnection conn = null;
+      
         public UserDAC()
         {
-            strConn = WebConfigurationManager.ConnectionStrings["teamDB"].ConnectionString;
+            strConn = WebConfigurationManager.ConnectionStrings["TeamDB"].ConnectionString;
+            conn = new SqlConnection(strConn);
+            conn.Open();
+        }
+
+        public void Dispose()
+        {
+            if (conn != null && conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+                conn = null;
+            }
         }
 
         public List<UserVO> GetAllUser() //전체
@@ -23,10 +36,10 @@ namespace APSServer.Models
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = @"select a.User_ID,a.User_Name,b.auth_name as auth_name
-from UserInfo a
+                cmd.CommandText = @"select a.empno,a.Id,a.Name,b.auth_name as auth_name
+from ASP_Users a
 inner join Authority b 
-on a.auth_id= b.AUTH_ID";
+on a.Auth_ID= b.AUTH_ID";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Connection.Open();
@@ -37,13 +50,29 @@ on a.auth_id= b.AUTH_ID";
             }
         }
 
-        public List<UserInfoVO> AllUserList() //전체
+        //public List<UserInfoVO> AllUserList() //전체
+        //{
+        //    using (SqlCommand cmd = new SqlCommand())
+        //    {
+        //        cmd.Connection = new SqlConnection(strConn);
+        //        cmd.CommandText = "select User_ID, User_Name, User_phone, User_Birth from UserInfo";
+        //        cmd.CommandType = CommandType.Text;
+
+        //        cmd.Connection.Open();
+        //        List<UserInfoVO> list = Helper.DataReaderMapToList<UserInfoVO>(cmd.ExecuteReader());
+        //        cmd.Connection.Close();
+
+        //        return list;
+        //    }
+        //}
+
+        public List<UserInfoVO> AllUserList()
         {
+
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = "select User_ID, User_Name, User_phone, User_Birth from UserInfo";
-                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = @"select User_ID, User_Name, User_phone, User_Birth from UserInfo";
 
                 cmd.Connection.Open();
                 List<UserInfoVO> list = Helper.DataReaderMapToList<UserInfoVO>(cmd.ExecuteReader());
@@ -51,6 +80,7 @@ on a.auth_id= b.AUTH_ID";
 
                 return list;
             }
+
         }
     }
 }

@@ -55,8 +55,9 @@ namespace APSWinForm
             dgvAuth.Columns.Add(chk);
 
             DataGridViewUtil.SetInitGridView(dgvUser);
-            DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 ID", "User_ID", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 이름", "User_Name", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 ID", "Id", colWidth: 100 , visibility:false);
+            DataGridViewUtil.AddGridTextColumn(dgvUser, "사원번호", "Empno", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 이름", "Name", colWidth: 105);
             DataGridViewUtil.AddGridTextColumn(dgvUser, "권한 ", "auth_name", colWidth: 100);
 
             DataGridViewUtil.SetInitGridView(dgvAuth);
@@ -95,7 +96,7 @@ namespace APSWinForm
 
                 if (isChecked)
                 {
-                    txtno.Text = (row.Cells["auth_ID"].Value.ToString());
+                    txtno.Text = (row.Cells["Auth_ID"].Value.ToString());
                 }
 
             }
@@ -103,10 +104,9 @@ namespace APSWinForm
 
         private void dgvUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewRow row in dgvUser.Rows)
-            {
-                txtID.Text = (row.Cells["user_ID"].Value.ToString());
-            }
+           
+                txtID.Text = dgvUser["Id", e.RowIndex].Value.ToString();
+
         }
 
         private async void btnAdd_Click(object sender, EventArgs e)
@@ -115,8 +115,8 @@ namespace APSWinForm
 
             if (vo != null)
             {
-                vo.User_ID = txtID.Text;
-                vo.auth_id = txtno.Text;
+                vo.Id = txtID.Text;
+                vo.Auth_ID = Convert.ToInt32(txtno.Text);
 
                 WebMessage msg = await srv.PostAsyncNone("api/Auth/AuthSave", vo);
 
@@ -144,13 +144,21 @@ namespace APSWinForm
                 } 
 
             dgvUser.DataSource = null;
-            dgvUser.DataSource = Userlist.FindAll(p => p.User_Name.Contains(txtName.Text));
+            dgvUser.DataSource = Userlist.FindAll(p => p.Name.Contains(txtName.Text));
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtName.Text= null;
             dgvLoad();
+        }
+
+        private void dgvUser_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvUser.Rows)
+            {
+                txtID.Text = (row.Cells["Id"].Value.ToString());
+            }
         }
     }
 }

@@ -302,6 +302,7 @@ namespace APSWinForm
             this.dgvUser.Size = new System.Drawing.Size(355, 384);
             this.dgvUser.TabIndex = 52;
             this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
+            this.dgvUser.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellDoubleClick);
             // 
             // dgvAuth
             // 
