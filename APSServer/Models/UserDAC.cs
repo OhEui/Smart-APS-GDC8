@@ -37,6 +37,20 @@ on a.auth_id= b.AUTH_ID";
             }
         }
 
+        public List<UserInfoVO> AllUserList() //전체
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "select User_ID, User_Name, User_phone, User_Birth from UserInfo";
+                cmd.CommandType = CommandType.Text;
 
+                cmd.Connection.Open();
+                List<UserInfoVO> list = Helper.DataReaderMapToList<UserInfoVO>(cmd.ExecuteReader());
+                cmd.Connection.Close();
+
+                return list;
+            }
+        }
     }
 }
