@@ -32,6 +32,28 @@ namespace APSServer.Controllers
             UserDAC dac = new UserDAC();
             return dac.GetAllUser();
         }
+
+        //Post : https://localhost:44309/api/Auth/AuthSave
+        [HttpPost]
+        [Route("AuthSave")]
+        public IHttpActionResult InsertEqp(UserVO vo)
+        {
+            WebMessage msg = new WebMessage();
+            AuthDAC db = new AuthDAC();
+            bool result = db.SaveAuth(vo);
+
+            if (result)
+            {
+                msg.IsSuccess = true;
+                msg.ResultMessage = "성공적으로 저장되었습니다.";
+            }
+            else
+            {
+                msg.IsSuccess = false;
+                msg.ResultMessage = "저장 중 오류가 발생했습니다.";
+            }
+            return Ok(msg);
+        }
     }
 }
 

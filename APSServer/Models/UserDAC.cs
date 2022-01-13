@@ -18,28 +18,15 @@ namespace APSServer.Models
             strConn = WebConfigurationManager.ConnectionStrings["teamDB"].ConnectionString;
         }
 
-        public List<UserInfos> GetAllUserInfo() //전체
-        {
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = "select User_ID, User_PWD, User_Name, User_IsAdmin from UserInfo";
-                cmd.CommandType = CommandType.Text;
-
-                cmd.Connection.Open();
-                List<UserInfos> list = Helper.DataReaderMapToList<UserInfos>(cmd.ExecuteReader());
-                cmd.Connection.Close();
-
-                return list;
-            }
-        }
-
         public List<UserVO> GetAllUser() //전체
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = "select User_ID, User_Name, user_auth from UserInfo";
+                cmd.CommandText = @"select a.User_ID,a.User_Name,b.auth_name as auth_name
+from UserInfo a
+inner join Authority b 
+on a.auth_id= b.AUTH_ID";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Connection.Open();

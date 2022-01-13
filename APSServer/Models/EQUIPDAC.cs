@@ -34,13 +34,17 @@ namespace APSServer.Models
         public List<EQUIPVO> GetAllEquipment()
         {
 
-            string sql = @"select SITE_ID, LINE_ID, EQP_ID, EQP_MODEL, EQP_GROUP from EQUIPMENT";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlCommand cmd = new SqlCommand())
             {
-                return Helper.DataReaderMapToList<EQUIPVO>(cmd.ExecuteReader());
-            }
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = @"select SITE_ID, LINE_ID, EQP_ID, EQP_MODEL, EQP_GROUP from EQUIPMENT";
 
+                cmd.Connection.Open();
+                List<EQUIPVO> list = Helper.DataReaderMapToList<EQUIPVO>(cmd.ExecuteReader());
+                cmd.Connection.Close();
+
+                return list;
+            }
 
         }
 

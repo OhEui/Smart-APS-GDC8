@@ -17,7 +17,7 @@ namespace APSWinForm
         List<AuthVO> Authlist = null;
         ServiceHelp srv = new ServiceHelp();
         List<UserVO> Userlist = null;
-
+        CheckBox headerbox = new CheckBox();
 
         public MenuAuth()
         {
@@ -26,7 +26,7 @@ namespace APSWinForm
 
         private void MenuAuth_Load(object sender, EventArgs e)
         {
-            
+
             DataLoad();
         }
 
@@ -40,7 +40,7 @@ namespace APSWinForm
             Authlist = await srv.GetListAsync("api/Auth/GetAuth", Authlist);
             dgvAuth.DataSource = Authlist;
 
-            
+
         }
 
         private void DataLoad()
@@ -57,17 +57,21 @@ namespace APSWinForm
             DataGridViewUtil.SetInitGridView(dgvUser);
             DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 ID", "User_ID", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 이름", "User_Name", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvUser, "권한 ", "auth_id", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvUser, "권한 ", "auth_name", colWidth: 100);
 
             DataGridViewUtil.SetInitGridView(dgvAuth);
-            DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한이름", "Auth_Name", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한기능", "auth_Desc", colWidth: 100);
-            
+            DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한 ID", "Auth_ID", colWidth: 105, visibility: false);
+            DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한", "Auth_Name", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한기능", "auth_Desc", colWidth: 250);
+
+
 
             dgvLoad();
         }
 
-        //https://milkoon1.tistory.com/17
+
+
+
         private void dgvAuth_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == 0)
@@ -85,6 +89,69 @@ namespace APSWinForm
                 }
             }
 
+            foreach (DataGridViewRow row in dgvAuth.Rows)
+            {
+                bool isChecked = Convert.ToBoolean(row.Cells[0].Value);
+
+                if (isChecked)
+                {
+                    txtno.Text = (row.Cells["auth_ID"].Value.ToString());
+                }
+
+            }
+        }
+
+        private void dgvUser_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvUser.Rows)
+            {
+                txtID.Text = (row.Cells["user_ID"].Value.ToString());
+            }
+        }
+
+        private async void btnAdd_Click(object sender, EventArgs e)
+        {
+            UserVO vo = new UserVO();
+
+            if (vo != null)
+            {
+                vo.User_ID = txtID.Text;
+                vo.auth_id = txtno.Text;
+
+                WebMessage msg = await srv.PostAsyncNone("api/Auth/AuthSave", vo);
+
+
+                if (msg.IsSuccess)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                MessageBox.Show(msg.ResultMessage);
+
+            }
+            dgvUser.DataSource = null;
+            Userlist = await srv.GetListAsync("api/Auth/GetUser", Userlist);
+            dgvUser.DataSource = Userlist;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+                {
+                MessageBox.Show("검색어를 입력해주세요.");
+                txtName.Focus();
+                return;
+                } 
+
+            dgvUser.DataSource = null;
+            dgvUser.DataSource = Userlist.FindAll(p => p.User_Name.Contains(txtName.Text));
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtName.Text= null;
+            dgvLoad();
         }
     }
 }
+    
