@@ -17,6 +17,7 @@ using System.Web;
 using System.Web.Http;
 using APSUtil.Http;
 using APSVO;
+using System.Net.Http.Headers;
 
 namespace APSServer.Controllers
 {
@@ -109,6 +110,49 @@ namespace APSServer.Controllers
             };
         }
 
+        // POST api/Account/Login
+        [AllowAnonymous]
+        [Route("Login")]
+        public async Task<IHttpActionResult> Login(LoginBindingModel model)
+        {
+            ServiceHelp service = new ServiceHelp(true);
+            var request = new Dictionary<string, string>()
+            {
+                { "username", model.ID } ,{ "password" , model.Password }, { "grant_type" , "password" }
+            };
+            TokenModel responseToken = await service.PostAsyncFormRequest<TokenModel>("token", request);
+
+            // UserInfo 조회하는 DAC 호출
+
+            bool isSuccess = responseToken.Error == null;
+
+            WebMessage<TokenModel> result = new WebMessage<TokenModel>()
+            {
+                IsSuccess = isSuccess,
+                ResultMessage = isSuccess ? "로그인에 성공하였습니다." : responseToken.ErrorDescription,
+                Data = responseToken
+            };
+
+
+            ApplicationUser user = await UserManager.FindByNameAsync(model.ID);
+            Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
+
+            ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
+               OAuthDefaults.AuthenticationType);
+            ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager,
+                CookieAuthenticationDefaults.AuthenticationType);
+
+            AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user.UserName);
+            Authentication.SignIn(properties, oAuthIdentity, cookieIdentity);
+
+            /*
+            SignInManager<ApplicationUser, string> signManager =
+                new SignInManager<ApplicationUser, string>(UserManager, Authentication);
+
+            SignInStatus signResult = await signManager.PasswordSignInAsync(model.ID, model.Password, false, shouldLockout: false);
+            */
+            return Content(service.StatusCode, result);
+        }
 
         // POST api/Account/Logout
         [Route("Logout")]
@@ -362,30 +406,6 @@ namespace APSServer.Controllers
             return logins;
         }
 
-        // POST api/Account/Login
-        [AllowAnonymous]
-        [Route("Login")]
-        public async Task<IHttpActionResult> Login(LoginBindingModel model) 
-        {
-            ServiceHelp service = new ServiceHelp(true); 
-            var request = new Dictionary<string, string>() 
-            { 
-                { "username", model.ID } ,{ "password" , model.Password }, { "grant_type" , "password" }
-            };
-            TokenModel responseToken = await service.PostAsyncFormRequest<TokenModel>("token", request);
-
-            // UserInfo 조회하는 DAC 호출
-
-            bool isSuccess = responseToken.Error == null;
-
-            WebMessage<TokenModel> result = new WebMessage<TokenModel>()
-            {
-                IsSuccess = isSuccess,
-                ResultMessage = isSuccess ? "로그인에 성공하였습니다." : responseToken.ErrorDescription,
-                Data = responseToken
-            };
-            return Content(service.StatusCode, result);
-        }
 
         // POST api/Account/Register
         [AllowAnonymous]
