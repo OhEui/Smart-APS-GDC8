@@ -54,6 +54,7 @@ namespace APSWinForm
             this.dgvAuth = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -330,11 +331,22 @@ namespace APSWinForm
             this.panel4.Size = new System.Drawing.Size(359, 384);
             this.panel4.TabIndex = 55;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(656, 612);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 56;
+            this.button1.Text = "저장";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // MenuAuth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 647);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -390,5 +402,6 @@ namespace APSWinForm
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label txtno;
         private System.Windows.Forms.Label txtID;
+        private System.Windows.Forms.Button button1;
     }
 }
