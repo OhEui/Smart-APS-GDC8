@@ -37,7 +37,7 @@ namespace APSServer.Controllers
             }
         }
 
-        //GET : https://localhost:44309/api/Result/getLOTList
+        //GET : https://localhost:44309/api/Result/getLOTList?productID={productID}&lotID={lotID}
         [HttpGet]
         [Route("getLOTList")]
         public List<ChartData> getLOTList(string productID, string lotID)

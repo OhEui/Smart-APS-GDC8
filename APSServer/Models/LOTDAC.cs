@@ -52,15 +52,16 @@ where s1.STEP_ID = 'PAINT' and s2.STEP_ID = 'FINISH' and s2.MACHINE_STATE='BUSY'
                 if (!string.IsNullOrWhiteSpace(productID))
                 {
                     sb.Append("and s1.PRODUCT_ID = @PRODUCT_ID ");
-                    cmd.Parameters.AddWithValue("@PRODUCT_ID", $"%{productID}%");
+                    cmd.Parameters.AddWithValue("@PRODUCT_ID", $"{productID}");
                 }
                 if (!string.IsNullOrWhiteSpace(lotID))
                 {
                     sb.Append("and s1.LOT_ID like @LOT_ID ");
                     cmd.Parameters.AddWithValue("@LOT_ID", $"%{lotID}%");
                 }
-                sb.Append("order by LOT_ID");
 
+                sb.Append("order by LOT_ID");
+                cmd.CommandText = sb.ToString();
                 lotList = Helper.DataReaderMapToList<LOTGanttData>(cmd.ExecuteReader());
             }
 
