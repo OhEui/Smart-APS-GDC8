@@ -15,9 +15,9 @@ namespace APSServer.Controllers
     public class ResultController : ApiController
     {
         // https://localhost:44309/api/Result/EQPGantt
-        [HttpGet]
-        [Route("EQPGantt")][Authorize]
-        public IHttpActionResult GetEQPGanttData()
+        [HttpPost]
+        [Route("EQPGantt/Data")]
+        public IHttpActionResult GetEQPGanttChartData(ReqEQPGantt req)
         {
             // APIController에서 로그인한 유저의 ID를 얻는법
             // 컨트롤러에 [Authorize]가 적용되어 있어야 함
@@ -37,7 +37,27 @@ namespace APSServer.Controllers
             }
         }
 
-        //GET : https://localhost:44309/api/Result/getLOTList?productID={productID}&lotID={lotID}
+        [HttpGet]
+        [Route("EQPGantt/Common")]
+        public IHttpActionResult GetEQPGanttCommonData()
+        {
+            // 설비그룹, 설비ID, 제품ID 가져오기
+            using (ResultDAC dac = new ResultDAC())
+            {
+                var data = dac.GetEQPGanttCommonData();
+
+                if (data != null)
+                {
+                    return Ok(data);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+        }
+
+        //GET : https://localhost:44309/api/Result/getLOTList
         [HttpGet]
         [Route("getLOTList")]
         public List<ChartData> getLOTList(string productID, string lotID)

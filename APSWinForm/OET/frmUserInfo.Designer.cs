@@ -75,7 +75,7 @@ namespace APSWinForm
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 50);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 394);
+            this.panel3.Size = new System.Drawing.Size(10, 393);
             this.panel3.TabIndex = 51;
             // 
             // panel1
@@ -84,7 +84,7 @@ namespace APSWinForm
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 394);
+            this.panel1.Size = new System.Drawing.Size(10, 393);
             this.panel1.TabIndex = 52;
             // 
             // panel2
@@ -195,7 +195,7 @@ namespace APSWinForm
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(10, 434);
+            this.panel5.Location = new System.Drawing.Point(10, 433);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(685, 10);
             this.panel5.TabIndex = 56;
@@ -206,19 +206,19 @@ namespace APSWinForm
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(685, 50);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 384);
+            this.panel6.Size = new System.Drawing.Size(10, 383);
             this.panel6.TabIndex = 57;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(450, 177);
+            this.textBox1.Location = new System.Drawing.Point(449, 177);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(165, 21);
             this.textBox1.TabIndex = 58;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(450, 237);
+            this.textBox2.Location = new System.Drawing.Point(449, 237);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(165, 21);
             this.textBox2.TabIndex = 59;
@@ -227,7 +227,7 @@ namespace APSWinForm
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(447, 220);
+            this.label1.Location = new System.Drawing.Point(446, 220);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(19, 14);
             this.label1.TabIndex = 60;
@@ -237,7 +237,7 @@ namespace APSWinForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(447, 281);
+            this.label2.Location = new System.Drawing.Point(446, 281);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 14);
             this.label2.TabIndex = 61;
@@ -245,7 +245,7 @@ namespace APSWinForm
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(450, 298);
+            this.textBox3.Location = new System.Drawing.Point(449, 298);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(165, 21);
             this.textBox3.TabIndex = 62;
@@ -254,7 +254,7 @@ namespace APSWinForm
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(447, 160);
+            this.label3.Location = new System.Drawing.Point(446, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 14);
             this.label3.TabIndex = 63;
@@ -275,7 +275,7 @@ namespace APSWinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 444);
+            this.ClientSize = new System.Drawing.Size(695, 443);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox3);
