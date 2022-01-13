@@ -37,13 +37,13 @@ namespace APSServer.Controllers
             }
         }
 
-        //GET : https://localhost:44309/api/Result/getLOTList
+        //GET : https://localhost:44309/api/Result/getLOTList?productID={productID}&lotID={lotID}
         [HttpGet]
         [Route("getLOTList")]
-        public List<ChartData> getLOTList()
+        public List<ChartData> getLOTList(string productID, string lotID)
         {
             LOTDAC db = new LOTDAC();
-            return db.GetLOTList();
+            return db.GetLOTList(productID, lotID);
         }
 
 
@@ -54,6 +54,15 @@ namespace APSServer.Controllers
         {
             LOTDAC db = new LOTDAC();
             return db.getLOTCategory();
+        }
+
+        //GET : https://localhost:44309/api/Result/getComboList
+        [HttpGet]
+        [Route("getComboList")]
+        public List<ComboItemVO> getComboList()
+        {
+            LOTDAC db = new LOTDAC();
+            return db.getComboList();
         }
     }
 }
