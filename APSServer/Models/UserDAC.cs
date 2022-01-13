@@ -42,7 +42,7 @@ on a.auth_id= b.AUTH_ID";
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = "select User_ID, User_Name, User_phone, User_Birth from UserInfo";
+                cmd.CommandText = "select User_ID, User_Name, User_phone, convert(varchar(10), User_Birth, 23) User_Birth from UserInfo";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Connection.Open();

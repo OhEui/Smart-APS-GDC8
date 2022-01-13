@@ -168,6 +168,7 @@
     <Compile Include="Models\DemandDAC.cs" />
     <Compile Include="Models\EQUIPDAC.cs" />
     <Compile Include="Models\Helper.cs" />
+    <Compile Include="Models\LineInfoDAC.cs" />
     <Compile Include="Models\LOTDAC.cs" />
     <Compile Include="Models\MenuDAC.cs" />
     <Compile Include="Models\ProductDAC.cs" />
