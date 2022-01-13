@@ -9,17 +9,17 @@ using APSServer.Models;
 
 namespace APSWinForm.Controllers
 {
-    [RoutePrefix("api/UserInfos")]
-    public class UserInfoController : ApiController
-    {
-        //GET :  https://localhost:44309/api/UserInfos/AllList
-        [HttpGet]
-        [Route("AllList")]
+    //    [RoutePrefix("api/UserInfos")]
+    //    public class UserInfoController : ApiController
+    //    //{
+    //    //    //GET :  https://localhost:44309/api/UserInfos/AllList
+    //    //    [HttpGet]
+    //    //    [Route("AllList")]
 
-        public List<UserInfos> GetAllUserInfo()
-        {
-            UserDAC db = new UserDAC();
-            return db.GetAllUserInfo();
-        }
-    }
+    //    //    public List<UserInfos> GetAllUserInfo()
+    //    //    {
+    //    //        UserDAC db = new UserDAC();
+    //    //        return db.GetAllUserInfo();
+    //    //    }
+    //    }
 }

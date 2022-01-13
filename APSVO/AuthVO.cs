@@ -11,6 +11,7 @@ namespace APSVO
         public string User_Name { get; set; }
         public string User_ID { get; set; }
         public string auth_id { get; set; }
+        public string User_PWD { get; set; }
 
     }
 
