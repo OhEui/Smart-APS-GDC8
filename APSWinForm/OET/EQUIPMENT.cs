@@ -31,6 +31,10 @@ namespace APSWinForm
         public EQUIPMENT()
         {
             InitializeComponent();
+            if (UserInfoStorage.Current.Auth_ID == 3)
+            {
+                btn_Add.Visible = btn_modify.Visible = btn_Delete.Visible = false;
+            }
         }
 
         private void EQUIPMENT_Load(object sender, EventArgs e)

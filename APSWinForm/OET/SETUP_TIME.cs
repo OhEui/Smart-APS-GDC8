@@ -28,6 +28,10 @@ namespace APSWinForm
         public SETUP_TIME()
         {
             InitializeComponent();
+            if (UserInfoStorage.Current.Auth_ID == 3)
+            {
+                btnAdd.Visible = btnModify.Visible = pictureBox6.Visible = false;
+            }
         }
 
         private void SETUP_TIME_Load(object sender, EventArgs e)

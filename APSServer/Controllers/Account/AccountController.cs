@@ -106,7 +106,8 @@ namespace APSServer.Controllers
                 Name = newUser.Name,
                 Birthday = newUser.Birthday,
                 ID = newUser.UserName,
-                Phone = newUser.Phone
+                Phone = newUser.Phone,
+                Auth_ID= newUser.Auth_ID
             };
         }
 

@@ -31,6 +31,10 @@ namespace APSWinForm
         public EQP_ARRANGE()
         {
             InitializeComponent();
+            if (UserInfoStorage.Current.Auth_ID == 3)
+            {
+                btnAdd.Visible = btnModify.Visible = pictureBox6.Visible = false;
+            }
         }
         
         
