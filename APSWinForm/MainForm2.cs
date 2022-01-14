@@ -19,6 +19,7 @@ namespace APSWinForm
             Font = new Font("ONE 모바일고딕 OTF Regular", 11F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(129)));
             InitializeComponent();
             hideSubMenu();
+            Login();
         }
 
         #region hideMenu
@@ -61,7 +62,7 @@ namespace APSWinForm
             this.WindowState = FormWindowState.Maximized;
             tabControl1.Visible = true;
             lblName.Text = "";
-            //Login();
+            
            
         }
 
@@ -73,14 +74,22 @@ namespace APSWinForm
             Hide();
             if (login.ShowDialog() == DialogResult.OK)
             {
+                if (UserInfoStorage.Current.Auth_ID == 2 || UserInfoStorage.Current.Auth_ID == 3)
+                {
+                    btnSystem.Visible = false;
+                }
+
                 lblName.Text = UserInfoStorage.Current.Name;
                 Show();
                 MessageBox.Show(UserInfoStorage.Current.ToString());
+
+               
             }
             else
             {
                 Close();
             }
+
         }
 
         private void Logout()
@@ -105,6 +114,7 @@ namespace APSWinForm
         private void btnInfo_Click(object sender, EventArgs e)
         {
             showSubMenu(panelInfoSubMenu);
+            
         }
 
         #region InfoSubMenu
@@ -112,6 +122,7 @@ namespace APSWinForm
         {
             CreateTabPages("제품정보", new frmPRODUCT());
             hideInfoSubMenu();
+
         }
 
         private void btnDemand_Click(object sender, EventArgs e)
@@ -271,7 +282,7 @@ namespace APSWinForm
 
 
         
-        private Form activeForm = null;
+        
 
 
         private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)

@@ -27,8 +27,8 @@ namespace APSVO
         public int EmpNo { get; set; }
         public string Phone { get; set; }
         public DateTime Birthday { get; set; }
-
-        public override string ToString() => $"ID:{ID}\nName:{Name}\nPhone:{Phone}\nBirthday:{Birthday:yyyy-MM-dd}";
+        public int Auth_ID { get; set; }
+        public override string ToString() => $"ID:{ID}\nName:{Name}\nPhone:{Phone}\nBirthday:{Birthday:yyyy-MM-dd}\n";
         
     }
 
