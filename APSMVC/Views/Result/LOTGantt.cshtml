@@ -11,7 +11,7 @@
             <div class="card-body">
 
 				<form action="#">
-					@using (Html.BeginForm("GetLOTGantt","Result", FormMethod.Get, null))
+					@using (Html.BeginForm("LOTGantt","Result", FormMethod.Get, null))
 					{
 						<div class="row">
 							<div class="col-2">
@@ -25,9 +25,13 @@
 							<div class="col-2">
 								<div class="form-group">
 									<label>제품 ID</label>
-									<select class="select2" id="productID" name="productID" style="width: 100%;">
-										<option selected>codi</option>
-										<option>DESC</option>
+									<select class="select2" asp-items="ViewBag.Combo" id="productID" name="productID" style="width: 100%;">
+										@foreach (var p in ViewBag.Combo)
+										{
+											<option value=@p.Code>@p.CodeName</option>
+
+										}
+										<option></option>
 									</select>
 								</div>
 							</div>
@@ -191,10 +195,14 @@
             });
             series.data.setAll(data);
 
-            // Add scrollbars
-            chart.set("scrollbarX", am5.Scrollbar.new(root, {
-                orientation: "horizontal"
-            }));
+			// Add scrollbars
+			chart.set("scrollbarX", am5.Scrollbar.new(root, {
+				orientation: "horizontal"
+			}));
+
+			chart.set("scrollbarY", am5.Scrollbar.new(root, {
+				orientation: "vertical"
+			}));
 
             // Make stuff animate on load
             // https://www.amcharts.com/docs/v5/concepts/animations/

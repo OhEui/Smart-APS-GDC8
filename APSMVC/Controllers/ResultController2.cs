@@ -15,7 +15,7 @@ namespace APSMVC.Controllers
     */
     public partial class ResultController : Controller
     {
-        public async Task<ActionResult> GetLOTGantt(string productID, string lotID)
+        public async Task<ActionResult> LOTGantt(string productID, string lotID)
         {
             ServiceHelp srv = new ServiceHelp(true);
             List<ComboItemVO> comboItem = null;
@@ -29,6 +29,7 @@ namespace APSMVC.Controllers
 
             ViewBag.Data = result;
             ViewBag.Category = cate;
+            //ViewBag.Combo = new SelectList(comboItem, "Code","CodeName");
             ViewBag.Combo = comboItem;
             return View();
         }
