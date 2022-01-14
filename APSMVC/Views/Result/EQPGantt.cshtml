@@ -51,6 +51,8 @@
                                     </span>
                                 </div>
                                 <input type="text" class="form-control float-right" id="reservation">
+                                @Html.Hidden("Start_Date", DateTime.Now, new { id = "Start_Date" })
+                                @Html.Hidden("End_Date", null, new { id = "End_Date" })
                             </div>
                         </div>
                     </div>
@@ -80,13 +82,27 @@
 @section Scripts
 {
     <script>
+
+
         $(function () {
             $(".condition").select2();
 
-
-
             //Date picker
-            $('#reservation').daterangepicker();
+            $('#reservation').daterangepicker({
+                locale: {
+                    format: 'YYYY-MM-DD'
+                },
+                startDate: '@Model.Start_Date.ToString("yyyy-MM-dd")',
+                endDate: '@Model.End_Date.ToString("yyyy-MM-dd")',
+
+                minDate: '@Model.Start_Date.ToString("yyyy-MM-dd")',
+                maxDate: '@Model.End_Date.ToString("yyyy-MM-dd")',
+            });
+
+            $('.submitTest').submit(() => {
+                $('#Start_Date').val($('#reservation').data('daterangepicker').startDate.format('YYYY-MM-DD'));
+                $('#End_Date').val($('#reservation').data('daterangepicker').endDate.format('YYYY-MM-DD'));
+            });
             /**
              * ---------------------------------------
              * This demo was created using amCharts 5.

@@ -87,12 +87,14 @@ from EQP_PLAN where 1=1");
             return result;
         }
 
-        public List<ComboItemVO> GetEQPGanttCommonData()
+        public ChartCommonData GetEQPGanttCommonData()
         {
-            List<ComboItemVO> data = new List<ComboItemVO>();
+            ChartCommonData result = new ChartCommonData();
 
             // 설비그룹, 설비ID, 제품ID 가져오기 (equipment)
-            string sql = @"
+            string sqlGetTime = $"select min(START_TIME) Start_Date, max(END_TIME) End_Date from EQP_PLAN";
+
+            string sqlCboList = @"
 select distinct EQP_ID Code, EQP_ID CodeName, 'EQP_ID' Category 
 from EQP_PLAN
 union
@@ -101,16 +103,31 @@ from EQP_PLAN
 union
 select distinct ep.STEP_ID Code, eg.EQP_GROUP CodeName,'EQP_GROUP' Category 
 from EQP_PLAN ep join vw_EQP_GROUP eg on ep.STEP_ID = eg.STD_STEP_ID
+order by 2
 ";
 
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlCommand cmd = new SqlCommand())
             {
+                cmd.Connection = conn;
+
+                cmd.CommandText = sqlGetTime;
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    return data = Helper.DataReaderMapToList<ComboItemVO>(reader);
+                    if (reader.Read()) 
+                    {
+                        result.Start_Date = Convert.ToDateTime(reader["Start_Date"]);
+                        result.End_Date = Convert.ToDateTime(reader["End_Date"]);
+                    } 
+                }
+
+                cmd.CommandText = sqlCboList;
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    result.ComboItemList = Helper.DataReaderMapToList<ComboItemVO>(reader);
                 }
             }
 
+            return result;
         }
 
         private int GetColorIdx(string step_id, string machine_state)

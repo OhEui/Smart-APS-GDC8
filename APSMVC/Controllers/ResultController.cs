@@ -16,16 +16,21 @@ namespace APSMVC.Controllers
      */
     public partial class ResultController : Controller
     {
-        public async Task<ActionResult> EQPGantt(string[] EQP_GROUP=null, string[] EQP_ID=null, string[] PRODUCT_ID=null)
+        public async Task<ActionResult> EQPGantt(string[] EQP_GROUP=null, string[] EQP_ID=null, string[] PRODUCT_ID=null,
+            DateTime? Start_Date = null, DateTime? End_Date = null)
         {
             ServiceHelp srv = new ServiceHelp(true);
 
-            List<ComboItemVO> comboItem = await srv.GetListAsync<List<ComboItemVO>>($"api/Result/EQPGantt/Common", null); // 설비그룹, 설비ID, 제품ID 가져오기
+            ChartCommonData commonData = await srv.GetListAsync<ChartCommonData>($"api/Result/EQPGantt/Common", null); // 설비그룹, 설비ID, 제품ID 가져오기
+            List<ComboItemVO> comboItem = commonData.ComboItemList;
+
             string result = await srv.PostJsonStringAsync($"api/Result/EQPGantt/Data", new ReqEQPGantt() 
             {
                 EQP_GROUP = EQP_GROUP,
                 EQP_ID = EQP_ID,
-                PRODUCT_ID = PRODUCT_ID
+                PRODUCT_ID = PRODUCT_ID,
+                Start_Date = Start_Date ?? commonData.Start_Date,
+                End_Date = End_Date ?? commonData.End_Date
             });  // 차트 데이터 가져오기
 
             var eqpIDList= comboItem.Where((i) => i.Category == "EQP_ID").ToList();
@@ -49,9 +54,12 @@ namespace APSMVC.Controllers
 
                 ChartDataJson = result,
                 DropDownAttributes = new Dictionary<string, object>() {
-                    { "class","condition" }, { "style", "width:100%;" }, 
-                    { "multiple", "multiple" } , {"data-close-on-select" ,"false"} 
-                }
+                    { "class", "condition" }, { "style", "width:100%;" },
+                    { "multiple", "multiple" }, { "data-close-on-select", "false" }
+                },
+
+                Start_Date = Start_Date ?? commonData.Start_Date,
+                End_Date = End_Date ?? commonData.End_Date
             };
             return View(model);
         }
