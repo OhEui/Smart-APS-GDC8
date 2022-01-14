@@ -61,7 +61,7 @@ namespace APSWinForm
             this.WindowState = FormWindowState.Maximized;
             tabControl1.Visible = true;
             lblName.Text = "";
-            Login();
+            //Login();
            
         }
 
