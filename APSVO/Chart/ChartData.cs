@@ -6,14 +6,6 @@ using System.Threading.Tasks;
 
 namespace APSVO
 {
-    /*
-select EQP_ID 'category', CONVERT(NCHAR(19),START_TIME,20) 'fromDate', CONVERT(NCHAR(19),END_TIME,20) 'toDate',
-case MACHINE_STATE when 'SETUP' 
-	then MACHINE_STATE
-	else LOT_ID 
-end 'task' 
-from EQP_PLAN
-     */
     public class ChartData
     {
     
@@ -23,5 +15,11 @@ from EQP_PLAN
         public string task { get; set; } // bar위에 표시될 텍스트
         public int colorIdx { get; set; } = 0; // amchart colorset에서 color 가져올 때 사용하는 index값
         public double brighten { get; set; } = 0.4; // 0~1 사이의 값만 넣어야 함
+    }
+    public class ChartCommonData 
+    {
+        public List<ComboItemVO> ComboItemList { get; set; }
+        public DateTime Start_Date { get; set; }
+        public DateTime End_Date { get; set; }
     }
 }
