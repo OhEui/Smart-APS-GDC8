@@ -96,6 +96,12 @@ namespace APSWinForm
             frm.ShowDialog();
         }
 
-      
+        private void txtPW_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                button1_Click(null, new EventArgs());
+            }
+        }
     }
 }

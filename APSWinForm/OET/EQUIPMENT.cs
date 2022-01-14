@@ -64,11 +64,11 @@ namespace APSWinForm
         private void DataLoad()
         {
             DataGridViewUtil.SetInitGridView(dgvEQP);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "설비ID", "EQP_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정모델명", "EQP_MODEL", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "사이트ID", "SITE_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "라인ID", "LINE_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "설비처리그룹", "EQP_GROUP", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.EQP_ID, "EQP_ID", colWidth: 200, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.EQP_MODEL, "EQP_MODEL", colWidth: 200, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.STEP_ID, "SITE_ID", colWidth: 200, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.LINE_ID, "LINE_ID", colWidth: 200, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.EQP_GROUP, "EQP_GROUP", colWidth: 200,align : DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "수정자", "user_id", colWidth: 100,visibility:false);
             dgvLoad();
             
@@ -117,22 +117,30 @@ namespace APSWinForm
             temp = e;
         }
 
-        private void btn_Delete_Click(object sender, EventArgs e)
+        private async void btn_Delete_Click(object sender, EventArgs e)
         {
 
-            //if (temp != null)
-            //{
-            //    if (MessageBox.Show("정말 삭제하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //    {
+            if (temp != null)
+            {
+                string cur = (Convert.ToString(dgvEQP.Rows[temp.RowIndex].Cells[0].Value));
 
-            //        DeleteEquip(Convert.ToString(dgvEQP.Rows[temp.RowIndex].Cells[0].Value));
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("삭제할 설비를 선택해주세요");
-            //}
-            //dgvLoad();
+                if (MessageBox.Show($"{cur}항목을 삭제 하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+
+                    WebMessage msg = await srv.GetAsync($"api/EQUIPMENT/DelEQP/{cur}");
+
+                    if (msg.IsSuccess)
+                    {
+                        dgvLoad();
+                    }
+                    MessageBox.Show(msg.ResultMessage);
+                }
+            }
+            else
+            {
+                MessageBox.Show("삭제할 설비를 선택해주세요");
+            }
+
         }
 
         private void btn_modify_Click(object sender, EventArgs e)

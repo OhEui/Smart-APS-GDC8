@@ -42,5 +42,29 @@ namespace APSServer.Controllers
             }
             return Ok(msg);
         }
+
+        //Post:     https://localhost:44309/api/SETUP_TIME/DelSetup/SetupID
+        [HttpGet]
+        [Route("DelSetup")]
+        public IHttpActionResult deleteSetup(string SITE_ID, string LINE_ID, string EQP_GROUP, string STEP_ID)
+        {
+            
+            WebMessage msg = new WebMessage();
+
+            SETUPDAC db = new SETUPDAC();
+            bool result = db.deleteSetup(new SetupVO { SITE_ID = SITE_ID, LINE_ID = LINE_ID, EQP_GROUP = EQP_GROUP, STEP_ID = STEP_ID });
+           
+            if (result)
+            {
+                msg.IsSuccess = true;
+                msg.ResultMessage = "성공적으로 삭제되었습니다.";
+            }
+            else
+            {
+                msg.IsSuccess = false;
+                msg.ResultMessage = "삭제 중 오류가 발생했습니다.";
+            }
+            return Ok(msg);
+        }
     }
 }

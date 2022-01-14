@@ -70,12 +70,12 @@ namespace APSWinForm
         private void DataLoad()
         {
             DataGridViewUtil.SetInitGridView(dgvEQP);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "품목ID", "PRODUCT_ID",colWidth: 130);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "프로세스ID", "PROCESS_ID", colWidth: 130);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정ID", "STEP_ID", colWidth: 90);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "설비ID", "EQP_ID", colWidth: 90);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "공정소요시간", "TACT_TIME", colWidth: 130);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, "프로세스처리시간", "PROC_TIME", colWidth: 130);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.PRODUCT_ID, "PRODUCT_ID",colWidth: 250, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.PROCESS_ID, "PROCESS_ID", colWidth: 300, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.STEP_ID, "STEP_ID", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.EQP_ID, "EQP_ID", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.TACT_TIME, "TACT_TIME", colWidth: 150,align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.PROC_TIME, "PROC_TIME", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "수정자", "user_id", colWidth: 130,visibility:false);
 
             dgvLoad();
@@ -168,6 +168,38 @@ namespace APSWinForm
             }
         }
 
-       
+        private async void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (temp != null)
+            {
+                string curProduct = (Convert.ToString(dgvEQP.Rows[temp.RowIndex].Cells[0].Value));
+                string curProcess = (Convert.ToString(dgvEQP.Rows[temp.RowIndex].Cells[1].Value));
+                string curStep = (Convert.ToString(dgvEQP.Rows[temp.RowIndex].Cells[2].Value));
+                string curEQP = (Convert.ToString(dgvEQP.Rows[temp.RowIndex].Cells[3].Value));
+
+                EqpArrangeVO curEQPARR = ARRList.Find(p => p.PRODUCT_ID == curProduct && p.PROCESS_ID == curProcess && p.STEP_ID == curStep && p.EQP_ID == curEQP);
+
+                if (MessageBox.Show($"{curProduct}/ {curStep} / {curEQP}항목을 삭제 하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string DeleteStr = $"api/EQUIPMENT/DelEQPARR?PRODUCT_ID={curProduct}&PROCESS_ID={curProcess}&STEP_ID={curStep}&EQP_ID={curEQP}";
+                    //WebMessage msg = await srv.GetAsync($"api/EQUIPMENT/DelEQPARR/{EQPARRID}}");
+                    WebMessage msg = await srv.GetAsync(DeleteStr);
+
+                    if (msg.IsSuccess)
+                    {
+                        dgvLoad();
+                    }
+                    MessageBox.Show(msg.ResultMessage);
+                }
+            }
+            else
+            {
+                MessageBox.Show("삭제할 설비를 선택해주세요");
+            }
+        }
+
+        
+      
+        
     }
 }

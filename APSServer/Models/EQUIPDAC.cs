@@ -151,21 +151,22 @@ namespace APSServer.Models
         //}
 
 
-        public bool DeleteEquip(string id)
+        public bool deleteEQP(string EQPID)
         {
-
-            string sql = @"delete EQUIPMENT where EQP_ID=@EQP_ID";
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            //삭제
+            using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.Parameters.AddWithValue("@EQP_ID", id);
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "delete from EQUIPMENT where EQP_ID=@EQP_ID ";
+
+                cmd.Parameters.AddWithValue("@EQP_ID", EQPID);
 
                 cmd.Connection.Open();
-                int iRowAffect = cmd.ExecuteNonQuery();
+                int result = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
-                return (iRowAffect > 0);
+
+                return result > 0;
             }
-
-
         }
         //-------------------------------------------------------------------------------------------//
 
@@ -219,5 +220,26 @@ namespace APSServer.Models
 
         //}
 
+
+        public bool deleteEQPARR(EqpArrangeVO EQPARR)
+        {
+            //삭제
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = @"delete from EQP_ARRANGE where PRODUCT_ID=@PRODUCT_ID and PROCESS_ID=@PROCESS_ID and STEP_ID=@STEP_ID and EQP_ID=@EQP_ID ";
+
+                cmd.Parameters.AddWithValue("@PRODUCT_ID", EQPARR.PRODUCT_ID);
+                cmd.Parameters.AddWithValue("@PROCESS_ID", EQPARR.PROCESS_ID);
+                cmd.Parameters.AddWithValue("@STEP_ID", EQPARR.STEP_ID);
+                cmd.Parameters.AddWithValue("@EQP_ID", EQPARR.EQP_ID);
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
+                return result > 0;
+            }
+        }
     }   
 }

@@ -89,12 +89,6 @@
     <Compile Include="Controls\PeriodUserControl.designer.cs">
       <DependentUpon>PeriodUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenuAuth.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMenuAuth.Designer.cs">
-      <DependentUpon>frmMenuAuth.cs</DependentUpon>
-    </Compile>
     <Compile Include="HSY\DEMANDpop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,12 +163,6 @@
     </Compile>
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm1.Designer.cs">
-      <DependentUpon>MainForm1.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm2.cs">
       <SubType>Form</SubType>
@@ -297,9 +285,6 @@
     <EmbeddedResource Include="Controls\PeriodUserControl.resx">
       <DependentUpon>PeriodUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuAuth.resx">
-      <DependentUpon>frmMenuAuth.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HSY\DEMANDpop.resx">
       <DependentUpon>DEMANDpop.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,9 +314,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\NumTextBox.resx">
       <DependentUpon>NumTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm1.resx">
-      <DependentUpon>MainForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm2.resx">
       <DependentUpon>MainForm2.cs</DependentUpon>
