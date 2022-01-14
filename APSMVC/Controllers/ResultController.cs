@@ -67,9 +67,36 @@ namespace APSMVC.Controllers
         }
 
 
-        public ActionResult Utilization()
+        public async Task<ActionResult> Utilization(string MACHINE_STATE = "BUSY", string VERSION_NO = null)
         {
-            return View();
+            ServiceHelp srv = new ServiceHelp(true);
+
+            ChartCommonData commonData = await srv.GetListAsync<ChartCommonData>($"api/Result/Utilization/Common", null); // 설비그룹, 설비ID, 제품ID 가져오기
+            List<ComboItemVO> comboItem = commonData.ComboItemList;
+
+            var result = 
+                await srv.PostAsyncList<ReqUtilizationData, ResUtilizationData> ($"api/Result/Utilization/Data", new ReqUtilizationData()
+            {
+                MachineState = MACHINE_STATE,
+                VersionNo = VERSION_NO
+            });  // 차트 데이터 가져오기
+
+            var chartData = result;
+            var mslist = comboItem.Where((i) => i.Category == "MACHINE_STATE").ToList();
+            var vnlist = comboItem.Where((i) => i.Category == "VERSION_NO").ToList();
+
+            // 차트 데이터 그룹화 (EQP_GROUP)
+            var dictionary = 
+                chartData.GroupBy((i) => i.EQP_GROUP).ToDictionary(g => g.Key, g => g.ToList());
+            
+            UtilizationModel model = new UtilizationModel() {
+                ChartDictionary = dictionary,
+                CurrentMachineState = MACHINE_STATE,
+                MachineStateList = new SelectList(mslist, "Code", "CodeName"),
+                VersionNoList = new SelectList(vnlist, "Code", "CodeName")
+            };
+            ViewBag.Enumerator = model.ChartDictionary.GetEnumerator();
+            return View(model);
         }
     }
 

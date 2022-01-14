@@ -10,7 +10,7 @@ using System.Web.Configuration;
 
 namespace APSServer.Models
 {
-    public class ResultDAC : IDisposable
+    public partial class ResultDAC : IDisposable
     {
         SqlConnection conn = null;
 
