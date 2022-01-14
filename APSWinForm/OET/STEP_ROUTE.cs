@@ -20,10 +20,10 @@ namespace APSWinForm
 		public STEP_ROUTE()
 		{
 			InitializeComponent();
-			if (UserInfoStorage.Current.Auth_ID == 3)
-			{
-				pictureBox4.Visible = pictureBox5.Visible = pictureBox6.Visible = false;
-			}
+			//if (UserInfoStorage.Current.Auth_ID == 3)
+			//{
+			//	pictureBox4.Visible = pictureBox5.Visible = pictureBox6.Visible = false;
+			//}
 		}
 
 		private void STEP_ROUTE_Load(object sender, EventArgs e)
