@@ -229,6 +229,25 @@ namespace APSUtil.Http
             }
         }
 
+        public async Task<List<TResponse>> PostAsyncList<TRequest, TResponse>(string path, TRequest value) where TResponse : class
+        {
+            path = BaseServiceUrl + path;
+
+            List<TResponse> result = null;
+            try
+            {
+                using (HttpResponseMessage response = await client.PostAsJsonAsync(path, value))
+                {
+                    result = JsonConvert.DeserializeObject<List<TResponse>>(await response.Content.ReadAsStringAsync());
+                }
+                return result;
+            }
+            catch
+            {
+                return result;
+            }
+        }
+
         public async Task<WebMessage> PostAsyncNone<T>(string path, T value)
         {
             path = BaseServiceUrl + path;

@@ -155,6 +155,7 @@
     <Compile Include="Controllers\EQUIPMENTController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\Result2Controller.cs" />
     <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="Controllers\SetUpController.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Models\LOTDAC.cs" />
     <Compile Include="Models\MenuDAC.cs" />
     <Compile Include="Models\ProductDAC.cs" />
+    <Compile Include="Models\Result2DAC.cs" />
     <Compile Include="Models\ResultDAC.cs" />
     <Compile Include="Models\SampleDAC.cs" />
     <Compile Include="Models\SETUPDAC.cs" />

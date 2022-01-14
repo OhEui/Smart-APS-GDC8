@@ -12,7 +12,7 @@ using System.Web.Http;
 namespace APSServer.Controllers
 {
     [RoutePrefix("api/Result")]
-    public class ResultController : ApiController
+    public partial class ResultController : ApiController
     {
         // https://localhost:44309/api/Result/EQPGantt
         [HttpPost]

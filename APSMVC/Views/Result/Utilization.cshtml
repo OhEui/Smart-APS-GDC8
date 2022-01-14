@@ -1,7 +1,17 @@
-﻿
+﻿@model APSMVC.Models.UtilizationModel
 @{
     ViewBag.Title = "Utilization";
     Layout = "~/Views/_Layout.cshtml";
+}
+@section Style
+{
+    <style>
+        .select2-selection--multiple {
+            height: 38px;
+            overflow-y: auto;
+            font-size: 4px;
+        }
+    </style>
 }
 
 <!-- Main content -->
@@ -14,36 +24,19 @@
                     <div class="row">
                         <div class="col-2">
                             <div class="form-group">
-                                <label>Condition</label>
-                                <div class="input-group input-group-lg">
-                                    <input type="search" class="form-control form-control-lg" style="height: 38px;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="form-group">
-                                <label>Condition</label>
+                                <label>버전번호</label>
                                 <select class="select2" style="width: 100%;">
-                                    <option selected>codi</option>
-                                    <option>DESC</option>
+                                    <option selected>TSK-20191107-112038</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="form-group">
-                                <label>Condition</label>
+                                <label>설비상태</label>
                                 <select class="select2" style="width: 100%;">
-                                    <option selected>codi</option>
-                                    <option>Date</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="form-group">
-                                <label>Condition</label>
-                                <select class="select2" style="width: 100%;">
-                                    <option selected>codi</option>
-                                    <option>Date</option>
+                                    <option selected>BUSY</option>
+                                    <option>SETUP</option>
+                                    <option>IDLE</option>
                                 </select>
                             </div>
                         </div>
@@ -62,9 +55,8 @@
         </div>
 
         <div class="card">
-
             <!-- /.card-header -->
-            <div class="card-body table-responsive p-0">
+            <div class="card-body table-responsive p-0 testClass">
                 <table class="table table-hover text-nowrap">
                     <thead>
                         <tr>
@@ -73,7 +65,6 @@
                             <th>20211202</th>
                             <th>20211203</th>
                             <th>20211204</th>
-
                             <th>20211205</th>
                             <th>20211206</th>
                             <th>20211207</th>
@@ -131,47 +122,53 @@
 @section Scripts
 {
     <script>
+
+
         $(function () {
-            $('.select2').select2()
+
             /**
              * ---------------------------------------
              * This demo was created using amCharts 5.
-             * 
+             *
              * For more information visit:
              * https://www.amcharts.com/
-             * 
+             *
              * Documentation is available at:
              * https://www.amcharts.com/docs/v5/
              * ---------------------------------------
              */
 
-            // Create root element
-            // https://www.amcharts.com/docs/v5/getting-started/#Root_element 
-            var root = am5.Root.new("chartdiv");
+            function hoverCallBack(e) {
+                var itemContainer = e.target;
 
+                // As series list is data of a legend, dataContext is series
+                var series = itemContainer.dataItem.dataContext;
 
-            // Set themes
-            // https://www.amcharts.com/docs/v5/concepts/themes/ 
-            root.setThemes([
-                am5themes_Animated.new(root)
-            ]);
+                chart.series.each(function (chartSeries) {
+                    if (chartSeries != series) {
+                        chartSeries.strokes.template.setAll({
+                            strokeOpacity: 0.15,
+                            stroke: am5.color(0x000000)
+                        });
+                    } else {
+                        chartSeries.strokes.template.setAll({
+                            strokeWidth: 3
+                        });
+                    }
+                })
+            }
+            function unhoverCallBack(e) {
+                var itemContainer = e.target;
+                var series = itemContainer.dataItem.dataContext;
 
-
-            // Create chart
-            // https://www.amcharts.com/docs/v5/charts/xy-chart/
-            var chart = root.container.children.push(am5xy.XYChart.new(root, {
-                panX: true,
-                panY: true,
-                wheelX: "panX",
-                wheelY: "zoomX",
-                maxTooltipDistance: 0
-            }));
-
-
-            var date = new Date();
-            date.setHours(0, 0, 0, 0);
-            var value = 100;
-
+                chart.series.each(function (chartSeries) {
+                    chartSeries.strokes.template.setAll({
+                        strokeOpacity: 1,
+                        strokeWidth: 1,
+                        stroke: chartSeries.get("fill")
+                    });
+                });
+            }
             function generateData() {
                 value = Math.round((Math.random() * 10 - 4.2) + value);
                 am5.time.add(date, "day", 1);
@@ -188,6 +185,35 @@
                 }
                 return data;
             }
+
+            $('.select2').select2()
+
+            //$('.testClass').hover(hoverCallBack, unhoverCallBack);
+
+            // Create root element
+            // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+            var root = am5.Root.new("chartdiv");
+
+
+            // Set themes
+            // https://www.amcharts.com/docs/v5/concepts/themes/
+            root.setThemes([
+                am5themes_Animated.new(root)
+            ]);
+
+            // Create chart
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/
+            var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                panX: true,
+                panY: true,
+                wheelX: "panX",
+                wheelY: "zoomX",
+                maxTooltipDistance: 0
+            }));
+
+            var date = new Date();
+            date.setHours(0, 0, 0, 0);
+            var value = 100;
 
 
             // Create axes
@@ -209,13 +235,22 @@
 
             // Add series
             // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-            for (var i = 0; i < 10; i++) {
+
+            @foreach (var item in Model.ChartDictionary)
+            {
+                string name = item.Key;
+
+                var data = item.Value.Select((i)=> new { rate = i.RATE, target_date = i.TARGET_DATE });
+            }
+
+            for (var i = 0; i < 3; i++) {
+
                 var series = chart.series.push(am5xy.LineSeries.new(root, {
-                    name: "Series " + i,
+                    name: 'test',
                     xAxis: xAxis,
                     yAxis: yAxis,
-                    valueYField: "value",
-                    valueXField: "date",
+                    valueYField: "rate",
+                    valueXField: "target_date",
                     legendValueText: "{valueY}",
                     tooltip: am5.Tooltip.new(root, {
                         pointerOrientation: "horizontal",
@@ -223,11 +258,7 @@
                     })
                 }));
 
-                date = new Date();
-                date.setHours(0, 0, 0, 0);
-                value = 0;
-
-                var data = generateDatas(100);
+                var data = {};
                 series.data.setAll(data);
 
                 // Make stuff animate on load
@@ -263,40 +294,13 @@
                 height: am5.percent(100)
             }));
 
+
+
             // When legend item container is hovered, dim all the series except the hovered one
-            legend.itemContainers.template.events.on("pointerover", function (e) {
-                var itemContainer = e.target;
-
-                // As series list is data of a legend, dataContext is series
-                var series = itemContainer.dataItem.dataContext;
-
-                chart.series.each(function (chartSeries) {
-                    if (chartSeries != series) {
-                        chartSeries.strokes.template.setAll({
-                            strokeOpacity: 0.15,
-                            stroke: am5.color(0x000000)
-                        });
-                    } else {
-                        chartSeries.strokes.template.setAll({
-                            strokeWidth: 3
-                        });
-                    }
-                })
-            })
+            legend.itemContainers.template.events.on("pointerover", hoverCallBack)
 
             // When legend item container is unhovered, make all series as they are
-            legend.itemContainers.template.events.on("pointerout", function (e) {
-                var itemContainer = e.target;
-                var series = itemContainer.dataItem.dataContext;
-
-                chart.series.each(function (chartSeries) {
-                    chartSeries.strokes.template.setAll({
-                        strokeOpacity: 1,
-                        strokeWidth: 1,
-                        stroke: chartSeries.get("fill")
-                    });
-                });
-            })
+            legend.itemContainers.template.events.on("pointerout", unhoverCallBack)
 
             legend.itemContainers.template.set("width", am5.p100);
             legend.valueLabels.template.setAll({
