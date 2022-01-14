@@ -64,7 +64,7 @@ from EQP_PLAN where 1=1");
                     cmd.Parameters.AddWithValue("@START", start);
                     cmd.Parameters.AddWithValue("@END", end);
                 }
-                
+
                 cmd.CommandText = sb.ToString();
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -116,7 +116,7 @@ from EQP_PLAN ep join vw_EQP_GROUP eg on ep.STEP_ID = eg.STD_STEP_ID
         private int GetColorIdx(string step_id, string machine_state)
         {
             if (machine_state == "SETUP") return 5;
-            switch (step_id) 
+            switch (step_id)
             {
                 case "PROC_Tumbler_KANU": return 1;
                 case "PROC_Tumbler_STARBUCKS": return 2;

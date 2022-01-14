@@ -1,8 +1,18 @@
 ﻿@model APSMVC.Models.EQPGanttModel
 @{
-    
+
     ViewBag.Title = "EQP Gantt";
     Layout = "~/Views/_Layout.cshtml";
+}
+@section Style
+{
+    <style>
+        .select2-selection--multiple {
+            height: 38px;
+            overflow-y: auto;
+            font-size: 4px;
+        }
+    </style>
 }
 
 <!-- Main content -->
@@ -57,7 +67,7 @@
 
             </div>
         </div>
-        
+
         <div class="card">
             <div class="card-body">
                 <div id="chartdiv"></div>
@@ -72,9 +82,9 @@
     <script>
         $(function () {
             $(".condition").select2();
-            
 
-            
+
+
             //Date picker
             $('#reservation').daterangepicker();
             /**
