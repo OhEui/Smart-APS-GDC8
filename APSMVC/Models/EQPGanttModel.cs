@@ -18,6 +18,8 @@ namespace APSMVC.Models
 
         public DateTime Start_Date { get; set; }
         public DateTime End_Date { get; set; }
+        public DateTime Min_Date { get; set; }
+        public DateTime Max_Date { get; set; }
     }
     public class CategoryElement
     {

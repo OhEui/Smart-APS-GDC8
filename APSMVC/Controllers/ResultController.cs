@@ -59,7 +59,9 @@ namespace APSMVC.Controllers
                 },
 
                 Start_Date = Start_Date ?? commonData.Start_Date,
-                End_Date = End_Date ?? commonData.End_Date
+                End_Date = End_Date ?? commonData.End_Date,
+                Min_Date = commonData.Start_Date,
+                Max_Date = commonData.End_Date
             };
             return View(model);
         }
