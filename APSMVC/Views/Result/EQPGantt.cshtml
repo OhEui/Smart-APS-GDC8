@@ -1,70 +1,63 @@
 ﻿@model APSMVC.Models.EQPGanttModel
 @{
-
+    
     ViewBag.Title = "EQP Gantt";
     Layout = "~/Views/_Layout.cshtml";
 }
 
-@section Style
-{
-<style>
-    .select2-selection--multiple {
-        height: 38px;
-        overflow-y: auto;
-        font-size: 4px;
-    }
-</style>
-}
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
 
-                @using (Html.BeginForm("EQPGantt", "Result", FormMethod.Get, new { @class = "submitTest" }))
-                {
-                    <div class="row">
-                        <div class="col-2">
-                            <div class="form-group">
-                                <label>설비그룹</label>
-                                @Html.DropDownList("EQP_GROUP", Model.EqpGroupList, null, Model.DropDownAttributes)
-                            </div>
+                @using (Html.BeginForm("EQPGantt", "Result", FormMethod.Get, new { @class = "submitTest"})) {
+                <div class="row">
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>설비그룹</label>
+                            @Html.DropDownList("EQP_GROUP", Model.EqpGroupList, null, Model.DropDownAttributes)
                         </div>
-                        <div class="col-2">
-                            <div class="form-group">
-                                <label>설비ID</label>
-                                @Html.DropDownList("EQP_ID", Model.EqpIDList, null, Model.DropDownAttributes)
-                            </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>설비ID</label>
+                            @Html.DropDownList("EQP_ID", Model.EqpIDList, null, Model.DropDownAttributes)
                         </div>
-                        <div class="col-2">
-                            <div class="form-group">
-                                <label>제품ID</label>
-                                @Html.DropDownList("PRODUCT_ID", Model.ProductIDList, null, Model.DropDownAttributes)
-                            </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>제품ID</label>
+                            @Html.DropDownList("PRODUCT_ID", Model.ProductIDList, null, Model.DropDownAttributes)
                         </div>
-                        <div class="col-2">
-                            <div class="form-group">
-                                <label>기간</label>
-                                <select class="condition" style="width: 100%;">
-                                    <option selected>codi</option>
-                                    <option>Date</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-14 align-self-end">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-lg btn-default"
-                                        style="width: 38px; height: 38px; padding-left: 9px; padding-top: 6px; margin-left: 6px">
-                                    <i class="fa fa-search"></i>
-                                </button>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>기간</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control float-right" id="reservation">
                             </div>
                         </div>
                     </div>
+                    <div class="col-14 align-self-end">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-lg btn-default"
+                                    style="width: 38px; height: 38px; padding-left: 9px; padding-top: 6px; margin-left: 6px">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 }
 
             </div>
         </div>
-
+        
         <div class="card">
             <div class="card-body">
                 <div id="chartdiv"></div>
@@ -78,11 +71,12 @@
 {
     <script>
         $(function () {
-            $(".condition").select2({});
+            $(".condition").select2();
+            
 
-
-
-
+            
+            //Date picker
+            $('#reservation').daterangepicker();
             /**
              * ---------------------------------------
              * This demo was created using amCharts 5.
