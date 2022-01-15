@@ -15,10 +15,7 @@ namespace APSWinForm
     public partial class Productpop : Form
     {
         ServiceHelp srv = new ServiceHelp();
-        // ProductVO Prdvo;
-        List<ProductVO> list;
-        ProductVO Pdvo;
-        List<ComboItemVO> ProductList = null;
+        List<ComboItemVO> list;
 
         public Productpop()
         {
@@ -26,8 +23,9 @@ namespace APSWinForm
         }
         public async void Combobinding()
         {
-            ProductList = await srv.GetListAsync("api/Common/CommonCodes", ProductList);
-            CommonUtil.ComboBinding(cboType, ProductList, "PRODUCT_TYPE", "PRODUCT_TYPE");
+            list = await srv.GetListAsync("api/Common/CommonCode", list);
+          
+            CommonUtil.ComboBinding(cboType, list, "PROCESS_ID");
         }
 
 
@@ -42,6 +40,7 @@ namespace APSWinForm
             txtSize.Text = prodInfo.LOT_SIZE.ToString();
 
             txtID.Enabled = false;
+
         }
         
 
@@ -57,7 +56,7 @@ namespace APSWinForm
                 LOT_SIZE = Convert.ToInt32(txtSize.Text)
             };
 
-            WebMessage msg = await srv.PostAsyncNone("api/Product/SaveProduct", productVO);
+            WebMessage msg = await srv.PostAsyncNone("api/Product/UdateProduct", productVO);
 
             if (msg.IsSuccess)
             {

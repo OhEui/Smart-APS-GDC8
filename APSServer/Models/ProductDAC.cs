@@ -29,27 +29,37 @@ namespace APSServer.Models
                 conn = null;
             }
         }
-
-        public bool SaveProduct(ProductVO product) // 저장, 수정
+        public bool SaveProduct(ProductVO product) // 저장
         {
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = "SP_SaveProduct";
-                cmd.CommandType = CommandType.StoredProcedure;
+            string sql = @"insert into PRODUCT (PRODUCT_ID, PRODUCT_TYPE, PRODUCT_NAME, PROCESS_ID, LOT_SIZE)
+			                    values (@PRODUCT_ID, @PRODUCT_TYPE, @PRODUCT_NAME, @PROCESS_ID, @LOT_SIZE)";
 
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
                 cmd.Parameters.AddWithValue("@PRODUCT_ID", product.PRODUCT_ID);
                 cmd.Parameters.AddWithValue("@PRODUCT_TYPE", product.PRODUCT_TYPE);
                 cmd.Parameters.AddWithValue("@PRODUCT_NAME", product.PRODUCT_NAME);
                 cmd.Parameters.AddWithValue("@PROCESS_ID ", product.PROCESS_ID);
                 cmd.Parameters.AddWithValue("@LOT_SIZE ", product.LOT_SIZE);
 
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
 
-                cmd.Connection.Open();
-                int iRwAffect = cmd.ExecuteNonQuery();
-                cmd.Connection.Close();
+        public bool UpdateProduct(ProductVO product) //수정
+        {
+            string sql = @"update PRODUCT set PRODUCT_ID = @PRODUCT_ID, PRODUCT_TYPE =@PRODUCT_TYPE, PRODUCT_NAME = @PRODUCT_NAME, PROCESS_ID = @PROCESS_ID, LOT_SIZE = @LOT_SIZE where PRODUCT_ID=@PRODUCT_ID ;";
 
-                return (iRwAffect > 0);
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@PRODUCT_ID", product.PRODUCT_ID);
+                cmd.Parameters.AddWithValue("@PRODUCT_TYPE", product.PRODUCT_TYPE);
+                cmd.Parameters.AddWithValue("@PRODUCT_NAME", product.PRODUCT_NAME);
+                cmd.Parameters.AddWithValue("@PROCESS_ID ", product.PROCESS_ID);
+                cmd.Parameters.AddWithValue("@LOT_SIZE ", product.LOT_SIZE);
+
+                return cmd.ExecuteNonQuery() > 0;
+
             }
         }
 

@@ -59,27 +59,5 @@ from LINE_INFO";
                 return list;
             }
         }
-
-        public List<ComboItemVO> GetComboItems()
-        {
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = @"select PRODUCT_ID as Code, PRODUCT_TYPE  as CodeName, 'PRODUCT_ID' as category
-from PRODUCT
-union 
-select DEMAND_ID as Code, CUSTOMER_ID  as CodeName, 'DEMAND_ID' as category
-from DEMAND
-union
-select DEMAND_ID as Code, PRODUCT_ID  as CodeName, 'DEMAND_ID' as category
-from DEMAND";
-
-                cmd.Connection.Open();
-                List<ComboItemVO> list = Helper.DataReaderMapToList<ComboItemVO>(cmd.ExecuteReader());
-                cmd.Connection.Close();
-
-                return list;
-            }
-        }
     }
 }

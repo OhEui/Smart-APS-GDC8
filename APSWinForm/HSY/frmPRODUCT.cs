@@ -29,7 +29,6 @@ namespace APSWinForm
             dgvPR.DataSource = list;
         }
 
-        private void DataLode() { }
         private void frmPRODUCT_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(dgvPR);
@@ -45,11 +44,7 @@ namespace APSWinForm
         //검색
         private void button7_Click(object sender, EventArgs e)
         {
-            MainForm frm = MdiParent as MainForm;
-            srv = new ServiceHelp();
-            DataLode();
-        
-            if (string.IsNullOrWhiteSpace(txtID.Text) && string.IsNullOrWhiteSpace(txtPID.Text))
+            if (string.IsNullOrWhiteSpace(txtID.Text) && string.IsNullOrWhiteSpace(txtID.Text) && string.IsNullOrWhiteSpace(txtPID.Text))
             {
                 MessageBox.Show("검색어를 입력해주세요.");
                 txtID.Focus();
@@ -58,7 +53,9 @@ namespace APSWinForm
 
             dgvPR.DataSource = null;
             dgvPR.DataSource = list.FindAll(p => p.PRODUCT_ID.Contains(txtID.Text.ToUpper()) && p.PROCESS_ID.Contains(txtPID.Text.ToUpper()));
-        }
+        
+         }
+
 
         //초기화
         private void button3_Click(object sender, EventArgs e)

@@ -12,11 +12,11 @@ namespace APSServer.Controllers
     [RoutePrefix("api/Demand")]
     public class DemandController : ApiController
     {
-        //POST : http://localhost:58802/api/Demand/SaveDemand
+        //POST : https://localhost:44309/api/Demand/SaveDemand
 
         [HttpPost]
         [Route("SaveDemand")]
-        public IHttpActionResult SaveProduct(DemandVO demand)
+        public IHttpActionResult SaveDemand(DemandVO demand)
         {
             WebMessage msg = new WebMessage();
 
@@ -35,7 +35,7 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-        //Post : http://localhost:58802/api/Demand/DemandUpdate
+        //Post : https://localhost:44309/api/Demand/DemandUpdate
         [HttpPost]
         [Route("DemandUpdate")]
         public IHttpActionResult UpdateDemand(DemandVO Demd)
@@ -57,7 +57,7 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-        //GET :  http://localhost:58802/api/Demand/AllList
+        //GET :  https://localhost:44309/api/Demand/AllList
         [HttpGet]
         [Route("AllList")]
         public List<DemandVO> GetAllDemand()
@@ -66,7 +66,7 @@ namespace APSServer.Controllers
             return db.GetAllDemand();
         }
 
-        //GET : http://localhost:58802/api/Demand/{id}
+        //GET : https://localhost:44309/api/Demand/{id}
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult GetDemandInfo(string id)
@@ -90,7 +90,7 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-        //GET : http://localhost:58802/api/Demand/Delete/{id}
+        //GET : https://localhost:44309/api/Demand/Delete/{id}
         [HttpGet]
         [Route("Delete/{id}")]
         public IHttpActionResult DeleteDemand(string id)

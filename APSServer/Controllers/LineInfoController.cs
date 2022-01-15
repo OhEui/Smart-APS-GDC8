@@ -7,22 +7,21 @@ using System.Web.Http;
 using APSVO;
 using APSServer.Models;
 
-
 namespace APSServer.Controllers
 {
-    [RoutePrefix("api/Product")]
-    public class ProductController : ApiController
+    [RoutePrefix("api/LineInfo")]
+    public class LineInfoController : ApiController
     {
-        //POST : https://localhost:44309/api/Product/SaveProduct
+        //POST : https://localhost:44309/api/LineInfo/SaveLineInfo
 
         [HttpPost]
-        [Route("SaveProduct")]
-        public IHttpActionResult SaveProduct(ProductVO product)
+        [Route("SaveLineInfo")]
+        public IHttpActionResult SaveLineInfo(Line_Info_VO line_Info)
         {
             WebMessage msg = new WebMessage();
 
-            ProductDAC db = new ProductDAC();
-            bool result = db.SaveProduct(product);
+            LineInfoDAC db = new LineInfoDAC();
+            bool result = db.SaveLineInfo(line_Info);
             if (result)
             {
                 msg.IsSuccess = true;
@@ -36,14 +35,14 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-        //Post : https://localhost:44309/api/Product/ProductUpdate
+        //Post : https://localhost:44309/api/LineInfo/LineInfoUpdate
         [HttpPost]
-        [Route("ProductUpdate")]
-        public IHttpActionResult UpdateProduct(ProductVO prod)
+        [Route("LineInfoUpdate")]
+        public IHttpActionResult UpdateLineInfo(Line_Info_VO Demd)
         {
             WebMessage msg = new WebMessage();
-            ProductDAC db = new ProductDAC();
-            bool result = db.UpdateProduct(prod);
+            LineInfoDAC db = new LineInfoDAC();
+            bool result = db.UpdateLineInfo(Demd);
 
             if (result)
             {
@@ -56,29 +55,26 @@ namespace APSServer.Controllers
                 msg.ResultMessage = "저장 중 오류가 발생했습니다.";
             }
             return Ok(msg);
-
         }
 
-        //GET :  https://localhost:44309/api/Product/Products
+        //GET :  https://localhost:44309/api/LineInfo/AllList
         [HttpGet]
-        [Route("Products")]
-        
-        //[Authorize]
-        public List<ProductVO> GetAllProduct()
+        [Route("AllList")]
+        public List<Line_Info_VO> GetAllLineInfo()
         {
-            ProductDAC db = new ProductDAC();
-            return db.GetAllProduct();
+            LineInfoDAC db = new LineInfoDAC();
+            return db.GetAllLineInfo();
         }
 
-        //GET : https://localhost:44309/api/Product/{id}
+        //GET : https://localhost:44309/api/LineInfo/{id}
         [HttpGet]
         [Route("{id}")]
-        public IHttpActionResult GetProductInfo(string id)
+        public IHttpActionResult GetLineInfo(string id)
         {
-            ProductDAC db = new ProductDAC();
-            ProductVO pr = db.GetDetail(id);
+            LineInfoDAC db = new LineInfoDAC();
+            Line_Info_VO pr = db.GetDetail(id);
 
-            Message<ProductVO> msg = new Message<ProductVO>();
+            Message<Line_Info_VO> msg = new Message<Line_Info_VO>();
             if (pr != null)
             {
                 msg.IsSuccess = true;
@@ -94,13 +90,13 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-        //GET : https://localhost:44309/api/Product/Delete/{id}
+        //GET : https://localhost:44309/api/LineInfo/Delete/{id}
         [HttpGet]
         [Route("Delete/{id}")]
-        public IHttpActionResult DeleteProduct(string id)
+        public IHttpActionResult DeleteLineInfo(string id)
         {
-            ProductDAC db = new ProductDAC();
-            bool result = db.DeleteProduct(id);
+            LineInfoDAC db = new LineInfoDAC();
+            bool result = db.DeleteLineInfo(id);
 
             WebMessage msg = new WebMessage();
             if (result)

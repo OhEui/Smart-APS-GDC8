@@ -152,6 +152,12 @@
     <Compile Include="HSY\frmPRODUCT.Designer.cs">
       <DependentUpon>frmPRODUCT.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSY\LineInfopop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSY\LineInfopop.Designer.cs">
+      <DependentUpon>LineInfopop.cs</DependentUpon>
+    </Compile>
     <Compile Include="HSY\Productpop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HSY\frmPRODUCT.resx">
       <DependentUpon>frmPRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSY\LineInfopop.resx">
+      <DependentUpon>LineInfopop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSY\Productpop.resx">
       <DependentUpon>Productpop.cs</DependentUpon>

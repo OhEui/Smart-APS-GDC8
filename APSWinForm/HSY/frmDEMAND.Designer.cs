@@ -352,7 +352,6 @@ namespace APSWinForm
             this.dgvDM.RowTemplate.Height = 23;
             this.dgvDM.Size = new System.Drawing.Size(711, 254);
             this.dgvDM.TabIndex = 53;
-            this.dgvDM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDM_CellClick);
             // 
             // frmDEMAND
             // 

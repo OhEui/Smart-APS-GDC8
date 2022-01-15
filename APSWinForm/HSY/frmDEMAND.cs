@@ -94,40 +94,25 @@ namespace APSWinForm
         }
 
         //삭제
-        private async void dgvDM_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-
-            string demdID = dgvDM[0, e.RowIndex].Value.ToString();
-            DemandVO user = null;
-            user = await srv.GetAsync($"api/Demand/{demdID}", user);
-            if (user != null)
-            {
-                lblUserID.Text = user.DEMAND_ID;
-            }
-        }
-        
         private async void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if (dgvDM.SelectedRows.Count < 1)
-            {
-                MessageBox.Show("삭제할 제품을 선택하여 주세요.");
-                return;
-            }
-
-            string DemdID = dgvDM.SelectedRows[0].Cells["DEMAND_ID"].Value.ToString();
-
-            if (MessageBox.Show("       정말 삭제하시겠습니까?", "수요정보삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                APSVO.WebMessage msg = await srv.GetAsync($"api/Demand/Delete/{DemdID}");
-                if (msg.IsSuccess)
+                if (dgvDM.SelectedRows.Count < 1)
                 {
-                    LoadData();
+                    MessageBox.Show("삭제할 제품을 선택하여 주세요.");
+                    return;
                 }
-                MessageBox.Show(msg.ResultMessage);
-            }
-        }
 
-        
+                string demdID = dgvDM.SelectedRows[0].Cells["DEMAND_ID"].Value.ToString();
+
+                if (MessageBox.Show("        정말 삭제하시겠습니까?", "제품삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    APSVO.WebMessage msg = await srv.GetAsync($"api/Demand/Delete/{demdID}");
+                    if (msg.IsSuccess)
+                    {
+                        LoadData();
+                    }
+                    MessageBox.Show(msg.ResultMessage);
+                }
+        }
     }
 }
