@@ -169,22 +169,6 @@
                     });
                 });
             }
-            function generateData() {
-                value = Math.round((Math.random() * 10 - 4.2) + value);
-                am5.time.add(date, "day", 1);
-                return {
-                    date: date.getTime(),
-                    value: value
-                };
-            }
-
-            function generateDatas(count) {
-                var data = [];
-                for (var i = 0; i < count; ++i) {
-                    data.push(generateData());
-                }
-                return data;
-            }
 
             $('.select2').select2()
 
@@ -193,7 +177,6 @@
             // Create root element
             // https://www.amcharts.com/docs/v5/getting-started/#Root_element
             var root = am5.Root.new("chartdiv");
-
 
             // Set themes
             // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -211,21 +194,16 @@
                 maxTooltipDistance: 0
             }));
 
-            var date = new Date();
-            date.setHours(0, 0, 0, 0);
-            var value = 100;
-
 
             // Create axes
             // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
             var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
                 maxDeviation: 0.2,
                 baseInterval: {
-                    timeUnit: "day",
-                    count: 1
+                    timeUnit: "day", count: 1
                 },
-                renderer: am5xy.AxisRendererX.new(root, {}),
-                tooltip: am5.Tooltip.new(root, {})
+                tooltip: am5.Tooltip.new(root, {}),
+                renderer: am5xy.AxisRendererX.new(root, {})
             }));
 
             var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
@@ -240,11 +218,39 @@
             {
                 string name = item.Key;
 
-                var data = item.Value.Select((i)=> new { rate = i.RATE, target_date = i.TARGET_DATE });
+                var data = item.Value.Select((i) => new { value = Math.Round(i.RATE,2), date = i.TARGET_DATE.ToString("yyyy-MM-dd") });
+
+                <text>
+                var series = chart.series.push(am5xy.LineSeries.new(root, {
+                    name: '@name',
+                    xAxis: xAxis,
+                    yAxis: yAxis,
+                    valueYField: "value",
+                    valueXField: "date",
+                    legendValueText: "{valueY}%",
+                    tooltip: am5.Tooltip.new(root, {
+                        pointerOrientation: "horizontal",
+                        labelText: "{valueY}%"
+                    })
+                }));
+
+                // https://www.amcharts.com/docs/v5/concepts/data/
+                series.data.processor = am5.DataProcessor.new(root, {
+                    numericFields: ["value"],
+                    dateFields: ["date"],
+                    dateFormat: "yyyy-MM-dd"
+                });
+
+                var data = @Html.Raw(Json.Encode(data));
+                series.data.setAll(data);
+                series.appear();
+
+                </text>
+
             }
 
+            /*
             for (var i = 0; i < 3; i++) {
-
                 var series = chart.series.push(am5xy.LineSeries.new(root, {
                     name: 'test',
                     xAxis: xAxis,
@@ -265,15 +271,15 @@
                 // https://www.amcharts.com/docs/v5/concepts/animations/
                 series.appear();
             }
-
-
+            */
+            
             // Add cursor
             // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
             var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
                 behavior: "none"
             }));
             cursor.lineY.set("visible", false);
-
+            
 
             // Add scrollbar
             // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
