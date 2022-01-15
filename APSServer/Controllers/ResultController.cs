@@ -67,10 +67,10 @@ namespace APSServer.Controllers
         //GET : https://localhost:44309/api/Result/getLOTCategory
         [HttpGet]
         [Route("getLOTCategory")]
-        public List<LOTGanttCategory> getLOTCategory()
+        public List<LOTGanttCategory> getLOTCategory(string productID, string lotID)
         {
             LOTDAC db = new LOTDAC();
-            return db.getLOTCategory();
+            return db.getLOTCategory(productID, lotID);
         }
 
         //GET : https://localhost:44309/api/Result/getComboList
