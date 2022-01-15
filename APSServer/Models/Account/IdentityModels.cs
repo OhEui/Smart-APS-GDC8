@@ -23,6 +23,8 @@ namespace APSServer.Models
         public int EmpNo { get; set; }
         public string Phone { get; set; }
         public DateTime Birthday { get; set; }
+        public int Auth_ID { get; set; }
+        
         #endregion
     }
 

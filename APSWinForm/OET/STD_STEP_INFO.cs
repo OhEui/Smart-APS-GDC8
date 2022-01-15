@@ -21,6 +21,10 @@ namespace APSWinForm
 		public STD_STEP_INFO()
 		{
 			InitializeComponent();
+			//if (UserInfoStorage.Current.Auth_ID == 3)
+			//{
+			//	pictureBox4.Visible = pictureBox5.Visible = pictureBox6.Visible = false;
+			//}
 		}
 
 		private void STD_STEP_INFO_Load(object sender, EventArgs e)

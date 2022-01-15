@@ -36,7 +36,7 @@ namespace APSServer.Controllers
         //Post : https://localhost:44309/api/Auth/AuthSave
         [HttpPost]
         [Route("AuthSave")]
-        public IHttpActionResult InsertEqp(UserVO vo)
+        public IHttpActionResult SaveAuth(UserVOs vo)
         {
             WebMessage msg = new WebMessage();
             AuthDAC db = new AuthDAC();

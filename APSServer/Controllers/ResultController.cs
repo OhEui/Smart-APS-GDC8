@@ -12,27 +12,24 @@ using System.Web.Http;
 namespace APSServer.Controllers
 {
     [RoutePrefix("api/Result")]
-    public class ResultController : ApiController
+    public partial class ResultController : ApiController
     {
         // https://localhost:44309/api/Result/EQPGantt
         [HttpPost]
         [Route("EQPGantt/Data")]
         public IHttpActionResult GetEQPGanttChartData(ReqEQPGantt req)
         {
-            // APIController에서 로그인한 유저의 ID를 얻는법
-            // 컨트롤러에 [Authorize]가 적용되어 있어야 함
-
+            // 차트 데이터 가져오기
             using (ResultDAC dac = new ResultDAC())
             {
-                var data = dac.GetEQPGanttData();
+                var data = dac.GetEQPGanttData(req);
                 if (data != null)
                 {
                     return Ok(data);
                 }
                 else
                 {
-                    //return Content(HttpStatusCode.NotFound, msg); // WebMessage를 사용하는 경우
-                    return NotFound(); // WebMessage를 사용하지 않는 경우
+                    return NotFound();
                 }
             }
         }
@@ -70,10 +67,10 @@ namespace APSServer.Controllers
         //GET : https://localhost:44309/api/Result/getLOTCategory
         [HttpGet]
         [Route("getLOTCategory")]
-        public List<LOTGanttCategory> getLOTCategory()
+        public List<LOTGanttCategory> getLOTCategory(string productID, string lotID)
         {
             LOTDAC db = new LOTDAC();
-            return db.getLOTCategory();
+            return db.getLOTCategory(productID, lotID);
         }
 
         //GET : https://localhost:44309/api/Result/getComboList

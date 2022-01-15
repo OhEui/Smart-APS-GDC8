@@ -144,8 +144,55 @@ namespace APSServer.Controllers
         //    return Ok(msg);
         //}
 
-       
+        //Post:     https://localhost:44309/api/EQUIPMENT/DelEQP/EQPID
+        [HttpGet]
+        [Route("DelEQP/{EQPID}")]
+        public IHttpActionResult deleteEQP(string EQPID)
+        {
+            WebMessage msg = new WebMessage();
 
+            EQUIPDAC db = new EQUIPDAC();
+            bool result = db.deleteEQP(EQPID);
+
+            if (result)
+            {
+                msg.IsSuccess = true;
+                msg.ResultMessage = "성공적으로 삭제되었습니다.";
+            }
+            else
+            {
+                msg.IsSuccess = false;
+                msg.ResultMessage = "삭제 중 오류가 발생했습니다.";
+            }
+            return Ok(msg);
+        }
+
+
+        //Post:     https://localhost:44309/api/EQUIPMENT/DelEQPARR/EQPARRID
+        [HttpGet]
+        [Route("DelEQPARR")]
+        public IHttpActionResult deleteEQPARR(string PRODUCT_ID, string PROCESS_ID, string STEP_ID, string EQP_ID)
+        {
+            WebMessage msg = new WebMessage();
+
+            EQUIPDAC db = new EQUIPDAC();
+            bool result = db.deleteEQPARR(new EqpArrangeVO { PRODUCT_ID= PRODUCT_ID, PROCESS_ID = PROCESS_ID, STEP_ID= STEP_ID,EQP_ID=EQP_ID });
+
+            if (result)
+            {
+                msg.IsSuccess = true;
+                msg.ResultMessage = "성공적으로 삭제되었습니다.";
+            }
+            else
+            {
+                msg.IsSuccess = false;
+                msg.ResultMessage = "삭제 중 오류가 발생했습니다.";
+            }
+            return Ok(msg);
+        }
+      
+
+        
 
     }
 

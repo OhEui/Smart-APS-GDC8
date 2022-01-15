@@ -28,6 +28,10 @@ namespace APSWinForm
         public SETUP_TIME()
         {
             InitializeComponent();
+            if (UserInfoStorage.Current.Auth_ID == 3)
+            {
+                btnAdd.Visible = btnModify.Visible = pictureBox6.Visible = false;
+            }
         }
 
         private void SETUP_TIME_Load(object sender, EventArgs e)
@@ -59,11 +63,11 @@ namespace APSWinForm
 
         private void DataLoad()
         {
-            DataGridViewUtil.AddGridTextColumn(dgvSetup, "사이트ID", "SITE_ID", colWidth: 70);
-            DataGridViewUtil.AddGridTextColumn(dgvSetup, "라인ID", "LINE_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvSetup, "설비처리그룹", "EQP_GROUP", colWidth: 110);
-            DataGridViewUtil.AddGridTextColumn(dgvSetup, "공정ID", "STEP_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvSetup, "소요시간", "TIME", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvSetup, Properties.Resources.SITE_ID, "SITE_ID", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvSetup, Properties.Resources.LINE_ID, "LINE_ID", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvSetup, Properties.Resources.EQP_GROUP, "EQP_GROUP", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvSetup, Properties.Resources.STEP_ID, "STEP_ID", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvSetup, Properties.Resources.TIME, "TIME", colWidth: 100, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvSetup, "수정자", "user_id", colWidth: 100, visibility:false);
             dgvLoad();
         }
@@ -135,6 +139,35 @@ namespace APSWinForm
             temp = e;
         }
 
-        
+        private async void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (temp != null)
+            {
+                string curSite = (Convert.ToString(dgvSetup.Rows[temp.RowIndex].Cells[0].Value));
+                string curLine = (Convert.ToString(dgvSetup.Rows[temp.RowIndex].Cells[1].Value));
+                string curEQPGroup = (Convert.ToString(dgvSetup.Rows[temp.RowIndex].Cells[2].Value));
+                string curStep = (Convert.ToString(dgvSetup.Rows[temp.RowIndex].Cells[3].Value));
+
+                SetupVO cursetup = SetupList.Find(p => p.SITE_ID == curSite && p.LINE_ID == curLine && p.EQP_GROUP == curEQPGroup && p.STEP_ID == curStep);
+
+
+                if (MessageBox.Show($"{curSite}/ {curLine} / {curEQPGroup} / {curStep} 항목을 삭제 하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string DeleteStr = $"api/SETUP_TIME/DelSetup?SITE_ID={curSite}&LINE_ID={curLine}&EQP_GROUP={curEQPGroup}&STEP_ID={curStep}";
+                    
+                    WebMessage msg = await srv.GetAsync(DeleteStr);
+
+                    if (msg.IsSuccess)
+                    {
+                        dgvLoad();
+                    }
+                    MessageBox.Show(msg.ResultMessage);
+                }
+            }
+            else
+            {
+                MessageBox.Show("삭제할 항목을 선택해주세요");
+            }
+        }
     }
 }

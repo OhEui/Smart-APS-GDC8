@@ -9,7 +9,7 @@ using APSVO;
 
 namespace APSServer.Models
 {
-    public class SETUPDAC:IDisposable
+    public class SETUPDAC : IDisposable
     {
         SqlConnection conn = null;
         string strConn = string.Empty;
@@ -60,11 +60,30 @@ namespace APSServer.Models
                 return (iRowAffect > 0);
             }
         }
-        
+
+        public bool deleteSetup(SetupVO Setup)
+        {
+            //삭제
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = @"delete from SETUP_TIME where SITE_ID=@SITE_ID and LINE_ID=@LINE_ID and EQP_GROUP=@EQP_GROUP and STEP_ID=@STEP_ID ";
+
+                cmd.Parameters.AddWithValue("@SITE_ID", Setup.SITE_ID);
+                cmd.Parameters.AddWithValue("@LINE_ID", Setup.LINE_ID);
+                cmd.Parameters.AddWithValue("@EQP_GROUP", Setup.EQP_GROUP);
+                cmd.Parameters.AddWithValue("@STEP_ID", Setup.STEP_ID);
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
+                return result > 0;
+            }
 
 
 
-        
-        
+
+        }
     }
 }

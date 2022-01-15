@@ -49,6 +49,7 @@
     <Compile Include="Chart\ChartData.cs" />
     <Compile Include="Chart\EQPGantt.cs" />
     <Compile Include="Chart\LOTGanttData.cs" />
+    <Compile Include="Chart\Utilization.cs" />
     <Compile Include="ComboItemVO.cs" />
     <Compile Include="CommonVO.cs" />
     <Compile Include="Line_Info_VO.cs" />

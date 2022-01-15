@@ -1,8 +1,18 @@
 ﻿@model APSMVC.Models.EQPGanttModel
 @{
-    
+
     ViewBag.Title = "EQP Gantt";
     Layout = "~/Views/_Layout.cshtml";
+}
+@section Style
+{
+    <style>
+        .select2-selection--multiple {
+            height: 38px;
+            overflow-y: auto;
+            font-size: 4px;
+        }
+    </style>
 }
 
 <!-- Main content -->
@@ -34,10 +44,16 @@
                     <div class="col-2">
                         <div class="form-group">
                             <label>기간</label>
-                            <select class="condition" style="width: 100%;">
-                                <option selected>codi</option>
-                                <option>Date</option>
-                            </select>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control float-right" id="reservation">
+                                @Html.Hidden("Start_Date", DateTime.Now, new { id = "Start_Date" })
+                                @Html.Hidden("End_Date", null, new { id = "End_Date" })
+                            </div>
                         </div>
                     </div>
                     <div class="col-14 align-self-end">
@@ -53,7 +69,7 @@
 
             </div>
         </div>
-        
+
         <div class="card">
             <div class="card-body">
                 <div id="chartdiv"></div>
@@ -66,12 +82,27 @@
 @section Scripts
 {
     <script>
+
+
         $(function () {
-            $(".condition").select2({});
+            $(".condition").select2();
 
+            //Date picker
+            $('#reservation').daterangepicker({
+                locale: {
+                    format: 'YYYY-MM-DD'
+                },
+                startDate: '@Model.Start_Date.ToString("yyyy-MM-dd")',
+                endDate: '@Model.End_Date.ToString("yyyy-MM-dd")',
 
-            
+                minDate: '@Model.Min_Date.ToString("yyyy-MM-dd")',
+                maxDate: '@Model.Max_Date.ToString("yyyy-MM-dd")',
+            });
 
+            $('.submitTest').submit(() => {
+                $('#Start_Date').val($('#reservation').data('daterangepicker').startDate.format('YYYY-MM-DD'));
+                $('#End_Date').val($('#reservation').data('daterangepicker').endDate.format('YYYY-MM-DD'));
+            });
             /**
              * ---------------------------------------
              * This demo was created using amCharts 5.

@@ -38,6 +38,8 @@ namespace APSWinForm
         public string Phone { get => _info.Phone; set => _info.Phone = value; }
         public DateTime Birthday { get => _info.Birthday; set => _info.Birthday = value; }
 
+        public int Auth_ID { get => _info.Auth_ID; set => _info.Auth_ID = value; }
+
 
 
         /// <summary>
