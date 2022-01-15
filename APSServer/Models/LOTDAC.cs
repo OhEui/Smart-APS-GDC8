@@ -13,6 +13,8 @@ namespace APSServer.Models
 	public class LOTDAC : IDisposable
     {
         SqlConnection conn = null;
+        List<Category> cate = null;
+        int i = 0;
 
         public LOTDAC()
         {
@@ -34,11 +36,12 @@ namespace APSServer.Models
         {
             List<LOTGanttData> lotList = new List<LOTGanttData>();
             List<ChartData> list = new List<ChartData>();
-            
-//            string sql = @"select s1.LOT_ID, s1.PRODUCT_ID, s1.START_TIME, s2.END_TIME 
-//from EQP_PLAN s1 inner join EQP_PLAN s2 on s1.LOT_ID=s2.LOT_ID
-//where s1.STEP_ID = 'PAINT' and s2.STEP_ID = 'FINISH' and s2.MACHINE_STATE='BUSY'
-//order by LOT_ID";
+            cate = new List<Category>();
+
+            //            string sql = @"select s1.LOT_ID, s1.PRODUCT_ID, s1.START_TIME, s2.END_TIME 
+            //from EQP_PLAN s1 inner join EQP_PLAN s2 on s1.LOT_ID=s2.LOT_ID
+            //where s1.STEP_ID = 'PAINT' and s2.STEP_ID = 'FINISH' and s2.MACHINE_STATE='BUSY'
+            //order by LOT_ID";
 
             using (SqlCommand cmd = new SqlCommand())
 			{
@@ -47,7 +50,7 @@ namespace APSServer.Models
                 StringBuilder sb = new StringBuilder();
                 sb.Append(@"select s1.LOT_ID, s1.PRODUCT_ID, s1.START_TIME, s2.END_TIME 
 from EQP_PLAN s1 inner join EQP_PLAN s2 on s1.LOT_ID=s2.LOT_ID
-where s1.STEP_ID = 'PAINT' and s2.STEP_ID = 'FINISH' and s2.MACHINE_STATE='BUSY' ");
+where s1.STEP_ID = 'PAINT' and s2.STEP_ID = 'FINISH' and s1.MACHINE_STATE='BUSY' and s2.MACHINE_STATE='BUSY' ");
 
                 if (!string.IsNullOrWhiteSpace(productID))
                 {
@@ -65,6 +68,7 @@ where s1.STEP_ID = 'PAINT' and s2.STEP_ID = 'FINISH' and s2.MACHINE_STATE='BUSY'
                 lotList = Helper.DataReaderMapToList<LOTGanttData>(cmd.ExecuteReader());
             }
 
+
             foreach (var item in lotList)
 			{
                 list.Add(new ChartData()
@@ -73,8 +77,8 @@ where s1.STEP_ID = 'PAINT' and s2.STEP_ID = 'FINISH' and s2.MACHINE_STATE='BUSY'
                     fromDate = item.START_TIME.ToString("yyyy-MM-dd HH:mm:ss"),
                     toDate = item.END_TIME.ToString("yyyy-MM-dd HH:mm:ss"),
                     task = item.PRODUCT_ID,
-                    //colorIdx = GetColor(),
-                    colorIdx = 1,
+                    colorIdx = GetColor(item.LOT_ID),
+                    //colorIdx = 1,
                     brighten = 0.4
                 });
 			}
@@ -82,19 +86,62 @@ where s1.STEP_ID = 'PAINT' and s2.STEP_ID = 'FINISH' and s2.MACHINE_STATE='BUSY'
             return list;
         }
 
-		private int GetColor()
+        private int GetColor(string category)
 		{
-			throw new NotImplementedException();
+            if (cate.Find(p => p.category.Equals(category)) == null)
+			{
+                cate.Add(new Category()
+                {
+                    category = category,
+                    idx = i
+                });
+                i++;
+            }
+
+            return cate.Find(i => i.category.Equals(category)).idx;
+        }
+
+        private class Category
+		{
+			public string category { get; set; }
+			public int idx { get; set; }
 		}
 
-        public List<LOTGanttCategory> getLOTCategory()
+        public List<LOTGanttCategory> getLOTCategory(string productID, string lotID)
         {
             List<LOTGanttCategory> list = new List<LOTGanttCategory>();
-            string sql = "select distinct LOT_ID as category from EQP_PLAN order by LOT_ID";
-           
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+
+            using (SqlCommand cmd = new SqlCommand())
             {
-               list = Helper.DataReaderMapToList<LOTGanttCategory>(cmd.ExecuteReader());
+                cmd.Connection = conn;
+
+                StringBuilder sb = new StringBuilder();
+                sb.Append(@"select distinct LOT_ID as category from EQP_PLAN ");
+
+                if (!string.IsNullOrWhiteSpace(productID))
+                {
+                    sb.Append("where PRODUCT_ID = @PRODUCT_ID ");
+                    cmd.Parameters.AddWithValue("@PRODUCT_ID", $"{productID}");
+
+                    if (!string.IsNullOrWhiteSpace(lotID))
+                    {
+                        sb.Append("and LOT_ID like @LOT_ID ");
+                        cmd.Parameters.AddWithValue("@LOT_ID", $"%{lotID}%");
+                    }
+                }
+				else
+				{
+                    if (!string.IsNullOrWhiteSpace(lotID))
+                    {
+                        sb.Append("where LOT_ID like @LOT_ID ");
+                        cmd.Parameters.AddWithValue("@LOT_ID", $"%{lotID}%");
+                    }
+                }
+
+                sb.Append("order by LOT_ID");
+                cmd.CommandText = sb.ToString();
+
+                list = Helper.DataReaderMapToList<LOTGanttCategory>(cmd.ExecuteReader());
             }
             return list;
         }

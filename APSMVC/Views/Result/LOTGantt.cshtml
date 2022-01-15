@@ -29,7 +29,6 @@
 										@foreach (var p in ViewBag.Combo)
 										{
 											<option value=@p.Code>@p.CodeName</option>
-
 										}
 										<option></option>
 									</select>
@@ -139,7 +138,7 @@
                     renderer: am5xy.AxisRendererY.new(root, { inversed: true }),
                     tooltip: am5.Tooltip.new(root, {
                         themeTags: ["axis"],
-                        animationDuration: 200
+                        animationDuration: 80
                     })
                 })
             );
@@ -180,7 +179,7 @@
                     // https://www.amcharts.com/docs/v5/concepts/common-elements/labels/
                     sprite: am5.Label.new(root, {
                         text: "{task}",
-                        fontSize: 12,
+                        fontSize: 10,
                         centerX: am5.percent(50),
                         centerY: am5.percent(50),
                         populateText: true,
