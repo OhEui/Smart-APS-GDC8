@@ -130,8 +130,8 @@
   <data name="STD_STEP_ID" xml:space="preserve">
     <value>표준공정 ID</value>
   </data>
-  <data name="free-icon-edit-1827933" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-edit-1827933.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PROCESS_ID" xml:space="preserve">
+    <value>프로세스 ID</value>
   </data>
   <data name="EQP_ARRANGE" xml:space="preserve">
     <value>작업조건</value>
@@ -141,6 +141,12 @@
   </data>
   <data name="PRODUCT_ID" xml:space="preserve">
     <value>제품 ID</value>
+  </data>
+  <data name="xlsr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xlsr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +166,8 @@
   <data name="PRODUCT" xml:space="preserve">
     <value>제품정보</value>
   </data>
-  <data name="My_project2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\My project2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DEMAND_ID" xml:space="preserve">
     <value>수요 ID</value>
@@ -169,11 +175,20 @@
   <data name="STEP_ID" xml:space="preserve">
     <value>공정 ID</value>
   </data>
-  <data name="premium-icon-delete-button-3635112" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\premium-icon-delete-button-3635112.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="xlsd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xlsd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EQUIPMENT" xml:space="preserve">
     <value>설비정보</value>
+  </data>
+  <data name="del" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\del.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PROC_TIME" xml:space="preserve">
+    <value>공정소요시간</value>
+  </data>
+  <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,8 +214,8 @@
   <data name="SITE_ID" xml:space="preserve">
     <value>현장 ID</value>
   </data>
-  <data name="PRODUCT_TYPE" xml:space="preserve">
-    <value>제품타입</value>
+  <data name="My_project2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\My project2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>close-grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,14 +241,8 @@
   <data name="PRODUCT_NAME" xml:space="preserve">
     <value>제품이름</value>
   </data>
-  <data name="xls" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xls.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="LINE_ID" xml:space="preserve">
     <value>라인 ID</value>
-  </data>
-  <data name="STEP_YIELD" xml:space="preserve">
-    <value>공정수율</value>
   </data>
   <data name="LINE_INFO" xml:space="preserve">
     <value>라인정보</value>
@@ -241,8 +250,8 @@
   <data name="DEMAND" xml:space="preserve">
     <value>수요정보</value>
   </data>
-  <data name="PROCESS_ID" xml:space="preserve">
-    <value>프로세스 ID</value>
+  <data name="PRODUCT_TYPE" xml:space="preserve">
+    <value>제품타입</value>
   </data>
   <data name="DUE_DATE" xml:space="preserve">
     <value>기한</value>
@@ -256,13 +265,13 @@
   <data name="SETUP_TIME" xml:space="preserve">
     <value>교체준비시간</value>
   </data>
-  <data name="PROC_TIME" xml:space="preserve">
-    <value>공정소요시간</value>
+  <data name="STEP_YIELD" xml:space="preserve">
+    <value>공정수율</value>
   </data>
   <data name="EQP_MODEL" xml:space="preserve">
     <value>모델명</value>
   </data>
-  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="xls" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xls1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
