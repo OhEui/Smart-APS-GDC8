@@ -249,7 +249,7 @@
             // When legend item container is unhovered, make all series as they are
             legend.itemContainers.template.events.on("pointerout", unhoverCallBack)
 
-            $('.testClass tr').hover(hoverCallBackTable, unhoverCallBack);
+            $('.testClass').hover(hoverCallBackTable, unhoverCallBack);
 
             legend.itemContainers.template.set("width", am5.p100);
             legend.valueLabels.template.setAll({
