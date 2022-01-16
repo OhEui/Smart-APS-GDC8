@@ -43,13 +43,13 @@ namespace APSWinForm
             this.label2 = new System.Windows.Forms.Label();
             this.txtSize = new System.Windows.Forms.TextBox();
             this.txtProcess = new System.Windows.Forms.TextBox();
+            this.cboType = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cboType = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -95,7 +95,7 @@ namespace APSWinForm
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-            this.button2.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(189, 270);
             this.button2.Name = "button2";
@@ -153,13 +153,13 @@ namespace APSWinForm
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-            this.button1.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(61, 270);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 36);
             this.button1.TabIndex = 6;
-            this.button1.Text = "등록";
+            this.button1.Text = "저장";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -197,6 +197,16 @@ namespace APSWinForm
             this.txtProcess.Name = "txtProcess";
             this.txtProcess.Size = new System.Drawing.Size(121, 21);
             this.txtProcess.TabIndex = 4;
+            // 
+            // cboType
+            // 
+            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Location = new System.Drawing.Point(162, 81);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(121, 20);
+            this.cboType.TabIndex = 168;
             // 
             // panel8
             // 
@@ -239,10 +249,10 @@ namespace APSWinForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(34, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 18);
+            this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "제품 추가/수정";
             // 
@@ -255,16 +265,6 @@ namespace APSWinForm
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // cboType
-            // 
-            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(162, 81);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(121, 20);
-            this.cboType.TabIndex = 168;
             // 
             // Productpop
             // 

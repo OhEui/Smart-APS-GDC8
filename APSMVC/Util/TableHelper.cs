@@ -9,7 +9,8 @@ namespace APSMVC
 {
     public static class TableHelper
     {
-        public static HtmlString Table(this HtmlHelper helper, List<List<string>> data, List<string> headers, string htmlClass= null)
+        public static HtmlString Table(this HtmlHelper helper, List<List<string>> data, List<string> headers, 
+            string tableClass= null)
         {
             //Tags
             TagBuilder table = new TagBuilder("table");
@@ -22,8 +23,8 @@ namespace APSMVC
             //Inner html of table
             StringBuilder sb = new StringBuilder();
 
-            if (htmlClass != null) 
-                table.MergeAttribute("class", htmlClass);
+            if (tableClass != null) 
+                table.MergeAttribute("class", tableClass);
 
 
             //Add headers
@@ -46,8 +47,12 @@ namespace APSMVC
                     tr.InnerHtml += td.ToString(); // <tr> <td> ... </tr>
                 }
                 tr.Attributes.Clear();
-                tr.MergeAttribute("class", $"testClass");
+
+                // custom tbody
+                tr.MergeAttribute("class", $"hoverCell");
                 tr.MergeAttribute("id", $"{d.First()}");
+                //
+                
                 tbody.InnerHtml += tr.ToString(); // <tbody> <tr> ... </tbody>
             }
 

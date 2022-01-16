@@ -14,6 +14,7 @@ namespace APSMVC.Models
         public string CurrentMachineState { get; set; }
         public Dictionary<string, List<ResUtilizationData>>  ChartDictionary { get; set; }
         public List<List<string>> TableData { get; set; }
+        public Dictionary<string, object> DropDownAttributes { get; set; }
     }
 
 }

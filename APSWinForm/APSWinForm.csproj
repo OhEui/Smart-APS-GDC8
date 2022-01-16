@@ -62,12 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseForm\BaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForm\BaseForm.designer.cs">
-      <DependentUpon>BaseForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaseForm\BaseFormSample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +82,12 @@
     </Compile>
     <Compile Include="Controls\PeriodUserControl.designer.cs">
       <DependentUpon>PeriodUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm2.Designer.cs">
+      <DependentUpon>BaseForm2.cs</DependentUpon>
     </Compile>
     <Compile Include="HSY\DEMANDpop.cs">
       <SubType>Form</SubType>
@@ -255,14 +255,13 @@
     <Compile Include="OET\UserManage.Designer.cs">
       <DependentUpon>UserManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\UserReg.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OET\UserReg.designer.cs">
-      <DependentUpon>UserReg.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserInfoStorage.cs" />
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
@@ -276,14 +275,15 @@
     <Compile Include="Util\ucTabControl.Designer.cs">
       <DependentUpon>ucTabControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BaseForm\BaseForm.resx">
-      <DependentUpon>BaseForm.cs</DependentUpon>
+    <EmbeddedResource Include="BaseForm2.resx">
+      <DependentUpon>BaseForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\BaseFormSample.resx">
       <DependentUpon>BaseFormSample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\frmpopup.resx">
       <DependentUpon>frmpopup.cs</DependentUpon>
@@ -366,19 +366,11 @@
     <EmbeddedResource Include="OET\UserManage.resx">
       <DependentUpon>UserManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\UserReg.resx">
-      <DependentUpon>UserReg.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -422,9 +414,6 @@
     <None Include="Resources\premium-icon-delete-button-3635112.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\free-icon-edit-1827933.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\close-grey.png" />
   </ItemGroup>
   <ItemGroup>
@@ -445,6 +434,34 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xls down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-add-file-1324044.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xls-document-stroke-interface-symbol_icon-icons.com_57492.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xls down %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xls1.png" />
+    <None Include="Resources\xlsr.png" />
+    <None Include="Resources\xlsd.png" />
+    <None Include="Resources\delete %281%291.png" />
+    <None Include="Resources\addd.png" />
+    <None Include="Resources\del.png" />
+    <None Include="Resources\edit.png" />
+    <Content Include="Resources\free-icon-add-file-13240441.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
