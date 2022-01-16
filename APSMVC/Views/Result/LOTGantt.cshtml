@@ -132,10 +132,14 @@
 
             // Create axes
             // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+			var yRenderer = am5xy.AxisRendererY.new(root, {
+				minGridDistance: 30
+			});
+
             var yAxis = chart.yAxes.push(
                 am5xy.CategoryAxis.new(root, {
                     categoryField: "category",
-                    renderer: am5xy.AxisRendererY.new(root, { inversed: true }),
+					renderer: yRenderer,
                     tooltip: am5.Tooltip.new(root, {
                         themeTags: ["axis"],
                         animationDuration: 80
@@ -147,8 +151,8 @@
 
             var xAxis = chart.xAxes.push(
                 am5xy.DateAxis.new(root, {
-                    baseInterval: { timeUnit: "minute", count: 1 },
-                    renderer: am5xy.AxisRendererX.new(root, {})
+                    baseInterval: { timeUnit: "hour", count: 1 },
+					renderer: am5xy.AxisRendererX.new(root, { minGridDistance: 150 })
                 })
             );
 
@@ -165,6 +169,7 @@
             }));
 
             series.columns.template.setAll({
+				height: am5.percent(100),
                 templateField: "columnSettings",
                 strokeOpacity: 0,
                 tooltipText: "{task}:\n[bold]{openValueX}[/] - [bold]{valueX}[/]"
