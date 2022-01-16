@@ -25,12 +25,14 @@ namespace APSMVC
             if (htmlClass != null) 
                 table.MergeAttribute("class", htmlClass);
 
+
             //Add headers
             foreach (var s in headers)
             {
                 th.InnerHtml = s;               // <th> s </th>
                 tr.InnerHtml += th.ToString(); // <tr> <th> ... </tr>
             }
+
             thead.InnerHtml = tr.ToString(); // <thead> <tr> ... </thead>
             sb.Append(thead.ToString()); 
             
@@ -43,6 +45,9 @@ namespace APSMVC
                     td.InnerHtml = h; // <td> data </td>
                     tr.InnerHtml += td.ToString(); // <tr> <td> ... </tr>
                 }
+                tr.Attributes.Clear();
+                tr.MergeAttribute("class", $"testClass");
+                tr.MergeAttribute("id", $"{d.First()}");
                 tbody.InnerHtml += tr.ToString(); // <tbody> <tr> ... </tbody>
             }
 

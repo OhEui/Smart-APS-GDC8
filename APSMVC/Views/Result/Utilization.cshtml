@@ -86,15 +86,35 @@
              * https://www.amcharts.com/docs/v5/
              * ---------------------------------------
              */
-
-            function hoverCallBack(e) {
-                var itemContainer = e.target;
-
-                // As series list is data of a legend, dataContext is series
-                var series = itemContainer.dataItem.dataContext;
+            function hoverCallBackTable(e) {
+                var name = $(this).attr('id'); // legend
 
                 chart.series.each(function (chartSeries) {
-                    if (chartSeries != series) {
+
+                    if (chartSeries.name != name) {
+                        console.log(chartSeries.name);
+                        console.log(chartSeries.className);
+                        chartSeries.strokes.template.setAll({
+                            strokeOpacity: 0.15,
+                            stroke: am5.color(0x000000)
+                        });
+                    } else {
+                        chartSeries.strokes.template.setAll({
+                            strokeWidth: 3
+                        });
+                    }
+                })
+            }
+
+            function hoverCallBack(e) {
+                var itemContainer = e.target; // legend
+
+                // As series list is data of a legend, dataContext is series
+                var currentSeries = itemContainer.dataItem.dataContext;
+
+                chart.series.each(function (chartSeries) {
+
+                    if (chartSeries != currentSeries) {
                         chartSeries.strokes.template.setAll({
                             strokeOpacity: 0.15,
                             stroke: am5.color(0x000000)
@@ -107,9 +127,6 @@
                 })
             }
             function unhoverCallBack(e) {
-                var itemContainer = e.target;
-                var series = itemContainer.dataItem.dataContext;
-
                 chart.series.each(function (chartSeries) {
                     chartSeries.strokes.template.setAll({
                         strokeOpacity: 1,
@@ -121,7 +138,7 @@
 
             $('.select2').select2()
 
-            //$('.testClass').hover(hoverCallBack, unhoverCallBack);
+
 
             // Create root element
             // https://www.amcharts.com/docs/v5/getting-started/#Root_element
@@ -170,7 +187,7 @@
                 var data = item.Value.Select((i) => new { value = Math.Round(i.RATE,2), date = i.TARGET_DATE.ToString("yyyy-MM-dd") });
 
                 <text>
-                var series = chart.series.push(am5xy.LineSeries.new(root, {
+                var newSeries = am5xy.LineSeries.new(root, {
                     name: '@name',
                     xAxis: xAxis,
                     yAxis: yAxis,
@@ -181,7 +198,9 @@
                         pointerOrientation: "horizontal",
                         labelText: "{valueY}%"
                     })
-                }));
+                });
+                newSeries.name = '@name';
+                var series = chart.series.push(newSeries);
 
                 // https://www.amcharts.com/docs/v5/concepts/data/
                 series.data.processor = am5.DataProcessor.new(root, {
@@ -198,37 +217,13 @@
 
             }
 
-            /*
-            for (var i = 0; i < 3; i++) {
-                var series = chart.series.push(am5xy.LineSeries.new(root, {
-                    name: 'test',
-                    xAxis: xAxis,
-                    yAxis: yAxis,
-                    valueYField: "rate",
-                    valueXField: "target_date",
-                    legendValueText: "{valueY}",
-                    tooltip: am5.Tooltip.new(root, {
-                        pointerOrientation: "horizontal",
-                        labelText: "{valueY}"
-                    })
-                }));
-
-                var data = {};
-                series.data.setAll(data);
-
-                // Make stuff animate on load
-                // https://www.amcharts.com/docs/v5/concepts/animations/
-                series.appear();
-            }
-            */
-            
             // Add cursor
             // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
             var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
                 behavior: "none"
             }));
             cursor.lineY.set("visible", false);
-            
+
 
             // Add scrollbar
             // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
@@ -256,6 +251,8 @@
 
             // When legend item container is unhovered, make all series as they are
             legend.itemContainers.template.events.on("pointerout", unhoverCallBack)
+
+            $('.testClass tr').hover(hoverCallBackTable, unhoverCallBack);
 
             legend.itemContainers.template.set("width", am5.p100);
             legend.valueLabels.template.setAll({
