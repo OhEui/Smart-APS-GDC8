@@ -384,6 +384,7 @@ namespace APSWinForm
             this.dgvEQP.RowTemplate.Height = 23;
             this.dgvEQP.Size = new System.Drawing.Size(780, 390);
             this.dgvEQP.TabIndex = 57;
+            this.dgvEQP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEQP_CellClick);
             // 
             // EQP_ARRANGE
             // 
@@ -397,7 +398,7 @@ namespace APSWinForm
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.toolStrip1);
             this.Name = "EQP_ARRANGE";
-            this.Text = "EQP_ARRANGE";
+            this.Text = "설비배치정보";
             this.Load += new System.EventHandler(this.EQP_ARRANGE_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

@@ -420,6 +420,7 @@ namespace APSWinForm
             this.dgvSetup.RowTemplate.Height = 23;
             this.dgvSetup.Size = new System.Drawing.Size(780, 377);
             this.dgvSetup.TabIndex = 57;
+            this.dgvSetup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSetup_CellClick);
             // 
             // SETUP_TIME
             // 
@@ -433,7 +434,7 @@ namespace APSWinForm
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.toolStrip1);
             this.Name = "SETUP_TIME";
-            this.Text = "SETUP_TIME";
+            this.Text = "교체준비시간";
             this.Load += new System.EventHandler(this.SETUP_TIME_Load);
             this.panel2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
