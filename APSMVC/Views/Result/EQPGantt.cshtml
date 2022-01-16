@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-body">
 
-                @using (Html.BeginForm("EQPGantt", "Result", FormMethod.Get, new { @class = "submitTest"})) {
+                @using (Html.BeginForm("EQPGantt", "Result", FormMethod.Get, new { @class = "submitTest" })) {
                 <div class="row">
                     <div class="col-2">
                         <div class="form-group">
@@ -64,6 +64,14 @@
                             </button>
                         </div>
                     </div>
+                    <div class="col-14 align-self-end">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-lg btn-default" onclick="resetCallBack();"
+                                    style="width: 38px; height: 38px; padding-left: 8px; padding-top: 5px; margin-left: 6px">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 }
 
@@ -82,7 +90,12 @@
 @section Scripts
 {
     <script>
-
+        function resetCallBack()
+        {
+            $('#reservation').data('daterangepicker').setStartDate('@Model.Start_Date.ToString("yyyy-MM-dd")');
+            $('#reservation').data('daterangepicker').setEndDate('@Model.End_Date.ToString("yyyy-MM-dd")');
+            $(".condition").select2().val(null).trigger('change');
+        }
 
         $(function () {
             $(".condition").select2();
@@ -103,6 +116,7 @@
                 $('#Start_Date').val($('#reservation').data('daterangepicker').startDate.format('YYYY-MM-DD'));
                 $('#End_Date').val($('#reservation').data('daterangepicker').endDate.format('YYYY-MM-DD'));
             });
+
             /**
              * ---------------------------------------
              * This demo was created using amCharts 5.
@@ -176,21 +190,6 @@
                 })
             );
 
-
-            // TODO
-            /*
-            yAxis.data.setAll([
-                { category: "EQP11" },
-                { category: "EQP12" },
-                { category: "EQP13" },
-                { category: "EQP21" },
-                { category: "EQP22" },
-                { category: "EQP31" },
-                { category: "EQP32" },
-                { category: "EQP33" }
-            ]);
-            */
-
             yAxis.data.setAll(@Html.Raw(Json.Encode(Model.CategoryList)))
             var xAxis = chart.xAxes.push(
                 am5xy.DateAxis.new(root, {
@@ -225,9 +224,9 @@
                 cornerRadiusBR: 3
             });
 
-            /*
+            
             // https://www.amcharts.com/docs/v5/concepts/common-elements/bullets/
-
+            
             series.bullets.push(function () {
                 return am5.Bullet.new(root, {
                     locationX: 0.5,
@@ -236,15 +235,15 @@
                     // https://www.amcharts.com/docs/v5/concepts/common-elements/labels/
                     sprite: am5.Label.new(root, {
                         text: "{task}",
-                        fontSize: 12,
+                        fontSize: 11,
                         centerX: am5.percent(50),
                         centerY: am5.percent(50),
                         populateText: true,
-                        oversizedBehavior: "truncate",
+                        oversizedBehavior: "hide"
                     })
                 });
-            });*/
-
+            });
+            
             series.data.processor = am5.DataProcessor.new(root, {
                 dateFields: ["fromDate", "toDate"],
                 dateFormat: "yyyy-MM-dd HH:mm"
