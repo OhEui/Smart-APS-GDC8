@@ -88,12 +88,9 @@
              */
             function hoverCallBackTable(e) {
                 var name = $(this).attr('id'); // legend
-
                 chart.series.each(function (chartSeries) {
 
                     if (chartSeries.name != name) {
-                        console.log(chartSeries.name);
-                        console.log(chartSeries.className);
                         chartSeries.strokes.template.setAll({
                             strokeOpacity: 0.15,
                             stroke: am5.color(0x000000)
