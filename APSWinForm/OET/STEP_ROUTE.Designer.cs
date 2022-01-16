@@ -35,7 +35,6 @@ namespace APSWinForm
 			this.btnInit = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
-			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.cboStepType = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@ namespace APSWinForm
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvStepRoute = new System.Windows.Forms.DataGridView();
+			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
 			this.panel6.SuspendLayout();
@@ -133,15 +133,6 @@ namespace APSWinForm
 			this.panel9.Name = "panel9";
 			this.panel9.Size = new System.Drawing.Size(668, 136);
 			this.panel9.TabIndex = 42;
-			// 
-			// txtStepID
-			// 
-			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepID.Location = new System.Drawing.Point(149, 82);
-			this.txtStepID.Name = "txtStepID";
-			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 61;
 			// 
 			// cboStepType
 			// 
@@ -337,6 +328,15 @@ namespace APSWinForm
 			this.dgvStepRoute.Size = new System.Drawing.Size(688, 434);
 			this.dgvStepRoute.TabIndex = 52;
 			// 
+			// txtStepID
+			// 
+			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepID.Location = new System.Drawing.Point(149, 82);
+			this.txtStepID.Name = "txtStepID";
+			this.txtStepID.Size = new System.Drawing.Size(121, 21);
+			this.txtStepID.TabIndex = 61;
+			// 
 			// STEP_ROUTE
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -350,7 +350,7 @@ namespace APSWinForm
 			this.Controls.Add(this.panel1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "STEP_ROUTE";
-			this.Text = "STEP_ROUTE";
+			this.Text = "공정순서";
 			this.Load += new System.EventHandler(this.STEP_ROUTE_Load);
 			this.panel2.ResumeLayout(false);
 			this.panel9.ResumeLayout(false);

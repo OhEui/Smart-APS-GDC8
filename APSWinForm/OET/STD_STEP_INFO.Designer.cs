@@ -387,7 +387,7 @@ namespace APSWinForm
 			this.Controls.Add(this.panel1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "STD_STEP_INFO";
-			this.Text = "STD_STEP_INFO";
+			this.Text = "표준 공정 정보";
 			this.Load += new System.EventHandler(this.STD_STEP_INFO_Load);
 			this.panel2.ResumeLayout(false);
 			this.panel9.ResumeLayout(false);

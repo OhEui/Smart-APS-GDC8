@@ -75,7 +75,7 @@ namespace APSWinForm
 		{
 			if(cboProcessID.SelectedIndex < 1)
 			{
-				return;
+				dgvStepRoute.DataSource = null;
 			}
 			else
 			{

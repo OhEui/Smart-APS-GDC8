@@ -323,6 +323,7 @@ namespace APSWinForm
 			this.Controls.Add(this.panel2);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "STEPROUTE_REG";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "공정순서";
 			this.Load += new System.EventHandler(this.STEPROUTE_REG_Load);
 			this.panel1.ResumeLayout(false);
