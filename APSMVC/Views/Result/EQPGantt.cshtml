@@ -98,7 +98,8 @@
         }
 
         $(function () {
-            $(".condition").select2();
+            var select2 = $(".condition").select2();
+            select2.val(@Html.Raw(Json.Encode(Model.QueryParameters))).trigger('change');
 
             //Date picker
             $('#reservation').daterangepicker({
@@ -224,9 +225,9 @@
                 cornerRadiusBR: 3
             });
 
-            
+
             // https://www.amcharts.com/docs/v5/concepts/common-elements/bullets/
-            
+
             series.bullets.push(function () {
                 return am5.Bullet.new(root, {
                     locationX: 0.5,
@@ -243,7 +244,7 @@
                     })
                 });
             });
-            
+
             series.data.processor = am5.DataProcessor.new(root, {
                 dateFields: ["fromDate", "toDate"],
                 dateFormat: "yyyy-MM-dd HH:mm"

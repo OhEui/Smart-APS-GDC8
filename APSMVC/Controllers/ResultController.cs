@@ -44,6 +44,13 @@ namespace APSMVC.Controllers
             eqpGroupList.Insert(0, blankItem);
             productIDList.Insert(0, blankItem);
             */
+            List<string> qParameters = new List<string>();
+            if (EQP_GROUP!=null)
+                qParameters.AddRange(EQP_GROUP);
+            if (EQP_ID != null)
+                qParameters.AddRange(EQP_ID);
+            if (PRODUCT_ID != null)
+                qParameters.AddRange(PRODUCT_ID);
 
             EQPGanttModel model = new EQPGanttModel
             {
@@ -57,6 +64,7 @@ namespace APSMVC.Controllers
                     { "class", "condition" }, { "style", "width:100%;" },
                     { "multiple", "multiple" }, { "data-close-on-select", "false" }
                 },
+                QueryParameters = qParameters?.ToArray(),
 
                 Start_Date = Start_Date ?? commonData.Start_Date,
                 End_Date = End_Date ?? commonData.End_Date,

@@ -15,6 +15,7 @@ namespace APSMVC.Models
         public string ChartDataJson { get; set; }
 
         public Dictionary<string,object> DropDownAttributes { get; set; }
+        public string[] QueryParameters { get; set; }
 
         public DateTime Start_Date { get; set; }
         public DateTime End_Date { get; set; }
