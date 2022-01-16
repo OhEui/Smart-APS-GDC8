@@ -43,13 +43,13 @@ namespace APSWinForm
             this.label2 = new System.Windows.Forms.Label();
             this.txtSize = new System.Windows.Forms.TextBox();
             this.txtProcess = new System.Windows.Forms.TextBox();
+            this.cboType = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cboType = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -198,6 +198,16 @@ namespace APSWinForm
             this.txtProcess.Size = new System.Drawing.Size(121, 21);
             this.txtProcess.TabIndex = 4;
             // 
+            // cboType
+            // 
+            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Location = new System.Drawing.Point(162, 81);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(121, 20);
+            this.cboType.TabIndex = 168;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(172)))), ((int)(((byte)(199)))));
@@ -255,16 +265,6 @@ namespace APSWinForm
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // cboType
-            // 
-            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(162, 81);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(121, 20);
-            this.cboType.TabIndex = 168;
             // 
             // Productpop
             // 

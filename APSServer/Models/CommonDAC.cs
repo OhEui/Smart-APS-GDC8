@@ -50,7 +50,16 @@ select LINE_ID as Code, LINE_ID  as CodeName, 'LINE_ID' as category
 from LINE_INFO
 union
 select SITE_ID as Code, SITE_ID  as CodeName, 'SITE_ID' as category
-from LINE_INFO";
+from LINE_INFO
+union
+select PRODUCT_TYPE as Code, PRODUCT_TYPE  as CodeName, 'PRODUCT_TYPE' as category
+from PRODUCT
+union
+select CUSTOMER_ID as Code, CUSTOMER_ID  as CodeName, 'CUSTOMER_ID' as category
+from DEMAND
+union
+select PRODUCT_ID as Code, PRODUCT_ID  as CodeName, 'PRODUCT_ID' as category
+from DEMAND";
 
                 cmd.Connection.Open();
                 List<ComboItemVO> list = Helper.DataReaderMapToList<ComboItemVO>(cmd.ExecuteReader());

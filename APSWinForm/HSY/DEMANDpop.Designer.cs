@@ -112,6 +112,7 @@ namespace APSWinForm
             this.txtQTY.Size = new System.Drawing.Size(121, 21);
             this.txtQTY.TabIndex = 143;
             this.txtQTY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQTY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQTY_KeyPress);
             // 
             // cboPID
             // 

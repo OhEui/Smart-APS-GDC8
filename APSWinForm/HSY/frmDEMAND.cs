@@ -16,6 +16,8 @@ namespace APSWinForm
     {
         ServiceHelp srv = new ServiceHelp();
         List<DemandVO> list = null;
+
+
         public frmDEMAND()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace APSWinForm
         {
             list = await srv.GetListAsync("api/Demand/AllList", list);
             dgvDM.DataSource = list;
+
         }
 
         private void frmDEMAND_Load(object sender, EventArgs e)
@@ -56,6 +59,7 @@ namespace APSWinForm
 
             dgvDM.DataSource = null;
             dgvDM.DataSource = list.FindAll(p => p.DEMAND_ID.Contains(txtID.Text.ToUpper()) && p.PRODUCT_ID.Contains(txtPR.Text.ToUpper()) && p.CUSTOMER_ID.Contains(txtCS.Text.ToUpper()));
+
         }
 
         //초기화

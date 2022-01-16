@@ -21,13 +21,12 @@ namespace APSWinForm
         {
             InitializeComponent();
         }
+
         public async void Combobinding()
         {
             list = await srv.GetListAsync("api/Common/CommonCode", list);
-          
-            CommonUtil.ComboBinding(cboType, list, "PROCESS_ID");
+            CommonUtil.ComboBinding(cboType, list, "PRODUCT_TYPE");
         }
-
 
         public Productpop(ProductVO prodInfo)
         {
@@ -40,7 +39,6 @@ namespace APSWinForm
             txtSize.Text = prodInfo.LOT_SIZE.ToString();
 
             txtID.Enabled = false;
-
         }
         
 

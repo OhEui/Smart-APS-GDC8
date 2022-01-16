@@ -36,7 +36,6 @@ namespace APSWinForm
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblUserID = new System.Windows.Forms.Label();
-            this.periodUserControl1 = new APSWinForm.PeriodUserControl();
             this.button3 = new System.Windows.Forms.Button();
             this.txtPR = new System.Windows.Forms.TextBox();
             this.txtCS = new System.Windows.Forms.TextBox();
@@ -58,6 +57,8 @@ namespace APSWinForm
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.dgvDM = new System.Windows.Forms.DataGridView();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -108,8 +109,9 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.dtpEnd);
+            this.panel9.Controls.Add(this.dtpStart);
             this.panel9.Controls.Add(this.lblUserID);
-            this.panel9.Controls.Add(this.periodUserControl1);
             this.panel9.Controls.Add(this.button3);
             this.panel9.Controls.Add(this.txtPR);
             this.panel9.Controls.Add(this.txtCS);
@@ -133,13 +135,6 @@ namespace APSWinForm
             this.lblUserID.Size = new System.Drawing.Size(0, 12);
             this.lblUserID.TabIndex = 56;
             this.lblUserID.Visible = false;
-            // 
-            // periodUserControl1
-            // 
-            this.periodUserControl1.Location = new System.Drawing.Point(100, 84);
-            this.periodUserControl1.Name = "periodUserControl1";
-            this.periodUserControl1.Size = new System.Drawing.Size(303, 24);
-            this.periodUserControl1.TabIndex = 58;
             // 
             // button3
             // 
@@ -353,6 +348,22 @@ namespace APSWinForm
             this.dgvDM.Size = new System.Drawing.Size(711, 254);
             this.dgvDM.TabIndex = 53;
             // 
+            // dtpStart
+            // 
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStart.Location = new System.Drawing.Point(100, 89);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(97, 21);
+            this.dtpStart.TabIndex = 2;
+            // 
+            // dtpEnd
+            // 
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEnd.Location = new System.Drawing.Point(223, 89);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(97, 21);
+            this.dtpEnd.TabIndex = 57;
+            // 
             // frmDEMAND
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -406,7 +417,8 @@ namespace APSWinForm
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         public System.Windows.Forms.DataGridView dgvDM;
-        private PeriodUserControl periodUserControl1;
         private System.Windows.Forms.Label lblUserID;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.DateTimePicker dtpStart;
     }
 }

@@ -15,7 +15,7 @@ namespace APSWinForm
     public partial class DEMANDpop : Form
     {
         ServiceHelp srv = new ServiceHelp();
-        List<DemandVO> list;
+        List<ComboItemVO> list;
 
         public DEMANDpop()
         {
@@ -38,12 +38,10 @@ namespace APSWinForm
 
         public async void Combobinding()
         {
-            list = await srv.GetListAsync("api/Demand/AllList", list);
-            CommonUtil.ComboBinding(cboPID, list, "PRODUCT_ID", "PRODUCT_ID");
-            CommonUtil.ComboBinding(cboCID, list, "CUSTOMER_ID", "CUSTOMER_ID");
+            list = await srv.GetListAsync("api/Common/CommonCode", list);
+            CommonUtil.ComboBinding(cboPID, list, "PRODUCT_ID");
+            CommonUtil.ComboBinding(cboCID, list, "CUSTOMER_ID");
 
-            cboPID.Text = "";
-            cboCID.Text = "";
         }
 
         private async void button7_Click(object sender, EventArgs e)
@@ -78,6 +76,15 @@ namespace APSWinForm
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void txtQTY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //숫자만 입력되도록 필터링
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -36,11 +36,11 @@ namespace APSWinForm
         private void frmPRODUCT_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(dgvPR);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품ID", "PRODUCT_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품타입", "PRODUCT_TYPE", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품이름", "PRODUCT_NAME", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "프로세스ID", "PROCESS_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "생산단위크기", "LOT_SIZE", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품ID", "PRODUCT_ID", colWidth: 160, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품타입", "PRODUCT_TYPE", colWidth: 80, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품이름", "PRODUCT_NAME", colWidth: 160, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "프로세스ID", "PROCESS_ID", colWidth: 200, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "생산단위크기", "LOT_SIZE", colWidth: 100, align: DataGridViewContentAlignment.MiddleCenter);
             
             LoadData();
         }
@@ -112,7 +112,7 @@ namespace APSWinForm
 
             string prodID = dgvPR.SelectedRows[0].Cells["PRODUCT_ID"].Value.ToString();
 
-            if (MessageBox.Show("        정말 삭제하시겠습니까?", "제품삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("       정말 삭제하시겠습니까?", "제품삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
             { 
                 APSVO.WebMessage msg = await srv.GetAsync($"api/Product/Delete/{prodID}");
                 if (msg.IsSuccess)
@@ -128,6 +128,22 @@ namespace APSWinForm
             bool bResult = ExcelUtil.ExportExcelToList(dgvPR.DataSource as List<ProductVO>, @".\product.xlsx", "");
             if (bResult)
                 MessageBox.Show("저장하였습니다.");
+        }
+
+        private void txtID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button7_Click(sender, e);
+            }
+        }
+
+        private void txtPID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button7_Click(sender, e);
+            }
         }
     }
 }
