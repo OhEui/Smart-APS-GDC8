@@ -30,8 +30,9 @@ namespace APSWinForm
             InitializeComponent();
             if (UserInfoStorage.Current.Auth_ID == 3)
             {
-                btnAdd.Visible = btnModify.Visible = pictureBox6.Visible = false;
+                BtnAdd.Visible = BtnEdit.Visible = BtnDelete.Visible = false;
             }
+            title.Text = "교체준비관리";
         }
 
         private void SETUP_TIME_Load(object sender, EventArgs e)

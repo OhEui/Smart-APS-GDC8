@@ -33,8 +33,9 @@ namespace APSWinForm
             InitializeComponent();
             if (UserInfoStorage.Current.Auth_ID == 3)
             {
-                btnAdd.Visible = btnModify.Visible = pictureBox6.Visible = false;
+                BtnAdd.Visible = BtnEdit.Visible = btnReset.Visible = false;
             }
+            title.Text = "설비배치정보";
         }
         
         

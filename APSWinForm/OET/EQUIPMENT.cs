@@ -31,9 +31,10 @@ namespace APSWinForm
         public EQUIPMENT()
         {
             InitializeComponent();
+            title.Text = "설비정보";
             if (UserInfoStorage.Current.Auth_ID == 3)
             {
-                btn_Add.Visible = btn_modify.Visible = btn_Delete.Visible = false;
+                BtnAdd.Visible = BtnEdit.Visible = BtnDelete.Visible = false;
             }
         }
 
@@ -59,6 +60,8 @@ namespace APSWinForm
             dgvEQP.DataSource = null;
             EQPlist = await srv.GetListAsync("api/EQUIPMENT/EQPlist", EQPlist);
             dgvEQP.DataSource = EQPlist;
+
+           
         }
 
         private void DataLoad()
@@ -72,6 +75,9 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "수정자", "user_id", colWidth: 100,visibility:false);
             dgvLoad();
             
+
+
+
 
         }
 

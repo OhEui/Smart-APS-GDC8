@@ -30,22 +30,21 @@ namespace APSWinForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EQP_ARRANGE));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.btnAdd = new System.Windows.Forms.PictureBox();
-            this.btnModify = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvEQP = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.title = new System.Windows.Forms.ToolStripLabel();
+            this.BtnDelete = new System.Windows.Forms.ToolStripButton();
+            this.BtnEdit = new System.Windows.Forms.ToolStripButton();
+            this.BtnAdd = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.XlsDown = new System.Windows.Forms.ToolStripButton();
+            this.XlsAdd = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.cboEQP = new System.Windows.Forms.ComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.cboProcess = new System.Windows.Forms.ComboBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.cboProduct = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,127 +54,122 @@ namespace APSWinForm
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnModify)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEQP)).BeginInit();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvEQP = new System.Windows.Forms.DataGridView();
+            this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEQP)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // toolStrip1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
-            this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.btnModify);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 38);
-            this.panel1.TabIndex = 41;
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(22, 22);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.title,
+            this.BtnDelete,
+            this.BtnEdit,
+            this.BtnAdd,
+            this.toolStripSeparator1,
+            this.XlsDown,
+            this.XlsAdd});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(800, 58);
+            this.toolStrip1.TabIndex = 50;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // pictureBox6
+            // title
             // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(771, 8);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(23, 24);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 59;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.title.Font = new System.Drawing.Font("ONE 모바일고딕 Title OTF", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.title.Image = ((System.Drawing.Image)(resources.GetObject("title.Image")));
+            this.title.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(104, 55);
+            this.title.Text = "메뉴이름";
             // 
-            // btnAdd
+            // BtnDelete
             // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(713, 7);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(23, 24);
-            this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAdd.TabIndex = 58;
-            this.btnAdd.TabStop = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.BtnDelete.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnDelete.Image = global::APSWinForm.Properties.Resources.del;
+            this.BtnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnDelete.Margin = new System.Windows.Forms.Padding(7, 1, 0, 2);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(36, 55);
+            this.BtnDelete.Text = "삭제";
+            this.BtnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnDelete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
-            // btnModify
+            // BtnEdit
             // 
-            this.btnModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModify.Image = ((System.Drawing.Image)(resources.GetObject("btnModify.Image")));
-            this.btnModify.Location = new System.Drawing.Point(742, 7);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(23, 24);
-            this.btnModify.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnModify.TabIndex = 57;
-            this.btnModify.TabStop = false;
-            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            this.BtnEdit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnEdit.Image = global::APSWinForm.Properties.Resources.edit;
+            this.BtnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnEdit.Margin = new System.Windows.Forms.Padding(7, 1, 0, 2);
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.Size = new System.Drawing.Size(36, 55);
+            this.BtnEdit.Text = "수정";
+            this.BtnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnEdit.Click += new System.EventHandler(this.btnModify_Click);
             // 
-            // pictureBox3
+            // BtnAdd
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(648, 8);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(23, 24);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 56;
-            this.pictureBox3.TabStop = false;
+            this.BtnAdd.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.BtnAdd.Image = global::APSWinForm.Properties.Resources.addd;
+            this.BtnAdd.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(7, 1, 0, 2);
+            this.BtnAdd.Name = "BtnAdd";
+            this.BtnAdd.Size = new System.Drawing.Size(36, 55);
+            this.BtnAdd.Text = "추가";
+            this.BtnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // pictureBox2
+            // toolStripSeparator1
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(678, 8);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 55;
-            this.pictureBox2.TabStop = false;
+            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 58);
             // 
-            // label1
+            // XlsDown
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "작업조건";
+            this.XlsDown.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.XlsDown.Image = global::APSWinForm.Properties.Resources.xlsd;
+            this.XlsDown.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.XlsDown.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.XlsDown.Margin = new System.Windows.Forms.Padding(7, 1, 0, 2);
+            this.XlsDown.Name = "XlsDown";
+            this.XlsDown.Size = new System.Drawing.Size(59, 55);
+            this.XlsDown.Text = "엑셀받기";
+            this.XlsDown.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.XlsDown.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // pictureBox1
+            // XlsAdd
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(19, 23);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // dgvEQP
-            // 
-            this.dgvEQP.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEQP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEQP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEQP.Location = new System.Drawing.Point(0, 194);
-            this.dgvEQP.Name = "dgvEQP";
-            this.dgvEQP.RowTemplate.Height = 23;
-            this.dgvEQP.Size = new System.Drawing.Size(800, 442);
-            this.dgvEQP.TabIndex = 47;
-            this.dgvEQP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEQP_CellClick);
+            this.XlsAdd.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.XlsAdd.Image = global::APSWinForm.Properties.Resources.xlsr;
+            this.XlsAdd.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.XlsAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.XlsAdd.Margin = new System.Windows.Forms.Padding(7, 1, 0, 2);
+            this.XlsAdd.Name = "XlsAdd";
+            this.XlsAdd.Size = new System.Drawing.Size(59, 55);
+            this.XlsAdd.Text = "엑셀추가";
+            this.XlsAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.XlsAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // panel2
             // 
@@ -184,18 +178,18 @@ namespace APSWinForm
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 38);
+            this.panel2.Location = new System.Drawing.Point(0, 58);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.panel2.Size = new System.Drawing.Size(800, 156);
-            this.panel2.TabIndex = 46;
+            this.panel2.TabIndex = 51;
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Controls.Add(this.panel5);
-            this.panel9.Controls.Add(this.panel4);
-            this.panel9.Controls.Add(this.panel3);
+            this.panel9.Controls.Add(this.panel1);
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.panel11);
             this.panel9.Controls.Add(this.label2);
             this.panel9.Controls.Add(this.label3);
             this.panel9.Controls.Add(this.label10);
@@ -207,14 +201,14 @@ namespace APSWinForm
             this.panel9.Size = new System.Drawing.Size(780, 136);
             this.panel9.TabIndex = 42;
             // 
-            // panel5
+            // panel1
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.cboEQP);
-            this.panel5.Location = new System.Drawing.Point(148, 105);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(121, 20);
-            this.panel5.TabIndex = 171;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cboEQP);
+            this.panel1.Location = new System.Drawing.Point(158, 103);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(121, 20);
+            this.panel1.TabIndex = 175;
             // 
             // cboEQP
             // 
@@ -227,14 +221,14 @@ namespace APSWinForm
             this.cboEQP.Size = new System.Drawing.Size(119, 20);
             this.cboEQP.TabIndex = 167;
             // 
-            // panel4
+            // panel10
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.cboProcess);
-            this.panel4.Location = new System.Drawing.Point(147, 64);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(121, 20);
-            this.panel4.TabIndex = 171;
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.cboProcess);
+            this.panel10.Location = new System.Drawing.Point(157, 62);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(121, 20);
+            this.panel10.TabIndex = 176;
             // 
             // cboProcess
             // 
@@ -247,14 +241,14 @@ namespace APSWinForm
             this.cboProcess.Size = new System.Drawing.Size(119, 20);
             this.cboProcess.TabIndex = 167;
             // 
-            // panel3
+            // panel11
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.cboProduct);
-            this.panel3.Location = new System.Drawing.Point(147, 24);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(121, 20);
-            this.panel3.TabIndex = 171;
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.cboProduct);
+            this.panel11.Location = new System.Drawing.Point(157, 22);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(121, 20);
+            this.panel11.TabIndex = 177;
             // 
             // cboProduct
             // 
@@ -271,30 +265,30 @@ namespace APSWinForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(68, 64);
+            this.label2.Location = new System.Drawing.Point(78, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 14);
-            this.label2.TabIndex = 156;
+            this.label2.TabIndex = 174;
             this.label2.Text = "ㆍ공정ID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(68, 24);
+            this.label3.Location = new System.Drawing.Point(78, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 14);
-            this.label3.TabIndex = 154;
+            this.label3.TabIndex = 173;
             this.label3.Text = "ㆍ제품ID";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(68, 105);
+            this.label10.Location = new System.Drawing.Point(78, 103);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 14);
-            this.label10.TabIndex = 152;
+            this.label10.TabIndex = 172;
             this.label10.Text = "ㆍ설비ID";
             // 
             // btnReset
@@ -350,63 +344,104 @@ namespace APSWinForm
             this.panel7.Size = new System.Drawing.Size(10, 136);
             this.panel7.TabIndex = 40;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(790, 214);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 390);
+            this.panel4.TabIndex = 56;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(10, 604);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(790, 10);
+            this.panel5.TabIndex = 58;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 214);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 400);
+            this.panel3.TabIndex = 55;
+            // 
+            // dgvEQP
+            // 
+            this.dgvEQP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEQP.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEQP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEQP.Location = new System.Drawing.Point(10, 214);
+            this.dgvEQP.Name = "dgvEQP";
+            this.dgvEQP.ReadOnly = true;
+            this.dgvEQP.RowTemplate.Height = 23;
+            this.dgvEQP.Size = new System.Drawing.Size(780, 390);
+            this.dgvEQP.TabIndex = 57;
+            // 
             // EQP_ARRANGE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 636);
+            this.ClientSize = new System.Drawing.Size(800, 614);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgvEQP);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.toolStrip1);
             this.Name = "EQP_ARRANGE";
             this.Text = "EQP_ARRANGE";
             this.Load += new System.EventHandler(this.EQP_ARRANGE_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnModify)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEQP)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEQP)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        protected System.Windows.Forms.PictureBox pictureBox6;
-        protected System.Windows.Forms.PictureBox btnAdd;
-        protected System.Windows.Forms.PictureBox btnModify;
-        protected System.Windows.Forms.PictureBox pictureBox3;
-        protected System.Windows.Forms.PictureBox pictureBox2;
-        protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.DataGridView dgvEQP;
+        public System.Windows.Forms.ToolStrip toolStrip1;
+        protected System.Windows.Forms.ToolStripLabel title;
+        public System.Windows.Forms.ToolStripButton BtnDelete;
+        public System.Windows.Forms.ToolStripButton BtnEdit;
+        public System.Windows.Forms.ToolStripButton BtnAdd;
+        protected System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        public System.Windows.Forms.ToolStripButton XlsDown;
+        public System.Windows.Forms.ToolStripButton XlsAdd;
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Panel panel9;
-        protected System.Windows.Forms.Button btnReset;
-        protected System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cboEQP;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.ComboBox cboProcess;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.ComboBox cboProduct;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ComboBox cboEQP;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox cboProcess;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox cboProduct;
+        protected System.Windows.Forms.Button btnReset;
+        protected System.Windows.Forms.Button btnSearch;
+        protected System.Windows.Forms.Panel panel8;
+        protected System.Windows.Forms.Panel panel6;
+        protected System.Windows.Forms.Panel panel7;
+        protected System.Windows.Forms.Panel panel4;
+        protected System.Windows.Forms.Panel panel5;
+        protected System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.DataGridView dgvEQP;
     }
 }
