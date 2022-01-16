@@ -369,6 +369,7 @@
     <Compile Include="Models\EQPGanttModel.cs" />
     <Compile Include="Models\UtilizationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\TableHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

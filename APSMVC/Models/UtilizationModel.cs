@@ -13,6 +13,7 @@ namespace APSMVC.Models
         public SelectList MachineStateList { get; set; }
         public string CurrentMachineState { get; set; }
         public Dictionary<string, List<ResUtilizationData>>  ChartDictionary { get; set; }
+        public List<List<string>> TableData { get; set; }
     }
 
 }
