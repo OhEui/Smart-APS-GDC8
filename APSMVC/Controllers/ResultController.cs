@@ -94,7 +94,7 @@ namespace APSMVC.Controllers
             List<List<string>> tableData = new List<List<string>>();
             
             List<string> headerRow = new List<string>();
-            headerRow.Add("EqpGroup");
+            headerRow.Add("설비그룹");
             headerRow.AddRange(result.Select((i) => i.TARGET_DATE.ToString("yyyyMMdd")).ToHashSet());
             tableData.Add(headerRow);
 
@@ -109,8 +109,12 @@ namespace APSMVC.Controllers
             UtilizationModel model = new UtilizationModel() {
                 ChartDictionary = dictionary,
                 CurrentMachineState = MACHINE_STATE,
-                MachineStateList = new SelectList(mslist, "Code", "CodeName"),
+                MachineStateList = new SelectList(mslist, "Code", "CodeName", "BUSY"),
                 VersionNoList = new SelectList(vnlist, "Code", "CodeName"),
+                DropDownAttributes = new Dictionary<string, object>() {
+                    { "class", "condition" }, { "style", "width:100%;" }
+                },
+
                 TableData = tableData
             };
 
