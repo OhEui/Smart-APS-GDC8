@@ -121,9 +121,6 @@
                 });
             }
 
-
-
-
             // Create root element
             // https://www.amcharts.com/docs/v5/getting-started/#Root_element
             var root = am5.Root.new("chartdiv");
@@ -133,6 +130,9 @@
             root.setThemes([
                 am5themes_Animated.new(root)
             ]);
+
+            // https://www.amcharts.com/docs/v5/concepts/formatters/formatting-numbers/
+            root.numberFormatter.set("numberFormat", "###.#0'%'");
 
             // Create chart
             // https://www.amcharts.com/docs/v5/charts/xy-chart/
@@ -179,13 +179,14 @@
                     yAxis: yAxis,
                     valueYField: "value",
                     valueXField: "date",
-                    legendValueText: "{valueY}%",
+                    legendValueText: "{valueY}",
                     tooltip: am5.Tooltip.new(root, {
                         pointerOrientation: "horizontal",
-                        labelText: "{valueY}%"
+                        labelText: "{valueY}"
                     })
                 });
                 newSeries.name = '@name';
+
                 var series = chart.series.push(newSeries);
 
                 // https://www.amcharts.com/docs/v5/concepts/data/
