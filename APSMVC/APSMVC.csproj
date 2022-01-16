@@ -114,6 +114,7 @@
     <Content Include="pages\dist\js\adminlte.min.js" />
     <Content Include="pages\dist\js\demo.js" />
     <Content Include="pages\html\chart.html" />
+    <Content Include="pages\html\signup.html" />
     <Content Include="pages\html\login.html" />
     <Content Include="pages\html\signin.css" />
     <Content Include="pages\plugins\bootstrap\js\bootstrap.bundle.js" />
