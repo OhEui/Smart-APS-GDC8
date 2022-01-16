@@ -355,7 +355,7 @@ namespace APSWinForm
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EQPARR_REG";
-            this.Text = "EQPARR_REG";
+            this.Text = "설비배치";
             this.Load += new System.EventHandler(this.EQPARR_REG_Load);
             this.panel2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);

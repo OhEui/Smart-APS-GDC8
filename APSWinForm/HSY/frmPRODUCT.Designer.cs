@@ -77,7 +77,7 @@ namespace APSWinForm
             this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(696, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(827, 40);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -153,18 +153,18 @@ namespace APSWinForm
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(10, 598);
+            this.panel5.Location = new System.Drawing.Point(10, 586);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(676, 10);
+            this.panel5.Size = new System.Drawing.Size(807, 10);
             this.panel5.TabIndex = 54;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(686, 196);
+            this.panel4.Location = new System.Drawing.Point(817, 196);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 412);
+            this.panel4.Size = new System.Drawing.Size(10, 400);
             this.panel4.TabIndex = 53;
             // 
             // panel3
@@ -173,7 +173,7 @@ namespace APSWinForm
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 196);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 412);
+            this.panel3.Size = new System.Drawing.Size(10, 400);
             this.panel3.TabIndex = 52;
             // 
             // panel2
@@ -186,7 +186,7 @@ namespace APSWinForm
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.panel2.Size = new System.Drawing.Size(696, 156);
+            this.panel2.Size = new System.Drawing.Size(827, 156);
             this.panel2.TabIndex = 51;
             // 
             // panel9
@@ -202,7 +202,7 @@ namespace APSWinForm
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(676, 136);
+            this.panel9.Size = new System.Drawing.Size(807, 136);
             this.panel9.TabIndex = 42;
             // 
             // lblUserID
@@ -219,7 +219,7 @@ namespace APSWinForm
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(548, 75);
+            this.button3.Location = new System.Drawing.Point(679, 75);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(74, 30);
             this.button3.TabIndex = 54;
@@ -233,6 +233,7 @@ namespace APSWinForm
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(121, 21);
             this.txtID.TabIndex = 43;
+            this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
             // button7
             // 
@@ -240,7 +241,7 @@ namespace APSWinForm
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(548, 35);
+            this.button7.Location = new System.Drawing.Point(679, 35);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(74, 30);
             this.button7.TabIndex = 45;
@@ -274,11 +275,12 @@ namespace APSWinForm
             this.txtPID.Name = "txtPID";
             this.txtPID.Size = new System.Drawing.Size(121, 21);
             this.txtPID.TabIndex = 56;
+            this.txtPID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPID_KeyDown);
             // 
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(686, 10);
+            this.panel8.Location = new System.Drawing.Point(817, 10);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(10, 136);
             this.panel8.TabIndex = 41;
@@ -308,14 +310,14 @@ namespace APSWinForm
             this.dgvPR.Location = new System.Drawing.Point(10, 196);
             this.dgvPR.Name = "dgvPR";
             this.dgvPR.RowTemplate.Height = 23;
-            this.dgvPR.Size = new System.Drawing.Size(676, 402);
+            this.dgvPR.Size = new System.Drawing.Size(807, 390);
             this.dgvPR.TabIndex = 55;
             // 
             // frmPRODUCT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 608);
+            this.ClientSize = new System.Drawing.Size(827, 596);
             this.Controls.Add(this.dgvPR);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);

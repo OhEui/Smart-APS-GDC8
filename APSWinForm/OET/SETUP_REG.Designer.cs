@@ -247,9 +247,9 @@ namespace APSWinForm
             this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.Location = new System.Drawing.Point(62, 112);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 14);
+            this.label9.Size = new System.Drawing.Size(55, 14);
             this.label9.TabIndex = 191;
-            this.label9.Text = "ㆍ라인아이디";
+            this.label9.Text = "ㆍ라인ID";
             // 
             // label10
             // 
@@ -257,9 +257,9 @@ namespace APSWinForm
             this.label10.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(61, 66);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 14);
+            this.label10.Size = new System.Drawing.Size(67, 14);
             this.label10.TabIndex = 190;
-            this.label10.Text = "ㆍ사이트아이디";
+            this.label10.Text = "ㆍ사이트ID";
             // 
             // btnAdd
             // 
@@ -323,7 +323,7 @@ namespace APSWinForm
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "SETUP_REG";
-            this.Text = "SETUP_REG";
+            this.Text = "교체준비시간";
             this.Load += new System.EventHandler(this.SETUP_REG_Load);
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

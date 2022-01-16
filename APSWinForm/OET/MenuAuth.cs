@@ -22,6 +22,7 @@ namespace APSWinForm
         public MenuAuth()
         {
             InitializeComponent();
+            BtnAdd.Visible = BtnDelete.Visible = XlsAdd.Visible = XlsDown.Visible = false;
         }
 
         private void MenuAuth_Load(object sender, EventArgs e)

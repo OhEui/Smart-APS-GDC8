@@ -114,5 +114,18 @@ namespace APSServer.Models
                 return (iRowAffect > 0);
             }
         }
+
+        public List<DemandVO> GetDemandList()
+        {
+            string sql = @"select DEMAND_ID, DUE_DATE
+from DEMAND
+where DUE_DATE between('yyyy-mm-dd')
+				                    AND ('yyyy-mm-dd')";
+
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                return Helper.DataReaderMapToList<DemandVO>(cmd.ExecuteReader());
+            }
+        }
     }
 }
