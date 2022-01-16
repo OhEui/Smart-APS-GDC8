@@ -63,7 +63,7 @@ where s1.STEP_ID = 'PAINT' and s2.STEP_ID = 'FINISH' and s1.MACHINE_STATE='BUSY'
                     cmd.Parameters.AddWithValue("@LOT_ID", $"%{lotID}%");
                 }
 
-                sb.Append("order by LOT_ID");
+                sb.Append("order by s1.LOT_ID desc");
                 cmd.CommandText = sb.ToString();
                 lotList = Helper.DataReaderMapToList<LOTGanttData>(cmd.ExecuteReader());
             }
@@ -138,7 +138,7 @@ where s1.STEP_ID = 'PAINT' and s2.STEP_ID = 'FINISH' and s1.MACHINE_STATE='BUSY'
                     }
                 }
 
-                sb.Append("order by LOT_ID");
+                sb.Append("order by LOT_ID desc");
                 cmd.CommandText = sb.ToString();
 
                 list = Helper.DataReaderMapToList<LOTGanttCategory>(cmd.ExecuteReader());

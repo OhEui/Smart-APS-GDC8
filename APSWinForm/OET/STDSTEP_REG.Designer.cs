@@ -299,7 +299,9 @@ namespace APSWinForm
 			this.ClientSize = new System.Drawing.Size(373, 441);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel2);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "STDSTEP_REG";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "표준 공정 정보";
 			this.Load += new System.EventHandler(this.STDSTEP_REG_Load);
 			this.panel9.ResumeLayout(false);

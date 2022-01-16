@@ -44,6 +44,13 @@ namespace APSMVC.Controllers
             eqpGroupList.Insert(0, blankItem);
             productIDList.Insert(0, blankItem);
             */
+            List<string> qParameters = new List<string>();
+            if (EQP_GROUP!=null)
+                qParameters.AddRange(EQP_GROUP);
+            if (EQP_ID != null)
+                qParameters.AddRange(EQP_ID);
+            if (PRODUCT_ID != null)
+                qParameters.AddRange(PRODUCT_ID);
 
             EQPGanttModel model = new EQPGanttModel
             {
@@ -57,6 +64,7 @@ namespace APSMVC.Controllers
                     { "class", "condition" }, { "style", "width:100%;" },
                     { "multiple", "multiple" }, { "data-close-on-select", "false" }
                 },
+                QueryParameters = qParameters?.ToArray(),
 
                 Start_Date = Start_Date ?? commonData.Start_Date,
                 End_Date = End_Date ?? commonData.End_Date,
@@ -88,14 +96,36 @@ namespace APSMVC.Controllers
             // 차트 데이터 그룹화 (EQP_GROUP)
             var dictionary = 
                 chartData.GroupBy((i) => i.EQP_GROUP).ToDictionary(g => g.Key, g => g.ToList());
+
+            // table 생성용 데이터
+            // result에서 target_date 데이터만 추출 => table의 header로 사용
+            List<List<string>> tableData = new List<List<string>>();
             
+            List<string> headerRow = new List<string>();
+            headerRow.Add("설비그룹");
+            headerRow.AddRange(result.Select((i) => i.TARGET_DATE.ToString("yyyyMMdd")).ToHashSet());
+            tableData.Add(headerRow);
+
+            foreach (var item in dictionary)
+            {
+                List<string> row = new List<string>();
+                row.Add(item.Key);
+                row.AddRange(item.Value.Select((i) => $"{i.RATE:#0.#0}%"));
+                tableData.Add(row);
+            }
+
             UtilizationModel model = new UtilizationModel() {
                 ChartDictionary = dictionary,
                 CurrentMachineState = MACHINE_STATE,
-                MachineStateList = new SelectList(mslist, "Code", "CodeName"),
-                VersionNoList = new SelectList(vnlist, "Code", "CodeName")
+                MachineStateList = new SelectList(mslist, "Code", "CodeName", "BUSY"),
+                VersionNoList = new SelectList(vnlist, "Code", "CodeName"),
+                DropDownAttributes = new Dictionary<string, object>() {
+                    { "class", "condition" }, { "style", "width:100%;" }
+                },
+
+                TableData = tableData
             };
-            ViewBag.Enumerator = model.ChartDictionary.GetEnumerator();
+
             return View(model);
         }
     }

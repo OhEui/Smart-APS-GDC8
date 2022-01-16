@@ -126,7 +126,7 @@ namespace APSWinForm
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-            this.button3.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(191, 326);
             this.button3.Name = "button3";
@@ -196,13 +196,13 @@ namespace APSWinForm
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-            this.button7.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Location = new System.Drawing.Point(63, 326);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(102, 36);
             this.button7.TabIndex = 7;
-            this.button7.Text = "등록";
+            this.button7.Text = "저장";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -275,10 +275,10 @@ namespace APSWinForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(35, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 18);
+            this.label1.Size = new System.Drawing.Size(113, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "수요정보 추가/수정";
             // 

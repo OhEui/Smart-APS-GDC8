@@ -35,6 +35,10 @@ namespace APSWinForm
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.txtGroup = new System.Windows.Forms.TextBox();
+            this.txtStep = new System.Windows.Forms.TextBox();
+            this.txtLine = new System.Windows.Forms.TextBox();
+            this.txtSite = new System.Windows.Forms.TextBox();
             this.cboStep = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cboGroup = new System.Windows.Forms.ComboBox();
@@ -50,10 +54,6 @@ namespace APSWinForm
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSite = new System.Windows.Forms.TextBox();
-            this.txtLine = new System.Windows.Forms.TextBox();
-            this.txtStep = new System.Windows.Forms.TextBox();
-            this.txtGroup = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -130,6 +130,42 @@ namespace APSWinForm
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(384, 433);
             this.panel9.TabIndex = 42;
+            // 
+            // txtGroup
+            // 
+            this.txtGroup.Location = new System.Drawing.Point(188, 195);
+            this.txtGroup.Name = "txtGroup";
+            this.txtGroup.ReadOnly = true;
+            this.txtGroup.Size = new System.Drawing.Size(121, 21);
+            this.txtGroup.TabIndex = 206;
+            this.txtGroup.Visible = false;
+            // 
+            // txtStep
+            // 
+            this.txtStep.Location = new System.Drawing.Point(188, 152);
+            this.txtStep.Name = "txtStep";
+            this.txtStep.ReadOnly = true;
+            this.txtStep.Size = new System.Drawing.Size(122, 21);
+            this.txtStep.TabIndex = 205;
+            this.txtStep.Visible = false;
+            // 
+            // txtLine
+            // 
+            this.txtLine.Location = new System.Drawing.Point(188, 108);
+            this.txtLine.Name = "txtLine";
+            this.txtLine.ReadOnly = true;
+            this.txtLine.Size = new System.Drawing.Size(122, 21);
+            this.txtLine.TabIndex = 204;
+            this.txtLine.Visible = false;
+            // 
+            // txtSite
+            // 
+            this.txtSite.Location = new System.Drawing.Point(188, 62);
+            this.txtSite.Name = "txtSite";
+            this.txtSite.ReadOnly = true;
+            this.txtSite.Size = new System.Drawing.Size(121, 21);
+            this.txtSite.TabIndex = 203;
+            this.txtSite.Visible = false;
             // 
             // cboStep
             // 
@@ -235,7 +271,7 @@ namespace APSWinForm
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 36);
             this.btnAdd.TabIndex = 45;
-            this.btnAdd.Text = "등록";
+            this.btnAdd.Text = "저장";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -278,42 +314,6 @@ namespace APSWinForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(404, 38);
             this.panel1.TabIndex = 44;
-            // 
-            // txtSite
-            // 
-            this.txtSite.Location = new System.Drawing.Point(188, 62);
-            this.txtSite.Name = "txtSite";
-            this.txtSite.ReadOnly = true;
-            this.txtSite.Size = new System.Drawing.Size(121, 21);
-            this.txtSite.TabIndex = 203;
-            this.txtSite.Visible = false;
-            // 
-            // txtLine
-            // 
-            this.txtLine.Location = new System.Drawing.Point(188, 108);
-            this.txtLine.Name = "txtLine";
-            this.txtLine.ReadOnly = true;
-            this.txtLine.Size = new System.Drawing.Size(122, 21);
-            this.txtLine.TabIndex = 204;
-            this.txtLine.Visible = false;
-            // 
-            // txtStep
-            // 
-            this.txtStep.Location = new System.Drawing.Point(188, 152);
-            this.txtStep.Name = "txtStep";
-            this.txtStep.ReadOnly = true;
-            this.txtStep.Size = new System.Drawing.Size(122, 21);
-            this.txtStep.TabIndex = 205;
-            this.txtStep.Visible = false;
-            // 
-            // txtGroup
-            // 
-            this.txtGroup.Location = new System.Drawing.Point(188, 195);
-            this.txtGroup.Name = "txtGroup";
-            this.txtGroup.ReadOnly = true;
-            this.txtGroup.Size = new System.Drawing.Size(121, 21);
-            this.txtGroup.TabIndex = 206;
-            this.txtGroup.Visible = false;
             // 
             // SETUP_REG
             // 
