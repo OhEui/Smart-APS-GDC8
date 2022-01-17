@@ -50,7 +50,7 @@ namespace APSWinForm
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(123)))), ((int)(((byte)(123)))));
-            this.linkLabel2.Location = new System.Drawing.Point(491, 379);
+            this.linkLabel2.Location = new System.Drawing.Point(560, 379);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(117, 15);
             this.linkLabel2.TabIndex = 4;
@@ -63,12 +63,13 @@ namespace APSWinForm
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(123)))), ((int)(((byte)(123)))));
-            this.linkLabel1.Location = new System.Drawing.Point(628, 379);
+            this.linkLabel1.Location = new System.Drawing.Point(558, 415);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(114, 15);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Finding a password";
+            this.linkLabel1.Visible = false;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // button1
@@ -91,9 +92,9 @@ namespace APSWinForm
             this.ckLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(123)))), ((int)(((byte)(123)))));
             this.ckLogin.Location = new System.Drawing.Point(561, 278);
             this.ckLogin.Name = "ckLogin";
-            this.ckLogin.Size = new System.Drawing.Size(113, 20);
+            this.ckLogin.Size = new System.Drawing.Size(117, 20);
             this.ckLogin.TabIndex = 5;
-            this.ckLogin.Text = "Keep Me login";
+            this.ckLogin.Text = "Remember me";
             this.ckLogin.UseVisualStyleBackColor = true;
             // 
             // label3
