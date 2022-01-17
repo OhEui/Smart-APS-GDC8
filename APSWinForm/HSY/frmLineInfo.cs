@@ -91,13 +91,13 @@ namespace APSWinForm
         {
             if (dgvLI.SelectedRows.Count < 1)
             {
-                MessageBox.Show("삭제할 제품을 선택하여 주세요.");
+                MessageBox.Show("삭제할 라인을 선택하여 주세요.");
                 return;
             }
 
             string lineID = dgvLI.SelectedRows[0].Cells["LINE_ID"].Value.ToString();
 
-            if (MessageBox.Show("        정말 삭제하시겠습니까?", "제품삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("        정말 삭제하시겠습니까?", "라인삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 APSVO.WebMessage msg = await srv.GetAsync($"api/LineInfo/Delete/{lineID}");
                 if (msg.IsSuccess)

@@ -84,7 +84,7 @@ namespace APSWinForm
             this.XlsAdd});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 58);
+            this.toolStrip1.Size = new System.Drawing.Size(992, 58);
             this.toolStrip1.TabIndex = 50;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -109,7 +109,7 @@ namespace APSWinForm
             this.BtnDelete.Text = "삭제";
             this.BtnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnDelete.Click += new System.EventHandler(this.btn_Delete_Click);
+            this.BtnDelete.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // BtnEdit
             // 
@@ -181,7 +181,7 @@ namespace APSWinForm
             this.panel2.Location = new System.Drawing.Point(0, 58);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.panel2.Size = new System.Drawing.Size(800, 156);
+            this.panel2.Size = new System.Drawing.Size(992, 124);
             this.panel2.TabIndex = 51;
             // 
             // panel9
@@ -198,14 +198,14 @@ namespace APSWinForm
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(780, 136);
+            this.panel9.Size = new System.Drawing.Size(972, 104);
             this.panel9.TabIndex = 42;
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.cboEQP);
-            this.panel1.Location = new System.Drawing.Point(158, 103);
+            this.panel1.Location = new System.Drawing.Point(539, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(121, 20);
             this.panel1.TabIndex = 175;
@@ -225,7 +225,7 @@ namespace APSWinForm
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.cboProcess);
-            this.panel10.Location = new System.Drawing.Point(157, 62);
+            this.panel10.Location = new System.Drawing.Point(313, 45);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(121, 20);
             this.panel10.TabIndex = 176;
@@ -245,7 +245,7 @@ namespace APSWinForm
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel11.Controls.Add(this.cboProduct);
-            this.panel11.Location = new System.Drawing.Point(157, 22);
+            this.panel11.Location = new System.Drawing.Point(95, 44);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(121, 20);
             this.panel11.TabIndex = 177;
@@ -265,7 +265,7 @@ namespace APSWinForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(78, 62);
+            this.label2.Location = new System.Drawing.Point(243, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 14);
             this.label2.TabIndex = 174;
@@ -275,7 +275,7 @@ namespace APSWinForm
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(78, 22);
+            this.label3.Location = new System.Drawing.Point(16, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 14);
             this.label3.TabIndex = 173;
@@ -285,7 +285,7 @@ namespace APSWinForm
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(78, 103);
+            this.label10.Location = new System.Drawing.Point(463, 47);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 14);
             this.label10.TabIndex = 172;
@@ -297,7 +297,7 @@ namespace APSWinForm
             this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(673, 75);
+            this.btnReset.Location = new System.Drawing.Point(865, 59);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(74, 30);
             this.btnReset.TabIndex = 54;
@@ -311,7 +311,7 @@ namespace APSWinForm
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(673, 35);
+            this.btnSearch.Location = new System.Drawing.Point(865, 19);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(74, 30);
             this.btnSearch.TabIndex = 45;
@@ -322,9 +322,9 @@ namespace APSWinForm
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(790, 10);
+            this.panel8.Location = new System.Drawing.Point(982, 10);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 136);
+            this.panel8.Size = new System.Drawing.Size(10, 104);
             this.panel8.TabIndex = 41;
             // 
             // panel6
@@ -333,7 +333,7 @@ namespace APSWinForm
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 10);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 136);
+            this.panel6.Size = new System.Drawing.Size(10, 104);
             this.panel6.TabIndex = 39;
             // 
             // panel7
@@ -341,48 +341,46 @@ namespace APSWinForm
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 136);
+            this.panel7.Size = new System.Drawing.Size(10, 104);
             this.panel7.TabIndex = 40;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(790, 214);
+            this.panel4.Location = new System.Drawing.Point(982, 182);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 390);
+            this.panel4.Size = new System.Drawing.Size(10, 513);
             this.panel4.TabIndex = 56;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(10, 604);
+            this.panel5.Location = new System.Drawing.Point(10, 695);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(790, 10);
+            this.panel5.Size = new System.Drawing.Size(982, 10);
             this.panel5.TabIndex = 58;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 214);
+            this.panel3.Location = new System.Drawing.Point(0, 182);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 400);
+            this.panel3.Size = new System.Drawing.Size(10, 523);
             this.panel3.TabIndex = 55;
             // 
             // dgvEQP
             // 
-            this.dgvEQP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEQP.BackgroundColor = System.Drawing.Color.White;
             this.dgvEQP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEQP.Location = new System.Drawing.Point(10, 214);
+            this.dgvEQP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEQP.Location = new System.Drawing.Point(0, 182);
             this.dgvEQP.Name = "dgvEQP";
             this.dgvEQP.ReadOnly = true;
             this.dgvEQP.RowTemplate.Height = 23;
-            this.dgvEQP.Size = new System.Drawing.Size(780, 390);
+            this.dgvEQP.Size = new System.Drawing.Size(992, 523);
             this.dgvEQP.TabIndex = 57;
             this.dgvEQP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEQP_CellClick);
             // 
@@ -390,7 +388,7 @@ namespace APSWinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 614);
+            this.ClientSize = new System.Drawing.Size(992, 705);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);

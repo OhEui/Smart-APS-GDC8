@@ -39,10 +39,10 @@ namespace APSWinForm
             {
                 SITE_ID = txtSID.Text,
                 LINE_ID = txtLID.Text,
-                LINE_NAME = txtName.Text,
+                LINE_NAME = txtName.Text
             };
 
-            WebMessage wmsg = await srv.PostAsyncNone("api/LineInfo/SaveLineInfo", lineinfovo);
+            WebMessage wmsg = await srv.PostAsyncNone("api/LineInfo/LineInfoUpdate", lineinfovo);
 
             if (wmsg.IsSuccess)
             {
