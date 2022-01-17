@@ -35,10 +35,11 @@ namespace APSVO
 
     public class UserInfoVO
     {
-        public string User_Name { get; set; }
-        public string User_ID { get; set; }
-        public string User_phone { get; set; }
-        public string User_Birth { get; set; }
+        public string Name { get; set; }
+        public string Id { get; set; }
+        public string Phone { get; set; }
+        public DateTime Birthday { get; set; }
+        public string Email { get; set; }
     }
 
 }
