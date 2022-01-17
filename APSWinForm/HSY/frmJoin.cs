@@ -12,7 +12,7 @@ using APSVO;
 
 namespace APSWinForm
 {
-    public partial class frmJoin : Form
+    public partial class frmJoin : frmBaseIcon
     {
 
 

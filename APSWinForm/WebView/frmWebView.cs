@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-    public partial class frmWebView : Form
+    public partial class frmWebView : frmBaseIcon
     {
         public string UrlAddress { get; set; }
 

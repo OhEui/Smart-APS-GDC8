@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-	public partial class STEP_ROUTE : Form
+	public partial class STEP_ROUTE : frmBaseIcon
 	{
 		ServiceHelp srv = new ServiceHelp();
 		List<StepRouteVO> stepRouteList = null;

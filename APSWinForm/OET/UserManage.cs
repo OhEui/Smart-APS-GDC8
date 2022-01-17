@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-    public partial class UserManage : Form
+    public partial class UserManage : frmBaseIcon
     {
         public UserManage()
         {

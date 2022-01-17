@@ -22,7 +22,7 @@ namespace APSWinForm.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace APSWinForm.Properties {
         ///   이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("APSWinForm.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace APSWinForm.Properties {
         ///   재정의합니다.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap addd {
+        public static System.Drawing.Bitmap addd {
             get {
                 object obj = ResourceManager.GetObject("addd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap Chart {
+        public static System.Drawing.Bitmap Chart {
             get {
                 object obj = ResourceManager.GetObject("Chart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap close_grey {
+        public static System.Drawing.Bitmap close_grey {
             get {
                 object obj = ResourceManager.GetObject("close_grey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap close_grey1 {
+        public static System.Drawing.Bitmap close_grey1 {
             get {
                 object obj = ResourceManager.GetObject("close_grey1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap close_red {
+        public static System.Drawing.Bitmap close_red {
             get {
                 object obj = ResourceManager.GetObject("close_red", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +113,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   고객 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string CUSTOMER_ID {
+        public static string CUSTOMER_ID {
             get {
                 return ResourceManager.GetString("CUSTOMER_ID", resourceCulture);
             }
@@ -122,7 +122,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap del {
+        public static System.Drawing.Bitmap del {
             get {
                 object obj = ResourceManager.GetObject("del", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -132,7 +132,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   수요정보과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string DEMAND {
+        public static string DEMAND {
             get {
                 return ResourceManager.GetString("DEMAND", resourceCulture);
             }
@@ -141,7 +141,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   수요 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string DEMAND_ID {
+        public static string DEMAND_ID {
             get {
                 return ResourceManager.GetString("DEMAND_ID", resourceCulture);
             }
@@ -150,7 +150,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   수량과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string DEMAND_QTY {
+        public static string DEMAND_QTY {
             get {
                 return ResourceManager.GetString("DEMAND_QTY", resourceCulture);
             }
@@ -159,7 +159,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   수요버전과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string DEMAND_VER {
+        public static string DEMAND_VER {
             get {
                 return ResourceManager.GetString("DEMAND_VER", resourceCulture);
             }
@@ -168,7 +168,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   기한과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string DUE_DATE {
+        public static string DUE_DATE {
             get {
                 return ResourceManager.GetString("DUE_DATE", resourceCulture);
             }
@@ -177,7 +177,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap edit {
+        public static System.Drawing.Bitmap edit {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -187,7 +187,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   작업조건과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string EQP_ARRANGE {
+        public static string EQP_ARRANGE {
             get {
                 return ResourceManager.GetString("EQP_ARRANGE", resourceCulture);
             }
@@ -196,7 +196,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   설비그룹과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string EQP_GROUP {
+        public static string EQP_GROUP {
             get {
                 return ResourceManager.GetString("EQP_GROUP", resourceCulture);
             }
@@ -205,7 +205,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   설비 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string EQP_ID {
+        public static string EQP_ID {
             get {
                 return ResourceManager.GetString("EQP_ID", resourceCulture);
             }
@@ -214,7 +214,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   모델명과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string EQP_MODEL {
+        public static string EQP_MODEL {
             get {
                 return ResourceManager.GetString("EQP_MODEL", resourceCulture);
             }
@@ -223,7 +223,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   설비정보과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string EQUIPMENT {
+        public static string EQUIPMENT {
             get {
                 return ResourceManager.GetString("EQUIPMENT", resourceCulture);
             }
@@ -232,7 +232,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap exit {
+        public static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -242,7 +242,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap file_add_icon_128235 {
+        public static System.Drawing.Bitmap file_add_icon_128235 {
             get {
                 object obj = ResourceManager.GetObject("file_add_icon_128235", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -252,7 +252,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap free_icon_edit_1827933 {
+        public static System.Drawing.Bitmap free_icon_edit_1827933 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-edit-1827933", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -262,7 +262,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap free_icon_save_file_2810399 {
+        public static System.Drawing.Bitmap free_icon_save_file_2810399 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-save-file-2810399", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -272,7 +272,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_inscription_30 {
+        public static System.Drawing.Bitmap icons8_inscription_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-inscription-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -282,7 +282,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   라인 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string LINE_ID {
+        public static string LINE_ID {
             get {
                 return ResourceManager.GetString("LINE_ID", resourceCulture);
             }
@@ -291,7 +291,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   라인정보과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string LINE_INFO {
+        public static string LINE_INFO {
             get {
                 return ResourceManager.GetString("LINE_INFO", resourceCulture);
             }
@@ -300,7 +300,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   라인이름과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string LINE_NAME {
+        public static string LINE_NAME {
             get {
                 return ResourceManager.GetString("LINE_NAME", resourceCulture);
             }
@@ -309,16 +309,26 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   생산단위크기과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string LOT_SIZE {
+        public static string LOT_SIZE {
             get {
                 return ResourceManager.GetString("LOT_SIZE", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        public static System.Drawing.Icon mainIcon {
+            get {
+                object obj = ResourceManager.GetObject("mainIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap Manage {
+        public static System.Drawing.Bitmap Manage {
             get {
                 object obj = ResourceManager.GetObject("Manage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -328,7 +338,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap My_project2 {
+        public static System.Drawing.Bitmap My_project2 {
             get {
                 object obj = ResourceManager.GetObject("My_project2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -338,7 +348,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap premium_icon_add_button_4904022 {
+        public static System.Drawing.Bitmap premium_icon_add_button_4904022 {
             get {
                 object obj = ResourceManager.GetObject("premium-icon-add-button-4904022", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -348,7 +358,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   공정소요시간과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string PROC_TIME {
+        public static string PROC_TIME {
             get {
                 return ResourceManager.GetString("PROC_TIME", resourceCulture);
             }
@@ -357,7 +367,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   프로세스 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string PROCESS_ID {
+        public static string PROCESS_ID {
             get {
                 return ResourceManager.GetString("PROCESS_ID", resourceCulture);
             }
@@ -366,7 +376,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   제품정보과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string PRODUCT {
+        public static string PRODUCT {
             get {
                 return ResourceManager.GetString("PRODUCT", resourceCulture);
             }
@@ -375,7 +385,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   제품 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string PRODUCT_ID {
+        public static string PRODUCT_ID {
             get {
                 return ResourceManager.GetString("PRODUCT_ID", resourceCulture);
             }
@@ -384,7 +394,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   제품이름과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string PRODUCT_NAME {
+        public static string PRODUCT_NAME {
             get {
                 return ResourceManager.GetString("PRODUCT_NAME", resourceCulture);
             }
@@ -393,7 +403,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   제품타입과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string PRODUCT_TYPE {
+        public static string PRODUCT_TYPE {
             get {
                 return ResourceManager.GetString("PRODUCT_TYPE", resourceCulture);
             }
@@ -402,7 +412,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   교체준비시간과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string SETUP_TIME {
+        public static string SETUP_TIME {
             get {
                 return ResourceManager.GetString("SETUP_TIME", resourceCulture);
             }
@@ -411,7 +421,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   현장 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string SITE_ID {
+        public static string SITE_ID {
             get {
                 return ResourceManager.GetString("SITE_ID", resourceCulture);
             }
@@ -420,7 +430,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   표준공정 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string STD_STEP_ID {
+        public static string STD_STEP_ID {
             get {
                 return ResourceManager.GetString("STD_STEP_ID", resourceCulture);
             }
@@ -429,7 +439,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   표준공정 정보과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string STD_STEP_INFO {
+        public static string STD_STEP_INFO {
             get {
                 return ResourceManager.GetString("STD_STEP_INFO", resourceCulture);
             }
@@ -438,7 +448,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   표준공정이름과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string STD_STEP_NAME {
+        public static string STD_STEP_NAME {
             get {
                 return ResourceManager.GetString("STD_STEP_NAME", resourceCulture);
             }
@@ -447,7 +457,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   공정 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string STEP_ID {
+        public static string STEP_ID {
             get {
                 return ResourceManager.GetString("STEP_ID", resourceCulture);
             }
@@ -456,7 +466,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   공정순서과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string STEP_ROUTE {
+        public static string STEP_ROUTE {
             get {
                 return ResourceManager.GetString("STEP_ROUTE", resourceCulture);
             }
@@ -465,7 +475,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   공정순서과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string STEP_SEQ {
+        public static string STEP_SEQ {
             get {
                 return ResourceManager.GetString("STEP_SEQ", resourceCulture);
             }
@@ -474,7 +484,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   공정준비시간과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string STEP_SETUP {
+        public static string STEP_SETUP {
             get {
                 return ResourceManager.GetString("STEP_SETUP", resourceCulture);
             }
@@ -483,7 +493,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   공정소요시간과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string STEP_TAT {
+        public static string STEP_TAT {
             get {
                 return ResourceManager.GetString("STEP_TAT", resourceCulture);
             }
@@ -492,7 +502,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   공정타입과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string STEP_TYPE {
+        public static string STEP_TYPE {
             get {
                 return ResourceManager.GetString("STEP_TYPE", resourceCulture);
             }
@@ -501,7 +511,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   공정수율과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string STEP_YIELD {
+        public static string STEP_YIELD {
             get {
                 return ResourceManager.GetString("STEP_YIELD", resourceCulture);
             }
@@ -510,7 +520,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   공정간격시간과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string TACT_TIME {
+        public static string TACT_TIME {
             get {
                 return ResourceManager.GetString("TACT_TIME", resourceCulture);
             }
@@ -519,7 +529,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   소요시간과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string TIME {
+        public static string TIME {
             get {
                 return ResourceManager.GetString("TIME", resourceCulture);
             }
@@ -528,7 +538,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap tools {
+        public static System.Drawing.Bitmap tools {
             get {
                 object obj = ResourceManager.GetObject("tools", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -538,7 +548,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap vms {
+        public static System.Drawing.Bitmap vms {
             get {
                 object obj = ResourceManager.GetObject("vms", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -548,7 +558,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap xls {
+        public static System.Drawing.Bitmap xls {
             get {
                 object obj = ResourceManager.GetObject("xls", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -558,7 +568,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap xlsd {
+        public static System.Drawing.Bitmap xlsd {
             get {
                 object obj = ResourceManager.GetObject("xlsd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -568,7 +578,7 @@ namespace APSWinForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap xlsr {
+        public static System.Drawing.Bitmap xlsr {
             get {
                 object obj = ResourceManager.GetObject("xlsr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

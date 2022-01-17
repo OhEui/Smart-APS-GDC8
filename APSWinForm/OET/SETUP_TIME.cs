@@ -12,7 +12,7 @@ using APSVO;
 
 namespace APSWinForm
 {
-    public partial class SETUP_TIME : Form
+    public partial class SETUP_TIME : frmBaseIcon
     {
         List<SetupVO> SetupList;
         ServiceHelp srv = new ServiceHelp();

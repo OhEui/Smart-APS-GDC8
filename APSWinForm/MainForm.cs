@@ -13,7 +13,7 @@ using System.Diagnostics;
 
 namespace APSWinForm
 {
-    public partial class MainForm : Form
+    public partial class MainForm : frmBaseIcon
     {
         public MainForm()
         {

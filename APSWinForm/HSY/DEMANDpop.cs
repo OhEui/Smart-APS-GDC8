@@ -12,7 +12,7 @@ using APSVO;
 
 namespace APSWinForm
 {
-    public partial class DEMANDpop : Form
+    public partial class DEMANDpop : frmBaseIcon
     {
         ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> list;

@@ -12,7 +12,7 @@ using APSUtil.Http;
 using System.Diagnostics;
 namespace APSWinForm
 {
-    public partial class MainForm2 : Form
+    public partial class MainForm2 : frmBaseIcon
     {
         public MainForm2()
         {

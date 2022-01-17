@@ -10,21 +10,12 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-    public partial class frmpopup : frmBaseIcon
+    public partial class frmBaseIcon : Form
     {
-        public frmpopup()
+        public frmBaseIcon()
         {
             InitializeComponent();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void frmAdd_Load(object sender, EventArgs e)
-        {
-
+            //this.Icon = global::APSWinForm.Properties.Resources.mainIcon; // 디자이너가 제대로 작동하지 않는 경우 주석 해제
         }
     }
 }

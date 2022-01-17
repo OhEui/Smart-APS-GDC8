@@ -13,7 +13,7 @@ using APSVO;
 
 namespace APSWinForm
 {
-    public partial class SETUP_REG : Form
+    public partial class SETUP_REG : frmBaseIcon
     {
         SetupVO SetupVO;
         ServiceHelp srv = new ServiceHelp();
