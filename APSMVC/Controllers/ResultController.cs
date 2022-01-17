@@ -19,8 +19,9 @@ namespace APSMVC.Controllers
         public async Task<ActionResult> EQPGantt(string[] EQP_GROUP=null, string[] EQP_ID=null, string[] PRODUCT_ID=null,
             DateTime? Start_Date = null, DateTime? End_Date = null)
         {
-            ServiceHelp srv = new ServiceHelp(true);
 
+            var access_token = Request.Headers["authorization"];
+            ServiceHelp srv = new ServiceHelp(true, access_token);
             ChartCommonData commonData = await srv.GetListAsync<ChartCommonData>($"api/Result/EQPGantt/Common", null); // 설비그룹, 설비ID, 제품ID 가져오기
             List<ComboItemVO> comboItem = commonData.ComboItemList;
 

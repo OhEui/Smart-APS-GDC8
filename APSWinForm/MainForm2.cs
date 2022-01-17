@@ -178,22 +178,40 @@ namespace APSWinForm
         #region ResultSubMenu
         private void btnLOT_Click(object sender, EventArgs e)
         {
-            Process.Start("https://localhost:44397/result/LOTgantt");
+            string title = "LOT 간트차트";
+            string url = "https://localhost:44397/result/LOTgantt";
+            StartWebView(title, url);
             hideResultSubMenu();
         }
-
         private void btnEQPgant_Click(object sender, EventArgs e)
         {
-            Process.Start("https://localhost:44397/result/EQPgantt");
+            string title = "EQP 간트차트";
+            string url = "https://localhost:44397/result/EQPgantt";
+            StartWebView(title, url);
             hideResultSubMenu();
         }
 
         private void btnUtil_Click(object sender, EventArgs e)
         {
-            Process.Start("https://localhost:44397/result/utilization");
+            string title = "가동률 분석";
+            string url = "https://localhost:44397/result/utilization";
+            StartWebView(title, url);
             hideResultSubMenu();
         }
-
+        private void StartWebView(string title, string url)
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm is frmWebView wb)
+                {
+                    wb.UrlAddress = "https://localhost:44397/result/LOTgantt";
+                    wb.UpdateWebView(title, url);
+                    return;
+                }
+            }
+            frmWebView newWb = new frmWebView(title, url);
+            newWb.Show();
+        }
         #endregion
 
         private void btnExcel_Click(object sender, EventArgs e)
