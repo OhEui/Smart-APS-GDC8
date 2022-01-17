@@ -23,7 +23,7 @@ namespace APSWinForm
         /// <param name="saveFileName"></param>
         /// <param name="exceptColumns"></param>
         /// <returns></returns>
-        public static bool ExportExcelToList<T>(List<T> dataList)
+        public static bool ExportExcelToList<T>(List<T> dataList,string Filter,string Title)
         {
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.Filter = "Excel Files(*.xls)|*.xls";

@@ -250,6 +250,36 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_edit_1827933 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-edit-1827933", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_save_file_2810399 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-save-file-2810399", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_inscription_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-inscription-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   라인 ID과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string LINE_ID {

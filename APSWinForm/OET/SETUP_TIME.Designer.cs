@@ -47,8 +47,6 @@ namespace APSWinForm
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.title = new System.Windows.Forms.ToolStripLabel();
             this.BtnDelete = new System.Windows.Forms.ToolStripButton();
@@ -67,7 +65,6 @@ namespace APSWinForm
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSetup)).BeginInit();
             this.SuspendLayout();
@@ -77,12 +74,11 @@ namespace APSWinForm
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel8);
-            this.panel2.Controls.Add(this.panel6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(10, 58);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.panel2.Size = new System.Drawing.Size(780, 156);
+            this.panel2.Size = new System.Drawing.Size(780, 124);
             this.panel2.TabIndex = 52;
             // 
             // panel9
@@ -99,16 +95,16 @@ namespace APSWinForm
             this.panel9.Controls.Add(this.btnReset);
             this.panel9.Controls.Add(this.btnSearch);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(10, 10);
+            this.panel9.Location = new System.Drawing.Point(0, 10);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(760, 136);
+            this.panel9.Size = new System.Drawing.Size(770, 104);
             this.panel9.TabIndex = 42;
             // 
             // panel13
             // 
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel13.Controls.Add(this.cboStep);
-            this.panel13.Location = new System.Drawing.Point(430, 84);
+            this.panel13.Location = new System.Drawing.Point(423, 69);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(121, 20);
             this.panel13.TabIndex = 212;
@@ -128,7 +124,7 @@ namespace APSWinForm
             // 
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel12.Controls.Add(this.cboLine);
-            this.panel12.Location = new System.Drawing.Point(429, 39);
+            this.panel12.Location = new System.Drawing.Point(422, 24);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(121, 20);
             this.panel12.TabIndex = 213;
@@ -148,7 +144,7 @@ namespace APSWinForm
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel11.Controls.Add(this.cboGroup);
-            this.panel11.Location = new System.Drawing.Point(160, 84);
+            this.panel11.Location = new System.Drawing.Point(153, 69);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(121, 20);
             this.panel11.TabIndex = 214;
@@ -168,7 +164,7 @@ namespace APSWinForm
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.cboSite);
-            this.panel1.Location = new System.Drawing.Point(161, 36);
+            this.panel1.Location = new System.Drawing.Point(154, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(121, 20);
             this.panel1.TabIndex = 219;
@@ -188,7 +184,7 @@ namespace APSWinForm
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(358, 86);
+            this.label7.Location = new System.Drawing.Point(351, 69);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 14);
             this.label7.TabIndex = 218;
@@ -198,7 +194,7 @@ namespace APSWinForm
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(46, 84);
+            this.label5.Location = new System.Drawing.Point(39, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 14);
             this.label5.TabIndex = 217;
@@ -208,7 +204,7 @@ namespace APSWinForm
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(358, 42);
+            this.label3.Location = new System.Drawing.Point(351, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 14);
             this.label3.TabIndex = 216;
@@ -218,7 +214,7 @@ namespace APSWinForm
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(46, 40);
+            this.label6.Location = new System.Drawing.Point(39, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 14);
             this.label6.TabIndex = 215;
@@ -230,7 +226,7 @@ namespace APSWinForm
             this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(653, 75);
+            this.btnReset.Location = new System.Drawing.Point(663, 59);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(74, 30);
             this.btnReset.TabIndex = 54;
@@ -244,7 +240,7 @@ namespace APSWinForm
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(653, 35);
+            this.btnSearch.Location = new System.Drawing.Point(663, 17);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(74, 30);
             this.btnSearch.TabIndex = 45;
@@ -257,25 +253,8 @@ namespace APSWinForm
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel8.Location = new System.Drawing.Point(770, 10);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 136);
+            this.panel8.Size = new System.Drawing.Size(10, 104);
             this.panel8.TabIndex = 41;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(0, 10);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 136);
-            this.panel6.TabIndex = 39;
-            // 
-            // panel7
-            // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 136);
-            this.panel7.TabIndex = 40;
             // 
             // toolStrip1
             // 
@@ -414,11 +393,11 @@ namespace APSWinForm
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSetup.BackgroundColor = System.Drawing.Color.White;
             this.dgvSetup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSetup.Location = new System.Drawing.Point(10, 210);
+            this.dgvSetup.Location = new System.Drawing.Point(10, 179);
             this.dgvSetup.Name = "dgvSetup";
             this.dgvSetup.ReadOnly = true;
             this.dgvSetup.RowTemplate.Height = 23;
-            this.dgvSetup.Size = new System.Drawing.Size(780, 377);
+            this.dgvSetup.Size = new System.Drawing.Size(780, 408);
             this.dgvSetup.TabIndex = 57;
             this.dgvSetup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSetup_CellClick);
             // 
@@ -443,7 +422,6 @@ namespace APSWinForm
             this.panel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSetup)).EndInit();
@@ -470,8 +448,6 @@ namespace APSWinForm
         protected System.Windows.Forms.Button btnReset;
         protected System.Windows.Forms.Button btnSearch;
         protected System.Windows.Forms.Panel panel8;
-        protected System.Windows.Forms.Panel panel6;
-        protected System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.ToolStrip toolStrip1;
         protected System.Windows.Forms.ToolStripLabel title;
         public System.Windows.Forms.ToolStripButton BtnDelete;
