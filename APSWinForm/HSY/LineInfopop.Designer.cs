@@ -92,8 +92,8 @@ namespace APSWinForm
             this.button3.Location = new System.Drawing.Point(185, 193);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 36);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "b2";
+            this.button3.TabIndex = 5;
+            this.button3.Text = "취소";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -102,21 +102,21 @@ namespace APSWinForm
             this.txtSID.Location = new System.Drawing.Point(145, 90);
             this.txtSID.Name = "txtSID";
             this.txtSID.Size = new System.Drawing.Size(121, 21);
-            this.txtSID.TabIndex = 52;
+            this.txtSID.TabIndex = 2;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(145, 138);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(121, 21);
-            this.txtName.TabIndex = 48;
+            this.txtName.TabIndex = 3;
             // 
             // txtLID
             // 
             this.txtLID.Location = new System.Drawing.Point(145, 42);
             this.txtLID.Name = "txtLID";
             this.txtLID.Size = new System.Drawing.Size(121, 21);
-            this.txtLID.TabIndex = 43;
+            this.txtLID.TabIndex = 1;
             // 
             // label9
             // 
@@ -147,8 +147,8 @@ namespace APSWinForm
             this.button7.Location = new System.Drawing.Point(57, 193);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(102, 36);
-            this.button7.TabIndex = 45;
-            this.button7.Text = "b1";
+            this.button7.TabIndex = 4;
+            this.button7.Text = "등록";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -206,9 +206,9 @@ namespace APSWinForm
             this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(35, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 18);
+            this.label1.Size = new System.Drawing.Size(139, 18);
             this.label1.TabIndex = 1;
-            this.label1.Text = "pop-up";
+            this.label1.Text = "라인정보 추가/수정";
             // 
             // pictureBox1
             // 
@@ -228,6 +228,7 @@ namespace APSWinForm
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "LineInfopop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LineInfopop";
             this.Load += new System.EventHandler(this.LineInfopop_Load);
             this.panel2.ResumeLayout(false);

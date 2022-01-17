@@ -35,14 +35,12 @@ namespace APSWinForm
             this.txtdate = new System.Windows.Forms.MaskedTextBox();
             this.txtQTY = new System.Windows.Forms.TextBox();
             this.cboPID = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtVer = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
             this.cboCID = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,6 +50,8 @@ namespace APSWinForm
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -75,17 +75,17 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.panel9.Controls.Add(this.button3);
+            this.panel9.Controls.Add(this.button7);
             this.panel9.Controls.Add(this.txtdate);
             this.panel9.Controls.Add(this.txtQTY);
             this.panel9.Controls.Add(this.cboPID);
-            this.panel9.Controls.Add(this.button3);
             this.panel9.Controls.Add(this.txtID);
             this.panel9.Controls.Add(this.txtVer);
             this.panel9.Controls.Add(this.label8);
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.label6);
             this.panel9.Controls.Add(this.label7);
-            this.panel9.Controls.Add(this.button7);
             this.panel9.Controls.Add(this.cboCID);
             this.panel9.Controls.Add(this.label3);
             this.panel9.Controls.Add(this.label2);
@@ -101,7 +101,7 @@ namespace APSWinForm
             this.txtdate.Mask = "0000-00-00";
             this.txtdate.Name = "txtdate";
             this.txtdate.Size = new System.Drawing.Size(121, 21);
-            this.txtdate.TabIndex = 145;
+            this.txtdate.TabIndex = 5;
             this.txtdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtdate.ValidatingType = typeof(System.DateTime);
             // 
@@ -110,7 +110,7 @@ namespace APSWinForm
             this.txtQTY.Location = new System.Drawing.Point(149, 275);
             this.txtQTY.Name = "txtQTY";
             this.txtQTY.Size = new System.Drawing.Size(121, 21);
-            this.txtQTY.TabIndex = 143;
+            this.txtQTY.TabIndex = 6;
             this.txtQTY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtQTY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQTY_KeyPress);
             // 
@@ -120,21 +120,7 @@ namespace APSWinForm
             this.cboPID.Location = new System.Drawing.Point(149, 134);
             this.cboPID.Name = "cboPID";
             this.cboPID.Size = new System.Drawing.Size(121, 20);
-            this.cboPID.TabIndex = 142;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(191, 326);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 36);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "취소";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.cboPID.TabIndex = 3;
             // 
             // txtID
             // 
@@ -191,20 +177,6 @@ namespace APSWinForm
             this.label7.Size = new System.Drawing.Size(55, 14);
             this.label7.TabIndex = 46;
             this.label7.Text = "ㆍ제품ID";
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(63, 326);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(102, 36);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "저장";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // cboCID
             // 
@@ -275,10 +247,10 @@ namespace APSWinForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(35, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 20);
+            this.label1.Size = new System.Drawing.Size(139, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "수요정보 추가/수정";
             // 
@@ -291,6 +263,33 @@ namespace APSWinForm
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
+            this.button3.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(191, 326);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(102, 36);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "취소";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
+            this.button7.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(63, 326);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(102, 36);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "등록";
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // DEMANDpop
             // 
@@ -318,14 +317,12 @@ namespace APSWinForm
 
         protected System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel9;
-        protected System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtVer;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        protected System.Windows.Forms.Button button7;
         private System.Windows.Forms.ComboBox cboCID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -338,5 +335,7 @@ namespace APSWinForm
         private System.Windows.Forms.ComboBox cboPID;
         private System.Windows.Forms.TextBox txtQTY;
         private System.Windows.Forms.MaskedTextBox txtdate;
+        protected System.Windows.Forms.Button button3;
+        protected System.Windows.Forms.Button button7;
     }
 }

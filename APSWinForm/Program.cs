@@ -17,7 +17,7 @@ namespace APSWinForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new frmLineInfo());
+            Application.Run(new frmDEMAND());
         }
     }
 }
