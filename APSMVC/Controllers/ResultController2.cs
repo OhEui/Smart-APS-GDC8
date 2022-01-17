@@ -17,7 +17,13 @@ namespace APSMVC.Controllers
     {
         public async Task<ActionResult> LOTGantt(string productID, string lotID)
         {
-            ServiceHelp srv = new ServiceHelp(true);
+            var access_token = Request.Headers["authorization"];
+            ServiceHelp srv = new ServiceHelp(true, access_token);
+
+            var resUserInfo = await srv.GetListAsync("api/Account/UserInfo", new UserInfo());
+            if (resUserInfo != null)
+                ViewBag.UserName = resUserInfo.Name;
+
             List<ComboItemVO> comboItem = null;
             //List<ChartData> list = null;
 

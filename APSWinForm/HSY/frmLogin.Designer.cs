@@ -41,7 +41,6 @@ namespace APSWinForm
             this.label4 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtPW = new System.Windows.Forms.TextBox();
-            this.lblTest = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -176,21 +175,11 @@ namespace APSWinForm
             this.txtPW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPW_KeyPress);
             // 
-            // lblTest
-            // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(689, 78);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(111, 60);
-            this.lblTest.TabIndex = 26;
-            this.lblTest.Text = "테스트용 계정\r\nID: test\r\nPW: abcd1234!@#$\r\nID: test2\r\nPW: qwerty1!";
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 453);
-            this.Controls.Add(this.lblTest);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
@@ -203,7 +192,7 @@ namespace APSWinForm
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtPW);
             this.Name = "frmLogin";
-            this.Text = "frmLogin";
+            this.Text = "APS";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -225,6 +214,5 @@ namespace APSWinForm
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtPW;
-        private System.Windows.Forms.Label lblTest;
     }
 }
