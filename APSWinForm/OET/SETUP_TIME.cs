@@ -64,6 +64,7 @@ namespace APSWinForm
 
         private void DataLoad()
         {
+            DataGridViewUtil.SetInitGridView(dgvSetup);
             DataGridViewUtil.AddGridTextColumn(dgvSetup, Properties.Resources.SITE_ID, "SITE_ID", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvSetup, Properties.Resources.LINE_ID, "LINE_ID", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvSetup, Properties.Resources.EQP_GROUP, "EQP_GROUP", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);

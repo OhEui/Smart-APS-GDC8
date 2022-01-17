@@ -354,6 +354,7 @@ namespace APSWinForm
             this.dgvEQP.RowTemplate.Height = 23;
             this.dgvEQP.Size = new System.Drawing.Size(780, 370);
             this.dgvEQP.TabIndex = 57;
+            this.dgvEQP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEQP_CellClick);
             // 
             // EQUIPMENT
             // 
@@ -368,7 +369,7 @@ namespace APSWinForm
             this.Controls.Add(this.toolStrip1);
             this.Name = "EQUIPMENT";
             this.Tag = "설비관리";
-            this.Text = "EQUIPMENT";
+            this.Text = "설비관리";
             this.Load += new System.EventHandler(this.EQUIPMENT_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

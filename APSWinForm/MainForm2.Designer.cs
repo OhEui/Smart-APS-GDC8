@@ -32,14 +32,8 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm2));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.메뉴ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.엑셀불러오기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.엑셀내보내기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.결과정보열기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.로그아웃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.샘플ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panelSystemSubMenu = new System.Windows.Forms.Panel();
             this.btnAuth = new System.Windows.Forms.Button();
@@ -67,6 +61,24 @@ namespace APSWinForm
             this.btnInfo = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblName = new System.Windows.Forms.Label();
+            this.기준정보관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.제품정보관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.수요정보관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.라인정보관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.표준공정정보관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.설비정보관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.설비배치정보관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.교체준비시간관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.결과차트조회ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lOT간트차트ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eQP간트차트ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.가동률분석ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eXCELToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.엑셀불러오기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.엑셀내보내기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.시스템관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.유저정보관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.권한관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new TabControlZ.TabControlZ();
             this.menuStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
@@ -82,7 +94,10 @@ namespace APSWinForm
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.메뉴ToolStripMenuItem,
-            this.샘플ToolStripMenuItem});
+            this.기준정보관리ToolStripMenuItem,
+            this.결과차트조회ToolStripMenuItem,
+            this.eXCELToolStripMenuItem,
+            this.시스템관리ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(933, 24);
@@ -92,63 +107,24 @@ namespace APSWinForm
             // 메뉴ToolStripMenuItem
             // 
             this.메뉴ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.엑셀불러오기ToolStripMenuItem,
-            this.엑셀내보내기ToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.결과정보열기ToolStripMenuItem,
-            this.toolStripSeparator2,
             this.로그아웃ToolStripMenuItem,
             this.종료ToolStripMenuItem});
             this.메뉴ToolStripMenuItem.Name = "메뉴ToolStripMenuItem";
             this.메뉴ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.메뉴ToolStripMenuItem.Text = "메뉴";
             // 
-            // 엑셀불러오기ToolStripMenuItem
-            // 
-            this.엑셀불러오기ToolStripMenuItem.Name = "엑셀불러오기ToolStripMenuItem";
-            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.엑셀불러오기ToolStripMenuItem.Text = "엑셀 불러오기";
-            // 
-            // 엑셀내보내기ToolStripMenuItem
-            // 
-            this.엑셀내보내기ToolStripMenuItem.Name = "엑셀내보내기ToolStripMenuItem";
-            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.엑셀내보내기ToolStripMenuItem.Text = "엑셀 내보내기";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // 결과정보열기ToolStripMenuItem
-            // 
-            this.결과정보열기ToolStripMenuItem.Name = "결과정보열기ToolStripMenuItem";
-            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.결과정보열기ToolStripMenuItem.Text = "결과 정보 열기";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
-            // 
             // 로그아웃ToolStripMenuItem
             // 
             this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
-            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.로그아웃ToolStripMenuItem.Text = "로그아웃";
             this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.종료ToolStripMenuItem.Text = "종료";
-            // 
-            // 샘플ToolStripMenuItem
-            // 
-            this.샘플ToolStripMenuItem.Name = "샘플ToolStripMenuItem";
-            this.샘플ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.샘플ToolStripMenuItem.Text = "샘플";
             // 
             // panelSideMenu
             // 
@@ -168,7 +144,7 @@ namespace APSWinForm
             this.panelSideMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panelSideMenu.Location = new System.Drawing.Point(0, 24);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(230, 743);
+            this.panelSideMenu.Size = new System.Drawing.Size(222, 743);
             this.panelSideMenu.TabIndex = 7;
             // 
             // panelSystemSubMenu
@@ -179,7 +155,7 @@ namespace APSWinForm
             this.panelSystemSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSystemSubMenu.Location = new System.Drawing.Point(0, 642);
             this.panelSystemSubMenu.Name = "panelSystemSubMenu";
-            this.panelSystemSubMenu.Size = new System.Drawing.Size(213, 63);
+            this.panelSystemSubMenu.Size = new System.Drawing.Size(205, 63);
             this.panelSystemSubMenu.TabIndex = 11;
             // 
             // btnAuth
@@ -194,7 +170,7 @@ namespace APSWinForm
             this.btnAuth.Location = new System.Drawing.Point(0, 30);
             this.btnAuth.Name = "btnAuth";
             this.btnAuth.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAuth.Size = new System.Drawing.Size(213, 30);
+            this.btnAuth.Size = new System.Drawing.Size(205, 30);
             this.btnAuth.TabIndex = 1;
             this.btnAuth.Text = "권한 관리";
             this.btnAuth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -213,7 +189,7 @@ namespace APSWinForm
             this.btnUser.Location = new System.Drawing.Point(0, 0);
             this.btnUser.Name = "btnUser";
             this.btnUser.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnUser.Size = new System.Drawing.Size(213, 30);
+            this.btnUser.Size = new System.Drawing.Size(205, 30);
             this.btnUser.TabIndex = 0;
             this.btnUser.Text = "사용자 관리";
             this.btnUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -235,7 +211,7 @@ namespace APSWinForm
             this.btnSystem.Location = new System.Drawing.Point(0, 597);
             this.btnSystem.Name = "btnSystem";
             this.btnSystem.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSystem.Size = new System.Drawing.Size(213, 45);
+            this.btnSystem.Size = new System.Drawing.Size(205, 45);
             this.btnSystem.TabIndex = 10;
             this.btnSystem.Text = "  시스템 관리";
             this.btnSystem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -258,7 +234,7 @@ namespace APSWinForm
             this.btnExit.Location = new System.Drawing.Point(0, 705);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(213, 45);
+            this.btnExit.Size = new System.Drawing.Size(205, 45);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "  Exit";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,7 +250,7 @@ namespace APSWinForm
             this.panelExcelSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelExcelSubMenu.Location = new System.Drawing.Point(0, 534);
             this.panelExcelSubMenu.Name = "panelExcelSubMenu";
-            this.panelExcelSubMenu.Size = new System.Drawing.Size(213, 63);
+            this.panelExcelSubMenu.Size = new System.Drawing.Size(205, 63);
             this.panelExcelSubMenu.TabIndex = 7;
             // 
             // btnExcelOut
@@ -289,7 +265,7 @@ namespace APSWinForm
             this.btnExcelOut.Location = new System.Drawing.Point(0, 30);
             this.btnExcelOut.Name = "btnExcelOut";
             this.btnExcelOut.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnExcelOut.Size = new System.Drawing.Size(213, 30);
+            this.btnExcelOut.Size = new System.Drawing.Size(205, 30);
             this.btnExcelOut.TabIndex = 1;
             this.btnExcelOut.Text = "엑셀 내보내기";
             this.btnExcelOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -308,7 +284,7 @@ namespace APSWinForm
             this.btnExcelin.Location = new System.Drawing.Point(0, 0);
             this.btnExcelin.Name = "btnExcelin";
             this.btnExcelin.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnExcelin.Size = new System.Drawing.Size(213, 30);
+            this.btnExcelin.Size = new System.Drawing.Size(205, 30);
             this.btnExcelin.TabIndex = 0;
             this.btnExcelin.Text = "엑셀 불러오기";
             this.btnExcelin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -330,7 +306,7 @@ namespace APSWinForm
             this.btnExcel.Location = new System.Drawing.Point(0, 489);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExcel.Size = new System.Drawing.Size(213, 45);
+            this.btnExcel.Size = new System.Drawing.Size(205, 45);
             this.btnExcel.TabIndex = 6;
             this.btnExcel.Text = "  EXCEL";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -347,7 +323,7 @@ namespace APSWinForm
             this.panelResultSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelResultSubMenu.Location = new System.Drawing.Point(0, 396);
             this.panelResultSubMenu.Name = "panelResultSubMenu";
-            this.panelResultSubMenu.Size = new System.Drawing.Size(213, 93);
+            this.panelResultSubMenu.Size = new System.Drawing.Size(205, 93);
             this.panelResultSubMenu.TabIndex = 4;
             // 
             // btnUtil
@@ -362,7 +338,7 @@ namespace APSWinForm
             this.btnUtil.Location = new System.Drawing.Point(0, 60);
             this.btnUtil.Name = "btnUtil";
             this.btnUtil.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnUtil.Size = new System.Drawing.Size(213, 30);
+            this.btnUtil.Size = new System.Drawing.Size(205, 30);
             this.btnUtil.TabIndex = 2;
             this.btnUtil.Text = "가동률분석";
             this.btnUtil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -381,7 +357,7 @@ namespace APSWinForm
             this.btnEQPgant.Location = new System.Drawing.Point(0, 30);
             this.btnEQPgant.Name = "btnEQPgant";
             this.btnEQPgant.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEQPgant.Size = new System.Drawing.Size(213, 30);
+            this.btnEQPgant.Size = new System.Drawing.Size(205, 30);
             this.btnEQPgant.TabIndex = 1;
             this.btnEQPgant.Text = "EQP 간트차트";
             this.btnEQPgant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -400,7 +376,7 @@ namespace APSWinForm
             this.btnLOT.Location = new System.Drawing.Point(0, 0);
             this.btnLOT.Name = "btnLOT";
             this.btnLOT.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnLOT.Size = new System.Drawing.Size(213, 30);
+            this.btnLOT.Size = new System.Drawing.Size(205, 30);
             this.btnLOT.TabIndex = 0;
             this.btnLOT.Text = "LOT 간트차트";
             this.btnLOT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -422,7 +398,7 @@ namespace APSWinForm
             this.btnResult.Location = new System.Drawing.Point(0, 351);
             this.btnResult.Name = "btnResult";
             this.btnResult.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnResult.Size = new System.Drawing.Size(213, 45);
+            this.btnResult.Size = new System.Drawing.Size(205, 45);
             this.btnResult.TabIndex = 3;
             this.btnResult.Text = " 결과 차트 조회";
             this.btnResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -444,7 +420,7 @@ namespace APSWinForm
             this.panelInfoSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInfoSubMenu.Location = new System.Drawing.Point(0, 108);
             this.panelInfoSubMenu.Name = "panelInfoSubMenu";
-            this.panelInfoSubMenu.Size = new System.Drawing.Size(213, 243);
+            this.panelInfoSubMenu.Size = new System.Drawing.Size(205, 243);
             this.panelInfoSubMenu.TabIndex = 2;
             // 
             // btnSetup
@@ -459,7 +435,7 @@ namespace APSWinForm
             this.btnSetup.Location = new System.Drawing.Point(0, 210);
             this.btnSetup.Name = "btnSetup";
             this.btnSetup.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSetup.Size = new System.Drawing.Size(213, 30);
+            this.btnSetup.Size = new System.Drawing.Size(205, 30);
             this.btnSetup.TabIndex = 7;
             this.btnSetup.Text = "교체준비시간관리";
             this.btnSetup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -478,7 +454,7 @@ namespace APSWinForm
             this.btnARR.Location = new System.Drawing.Point(0, 180);
             this.btnARR.Name = "btnARR";
             this.btnARR.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnARR.Size = new System.Drawing.Size(213, 30);
+            this.btnARR.Size = new System.Drawing.Size(205, 30);
             this.btnARR.TabIndex = 6;
             this.btnARR.Text = "설비배치정보관리";
             this.btnARR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -497,7 +473,7 @@ namespace APSWinForm
             this.btnEquip.Location = new System.Drawing.Point(0, 150);
             this.btnEquip.Name = "btnEquip";
             this.btnEquip.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEquip.Size = new System.Drawing.Size(213, 30);
+            this.btnEquip.Size = new System.Drawing.Size(205, 30);
             this.btnEquip.TabIndex = 5;
             this.btnEquip.Text = "설비정보관리";
             this.btnEquip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -516,7 +492,7 @@ namespace APSWinForm
             this.btnRoute.Location = new System.Drawing.Point(0, 120);
             this.btnRoute.Name = "btnRoute";
             this.btnRoute.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRoute.Size = new System.Drawing.Size(213, 30);
+            this.btnRoute.Size = new System.Drawing.Size(205, 30);
             this.btnRoute.TabIndex = 4;
             this.btnRoute.Text = "공정순서관리";
             this.btnRoute.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -535,7 +511,7 @@ namespace APSWinForm
             this.btnStdStep.Location = new System.Drawing.Point(0, 90);
             this.btnStdStep.Name = "btnStdStep";
             this.btnStdStep.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnStdStep.Size = new System.Drawing.Size(213, 30);
+            this.btnStdStep.Size = new System.Drawing.Size(205, 30);
             this.btnStdStep.TabIndex = 3;
             this.btnStdStep.Text = "표준공정정보관리";
             this.btnStdStep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -554,7 +530,7 @@ namespace APSWinForm
             this.btnLine.Location = new System.Drawing.Point(0, 60);
             this.btnLine.Name = "btnLine";
             this.btnLine.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnLine.Size = new System.Drawing.Size(213, 30);
+            this.btnLine.Size = new System.Drawing.Size(205, 30);
             this.btnLine.TabIndex = 2;
             this.btnLine.Text = "라인정보관리";
             this.btnLine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -573,7 +549,7 @@ namespace APSWinForm
             this.btnDemand.Location = new System.Drawing.Point(0, 30);
             this.btnDemand.Name = "btnDemand";
             this.btnDemand.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnDemand.Size = new System.Drawing.Size(213, 30);
+            this.btnDemand.Size = new System.Drawing.Size(205, 30);
             this.btnDemand.TabIndex = 1;
             this.btnDemand.Text = "수요정보관리";
             this.btnDemand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -592,7 +568,7 @@ namespace APSWinForm
             this.btnProduct.Location = new System.Drawing.Point(0, 0);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnProduct.Size = new System.Drawing.Size(213, 30);
+            this.btnProduct.Size = new System.Drawing.Size(205, 30);
             this.btnProduct.TabIndex = 0;
             this.btnProduct.Tag = "frmPRODUCT";
             this.btnProduct.Text = "제품정보관리";
@@ -615,7 +591,7 @@ namespace APSWinForm
             this.btnInfo.Location = new System.Drawing.Point(0, 63);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnInfo.Size = new System.Drawing.Size(213, 45);
+            this.btnInfo.Size = new System.Drawing.Size(205, 45);
             this.btnInfo.TabIndex = 1;
             this.btnInfo.Text = "  기준정보관리";
             this.btnInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -631,7 +607,7 @@ namespace APSWinForm
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(213, 63);
+            this.panelLogo.Size = new System.Drawing.Size(205, 63);
             this.panelLogo.TabIndex = 0;
             // 
             // lblName
@@ -644,6 +620,146 @@ namespace APSWinForm
             this.lblName.TabIndex = 19;
             this.lblName.Text = "label1";
             // 
+            // 기준정보관리ToolStripMenuItem
+            // 
+            this.기준정보관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.제품정보관리ToolStripMenuItem,
+            this.수요정보관리ToolStripMenuItem,
+            this.라인정보관리ToolStripMenuItem,
+            this.표준공정정보관리ToolStripMenuItem,
+            this.설비정보관리ToolStripMenuItem,
+            this.설비배치정보관리ToolStripMenuItem,
+            this.교체준비시간관리ToolStripMenuItem});
+            this.기준정보관리ToolStripMenuItem.Name = "기준정보관리ToolStripMenuItem";
+            this.기준정보관리ToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.기준정보관리ToolStripMenuItem.Text = "기준정보관리";
+            // 
+            // 제품정보관리ToolStripMenuItem
+            // 
+            this.제품정보관리ToolStripMenuItem.Name = "제품정보관리ToolStripMenuItem";
+            this.제품정보관리ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.제품정보관리ToolStripMenuItem.Text = "제품정보관리";
+            this.제품정보관리ToolStripMenuItem.Click += new System.EventHandler(this.btnProduct_Click);
+            // 
+            // 수요정보관리ToolStripMenuItem
+            // 
+            this.수요정보관리ToolStripMenuItem.Name = "수요정보관리ToolStripMenuItem";
+            this.수요정보관리ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.수요정보관리ToolStripMenuItem.Text = "수요정보관리";
+            this.수요정보관리ToolStripMenuItem.Click += new System.EventHandler(this.btnDemand_Click);
+            // 
+            // 라인정보관리ToolStripMenuItem
+            // 
+            this.라인정보관리ToolStripMenuItem.Name = "라인정보관리ToolStripMenuItem";
+            this.라인정보관리ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.라인정보관리ToolStripMenuItem.Text = "라인정보관리";
+            this.라인정보관리ToolStripMenuItem.Click += new System.EventHandler(this.btnLine_Click);
+            // 
+            // 표준공정정보관리ToolStripMenuItem
+            // 
+            this.표준공정정보관리ToolStripMenuItem.Name = "표준공정정보관리ToolStripMenuItem";
+            this.표준공정정보관리ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.표준공정정보관리ToolStripMenuItem.Text = "표준공정정보관리";
+            this.표준공정정보관리ToolStripMenuItem.Click += new System.EventHandler(this.btnStdStep_Click);
+            // 
+            // 설비정보관리ToolStripMenuItem
+            // 
+            this.설비정보관리ToolStripMenuItem.Name = "설비정보관리ToolStripMenuItem";
+            this.설비정보관리ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.설비정보관리ToolStripMenuItem.Text = "설비정보관리";
+            this.설비정보관리ToolStripMenuItem.Click += new System.EventHandler(this.btnEquip_Click);
+            // 
+            // 설비배치정보관리ToolStripMenuItem
+            // 
+            this.설비배치정보관리ToolStripMenuItem.Name = "설비배치정보관리ToolStripMenuItem";
+            this.설비배치정보관리ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.설비배치정보관리ToolStripMenuItem.Text = "설비배치정보관리";
+            this.설비배치정보관리ToolStripMenuItem.Click += new System.EventHandler(this.btnARR_Click);
+            // 
+            // 교체준비시간관리ToolStripMenuItem
+            // 
+            this.교체준비시간관리ToolStripMenuItem.Name = "교체준비시간관리ToolStripMenuItem";
+            this.교체준비시간관리ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.교체준비시간관리ToolStripMenuItem.Text = "교체준비시간관리";
+            this.교체준비시간관리ToolStripMenuItem.Click += new System.EventHandler(this.btnSetup_Click);
+            // 
+            // 결과차트조회ToolStripMenuItem
+            // 
+            this.결과차트조회ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lOT간트차트ToolStripMenuItem,
+            this.eQP간트차트ToolStripMenuItem,
+            this.가동률분석ToolStripMenuItem});
+            this.결과차트조회ToolStripMenuItem.Name = "결과차트조회ToolStripMenuItem";
+            this.결과차트조회ToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.결과차트조회ToolStripMenuItem.Text = "결과 차트 조회";
+            // 
+            // lOT간트차트ToolStripMenuItem
+            // 
+            this.lOT간트차트ToolStripMenuItem.Name = "lOT간트차트ToolStripMenuItem";
+            this.lOT간트차트ToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.lOT간트차트ToolStripMenuItem.Text = "LOT 간트차트";
+            this.lOT간트차트ToolStripMenuItem.Click += new System.EventHandler(this.btnLOT_Click);
+            // 
+            // eQP간트차트ToolStripMenuItem
+            // 
+            this.eQP간트차트ToolStripMenuItem.Name = "eQP간트차트ToolStripMenuItem";
+            this.eQP간트차트ToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.eQP간트차트ToolStripMenuItem.Text = "EQP 간트차트";
+            this.eQP간트차트ToolStripMenuItem.Click += new System.EventHandler(this.btnEQPgant_Click);
+            // 
+            // 가동률분석ToolStripMenuItem
+            // 
+            this.가동률분석ToolStripMenuItem.Name = "가동률분석ToolStripMenuItem";
+            this.가동률분석ToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.가동률분석ToolStripMenuItem.Text = "가동률 분석";
+            this.가동률분석ToolStripMenuItem.Click += new System.EventHandler(this.btnUtil_Click);
+            // 
+            // eXCELToolStripMenuItem
+            // 
+            this.eXCELToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.엑셀불러오기ToolStripMenuItem,
+            this.엑셀내보내기ToolStripMenuItem});
+            this.eXCELToolStripMenuItem.Name = "eXCELToolStripMenuItem";
+            this.eXCELToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.eXCELToolStripMenuItem.Text = "EXCEL";
+            // 
+            // 엑셀불러오기ToolStripMenuItem
+            // 
+            this.엑셀불러오기ToolStripMenuItem.Name = "엑셀불러오기ToolStripMenuItem";
+            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.엑셀불러오기ToolStripMenuItem.Text = "엑셀 불러오기";
+            this.엑셀불러오기ToolStripMenuItem.Click += new System.EventHandler(this.btnExcelin_Click);
+            // 
+            // 엑셀내보내기ToolStripMenuItem
+            // 
+            this.엑셀내보내기ToolStripMenuItem.Name = "엑셀내보내기ToolStripMenuItem";
+            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.엑셀내보내기ToolStripMenuItem.Text = "엑셀 내보내기";
+            this.엑셀내보내기ToolStripMenuItem.Click += new System.EventHandler(this.btnExcelOut_Click);
+            // 
+            // 시스템관리ToolStripMenuItem
+            // 
+            this.시스템관리ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.유저정보관리ToolStripMenuItem,
+            this.권한관리ToolStripMenuItem});
+            this.시스템관리ToolStripMenuItem.Name = "시스템관리ToolStripMenuItem";
+            this.시스템관리ToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.시스템관리ToolStripMenuItem.Text = "시스템 관리";
+            this.시스템관리ToolStripMenuItem.Click += new System.EventHandler(this.btnUser_Click);
+            // 
+            // 유저정보관리ToolStripMenuItem
+            // 
+            this.유저정보관리ToolStripMenuItem.Name = "유저정보관리ToolStripMenuItem";
+            this.유저정보관리ToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.유저정보관리ToolStripMenuItem.Text = "유저 정보관리";
+            // 
+            // 권한관리ToolStripMenuItem
+            // 
+            this.권한관리ToolStripMenuItem.Name = "권한관리ToolStripMenuItem";
+            this.권한관리ToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.권한관리ToolStripMenuItem.Text = "권한 관리";
+            this.권한관리ToolStripMenuItem.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.ActiveTabEndColor = System.Drawing.Color.DarkOrange;
@@ -652,13 +768,13 @@ namespace APSWinForm
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.GradientAngle = 90;
-            this.tabControl1.Location = new System.Drawing.Point(230, 24);
+            this.tabControl1.Location = new System.Drawing.Point(222, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.NonActiveTabEndColor = System.Drawing.Color.DarkBlue;
             this.tabControl1.NonActiveTabStartColor = System.Drawing.Color.LightGreen;
             this.tabControl1.Padding = new System.Drawing.Point(22, 4);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(703, 743);
+            this.tabControl1.Size = new System.Drawing.Size(711, 743);
             this.tabControl1.TabIndex = 20;
             this.tabControl1.TextColor = System.Drawing.Color.Navy;
             this.tabControl1.Transparent1 = 150;
@@ -675,7 +791,7 @@ namespace APSWinForm
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Name = "MainForm2";
-            this.Text = "MainForm2";
+            this.Text = "APS";
             this.Load += new System.EventHandler(this.MainForm2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -693,14 +809,8 @@ namespace APSWinForm
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 메뉴ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 엑셀불러오기ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 엑셀내보내기ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem 결과정보열기ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem 로그아웃ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 종료ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 샘플ToolStripMenuItem;
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panelSystemSubMenu;
         private System.Windows.Forms.Button btnAuth;
@@ -729,5 +839,23 @@ namespace APSWinForm
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Label lblName;
         private TabControlZ.TabControlZ tabControl1;
+        private System.Windows.Forms.ToolStripMenuItem 기준정보관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 제품정보관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 수요정보관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 라인정보관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 표준공정정보관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 설비정보관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 설비배치정보관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 교체준비시간관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 결과차트조회ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lOT간트차트ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eQP간트차트ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 가동률분석ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eXCELToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 엑셀불러오기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 엑셀내보내기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 시스템관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 유저정보관리ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 권한관리ToolStripMenuItem;
     }
 }

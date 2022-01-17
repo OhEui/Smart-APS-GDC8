@@ -315,7 +315,7 @@ namespace APSWinForm
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EQUIPMENT_REG";
-            this.Text = "EQUIPMENT_REG";
+            this.Text = "설비정보";
             this.Load += new System.EventHandler(this.EQUIPMENT_REG_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
