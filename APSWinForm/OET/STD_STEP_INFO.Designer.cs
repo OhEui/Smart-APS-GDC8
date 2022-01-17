@@ -31,16 +31,11 @@ namespace APSWinForm
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(STD_STEP_INFO));
 			this.btnSearch = new System.Windows.Forms.Button();
-			this.panel8 = new System.Windows.Forms.Panel();
 			this.btnInit = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
-			this.txtStepName = new APSWinForm.CapitalTextBox();
-			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.panel6 = new System.Windows.Forms.Panel();
-			this.panel7 = new System.Windows.Forms.Panel();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,9 +54,11 @@ namespace APSWinForm
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvStepInfoList = new System.Windows.Forms.DataGridView();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtStepName = new APSWinForm.CapitalTextBox();
+			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
-			this.panel6.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -76,9 +73,9 @@ namespace APSWinForm
 			// 
 			this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
-			this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSearch.ForeColor = System.Drawing.Color.White;
-			this.btnSearch.Location = new System.Drawing.Point(561, 35);
+			this.btnSearch.Location = new System.Drawing.Point(873, 19);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(74, 30);
 			this.btnSearch.TabIndex = 45;
@@ -86,21 +83,13 @@ namespace APSWinForm
 			this.btnSearch.UseVisualStyleBackColor = false;
 			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 			// 
-			// panel8
-			// 
-			this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panel8.Location = new System.Drawing.Point(678, 10);
-			this.panel8.Name = "panel8";
-			this.panel8.Size = new System.Drawing.Size(10, 136);
-			this.panel8.TabIndex = 41;
-			// 
 			// btnInit
 			// 
 			this.btnInit.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.btnInit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-			this.btnInit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.btnInit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnInit.ForeColor = System.Drawing.Color.White;
-			this.btnInit.Location = new System.Drawing.Point(561, 75);
+			this.btnInit.Location = new System.Drawing.Point(873, 59);
 			this.btnInit.Name = "btnInit";
 			this.btnInit.Size = new System.Drawing.Size(74, 30);
 			this.btnInit.TabIndex = 54;
@@ -112,18 +101,17 @@ namespace APSWinForm
 			// 
 			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
 			this.panel2.Controls.Add(this.panel9);
-			this.panel2.Controls.Add(this.panel8);
-			this.panel2.Controls.Add(this.panel6);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(10, 38);
 			this.panel2.Name = "panel2";
 			this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-			this.panel2.Size = new System.Drawing.Size(688, 156);
+			this.panel2.Size = new System.Drawing.Size(980, 124);
 			this.panel2.TabIndex = 46;
 			// 
 			// panel9
 			// 
 			this.panel9.BackColor = System.Drawing.Color.White;
+			this.panel9.Controls.Add(this.textBox1);
 			this.panel9.Controls.Add(this.txtStepName);
 			this.panel9.Controls.Add(this.txtStepID);
 			this.panel9.Controls.Add(this.label9);
@@ -131,65 +119,32 @@ namespace APSWinForm
 			this.panel9.Controls.Add(this.btnInit);
 			this.panel9.Controls.Add(this.btnSearch);
 			this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel9.Location = new System.Drawing.Point(10, 10);
+			this.panel9.Location = new System.Drawing.Point(0, 10);
 			this.panel9.Name = "panel9";
-			this.panel9.Size = new System.Drawing.Size(668, 136);
+			this.panel9.Size = new System.Drawing.Size(980, 104);
 			this.panel9.TabIndex = 42;
-			// 
-			// txtStepName
-			// 
-			this.txtStepName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtStepName.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepName.Location = new System.Drawing.Point(172, 81);
-			this.txtStepName.Name = "txtStepName";
-			this.txtStepName.Size = new System.Drawing.Size(121, 21);
-			this.txtStepName.TabIndex = 60;
-			// 
-			// txtStepID
-			// 
-			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepID.Location = new System.Drawing.Point(172, 40);
-			this.txtStepID.Name = "txtStepID";
-			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 59;
 			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label9.Location = new System.Drawing.Point(45, 83);
+			this.label9.Location = new System.Drawing.Point(271, 47);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(91, 14);
 			this.label9.TabIndex = 57;
 			this.label9.Text = "ㆍ표준공정이름";
+			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label2.Location = new System.Drawing.Point(45, 42);
+			this.label2.Location = new System.Drawing.Point(26, 47);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(79, 14);
 			this.label2.TabIndex = 55;
 			this.label2.Text = "ㆍ표준공정ID";
-			// 
-			// panel6
-			// 
-			this.panel6.Controls.Add(this.panel7);
-			this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel6.Location = new System.Drawing.Point(0, 10);
-			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(10, 136);
-			this.panel6.TabIndex = 39;
-			// 
-			// panel7
-			// 
-			this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel7.Location = new System.Drawing.Point(0, 0);
-			this.panel7.Name = "panel7";
-			this.panel7.Size = new System.Drawing.Size(10, 136);
-			this.panel7.TabIndex = 40;
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// dataGridView1
 			// 
@@ -206,7 +161,7 @@ namespace APSWinForm
 			this.dataGridView1.Location = new System.Drawing.Point(10, 38);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowTemplate.Height = 23;
-			this.dataGridView1.Size = new System.Drawing.Size(688, 590);
+			this.dataGridView1.Size = new System.Drawing.Size(980, 590);
 			this.dataGridView1.TabIndex = 50;
 			// 
 			// Column1
@@ -245,14 +200,14 @@ namespace APSWinForm
 			this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panel5.Location = new System.Drawing.Point(10, 628);
 			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(688, 10);
+			this.panel5.Size = new System.Drawing.Size(980, 10);
 			this.panel5.TabIndex = 49;
 			// 
 			// panel4
 			// 
 			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panel4.Location = new System.Drawing.Point(698, 38);
+			this.panel4.Location = new System.Drawing.Point(990, 38);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(10, 600);
 			this.panel4.TabIndex = 48;
@@ -270,7 +225,7 @@ namespace APSWinForm
 			// 
 			this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-			this.pictureBox6.Location = new System.Drawing.Point(679, 8);
+			this.pictureBox6.Location = new System.Drawing.Point(971, 8);
 			this.pictureBox6.Name = "pictureBox6";
 			this.pictureBox6.Size = new System.Drawing.Size(23, 24);
 			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -282,7 +237,7 @@ namespace APSWinForm
 			// 
 			this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-			this.pictureBox5.Location = new System.Drawing.Point(621, 7);
+			this.pictureBox5.Location = new System.Drawing.Point(913, 7);
 			this.pictureBox5.Name = "pictureBox5";
 			this.pictureBox5.Size = new System.Drawing.Size(23, 24);
 			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -294,7 +249,7 @@ namespace APSWinForm
 			// 
 			this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-			this.pictureBox4.Location = new System.Drawing.Point(650, 7);
+			this.pictureBox4.Location = new System.Drawing.Point(942, 7);
 			this.pictureBox4.Name = "pictureBox4";
 			this.pictureBox4.Size = new System.Drawing.Size(23, 24);
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -306,7 +261,7 @@ namespace APSWinForm
 			// 
 			this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(586, 8);
+			this.pictureBox2.Location = new System.Drawing.Point(878, 8);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(23, 24);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -345,25 +300,50 @@ namespace APSWinForm
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(708, 38);
+			this.panel1.Size = new System.Drawing.Size(1000, 38);
 			this.panel1.TabIndex = 45;
 			// 
 			// dgvStepInfoList
 			// 
-			this.dgvStepInfoList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(230)))), ((int)(((byte)(228)))));
+			this.dgvStepInfoList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
 			this.dgvStepInfoList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvStepInfoList.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dgvStepInfoList.Location = new System.Drawing.Point(10, 194);
+			this.dgvStepInfoList.Location = new System.Drawing.Point(10, 162);
 			this.dgvStepInfoList.Name = "dgvStepInfoList";
 			this.dgvStepInfoList.RowTemplate.Height = 23;
-			this.dgvStepInfoList.Size = new System.Drawing.Size(688, 434);
+			this.dgvStepInfoList.Size = new System.Drawing.Size(980, 466);
 			this.dgvStepInfoList.TabIndex = 51;
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(0, 44);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(28, 21);
+			this.textBox1.TabIndex = 63;
+			// 
+			// txtStepName
+			// 
+			this.txtStepName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepName.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepName.Location = new System.Drawing.Point(368, 44);
+			this.txtStepName.Name = "txtStepName";
+			this.txtStepName.Size = new System.Drawing.Size(121, 21);
+			this.txtStepName.TabIndex = 60;
+			// 
+			// txtStepID
+			// 
+			this.txtStepID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtStepID.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			this.txtStepID.Location = new System.Drawing.Point(111, 44);
+			this.txtStepID.Name = "txtStepID";
+			this.txtStepID.Size = new System.Drawing.Size(121, 21);
+			this.txtStepID.TabIndex = 59;
 			// 
 			// STD_STEP_INFO
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(708, 638);
+			this.ClientSize = new System.Drawing.Size(1000, 638);
 			this.Controls.Add(this.dgvStepInfoList);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.dataGridView1);
@@ -378,7 +358,6 @@ namespace APSWinForm
 			this.panel2.ResumeLayout(false);
 			this.panel9.ResumeLayout(false);
 			this.panel9.PerformLayout();
-			this.panel6.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -394,12 +373,9 @@ namespace APSWinForm
 
 		#endregion
 		protected System.Windows.Forms.Button btnSearch;
-		private System.Windows.Forms.Panel panel8;
 		protected System.Windows.Forms.Button btnInit;
 		protected System.Windows.Forms.Panel panel2;
 		protected System.Windows.Forms.Panel panel9;
-		private System.Windows.Forms.Panel panel6;
-		private System.Windows.Forms.Panel panel7;
 		public System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -422,5 +398,6 @@ namespace APSWinForm
 		public System.Windows.Forms.DataGridView dgvStepInfoList;
 		private CapitalTextBox txtStepID;
 		private CapitalTextBox txtStepName;
+		private System.Windows.Forms.TextBox textBox1;
 	}
 }
