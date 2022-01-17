@@ -224,13 +224,64 @@ namespace APSWinForm
         private void btnExcelin_Click(object sender, EventArgs e)
         {
             hideExcelSubMenu();
+            //ExcelImportAll();
         }
-
-        private void btnExcelOut_Click(object sender, EventArgs e)
+        
+        private async void btnExcelOut_Click(object sender, EventArgs e)
         {
             hideExcelSubMenu();
+            await ExcelExportAll();
+        }
+        
+        private async void ExcelImportAll()
+        {
+            string oldDataFileName = "oldData.xls";
+
+            if (MessageBox.Show($@"지정한 엑셀 파일로 전체파일을 덮어씁니다.
+이전 데이터는 {oldDataFileName}으로 현재 폴더에 저장됩니다.
+계속하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.No) 
+                return;
+
+            if(!await ExcelExportAll(oldDataFileName))
+                return;
+
+            // 엑셀파일을 열어서 dataset 형태로 바꿈 -> dataset로 api 호출
+            // 서버에서 DB 데이터 전부 삭제 -> 서버에서 DB에 데이터를 insert
+
+            throw new NotImplementedException();
         }
 
+        private async Task<bool> ExcelExportAll(string fileNameFullPath = null) 
+        {
+            string resultMsg;
+            string msgTitle = "엑셀 내보내기";
+            string path = "api/Excel/Data";
+            string saveFileName;
+
+            if (fileNameFullPath == null) 
+            {
+                SaveFileDialog dlg = new SaveFileDialog();
+                dlg.Filter = "Excel Files(*.xls)|*.xls";
+                dlg.Title = "엑셀파일로 내보내기";
+
+                if (dlg.ShowDialog() != DialogResult.OK)
+                    return false;
+                saveFileName = dlg.FileName;
+            }
+            else
+            {
+                saveFileName = fileNameFullPath;
+            }
+
+            ServiceHelp srv = new ServiceHelp();
+            DataSet data = await srv.GetAsync<DataSet>(path);
+            bool bResult = ExcelUtil.ExportExcelToDataSet(data, saveFileName);
+            resultMsg = bResult ?
+                "엑셀파일을 저장하였습니다." : "엑셀파일 저장 중 문제가 발생하였습니다.";
+
+            MessageBox.Show(resultMsg, msgTitle);
+            return bResult;
+        }
         #endregion
 
 
