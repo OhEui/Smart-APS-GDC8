@@ -67,7 +67,8 @@ namespace APSWinForm
 			LoadData();
 		}
 
-		private void pictureBox5_Click(object sender, EventArgs e)
+		#region toolStrip
+		private void BtnAdd_Click(object sender, EventArgs e)
 		{
 			//추가
 			STDSTEP_REG reg = new STDSTEP_REG();
@@ -79,11 +80,12 @@ namespace APSWinForm
 			else return;
 		}
 
-		private void pictureBox4_Click(object sender, EventArgs e)
+		
+		private void BtnEdit_Click(object sender, EventArgs e)
 		{
 			//수정
 			string curStep = dgvStepInfoList["STD_STEP_ID", dgvStepInfoList.CurrentRow.Index].Value.ToString();
-			if(curStep == null)
+			if (curStep == null)
 			{
 				MessageBox.Show("수정할 항목을 선택해주세요.");
 				return;
@@ -99,7 +101,7 @@ namespace APSWinForm
 			else return;
 		}
 
-		private async void pictureBox6_Click(object sender, EventArgs e)
+		private async void BtnDelete_Click(object sender, EventArgs e)
 		{
 			//삭제
 			if (dgvStepInfoList.CurrentCell == null) return;
@@ -120,5 +122,12 @@ namespace APSWinForm
 				MessageBox.Show(msg.ResultMessage);
 			}
 		}
+
+		private void XlsDown_Click(object sender, EventArgs e)
+		{
+			ExcelUtil.ExportExcelToList<STD_STEP_VO>((List<STD_STEP_VO>)dgvStepInfoList.DataSource);
+		}
+
+		#endregion
 	}
 }
