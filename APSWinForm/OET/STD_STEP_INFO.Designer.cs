@@ -77,7 +77,7 @@ namespace APSWinForm
 			this.btnSearch.Location = new System.Drawing.Point(873, 19);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(74, 30);
-			this.btnSearch.TabIndex = 45;
+			this.btnSearch.TabIndex = 3;
 			this.btnSearch.Text = "검색";
 			this.btnSearch.UseVisualStyleBackColor = false;
 			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -91,7 +91,7 @@ namespace APSWinForm
 			this.btnInit.Location = new System.Drawing.Point(873, 59);
 			this.btnInit.Name = "btnInit";
 			this.btnInit.Size = new System.Drawing.Size(74, 30);
-			this.btnInit.TabIndex = 54;
+			this.btnInit.TabIndex = 4;
 			this.btnInit.Text = "초기화";
 			this.btnInit.UseVisualStyleBackColor = false;
 			this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
@@ -138,7 +138,7 @@ namespace APSWinForm
 			this.txtStepName.Location = new System.Drawing.Point(368, 44);
 			this.txtStepName.Name = "txtStepName";
 			this.txtStepName.Size = new System.Drawing.Size(121, 21);
-			this.txtStepName.TabIndex = 60;
+			this.txtStepName.TabIndex = 2;
 			// 
 			// txtStepID
 			// 
@@ -147,7 +147,7 @@ namespace APSWinForm
 			this.txtStepID.Location = new System.Drawing.Point(111, 44);
 			this.txtStepID.Name = "txtStepID";
 			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 59;
+			this.txtStepID.TabIndex = 1;
 			// 
 			// label9
 			// 

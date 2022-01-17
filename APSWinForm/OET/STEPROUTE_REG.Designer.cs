@@ -37,16 +37,21 @@ namespace APSWinForm
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
-			this.txtStepSeq = new APSWinForm.NumTextBox();
-			this.cboProcessID = new System.Windows.Forms.ComboBox();
-			this.txtStepID = new APSWinForm.CapitalTextBox();
+			this.panel11 = new System.Windows.Forms.Panel();
+			this.cboStepType = new System.Windows.Forms.ComboBox();
+			this.comboBox4 = new System.Windows.Forms.ComboBox();
+			this.panel10 = new System.Windows.Forms.Panel();
 			this.cboStdStep = new System.Windows.Forms.ComboBox();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.cboProcessID = new System.Windows.Forms.ComboBox();
+			this.txtStepSeq = new APSWinForm.NumTextBox();
+			this.txtStepID = new APSWinForm.CapitalTextBox();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.dgvStepRoute = new System.Windows.Forms.DataGridView();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.cboStepType = new System.Windows.Forms.ComboBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.btnCancel = new System.Windows.Forms.Button();
@@ -57,6 +62,9 @@ namespace APSWinForm
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
+			this.panel11.SuspendLayout();
+			this.panel10.SuspendLayout();
+			this.panel5.SuspendLayout();
 			this.panel4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvStepRoute)).BeginInit();
 			this.panel6.SuspendLayout();
@@ -126,15 +134,15 @@ namespace APSWinForm
 			// panel9
 			// 
 			this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+			this.panel9.Controls.Add(this.panel11);
+			this.panel9.Controls.Add(this.panel10);
+			this.panel9.Controls.Add(this.panel5);
 			this.panel9.Controls.Add(this.txtStepSeq);
-			this.panel9.Controls.Add(this.cboProcessID);
 			this.panel9.Controls.Add(this.txtStepID);
-			this.panel9.Controls.Add(this.cboStdStep);
 			this.panel9.Controls.Add(this.panel4);
 			this.panel9.Controls.Add(this.label5);
 			this.panel9.Controls.Add(this.label13);
 			this.panel9.Controls.Add(this.label4);
-			this.panel9.Controls.Add(this.cboStepType);
 			this.panel9.Controls.Add(this.label10);
 			this.panel9.Controls.Add(this.label12);
 			this.panel9.Controls.Add(this.btnCancel);
@@ -145,25 +153,97 @@ namespace APSWinForm
 			this.panel9.Size = new System.Drawing.Size(949, 417);
 			this.panel9.TabIndex = 42;
 			// 
+			// panel11
+			// 
+			this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel11.Controls.Add(this.cboStepType);
+			this.panel11.Controls.Add(this.comboBox4);
+			this.panel11.Location = new System.Drawing.Point(725, 285);
+			this.panel11.Name = "panel11";
+			this.panel11.Size = new System.Drawing.Size(121, 20);
+			this.panel11.TabIndex = 180;
+			// 
+			// cboStepType
+			// 
+			this.cboStepType.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.cboStepType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboStepType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cboStepType.FormattingEnabled = true;
+			this.cboStepType.Location = new System.Drawing.Point(0, 0);
+			this.cboStepType.Name = "cboStepType";
+			this.cboStepType.Size = new System.Drawing.Size(119, 20);
+			this.cboStepType.TabIndex = 5;
+			// 
+			// comboBox4
+			// 
+			this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBox4.FormattingEnabled = true;
+			this.comboBox4.Location = new System.Drawing.Point(0, 0);
+			this.comboBox4.Name = "comboBox4";
+			this.comboBox4.Size = new System.Drawing.Size(119, 20);
+			this.comboBox4.TabIndex = 167;
+			// 
+			// panel10
+			// 
+			this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel10.Controls.Add(this.cboStdStep);
+			this.panel10.Controls.Add(this.comboBox1);
+			this.panel10.Location = new System.Drawing.Point(725, 234);
+			this.panel10.Name = "panel10";
+			this.panel10.Size = new System.Drawing.Size(121, 20);
+			this.panel10.TabIndex = 179;
+			// 
+			// cboStdStep
+			// 
+			this.cboStdStep.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.cboStdStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboStdStep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cboStdStep.FormattingEnabled = true;
+			this.cboStdStep.Location = new System.Drawing.Point(0, 0);
+			this.cboStdStep.Name = "cboStdStep";
+			this.cboStdStep.Size = new System.Drawing.Size(119, 20);
+			this.cboStdStep.TabIndex = 4;
+			// 
+			// comboBox1
+			// 
+			this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Location = new System.Drawing.Point(0, 0);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(119, 20);
+			this.comboBox1.TabIndex = 167;
+			// 
+			// panel5
+			// 
+			this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel5.Controls.Add(this.cboProcessID);
+			this.panel5.Location = new System.Drawing.Point(725, 81);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(189, 20);
+			this.panel5.TabIndex = 178;
+			// 
+			// cboProcessID
+			// 
+			this.cboProcessID.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.cboProcessID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboProcessID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cboProcessID.FormattingEnabled = true;
+			this.cboProcessID.Location = new System.Drawing.Point(0, 0);
+			this.cboProcessID.Name = "cboProcessID";
+			this.cboProcessID.Size = new System.Drawing.Size(187, 20);
+			this.cboProcessID.TabIndex = 1;
+			this.cboProcessID.SelectedIndexChanged += new System.EventHandler(this.cboProcessID_SelectedIndexChanged);
+			// 
 			// txtStepSeq
 			// 
 			this.txtStepSeq.Location = new System.Drawing.Point(725, 184);
 			this.txtStepSeq.Name = "txtStepSeq";
 			this.txtStepSeq.Size = new System.Drawing.Size(121, 21);
-			this.txtStepSeq.TabIndex = 77;
-			// 
-			// cboProcessID
-			// 
-			this.cboProcessID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cboProcessID.FormattingEnabled = true;
-			this.cboProcessID.Items.AddRange(new object[] {
-            "IN",
-            "OUT"});
-			this.cboProcessID.Location = new System.Drawing.Point(725, 82);
-			this.cboProcessID.Name = "cboProcessID";
-			this.cboProcessID.Size = new System.Drawing.Size(189, 20);
-			this.cboProcessID.TabIndex = 76;
-			this.cboProcessID.SelectedIndexChanged += new System.EventHandler(this.cboProcessID_SelectedIndexChanged);
+			this.txtStepSeq.TabIndex = 3;
 			// 
 			// txtStepID
 			// 
@@ -172,19 +252,7 @@ namespace APSWinForm
 			this.txtStepID.Location = new System.Drawing.Point(725, 133);
 			this.txtStepID.Name = "txtStepID";
 			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 75;
-			// 
-			// cboStdStep
-			// 
-			this.cboStdStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cboStdStep.FormattingEnabled = true;
-			this.cboStdStep.Items.AddRange(new object[] {
-            "IN",
-            "OUT"});
-			this.cboStdStep.Location = new System.Drawing.Point(725, 235);
-			this.cboStdStep.Name = "cboStdStep";
-			this.cboStdStep.Size = new System.Drawing.Size(121, 20);
-			this.cboStdStep.TabIndex = 72;
+			this.txtStepID.TabIndex = 2;
 			// 
 			// panel4
 			// 
@@ -236,18 +304,6 @@ namespace APSWinForm
 			this.label4.TabIndex = 62;
 			this.label4.Text = "ㆍ표준공정 ID";
 			// 
-			// cboStepType
-			// 
-			this.cboStepType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cboStepType.FormattingEnabled = true;
-			this.cboStepType.Items.AddRange(new object[] {
-            "IN",
-            "OUT"});
-			this.cboStepType.Location = new System.Drawing.Point(725, 286);
-			this.cboStepType.Name = "cboStepType";
-			this.cboStepType.Size = new System.Drawing.Size(121, 20);
-			this.cboStepType.TabIndex = 61;
-			// 
 			// label10
 			// 
 			this.label10.AutoSize = true;
@@ -277,7 +333,7 @@ namespace APSWinForm
 			this.btnCancel.Location = new System.Drawing.Point(774, 349);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(102, 36);
-			this.btnCancel.TabIndex = 54;
+			this.btnCancel.TabIndex = 7;
 			this.btnCancel.Text = "취소";
 			this.btnCancel.UseVisualStyleBackColor = false;
 			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -291,7 +347,7 @@ namespace APSWinForm
 			this.btnSave.Location = new System.Drawing.Point(646, 349);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(102, 36);
-			this.btnSave.TabIndex = 45;
+			this.btnSave.TabIndex = 6;
 			this.btnSave.Text = "저장";
 			this.btnSave.UseVisualStyleBackColor = false;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -332,6 +388,9 @@ namespace APSWinForm
 			this.panel2.ResumeLayout(false);
 			this.panel9.ResumeLayout(false);
 			this.panel9.PerformLayout();
+			this.panel11.ResumeLayout(false);
+			this.panel10.ResumeLayout(false);
+			this.panel5.ResumeLayout(false);
 			this.panel4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgvStepRoute)).EndInit();
 			this.panel6.ResumeLayout(false);
@@ -360,9 +419,14 @@ namespace APSWinForm
 		protected System.Windows.Forms.Label label12;
 		private System.Windows.Forms.DataGridView dgvStepRoute;
 		private NumTextBox txtStepSeq;
-		protected System.Windows.Forms.ComboBox cboProcessID;
 		private CapitalTextBox txtStepID;
-		protected System.Windows.Forms.ComboBox cboStdStep;
-		protected System.Windows.Forms.ComboBox cboStepType;
+		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.ComboBox cboProcessID;
+		private System.Windows.Forms.Panel panel11;
+		private System.Windows.Forms.ComboBox cboStepType;
+		private System.Windows.Forms.ComboBox comboBox4;
+		private System.Windows.Forms.Panel panel10;
+		private System.Windows.Forms.ComboBox cboStdStep;
+		private System.Windows.Forms.ComboBox comboBox1;
 	}
 }

@@ -44,6 +44,7 @@ namespace APSWinForm
             this.webView.Size = new System.Drawing.Size(1438, 1009);
             this.webView.TabIndex = 0;
             this.webView.ZoomFactor = 1D;
+            this.webView.CoreWebView2InitializationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs>(this.webView_CoreWebView2InitializationCompleted);
             // 
             // frmWebView
             // 
