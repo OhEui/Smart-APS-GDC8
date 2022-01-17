@@ -64,7 +64,7 @@ namespace APSWinForm
             StringBuilder sb = new StringBuilder();
             foreach (var item in list)
             {
-                sb.Append($"{item},");
+                sb.Append($"{item}, ");
             }
             
             if (sb.Length == 0)
@@ -74,7 +74,7 @@ namespace APSWinForm
             else 
             {
                 string prefix = deleteData != null ? $"{deleteData} 데이터를 삭제하려고 합니다.\n" : null;
-                string str = sb.ToString().TrimEnd(',');
+                string str = sb.ToString().TrimEnd().TrimEnd(',');
                 return $"{prefix}현재 테이블의 데이터를 삭제하면 {str} 테이블의 데이터가 같이 삭제될 수 있습니다\n계속하시겠습니까?";
             }
         }
