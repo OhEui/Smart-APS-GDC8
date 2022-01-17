@@ -158,5 +158,20 @@ namespace APSWinForm
 
 			LoadData();
 		}
+
+		private void label3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void txtProcessID_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void cboStepType_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
