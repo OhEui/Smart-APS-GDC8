@@ -79,6 +79,60 @@ namespace APSWinForm
                 return false;
             }
         }
+
+
+        public static bool ExportExcelToDataSet(DataSet ds, string fileName = "tempFile.xls")
+        {
+            try
+            {
+                int count = ds.Tables.Count - 1;
+
+                Excel.Application xlApp = new Excel.Application();
+                Excel.Workbook xlWorkBook = xlApp.Workbooks.Add();
+                Excel.Sheets xlWorkSheets = xlWorkBook.Worksheets;
+                xlWorkSheets.Add(Count: count - 1); // 1개는 기본으로 추가되어 있음
+                Excel.Worksheet xlWorkSheet =  null;
+                DataTable dt = null;
+
+                for (int i = 1; i <= count; i++) 
+                {
+                    dt = ds.Tables[i];
+                    xlWorkSheet = (Excel.Worksheet)xlWorkSheets.get_Item(i); // 1 ~ count
+                    xlWorkSheet.Name = ds.Tables[i - 1].TableName; // 0 ~ count - 1
+
+                    for (int c = 0; c < dt.Columns.Count; c++)
+                    {
+                        xlWorkSheet.Cells[1, c + 1] = dt.Columns[c].ColumnName;
+                    }
+
+                    for (int r = 0; r < dt.Rows.Count; r++)
+                    {
+                        for (int c = 0; c < dt.Columns.Count; c++)
+                        {
+                            xlWorkSheet.Cells[r + 2, c + 1] = dt.Rows[r][c].ToString();
+                        }
+                    }
+                    xlWorkSheet.Columns.AutoFit();  //엑셀컬럼의 너비가 데이터길이에 따라서 자동조정
+                }
+
+                xlWorkBook.SaveAs(fileName, Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+
+                return true;
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+            }
+        }
+
+
         /*
         private static void ExcelExport(DataGridView dgv)
         {
