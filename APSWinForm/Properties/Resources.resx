@@ -139,14 +139,14 @@
   <data name="TACT_TIME" xml:space="preserve">
     <value>공정간격시간</value>
   </data>
+  <data name="free-icon-save-file-2810399" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-save-file-2810399.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PRODUCT_ID" xml:space="preserve">
     <value>제품 ID</value>
   </data>
   <data name="xlsr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xlsr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="addd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,6 +175,9 @@
   <data name="STEP_ID" xml:space="preserve">
     <value>공정 ID</value>
   </data>
+  <data name="icons8-inscription-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-inscription-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="xlsd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xlsd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -183,9 +186,6 @@
   </data>
   <data name="del" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\del.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PROC_TIME" xml:space="preserve">
-    <value>공정소요시간</value>
   </data>
   <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,6 +214,9 @@
   <data name="SITE_ID" xml:space="preserve">
     <value>현장 ID</value>
   </data>
+  <data name="DEMAND" xml:space="preserve">
+    <value>수요정보</value>
+  </data>
   <data name="My_project2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\My project2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -241,14 +244,20 @@
   <data name="PRODUCT_NAME" xml:space="preserve">
     <value>제품이름</value>
   </data>
+  <data name="xls" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xls1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LINE_ID" xml:space="preserve">
     <value>라인 ID</value>
+  </data>
+  <data name="STEP_YIELD" xml:space="preserve">
+    <value>공정수율</value>
   </data>
   <data name="LINE_INFO" xml:space="preserve">
     <value>라인정보</value>
   </data>
-  <data name="DEMAND" xml:space="preserve">
-    <value>수요정보</value>
+  <data name="addd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PRODUCT_TYPE" xml:space="preserve">
     <value>제품타입</value>
@@ -265,13 +274,13 @@
   <data name="SETUP_TIME" xml:space="preserve">
     <value>교체준비시간</value>
   </data>
-  <data name="STEP_YIELD" xml:space="preserve">
-    <value>공정수율</value>
+  <data name="PROC_TIME" xml:space="preserve">
+    <value>공정소요시간</value>
   </data>
   <data name="EQP_MODEL" xml:space="preserve">
     <value>모델명</value>
   </data>
-  <data name="xls" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xls1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-icon-edit-1827933" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-edit-18279331.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

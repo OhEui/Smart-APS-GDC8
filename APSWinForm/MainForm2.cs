@@ -77,7 +77,7 @@ namespace APSWinForm
                 if (UserInfoStorage.Current.Auth_ID == 2 || UserInfoStorage.Current.Auth_ID == 3)
                 {
                     btnSystem.Visible = false;
-                    시스템관리ToolStripMenuItem.Visible = false;
+                    
                 }
 
                 lblName.Text = UserInfoStorage.Current.Name;
