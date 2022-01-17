@@ -39,7 +39,7 @@ namespace APSWinForm
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.현장ID = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -63,7 +63,7 @@ namespace APSWinForm
             this.panel2.Location = new System.Drawing.Point(0, 38);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.panel2.Size = new System.Drawing.Size(362, 388);
+            this.panel2.Size = new System.Drawing.Size(362, 276);
             this.panel2.TabIndex = 45;
             // 
             // panel9
@@ -76,11 +76,11 @@ namespace APSWinForm
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.label7);
             this.panel9.Controls.Add(this.button7);
-            this.panel9.Controls.Add(this.label2);
+            this.panel9.Controls.Add(this.현장ID);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(342, 368);
+            this.panel9.Size = new System.Drawing.Size(342, 256);
             this.panel9.TabIndex = 42;
             // 
             // button3
@@ -89,7 +89,7 @@ namespace APSWinForm
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.button3.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(180, 310);
+            this.button3.Location = new System.Drawing.Point(185, 193);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 36);
             this.button3.TabIndex = 54;
@@ -99,21 +99,21 @@ namespace APSWinForm
             // 
             // txtSID
             // 
-            this.txtSID.Location = new System.Drawing.Point(176, 82);
+            this.txtSID.Location = new System.Drawing.Point(145, 90);
             this.txtSID.Name = "txtSID";
             this.txtSID.Size = new System.Drawing.Size(121, 21);
             this.txtSID.TabIndex = 52;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(176, 129);
+            this.txtName.Location = new System.Drawing.Point(145, 138);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(121, 21);
             this.txtName.TabIndex = 48;
             // 
             // txtLID
             // 
-            this.txtLID.Location = new System.Drawing.Point(176, 35);
+            this.txtLID.Location = new System.Drawing.Point(145, 42);
             this.txtLID.Name = "txtLID";
             this.txtLID.Size = new System.Drawing.Size(121, 21);
             this.txtLID.TabIndex = 43;
@@ -122,21 +122,21 @@ namespace APSWinForm
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(49, 84);
+            this.label9.Location = new System.Drawing.Point(84, 93);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 14);
+            this.label9.Size = new System.Drawing.Size(55, 14);
             this.label9.TabIndex = 50;
-            this.label9.Text = "ㆍSTD_STEP_NAME";
+            this.label9.Text = "ㆍ라인ID";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(49, 131);
+            this.label7.Location = new System.Drawing.Point(72, 141);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 14);
+            this.label7.Size = new System.Drawing.Size(67, 14);
             this.label7.TabIndex = 46;
-            this.label7.Text = "ㆍSTD_STEP_NAME";
+            this.label7.Text = "ㆍ라인이름";
             // 
             // button7
             // 
@@ -144,7 +144,7 @@ namespace APSWinForm
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
             this.button7.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(52, 310);
+            this.button7.Location = new System.Drawing.Point(57, 193);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(102, 36);
             this.button7.TabIndex = 45;
@@ -152,15 +152,15 @@ namespace APSWinForm
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // label2
+            // 현장ID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(49, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 14);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "ㆍSTD_STEP_NAME";
+            this.현장ID.AutoSize = true;
+            this.현장ID.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.현장ID.Location = new System.Drawing.Point(84, 45);
+            this.현장ID.Name = "현장ID";
+            this.현장ID.Size = new System.Drawing.Size(55, 14);
+            this.현장ID.TabIndex = 41;
+            this.현장ID.Text = "ㆍ현장ID";
             // 
             // panel8
             // 
@@ -168,7 +168,7 @@ namespace APSWinForm
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel8.Location = new System.Drawing.Point(352, 10);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 368);
+            this.panel8.Size = new System.Drawing.Size(10, 256);
             this.panel8.TabIndex = 41;
             // 
             // panel6
@@ -177,7 +177,7 @@ namespace APSWinForm
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 10);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 368);
+            this.panel6.Size = new System.Drawing.Size(10, 256);
             this.panel6.TabIndex = 39;
             // 
             // panel7
@@ -186,7 +186,7 @@ namespace APSWinForm
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 368);
+            this.panel7.Size = new System.Drawing.Size(10, 256);
             this.panel7.TabIndex = 40;
             // 
             // panel1
@@ -224,7 +224,7 @@ namespace APSWinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 426);
+            this.ClientSize = new System.Drawing.Size(362, 314);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "LineInfopop";
@@ -252,7 +252,7 @@ namespace APSWinForm
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         protected System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label 현장ID;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;

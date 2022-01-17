@@ -50,29 +50,13 @@ on a.Auth_ID= b.AUTH_ID";
             }
         }
 
-        //public List<UserInfoVO> AllUserList() //전체
-        //{
-        //    using (SqlCommand cmd = new SqlCommand())
-        //    {
-        //        cmd.Connection = new SqlConnection(strConn);
-        //        cmd.CommandText = "select User_ID, User_Name, User_phone, User_Birth from UserInfo";
-        //        cmd.CommandType = CommandType.Text;
-
-        //        cmd.Connection.Open();
-        //        List<UserInfoVO> list = Helper.DataReaderMapToList<UserInfoVO>(cmd.ExecuteReader());
-        //        cmd.Connection.Close();
-
-        //        return list;
-        //    }
-        //}
-
         public List<UserInfoVO> AllUserList()
         {
 
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = @"select User_ID, User_Name, User_phone, User_Birth from UserInfo";
+                cmd.CommandText = @"select ID, Name, phone, Birthday, Email from ASP_Users";
 
                 cmd.Connection.Open();
                 List<UserInfoVO> list = Helper.DataReaderMapToList<UserInfoVO>(cmd.ExecuteReader());
@@ -81,6 +65,60 @@ on a.Auth_ID= b.AUTH_ID";
                 return list;
             }
 
+        }
+        public bool UpdateUserInfo(UserInfoVO product) //수정
+        {
+            string sql = @"update ASP_Users set Id = @Id, Name =@Name, Phone = @Phone, Birthday = @Birthday, Email = @Email where Id=@Id ;";
+
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@Id", product.Id);
+                cmd.Parameters.AddWithValue("@Name", product.Name);
+                cmd.Parameters.AddWithValue("@Phone", product.Phone);
+                cmd.Parameters.AddWithValue("@Birthday ", product.Birthday);
+                cmd.Parameters.AddWithValue("@Email ", product.Email);
+
+                return cmd.ExecuteNonQuery() > 0;
+
+            }
+        }
+
+        public UserInfoVO GetDetail(string id) // 특정
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "select  Id, Name, Phone, Email, Birthday from ASP_Users where Id=@Id";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", id);
+
+                cmd.Connection.Open();
+                List<UserInfoVO> list = Helper.DataReaderMapToList<UserInfoVO>(cmd.ExecuteReader());
+                cmd.Connection.Close();
+
+                if (list != null && list.Count > 0)
+                    return list[0];
+                else
+                    return null;
+            }
+        }
+
+        public bool DeleteUserInfo(string id) //삭제
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "delete from ASP_Users where Id=@Id";
+
+                cmd.Parameters.AddWithValue("@Id", id);
+
+                cmd.Connection.Open();
+                int iRowAffect = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
+                return (iRowAffect > 0);
+            }
         }
     }
 }
