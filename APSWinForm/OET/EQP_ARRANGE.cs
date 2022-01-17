@@ -127,23 +127,7 @@ namespace APSWinForm
         {
             temp = e;
         }
-        private void btn_Delete_Click(object sender, EventArgs e)
-        {
-
-            //if (temp != null)
-            //{
-            //    if (MessageBox.Show("정말 삭제하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //    {
-
-            //        DeleteEquip(Convert.ToString(dgvEQP.Rows[temp.RowIndex].Cells[0].Value));
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("삭제할 설비를 선택해주세요");
-            //}
-            //dgvLoad();
-        }
+        
 
         private void btnModify_Click(object sender, EventArgs e)
         {
