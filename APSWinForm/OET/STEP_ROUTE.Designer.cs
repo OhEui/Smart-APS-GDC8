@@ -34,6 +34,8 @@ namespace APSWinForm
 			this.btnInit = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel9 = new System.Windows.Forms.Panel();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.label4 = new System.Windows.Forms.Label();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.txtStepID = new APSWinForm.CapitalTextBox();
@@ -53,8 +55,6 @@ namespace APSWinForm
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvStepRoute = new System.Windows.Forms.DataGridView();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.label4 = new System.Windows.Forms.Label();
 			this.panel2.SuspendLayout();
 			this.panel9.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -126,6 +126,26 @@ namespace APSWinForm
 			this.panel9.Size = new System.Drawing.Size(881, 104);
 			this.panel9.TabIndex = 42;
 			// 
+			// comboBox1
+			// 
+			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Location = new System.Drawing.Point(580, 28);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(108, 20);
+			this.comboBox1.TabIndex = 65;
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label4.Location = new System.Drawing.Point(507, 31);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(67, 14);
+			this.label4.TabIndex = 64;
+			this.label4.Text = "ㆍ공정타입";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// textBox2
 			// 
 			this.textBox2.Location = new System.Drawing.Point(237, 28);
@@ -159,7 +179,6 @@ namespace APSWinForm
 			this.cboStepType.Name = "cboStepType";
 			this.cboStepType.Size = new System.Drawing.Size(108, 20);
 			this.cboStepType.TabIndex = 60;
-			this.cboStepType.SelectedIndexChanged += new System.EventHandler(this.cboStepType_SelectedIndexChanged);
 			// 
 			// label3
 			// 
@@ -171,7 +190,6 @@ namespace APSWinForm
 			this.label3.TabIndex = 59;
 			this.label3.Text = "ㆍ공정타입";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.label3.Click += new System.EventHandler(this.label3_Click);
 			// 
 			// label9
 			// 
@@ -189,7 +207,6 @@ namespace APSWinForm
 			this.txtProcessID.Name = "txtProcessID";
 			this.txtProcessID.Size = new System.Drawing.Size(121, 21);
 			this.txtProcessID.TabIndex = 56;
-			this.txtProcessID.TextChanged += new System.EventHandler(this.txtProcessID_TextChanged);
 			// 
 			// label2
 			// 
@@ -322,26 +339,6 @@ namespace APSWinForm
 			this.dgvStepRoute.RowTemplate.Height = 23;
 			this.dgvStepRoute.Size = new System.Drawing.Size(881, 466);
 			this.dgvStepRoute.TabIndex = 52;
-			// 
-			// comboBox1
-			// 
-			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(580, 28);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(108, 20);
-			this.comboBox1.TabIndex = 65;
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label4.Location = new System.Drawing.Point(507, 31);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(67, 14);
-			this.label4.TabIndex = 64;
-			this.label4.Text = "ㆍ공정타입";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// STEP_ROUTE
 			// 
