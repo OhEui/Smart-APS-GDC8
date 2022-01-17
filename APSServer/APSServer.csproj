@@ -153,9 +153,10 @@
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\DemandController.cs" />
     <Compile Include="Controllers\EQUIPMENTController.cs" />
-    <Compile Include="Controllers\Excel\ExcelController.cs" />
+    <Compile Include="Controllers\Util\ExcelController.cs" />
     <Compile Include="Controllers\LineInfoController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\Util\MetaDataController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\Result2Controller.cs" />
     <Compile Include="Controllers\ResultController.cs" />
@@ -173,7 +174,7 @@
     <Compile Include="Models\CommonDAC.cs" />
     <Compile Include="Models\DemandDAC.cs" />
     <Compile Include="Models\EQUIPDAC.cs" />
-    <Compile Include="Models\Excel\ExcelDAC.cs" />
+    <Compile Include="Models\Util\ExcelDAC.cs" />
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\LineInfoDAC.cs" />
     <Compile Include="Models\LOTDAC.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Models\SETUPDAC.cs" />
     <Compile Include="Models\StepDAC.cs" />
     <Compile Include="Models\UserDAC.cs" />
+    <Compile Include="Models\Util\MetaDataDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />

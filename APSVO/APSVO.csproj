@@ -54,6 +54,7 @@
     <Compile Include="CommonVO.cs" />
     <Compile Include="Line_Info_VO.cs" />
     <Compile Include="MenuVO.cs" />
+    <Compile Include="MetaData\DeleteMetaDataVO.cs" />
     <Compile Include="ProductVO.cs" />
     <Compile Include="STD_STEP_VO.cs" />
     <Compile Include="EQUIPVO.cs" />

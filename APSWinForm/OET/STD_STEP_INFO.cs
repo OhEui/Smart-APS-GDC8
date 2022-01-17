@@ -107,8 +107,10 @@ namespace APSWinForm
 			if (dgvStepInfoList.CurrentCell == null) return;
 
 			string curStep = dgvStepInfoList["STD_STEP_ID", dgvStepInfoList.CurrentRow.Index].Value.ToString();
+			string deleteMsg = DBInfoStorage.GetDeleteMessage("STD_STEP_INFO", curStep) ?? $"{curStep} 항목을 삭제 하시겠습니까?";
 
-			DialogResult msgResullt = MessageBox.Show($"{curStep} 항목을 삭제 하시겠습니까?", $"{Properties.Resources.STD_STEP_INFO} 삭제", MessageBoxButtons.OKCancel);
+
+			DialogResult msgResullt = MessageBox.Show(deleteMsg, $"{Properties.Resources.STD_STEP_INFO} 삭제", MessageBoxButtons.OKCancel);
 
 			if (msgResullt == DialogResult.Cancel) return;
 			else

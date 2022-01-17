@@ -274,7 +274,7 @@ namespace APSWinForm
             }
 
             ServiceHelp srv = new ServiceHelp();
-            DataSet data = await srv.GetAsync<DataSet>(path);
+            DataSet data = await srv.GetListAsync<DataSet>(path);
             bool bResult = ExcelUtil.ExportExcelToDataSet(data, saveFileName);
             resultMsg = bResult ?
                 "엑셀파일을 저장하였습니다." : "엑셀파일 저장 중 문제가 발생하였습니다.";
