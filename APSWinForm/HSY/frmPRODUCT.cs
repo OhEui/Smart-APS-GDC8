@@ -125,7 +125,7 @@ namespace APSWinForm
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            bool bResult = ExcelUtil.ExportExcelToList(dgvPR.DataSource as List<ProductVO>, @".\product.xlsx", "");
+            //bool bResult = ExcelUtil.ExportExcelToList(dgvPR.DataSource as List<ProductVO>, @".\product.xlsx", "");
             if (bResult)
                 MessageBox.Show("저장하였습니다.");
         }
