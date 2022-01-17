@@ -23,6 +23,8 @@ namespace APSMVC.Controllers
             var access_token = Request.Headers["authorization"];
             ServiceHelp srv = new ServiceHelp(true, access_token);
             ChartCommonData commonData = await srv.GetListAsync<ChartCommonData>($"api/Result/EQPGantt/Common", null); // 설비그룹, 설비ID, 제품ID 가져오기
+
+
             List<ComboItemVO> comboItem = commonData.ComboItemList;
 
             string result = await srv.PostJsonStringAsync($"api/Result/EQPGantt/Data", new ReqEQPGantt() 
@@ -33,6 +35,11 @@ namespace APSMVC.Controllers
                 Start_Date = Start_Date ?? commonData.Start_Date,
                 End_Date = End_Date ?? commonData.End_Date
             });  // 차트 데이터 가져오기
+
+            if (result == null)
+            {
+                return Redirect("/user/login");
+            }
 
             var eqpIDList= comboItem.Where((i) => i.Category == "EQP_ID").ToList();
             var eqpGroupList = comboItem.Where((i) => i.Category == "EQP_GROUP").ToList();
