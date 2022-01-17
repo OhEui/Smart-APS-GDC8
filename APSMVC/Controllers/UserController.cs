@@ -17,7 +17,7 @@ namespace APSMVC.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult LogOut()
         {
             // Header에서 token을 제거하는 ajax 코드 실행해야함

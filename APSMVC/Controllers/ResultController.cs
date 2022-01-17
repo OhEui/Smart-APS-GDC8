@@ -24,6 +24,9 @@ namespace APSMVC.Controllers
             ServiceHelp srv = new ServiceHelp(true, access_token);
             ChartCommonData commonData = await srv.GetListAsync<ChartCommonData>($"api/Result/EQPGantt/Common", null); // 설비그룹, 설비ID, 제품ID 가져오기
 
+            var resUserInfo = await srv.GetListAsync("api/Account/UserInfo", new UserInfo());
+            if (resUserInfo != null)
+                ViewBag.UserName = resUserInfo.Name;
 
             List<ComboItemVO> comboItem = commonData.ComboItemList;
 
