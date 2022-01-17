@@ -77,7 +77,7 @@ namespace APSWinForm
 			this.btnCancel.Location = new System.Drawing.Point(192, 347);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(102, 36);
-			this.btnCancel.TabIndex = 54;
+			this.btnCancel.TabIndex = 7;
 			this.btnCancel.Text = "취소";
 			this.btnCancel.UseVisualStyleBackColor = false;
 			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -91,7 +91,7 @@ namespace APSWinForm
 			this.btnAdd.Location = new System.Drawing.Point(64, 347);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(102, 36);
-			this.btnAdd.TabIndex = 45;
+			this.btnAdd.TabIndex = 6;
 			this.btnAdd.Text = "저장";
 			this.btnAdd.UseVisualStyleBackColor = false;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -126,7 +126,7 @@ namespace APSWinForm
 			this.txtStepName.Location = new System.Drawing.Point(162, 145);
 			this.txtStepName.Name = "txtStepName";
 			this.txtStepName.Size = new System.Drawing.Size(121, 21);
-			this.txtStepName.TabIndex = 72;
+			this.txtStepName.TabIndex = 2;
 			// 
 			// txtStepID
 			// 
@@ -135,7 +135,7 @@ namespace APSWinForm
 			this.txtStepID.Location = new System.Drawing.Point(162, 87);
 			this.txtStepID.Name = "txtStepID";
 			this.txtStepID.Size = new System.Drawing.Size(121, 21);
-			this.txtStepID.TabIndex = 71;
+			this.txtStepID.TabIndex = 1;
 			this.txtStepID.Leave += new System.EventHandler(this.capitalTextBox1_Leave);
 			// 
 			// txtStepSetup
@@ -143,14 +143,14 @@ namespace APSWinForm
 			this.txtStepSetup.Location = new System.Drawing.Point(162, 290);
 			this.txtStepSetup.Name = "txtStepSetup";
 			this.txtStepSetup.Size = new System.Drawing.Size(121, 21);
-			this.txtStepSetup.TabIndex = 70;
+			this.txtStepSetup.TabIndex = 5;
 			// 
 			// txtTAT
 			// 
 			this.txtTAT.Location = new System.Drawing.Point(162, 195);
 			this.txtTAT.Name = "txtTAT";
 			this.txtTAT.Size = new System.Drawing.Size(86, 21);
-			this.txtTAT.TabIndex = 69;
+			this.txtTAT.TabIndex = 3;
 			// 
 			// lblStepIDExist
 			// 
@@ -177,7 +177,7 @@ namespace APSWinForm
 			this.txtYield.Location = new System.Drawing.Point(162, 242);
 			this.txtYield.Name = "txtYield";
 			this.txtYield.Size = new System.Drawing.Size(121, 21);
-			this.txtYield.TabIndex = 64;
+			this.txtYield.TabIndex = 4;
 			// 
 			// label4
 			// 
