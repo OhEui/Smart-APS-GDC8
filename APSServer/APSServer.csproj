@@ -12,16 +12,19 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApplication1</RootNamespace>
-    <AssemblyName>WebApplication1</AssemblyName>
+    <RootNamespace>APSServer</RootNamespace>
+    <AssemblyName>APSServer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44309</IISExpressSSLPort>
-    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
-    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <IISExpressAnonymousAuthentication>
+    </IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>
+    </IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>
+    </IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -150,8 +153,10 @@
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\DemandController.cs" />
     <Compile Include="Controllers\EQUIPMENTController.cs" />
+    <Compile Include="Controllers\Util\ExcelController.cs" />
     <Compile Include="Controllers\LineInfoController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\Util\MetaDataController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\Result2Controller.cs" />
     <Compile Include="Controllers\ResultController.cs" />
@@ -169,6 +174,7 @@
     <Compile Include="Models\CommonDAC.cs" />
     <Compile Include="Models\DemandDAC.cs" />
     <Compile Include="Models\EQUIPDAC.cs" />
+    <Compile Include="Models\Util\ExcelDAC.cs" />
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\LineInfoDAC.cs" />
     <Compile Include="Models\LOTDAC.cs" />
@@ -180,6 +186,7 @@
     <Compile Include="Models\SETUPDAC.cs" />
     <Compile Include="Models\StepDAC.cs" />
     <Compile Include="Models\UserDAC.cs" />
+    <Compile Include="Models\Util\MetaDataDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />

@@ -12,7 +12,7 @@ using APSVO;
 
 namespace APSWinForm
 {
-    public partial class DEMANDpop : Form
+    public partial class DEMANDpop : frmBaseIcon
     {
         ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> list;
@@ -72,11 +72,6 @@ namespace APSWinForm
             list = await srv.GetListAsync("api/Demand/AllList", list);
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
 
         private void txtQTY_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -85,6 +80,12 @@ namespace APSWinForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

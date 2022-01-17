@@ -29,7 +29,6 @@ namespace APSWinForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWebView));
             this.webView = new Microsoft.Web.WebView2.WinForms.WebView2();
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
             this.SuspendLayout();
@@ -42,7 +41,7 @@ namespace APSWinForm
             this.webView.Location = new System.Drawing.Point(0, 0);
             this.webView.Name = "webView";
             this.webView.Size = new System.Drawing.Size(1438, 1009);
-            this.webView.TabIndex = 0;
+            this.webView.TabIndex = 1;
             this.webView.ZoomFactor = 1D;
             // 
             // frmWebView
@@ -51,7 +50,7 @@ namespace APSWinForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1438, 1009);
             this.Controls.Add(this.webView);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = global::APSWinForm.Properties.Resources.mainIcon;
             this.Name = "frmWebView";
             this.Text = "frmWebView";
             this.Load += new System.EventHandler(this.frmWebView_Load);

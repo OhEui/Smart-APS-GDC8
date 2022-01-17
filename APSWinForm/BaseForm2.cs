@@ -12,7 +12,7 @@ using APSVO;
 
 namespace APSWinForm
 {
-    public partial class BaseForm2 : Form
+    public partial class BaseForm2 : frmBaseIcon
     {
         public BaseForm2()
         {

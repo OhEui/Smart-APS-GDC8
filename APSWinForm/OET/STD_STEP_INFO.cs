@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-	public partial class STD_STEP_INFO : Form
+	public partial class STD_STEP_INFO : frmBaseIcon
 	{
 		ServiceHelp srv = new ServiceHelp();
 		List<STD_STEP_VO> stepList = null;
@@ -30,11 +30,11 @@ namespace APSWinForm
 		private void STD_STEP_INFO_Load(object sender, EventArgs e)
 		{
 			DataGridViewUtil.SetInitGridView(dgvStepInfoList);
-			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STD_STEP_ID, "STD_STEP_ID", colWidth:145);
-			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STD_STEP_NAME, "STD_STEP_NAME", colWidth: 145);
-			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STEP_TAT, "STEP_TAT", align:DataGridViewContentAlignment.MiddleCenter, colWidth: 120);
-			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STEP_YIELD, "STEP_YIELD", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 115);
-			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STEP_SETUP, "STEP_SETUP", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 120);
+			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STD_STEP_ID, "STD_STEP_ID", colWidth:180);
+			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STD_STEP_NAME, "STD_STEP_NAME", colWidth: 180);
+			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STEP_TAT, "STEP_TAT", align:DataGridViewContentAlignment.MiddleCenter, colWidth: 155);
+			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STEP_YIELD, "STEP_YIELD", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 150);
+			DataGridViewUtil.AddGridTextColumn(dgvStepInfoList, Properties.Resources.STEP_SETUP, "STEP_SETUP", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 155);
 
 			LoadData();
 		}
@@ -67,7 +67,8 @@ namespace APSWinForm
 			LoadData();
 		}
 
-		private void pictureBox5_Click(object sender, EventArgs e)
+		#region toolStrip
+		private void BtnAdd_Click(object sender, EventArgs e)
 		{
 			//추가
 			STDSTEP_REG reg = new STDSTEP_REG();
@@ -79,11 +80,12 @@ namespace APSWinForm
 			else return;
 		}
 
-		private void pictureBox4_Click(object sender, EventArgs e)
+		
+		private void BtnEdit_Click(object sender, EventArgs e)
 		{
 			//수정
 			string curStep = dgvStepInfoList["STD_STEP_ID", dgvStepInfoList.CurrentRow.Index].Value.ToString();
-			if(curStep == null)
+			if (curStep == null)
 			{
 				MessageBox.Show("수정할 항목을 선택해주세요.");
 				return;
@@ -99,14 +101,16 @@ namespace APSWinForm
 			else return;
 		}
 
-		private async void pictureBox6_Click(object sender, EventArgs e)
+		private async void BtnDelete_Click(object sender, EventArgs e)
 		{
 			//삭제
 			if (dgvStepInfoList.CurrentCell == null) return;
 
 			string curStep = dgvStepInfoList["STD_STEP_ID", dgvStepInfoList.CurrentRow.Index].Value.ToString();
+			string deleteMsg = DBInfoStorage.GetDeleteMessage("STD_STEP_INFO", curStep) ?? $"{curStep} 항목을 삭제 하시겠습니까?";
 
-			DialogResult msgResullt = MessageBox.Show($"{curStep} 항목을 삭제 하시겠습니까?", $"{Properties.Resources.STD_STEP_INFO} 삭제", MessageBoxButtons.OKCancel);
+
+			DialogResult msgResullt = MessageBox.Show(deleteMsg, $"{Properties.Resources.STD_STEP_INFO} 삭제", MessageBoxButtons.OKCancel);
 
 			if (msgResullt == DialogResult.Cancel) return;
 			else
@@ -120,5 +124,12 @@ namespace APSWinForm
 				MessageBox.Show(msg.ResultMessage);
 			}
 		}
+
+		private void XlsDown_Click(object sender, EventArgs e)
+		{
+			ExcelUtil.ExportExcelToList<STD_STEP_VO>((List<STD_STEP_VO>)dgvStepInfoList.DataSource);
+		}
+
+		#endregion
 	}
 }

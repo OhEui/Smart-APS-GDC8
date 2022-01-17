@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-    public partial class frmIDCheck : Form
+    public partial class frmIDCheck : frmBaseIcon
     {
         public frmIDCheck()
         {

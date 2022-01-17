@@ -13,7 +13,7 @@ using APSUtil.Http;
 
 namespace APSWinForm
 {
-    public partial class EQP_ARRANGE : Form
+    public partial class EQP_ARRANGE : frmBaseIcon
     {
         List<EqpArrangeVO> ARRList= null;
         ServiceHelp srv = new ServiceHelp();

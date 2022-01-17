@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-    public partial class frmpopup : frmBaseIcon
+    public partial class UserManage : frmBaseIcon
     {
-        public frmpopup()
+        public UserManage()
         {
             InitializeComponent();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void frmAdd_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

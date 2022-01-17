@@ -12,7 +12,7 @@ using APSUtil.Http;
 using System.Diagnostics;
 namespace APSWinForm
 {
-    public partial class MainForm2 : Form
+    public partial class MainForm2 : frmBaseIcon
     {
         public MainForm2()
         {
@@ -178,22 +178,40 @@ namespace APSWinForm
         #region ResultSubMenu
         private void btnLOT_Click(object sender, EventArgs e)
         {
-            Process.Start("https://localhost:44397/result/LOTgantt");
+            string title = "LOT 간트차트";
+            string url = "https://localhost:44397/result/LOTgantt";
+            StartWebView(title, url);
             hideResultSubMenu();
         }
-
         private void btnEQPgant_Click(object sender, EventArgs e)
         {
-            Process.Start("https://localhost:44397/result/EQPgantt");
+            string title = "EQP 간트차트";
+            string url = "https://localhost:44397/result/EQPgantt";
+            StartWebView(title, url);
             hideResultSubMenu();
         }
 
         private void btnUtil_Click(object sender, EventArgs e)
         {
-            Process.Start("https://localhost:44397/result/utilization");
+            string title = "가동률 분석";
+            string url = "https://localhost:44397/result/utilization";
+            StartWebView(title, url);
             hideResultSubMenu();
         }
-
+        private void StartWebView(string title, string url)
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm is frmWebView wb)
+                {
+                    wb.UrlAddress = "https://localhost:44397/result/LOTgantt";
+                    wb.UpdateWebView(title, url);
+                    return;
+                }
+            }
+            frmWebView newWb = new frmWebView(title, url);
+            newWb.Show();
+        }
         #endregion
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -206,13 +224,64 @@ namespace APSWinForm
         private void btnExcelin_Click(object sender, EventArgs e)
         {
             hideExcelSubMenu();
+            //ExcelImportAll();
         }
-
-        private void btnExcelOut_Click(object sender, EventArgs e)
+        
+        private async void btnExcelOut_Click(object sender, EventArgs e)
         {
             hideExcelSubMenu();
+            await ExcelExportAll();
+        }
+        
+        private async void ExcelImportAll()
+        {
+            string oldDataFileName = "oldData.xls";
+
+            if (MessageBox.Show($@"지정한 엑셀 파일로 전체파일을 덮어씁니다.
+이전 데이터는 {oldDataFileName}으로 현재 폴더에 저장됩니다.
+계속하시겠습니까?", "경고", MessageBoxButtons.YesNo) == DialogResult.No) 
+                return;
+
+            if(!await ExcelExportAll(oldDataFileName))
+                return;
+
+            // 엑셀파일을 열어서 dataset 형태로 바꿈 -> dataset로 api 호출
+            // 서버에서 DB 데이터 전부 삭제 -> 서버에서 DB에 데이터를 insert
+
+            throw new NotImplementedException();
         }
 
+        private async Task<bool> ExcelExportAll(string fileNameFullPath = null) 
+        {
+            string resultMsg;
+            string msgTitle = "엑셀 내보내기";
+            string path = "api/Excel/Data";
+            string saveFileName;
+
+            if (fileNameFullPath == null) 
+            {
+                SaveFileDialog dlg = new SaveFileDialog();
+                dlg.Filter = "Excel Files(*.xls)|*.xls";
+                dlg.Title = "엑셀파일로 내보내기";
+
+                if (dlg.ShowDialog() != DialogResult.OK)
+                    return false;
+                saveFileName = dlg.FileName;
+            }
+            else
+            {
+                saveFileName = fileNameFullPath;
+            }
+
+            ServiceHelp srv = new ServiceHelp();
+            DataSet data = await srv.GetListAsync<DataSet>(path);
+            bool bResult = ExcelUtil.ExportExcelToDataSet(data, saveFileName);
+            resultMsg = bResult ?
+                "엑셀파일을 저장하였습니다." : "엑셀파일 저장 중 문제가 발생하였습니다.";
+
+            MessageBox.Show(resultMsg, msgTitle);
+            return bResult;
+        }
         #endregion
 
 

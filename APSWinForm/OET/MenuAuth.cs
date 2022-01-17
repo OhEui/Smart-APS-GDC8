@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-    public partial class MenuAuth : Form
+    public partial class MenuAuth : frmBaseIcon
     {
         List<AuthVO> Authlist = null;
         ServiceHelp srv = new ServiceHelp();

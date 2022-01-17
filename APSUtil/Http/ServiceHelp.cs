@@ -58,7 +58,7 @@ namespace APSUtil.Http
             }
         }
 
-        public async Task<T> GetListAsync<T>(string path, T t)
+        public async Task<T> GetListAsync<T>(string path, T t = default)
         {
             path = BaseServiceUrl + path;
 
@@ -124,7 +124,7 @@ namespace APSUtil.Http
             }
         }
 
-        public async Task<T> GetAsync<T>(string path, T t)
+        public async Task<T> GetAsync<T>(string path, T t = default)
         {
             path = BaseServiceUrl + path;
 

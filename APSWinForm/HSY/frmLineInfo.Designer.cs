@@ -142,14 +142,14 @@ namespace APSWinForm
             // 
             // txtSID
             // 
-            this.txtSID.Location = new System.Drawing.Point(157, 72);
+            this.txtSID.Location = new System.Drawing.Point(371, 62);
             this.txtSID.Name = "txtSID";
             this.txtSID.Size = new System.Drawing.Size(121, 21);
             this.txtSID.TabIndex = 52;
             // 
             // txtLID
             // 
-            this.txtLID.Location = new System.Drawing.Point(157, 27);
+            this.txtLID.Location = new System.Drawing.Point(132, 62);
             this.txtLID.Name = "txtLID";
             this.txtLID.Size = new System.Drawing.Size(121, 21);
             this.txtLID.TabIndex = 43;
@@ -158,7 +158,7 @@ namespace APSWinForm
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(30, 75);
+            this.label9.Location = new System.Drawing.Point(310, 64);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 14);
             this.label9.TabIndex = 50;
@@ -182,7 +182,7 @@ namespace APSWinForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(30, 30);
+            this.label2.Location = new System.Drawing.Point(71, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 14);
             this.label2.TabIndex = 41;

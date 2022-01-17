@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-	public partial class STDSTEP_REG : Form
+	public partial class STDSTEP_REG : frmBaseIcon
 	{
 		ServiceHelp srv = new ServiceHelp();
 		List<STD_STEP_VO> stepList;
@@ -60,7 +60,7 @@ namespace APSWinForm
 			{
 				STD_STEP_ID = txtStepID.Text,
 				STD_STEP_NAME = txtStepName.Text,
-				STEP_YIELD = Convert.ToInt32(txtYield.Text),
+				STEP_YIELD = Convert.ToDouble(txtYield.Text),
 				STEP_TAT = Convert.ToInt32(txtTAT.Text),
 				STEP_SETUP = Convert.ToInt32(txtStepSetup.Text),
 				user_id = "test"

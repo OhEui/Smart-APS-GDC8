@@ -13,7 +13,7 @@ using APSWinForm.Properties;
 
 namespace APSWinForm
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : frmBaseIcon
     {
         public frmLogin()
         {
