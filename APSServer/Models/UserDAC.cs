@@ -56,7 +56,7 @@ on a.Auth_ID= b.AUTH_ID";
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = @"select ID, Name, phone, Birthday, Email from ASP_Users";
+                cmd.CommandText = @"select UserName, Name, phone, Birthday, Email from ASP_Users";
 
                 cmd.Connection.Open();
                 List<UserInfoVO> list = Helper.DataReaderMapToList<UserInfoVO>(cmd.ExecuteReader());
@@ -68,11 +68,11 @@ on a.Auth_ID= b.AUTH_ID";
         }
         public bool UpdateUserInfo(UserInfoVO product) //수정
         {
-            string sql = @"update ASP_Users set Id = @Id, Name =@Name, Phone = @Phone, Birthday = @Birthday, Email = @Email where Id=@Id ;";
+            string sql = @"update ASP_Users set UserName = @UserName, Name =@Name, Phone = @Phone, Birthday = @Birthday, Email = @Email where UserName=@UserName ;";
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
-                cmd.Parameters.AddWithValue("@Id", product.Id);
+                cmd.Parameters.AddWithValue("@UserName", product.UserName);
                 cmd.Parameters.AddWithValue("@Name", product.Name);
                 cmd.Parameters.AddWithValue("@Phone", product.Phone);
                 cmd.Parameters.AddWithValue("@Birthday ", product.Birthday);
@@ -88,10 +88,10 @@ on a.Auth_ID= b.AUTH_ID";
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = "select  Id, Name, Phone, Email, Birthday from ASP_Users where Id=@Id";
+                cmd.CommandText = "select  UserName, Name, Phone, Email, Birthday from ASP_Users where UserName=@UserName";
                 cmd.CommandType = CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.Parameters.AddWithValue("@UserName", id);
 
                 cmd.Connection.Open();
                 List<UserInfoVO> list = Helper.DataReaderMapToList<UserInfoVO>(cmd.ExecuteReader());
@@ -109,9 +109,9 @@ on a.Auth_ID= b.AUTH_ID";
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(strConn);
-                cmd.CommandText = "delete from ASP_Users where Id=@Id";
+                cmd.CommandText = "delete from ASP_Users where UserName=@UserName";
 
-                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.Parameters.AddWithValue("@UserName", id);
 
                 cmd.Connection.Open();
                 int iRowAffect = cmd.ExecuteNonQuery();

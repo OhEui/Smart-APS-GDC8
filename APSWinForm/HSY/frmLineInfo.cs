@@ -20,10 +20,10 @@ namespace APSWinForm
         public frmLineInfo()
         {
             InitializeComponent();
-            //if (UserInfoStorage.Current.Auth_ID == 3)
-            //{
-            //    BtnAdd.Visible = BtnDelete.Visible = BtnEdit.Visible = false;
-            //}
+            if (UserInfoStorage.Current.Auth_ID == 3)
+            {
+                BtnAdd.Visible = BtnDelete.Visible = BtnEdit.Visible = false;
+            }
         }
 
         private async void LoadData()
@@ -42,7 +42,7 @@ namespace APSWinForm
             LoadData();
         }
 
-
+        #region toolstrip
         //추가
         private void BtnAdd_Click(object sender, EventArgs e)
         {
@@ -95,7 +95,9 @@ namespace APSWinForm
                 MessageBox.Show(msg.ResultMessage);
             }
         }
+        #endregion
 
+        #region 검색창
         //초기화
         private void button3_Click(object sender, EventArgs e)
         {
@@ -118,5 +120,24 @@ namespace APSWinForm
             dgvLI.DataSource = list.FindAll(p => p.LINE_ID.Contains(txtLID.Text.ToUpper()) && p.SITE_ID.Contains(txtSID.Text.ToUpper()));
         
          }
+
+        private void txtLID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button7_Click(sender, e);
+            }
+        }
+
+        private void txtSID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button7_Click(sender, e);
+            }
+        }
+
+        #endregion
+
     }
 }

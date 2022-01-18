@@ -40,6 +40,8 @@ namespace APSWinForm
             this.XlsDown = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.txtver = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.txtPR = new System.Windows.Forms.TextBox();
@@ -54,8 +56,6 @@ namespace APSWinForm
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvDM = new System.Windows.Forms.DataGridView();
-            this.txtver = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -189,6 +189,24 @@ namespace APSWinForm
             this.panel9.Size = new System.Drawing.Size(1255, 104);
             this.panel9.TabIndex = 42;
             // 
+            // txtver
+            // 
+            this.txtver.Location = new System.Drawing.Point(99, 29);
+            this.txtver.Name = "txtver";
+            this.txtver.Size = new System.Drawing.Size(121, 21);
+            this.txtver.TabIndex = 69;
+            this.txtver.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtver_KeyDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(26, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 14);
+            this.label1.TabIndex = 68;
+            this.label1.Text = "ㆍ수요버전";
+            // 
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -223,6 +241,7 @@ namespace APSWinForm
             this.txtPR.Name = "txtPR";
             this.txtPR.Size = new System.Drawing.Size(121, 21);
             this.txtPR.TabIndex = 52;
+            this.txtPR.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPR_KeyDown);
             // 
             // txtCS
             // 
@@ -230,6 +249,7 @@ namespace APSWinForm
             this.txtCS.Name = "txtCS";
             this.txtCS.Size = new System.Drawing.Size(121, 21);
             this.txtCS.TabIndex = 48;
+            this.txtCS.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCS_KeyDown);
             // 
             // txtID
             // 
@@ -237,6 +257,7 @@ namespace APSWinForm
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(121, 21);
             this.txtID.TabIndex = 43;
+            this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
             // label9
             // 
@@ -262,7 +283,7 @@ namespace APSWinForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(38, 64);
+            this.label2.Location = new System.Drawing.Point(26, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 14);
             this.label2.TabIndex = 41;
@@ -321,23 +342,6 @@ namespace APSWinForm
             this.dgvDM.RowTemplate.Height = 23;
             this.dgvDM.Size = new System.Drawing.Size(1255, 452);
             this.dgvDM.TabIndex = 75;
-            // 
-            // txtver
-            // 
-            this.txtver.Location = new System.Drawing.Point(99, 29);
-            this.txtver.Name = "txtver";
-            this.txtver.Size = new System.Drawing.Size(121, 21);
-            this.txtver.TabIndex = 69;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(26, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 14);
-            this.label1.TabIndex = 68;
-            this.label1.Text = "ㆍ수요버전";
             // 
             // frmDEMAND
             // 
