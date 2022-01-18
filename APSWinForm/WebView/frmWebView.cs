@@ -16,7 +16,7 @@ namespace APSWinForm
     {
         public string UrlAddress { get; set; }
 
-        private void Logout() => MainForm2.Logout();
+        private void Logout() => MainForm.Logout();
 
         public frmWebView(string title, string urlAddress)
         {

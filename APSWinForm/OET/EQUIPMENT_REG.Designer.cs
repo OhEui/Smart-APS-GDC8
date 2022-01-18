@@ -160,7 +160,7 @@ namespace APSWinForm
             this.btnCancel.Location = new System.Drawing.Point(193, 346);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 36);
-            this.btnCancel.TabIndex = 54;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
@@ -173,7 +173,7 @@ namespace APSWinForm
             this.btnAdd.Location = new System.Drawing.Point(65, 346);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 36);
-            this.btnAdd.TabIndex = 45;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "저장";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -230,7 +230,7 @@ namespace APSWinForm
             this.cboLineID.Location = new System.Drawing.Point(0, 0);
             this.cboLineID.Name = "cboLineID";
             this.cboLineID.Size = new System.Drawing.Size(119, 20);
-            this.cboLineID.TabIndex = 167;
+            this.cboLineID.TabIndex = 4;
             // 
             // panel4
             // 
@@ -250,7 +250,7 @@ namespace APSWinForm
             this.cboSiteID.Location = new System.Drawing.Point(0, 0);
             this.cboSiteID.Name = "cboSiteID";
             this.cboSiteID.Size = new System.Drawing.Size(119, 20);
-            this.cboSiteID.TabIndex = 167;
+            this.cboSiteID.TabIndex = 3;
             // 
             // panel3
             // 
@@ -270,7 +270,7 @@ namespace APSWinForm
             this.cboEqpGroup.Location = new System.Drawing.Point(0, 0);
             this.cboEqpGroup.Name = "cboEqpGroup";
             this.cboEqpGroup.Size = new System.Drawing.Size(119, 20);
-            this.cboEqpGroup.TabIndex = 167;
+            this.cboEqpGroup.TabIndex = 2;
             // 
             // txtEqpmodel
             // 
@@ -278,6 +278,7 @@ namespace APSWinForm
             this.txtEqpmodel.Name = "txtEqpmodel";
             this.txtEqpmodel.Size = new System.Drawing.Size(121, 21);
             this.txtEqpmodel.TabIndex = 173;
+            this.txtEqpmodel.Tag = "1";
             // 
             // txtEqpID
             // 
@@ -285,6 +286,7 @@ namespace APSWinForm
             this.txtEqpID.Name = "txtEqpID";
             this.txtEqpID.Size = new System.Drawing.Size(121, 21);
             this.txtEqpID.TabIndex = 172;
+            this.txtEqpID.Tag = "0";
             // 
             // label2
             // 

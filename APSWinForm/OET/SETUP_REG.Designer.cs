@@ -89,7 +89,7 @@ namespace APSWinForm
             this.button3.Location = new System.Drawing.Point(207, 330);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 36);
-            this.button3.TabIndex = 54;
+            this.button3.TabIndex = 6;
             this.button3.Text = "취소";
             this.button3.UseVisualStyleBackColor = false;
             // 
@@ -137,7 +137,7 @@ namespace APSWinForm
             this.txtGroup.Name = "txtGroup";
             this.txtGroup.ReadOnly = true;
             this.txtGroup.Size = new System.Drawing.Size(121, 21);
-            this.txtGroup.TabIndex = 206;
+            this.txtGroup.TabIndex = 3;
             this.txtGroup.Visible = false;
             // 
             // txtStep
@@ -146,7 +146,7 @@ namespace APSWinForm
             this.txtStep.Name = "txtStep";
             this.txtStep.ReadOnly = true;
             this.txtStep.Size = new System.Drawing.Size(122, 21);
-            this.txtStep.TabIndex = 205;
+            this.txtStep.TabIndex = 2;
             this.txtStep.Visible = false;
             // 
             // txtLine
@@ -155,7 +155,7 @@ namespace APSWinForm
             this.txtLine.Name = "txtLine";
             this.txtLine.ReadOnly = true;
             this.txtLine.Size = new System.Drawing.Size(122, 21);
-            this.txtLine.TabIndex = 204;
+            this.txtLine.TabIndex = 1;
             this.txtLine.Visible = false;
             // 
             // txtSite
@@ -164,7 +164,7 @@ namespace APSWinForm
             this.txtSite.Name = "txtSite";
             this.txtSite.ReadOnly = true;
             this.txtSite.Size = new System.Drawing.Size(121, 21);
-            this.txtSite.TabIndex = 203;
+            this.txtSite.TabIndex = 0;
             this.txtSite.Visible = false;
             // 
             // cboStep
@@ -213,7 +213,7 @@ namespace APSWinForm
             0});
             this.numTime.Name = "numTime";
             this.numTime.Size = new System.Drawing.Size(120, 21);
-            this.numTime.TabIndex = 198;
+            this.numTime.TabIndex = 4;
             // 
             // label11
             // 
@@ -270,7 +270,7 @@ namespace APSWinForm
             this.btnAdd.Location = new System.Drawing.Point(79, 330);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 36);
-            this.btnAdd.TabIndex = 45;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "저장";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);

@@ -111,7 +111,7 @@ namespace APSWinForm
             this.txtStep.Name = "txtStep";
             this.txtStep.ReadOnly = true;
             this.txtStep.Size = new System.Drawing.Size(130, 21);
-            this.txtStep.TabIndex = 181;
+            this.txtStep.TabIndex = 3;
             this.txtStep.Visible = false;
             // 
             // txtProcess
@@ -120,7 +120,7 @@ namespace APSWinForm
             this.txtProcess.Name = "txtProcess";
             this.txtProcess.ReadOnly = true;
             this.txtProcess.Size = new System.Drawing.Size(130, 21);
-            this.txtProcess.TabIndex = 180;
+            this.txtProcess.TabIndex = 2;
             this.txtProcess.Visible = false;
             // 
             // txtProduct
@@ -129,7 +129,7 @@ namespace APSWinForm
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.ReadOnly = true;
             this.txtProduct.Size = new System.Drawing.Size(131, 21);
-            this.txtProduct.TabIndex = 179;
+            this.txtProduct.TabIndex = 1;
             this.txtProduct.Visible = false;
             // 
             // txtEQP
@@ -138,7 +138,7 @@ namespace APSWinForm
             this.txtEQP.Name = "txtEQP";
             this.txtEQP.ReadOnly = true;
             this.txtEQP.Size = new System.Drawing.Size(130, 21);
-            this.txtEQP.TabIndex = 178;
+            this.txtEQP.TabIndex = 0;
             this.txtEQP.Visible = false;
             // 
             // cboStep
@@ -218,6 +218,7 @@ namespace APSWinForm
             this.numStep.Name = "numStep";
             this.numStep.Size = new System.Drawing.Size(129, 21);
             this.numStep.TabIndex = 163;
+            this.numStep.Tag = "4";
             // 
             // label7
             // 
@@ -240,6 +241,7 @@ namespace APSWinForm
             this.numProcess.Name = "numProcess";
             this.numProcess.Size = new System.Drawing.Size(129, 21);
             this.numProcess.TabIndex = 160;
+            this.numProcess.Tag = "5";
             // 
             // label9
             // 
@@ -272,6 +274,7 @@ namespace APSWinForm
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 36);
             this.btnCancel.TabIndex = 54;
+            this.btnCancel.Tag = "7";
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
@@ -285,6 +288,7 @@ namespace APSWinForm
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 36);
             this.btnAdd.TabIndex = 45;
+            this.btnAdd.Tag = "6";
             this.btnAdd.Text = "저장";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
