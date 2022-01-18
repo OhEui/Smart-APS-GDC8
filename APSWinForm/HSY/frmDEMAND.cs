@@ -37,11 +37,11 @@ namespace APSWinForm
         private void frmDEMAND_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(dgvDM);
-            DataGridViewUtil.AddGridTextColumn(dgvDM, "수요버전", "DEMAND_VER", colWidth: 125, align: DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(dgvDM, "수요ID", "DEMAND_ID", colWidth: 110, align: DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(dgvDM, "제품ID", "PRODUCT_ID", colWidth: 170);
-            DataGridViewUtil.AddGridTextColumn(dgvDM, "고객ID", "CUSTOMER_ID", colWidth: 115, align: DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(dgvDM, "기한", "DUE_DATE", colWidth: 110, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvDM, "수요버전", "DEMAND_VER", colWidth: 145, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvDM, "수요ID", "DEMAND_ID", colWidth: 115, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvDM, "제품ID", "PRODUCT_ID", colWidth: 200);
+            DataGridViewUtil.AddGridTextColumn(dgvDM, "고객ID", "CUSTOMER_ID", colWidth: 125, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvDM, "기한", "DUE_DATE", colWidth: 140, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvDM, "수량", "DEMAND_QTY", colWidth: 90, align: DataGridViewContentAlignment.MiddleCenter);
 
             LoadData();

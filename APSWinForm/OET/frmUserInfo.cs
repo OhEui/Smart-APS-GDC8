@@ -31,7 +31,7 @@ namespace APSWinForm
         private void frmUserInfo_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(dgvUI);
-            DataGridViewUtil.AddGridTextColumn(dgvUI, "ID", "ID", colWidth: 160, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvUI, "ID", "UserName", colWidth: 160, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvUI, "이름", "Name", colWidth: 60, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvUI, "이메일", "Email", colWidth: 90, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvUI, "전화번호", "Phone", colWidth: 100, align: DataGridViewContentAlignment.MiddleCenter);
@@ -57,7 +57,7 @@ namespace APSWinForm
                 Name = txtName.Text,
                 Email = txtE.Text,
                 Phone = txtP.Text,
-                Id = txtID.Text,
+                UserName = txtID.Text,
                 Birthday = DateTime.Parse(txtB.Text)
             };
 
@@ -78,7 +78,7 @@ namespace APSWinForm
                 return;
             }
 
-            string prodID = dgvUI.SelectedRows[0].Cells["Id"].Value.ToString();
+            string prodID = dgvUI.SelectedRows[0].Cells["UserName"].Value.ToString();
 
             if (MessageBox.Show("       정말 삭제하시겠습니까?", "유저삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -101,7 +101,7 @@ namespace APSWinForm
             if (user != null)
             {
                 txtName.Text = user.Name;
-                txtID.Text = user.Id;
+                txtID.Text = user.UserName;
                 txtE.Text = user.Email;
                 txtP.Text = user.Phone;
                 txtB.Text = user.Birthday.ToString();
