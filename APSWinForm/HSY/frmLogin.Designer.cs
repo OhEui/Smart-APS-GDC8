@@ -41,7 +41,6 @@ namespace APSWinForm
             this.label4 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtPW = new System.Windows.Forms.TextBox();
-            this.lblTest = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +50,7 @@ namespace APSWinForm
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(123)))), ((int)(((byte)(123)))));
-            this.linkLabel2.Location = new System.Drawing.Point(491, 379);
+            this.linkLabel2.Location = new System.Drawing.Point(560, 379);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(117, 15);
             this.linkLabel2.TabIndex = 4;
@@ -64,12 +63,13 @@ namespace APSWinForm
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(123)))), ((int)(((byte)(123)))));
-            this.linkLabel1.Location = new System.Drawing.Point(628, 379);
+            this.linkLabel1.Location = new System.Drawing.Point(558, 415);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(114, 15);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Finding a password";
+            this.linkLabel1.Visible = false;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // button1
@@ -92,9 +92,9 @@ namespace APSWinForm
             this.ckLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(123)))), ((int)(((byte)(123)))));
             this.ckLogin.Location = new System.Drawing.Point(561, 278);
             this.ckLogin.Name = "ckLogin";
-            this.ckLogin.Size = new System.Drawing.Size(113, 20);
+            this.ckLogin.Size = new System.Drawing.Size(117, 20);
             this.ckLogin.TabIndex = 5;
-            this.ckLogin.Text = "Keep Me login";
+            this.ckLogin.Text = "Remember me";
             this.ckLogin.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -176,21 +176,11 @@ namespace APSWinForm
             this.txtPW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPW_KeyPress);
             // 
-            // lblTest
-            // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(689, 78);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(111, 60);
-            this.lblTest.TabIndex = 26;
-            this.lblTest.Text = "테스트용 계정\r\nID: test\r\nPW: abcd1234!@#$\r\nID: test2\r\nPW: qwerty1!";
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 453);
-            this.Controls.Add(this.lblTest);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
@@ -203,7 +193,7 @@ namespace APSWinForm
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtPW);
             this.Name = "frmLogin";
-            this.Text = "frmLogin";
+            this.Text = "APS";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -225,6 +215,5 @@ namespace APSWinForm
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtPW;
-        private System.Windows.Forms.Label lblTest;
     }
 }

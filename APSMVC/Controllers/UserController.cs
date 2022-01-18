@@ -18,12 +18,15 @@ namespace APSMVC.Controllers
         }
 
         [HttpGet]
-        public ActionResult LogOut()
+        public async Task<ActionResult> LogOut()
         {
-            // Header에서 token을 제거하는 ajax 코드 실행해야함
+            var access_token = Request.Headers["authorization"];
+            ServiceHelp srv = new ServiceHelp(true, access_token);
+            WebMessage result = await srv.PostAsyncNone($"api/Account/Logout", new object()); // 설비그룹, 설비ID, 제품ID 가져오기
+
             return RedirectToAction("Login");
         }
 
-        
+
     }
 }

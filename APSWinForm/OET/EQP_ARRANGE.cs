@@ -13,7 +13,7 @@ using APSUtil.Http;
 
 namespace APSWinForm
 {
-    public partial class EQP_ARRANGE : Form
+    public partial class EQP_ARRANGE : frmBaseIcon
     {
         List<EqpArrangeVO> ARRList= null;
         ServiceHelp srv = new ServiceHelp();
@@ -33,13 +33,15 @@ namespace APSWinForm
             InitializeComponent();
             if (UserInfoStorage.Current.Auth_ID == 3)
             {
-                BtnAdd.Visible = BtnEdit.Visible = btnReset.Visible = false;
+                BtnAdd.Visible = BtnEdit.Visible = BtnDelete.Visible = false;
             }
             title.Text = "설비배치정보";
+
+            
+            
         }
         
         
-
         private void EQP_ARRANGE_Load(object sender, EventArgs e)
         {
             combobinding();
@@ -71,8 +73,8 @@ namespace APSWinForm
         private void DataLoad()
         {
             DataGridViewUtil.SetInitGridView(dgvEQP);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.PRODUCT_ID, "PRODUCT_ID",colWidth: 250, align: DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.PROCESS_ID, "PROCESS_ID", colWidth: 300, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.PRODUCT_ID, "PRODUCT_ID",colWidth: 250, align: DataGridViewContentAlignment.MiddleLeft);
+            DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.PROCESS_ID, "PROCESS_ID", colWidth: 300, align: DataGridViewContentAlignment.MiddleLeft);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.STEP_ID, "STEP_ID", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.EQP_ID, "EQP_ID", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.TACT_TIME, "TACT_TIME", colWidth: 150,align: DataGridViewContentAlignment.MiddleCenter);
@@ -183,8 +185,11 @@ namespace APSWinForm
             }
         }
 
-        
-      
-        
+        private void XlsDown_Click(object sender, EventArgs e)
+        {
+            bool bResult = ExcelUtil.ExportExcelToList(dgvEQP.DataSource as List<EqpArrangeVO>);
+                if (bResult)
+                MessageBox.Show("저장하였습니다.");
+        }
     }
 }

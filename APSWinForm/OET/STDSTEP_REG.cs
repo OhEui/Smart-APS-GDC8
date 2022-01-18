@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-	public partial class STDSTEP_REG : Form
+	public partial class STDSTEP_REG : frmBaseIcon
 	{
 		ServiceHelp srv = new ServiceHelp();
 		List<STD_STEP_VO> stepList;

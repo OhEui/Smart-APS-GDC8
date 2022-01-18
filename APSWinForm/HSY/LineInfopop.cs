@@ -12,7 +12,7 @@ using APSVO;
 
 namespace APSWinForm
 {
-    public partial class LineInfopop : Form
+    public partial class LineInfopop : frmBaseIcon
     {
         ServiceHelp srv = new ServiceHelp();
         List<Line_Info_VO> list;

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-    public partial class frmBase : Form
+    public partial class frmBase : frmBaseIcon
     {
         public frmBase()
         {

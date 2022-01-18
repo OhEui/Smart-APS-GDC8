@@ -96,6 +96,7 @@
     <Content Include="pages\assets\dist\js\bootstrap.bundle.min.js" />
     <Content Include="pages\assets\dist\svg\bootstrap-outline.svg" />
     <Content Include="pages\assets\dist\svg\bootstrap-solid.svg" />
+    <Content Include="pages\assets\dist\svg\mainIcon.svg" />
     <Content Include="pages\dist\css\adminlte.css" />
     <Content Include="pages\dist\css\adminlte.min.css" />
     <Content Include="pages\dist\css\alt\adminlte.components.css" />

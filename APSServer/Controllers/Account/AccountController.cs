@@ -160,7 +160,8 @@ namespace APSServer.Controllers
         public IHttpActionResult Logout()
         {
             Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
-            return Ok();
+
+            return Ok(new WebMessage() { IsSuccess = true, ResultMessage="로그아웃 하였습니다."});
         }
 
         // GET api/Account/ManageInfo?returnUrl=%2F&generateState=true

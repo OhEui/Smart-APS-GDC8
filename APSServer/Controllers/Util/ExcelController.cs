@@ -17,9 +17,9 @@ namespace APSServer.Controllers
         /// </summary>
         /// <param name="req"></param>
         /// <returns></returns>
-        [HttpPost]
-        [Route("Download")]
-        public IHttpActionResult ExcelDownload(ReqEQPGantt req)
+        [HttpGet]
+        [Route("Data")]
+        public IHttpActionResult GetExcelData()
         {
             // 차트 데이터 가져오기
             using (ExcelDAC dac = new ExcelDAC())

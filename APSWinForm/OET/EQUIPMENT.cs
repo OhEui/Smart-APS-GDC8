@@ -13,7 +13,7 @@ using APSVO;
 
 namespace APSWinForm
 {
-    public partial class EQUIPMENT : Form
+    public partial class EQUIPMENT : frmBaseIcon
     {
         List<EQUIPVO> EQPlist = null;
         ServiceHelp srv = new ServiceHelp();
@@ -172,7 +172,12 @@ namespace APSWinForm
             }
         }
 
-       
+        private void XlsDown_Click(object sender, EventArgs e)
+        {
+            bool bResult = ExcelUtil.ExportExcelToList(dgvEQP.DataSource as List<EQUIPVO>);
+            if (bResult)
+                MessageBox.Show("저장하였습니다.");
+        }
     }
   
 }

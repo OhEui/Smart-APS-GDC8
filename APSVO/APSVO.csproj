@@ -54,11 +54,13 @@
     <Compile Include="CommonVO.cs" />
     <Compile Include="Line_Info_VO.cs" />
     <Compile Include="MenuVO.cs" />
+    <Compile Include="MetaData\DeleteMetaDataVO.cs" />
     <Compile Include="ProductVO.cs" />
     <Compile Include="STD_STEP_VO.cs" />
     <Compile Include="EQUIPVO.cs" />
     <Compile Include="StepRouteVO.cs" />
     <Compile Include="DemandVO.cs" />
+    <Compile Include="User\RegisterVO.cs" />
     <Compile Include="User\Request.cs" />
     <Compile Include="User\UserInfo.cs" />
     <Compile Include="SampleVO.cs" />

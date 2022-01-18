@@ -6,13 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.ModelBinding;
 using System.Windows.Forms;
+using APSUtil.Http;
 using APSVO;
 
 
 namespace APSWinForm
 {
-    public partial class frmJoin : Form
+    public partial class frmJoin : frmBaseIcon
     {
 
 
@@ -21,7 +23,7 @@ namespace APSWinForm
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
             //입력 유효성 체크
             StringBuilder sb = new StringBuilder();
@@ -62,26 +64,55 @@ namespace APSWinForm
                 MessageBox.Show(sb.ToString());
                 return;
             }
-            //처리
 
-            //입력받은 유저정보를 DB에 저장
-            /*
-            UserDAC dac = new UserDAC();
-            int iResult = dac.Insert(UserInfo);
-            dac.Dispose();
+            var req = new RegisterVO()
+            { 
+                ID = $"{txtID}",
+                Email = $@"{txtEmail}@{cbEmail}",
+                Password = $"{txtPW}",
+                ConfirmPassword = $"{txtPW2}",
+                Phone = $"{txtPhone}",
+                Name = $"{txtName}",
+                Birthday = Convert.ToDateTime(txtBirth)
+            };
 
-            if (iResult > 0)
+            ServiceHelp srv = new ServiceHelp();
+            string path = "api/Account/Register";
+            var result = await srv.PostAsync<RegisterVO, ModelStateDictionary>(path, req);
+            if (srv.IsSuccessStatusCode)
             {
-                MessageBox.Show("유저가 추가되었습니다.");
-                this.Close();
+                MessageBox.Show("회원가입에 성공하였습니다.");
+                Close();
             }
-            */
+            else
+            {
+                StringBuilder errStr = new StringBuilder();
+                var allErrors = result.Values.SelectMany(v => v.Errors.Select(b => b.ErrorMessage));
+                if (allErrors == null)
+                    return;
+                allErrors.ToList().ForEach((i) => errStr.AppendLine(i));
+                MessageBox.Show(errStr.ToString());
+            }
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private async void button3_Click(object sender, EventArgs e)
         {
+            string path = "api/Account/CheckID";
+            ServiceHelp srv = new ServiceHelp();
+            bool bResult = await srv.GetListAsync<bool>(path);
+            if (bResult)
+            {
+                MessageBox.Show("사용 가능한 ID입니다.");
+            }
+            else 
+            {
+                MessageBox.Show("사용중인 ID입니다.");
+            }
+
             /*
+             * 
+             * 
             txtID.Text = txtID.Text.Replace(" ", "");
             bool check = dac.IDCheck(txtID.Text);
             if (!check)

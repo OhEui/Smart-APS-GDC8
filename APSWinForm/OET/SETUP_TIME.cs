@@ -12,7 +12,7 @@ using APSVO;
 
 namespace APSWinForm
 {
-    public partial class SETUP_TIME : Form
+    public partial class SETUP_TIME : frmBaseIcon
     {
         List<SetupVO> SetupList;
         ServiceHelp srv = new ServiceHelp();
@@ -170,6 +170,13 @@ namespace APSWinForm
             {
                 MessageBox.Show("삭제할 항목을 선택해주세요");
             }
+        }
+
+        private void XlsDown_Click(object sender, EventArgs e)
+        {
+            bool bResult = ExcelUtil.ExportExcelToList(dgvSetup.DataSource as List<SetupVO>);
+            if (bResult)
+                MessageBox.Show("저장하였습니다.");
         }
     }
 }

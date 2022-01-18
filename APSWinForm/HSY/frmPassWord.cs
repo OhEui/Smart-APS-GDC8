@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace APSWinForm
 {
-    public partial class frmPassWord : Form
+    public partial class frmPassWord : frmBaseIcon
     {
         public frmPassWord()
         {
             InitializeComponent();
+        }
+
+        private void frmPassWord_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
