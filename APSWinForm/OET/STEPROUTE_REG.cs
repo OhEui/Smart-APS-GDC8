@@ -106,7 +106,7 @@ namespace APSWinForm
 					STEP_SEQ = Convert.ToInt32(txtStepSeq.Text),
 					STD_STEP_ID = cboStdStep.SelectedValue.ToString(),
 					STEP_TYPE = null,
-					user_id = "Test"
+					user_id = UserInfoStorage.Current.ID
 				};
 			}
 			else
