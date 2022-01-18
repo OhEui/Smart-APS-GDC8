@@ -101,6 +101,7 @@ namespace APSWinForm
             if (e.KeyChar == 13)
             {
                 button1_Click(null, new EventArgs());
+                e.Handled = true;
             }
         }
     }
