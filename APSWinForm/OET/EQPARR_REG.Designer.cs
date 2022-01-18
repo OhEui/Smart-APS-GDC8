@@ -32,14 +32,18 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EQPARR_REG));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txtStep = new System.Windows.Forms.TextBox();
-            this.txtProcess = new System.Windows.Forms.TextBox();
-            this.txtProduct = new System.Windows.Forms.TextBox();
-            this.txtEQP = new System.Windows.Forms.TextBox();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.cboStep = new System.Windows.Forms.ComboBox();
+            this.txtStep = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.cboProcess = new System.Windows.Forms.ComboBox();
+            this.txtProcess = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.cboProduct = new System.Windows.Forms.ComboBox();
+            this.txtProduct = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.cboEQP = new System.Windows.Forms.ComboBox();
+            this.txtEQP = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,16 +57,20 @@ namespace APSWinForm
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numProcess)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -81,14 +89,10 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
-            this.panel9.Controls.Add(this.txtStep);
-            this.panel9.Controls.Add(this.txtProcess);
-            this.panel9.Controls.Add(this.txtProduct);
-            this.panel9.Controls.Add(this.txtEQP);
-            this.panel9.Controls.Add(this.cboStep);
-            this.panel9.Controls.Add(this.cboProcess);
-            this.panel9.Controls.Add(this.cboProduct);
-            this.panel9.Controls.Add(this.cboEQP);
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.panel5);
+            this.panel9.Controls.Add(this.panel4);
+            this.panel9.Controls.Add(this.panel3);
             this.panel9.Controls.Add(this.label4);
             this.panel9.Controls.Add(this.label5);
             this.panel9.Controls.Add(this.label8);
@@ -105,77 +109,125 @@ namespace APSWinForm
             this.panel9.Size = new System.Drawing.Size(370, 427);
             this.panel9.TabIndex = 42;
             // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.txtStep);
+            this.panel10.Controls.Add(this.cboStep);
+            this.panel10.Location = new System.Drawing.Point(183, 187);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(130, 20);
+            this.panel10.TabIndex = 179;
+            // 
+            // cboStep
+            // 
+            this.cboStep.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboStep.FormattingEnabled = true;
+            this.cboStep.Location = new System.Drawing.Point(0, 0);
+            this.cboStep.Name = "cboStep";
+            this.cboStep.Size = new System.Drawing.Size(128, 20);
+            this.cboStep.TabIndex = 2;
+            // 
             // txtStep
             // 
-            this.txtStep.Location = new System.Drawing.Point(184, 181);
+            this.txtStep.Location = new System.Drawing.Point(-1, -1);
             this.txtStep.Name = "txtStep";
             this.txtStep.ReadOnly = true;
             this.txtStep.Size = new System.Drawing.Size(130, 21);
             this.txtStep.TabIndex = 3;
             this.txtStep.Visible = false;
             // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.txtProcess);
+            this.panel5.Controls.Add(this.cboProcess);
+            this.panel5.Location = new System.Drawing.Point(183, 145);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(130, 20);
+            this.panel5.TabIndex = 179;
+            // 
+            // cboProcess
+            // 
+            this.cboProcess.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboProcess.FormattingEnabled = true;
+            this.cboProcess.Location = new System.Drawing.Point(0, 0);
+            this.cboProcess.Name = "cboProcess";
+            this.cboProcess.Size = new System.Drawing.Size(128, 20);
+            this.cboProcess.TabIndex = 2;
+            // 
             // txtProcess
             // 
-            this.txtProcess.Location = new System.Drawing.Point(184, 139);
+            this.txtProcess.Location = new System.Drawing.Point(-1, -1);
             this.txtProcess.Name = "txtProcess";
             this.txtProcess.ReadOnly = true;
             this.txtProcess.Size = new System.Drawing.Size(130, 21);
             this.txtProcess.TabIndex = 2;
             this.txtProcess.Visible = false;
             // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.txtProduct);
+            this.panel4.Controls.Add(this.cboProduct);
+            this.panel4.Location = new System.Drawing.Point(184, 105);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(130, 20);
+            this.panel4.TabIndex = 179;
+            // 
+            // cboProduct
+            // 
+            this.cboProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboProduct.FormattingEnabled = true;
+            this.cboProduct.Location = new System.Drawing.Point(0, 0);
+            this.cboProduct.Name = "cboProduct";
+            this.cboProduct.Size = new System.Drawing.Size(128, 20);
+            this.cboProduct.TabIndex = 2;
+            // 
             // txtProduct
             // 
-            this.txtProduct.Location = new System.Drawing.Point(184, 98);
+            this.txtProduct.Location = new System.Drawing.Point(-2, -1);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.ReadOnly = true;
             this.txtProduct.Size = new System.Drawing.Size(131, 21);
             this.txtProduct.TabIndex = 1;
             this.txtProduct.Visible = false;
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.txtEQP);
+            this.panel3.Controls.Add(this.cboEQP);
+            this.panel3.Location = new System.Drawing.Point(184, 64);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(130, 20);
+            this.panel3.TabIndex = 178;
+            // 
+            // cboEQP
+            // 
+            this.cboEQP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboEQP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEQP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboEQP.FormattingEnabled = true;
+            this.cboEQP.Location = new System.Drawing.Point(0, 0);
+            this.cboEQP.Name = "cboEQP";
+            this.cboEQP.Size = new System.Drawing.Size(128, 20);
+            this.cboEQP.TabIndex = 2;
+            // 
             // txtEQP
             // 
-            this.txtEQP.Location = new System.Drawing.Point(184, 58);
+            this.txtEQP.Location = new System.Drawing.Point(-1, -1);
             this.txtEQP.Name = "txtEQP";
             this.txtEQP.ReadOnly = true;
             this.txtEQP.Size = new System.Drawing.Size(130, 21);
             this.txtEQP.TabIndex = 0;
             this.txtEQP.Visible = false;
-            // 
-            // cboStep
-            // 
-            this.cboStep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboStep.FormattingEnabled = true;
-            this.cboStep.Location = new System.Drawing.Point(184, 181);
-            this.cboStep.Name = "cboStep";
-            this.cboStep.Size = new System.Drawing.Size(130, 20);
-            this.cboStep.TabIndex = 177;
-            // 
-            // cboProcess
-            // 
-            this.cboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboProcess.FormattingEnabled = true;
-            this.cboProcess.Location = new System.Drawing.Point(184, 139);
-            this.cboProcess.Name = "cboProcess";
-            this.cboProcess.Size = new System.Drawing.Size(130, 20);
-            this.cboProcess.TabIndex = 176;
-            // 
-            // cboProduct
-            // 
-            this.cboProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboProduct.FormattingEnabled = true;
-            this.cboProduct.Location = new System.Drawing.Point(184, 99);
-            this.cboProduct.Name = "cboProduct";
-            this.cboProduct.Size = new System.Drawing.Size(130, 20);
-            this.cboProduct.TabIndex = 175;
-            // 
-            // cboEQP
-            // 
-            this.cboEQP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEQP.FormattingEnabled = true;
-            this.cboEQP.Location = new System.Drawing.Point(185, 58);
-            this.cboEQP.Name = "cboEQP";
-            this.cboEQP.Size = new System.Drawing.Size(130, 20);
-            this.cboEQP.TabIndex = 174;
             // 
             // label4
             // 
@@ -320,6 +372,17 @@ namespace APSWinForm
             this.panel7.Size = new System.Drawing.Size(10, 427);
             this.panel7.TabIndex = 40;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(172)))), ((int)(((byte)(199)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(390, 38);
+            this.panel1.TabIndex = 46;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -340,17 +403,6 @@ namespace APSWinForm
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(172)))), ((int)(((byte)(199)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(390, 38);
-            this.panel1.TabIndex = 46;
-            // 
             // EQPARR_REG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -364,12 +416,20 @@ namespace APSWinForm
             this.panel2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numProcess)).EndInit();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,13 +453,17 @@ namespace APSWinForm
         private System.Windows.Forms.NumericUpDown numProcess;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cboStep;
-        private System.Windows.Forms.ComboBox cboProcess;
-        private System.Windows.Forms.ComboBox cboProduct;
-        private System.Windows.Forms.ComboBox cboEQP;
         private System.Windows.Forms.TextBox txtStep;
         private System.Windows.Forms.TextBox txtProcess;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.TextBox txtEQP;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.ComboBox cboStep;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ComboBox cboProcess;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ComboBox cboProduct;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox cboEQP;
     }
 }

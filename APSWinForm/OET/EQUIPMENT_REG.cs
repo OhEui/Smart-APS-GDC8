@@ -64,7 +64,7 @@ namespace APSWinForm
         {
             if (EQPvo != null)
             {
-                txtEqpID.Text = EQPvo.EQP_ID;
+                txtEQPIDM.Text = EQPvo.EQP_ID;
                 txtEqpmodel.Text = EQPvo.EQP_MODEL;
                 cboEqpGroup.SelectedValue = EQPvo.EQP_GROUP;
                 cboLineID.SelectedValue = EQPvo.LINE_ID;
