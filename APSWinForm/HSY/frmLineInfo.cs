@@ -31,34 +31,16 @@ namespace APSWinForm
         private void frmLineInfo_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(dgvLI);
-            DataGridViewUtil.AddGridTextColumn(dgvLI, "현장ID", "SITE_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvLI, "라인ID", "LINE_ID", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvLI, "라인이름", "LINE_NAME", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvLI, "현장ID", "SITE_ID", colWidth: 110, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvLI, "라인ID", "LINE_ID", colWidth: 110, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvLI, "라인이름", "LINE_NAME", colWidth: 120);
 
             LoadData();
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtLID.Text) && string.IsNullOrWhiteSpace(txtSID.Text))
-            {
-                MessageBox.Show("검색어를 입력해주세요.");
-                txtLID.Focus();
-                return;
-            }
 
-            dgvLI.DataSource = null;
-            dgvLI.DataSource = list.FindAll(p => p.LINE_ID.Contains(txtLID.Text.ToUpper()) && p.SITE_ID.Contains(txtSID.Text.ToUpper()));
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            txtLID.Text = txtSID.Text = null;
-
-            LoadData();
-        }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        //추가
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             LineInfopop reg = new LineInfopop();
 
@@ -69,7 +51,8 @@ namespace APSWinForm
             else return;
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        //수정
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
             string line = dgvLI["LINE_ID", dgvLI.CurrentRow.Index].Value.ToString();
             if (line == null)
@@ -87,7 +70,8 @@ namespace APSWinForm
             else return;
         }
 
-        private async void toolStripButton1_Click(object sender, EventArgs e)
+        //삭제
+        private async void BtnDelete_Click(object sender, EventArgs e)
         {
             if (dgvLI.SelectedRows.Count < 1)
             {
@@ -107,5 +91,28 @@ namespace APSWinForm
                 MessageBox.Show(msg.ResultMessage);
             }
         }
+
+        //초기화
+        private void button3_Click(object sender, EventArgs e)
+        {
+            txtLID.Text = txtSID.Text = null;
+
+            LoadData();
+        }
+
+        //검색
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtLID.Text) && string.IsNullOrWhiteSpace(txtSID.Text))
+            {
+                MessageBox.Show("검색어를 입력해주세요.");
+                txtLID.Focus();
+                return;
+            }
+
+            dgvLI.DataSource = null;
+            dgvLI.DataSource = list.FindAll(p => p.LINE_ID.Contains(txtLID.Text.ToUpper()) && p.SITE_ID.Contains(txtSID.Text.ToUpper()));
+        
+         }
     }
 }

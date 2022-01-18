@@ -16,6 +16,7 @@ namespace APSWinForm
     {
         ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> list;
+        DemandVO dmadvo;
 
         public DEMANDpop()
         {
@@ -25,15 +26,7 @@ namespace APSWinForm
         public DEMANDpop(DemandVO demdInfo)
         {
             InitializeComponent();
-
-            txtID.Text = demdInfo.DEMAND_ID;
-            txtVer.Text = demdInfo.DEMAND_VER;
-            txtQTY.Text = demdInfo.DEMAND_QTY.ToString();
-            txtdate.Text = demdInfo.DUE_DATE.ToString();
-            cboCID.Text = demdInfo.CUSTOMER_ID;
-            cboPID.Text = demdInfo.PRODUCT_ID;
-
-            txtID.Enabled = false;
+            this.dmadvo = demdInfo;
         }
 
         public async void Combobinding()
@@ -42,6 +35,20 @@ namespace APSWinForm
             CommonUtil.ComboBinding(cboPID, list, "PRODUCT_ID");
             CommonUtil.ComboBinding(cboCID, list, "CUSTOMER_ID");
 
+            Modify();
+        }
+
+        private void Modify()
+        {
+            if (dmadvo != null)
+            {
+                txtID.Text = dmadvo.DEMAND_ID;
+                txtVer.Text = dmadvo.DEMAND_VER;
+                txtQTY.Text = dmadvo.DEMAND_QTY.ToString();
+                txtdate.Text = dmadvo.DUE_DATE.ToString();
+                cboCID.SelectedValue = dmadvo.CUSTOMER_ID;
+                cboPID.SelectedValue = dmadvo.PRODUCT_ID;
+            }
         }
 
         private async void button7_Click(object sender, EventArgs e)
