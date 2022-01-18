@@ -18,8 +18,7 @@ namespace APSWinForm
         {
             Font = new Font("ONE 모바일고딕 OTF Regular", 11F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(129)));
             InitializeComponent();
-            hideSubMenu();
-            Login();
+
         }
 
         #region hideMenu
@@ -59,11 +58,11 @@ namespace APSWinForm
 
         private void MainForm2_Load(object sender, EventArgs e)
         {
+            hideSubMenu();
+            Login();
+
             this.WindowState = FormWindowState.Maximized;
             tabControl1.Visible = true;
-            lblName.Text = "";
-            
-           
         }
 
 
@@ -79,8 +78,6 @@ namespace APSWinForm
                     btnSystem.Visible = false;
                     
                 }
-
-                lblName.Text = UserInfoStorage.Current.Name;
                 Show();
                 MessageBox.Show(UserInfoStorage.Current.ToString());
 
@@ -88,7 +85,7 @@ namespace APSWinForm
             }
             else
             {
-                Close();
+                Application.Exit();
             }
 
         }
@@ -112,7 +109,6 @@ namespace APSWinForm
                 return;
             TokenStorage.Clear();
             UserInfoStorage.Clear();
-            mainForm.lblName.Text = "";
             mainForm.Login();
         }
 
