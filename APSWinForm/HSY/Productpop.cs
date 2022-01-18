@@ -16,6 +16,7 @@ namespace APSWinForm
     {
         ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> list;
+        ProductVO prodvo;
 
         public Productpop()
         {
@@ -25,22 +26,28 @@ namespace APSWinForm
         public async void Combobinding()
         {
             list = await srv.GetListAsync("api/Common/CommonCode", list);
-            CommonUtil.ComboBinding(cboType, list, "PRODUCT_TYPE");
+            CommonUtil.ComboBinding(cboType, list, "PRODUCT_TYPE", blankText: "선택");
+
+            Modify();
         }
 
         public Productpop(ProductVO prodInfo)
         {
             InitializeComponent();
-
-            txtID.Text = prodInfo.PRODUCT_ID;
-            cboType.Text = prodInfo.PRODUCT_TYPE;
-            txtName.Text = prodInfo.PRODUCT_NAME;
-            txtProcess.Text = prodInfo.PROCESS_ID;
-            txtSize.Text = prodInfo.LOT_SIZE.ToString();
-
-            txtID.Enabled = false;
+            this.prodvo = prodInfo;
         }
-        
+
+        private void Modify()
+        {
+            if (prodvo != null)
+            {
+                txtID.Text = prodvo.PRODUCT_ID;
+                txtName.Text = prodvo.PRODUCT_NAME;
+                txtProcess.Text = prodvo.PROCESS_ID; 
+                txtSize.Text = prodvo.LOT_SIZE.ToString();
+                cboType.SelectedValue = prodvo.PRODUCT_TYPE;
+            }
+        }
 
         //수정
         private async void button7_Click(object sender, EventArgs e)

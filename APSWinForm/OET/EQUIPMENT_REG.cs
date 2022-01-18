@@ -45,7 +45,7 @@ namespace APSWinForm
             //Siteinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Siteinfo)
             CommonUtil.ComboBinding(cboSiteID, Lineinfo, "SITE_ID", "SITE_ID");
             CommonUtil.ComboBinding(cboLineID, Lineinfo, "LINE_ID", "LINE_ID");
-            CommonUtil.ComboBinding(cboEqpGroup, list, "STD_STEP_ID" , blankText:"선택");
+            CommonUtil.ComboBinding(cboEqpGroup, list, "STD_STEP_ID" , blankText: "선택");
             //CommonUtil.ComboBinding(cboLineID, list, "LINE_ID", blankText: "선택");
             //CommonUtil.ComboBinding(cboSiteID, list, "SITE_ID", blankText: "선택");
 

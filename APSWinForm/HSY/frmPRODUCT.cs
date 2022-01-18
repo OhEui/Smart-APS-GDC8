@@ -36,11 +36,11 @@ namespace APSWinForm
         private void frmPRODUCT_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(dgvPR);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품ID", "PRODUCT_ID", colWidth: 160, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품ID", "PRODUCT_ID", colWidth: 190);
             DataGridViewUtil.AddGridTextColumn(dgvPR, "제품타입", "PRODUCT_TYPE", colWidth: 80, align: DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품이름", "PRODUCT_NAME", colWidth: 160, align: DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "프로세스ID", "PROCESS_ID", colWidth: 200, align: DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(dgvPR, "생산단위크기", "LOT_SIZE", colWidth: 100, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "제품이름", "PRODUCT_NAME", colWidth: 190);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "프로세스ID", "PROCESS_ID", colWidth: 230);
+            DataGridViewUtil.AddGridTextColumn(dgvPR, "생산단위크기", "LOT_SIZE", colWidth: 90, align: DataGridViewContentAlignment.MiddleCenter);
             
             LoadData();
         }
@@ -60,17 +60,8 @@ namespace APSWinForm
         
          }
 
-
-        //초기화
-        private void button3_Click(object sender, EventArgs e)
-        {
-            txtID.Text = txtPID.Text = null;
-
-            LoadData();
-        }
-
         //추가
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             Productpop reg = new Productpop();
 
@@ -82,7 +73,7 @@ namespace APSWinForm
         }
 
         //수정
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
             string prod = dgvPR["PRODUCT_ID", dgvPR.CurrentRow.Index].Value.ToString();
             if (prod == null)
@@ -99,10 +90,9 @@ namespace APSWinForm
             }
             else return;
         }
-        
 
         //삭제
-        private async void toolStripButton1_Click(object sender, EventArgs e)
+        private async void BtnDelete_Click(object sender, EventArgs e)
         {
             if (dgvPR.SelectedRows.Count < 1)
             {
@@ -113,7 +103,7 @@ namespace APSWinForm
             string prodID = dgvPR.SelectedRows[0].Cells["PRODUCT_ID"].Value.ToString();
 
             if (MessageBox.Show("       정말 삭제하시겠습니까?", "제품삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            { 
+            {
                 APSVO.WebMessage msg = await srv.GetAsync($"api/Product/Delete/{prodID}");
                 if (msg.IsSuccess)
                 {
@@ -123,14 +113,16 @@ namespace APSWinForm
             }
         }
 
-        private void toolStripButton5_Click(object sender, EventArgs e)
+        //초기화
+        private void button3_Click(object sender, EventArgs e)
         {
-            //bool bResult = ExcelUtil.ExportExcelToList(dgvPR.DataSource as List<ProductVO>, @".\product.xlsx", "");
-            //if (bResult)
-            //    MessageBox.Show("저장하였습니다.");
+            txtID.Text = txtPID.Text = null;
+
+            LoadData();
         }
 
-        private void txtID_KeyDown(object sender, KeyEventArgs e)
+        //엔터
+        private void txtID_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -144,6 +136,13 @@ namespace APSWinForm
             {
                 button7_Click(sender, e);
             }
+        }
+
+        private void XlsDown_Click(object sender, EventArgs e)
+        {
+            //bool bResult = ExcelUtil.ExportExcelToList(dgvPR.DataSource as List<ProductVO>, @".\product.xlsx", "");
+            //if (bResult)
+            //    MessageBox.Show("저장하였습니다.");
         }
     }
 }
