@@ -23,7 +23,7 @@ namespace APSWinForm
             InitializeComponent();
             //if (UserInfoStorage.Current.Auth_ID == 3)
             //{
-            //    toolStripButton1.Visible = toolStripButton2.Visible = toolStripButton3.Visible = false;
+            //    BtnAdd.Visible = BtnDelete.Visible = BtnEdit.Visible = false;
             //}
         }
 
