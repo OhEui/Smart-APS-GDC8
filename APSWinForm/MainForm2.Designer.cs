@@ -41,6 +41,7 @@ namespace APSWinForm
             this.btnSystem = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panelExcelSubMenu = new System.Windows.Forms.Panel();
+            this.btnExcelOut = new System.Windows.Forms.Button();
             this.btnExcelin = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.panelResultSubMenu = new System.Windows.Forms.Panel();
@@ -59,9 +60,7 @@ namespace APSWinForm
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.lblName = new System.Windows.Forms.Label();
             this.tabControl1 = new TabControlZ.TabControlZ();
-            this.btnExcelOut = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.panelSystemSubMenu.SuspendLayout();
@@ -233,6 +232,24 @@ namespace APSWinForm
             this.panelExcelSubMenu.Name = "panelExcelSubMenu";
             this.panelExcelSubMenu.Size = new System.Drawing.Size(205, 60);
             this.panelExcelSubMenu.TabIndex = 7;
+            // 
+            // btnExcelOut
+            // 
+            this.btnExcelOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExcelOut.FlatAppearance.BorderSize = 0;
+            this.btnExcelOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btnExcelOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btnExcelOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelOut.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcelOut.ForeColor = System.Drawing.Color.Silver;
+            this.btnExcelOut.Location = new System.Drawing.Point(0, 30);
+            this.btnExcelOut.Name = "btnExcelOut";
+            this.btnExcelOut.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnExcelOut.Size = new System.Drawing.Size(205, 30);
+            this.btnExcelOut.TabIndex = 2;
+            this.btnExcelOut.Text = "엑셀 내보내기";
+            this.btnExcelOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcelOut.UseVisualStyleBackColor = true;
             // 
             // btnExcelin
             // 
@@ -574,16 +591,6 @@ namespace APSWinForm
             this.panelLogo.Size = new System.Drawing.Size(205, 63);
             this.panelLogo.TabIndex = 0;
             // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
-            this.lblName.Location = new System.Drawing.Point(762, 9);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(38, 12);
-            this.lblName.TabIndex = 19;
-            this.lblName.Text = "label1";
-            // 
             // tabControl1
             // 
             this.tabControl1.ActiveTabEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
@@ -605,31 +612,12 @@ namespace APSWinForm
             this.tabControl1.Transparent1 = 150;
             this.tabControl1.Transparent2 = 150;
             // 
-            // btnExcelOut
-            // 
-            this.btnExcelOut.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExcelOut.FlatAppearance.BorderSize = 0;
-            this.btnExcelOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.btnExcelOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.btnExcelOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcelOut.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnExcelOut.ForeColor = System.Drawing.Color.Silver;
-            this.btnExcelOut.Location = new System.Drawing.Point(0, 30);
-            this.btnExcelOut.Name = "btnExcelOut";
-            this.btnExcelOut.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnExcelOut.Size = new System.Drawing.Size(205, 30);
-            this.btnExcelOut.TabIndex = 2;
-            this.btnExcelOut.Text = "엑셀 내보내기";
-            this.btnExcelOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelOut.UseVisualStyleBackColor = true;
-            // 
             // MainForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 767);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.lblName);
             this.Controls.Add(this.panelSideMenu);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -677,7 +665,6 @@ namespace APSWinForm
         private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Label lblName;
         private TabControlZ.TabControlZ tabControl1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
