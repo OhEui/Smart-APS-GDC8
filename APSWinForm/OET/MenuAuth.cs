@@ -22,7 +22,7 @@ namespace APSWinForm
         public MenuAuth()
         {
             InitializeComponent();
-            BtnAdd.Visible = BtnDelete.Visible = XlsAdd.Visible = XlsDown.Visible = false;
+            BtnAdd.Visible = BtnDelete.Visible =  XlsDown.Visible = false;
         }
 
         private void MenuAuth_Load(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 ID", "Id", colWidth: 100 , visibility:false);
             DataGridViewUtil.AddGridTextColumn(dgvUser, "사원번호", "Empno", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 이름", "Name", colWidth: 105);
-            DataGridViewUtil.AddGridTextColumn(dgvUser, "권한 ", "auth_name", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvUser, "권한 ", "auth_name", colWidth: 150);
 
             DataGridViewUtil.SetInitGridView(dgvAuth);
             DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한 ID", "Auth_ID", colWidth: 105, visibility: false);
@@ -140,7 +140,7 @@ namespace APSWinForm
             if (string.IsNullOrWhiteSpace(txtName.Text))
                 {
                 MessageBox.Show("검색어를 입력해주세요.");
-                txtName.Focus();
+                txtID.Focus();
                 return;
                 } 
 
@@ -154,13 +154,7 @@ namespace APSWinForm
             dgvLoad();
         }
 
-        private void dgvUser_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            foreach (DataGridViewRow row in dgvUser.Rows)
-            {
-                txtID.Text = (row.Cells["Id"].Value.ToString());
-            }
-        }
+        
     }
 }
     

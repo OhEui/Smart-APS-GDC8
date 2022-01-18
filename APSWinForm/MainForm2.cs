@@ -293,6 +293,7 @@ namespace APSWinForm
         #region SystemSubMenu
         private void btnUser_Click(object sender, EventArgs e)
         {
+            CreateTabPages("유저관리", new frmUserInfo());
             hideSystemSubMenu();
         }
 
