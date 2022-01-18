@@ -21,10 +21,10 @@ namespace APSWinForm
 		public STEP_ROUTE()
 		{
 			InitializeComponent();
-			//if (UserInfoStorage.Current.Auth_ID == 3)
-			//{
-			//    BtnAdd.Visible = BtnDelete.Visible = BtnEdit.Visible = false;
-			//}
+			if (UserInfoStorage.Current.Auth_ID == 3)
+			{
+				BtnAdd.Visible = BtnDelete.Visible = BtnEdit.Visible = false;
+			}
 		}
 
 		private void STEP_ROUTE_Load(object sender, EventArgs e)

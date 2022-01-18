@@ -22,11 +22,6 @@ namespace APSWinForm
         List<EQUIPVO> EQPList = null;
         
 
-        //public List<EqpArrangeVO> GetEquipmentARR()
-        //{
-        //    EQUIPDAC dac = new EQUIPDAC();
-        //    return dac.GetEqipmentARR();
-        //}
 
         public EQP_ARRANGE()
         {
