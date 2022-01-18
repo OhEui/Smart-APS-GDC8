@@ -21,10 +21,10 @@ namespace APSWinForm
         public frmDEMAND()
         {
             InitializeComponent();
-            //if (UserInfoStorage.Current.Auth_ID == 3)
-            //{
-            //    BtnAdd.Visible = BtnDelete.Visible = BtnEdit.Visible = false;
-            //}
+            if (UserInfoStorage.Current.Auth_ID == 3)
+            {
+                BtnAdd.Visible = BtnDelete.Visible = BtnEdit.Visible = false;
+            }
         }
 
         private async void LoadData()
@@ -47,6 +47,7 @@ namespace APSWinForm
             LoadData();
         }
 
+        #region toolstrip
         //추가
         private void BtnAdd_Click(object sender, EventArgs e)
         {
@@ -99,7 +100,9 @@ namespace APSWinForm
                 MessageBox.Show(msg.ResultMessage);
             }
         }
-        
+        #endregion
+
+        #region 검색창
         //초기화
         private void button3_Click_1(object sender, EventArgs e)
         {
@@ -122,5 +125,40 @@ namespace APSWinForm
             dgvDM.DataSource = list.FindAll(p => p.DEMAND_ID.Contains(txtID.Text.ToUpper()) && p.PRODUCT_ID.Contains(txtPR.Text.ToUpper()) && p.CUSTOMER_ID.Contains(txtCS.Text.ToUpper()) && p.DEMAND_VER.Contains(txtver.Text.ToUpper()));
 
         }
+
+        private void txtver_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button7_Click_1(sender, e);
+            }
+        }
+
+        private void txtPR_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button7_Click_1(sender, e);
+            }
+        }
+
+        private void txtID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button7_Click_1(sender, e);
+            }
+        }
+
+        private void txtCS_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button7_Click_1(sender, e);
+            }
+        }
+
+        #endregion
+
     }
 }

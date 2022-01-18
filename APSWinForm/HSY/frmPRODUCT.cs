@@ -21,10 +21,10 @@ namespace APSWinForm
         public frmPRODUCT()
         {
             InitializeComponent();
-            //if (UserInfoStorage.Current.Auth_ID == 3)
-            //{
-            //    toolStripButton1.Visible = toolStripButton2.Visible = toolStripButton3.Visible = false;
-            //}
+            if (UserInfoStorage.Current.Auth_ID == 3)
+            {
+                BtnAdd.Visible = BtnDelete.Visible = BtnEdit.Visible = false;
+            }
         }
 
         private async void LoadData()
@@ -45,21 +45,7 @@ namespace APSWinForm
             LoadData();
         }
 
-        //검색
-        private void button7_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtID.Text) && string.IsNullOrWhiteSpace(txtID.Text) && string.IsNullOrWhiteSpace(txtPID.Text))
-            {
-                MessageBox.Show("검색어를 입력해주세요.");
-                txtID.Focus();
-                return;
-            }
-
-            dgvPR.DataSource = null;
-            dgvPR.DataSource = list.FindAll(p => p.PRODUCT_ID.Contains(txtID.Text.ToUpper()) && p.PROCESS_ID.Contains(txtPID.Text.ToUpper()));
-        
-         }
-
+        #region toolstrip
         //추가
         private void BtnAdd_Click(object sender, EventArgs e)
         {
@@ -113,6 +99,31 @@ namespace APSWinForm
             }
         }
 
+        private void XlsDown_Click(object sender, EventArgs e)
+        {
+            //bool bResult = ExcelUtil.ExportExcelToList(dgvPR.DataSource as List<ProductVO>, @".\product.xlsx", "");
+            //if (bResult)
+            //    MessageBox.Show("저장하였습니다.");
+        }
+
+        #endregion
+
+        #region 검색창
+        //검색
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtID.Text) && string.IsNullOrWhiteSpace(txtID.Text) && string.IsNullOrWhiteSpace(txtPID.Text))
+            {
+                MessageBox.Show("검색어를 입력해주세요.");
+                txtID.Focus();
+                return;
+            }
+
+            dgvPR.DataSource = null;
+            dgvPR.DataSource = list.FindAll(p => p.PRODUCT_ID.Contains(txtID.Text.ToUpper()) && p.PROCESS_ID.Contains(txtPID.Text.ToUpper()));
+
+        }
+
         //초기화
         private void button3_Click(object sender, EventArgs e)
         {
@@ -137,12 +148,7 @@ namespace APSWinForm
                 button7_Click(sender, e);
             }
         }
+        #endregion
 
-        private void XlsDown_Click(object sender, EventArgs e)
-        {
-            //bool bResult = ExcelUtil.ExportExcelToList(dgvPR.DataSource as List<ProductVO>, @".\product.xlsx", "");
-            //if (bResult)
-            //    MessageBox.Show("저장하였습니다.");
-        }
     }
 }

@@ -201,6 +201,7 @@ namespace APSWinForm
             this.txtSID.Name = "txtSID";
             this.txtSID.Size = new System.Drawing.Size(121, 21);
             this.txtSID.TabIndex = 52;
+            this.txtSID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSID_KeyDown);
             // 
             // txtLID
             // 
@@ -208,6 +209,7 @@ namespace APSWinForm
             this.txtLID.Name = "txtLID";
             this.txtLID.Size = new System.Drawing.Size(121, 21);
             this.txtLID.TabIndex = 43;
+            this.txtLID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLID_KeyDown);
             // 
             // label9
             // 
