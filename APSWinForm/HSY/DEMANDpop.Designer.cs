@@ -225,7 +225,7 @@ namespace APSWinForm
 			this.cboPID.Location = new System.Drawing.Point(149, 134);
 			this.cboPID.Name = "cboPID";
 			this.cboPID.Size = new System.Drawing.Size(121, 20);
-			this.cboPID.TabIndex = 170;
+			this.cboPID.TabIndex = 3;
 			// 
 			// cboCID
 			// 
@@ -235,7 +235,7 @@ namespace APSWinForm
 			this.cboCID.Location = new System.Drawing.Point(149, 180);
 			this.cboCID.Name = "cboCID";
 			this.cboCID.Size = new System.Drawing.Size(121, 20);
-			this.cboCID.TabIndex = 168;
+			this.cboCID.TabIndex = 4;
 			// 
 			// panel8
 			// 
