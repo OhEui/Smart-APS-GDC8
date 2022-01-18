@@ -123,7 +123,7 @@ namespace APSWinForm
 			// 
 			this.txtStepName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtStepName.ImeMode = System.Windows.Forms.ImeMode.Disable;
-			this.txtStepName.Location = new System.Drawing.Point(162, 145);
+			this.txtStepName.Location = new System.Drawing.Point(162, 142);
 			this.txtStepName.Name = "txtStepName";
 			this.txtStepName.Size = new System.Drawing.Size(121, 21);
 			this.txtStepName.TabIndex = 2;
