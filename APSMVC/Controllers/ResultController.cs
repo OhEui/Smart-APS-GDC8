@@ -88,7 +88,12 @@ namespace APSMVC.Controllers
 
         public async Task<ActionResult> Utilization(string MACHINE_STATE = "BUSY", string VERSION_NO = null)
         {
-            ServiceHelp srv = new ServiceHelp(true);
+            var access_token = Request.Headers["authorization"];
+            ServiceHelp srv = new ServiceHelp(true, access_token);
+
+            var resUserInfo = await srv.GetListAsync("api/Account/UserInfo", new UserInfo());
+            if (resUserInfo != null)
+                ViewBag.UserName = resUserInfo.Name;
 
             ChartCommonData commonData = await srv.GetListAsync<ChartCommonData>($"api/Result/Utilization/Common", null); // 설비그룹, 설비ID, 제품ID 가져오기
             List<ComboItemVO> comboItem = commonData.ComboItemList;

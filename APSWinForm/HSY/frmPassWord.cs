@@ -16,5 +16,10 @@ namespace APSWinForm
         {
             InitializeComponent();
         }
+
+        private void frmPassWord_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

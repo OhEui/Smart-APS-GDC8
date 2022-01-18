@@ -79,22 +79,22 @@ namespace APSWinForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.label1.Location = new System.Drawing.Point(99, 148);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 18);
+            this.label1.Size = new System.Drawing.Size(26, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.label2.Location = new System.Drawing.Point(88, 199);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 18);
+            this.label2.Size = new System.Drawing.Size(34, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "PW";
             // 
@@ -102,11 +102,11 @@ namespace APSWinForm
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(172)))), ((int)(((byte)(199)))));
-            this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.label3.Location = new System.Drawing.Point(72, 400);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 18);
+            this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "Email";
             // 
@@ -114,11 +114,11 @@ namespace APSWinForm
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(172)))), ((int)(((byte)(199)))));
-            this.label4.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.label4.Location = new System.Drawing.Point(65, 349);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 18);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "Phone";
             // 
@@ -126,11 +126,11 @@ namespace APSWinForm
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(172)))), ((int)(((byte)(199)))));
-            this.label5.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.label5.Location = new System.Drawing.Point(69, 298);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 18);
+            this.label5.Size = new System.Drawing.Size(51, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Name";
             // 
@@ -138,17 +138,17 @@ namespace APSWinForm
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(172)))), ((int)(((byte)(199)))));
-            this.label6.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.label6.Location = new System.Drawing.Point(77, 451);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 18);
+            this.label6.Size = new System.Drawing.Size(42, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Birth";
             // 
             // txtID
             // 
-            this.txtID.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtID.Location = new System.Drawing.Point(130, 143);
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
@@ -158,7 +158,7 @@ namespace APSWinForm
             // 
             // txtName
             // 
-            this.txtName.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtName.Location = new System.Drawing.Point(129, 293);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
@@ -168,7 +168,7 @@ namespace APSWinForm
             // 
             // txtPW
             // 
-            this.txtPW.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPW.Location = new System.Drawing.Point(130, 194);
             this.txtPW.Multiline = true;
             this.txtPW.Name = "txtPW";
@@ -188,7 +188,7 @@ namespace APSWinForm
             // 
             // txtPW2
             // 
-            this.txtPW2.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPW2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPW2.Location = new System.Drawing.Point(130, 241);
             this.txtPW2.Multiline = true;
             this.txtPW2.Name = "txtPW2";
@@ -200,10 +200,10 @@ namespace APSWinForm
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(172)))), ((int)(((byte)(199)))));
-            this.label7.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.Location = new System.Drawing.Point(256, 401);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 17);
+            this.label7.Size = new System.Drawing.Size(23, 18);
             this.label7.TabIndex = 22;
             this.label7.Text = "@";
             // 
@@ -228,7 +228,7 @@ namespace APSWinForm
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(123)))), ((int)(((byte)(123)))));
-            this.button1.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(98, 502);
             this.button1.Name = "button1";
@@ -240,7 +240,7 @@ namespace APSWinForm
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
-            this.button2.Font = new System.Drawing.Font("ONE 모바일고딕 Title", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(251, 502);
             this.button2.Name = "button2";
@@ -261,6 +261,7 @@ namespace APSWinForm
             this.label8.Size = new System.Drawing.Size(166, 13);
             this.label8.TabIndex = 24;
             this.label8.Text = "* 동일한 비밀번호를 작성해주세요.";
+            this.label8.Visible = false;
             // 
             // txtPhone
             // 
@@ -285,7 +286,7 @@ namespace APSWinForm
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.Location = new System.Drawing.Point(305, 146);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(67, 23);
@@ -321,7 +322,7 @@ namespace APSWinForm
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmJoin";
-            this.Text = "frmJoin";
+            this.Text = "회원가입";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

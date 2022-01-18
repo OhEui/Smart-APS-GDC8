@@ -32,11 +32,6 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm2));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.엑셀불러오기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.엑셀내보내기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.결과정보열기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSideMenu = new System.Windows.Forms.Panel();
@@ -47,7 +42,6 @@ namespace APSWinForm
             this.btnExit = new System.Windows.Forms.Button();
             this.panelExcelSubMenu = new System.Windows.Forms.Panel();
             this.btnExcelOut = new System.Windows.Forms.Button();
-            this.btnExcelin = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.panelResultSubMenu = new System.Windows.Forms.Panel();
             this.btnUtil = new System.Windows.Forms.Button();
@@ -67,6 +61,7 @@ namespace APSWinForm
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblName = new System.Windows.Forms.Label();
             this.tabControl1 = new TabControlZ.TabControlZ();
+            this.btnExcelin = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.panelSystemSubMenu.SuspendLayout();
@@ -90,56 +85,25 @@ namespace APSWinForm
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.엑셀불러오기ToolStripMenuItem,
-            this.엑셀내보내기ToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.결과정보열기ToolStripMenuItem,
-            this.toolStripSeparator2,
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
             this.toolStripMenuItem1.Text = "메뉴";
             // 
-            // 엑셀불러오기ToolStripMenuItem
-            // 
-            this.엑셀불러오기ToolStripMenuItem.Name = "엑셀불러오기ToolStripMenuItem";
-            this.엑셀불러오기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.엑셀불러오기ToolStripMenuItem.Text = "엑셀 불러오기";
-            // 
-            // 엑셀내보내기ToolStripMenuItem
-            // 
-            this.엑셀내보내기ToolStripMenuItem.Name = "엑셀내보내기ToolStripMenuItem";
-            this.엑셀내보내기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.엑셀내보내기ToolStripMenuItem.Text = "엑셀 내보내기";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // 결과정보열기ToolStripMenuItem
-            // 
-            this.결과정보열기ToolStripMenuItem.Name = "결과정보열기ToolStripMenuItem";
-            this.결과정보열기ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.결과정보열기ToolStripMenuItem.Text = "결과 정보 열기";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
-            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(122, 22);
             this.toolStripMenuItem2.Text = "로그아웃";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(122, 22);
             this.toolStripMenuItem3.Text = "종료";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // panelSideMenu
             // 
@@ -286,25 +250,6 @@ namespace APSWinForm
             this.btnExcelOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcelOut.UseVisualStyleBackColor = true;
             this.btnExcelOut.Click += new System.EventHandler(this.btnExcelOut_Click);
-            // 
-            // btnExcelin
-            // 
-            this.btnExcelin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExcelin.FlatAppearance.BorderSize = 0;
-            this.btnExcelin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.btnExcelin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.btnExcelin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcelin.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnExcelin.ForeColor = System.Drawing.Color.Silver;
-            this.btnExcelin.Location = new System.Drawing.Point(0, 0);
-            this.btnExcelin.Name = "btnExcelin";
-            this.btnExcelin.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnExcelin.Size = new System.Drawing.Size(205, 30);
-            this.btnExcelin.TabIndex = 0;
-            this.btnExcelin.Text = "엑셀 불러오기";
-            this.btnExcelin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelin.UseVisualStyleBackColor = true;
-            this.btnExcelin.Click += new System.EventHandler(this.btnExcelin_Click);
             // 
             // btnExcel
             // 
@@ -656,6 +601,27 @@ namespace APSWinForm
             this.tabControl1.Transparent1 = 150;
             this.tabControl1.Transparent2 = 150;
             // 
+            // btnExcelin
+            // 
+            this.btnExcelin.AutoSize = true;
+            this.btnExcelin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExcelin.FlatAppearance.BorderSize = 0;
+            this.btnExcelin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btnExcelin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btnExcelin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelin.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcelin.ForeColor = System.Drawing.Color.Silver;
+            this.btnExcelin.Location = new System.Drawing.Point(0, 0);
+            this.btnExcelin.Name = "btnExcelin";
+            this.btnExcelin.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnExcelin.Size = new System.Drawing.Size(205, 30);
+            this.btnExcelin.TabIndex = 0;
+            this.btnExcelin.Text = "엑셀 불러오기";
+            this.btnExcelin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcelin.UseVisualStyleBackColor = true;
+            this.btnExcelin.Visible = false;
+            this.btnExcelin.Click += new System.EventHandler(this.btnExcelin_Click);
+            // 
             // MainForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -674,6 +640,7 @@ namespace APSWinForm
             this.panelSideMenu.ResumeLayout(false);
             this.panelSystemSubMenu.ResumeLayout(false);
             this.panelExcelSubMenu.ResumeLayout(false);
+            this.panelExcelSubMenu.PerformLayout();
             this.panelResultSubMenu.ResumeLayout(false);
             this.panelInfoSubMenu.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -692,7 +659,6 @@ namespace APSWinForm
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panelExcelSubMenu;
         private System.Windows.Forms.Button btnExcelOut;
-        private System.Windows.Forms.Button btnExcelin;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Panel panelResultSubMenu;
         private System.Windows.Forms.Button btnUtil;
@@ -713,12 +679,8 @@ namespace APSWinForm
         private System.Windows.Forms.Label lblName;
         private TabControlZ.TabControlZ tabControl1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 엑셀불러오기ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 엑셀내보내기ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem 결과정보열기ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.Button btnExcelin;
     }
 }

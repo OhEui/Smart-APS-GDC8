@@ -38,7 +38,7 @@ namespace APSWinForm
             // access_token 가져오기
             using (ServiceHelp srv = new ServiceHelp()) 
             {
-                resToken = await srv.PostAsync<ReqUserLogin, TokenModel>("api/Account/Login", reqData);
+                resToken = await srv.PostAsync<ReqUserLogin, WebMessage<TokenModel>>("api/Account/Login", reqData);
                 if (resToken != null && resToken.IsSuccess)
                 {
                     if (ckLogin.Checked) // 로그인 OK 버튼 실행할 때 저장
@@ -101,6 +101,7 @@ namespace APSWinForm
             if (e.KeyChar == 13)
             {
                 button1_Click(null, new EventArgs());
+                e.Handled = true;
             }
         }
     }

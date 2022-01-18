@@ -93,12 +93,27 @@ namespace APSWinForm
 
         }
 
-        private void Logout()
+        public static void Logout()
         {
+            MainForm2 mainForm = null;
+            List<Form> collection = new List<Form>();
+            collection.AddRange(Application.OpenForms.Cast<Form>());
+
+            foreach (Form frm in collection)
+            {
+                if (frm is MainForm2 main) 
+                {
+                    mainForm = main;
+                    continue;
+                }
+                frm.Close();
+            }
+            if (mainForm == null) 
+                return;
             TokenStorage.Clear();
             UserInfoStorage.Clear();
-            lblName.Text = "";
-            Login();
+            mainForm.lblName.Text = "";
+            mainForm.Login();
         }
 
         private void showSubMenu(Panel subMenu)
@@ -275,6 +290,9 @@ namespace APSWinForm
 
             ServiceHelp srv = new ServiceHelp();
             DataSet data = await srv.GetListAsync<DataSet>(path);
+            
+            if (data == null) return false;
+            
             bool bResult = ExcelUtil.ExportExcelToDataSet(data, saveFileName);
             resultMsg = bResult ?
                 "엑셀파일을 저장하였습니다." : "엑셀파일 저장 중 문제가 발생하였습니다.";
@@ -353,14 +371,15 @@ namespace APSWinForm
 
 
         
-        
-
-
-        private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
+      
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             Logout();
         }
 
-        
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

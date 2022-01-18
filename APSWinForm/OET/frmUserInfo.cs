@@ -40,52 +40,17 @@ namespace APSWinForm
             LoadData();
         }
 
-        private async void dgvUI_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
 
-            string userID = dgvUI[0, e.RowIndex].Value.ToString();
-            UserInfoVO user = null;
-            user = await srv.GetAsync($"api/UserInfo/{userID}", user);
-            if (user != null)
-            {
-                txtName.Text = user.Name;
-                txtID.Text = user.Id;
-                txtE.Text = user.Email;
-                txtP.Text = user.Phone;
-                txtB.Text = user.Birthday.ToString();
-            }
-        }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        //초기화
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             txtID.Text = txtName.Text = txtE.Text = txtB.Text = txtP.Text = null;
 
             LoadData();
         }
 
-        private async void toolStripButton1_Click(object sender, EventArgs e)
-        {
-             if (dgvUI.SelectedRows.Count < 1)
-             {
-                 MessageBox.Show("삭제할 유저를 선택해 주세요.");
-                 return;
-             }
-
-             string prodID = dgvUI.SelectedRows[0].Cells["Id"].Value.ToString();
-
-             if (MessageBox.Show("       정말 삭제하시겠습니까?", "유저삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
-             {
-                 APSVO.WebMessage msg = await srv.GetAsync($"api/UserInfo/Delete/{prodID}");
-                 if (msg.IsSuccess)
-                 {
-                     LoadData();
-                 }
-                 MessageBox.Show(msg.ResultMessage);
-         }
-        }
-
-        private async void toolStripButton2_Click(object sender, EventArgs e)
+        //수정
+        private async void BtnEdit_Click(object sender, EventArgs e)
         {
             UserInfoVO user = new UserInfoVO
             {
@@ -102,6 +67,45 @@ namespace APSWinForm
                 LoadData();
             }
             MessageBox.Show(msg.ResultMessage);
+        }
+
+        //삭제
+        private async void BtnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvUI.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("삭제할 유저를 선택해 주세요.");
+                return;
+            }
+
+            string prodID = dgvUI.SelectedRows[0].Cells["Id"].Value.ToString();
+
+            if (MessageBox.Show("       정말 삭제하시겠습니까?", "유저삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                APSVO.WebMessage msg = await srv.GetAsync($"api/UserInfo/Delete/{prodID}");
+                if (msg.IsSuccess)
+                {
+                    LoadData();
+                }
+                MessageBox.Show(msg.ResultMessage);
+            }
+        }
+
+        private async void dgvUI_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            string userID = dgvUI[0, e.RowIndex].Value.ToString();
+            UserInfoVO user = null;
+            user = await srv.GetAsync($"api/UserInfo/{userID}", user);
+            if (user != null)
+            {
+                txtName.Text = user.Name;
+                txtID.Text = user.Id;
+                txtE.Text = user.Email;
+                txtP.Text = user.Phone;
+                txtB.Text = user.Birthday.ToString();
+            }
         }
     }
 }

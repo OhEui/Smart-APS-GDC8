@@ -19,6 +19,7 @@ namespace APSUtil.Http
 
         public string BaseServiceUrl { get; set; }
         public System.Net.HttpStatusCode StatusCode { get; set; }
+        public bool IsSuccessStatusCode { get; private set; }
 
         /// <summary>
         /// Web API 사용을 위한 ServiceHelp 인스턴스를 생성합니다. <br/>
@@ -210,21 +211,23 @@ namespace APSUtil.Http
             */
         }
 
-        public async Task<WebMessage<TResponse>> PostAsync<TRequest, TResponse>(string path, TRequest value)
+        public async Task<TResponse> PostAsync<TRequest, TResponse>(string path, TRequest value) 
         {
             path = BaseServiceUrl + path;
 
-            WebMessage<TResponse> result = null;
+            TResponse result = default;
             try
             {
                 using (HttpResponseMessage response = await client.PostAsJsonAsync(path, value))
                 {
-                    result = JsonConvert.DeserializeObject<WebMessage<TResponse>>(await response.Content.ReadAsStringAsync());
+                    IsSuccessStatusCode = response.IsSuccessStatusCode;
+                    result = JsonConvert.DeserializeObject<TResponse>(await response.Content.ReadAsStringAsync());
                 }
                 return result;
             }
-            catch
+            catch(Exception e)
             {
+                _ = e.Message;
                 return result;
             }
         }

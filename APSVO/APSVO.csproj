@@ -60,6 +60,7 @@
     <Compile Include="EQUIPVO.cs" />
     <Compile Include="StepRouteVO.cs" />
     <Compile Include="DemandVO.cs" />
+    <Compile Include="User\RegisterVO.cs" />
     <Compile Include="User\Request.cs" />
     <Compile Include="User\UserInfo.cs" />
     <Compile Include="SampleVO.cs" />

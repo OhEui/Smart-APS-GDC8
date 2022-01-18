@@ -16,6 +16,8 @@ namespace APSWinForm
     {
         public string UrlAddress { get; set; }
 
+        private void Logout() => MainForm2.Logout();
+
         public frmWebView(string title, string urlAddress)
         {
             InitializeComponent();
@@ -57,22 +59,30 @@ namespace APSWinForm
             webView.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
             webView.CoreWebView2.Settings.AreBrowserAcceleratorKeysEnabled = false;
             webView.CoreWebView2.WebResourceRequested += CoreWebView2_WebResourceRequested;
-            webView.CoreWebView2.WebResourceResponseReceived += CoreWebView2_WebResourceResponseReceived;
+            webView.CoreWebView2.WebResourceResponseReceived += CheckLogout;
+            webView.CoreWebView2.SourceChanged += CoreWebView2_SourceChanged;
         }
 
-        private void CoreWebView2_WebResourceResponseReceived(object sender, CoreWebView2WebResourceResponseReceivedEventArgs e)
+        private void CoreWebView2_SourceChanged(object sender, CoreWebView2SourceChangedEventArgs e)
         {
+            txtAddress.Text = webView.CoreWebView2.Source;
+        }
+
+        private void CheckLogout(object sender, CoreWebView2WebResourceResponseReceivedEventArgs e)
+        {
+
             string requestUri = @"https://localhost:44397/user/logout"; // 로그아웃 Uri 변경해야 함
-            if (e.Request.Uri.ToLower() == requestUri.ToLower())  //&& e.Response.StatusCode == 200
+            if (e.Request.Uri.ToLower() == requestUri.ToLower()) //  && e.Response.StatusCode == 200
             {
-                // 로그아웃 로직 추가해야함
-                string text = e.Response.StatusCode.ToString(); // redirect == 302
+                Logout();
             }
         }
 
         private void CoreWebView2_WebResourceRequested(object sender, CoreWebView2WebResourceRequestedEventArgs e)
         {
             e.Request.Headers.SetHeader("Authorization", $"Bearer {TokenStorage.AccessToken}");
+           
         }
+
     }
 }
