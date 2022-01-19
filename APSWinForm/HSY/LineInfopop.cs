@@ -42,7 +42,7 @@ namespace APSWinForm
                 LINE_NAME = txtName.Text
             };
 
-            WebMessage wmsg = await srv.PostAsyncNone("api/LineInfo/LineInfoUpdate", lineinfovo);
+            WebMessage wmsg = await srv.PostAsyncNone("api/LineInfo/SaveLineInfo", lineinfovo);
 
             if (wmsg.IsSuccess)
             {

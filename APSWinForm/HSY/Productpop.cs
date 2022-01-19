@@ -61,7 +61,7 @@ namespace APSWinForm
                 LOT_SIZE = Convert.ToInt32(txtSize.Text)
             };
 
-            WebMessage msg = await srv.PostAsyncNone("api/Product/UdateProduct", productVO);
+            WebMessage msg = await srv.PostAsyncNone("api/Product/SaveProduct", productVO);
 
             if (msg.IsSuccess)
             {
