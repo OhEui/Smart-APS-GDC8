@@ -288,12 +288,6 @@
     <Compile Include="Util\TabControlZ.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Util\ucTabControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Util\ucTabControl.Designer.cs">
-      <DependentUpon>ucTabControl.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="BaseForm2.resx">
       <DependentUpon>BaseForm2.cs</DependentUpon>
     </EmbeddedResource>
