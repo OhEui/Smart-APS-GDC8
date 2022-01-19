@@ -192,14 +192,16 @@ namespace APSWinForm
         {
             string title = "LOT 간트차트";
             string url = "https://localhost:44397/result/LOTgantt";
-            StartWebView(title, url);
+            //StartWebView(title, url);
+            CreateTabPages(title, new frmWebView(title, url));
             hideResultSubMenu();
         }
         private void btnEQPgant_Click(object sender, EventArgs e)
         {
             string title = "EQP 간트차트";
             string url = "https://localhost:44397/result/EQPgantt";
-            StartWebView(title, url);
+            //StartWebView(title, url);
+            CreateTabPages(title, new frmWebView(title, url));
             hideResultSubMenu();
         }
 
@@ -207,7 +209,8 @@ namespace APSWinForm
         {
             string title = "가동률 분석";
             string url = "https://localhost:44397/result/utilization";
-            StartWebView(title, url);
+            //StartWebView(title, url);
+            CreateTabPages(title, new frmWebView(title, url));
             hideResultSubMenu();
         }
         private void StartWebView(string title, string url)
