@@ -39,7 +39,6 @@ namespace APSWinForm
 			this.txtStepSetup = new APSWinForm.NumTextBox();
 			this.txtTAT = new APSWinForm.NumTextBox();
 			this.lblStepIDExist = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.txtYield = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
@@ -104,7 +103,6 @@ namespace APSWinForm
 			this.panel9.Controls.Add(this.txtStepSetup);
 			this.panel9.Controls.Add(this.txtTAT);
 			this.panel9.Controls.Add(this.lblStepIDExist);
-			this.panel9.Controls.Add(this.label3);
 			this.panel9.Controls.Add(this.txtYield);
 			this.panel9.Controls.Add(this.label4);
 			this.panel9.Controls.Add(this.label5);
@@ -149,7 +147,7 @@ namespace APSWinForm
 			// 
 			this.txtTAT.Location = new System.Drawing.Point(162, 195);
 			this.txtTAT.Name = "txtTAT";
-			this.txtTAT.Size = new System.Drawing.Size(86, 21);
+			this.txtTAT.Size = new System.Drawing.Size(121, 21);
 			this.txtTAT.TabIndex = 3;
 			// 
 			// lblStepIDExist
@@ -162,15 +160,6 @@ namespace APSWinForm
 			this.lblStepIDExist.TabIndex = 68;
 			this.lblStepIDExist.Text = "* 이미 존재하는 공정입니다.";
 			this.lblStepIDExist.Visible = false;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(254, 200);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(26, 12);
-			this.label3.TabIndex = 67;
-			this.label3.Text = "sec";
 			// 
 			// txtYield
 			// 
@@ -327,7 +316,6 @@ namespace APSWinForm
 		private System.Windows.Forms.Panel panel8;
 		private System.Windows.Forms.Panel panel6;
 		protected System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Label label3;
 		protected System.Windows.Forms.TextBox txtYield;
 		protected System.Windows.Forms.Label label4;
 		protected System.Windows.Forms.Label label5;
