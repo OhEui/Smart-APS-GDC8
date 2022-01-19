@@ -12,6 +12,8 @@ namespace APSWinForm
     /// </summary>
     public sealed class UserInfoStorage : IUserInfo
     {
+        public static event EventHandler UserInfoUpdated;
+
         private static readonly Lazy<UserInfoStorage> _instance =
             new Lazy<UserInfoStorage>(() => new UserInfoStorage(), isThreadSafe: true);
 
@@ -29,7 +31,15 @@ namespace APSWinForm
         /// <summary>
         /// 저장되어 있는 로그인 유저정보입니다.
         /// </summary>
-        public static UserInfo Current { get => _instance.Value._info; set => _instance.Value._info = value; }
+        public static UserInfo Current
+        {
+            get => _instance.Value._info;
+            set
+            {
+                _instance.Value._info = value;
+                UserInfoUpdated?.Invoke(null, new EventArgs());
+            }
+        }
 
         public int EmpNo { get => _info.EmpNo; set => _info.EmpNo = value; }
         public string ID { get => _info.ID; set => _info.ID = value; }

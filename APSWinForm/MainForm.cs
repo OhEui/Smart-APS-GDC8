@@ -14,11 +14,17 @@ namespace APSWinForm
 {
     public partial class MainForm : frmBaseIcon
     {
+
         public MainForm()
         {
             Font = new Font("ONE 모바일고딕 OTF Regular", 11F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(129)));
             InitializeComponent();
             hideSubMenu();
+
+            UserInfoStorage.UserInfoUpdated += (_, _e) => {
+                //MessageBox.Show(UserInfoStorage.Current.ToString());
+                btnUserName.Text = $"  {UserInfoStorage.Current.Name}";
+            };
             Login();
         }
 
@@ -66,8 +72,6 @@ namespace APSWinForm
            
         }
 
-
-
         private void Login()
         {
             frmLogin login = new frmLogin();
@@ -77,20 +81,13 @@ namespace APSWinForm
                 if (UserInfoStorage.Current.Auth_ID == 2 || UserInfoStorage.Current.Auth_ID == 3)
                 {
                     btnSystem.Visible = false;
-
                 }
-
-                lblName.Text = "로그인된 계정:" + UserInfoStorage.Current.ID;
-                Show();
-                MessageBox.Show(UserInfoStorage.Current.ToString());
-
-               
+                Show();            
             }
             else
             {
-                Close();
+                Application.Exit();
             }
-
         }
 
         public static void Logout()
@@ -112,7 +109,6 @@ namespace APSWinForm
                 return;
             TokenStorage.Clear();
             UserInfoStorage.Clear();
-            mainForm.lblName.Text = "";
             mainForm.Login();
         }
 
@@ -195,14 +191,16 @@ namespace APSWinForm
         {
             string title = "LOT 간트차트";
             string url = "https://localhost:44397/result/LOTgantt";
-            StartWebView(title, url);
+            //StartWebView(title, url);
+            CreateTabPages(title, new frmWebView(title, url));
             hideResultSubMenu();
         }
         private void btnEQPgant_Click(object sender, EventArgs e)
         {
             string title = "EQP 간트차트";
             string url = "https://localhost:44397/result/EQPgantt";
-            StartWebView(title, url);
+            //StartWebView(title, url);
+            CreateTabPages(title, new frmWebView(title, url));
             hideResultSubMenu();
         }
 
@@ -210,7 +208,8 @@ namespace APSWinForm
         {
             string title = "가동률 분석";
             string url = "https://localhost:44397/result/utilization";
-            StartWebView(title, url);
+            //StartWebView(title, url);
+            CreateTabPages(title, new frmWebView(title, url));
             hideResultSubMenu();
         }
         private void StartWebView(string title, string url)
