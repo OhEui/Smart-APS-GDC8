@@ -418,6 +418,7 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="pages\plugins\daterangepicker\bower.json" />
     <Content Include="pages\plugins\daterangepicker\example\browserify\README.md" />
+    <Content Include="Views\_Layout_old.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
