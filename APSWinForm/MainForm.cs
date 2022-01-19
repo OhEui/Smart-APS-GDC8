@@ -236,11 +236,7 @@ namespace APSWinForm
 
         #region ExcelSubMenu
 
-        private void btnExcelin_Click(object sender, EventArgs e)
-        {
-            hideExcelSubMenu();
-            //ExcelImportAll();
-        }
+        
         
         private async void btnExcelOut_Click(object sender, EventArgs e)
         {

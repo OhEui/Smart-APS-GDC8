@@ -40,9 +40,6 @@ namespace APSWinForm
             this.btnUser = new System.Windows.Forms.Button();
             this.btnSystem = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.panelExcelSubMenu = new System.Windows.Forms.Panel();
-            this.btnExcelOut = new System.Windows.Forms.Button();
-            this.btnExcelin = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.panelResultSubMenu = new System.Windows.Forms.Panel();
             this.btnUtil = new System.Windows.Forms.Button();
@@ -64,13 +61,15 @@ namespace APSWinForm
             this.tabControl1 = new TabControlZ.TabControlZ();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnExcelOut = new System.Windows.Forms.Button();
+            this.panelExcelSubMenu = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.panelSystemSubMenu.SuspendLayout();
-            this.panelExcelSubMenu.SuspendLayout();
             this.panelResultSubMenu.SuspendLayout();
             this.panelInfoSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            this.panelExcelSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -136,9 +135,9 @@ namespace APSWinForm
             this.panelSystemSubMenu.Controls.Add(this.btnAuth);
             this.panelSystemSubMenu.Controls.Add(this.btnUser);
             this.panelSystemSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSystemSubMenu.Location = new System.Drawing.Point(0, 642);
+            this.panelSystemSubMenu.Location = new System.Drawing.Point(0, 614);
             this.panelSystemSubMenu.Name = "panelSystemSubMenu";
-            this.panelSystemSubMenu.Size = new System.Drawing.Size(205, 63);
+            this.panelSystemSubMenu.Size = new System.Drawing.Size(222, 63);
             this.panelSystemSubMenu.TabIndex = 11;
             // 
             // btnAuth
@@ -153,7 +152,7 @@ namespace APSWinForm
             this.btnAuth.Location = new System.Drawing.Point(0, 30);
             this.btnAuth.Name = "btnAuth";
             this.btnAuth.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAuth.Size = new System.Drawing.Size(205, 30);
+            this.btnAuth.Size = new System.Drawing.Size(222, 30);
             this.btnAuth.TabIndex = 1;
             this.btnAuth.Text = "권한 관리";
             this.btnAuth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,7 +171,7 @@ namespace APSWinForm
             this.btnUser.Location = new System.Drawing.Point(0, 0);
             this.btnUser.Name = "btnUser";
             this.btnUser.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnUser.Size = new System.Drawing.Size(205, 30);
+            this.btnUser.Size = new System.Drawing.Size(222, 30);
             this.btnUser.TabIndex = 0;
             this.btnUser.Text = "사용자 관리";
             this.btnUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -191,10 +190,10 @@ namespace APSWinForm
             this.btnSystem.ForeColor = System.Drawing.Color.Silver;
             this.btnSystem.Image = global::APSWinForm.Properties.Resources.tools;
             this.btnSystem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSystem.Location = new System.Drawing.Point(0, 597);
+            this.btnSystem.Location = new System.Drawing.Point(0, 569);
             this.btnSystem.Name = "btnSystem";
             this.btnSystem.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSystem.Size = new System.Drawing.Size(205, 45);
+            this.btnSystem.Size = new System.Drawing.Size(222, 45);
             this.btnSystem.TabIndex = 10;
             this.btnSystem.Text = "  시스템 관리";
             this.btnSystem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -214,67 +213,16 @@ namespace APSWinForm
             this.btnExit.ForeColor = System.Drawing.Color.Silver;
             this.btnExit.Image = global::APSWinForm.Properties.Resources.exit;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 705);
+            this.btnExit.Location = new System.Drawing.Point(0, 698);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(205, 45);
+            this.btnExit.Size = new System.Drawing.Size(222, 45);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "  Exit";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // panelExcelSubMenu
-            // 
-            this.panelExcelSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelExcelSubMenu.Controls.Add(this.btnExcelOut);
-            this.panelExcelSubMenu.Controls.Add(this.btnExcelin);
-            this.panelExcelSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelExcelSubMenu.Location = new System.Drawing.Point(0, 534);
-            this.panelExcelSubMenu.Name = "panelExcelSubMenu";
-            this.panelExcelSubMenu.Size = new System.Drawing.Size(205, 63);
-            this.panelExcelSubMenu.TabIndex = 7;
-            // 
-            // btnExcelOut
-            // 
-            this.btnExcelOut.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExcelOut.FlatAppearance.BorderSize = 0;
-            this.btnExcelOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.btnExcelOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.btnExcelOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcelOut.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnExcelOut.ForeColor = System.Drawing.Color.Silver;
-            this.btnExcelOut.Location = new System.Drawing.Point(0, 30);
-            this.btnExcelOut.Name = "btnExcelOut";
-            this.btnExcelOut.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnExcelOut.Size = new System.Drawing.Size(205, 30);
-            this.btnExcelOut.TabIndex = 1;
-            this.btnExcelOut.Text = "엑셀 내보내기";
-            this.btnExcelOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelOut.UseVisualStyleBackColor = true;
-            this.btnExcelOut.Click += new System.EventHandler(this.btnExcelOut_Click);
-            // 
-            // btnExcelin
-            // 
-            this.btnExcelin.AutoSize = true;
-            this.btnExcelin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExcelin.FlatAppearance.BorderSize = 0;
-            this.btnExcelin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.btnExcelin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.btnExcelin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcelin.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnExcelin.ForeColor = System.Drawing.Color.Silver;
-            this.btnExcelin.Location = new System.Drawing.Point(0, 0);
-            this.btnExcelin.Name = "btnExcelin";
-            this.btnExcelin.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnExcelin.Size = new System.Drawing.Size(205, 30);
-            this.btnExcelin.TabIndex = 0;
-            this.btnExcelin.Text = "엑셀 불러오기";
-            this.btnExcelin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelin.UseVisualStyleBackColor = true;
-            this.btnExcelin.Visible = false;
-            this.btnExcelin.Click += new System.EventHandler(this.btnExcelin_Click);
             // 
             // btnExcel
             // 
@@ -291,7 +239,7 @@ namespace APSWinForm
             this.btnExcel.Location = new System.Drawing.Point(0, 489);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExcel.Size = new System.Drawing.Size(205, 45);
+            this.btnExcel.Size = new System.Drawing.Size(222, 45);
             this.btnExcel.TabIndex = 6;
             this.btnExcel.Text = "  EXCEL";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -308,7 +256,7 @@ namespace APSWinForm
             this.panelResultSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelResultSubMenu.Location = new System.Drawing.Point(0, 396);
             this.panelResultSubMenu.Name = "panelResultSubMenu";
-            this.panelResultSubMenu.Size = new System.Drawing.Size(205, 93);
+            this.panelResultSubMenu.Size = new System.Drawing.Size(222, 93);
             this.panelResultSubMenu.TabIndex = 4;
             // 
             // btnUtil
@@ -323,7 +271,7 @@ namespace APSWinForm
             this.btnUtil.Location = new System.Drawing.Point(0, 60);
             this.btnUtil.Name = "btnUtil";
             this.btnUtil.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnUtil.Size = new System.Drawing.Size(205, 30);
+            this.btnUtil.Size = new System.Drawing.Size(222, 30);
             this.btnUtil.TabIndex = 2;
             this.btnUtil.Text = "가동률분석";
             this.btnUtil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -342,7 +290,7 @@ namespace APSWinForm
             this.btnEQPgant.Location = new System.Drawing.Point(0, 30);
             this.btnEQPgant.Name = "btnEQPgant";
             this.btnEQPgant.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEQPgant.Size = new System.Drawing.Size(205, 30);
+            this.btnEQPgant.Size = new System.Drawing.Size(222, 30);
             this.btnEQPgant.TabIndex = 1;
             this.btnEQPgant.Text = "EQP 간트차트";
             this.btnEQPgant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -361,7 +309,7 @@ namespace APSWinForm
             this.btnLOT.Location = new System.Drawing.Point(0, 0);
             this.btnLOT.Name = "btnLOT";
             this.btnLOT.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnLOT.Size = new System.Drawing.Size(205, 30);
+            this.btnLOT.Size = new System.Drawing.Size(222, 30);
             this.btnLOT.TabIndex = 0;
             this.btnLOT.Text = "LOT 간트차트";
             this.btnLOT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -383,7 +331,7 @@ namespace APSWinForm
             this.btnResult.Location = new System.Drawing.Point(0, 351);
             this.btnResult.Name = "btnResult";
             this.btnResult.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnResult.Size = new System.Drawing.Size(205, 45);
+            this.btnResult.Size = new System.Drawing.Size(222, 45);
             this.btnResult.TabIndex = 3;
             this.btnResult.Text = " 결과 차트 조회";
             this.btnResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -405,7 +353,7 @@ namespace APSWinForm
             this.panelInfoSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInfoSubMenu.Location = new System.Drawing.Point(0, 108);
             this.panelInfoSubMenu.Name = "panelInfoSubMenu";
-            this.panelInfoSubMenu.Size = new System.Drawing.Size(205, 243);
+            this.panelInfoSubMenu.Size = new System.Drawing.Size(222, 243);
             this.panelInfoSubMenu.TabIndex = 2;
             // 
             // btnSetup
@@ -420,7 +368,7 @@ namespace APSWinForm
             this.btnSetup.Location = new System.Drawing.Point(0, 210);
             this.btnSetup.Name = "btnSetup";
             this.btnSetup.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSetup.Size = new System.Drawing.Size(205, 30);
+            this.btnSetup.Size = new System.Drawing.Size(222, 30);
             this.btnSetup.TabIndex = 7;
             this.btnSetup.Text = "교체준비시간관리";
             this.btnSetup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -439,7 +387,7 @@ namespace APSWinForm
             this.btnARR.Location = new System.Drawing.Point(0, 180);
             this.btnARR.Name = "btnARR";
             this.btnARR.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnARR.Size = new System.Drawing.Size(205, 30);
+            this.btnARR.Size = new System.Drawing.Size(222, 30);
             this.btnARR.TabIndex = 6;
             this.btnARR.Text = "설비배치정보관리";
             this.btnARR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -458,7 +406,7 @@ namespace APSWinForm
             this.btnEquip.Location = new System.Drawing.Point(0, 150);
             this.btnEquip.Name = "btnEquip";
             this.btnEquip.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEquip.Size = new System.Drawing.Size(205, 30);
+            this.btnEquip.Size = new System.Drawing.Size(222, 30);
             this.btnEquip.TabIndex = 5;
             this.btnEquip.Text = "설비정보관리";
             this.btnEquip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -477,7 +425,7 @@ namespace APSWinForm
             this.btnRoute.Location = new System.Drawing.Point(0, 120);
             this.btnRoute.Name = "btnRoute";
             this.btnRoute.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRoute.Size = new System.Drawing.Size(205, 30);
+            this.btnRoute.Size = new System.Drawing.Size(222, 30);
             this.btnRoute.TabIndex = 4;
             this.btnRoute.Text = "공정순서관리";
             this.btnRoute.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -496,7 +444,7 @@ namespace APSWinForm
             this.btnStdStep.Location = new System.Drawing.Point(0, 90);
             this.btnStdStep.Name = "btnStdStep";
             this.btnStdStep.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnStdStep.Size = new System.Drawing.Size(205, 30);
+            this.btnStdStep.Size = new System.Drawing.Size(222, 30);
             this.btnStdStep.TabIndex = 3;
             this.btnStdStep.Text = "표준공정정보관리";
             this.btnStdStep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -515,7 +463,7 @@ namespace APSWinForm
             this.btnLine.Location = new System.Drawing.Point(0, 60);
             this.btnLine.Name = "btnLine";
             this.btnLine.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnLine.Size = new System.Drawing.Size(205, 30);
+            this.btnLine.Size = new System.Drawing.Size(222, 30);
             this.btnLine.TabIndex = 2;
             this.btnLine.Text = "라인정보관리";
             this.btnLine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -534,7 +482,7 @@ namespace APSWinForm
             this.btnDemand.Location = new System.Drawing.Point(0, 30);
             this.btnDemand.Name = "btnDemand";
             this.btnDemand.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnDemand.Size = new System.Drawing.Size(205, 30);
+            this.btnDemand.Size = new System.Drawing.Size(222, 30);
             this.btnDemand.TabIndex = 1;
             this.btnDemand.Text = "수요정보관리";
             this.btnDemand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -553,7 +501,7 @@ namespace APSWinForm
             this.btnProduct.Location = new System.Drawing.Point(0, 0);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnProduct.Size = new System.Drawing.Size(205, 30);
+            this.btnProduct.Size = new System.Drawing.Size(222, 30);
             this.btnProduct.TabIndex = 0;
             this.btnProduct.Tag = "frmPRODUCT";
             this.btnProduct.Text = "제품정보관리";
@@ -576,7 +524,7 @@ namespace APSWinForm
             this.btnInfo.Location = new System.Drawing.Point(0, 63);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnInfo.Size = new System.Drawing.Size(205, 45);
+            this.btnInfo.Size = new System.Drawing.Size(222, 45);
             this.btnInfo.TabIndex = 1;
             this.btnInfo.Text = "  기준정보관리";
             this.btnInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -593,7 +541,7 @@ namespace APSWinForm
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(205, 63);
+            this.panelLogo.Size = new System.Drawing.Size(222, 63);
             this.panelLogo.TabIndex = 0;
             // 
             // lblName
@@ -652,6 +600,35 @@ namespace APSWinForm
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnExcelOut
+            // 
+            this.btnExcelOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExcelOut.FlatAppearance.BorderSize = 0;
+            this.btnExcelOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btnExcelOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btnExcelOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelOut.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcelOut.ForeColor = System.Drawing.Color.Silver;
+            this.btnExcelOut.Location = new System.Drawing.Point(0, 0);
+            this.btnExcelOut.Name = "btnExcelOut";
+            this.btnExcelOut.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnExcelOut.Size = new System.Drawing.Size(222, 30);
+            this.btnExcelOut.TabIndex = 1;
+            this.btnExcelOut.Text = "엑셀 내보내기";
+            this.btnExcelOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcelOut.UseVisualStyleBackColor = true;
+            this.btnExcelOut.Click += new System.EventHandler(this.btnExcelOut_Click);
+            // 
+            // panelExcelSubMenu
+            // 
+            this.panelExcelSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelExcelSubMenu.Controls.Add(this.btnExcelOut);
+            this.panelExcelSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelExcelSubMenu.Location = new System.Drawing.Point(0, 534);
+            this.panelExcelSubMenu.Name = "panelExcelSubMenu";
+            this.panelExcelSubMenu.Size = new System.Drawing.Size(222, 35);
+            this.panelExcelSubMenu.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -668,12 +645,11 @@ namespace APSWinForm
             this.menuStrip1.PerformLayout();
             this.panelSideMenu.ResumeLayout(false);
             this.panelSystemSubMenu.ResumeLayout(false);
-            this.panelExcelSubMenu.ResumeLayout(false);
-            this.panelExcelSubMenu.PerformLayout();
             this.panelResultSubMenu.ResumeLayout(false);
             this.panelInfoSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
+            this.panelExcelSubMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -688,8 +664,6 @@ namespace APSWinForm
         private System.Windows.Forms.Button btnUser;
         private System.Windows.Forms.Button btnSystem;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Panel panelExcelSubMenu;
-        private System.Windows.Forms.Button btnExcelOut;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Panel panelResultSubMenu;
         private System.Windows.Forms.Button btnUtil;
@@ -712,8 +686,9 @@ namespace APSWinForm
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.Button btnExcelin;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panelExcelSubMenu;
+        private System.Windows.Forms.Button btnExcelOut;
     }
 }
