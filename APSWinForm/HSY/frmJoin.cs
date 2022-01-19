@@ -21,6 +21,7 @@ namespace APSWinForm
         public frmJoin()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         private async void button2_Click(object sender, EventArgs e)

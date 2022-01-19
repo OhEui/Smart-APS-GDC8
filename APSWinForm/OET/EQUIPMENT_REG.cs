@@ -27,10 +27,12 @@ namespace APSWinForm
             existEQPID = true;
             txtEqpID.ImeMode = ImeMode.Disable;
             txtEqpID.CharacterCasing = CharacterCasing.Upper;
+            this.MaximizeBox = false;
         }
         public EQUIPMENT_REG(EQUIPVO vo)
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             this.EQPvo = vo;
         }
 

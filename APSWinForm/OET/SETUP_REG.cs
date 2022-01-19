@@ -25,7 +25,8 @@ namespace APSWinForm
         public SETUP_REG()
         {
             InitializeComponent();
-            
+            this.MaximizeBox = false;
+
         }
 
         public SETUP_REG(SetupVO vo)
