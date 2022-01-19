@@ -80,7 +80,7 @@ namespace APSWinForm
 			this.panel2.Location = new System.Drawing.Point(0, 38);
 			this.panel2.Name = "panel2";
 			this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-			this.panel2.Size = new System.Drawing.Size(404, 453);
+			this.panel2.Size = new System.Drawing.Size(404, 427);
 			this.panel2.TabIndex = 45;
 			// 
 			// panel9
@@ -101,7 +101,7 @@ namespace APSWinForm
 			this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel9.Location = new System.Drawing.Point(10, 10);
 			this.panel9.Name = "panel9";
-			this.panel9.Size = new System.Drawing.Size(384, 433);
+			this.panel9.Size = new System.Drawing.Size(384, 407);
 			this.panel9.TabIndex = 42;
 			// 
 			// panel5
@@ -109,7 +109,7 @@ namespace APSWinForm
 			this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel5.Controls.Add(this.txtGroup);
 			this.panel5.Controls.Add(this.cboGroup);
-			this.panel5.Location = new System.Drawing.Point(191, 195);
+			this.panel5.Location = new System.Drawing.Point(191, 210);
 			this.panel5.Name = "panel5";
 			this.panel5.Size = new System.Drawing.Size(121, 20);
 			this.panel5.TabIndex = 183;
@@ -139,7 +139,7 @@ namespace APSWinForm
 			this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel4.Controls.Add(this.txtStep);
 			this.panel4.Controls.Add(this.cboStep);
-			this.panel4.Location = new System.Drawing.Point(190, 152);
+			this.panel4.Location = new System.Drawing.Point(191, 161);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(121, 20);
 			this.panel4.TabIndex = 183;
@@ -169,7 +169,7 @@ namespace APSWinForm
 			this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel23.Controls.Add(this.txtLine);
 			this.panel23.Controls.Add(this.cboLine);
-			this.panel23.Location = new System.Drawing.Point(190, 106);
+			this.panel23.Location = new System.Drawing.Point(191, 112);
 			this.panel23.Name = "panel23";
 			this.panel23.Size = new System.Drawing.Size(121, 20);
 			this.panel23.TabIndex = 183;
@@ -199,7 +199,7 @@ namespace APSWinForm
 			this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel3.Controls.Add(this.txtSite);
 			this.panel3.Controls.Add(this.cboSite);
-			this.panel3.Location = new System.Drawing.Point(190, 66);
+			this.panel3.Location = new System.Drawing.Point(191, 63);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(121, 20);
 			this.panel3.TabIndex = 203;
@@ -228,25 +228,27 @@ namespace APSWinForm
 			// 
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label7.Location = new System.Drawing.Point(63, 156);
+			this.label7.Location = new System.Drawing.Point(68, 164);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(55, 14);
 			this.label7.TabIndex = 201;
 			this.label7.Text = "ㆍ공정ID";
+			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label5.Location = new System.Drawing.Point(62, 199);
+			this.label5.Location = new System.Drawing.Point(68, 213);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(91, 14);
 			this.label5.TabIndex = 199;
 			this.label5.Text = "ㆍ설비처리그룹";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// numTime
 			// 
-			this.numTime.Location = new System.Drawing.Point(190, 238);
+			this.numTime.Location = new System.Drawing.Point(191, 259);
 			this.numTime.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -260,31 +262,34 @@ namespace APSWinForm
 			// 
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label11.Location = new System.Drawing.Point(64, 241);
+			this.label11.Location = new System.Drawing.Point(68, 262);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(67, 14);
 			this.label11.TabIndex = 197;
 			this.label11.Text = "ㆍ소요시간";
+			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label9.Location = new System.Drawing.Point(62, 112);
+			this.label9.Location = new System.Drawing.Point(68, 115);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(55, 14);
 			this.label9.TabIndex = 191;
 			this.label9.Text = "ㆍ라인ID";
+			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label10
 			// 
 			this.label10.AutoSize = true;
 			this.label10.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label10.Location = new System.Drawing.Point(61, 66);
+			this.label10.Location = new System.Drawing.Point(68, 66);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(67, 14);
 			this.label10.TabIndex = 190;
 			this.label10.Text = "ㆍ사이트ID";
+			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// button3
 			// 
@@ -292,7 +297,7 @@ namespace APSWinForm
 			this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
 			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.button3.ForeColor = System.Drawing.Color.White;
-			this.button3.Location = new System.Drawing.Point(207, 330);
+			this.button3.Location = new System.Drawing.Point(207, 325);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(102, 36);
 			this.button3.TabIndex = 6;
@@ -305,7 +310,7 @@ namespace APSWinForm
 			this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
 			this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.btnAdd.ForeColor = System.Drawing.Color.White;
-			this.btnAdd.Location = new System.Drawing.Point(79, 330);
+			this.btnAdd.Location = new System.Drawing.Point(79, 325);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(102, 36);
 			this.btnAdd.TabIndex = 5;
@@ -319,7 +324,7 @@ namespace APSWinForm
 			this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
 			this.panel8.Location = new System.Drawing.Point(394, 10);
 			this.panel8.Name = "panel8";
-			this.panel8.Size = new System.Drawing.Size(10, 433);
+			this.panel8.Size = new System.Drawing.Size(10, 407);
 			this.panel8.TabIndex = 41;
 			// 
 			// panel6
@@ -328,7 +333,7 @@ namespace APSWinForm
 			this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel6.Location = new System.Drawing.Point(0, 10);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(10, 433);
+			this.panel6.Size = new System.Drawing.Size(10, 407);
 			this.panel6.TabIndex = 39;
 			// 
 			// panel7
@@ -337,7 +342,7 @@ namespace APSWinForm
 			this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel7.Location = new System.Drawing.Point(0, 0);
 			this.panel7.Name = "panel7";
-			this.panel7.Size = new System.Drawing.Size(10, 433);
+			this.panel7.Size = new System.Drawing.Size(10, 407);
 			this.panel7.TabIndex = 40;
 			// 
 			// panel1
@@ -375,7 +380,7 @@ namespace APSWinForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(404, 491);
+			this.ClientSize = new System.Drawing.Size(404, 465);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Name = "SETUP_REG";

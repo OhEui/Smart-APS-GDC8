@@ -283,6 +283,7 @@ namespace APSWinForm
 			this.label5.Size = new System.Drawing.Size(58, 14);
 			this.label5.TabIndex = 65;
 			this.label5.Text = "ㆍ공정 ID";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label13
 			// 
@@ -293,6 +294,7 @@ namespace APSWinForm
 			this.label13.Size = new System.Drawing.Size(82, 14);
 			this.label13.TabIndex = 63;
 			this.label13.Text = "ㆍ프로세스 ID";
+			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label4
 			// 
@@ -303,6 +305,7 @@ namespace APSWinForm
 			this.label4.Size = new System.Drawing.Size(82, 14);
 			this.label4.TabIndex = 62;
 			this.label4.Text = "ㆍ표준공정 ID";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label10
 			// 
@@ -313,6 +316,7 @@ namespace APSWinForm
 			this.label10.Size = new System.Drawing.Size(67, 14);
 			this.label10.TabIndex = 60;
 			this.label10.Text = "ㆍ공정타입";
+			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label12
 			// 
@@ -323,6 +327,7 @@ namespace APSWinForm
 			this.label12.Size = new System.Drawing.Size(67, 14);
 			this.label12.TabIndex = 59;
 			this.label12.Text = "ㆍ공정순서";
+			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// btnCancel
 			// 
