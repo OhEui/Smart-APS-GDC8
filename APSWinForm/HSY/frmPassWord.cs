@@ -15,6 +15,7 @@ namespace APSWinForm
         public frmPassWord()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         private void frmPassWord_Load(object sender, EventArgs e)

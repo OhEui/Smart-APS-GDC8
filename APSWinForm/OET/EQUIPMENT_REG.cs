@@ -19,14 +19,20 @@ namespace APSWinForm
         EQUIPVO EQPvo;
         List<ComboItemVO> list;
         List<LineVO> Lineinfo;
-        
+        List<EQUIPVO> EQPlist;
+        bool existEQPID = false;
         public EQUIPMENT_REG()
         {
             InitializeComponent();
+            existEQPID = true;
+            txtEqpID.ImeMode = ImeMode.Disable;
+            txtEqpID.CharacterCasing = CharacterCasing.Upper;
+            this.MaximizeBox = false;
         }
         public EQUIPMENT_REG(EQUIPVO vo)
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             this.EQPvo = vo;
         }
 
@@ -48,7 +54,7 @@ namespace APSWinForm
             CommonUtil.ComboBinding(cboEqpGroup, list, "STD_STEP_ID" , blankText: "선택");
             //CommonUtil.ComboBinding(cboLineID, list, "LINE_ID", blankText: "선택");
             //CommonUtil.ComboBinding(cboSiteID, list, "SITE_ID", blankText: "선택");
-
+            EQPlist = await srv.GetListAsync("api/EQUIPMENT/EQPlist", EQPlist);
             Modify();
         }
 
@@ -64,6 +70,7 @@ namespace APSWinForm
         {
             if (EQPvo != null)
             {
+                txtEQPIDM.Visible = true;
                 txtEQPIDM.Text = EQPvo.EQP_ID;
                 txtEqpID.Text = EQPvo.EQP_ID;
                 txtEqpmodel.Text = EQPvo.EQP_MODEL;
@@ -72,6 +79,8 @@ namespace APSWinForm
                 cboSiteID.SelectedValue = EQPvo.SITE_ID;
             }
         }
+
+      
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
@@ -131,6 +140,19 @@ namespace APSWinForm
             }
         }
 
-        
+        private void txtEqpID_Leave(object sender, EventArgs e)
+        {
+            var EQPID = EQPlist.Find(p => p.EQP_ID == txtEqpID.Text);
+
+            if (EQPID != null)
+            {
+                lblExist.Visible = true;
+                existEQPID = false;
+                this.ActiveControl = txtEqpID;
+            }
+            else
+                lblExist.Visible = false;
+                existEQPID = true;
+        }
     }
 }

@@ -26,11 +26,13 @@ namespace APSWinForm
         public EQPARR_REG()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         public EQPARR_REG(EqpArrangeVO vo)
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             this.EQPArrvo = vo;
         }
 

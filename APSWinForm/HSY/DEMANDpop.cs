@@ -21,12 +21,14 @@ namespace APSWinForm
         public DEMANDpop()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         public DEMANDpop(DemandVO demdInfo)
         {
             InitializeComponent();
             this.dmadvo = demdInfo;
+            this.MaximizeBox = false;
         }
 
         public async void Combobinding()

@@ -167,7 +167,7 @@ namespace TabControlZ
                 Rectangle closeButton = new Rectangle(r.Right + 1 - 15, r.Top + 4, 12, 12);
                 if (closeButton.Contains(e.Location))
                 {
-                    if (MessageBox.Show("탭을 닫으시겠습니까?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("탭을 닫으시겠습니까?", "탭 종료", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         this.TabPages.RemoveAt(i);
                         break;
