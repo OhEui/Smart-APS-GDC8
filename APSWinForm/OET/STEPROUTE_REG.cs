@@ -21,12 +21,13 @@ namespace APSWinForm
 		public STEPROUTE_REG()
 		{
 			InitializeComponent();
+			this.MaximizeBox = false;
 		}
 
 		public STEPROUTE_REG(StepRouteVO stepRoute)
 		{
 			InitializeComponent();
-
+			this.MaximizeBox = false;
 			modStepRoute = stepRoute;
 		}
 

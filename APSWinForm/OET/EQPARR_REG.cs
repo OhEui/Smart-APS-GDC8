@@ -21,16 +21,18 @@ namespace APSWinForm
         List<ComboItemVO> ProductList = null;
         List<ComboItemVO> ProcessList = null;
         List<EQUIPVO> EQPList = null;
-
+        List<EqpArrangeVO> EQPARRList = null;
 
         public EQPARR_REG()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         public EQPARR_REG(EqpArrangeVO vo)
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             this.EQPArrvo = vo;
         }
 
@@ -49,6 +51,7 @@ namespace APSWinForm
             CommonUtil.ComboBinding(cboProcess, ProcessList, "PROCESS_ID", blankText: "");
             CommonUtil.ComboBinding(cboStep, ProcessList, "STD_STEP_ID", blankText: "");
             CommonUtil.ComboBinding(cboEQP, EQPList, "EQP_ID", "EQP_MODEL", "");
+            EQPARRList = await srv.GetListAsync("api/EQUIPMENT/ARRlist", EQPARRList);
             Modify();
 
         }
@@ -96,7 +99,12 @@ namespace APSWinForm
                     vo.PROC_TIME = Convert.ToInt32(numProcess.Text.Trim());
                     vo.user_id = "test";
 
-
+                    var EQP = EQPARRList.Find(p => p.EQP_ID == cboEQP.Text && p.PRODUCT_ID == cboProduct.Text && p.PROCESS_ID == cboProcess.Text && p.STEP_ID == cboStep.Text);
+                    if(EQP !=null)
+                    {
+                        MessageBox.Show("중복되는 데이터입니다.다른 데이터를 입력해주십시오");
+                        return;
+                    }
 
                     WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPArrnew", vo);
 

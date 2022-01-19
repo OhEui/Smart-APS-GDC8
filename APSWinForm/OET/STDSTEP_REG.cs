@@ -22,12 +22,13 @@ namespace APSWinForm
 		public STDSTEP_REG()
 		{
 			InitializeComponent();
+			this.MaximizeBox = false;
 		}
 
 		public STDSTEP_REG(STD_STEP_VO stepInfo)
 		{
 			InitializeComponent();
-
+			this.MaximizeBox = false;
 			txtStepID.Text = stepInfo.STD_STEP_ID;
 			txtStepName.Text = stepInfo.STD_STEP_NAME;
 			txtStepSetup.Text = stepInfo.STEP_SETUP.ToString();
@@ -90,6 +91,7 @@ namespace APSWinForm
 				existStepID = false;
 			}
 			else
+
 				existStepID = true;
 		}
 

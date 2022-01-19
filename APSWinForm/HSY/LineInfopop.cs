@@ -20,6 +20,7 @@ namespace APSWinForm
         public LineInfopop()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         public LineInfopop(Line_Info_VO lineinfo)
@@ -31,6 +32,7 @@ namespace APSWinForm
             txtName.Text = lineinfo.LINE_NAME;
 
             txtLID.Enabled = false;
+            this.MaximizeBox = false;
         }
 
         private async void button7_Click(object sender, EventArgs e)

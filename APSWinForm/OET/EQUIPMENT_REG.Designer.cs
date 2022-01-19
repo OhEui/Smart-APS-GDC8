@@ -32,7 +32,7 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EQUIPMENT_REG));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txtEQPIDM = new System.Windows.Forms.TextBox();
+            this.lblExist = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.cboLineID = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -40,7 +40,6 @@ namespace APSWinForm
             this.panel3 = new System.Windows.Forms.Panel();
             this.cboEqpGroup = new System.Windows.Forms.ComboBox();
             this.txtEqpmodel = new System.Windows.Forms.TextBox();
-            this.txtEqpID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,6 +47,8 @@ namespace APSWinForm
             this.label9 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.txtEQPIDM = new System.Windows.Forms.TextBox();
+            this.txtEqpID = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -80,12 +81,11 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
-            this.panel9.Controls.Add(this.txtEQPIDM);
+            this.panel9.Controls.Add(this.lblExist);
             this.panel9.Controls.Add(this.panel5);
             this.panel9.Controls.Add(this.panel4);
             this.panel9.Controls.Add(this.panel3);
             this.panel9.Controls.Add(this.txtEqpmodel);
-            this.panel9.Controls.Add(this.txtEqpID);
             this.panel9.Controls.Add(this.label2);
             this.panel9.Controls.Add(this.label4);
             this.panel9.Controls.Add(this.label5);
@@ -93,20 +93,24 @@ namespace APSWinForm
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.btnCancel);
             this.panel9.Controls.Add(this.btnAdd);
+            this.panel9.Controls.Add(this.txtEQPIDM);
+            this.panel9.Controls.Add(this.txtEqpID);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(375, 400);
             this.panel9.TabIndex = 42;
             // 
-            // txtEQPIDM
+            // lblExist
             // 
-            this.txtEQPIDM.Location = new System.Drawing.Point(184, 64);
-            this.txtEQPIDM.Name = "txtEQPIDM";
-            this.txtEQPIDM.ReadOnly = true;
-            this.txtEQPIDM.Size = new System.Drawing.Size(121, 21);
-            this.txtEQPIDM.TabIndex = 175;
-            this.txtEQPIDM.Tag = "0";
+            this.lblExist.AutoSize = true;
+            this.lblExist.ForeColor = System.Drawing.Color.Red;
+            this.lblExist.Location = new System.Drawing.Point(184, 88);
+            this.lblExist.Name = "lblExist";
+            this.lblExist.Size = new System.Drawing.Size(159, 12);
+            this.lblExist.TabIndex = 176;
+            this.lblExist.Text = "* 이미 존재하는 설비입니다.";
+            this.lblExist.Visible = false;
             // 
             // panel5
             // 
@@ -175,14 +179,6 @@ namespace APSWinForm
             this.txtEqpmodel.Size = new System.Drawing.Size(121, 21);
             this.txtEqpmodel.TabIndex = 173;
             this.txtEqpmodel.Tag = "1";
-            // 
-            // txtEqpID
-            // 
-            this.txtEqpID.Location = new System.Drawing.Point(184, 64);
-            this.txtEqpID.Name = "txtEqpID";
-            this.txtEqpID.Size = new System.Drawing.Size(121, 21);
-            this.txtEqpID.TabIndex = 172;
-            this.txtEqpID.Tag = "0";
             // 
             // label2
             // 
@@ -266,6 +262,25 @@ namespace APSWinForm
             this.btnAdd.Text = "저장";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtEQPIDM
+            // 
+            this.txtEQPIDM.Location = new System.Drawing.Point(184, 64);
+            this.txtEQPIDM.Name = "txtEQPIDM";
+            this.txtEQPIDM.ReadOnly = true;
+            this.txtEQPIDM.Size = new System.Drawing.Size(121, 21);
+            this.txtEQPIDM.TabIndex = 175;
+            this.txtEQPIDM.Tag = "0";
+            this.txtEQPIDM.Visible = false;
+            // 
+            // txtEqpID
+            // 
+            this.txtEqpID.Location = new System.Drawing.Point(184, 64);
+            this.txtEqpID.Name = "txtEqpID";
+            this.txtEqpID.Size = new System.Drawing.Size(121, 21);
+            this.txtEqpID.TabIndex = 172;
+            this.txtEqpID.Tag = "0";
+            this.txtEqpID.Leave += new System.EventHandler(this.txtEqpID_Leave);
             // 
             // panel8
             // 
@@ -374,5 +389,6 @@ namespace APSWinForm
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cboEqpGroup;
         private System.Windows.Forms.TextBox txtEQPIDM;
+        private System.Windows.Forms.Label lblExist;
     }
 }

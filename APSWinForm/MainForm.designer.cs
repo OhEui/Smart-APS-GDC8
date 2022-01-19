@@ -32,8 +32,6 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.btnUserName = new System.Windows.Forms.Button();
             this.panelSystemSubMenu = new System.Windows.Forms.Panel();
@@ -60,9 +58,12 @@ namespace APSWinForm
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.tabControl1 = new TabControlZ.TabControlZ();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new TabControlZ.TabControlZ();
             this.menuStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.panelSystemSubMenu.SuspendLayout();
@@ -85,27 +86,11 @@ namespace APSWinForm
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Silver;
+            this.toolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
-            this.toolStripMenuItem1.Text = "메뉴";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(122, 22);
-            this.toolStripMenuItem2.Text = "로그아웃";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(122, 22);
-            this.toolStripMenuItem3.Text = "종료";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.CloseAll_Click);
             // 
             // panelSideMenu
             // 
@@ -150,6 +135,7 @@ namespace APSWinForm
             this.btnUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserName.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUserName.UseVisualStyleBackColor = false;
+            this.btnUserName.Click += new System.EventHandler(this.btnUserName_Click);
             // 
             // panelSystemSubMenu
             // 
@@ -197,7 +183,7 @@ namespace APSWinForm
             this.btnUser.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnUser.Size = new System.Drawing.Size(205, 30);
             this.btnUser.TabIndex = 0;
-            this.btnUser.Text = "사용자 관리";
+            this.btnUser.Text = "유저 관리";
             this.btnUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUser.UseVisualStyleBackColor = true;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
@@ -242,7 +228,7 @@ namespace APSWinForm
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(205, 45);
             this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "  Exit";
+            this.btnExit.Text = "  종료하기";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = false;
@@ -274,7 +260,7 @@ namespace APSWinForm
             this.btnExcelOut.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnExcelOut.Size = new System.Drawing.Size(205, 30);
             this.btnExcelOut.TabIndex = 1;
-            this.btnExcelOut.Text = "엑셀 내보내기";
+            this.btnExcelOut.Text = "엑셀 일괄 내보내기";
             this.btnExcelOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcelOut.UseVisualStyleBackColor = true;
             this.btnExcelOut.Click += new System.EventHandler(this.btnExcelOut_Click);
@@ -602,27 +588,6 @@ namespace APSWinForm
             this.panelLogo.Size = new System.Drawing.Size(205, 63);
             this.panelLogo.TabIndex = 0;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.ActiveTabEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
-            this.tabControl1.ActiveTabStartColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
-            this.tabControl1.CloseButtonColor = System.Drawing.Color.Red;
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabControl1.GradientAngle = 90;
-            this.tabControl1.Location = new System.Drawing.Point(222, 24);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.NonActiveTabEndColor = System.Drawing.Color.SteelBlue;
-            this.tabControl1.NonActiveTabStartColor = System.Drawing.Color.SteelBlue;
-            this.tabControl1.Padding = new System.Drawing.Point(22, 6);
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(711, 743);
-            this.tabControl1.TabIndex = 20;
-            this.tabControl1.TextColor = System.Drawing.Color.Black;
-            this.tabControl1.Transparent1 = 150;
-            this.tabControl1.Transparent2 = 150;
-            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.LightGray;
@@ -646,6 +611,64 @@ namespace APSWinForm
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabPage3.Location = new System.Drawing.Point(4, 33);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(703, 706);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabPage4.Location = new System.Drawing.Point(4, 33);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(703, 706);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabPage5.Location = new System.Drawing.Point(4, 33);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(703, 706);
+            this.tabPage5.TabIndex = 0;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.ActiveTabEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
+            this.tabControl1.ActiveTabStartColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
+            this.tabControl1.CloseButtonColor = System.Drawing.Color.Red;
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabControl1.GradientAngle = 90;
+            this.tabControl1.Location = new System.Drawing.Point(222, 24);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.NonActiveTabEndColor = System.Drawing.Color.SteelBlue;
+            this.tabControl1.NonActiveTabStartColor = System.Drawing.Color.SteelBlue;
+            this.tabControl1.Padding = new System.Drawing.Point(22, 6);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(711, 743);
+            this.tabControl1.TabIndex = 20;
+            this.tabControl1.TextColor = System.Drawing.Color.Black;
+            this.tabControl1.Transparent1 = 150;
+            this.tabControl1.Transparent2 = 150;
+            this.tabControl1.Visible = false;
             // 
             // MainForm
             // 
@@ -698,14 +721,15 @@ namespace APSWinForm
         private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.Panel panelLogo;
-        private TabControlZ.TabControlZ tabControl1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panelExcelSubMenu;
         private System.Windows.Forms.Button btnExcelOut;
         private System.Windows.Forms.Button btnUserName;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private TabControlZ.TabControlZ tabControl1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

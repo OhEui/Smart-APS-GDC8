@@ -26,6 +26,7 @@ namespace APSWinForm
                 btnUserName.Text = $"  {UserInfoStorage.Current.Name}";
             };
             Login();
+
         }
 
         #region hideMenu
@@ -175,7 +176,7 @@ namespace APSWinForm
 
         private void btnSetup_Click(object sender, EventArgs e)
         {
-            CreateTabPages("교체준비시간관리", new SETUP_TIME());
+            CreateTabPages("교체준비시간", new SETUP_TIME());
             hideInfoSubMenu();
         }
 
@@ -312,7 +313,7 @@ namespace APSWinForm
 
         private void btnAuth_Click(object sender, EventArgs e)
         {
-            CreateTabPages("권한설정", new MenuAuth());
+            CreateTabPages("권한관리", new MenuAuth());
             hideSystemSubMenu();
         }
         #endregion
@@ -366,15 +367,27 @@ namespace APSWinForm
 
 
         
-      
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+
+        private void btnUserName_Click(object sender, EventArgs e)
         {
-            Logout();
+            if (MessageBox.Show($"{UserInfoStorage.Current.Name}님 로그아웃 하시겠습니까?", "로그아웃", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DialogResult = DialogResult.OK;
+                Logout();
+                hideSubMenu();
+                tabControl1.TabPages.Clear();
+            }
         }
 
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        private void CloseAll_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("열린탭을 모두 닫으시겠습니까?", "열린 탭 닫기", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                tabControl1.TabPages.Clear();
+            }
         }
+
+       
+        
     }
 }

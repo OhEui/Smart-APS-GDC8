@@ -21,6 +21,7 @@ namespace APSWinForm
         public Productpop()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         public async void Combobinding()
@@ -35,6 +36,7 @@ namespace APSWinForm
         {
             InitializeComponent();
             this.prodvo = prodInfo;
+            this.MaximizeBox = false;
         }
 
         private void Modify()
