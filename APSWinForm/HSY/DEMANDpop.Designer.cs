@@ -121,6 +121,7 @@ namespace APSWinForm
             this.button7.TabIndex = 7;
             this.button7.Text = "등록";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // txtdate
             // 
