@@ -109,7 +109,6 @@ namespace APSWinForm
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(0, 12);
             this.txtID.TabIndex = 182;
-            this.txtID.Visible = false;
             // 
             // txtno
             // 
@@ -118,7 +117,6 @@ namespace APSWinForm
             this.txtno.Name = "txtno";
             this.txtno.Size = new System.Drawing.Size(0, 12);
             this.txtno.TabIndex = 181;
-            this.txtno.Visible = false;
             // 
             // txtName
             // 
@@ -305,7 +303,7 @@ namespace APSWinForm
             this.dgvUser.RowTemplate.Height = 23;
             this.dgvUser.Size = new System.Drawing.Size(361, 426);
             this.dgvUser.TabIndex = 52;
-            this.dgvUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
+            this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
             // 
             // dataGridView1
             // 

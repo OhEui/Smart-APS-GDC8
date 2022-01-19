@@ -103,8 +103,13 @@ namespace APSWinForm
                     vo.SITE_ID = cboSiteID.SelectedValue.ToString();
                     vo.user_id = "test";
                     WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", vo);
+                    var EQPID = EQPlist.Find(p => p.EQP_ID == txtEqpID.Text);
 
-
+                    if (EQPID != null)
+                    {
+                        MessageBox.Show("중복되는 데이터입니다.다른 데이터를 입력해주십시오");
+                        return;
+                    }
                     if (msg.IsSuccess)
                     {
                         this.DialogResult = DialogResult.OK;
