@@ -13,36 +13,37 @@
 				<form action="#">
 					@using (Html.BeginForm("LOTGantt","Result", FormMethod.Get, null))
 					{
-						<div class="row">
-							<div class="col-2">
-								<div class="form-group">
-									<label>LOT_ID</label>
-									<div class="input-group input-group-lg">
-										<input type="search" id="lotID" name="lotID" class="form-control form-control-lg" style="height: 38px;">
-									</div>
-								</div>
-							</div>
-							<div class="col-2">
-								<div class="form-group">
-									<label>제품 ID</label>
-									<select class="select2" asp-items="ViewBag.Combo" id="productID" name="productID" style="width: 100%;">
-										@foreach (var p in ViewBag.Combo)
-										{
-											<option value=@p.Code>@p.CodeName</option>
-										}
-										<option></option>
-									</select>
-								</div>
-							</div>
-							<div class="col-14 align-self-end">
-								<div class="form-group">
-									<button type="submit" class="btn btn-lg btn-default" style="width: 38px; height: 38px; padding-left: 9px;
-                        padding-top: 6px; margin-left: 6px">
-										<i class="fa fa-search"></i>
-									</button>
+					<div class="row">
+						<div class="col-2">
+							<div class="form-group">
+								<label>LOT_ID</label>
+								<div class="input-group input-group-lg">
+									<input type="search" id="lotID" name="lotID" class="form-control form-control-lg" style="height: 38px;">
 								</div>
 							</div>
 						</div>
+						<div class="col-2">
+							<div class="form-group">
+								<label>제품 ID</label>
+								@*@Html.DropDownList("productID", (IEnumerable<SelectListItem>)ViewBag.Combo, null, null)*@
+								<select class="select2" asp-items="ViewBag.Combo" id="productID" name="productID" style="width: 100%;">
+									@foreach (var p in ViewBag.Combo)
+									{
+										<option value=@p.Code>@p.CodeName</option>
+									}
+									<option></option>
+								</select>
+							</div>
+						</div>
+						<div class="col-14 align-self-end">
+							<div class="form-group">
+								<button type="submit" class="btn btn-lg btn-default" style="width: 38px; height: 38px; padding-left: 9px;
+                        padding-top: 6px; margin-left: 6px">
+									<i class="fa fa-search"></i>
+								</button>
+							</div>
+						</div>
+					</div>
 					}
 
 				</form>
