@@ -19,9 +19,13 @@ namespace APSWinForm
         ServiceHelp srv = new ServiceHelp();
         List<LineVO> Lineinfo;
         List<ComboItemVO> list = null;
+        List<SetupVO> Setuplist;
+        bool existStepID = false;
+        bool existGroupID = false;
         public SETUP_REG()
         {
             InitializeComponent();
+            
         }
 
         public SETUP_REG(SetupVO vo)
@@ -40,6 +44,7 @@ namespace APSWinForm
             CommonUtil.ComboBinding(cboLine, Lineinfo, "LINE_ID", "LINE_ID");
             CommonUtil.ComboBinding(cboSite, Lineinfo, "SITE_ID", "SITE_ID");
             Modify();
+            Setuplist = await srv.GetListAsync("api/SETUP_TIME/SetupList", Setuplist);
         }
         private void Modify()
         {
@@ -121,6 +126,36 @@ namespace APSWinForm
             {
                 MessageBox.Show("필수 사항을 모두 입력해주세요");
             }
+        }
+
+        private void cboStep_Leave(object sender, EventArgs e)
+        {
+            var StepID = Setuplist.Find(p => p.LINE_ID ==cboLine.Text && p.SITE_ID == cboSite.Text && p.STEP_ID == cboStep.Text);
+
+            if (StepID != null)
+            {
+                lblExist.Visible = true;
+                existStepID = false;
+                this.ActiveControl = cboStep;
+            }
+            else
+                lblExist.Visible = false;
+            existStepID = true;
+        }
+
+        private void cboGroup_Leave(object sender, EventArgs e)
+        {
+            var GroupID = Setuplist.Find(p => p.LINE_ID == cboLine.Text && p.SITE_ID == cboSite.Text && p.EQP_GROUP == cboGroup.Text);
+
+            if (GroupID != null)
+            {
+                lblExist2.Visible = true;
+                existGroupID = false;
+                this.ActiveControl = cboStep;
+            }
+            else
+                lblExist2.Visible = false;
+                existGroupID = true;
         }
     }
 }

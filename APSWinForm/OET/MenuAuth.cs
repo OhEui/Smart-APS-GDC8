@@ -58,7 +58,7 @@ namespace APSWinForm
             DataGridViewUtil.SetInitGridView(dgvUser);
             DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 ID", "Id", colWidth: 100 , visibility:false);
             DataGridViewUtil.AddGridTextColumn(dgvUser, "사원번호", "Empno", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 이름", "Name", colWidth: 105);
+            DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 이름", "Name", colWidth: 130);
             DataGridViewUtil.AddGridTextColumn(dgvUser, "권한 ", "auth_name", colWidth: 150);
 
             DataGridViewUtil.SetInitGridView(dgvAuth);

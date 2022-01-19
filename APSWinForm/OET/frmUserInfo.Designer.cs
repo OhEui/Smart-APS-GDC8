@@ -94,7 +94,7 @@ namespace APSWinForm
             this.title.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(90, 46);
-            this.title.Text = "회원관리";
+            this.title.Text = "유저관리";
             // 
             // BtnDelete
             // 
@@ -195,10 +195,10 @@ namespace APSWinForm
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
-            this.label5.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.Location = new System.Drawing.Point(85, 391);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 14);
+            this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 67;
             this.label5.Text = "생년월일";
             // 
@@ -214,10 +214,10 @@ namespace APSWinForm
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
-            this.label4.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(85, 330);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 14);
+            this.label4.Size = new System.Drawing.Size(52, 16);
             this.label4.TabIndex = 65;
             this.label4.Text = "전화번호";
             // 
@@ -236,10 +236,10 @@ namespace APSWinForm
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
-            this.label3.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(85, 208);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 14);
+            this.label3.Size = new System.Drawing.Size(30, 16);
             this.label3.TabIndex = 63;
             this.label3.Text = "이름";
             // 
@@ -272,10 +272,10 @@ namespace APSWinForm
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
-            this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(85, 269);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 14);
+            this.label2.Size = new System.Drawing.Size(42, 16);
             this.label2.TabIndex = 61;
             this.label2.Text = "Email";
             // 
@@ -283,10 +283,10 @@ namespace APSWinForm
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
-            this.label1.Font = new System.Drawing.Font("ONE 모바일고딕 Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(85, 145);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 14);
+            this.label1.Size = new System.Drawing.Size(21, 16);
             this.label1.TabIndex = 60;
             this.label1.Text = "ID";
             // 
@@ -301,6 +301,7 @@ namespace APSWinForm
             // 
             // dgvUI
             // 
+            this.dgvUI.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvUI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUI.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUI.Location = new System.Drawing.Point(10, 59);

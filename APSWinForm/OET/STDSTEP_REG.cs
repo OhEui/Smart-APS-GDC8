@@ -90,6 +90,7 @@ namespace APSWinForm
 				existStepID = false;
 			}
 			else
+
 				existStepID = true;
 		}
 
