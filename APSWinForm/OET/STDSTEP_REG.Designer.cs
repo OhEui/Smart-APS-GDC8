@@ -138,7 +138,7 @@ namespace APSWinForm
 			// 
 			// txtStepSetup
 			// 
-			this.txtStepSetup.Location = new System.Drawing.Point(162, 290);
+			this.txtStepSetup.Location = new System.Drawing.Point(162, 289);
 			this.txtStepSetup.Name = "txtStepSetup";
 			this.txtStepSetup.Size = new System.Drawing.Size(121, 21);
 			this.txtStepSetup.TabIndex = 5;
