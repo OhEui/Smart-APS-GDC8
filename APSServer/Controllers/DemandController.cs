@@ -35,27 +35,6 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-        //Post : https://localhost:44309/api/Demand/DemandUpdate
-        [HttpPost]
-        [Route("DemandUpdate")]
-        public IHttpActionResult UpdateDemand(DemandVO Demd)
-        {
-            WebMessage msg = new WebMessage();
-            DemandDAC db = new DemandDAC();
-            bool result = db.UpdateDemand(Demd);
-
-            if (result)
-            {
-                msg.IsSuccess = true;
-                msg.ResultMessage = "성공적으로 수정되었습니다.";
-            }
-            else
-            {
-                msg.IsSuccess = false;
-                msg.ResultMessage = "저장 중 오류가 발생했습니다.";
-            }
-            return Ok(msg);
-        }
 
         //GET :  https://localhost:44309/api/Demand/AllList
         [HttpGet]

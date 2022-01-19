@@ -43,14 +43,7 @@ namespace APSServer.Controllers
             return dac.GetEqipmentARR();
         }
 
-        //GET :  http://localhost:58802/api/Product/Productlist
-        [HttpGet]
-        [Route("Productlist")]
-        public List<ProductVO> GetAllProduct()
-        {
-            ProductDAC db = new ProductDAC();
-            return db.GetAllProduct();
-        }
+        
 
         //Post : https://localhost:44309/api/EQUIPMENT/EQPnew
         [HttpPost]

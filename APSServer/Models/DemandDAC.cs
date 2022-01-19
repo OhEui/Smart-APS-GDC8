@@ -30,43 +30,30 @@ namespace APSServer.Models
             }
         }
 
-        public bool SaveDemand(DemandVO demand) // 저장
+        public bool SaveDemand(DemandVO demand)
         {
-            string sql = @"insert into DEMAND (DEMAND_VER, DEMAND_ID, PRODUCT_ID, CUSTOMER_ID, DUE_DATE, DEMAND_QTY)
-			                    values (@DEMAND_VER, @DEMAND_ID, @PRODUCT_ID, @CUSTOMER_ID, @DUE_DATE, @DEMAND_QTY)";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlCommand cmd = new SqlCommand())
             {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "SP_SaveDemand";
+                cmd.CommandType = CommandType.StoredProcedure;
+
                 cmd.Parameters.AddWithValue("@DEMAND_VER", demand.DEMAND_VER);
                 cmd.Parameters.AddWithValue("@DEMAND_ID", demand.DEMAND_ID);
                 cmd.Parameters.AddWithValue("@PRODUCT_ID", demand.PRODUCT_ID);
                 cmd.Parameters.AddWithValue("@CUSTOMER_ID ", demand.CUSTOMER_ID);
                 cmd.Parameters.AddWithValue("@DUE_DATE ", demand.DUE_DATE);
                 cmd.Parameters.AddWithValue("@DEMAND_QTY ", demand.DEMAND_QTY);
+                cmd.Parameters.AddWithValue("@user_id", demand.user_id);
+                cmd.Connection.Open();
+                int iRowAffect = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
 
-                return cmd.ExecuteNonQuery() > 0;
+                return (iRowAffect > 0);
             }
         }
 
-        public bool UpdateDemand(DemandVO Demd) //수정
-        {
-            string sql = @"update DEMAND set DEMAND_VER = @DEMAND_VER, DEMAND_ID =@DEMAND_ID, PRODUCT_ID = @PRODUCT_ID, CUSTOMER_ID = @CUSTOMER_ID, DUE_DATE = @DUE_DATE, DEMAND_QTY = @DEMAND_QTY where DEMAND_ID=@DEMAND_ID ;";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-                cmd.Parameters.AddWithValue("@DEMAND_VER", Demd.DEMAND_VER);
-                cmd.Parameters.AddWithValue("@DEMAND_ID", Demd.DEMAND_ID);
-                cmd.Parameters.AddWithValue("@PRODUCT_ID", Demd.PRODUCT_ID);
-                cmd.Parameters.AddWithValue("@CUSTOMER_ID", Demd.CUSTOMER_ID);
-                cmd.Parameters.AddWithValue("@DUE_DATE", Demd.DUE_DATE);
-                cmd.Parameters.AddWithValue("@DEMAND_QTY", Demd.DEMAND_QTY);
-
-                return cmd.ExecuteNonQuery() > 0;
-
-            }
-        }
-
-
+      
         public List<DemandVO> GetAllDemand() //전체
         {
                 string sql = "select DEMAND_VER, DEMAND_ID, PRODUCT_ID, CUSTOMER_ID, DUE_DATE, DEMAND_QTY from DEMAND";

@@ -11,5 +11,7 @@ namespace APSVO
       public string SITE_ID { get; set; }
       public string  LINE_ID { get; set; }
       public string  LINE_NAME { get; set; }
+        public string user_id { get; set; }
+
     }
 }

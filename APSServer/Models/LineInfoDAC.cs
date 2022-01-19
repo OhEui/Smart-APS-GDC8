@@ -30,37 +30,26 @@ namespace APSServer.Models
             }
         }
 
-        public bool SaveLineInfo(Line_Info_VO line_Info) // 저장
+        public bool SaveLineInfo(Line_Info_VO line_Info)
         {
-            string sql = @"insert into LINE_INFO (SITE_ID, LINE_ID, LINE_NAME)
-			                    values (@SITE_ID, @LINE_ID, @LINE_NAME)";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlCommand cmd = new SqlCommand())
             {
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "SP_SaveLineInfo";
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@SITE_ID", line_Info.SITE_ID);
                 cmd.Parameters.AddWithValue("@LINE_ID", line_Info.LINE_ID);
                 cmd.Parameters.AddWithValue("@LINE_NAME", line_Info.LINE_NAME);
+                cmd.Parameters.AddWithValue("@user_id", line_Info.user_id);
+                cmd.Connection.Open();
+                int iRowAffect = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
 
-                return cmd.ExecuteNonQuery() > 0;
+                return (iRowAffect > 0);
             }
+
         }
-
-        public bool UpdateLineInfo(Line_Info_VO line_Info) //수정
-        {
-            string sql = @"update LINE_INFO set SITE_ID = @SITE_ID, LINE_ID =@LINE_ID, LINE_NAME = @LINE_NAME where LINE_ID=@LINE_ID ;";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-                cmd.Parameters.AddWithValue("@SITE_ID", line_Info.SITE_ID);
-                cmd.Parameters.AddWithValue("@LINE_ID", line_Info.LINE_ID);
-                cmd.Parameters.AddWithValue("@LINE_NAME", line_Info.LINE_NAME);
-
-                return cmd.ExecuteNonQuery() > 0;
-
-            }
-        }
-
-
+      
         public List<Line_Info_VO> GetAllLineInfo() //전체
         {
             string sql = "select SITE_ID, LINE_ID, LINE_NAME from LINE_INFO";

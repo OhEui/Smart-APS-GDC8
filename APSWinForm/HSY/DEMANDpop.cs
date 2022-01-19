@@ -17,11 +17,16 @@ namespace APSWinForm
         ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> list;
         DemandVO dmadvo;
+        List<DemandVO> prvo;
+        bool existDDID = false;
 
         public DEMANDpop()
         {
             InitializeComponent();
             this.MaximizeBox = false;
+            existDDID = true;
+            txtID.ImeMode = ImeMode.Disable;
+            txtID.CharacterCasing = CharacterCasing.Upper;
         }
 
         public DEMANDpop(DemandVO demdInfo)
@@ -29,6 +34,8 @@ namespace APSWinForm
             InitializeComponent();
             this.dmadvo = demdInfo;
             this.MaximizeBox = false;
+            txtID.Enabled = false;
+            txtVer.Enabled = false;
         }
 
         public async void Combobinding()
@@ -55,6 +62,11 @@ namespace APSWinForm
 
         private async void button7_Click(object sender, EventArgs e)
         {
+            if (!isNotWhiteSpace())
+            {
+                return;
+            }
+
             DemandVO demandVO = new DemandVO
             {
                 DEMAND_VER = txtVer.Text,
@@ -62,7 +74,8 @@ namespace APSWinForm
                 PRODUCT_ID = cboPID.Text,
                 CUSTOMER_ID = cboCID.Text,
                 DUE_DATE = DateTime.Parse(txtdate.Text),
-                DEMAND_QTY = Convert.ToInt32(txtQTY.Text)
+                DEMAND_QTY = Convert.ToInt32(txtQTY.Text),
+                user_id = "test"
             };
 
             WebMessage wmsg = await srv.PostAsyncNone("api/Demand/SaveDemand", demandVO);
@@ -96,5 +109,35 @@ namespace APSWinForm
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void txtID_Leave(object sender, EventArgs e)
+        {
+            var ProdID = prvo.Find(p => p.DEMAND_ID == txtID.Text);
+
+            if (ProdID != null)
+            {
+                lblExist.Visible = true;
+                existDDID = false;
+                this.ActiveControl = txtID;
+            }
+            else
+
+                existDDID = true;
+        }
+
+        public bool isNotWhiteSpace()
+        {
+            //유효성 검사
+            if (!existDDID || string.IsNullOrWhiteSpace(txtID.Text) || string.IsNullOrWhiteSpace(cboPID.Text) || string.IsNullOrWhiteSpace(cboCID.Text) ||
+                string.IsNullOrWhiteSpace(txtdate.Text) || string.IsNullOrWhiteSpace(txtQTY.Text))
+            {
+                txtID.Focus();
+                return false;
+
+            }
+            return true;
+
+        }
+
     }
 }

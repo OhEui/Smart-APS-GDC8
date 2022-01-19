@@ -21,10 +21,10 @@ namespace APSWinForm
         public frmDEMAND()
         {
             InitializeComponent();
-            if (UserInfoStorage.Current.Auth_ID == 3)
-            {
-                BtnAdd.Visible = BtnDelete.Visible = BtnEdit.Visible = false;
-            }
+            //if (UserInfoStorage.Current.Auth_ID == 3)
+            //{
+            //    BtnAdd.Visible = BtnDelete.Visible = BtnEdit.Visible = false;
+            //}
         }
 
         private async void LoadData()
