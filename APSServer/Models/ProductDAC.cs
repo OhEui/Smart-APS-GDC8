@@ -29,39 +29,29 @@ namespace APSServer.Models
                 conn = null;
             }
         }
-        public bool SaveProduct(ProductVO product) // 저장
+
+        public bool SaveProduct(ProductVO vo)
         {
-            string sql = @"insert into PRODUCT (PRODUCT_ID, PRODUCT_TYPE, PRODUCT_NAME, PROCESS_ID, LOT_SIZE)
-			                    values (@PRODUCT_ID, @PRODUCT_TYPE, @PRODUCT_NAME, @PROCESS_ID, @LOT_SIZE)";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.Parameters.AddWithValue("@PRODUCT_ID", product.PRODUCT_ID);
-                cmd.Parameters.AddWithValue("@PRODUCT_TYPE", product.PRODUCT_TYPE);
-                cmd.Parameters.AddWithValue("@PRODUCT_NAME", product.PRODUCT_NAME);
-                cmd.Parameters.AddWithValue("@PROCESS_ID ", product.PROCESS_ID);
-                cmd.Parameters.AddWithValue("@LOT_SIZE ", product.LOT_SIZE);
+                cmd.Connection = new SqlConnection(strConn);
+                cmd.CommandText = "SP_SaveProduct";
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                return cmd.ExecuteNonQuery() > 0;
+                cmd.Parameters.AddWithValue("@PRODUCT_ID", vo.PRODUCT_ID);
+                cmd.Parameters.AddWithValue("@LOT_SIZE", vo.LOT_SIZE);
+                cmd.Parameters.AddWithValue("@PRODUCT_TYPE", vo.PRODUCT_TYPE);
+                cmd.Parameters.AddWithValue("@PRODUCT_NAME", vo.PRODUCT_NAME);
+                cmd.Parameters.AddWithValue("@PROCESS_ID", vo.PROCESS_ID);
+                cmd.Parameters.AddWithValue("@user_id", vo.user_id);
+                cmd.Connection.Open();
+                int iRowAffect = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
+                return (iRowAffect > 0);
             }
         }
 
-        public bool UpdateProduct(ProductVO product) //수정
-        {
-            string sql = @"update PRODUCT set PRODUCT_ID = @PRODUCT_ID, PRODUCT_TYPE =@PRODUCT_TYPE, PRODUCT_NAME = @PRODUCT_NAME, PROCESS_ID = @PROCESS_ID, LOT_SIZE = @LOT_SIZE where PRODUCT_ID=@PRODUCT_ID ;";
-
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-                cmd.Parameters.AddWithValue("@PRODUCT_ID", product.PRODUCT_ID);
-                cmd.Parameters.AddWithValue("@PRODUCT_TYPE", product.PRODUCT_TYPE);
-                cmd.Parameters.AddWithValue("@PRODUCT_NAME", product.PRODUCT_NAME);
-                cmd.Parameters.AddWithValue("@PROCESS_ID ", product.PROCESS_ID);
-                cmd.Parameters.AddWithValue("@LOT_SIZE ", product.LOT_SIZE);
-
-                return cmd.ExecuteNonQuery() > 0;
-
-            }
-        }
 
         public List<ProductVO> GetAllProduct() //전체
         {

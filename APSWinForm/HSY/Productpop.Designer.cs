@@ -50,6 +50,7 @@ namespace APSWinForm
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblExist = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -73,6 +74,7 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.panel9.Controls.Add(this.lblExist);
             this.panel9.Controls.Add(this.button2);
             this.panel9.Controls.Add(this.txtName);
             this.panel9.Controls.Add(this.txtID);
@@ -118,6 +120,7 @@ namespace APSWinForm
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(144, 21);
             this.txtID.TabIndex = 1;
+            this.txtID.Leave += new System.EventHandler(this.txtID_Leave);
             // 
             // label8
             // 
@@ -266,6 +269,17 @@ namespace APSWinForm
             this.label1.TabIndex = 1;
             this.label1.Text = "추가/수정";
             // 
+            // lblExist
+            // 
+            this.lblExist.AutoSize = true;
+            this.lblExist.ForeColor = System.Drawing.Color.Red;
+            this.lblExist.Location = new System.Drawing.Point(127, 59);
+            this.lblExist.Name = "lblExist";
+            this.lblExist.Size = new System.Drawing.Size(183, 12);
+            this.lblExist.TabIndex = 177;
+            this.lblExist.Text = "* 이미 존재하는 제품정보입니다.";
+            this.lblExist.Visible = false;
+            // 
             // Productpop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -311,5 +325,6 @@ namespace APSWinForm
         private System.Windows.Forms.TextBox txtProcess;
         private System.Windows.Forms.ComboBox cboType;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblExist;
     }
 }

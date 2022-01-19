@@ -52,6 +52,7 @@ namespace APSWinForm
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblExist = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -75,6 +76,7 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.panel9.Controls.Add(this.lblExist);
             this.panel9.Controls.Add(this.button3);
             this.panel9.Controls.Add(this.button7);
             this.panel9.Controls.Add(this.txtdate);
@@ -143,14 +145,14 @@ namespace APSWinForm
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(149, 86);
+            this.txtID.Location = new System.Drawing.Point(149, 32);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(121, 21);
             this.txtID.TabIndex = 2;
             // 
             // txtVer
             // 
-            this.txtVer.Location = new System.Drawing.Point(149, 39);
+            this.txtVer.Location = new System.Drawing.Point(149, 87);
             this.txtVer.Name = "txtVer";
             this.txtVer.Size = new System.Drawing.Size(121, 21);
             this.txtVer.TabIndex = 1;
@@ -169,7 +171,7 @@ namespace APSWinForm
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(69, 89);
+            this.label9.Location = new System.Drawing.Point(69, 35);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 14);
             this.label9.TabIndex = 50;
@@ -209,7 +211,7 @@ namespace APSWinForm
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("ONE 모바일고딕 OTF Regular", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(69, 42);
+            this.label2.Location = new System.Drawing.Point(69, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 14);
             this.label2.TabIndex = 141;
@@ -293,6 +295,17 @@ namespace APSWinForm
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
+            // lblExist
+            // 
+            this.lblExist.AutoSize = true;
+            this.lblExist.ForeColor = System.Drawing.Color.Red;
+            this.lblExist.Location = new System.Drawing.Point(89, 59);
+            this.lblExist.Name = "lblExist";
+            this.lblExist.Size = new System.Drawing.Size(183, 12);
+            this.lblExist.TabIndex = 178;
+            this.lblExist.Text = "* 이미 존재하는 수요정보입니다.";
+            this.lblExist.Visible = false;
+            // 
             // DEMANDpop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -340,5 +353,6 @@ namespace APSWinForm
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox cboPID;
         private System.Windows.Forms.ComboBox cboCID;
+        private System.Windows.Forms.Label lblExist;
     }
 }

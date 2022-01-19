@@ -17,10 +17,15 @@ namespace APSWinForm
         ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> list;
         ProductVO prodvo;
+        List<ProductVO> prvo;
+        bool existPdID = false;
 
         public Productpop()
         {
             InitializeComponent();
+            existPdID = true;
+            txtID.ImeMode = ImeMode.Disable;
+            txtID.CharacterCasing = CharacterCasing.Upper;
             this.MaximizeBox = false;
         }
 
@@ -28,6 +33,7 @@ namespace APSWinForm
         {
             list = await srv.GetListAsync("api/Common/CommonCode", list);
             CommonUtil.ComboBinding(cboType, list, "PRODUCT_TYPE", blankText: "선택");
+
 
             Modify();
         }
@@ -37,6 +43,7 @@ namespace APSWinForm
             InitializeComponent();
             this.prodvo = prodInfo;
             this.MaximizeBox = false;
+            txtID.Enabled = false;
         }
 
         private void Modify()
@@ -45,25 +52,31 @@ namespace APSWinForm
             {
                 txtID.Text = prodvo.PRODUCT_ID;
                 txtName.Text = prodvo.PRODUCT_NAME;
-                txtProcess.Text = prodvo.PROCESS_ID; 
+                txtProcess.Text = prodvo.PROCESS_ID;
                 txtSize.Text = prodvo.LOT_SIZE.ToString();
                 cboType.SelectedValue = prodvo.PRODUCT_TYPE;
             }
         }
 
-        //수정
+
         private async void button7_Click(object sender, EventArgs e)
         {
-            ProductVO productVO = new ProductVO
+            if (!isNotWhiteSpace())
+            {
+                return;
+            }
+
+            ProductVO newStep = new ProductVO
             {
                 PRODUCT_ID = txtID.Text,
                 PRODUCT_TYPE = cboType.Text,
                 PRODUCT_NAME = txtName.Text,
                 PROCESS_ID = txtProcess.Text,
-                LOT_SIZE = Convert.ToInt32(txtSize.Text)
+                LOT_SIZE = Convert.ToInt32(txtSize.Text),
+                user_id = "test"
             };
 
-            WebMessage msg = await srv.PostAsyncNone("api/Product/SaveProduct", productVO);
+            WebMessage msg = await srv.PostAsyncNone("api/Product/SaveProduct", newStep);
 
             if (msg.IsSuccess)
             {
@@ -74,9 +87,10 @@ namespace APSWinForm
         }
 
 
-        private void Productpop_Load(object sender, EventArgs e)
+        private async void Productpop_Load(object sender, EventArgs e)
         {
             Combobinding();
+            prvo = await srv.GetListAsync("api/Product/Products", prvo);
         }
 
 
@@ -94,6 +108,36 @@ namespace APSWinForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtID_Leave(object sender, EventArgs e)
+        {
+            var ProdID = prvo.Find(p => p.PRODUCT_ID == txtID.Text);
+
+            if (ProdID != null)
+            {
+                lblExist.Visible = true;
+                existPdID = false;
+                this.ActiveControl = txtID;
+            }
+            else
+                
+            existPdID = true;
+        
+        }
+
+        public bool isNotWhiteSpace()
+        {
+            //유효성 검사
+            if (!existPdID || string.IsNullOrWhiteSpace(txtID.Text) || string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtProcess.Text) ||
+                string.IsNullOrWhiteSpace(txtSize.Text) || string.IsNullOrWhiteSpace(cboType.Text))
+            {
+                txtID.Focus();
+                return false;
+
+            }
+            return true;
+
         }
     }
 }

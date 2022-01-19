@@ -13,6 +13,7 @@ namespace APSVO
         public string  PRODUCT_NAME { get; set; }
         public string  PROCESS_ID { get; set; }
         public int  LOT_SIZE { get; set; }
+        public string user_id { get; set; }
 
 
     }
