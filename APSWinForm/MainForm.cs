@@ -61,7 +61,7 @@ namespace APSWinForm
         {
             this.WindowState = FormWindowState.Maximized;
             tabControl1.Visible = true;
-            lblName.Text = "";
+            
             
            
         }
@@ -77,10 +77,10 @@ namespace APSWinForm
                 if (UserInfoStorage.Current.Auth_ID == 2 || UserInfoStorage.Current.Auth_ID == 3)
                 {
                     btnSystem.Visible = false;
-                    
+
                 }
 
-                lblName.Text = UserInfoStorage.Current.Name;
+                lblName.Text = "로그인된 계정:" + UserInfoStorage.Current.ID;
                 Show();
                 MessageBox.Show(UserInfoStorage.Current.ToString());
 
