@@ -138,10 +138,12 @@ namespace APSWinForm
                 lblExist.Visible = true;
                 existStepID = false;
                 this.ActiveControl = cboStep;
+                btnAdd.Enabled = false;
             }
             else
                 lblExist.Visible = false;
             existStepID = true;
+            btnAdd.Enabled = true;
         }
 
         private void cboGroup_Leave(object sender, EventArgs e)
@@ -153,10 +155,12 @@ namespace APSWinForm
                 lblExist2.Visible = true;
                 existGroupID = false;
                 this.ActiveControl = cboStep;
+                btnAdd.Enabled = false;
             }
             else
                 lblExist2.Visible = false;
                 existGroupID = true;
+                btnAdd.Enabled = true;
         }
     }
 }
