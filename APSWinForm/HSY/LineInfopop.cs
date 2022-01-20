@@ -35,6 +35,7 @@ namespace APSWinForm
             this.linevo = lineinfo;
             txtLID.Enabled = false;
             this.MaximizeBox = false;
+            existLID = true;
         }
 
         private void Modify()
