@@ -109,6 +109,7 @@ namespace APSWinForm
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(0, 12);
             this.txtID.TabIndex = 182;
+            this.txtID.Visible = false;
             // 
             // txtno
             // 
@@ -117,6 +118,7 @@ namespace APSWinForm
             this.txtno.Name = "txtno";
             this.txtno.Size = new System.Drawing.Size(0, 12);
             this.txtno.TabIndex = 181;
+            this.txtno.Visible = false;
             // 
             // txtName
             // 

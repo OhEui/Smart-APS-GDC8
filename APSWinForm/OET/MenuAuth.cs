@@ -128,10 +128,12 @@ namespace APSWinForm
                 }
                 MessageBox.Show(msg.ResultMessage);
 
+
             }
             dgvUser.DataSource = null;
             Userlist = await srv.GetListAsync("api/Auth/GetUser", Userlist);
             dgvUser.DataSource = Userlist;
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
