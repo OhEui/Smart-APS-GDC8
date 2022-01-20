@@ -44,6 +44,7 @@ namespace APSWinForm
             this.prodvo = prodInfo;
             this.MaximizeBox = false;
             txtID.Enabled = false;
+            existPdID = true;
         }
 
         private void Modify()

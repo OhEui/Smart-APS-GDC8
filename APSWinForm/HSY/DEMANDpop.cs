@@ -36,6 +36,7 @@ namespace APSWinForm
             this.MaximizeBox = false;
             txtID.Enabled = false;
             txtVer.Enabled = false;
+            existDDID = true;
         }
 
         public async void Combobinding()
