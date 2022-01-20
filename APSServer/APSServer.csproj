@@ -155,7 +155,6 @@
     <Compile Include="Controllers\EQUIPMENTController.cs" />
     <Compile Include="Controllers\Util\ExcelController.cs" />
     <Compile Include="Controllers\LineInfoController.cs" />
-    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\Util\MetaDataController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\Result2Controller.cs" />
@@ -178,7 +177,6 @@
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\LineInfoDAC.cs" />
     <Compile Include="Models\LOTDAC.cs" />
-    <Compile Include="Models\MenuDAC.cs" />
     <Compile Include="Models\ProductDAC.cs" />
     <Compile Include="Models\Result2DAC.cs" />
     <Compile Include="Models\ResultDAC.cs" />
