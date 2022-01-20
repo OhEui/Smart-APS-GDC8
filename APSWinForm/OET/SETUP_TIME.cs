@@ -153,6 +153,8 @@ namespace APSWinForm
                 SetupVO cursetup = SetupList.Find(p => p.SITE_ID == curSite && p.LINE_ID == curLine && p.EQP_GROUP == curEQPGroup && p.STEP_ID == curStep);
 
 
+                string deleteMsg = DBInfoStorage.GetDeleteMessage("SETUP_TIME", $"{curSite}/ {curLine} / {curEQPGroup} / {curStep}")
+                    ?? $"{curSite}/ {curLine} / {curEQPGroup} / {curStep} 항목을 삭제 하시겠습니까?";
                 if (MessageBox.Show($"{curSite}/ {curLine} / {curEQPGroup} / {curStep} 항목을 삭제 하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     string DeleteStr = $"api/SETUP_TIME/DelSetup?SITE_ID={curSite}&LINE_ID={curLine}&EQP_GROUP={curEQPGroup}&STEP_ID={curStep}";
