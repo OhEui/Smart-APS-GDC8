@@ -85,18 +85,18 @@ namespace APSWinForm
         {
             try
             {
-                int count = ds.Tables.Count - 1;
+                int count = ds.Tables.Count;
 
                 Excel.Application xlApp = new Excel.Application();
                 Excel.Workbook xlWorkBook = xlApp.Workbooks.Add();
                 Excel.Sheets xlWorkSheets = xlWorkBook.Worksheets;
-                xlWorkSheets.Add(Count: count - 1); // 1개는 기본으로 추가되어 있음
+                xlWorkSheets.Add(Count: count -1); // 1개는 기본으로 추가되어 있음
                 Excel.Worksheet xlWorkSheet =  null;
                 DataTable dt = null;
 
                 for (int i = 1; i <= count; i++) 
                 {
-                    dt = ds.Tables[i];
+                    dt = ds.Tables[i-1];
                     xlWorkSheet = (Excel.Worksheet)xlWorkSheets.get_Item(i); // 1 ~ count
                     xlWorkSheet.Name = ds.Tables[i - 1].TableName; // 0 ~ count - 1
 
