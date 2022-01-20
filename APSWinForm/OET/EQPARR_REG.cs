@@ -99,14 +99,10 @@ namespace APSWinForm
                     vo.PROC_TIME = Convert.ToInt32(numProcess.Text.Trim());
                     vo.user_id = "test";
 
-                    var EQP = EQPARRList.Find(p => p.EQP_ID == cboEQP.Text && p.PRODUCT_ID == cboProduct.Text && p.PROCESS_ID == cboProcess.Text && p.STEP_ID == cboStep.Text);
-                    if(EQP !=null)
-                    {
-                        MessageBox.Show("중복되는 데이터입니다.다른 데이터를 입력해주십시오");
-                        return;
-                    }
+                    
 
                     WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPArrnew", vo);
+
 
 
                     if (msg.IsSuccess)
@@ -128,7 +124,7 @@ namespace APSWinForm
                     newvo.user_id = "test";
                     WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPArrnew", newvo);
 
-
+                   
                     if (msg.IsSuccess)
                     {
                         this.DialogResult = DialogResult.OK;

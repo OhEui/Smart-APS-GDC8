@@ -91,8 +91,8 @@ namespace APSWinForm
 				existStepID = false;
 			}
 			else
-
-				existStepID = true;
+				lblStepIDExist.Visible = false;
+			    existStepID = true;
 		}
 
 		public bool isNotWhiteSpace()
