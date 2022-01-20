@@ -32,10 +32,10 @@ namespace APSWinForm
         {
             DataGridViewUtil.SetInitGridView(dgvUI);
             DataGridViewUtil.AddGridTextColumn(dgvUI, "ID", "UserName", colWidth: 160, align: DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(dgvUI, "이름", "Name", colWidth: 60, align: DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(dgvUI, "이메일", "Email", colWidth: 90, align: DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(dgvUI, "전화번호", "Phone", colWidth: 100, align: DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(dgvUI, "생년월일", "Birthday", colWidth: 120, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvUI, "이름", "Name", colWidth: 100, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvUI, "이메일", "Email", colWidth: 200, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvUI, "전화번호", "Phone", colWidth: 200, align: DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvUI, "생년월일", "Birthday", colWidth: 180, align: DataGridViewContentAlignment.MiddleCenter);
 
             LoadData();
         }

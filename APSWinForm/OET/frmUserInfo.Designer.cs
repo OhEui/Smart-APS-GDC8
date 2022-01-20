@@ -63,9 +63,9 @@ namespace APSWinForm
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 581);
+            this.panel5.Location = new System.Drawing.Point(0, 642);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1071, 10);
+            this.panel5.Size = new System.Drawing.Size(1137, 10);
             this.panel5.TabIndex = 56;
             // 
             // toolStrip2
@@ -83,7 +83,7 @@ namespace APSWinForm
             this.XlsDown});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1071, 49);
+            this.toolStrip2.Size = new System.Drawing.Size(1137, 49);
             this.toolStrip2.TabIndex = 78;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -160,7 +160,7 @@ namespace APSWinForm
             this.panel2.Location = new System.Drawing.Point(0, 49);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.panel2.Size = new System.Drawing.Size(1071, 10);
+            this.panel2.Size = new System.Drawing.Size(1137, 10);
             this.panel2.TabIndex = 79;
             // 
             // panel6
@@ -178,14 +178,14 @@ namespace APSWinForm
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(737, 59);
+            this.panel6.Location = new System.Drawing.Point(803, 59);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(334, 522);
+            this.panel6.Size = new System.Drawing.Size(334, 583);
             this.panel6.TabIndex = 80;
             // 
             // txtB
             // 
-            this.txtB.Location = new System.Drawing.Point(88, 408);
+            this.txtB.Location = new System.Drawing.Point(88, 424);
             this.txtB.Name = "txtB";
             this.txtB.Size = new System.Drawing.Size(165, 21);
             this.txtB.TabIndex = 68;
@@ -196,7 +196,7 @@ namespace APSWinForm
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(85, 391);
+            this.label5.Location = new System.Drawing.Point(85, 407);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 67;
@@ -204,7 +204,7 @@ namespace APSWinForm
             // 
             // txtP
             // 
-            this.txtP.Location = new System.Drawing.Point(88, 347);
+            this.txtP.Location = new System.Drawing.Point(88, 363);
             this.txtP.Name = "txtP";
             this.txtP.Size = new System.Drawing.Size(165, 21);
             this.txtP.TabIndex = 66;
@@ -215,7 +215,7 @@ namespace APSWinForm
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(85, 330);
+            this.label4.Location = new System.Drawing.Point(85, 346);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 16);
             this.label4.TabIndex = 65;
@@ -225,7 +225,7 @@ namespace APSWinForm
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(138, 72);
+            this.pictureBox3.Location = new System.Drawing.Point(138, 88);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(59, 56);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -237,7 +237,7 @@ namespace APSWinForm
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(85, 208);
+            this.label3.Location = new System.Drawing.Point(85, 224);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 16);
             this.label3.TabIndex = 63;
@@ -245,7 +245,7 @@ namespace APSWinForm
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(88, 225);
+            this.txtName.Location = new System.Drawing.Point(88, 241);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(165, 21);
             this.txtName.TabIndex = 58;
@@ -253,7 +253,7 @@ namespace APSWinForm
             // 
             // txtE
             // 
-            this.txtE.Location = new System.Drawing.Point(88, 286);
+            this.txtE.Location = new System.Drawing.Point(88, 302);
             this.txtE.Name = "txtE";
             this.txtE.Size = new System.Drawing.Size(165, 21);
             this.txtE.TabIndex = 62;
@@ -261,7 +261,7 @@ namespace APSWinForm
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(88, 162);
+            this.txtID.Location = new System.Drawing.Point(88, 178);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(165, 21);
@@ -273,7 +273,7 @@ namespace APSWinForm
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(85, 269);
+            this.label2.Location = new System.Drawing.Point(85, 285);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 16);
             this.label2.TabIndex = 61;
@@ -284,7 +284,7 @@ namespace APSWinForm
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(85, 145);
+            this.label1.Location = new System.Drawing.Point(85, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 16);
             this.label1.TabIndex = 60;
@@ -296,7 +296,7 @@ namespace APSWinForm
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 59);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 522);
+            this.panel3.Size = new System.Drawing.Size(10, 583);
             this.panel3.TabIndex = 81;
             // 
             // dgvUI
@@ -307,7 +307,7 @@ namespace APSWinForm
             this.dgvUI.Location = new System.Drawing.Point(10, 59);
             this.dgvUI.Name = "dgvUI";
             this.dgvUI.RowTemplate.Height = 23;
-            this.dgvUI.Size = new System.Drawing.Size(727, 522);
+            this.dgvUI.Size = new System.Drawing.Size(793, 583);
             this.dgvUI.TabIndex = 82;
             this.dgvUI.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUI_CellDoubleClick);
             // 
@@ -315,7 +315,7 @@ namespace APSWinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 591);
+            this.ClientSize = new System.Drawing.Size(1137, 652);
             this.Controls.Add(this.dgvUI);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);

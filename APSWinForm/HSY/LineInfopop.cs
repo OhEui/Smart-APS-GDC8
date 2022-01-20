@@ -36,6 +36,7 @@ namespace APSWinForm
             txtLID.Enabled = false;
             this.MaximizeBox = false;
             existLID = true;
+            txtSID.Enabled = false;
         }
 
         private void Modify()

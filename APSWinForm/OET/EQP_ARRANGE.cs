@@ -161,7 +161,9 @@ namespace APSWinForm
 
                 EqpArrangeVO curEQPARR = ARRList.Find(p => p.PRODUCT_ID == curProduct && p.PROCESS_ID == curProcess && p.STEP_ID == curStep && p.EQP_ID == curEQP);
 
-                if (MessageBox.Show($"{curProduct}/ {curStep} / {curEQP}항목을 삭제 하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                string deleteMsg = DBInfoStorage.GetDeleteMessage("EQP_ARRANGE", $"{curProduct}/ {curStep} / {curEQP}")
+    ?? $"{curProduct}/ {curStep} / {curEQP}항목을 삭제 하시겠습니까?";
+                if (MessageBox.Show(deleteMsg, "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     string DeleteStr = $"api/EQUIPMENT/DelEQPARR?PRODUCT_ID={curProduct}&PROCESS_ID={curProcess}&STEP_ID={curStep}&EQP_ID={curEQP}";
                     //WebMessage msg = await srv.GetAsync($"api/EQUIPMENT/DelEQPARR/{EQPARRID}}");
