@@ -130,6 +130,9 @@ namespace APSWinForm
             {
                 string cur = (Convert.ToString(dgvEQP.Rows[temp.RowIndex].Cells[0].Value));
 
+                string deleteMsg = DBInfoStorage.GetDeleteMessage("EQUIPMENT", $"{cur}")
+    ?? $"{cur}항목을 삭제 하시겠습니까?";
+
                 if (MessageBox.Show($"{cur}항목을 삭제 하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
 

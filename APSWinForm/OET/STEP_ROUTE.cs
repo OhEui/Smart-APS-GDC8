@@ -137,13 +137,15 @@ namespace APSWinForm
 		{
 			//삭제
 			if (dgvStepRoute.CurrentCell == null) return;
-
+			
 			string curProcID = dgvStepRoute["PROCESS_ID", dgvStepRoute.CurrentRow.Index].Value.ToString();
 			string curStepID = dgvStepRoute["STEP_ID", dgvStepRoute.CurrentRow.Index].Value.ToString();
+			string deleteMsg = DBInfoStorage.GetDeleteMessage("STEP_ROUTE", $"{curProcID} / {curStepID}") 
+				?? $"{curProcID} / {curStepID} 항목을 삭제 하시겠습니까?";
 
 			StepRouteVO curStepRoute = stepRouteList.Find(p => p.PROCESS_ID == curProcID && p.STEP_ID == curStepID);
 
-			DialogResult msgResullt = MessageBox.Show($"{curProcID} / {curStepID} 항목을 삭제 하시겠습니까?", $"{Properties.Resources.STD_STEP_INFO} 삭제", MessageBoxButtons.OKCancel);
+			DialogResult msgResullt = MessageBox.Show(deleteMsg, $"{Properties.Resources.STD_STEP_INFO} 삭제", MessageBoxButtons.OKCancel);
 
 			if (msgResullt == DialogResult.Cancel) return;
 			else
