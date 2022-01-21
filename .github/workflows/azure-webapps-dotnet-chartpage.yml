@@ -1,6 +1,8 @@
 name: Deploy ASP.NET MVC App deploy to Azure Web App
 
+
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'APSMVC/**'
