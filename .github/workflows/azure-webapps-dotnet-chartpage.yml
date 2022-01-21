@@ -3,7 +3,7 @@ name: Deploy ASP.NET MVC App deploy to Azure Web App
 on:
   push:
     paths:
-      - 'APSServer/**'
+      - 'APSMVC/**'
 
 env:
   AZURE_WEBAPP_NAME: 'Team2APSResult'    # set this to your application's name
