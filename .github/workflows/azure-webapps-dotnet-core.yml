@@ -1,6 +1,7 @@
 name: Deploy ASP.NET MVC App deploy to Azure Web App
 
 on:
+  workflow_dispatch: # 수동으로 workflow를 실행가능
   push:
     paths:
       - 'APSServer/**'
