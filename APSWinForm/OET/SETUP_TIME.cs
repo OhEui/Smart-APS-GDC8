@@ -71,6 +71,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvSetup, Properties.Resources.STEP_ID, "STEP_ID", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvSetup, Properties.Resources.TIME, "TIME", colWidth: 100, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvSetup, "수정자", "user_id", colWidth: 100, visibility:false);
+            dgvSetup.ClearSelection();
             dgvLoad();
         }
 

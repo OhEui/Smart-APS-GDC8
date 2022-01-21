@@ -73,6 +73,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.LINE_ID, "LINE_ID", colWidth: 200, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.EQP_GROUP, "EQP_GROUP", colWidth: 200,align : DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "수정자", "user_id", colWidth: 100,visibility:false);
+            dgvEQP.ClearSelection();
             dgvLoad();
             
 

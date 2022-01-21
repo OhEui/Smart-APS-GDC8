@@ -75,7 +75,7 @@ namespace APSWinForm
             DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.TACT_TIME, "TACT_TIME", colWidth: 150,align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, Properties.Resources.PROC_TIME, "PROC_TIME", colWidth: 150, align: DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvEQP, "수정자", "user_id", colWidth: 130,visibility:false);
-
+            dgvEQP.ClearSelection();
             dgvLoad();
 
         }
