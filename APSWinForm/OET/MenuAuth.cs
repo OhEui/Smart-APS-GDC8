@@ -56,15 +56,15 @@ namespace APSWinForm
             dgvAuth.Columns.Add(chk);
 
             DataGridViewUtil.SetInitGridView(dgvUser);
-            DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 ID", "Id", colWidth: 120 , visibility:false);
-            DataGridViewUtil.AddGridTextColumn(dgvUser, "사원번호", "Empno", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 이름", "Name", colWidth: 150);
-            DataGridViewUtil.AddGridTextColumn(dgvUser, "권한 ", "auth_name", colWidth: 170);
+            DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 ID", "Id", colWidth: 135 , visibility:false);
+            DataGridViewUtil.AddGridTextColumn(dgvUser, "사원번호", "Empno", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 135);
+            DataGridViewUtil.AddGridTextColumn(dgvUser, "사용자 이름", "Name", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 180);
+            DataGridViewUtil.AddGridTextColumn(dgvUser, "권한 ", "auth_name", colWidth: 200);
 
             DataGridViewUtil.SetInitGridView(dgvAuth);
-            DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한 ID", "Auth_ID", colWidth: 125, visibility: false);
-            DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한", "Auth_Name", colWidth: 125);
-            DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한기능", "auth_Desc", colWidth: 270);
+            DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한 ID", "Auth_ID", colWidth: 150, visibility: false);
+            DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한", "Auth_Name", colWidth: 200);
+            DataGridViewUtil.AddGridTextColumn(dgvAuth, "권한기능", "auth_Desc", colWidth: 300);
 
 
 
