@@ -19,15 +19,9 @@ namespace APSMVC.Controllers
         public async Task<ActionResult> EQPGantt(string[] EQP_GROUP=null, string[] EQP_ID=null, string[] PRODUCT_ID=null,
             DateTime? Start_Date = null, DateTime? End_Date = null)
         {
-
             var access_token = Request.Headers["authorization"];
             ServiceHelp srv = new ServiceHelp(true, access_token);
             ChartCommonData commonData = await srv.GetListAsync<ChartCommonData>($"api/Result/EQPGantt/Common", null); // 설비그룹, 설비ID, 제품ID 가져오기
-
-            var resUserInfo = await srv.GetListAsync("api/Account/UserInfo", new UserInfo());
-            if (resUserInfo != null)
-                ViewBag.UserName = resUserInfo.Name;
-
             List<ComboItemVO> comboItem = commonData.ComboItemList;
 
             string result = await srv.PostJsonStringAsync($"api/Result/EQPGantt/Data", new ReqEQPGantt() 
@@ -49,12 +43,6 @@ namespace APSMVC.Controllers
             var productIDList = comboItem.Where((i) => i.Category == "PRODUCT_ID").ToList();
             var categoryList = eqpIDList.Select((i) => new CategoryElement(i.Code)).ToList();
 
-            /*
-            ComboItemVO blankItem = new ComboItemVO() { Code = "", CodeName = "전체" };
-            eqpIDList.Insert(0, blankItem);
-            eqpGroupList.Insert(0, blankItem);
-            productIDList.Insert(0, blankItem);
-            */
             List<string> qParameters = new List<string>();
             if (EQP_GROUP!=null)
                 qParameters.AddRange(EQP_GROUP);
@@ -90,11 +78,6 @@ namespace APSMVC.Controllers
         {
             var access_token = Request.Headers["authorization"];
             ServiceHelp srv = new ServiceHelp(true, access_token);
-
-            var resUserInfo = await srv.GetListAsync("api/Account/UserInfo", new UserInfo());
-            if (resUserInfo != null)
-                ViewBag.UserName = resUserInfo.Name;
-
             ChartCommonData commonData = await srv.GetListAsync<ChartCommonData>($"api/Result/Utilization/Common", null); // 설비그룹, 설비ID, 제품ID 가져오기
             List<ComboItemVO> comboItem = commonData.ComboItemList;
 
@@ -104,6 +87,11 @@ namespace APSMVC.Controllers
                 MachineState = MACHINE_STATE,
                 VersionNo = VERSION_NO
             });  // 차트 데이터 가져오기
+
+            if (result == null)
+            {
+                return new HttpUnauthorizedResult();
+            }
 
             var chartData = result;
             var mslist = comboItem.Where((i) => i.Category == "MACHINE_STATE").ToList();
