@@ -363,7 +363,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResultController2.cs" />
     <Compile Include="Controllers\ResultController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -414,7 +413,6 @@
     <Content Include="Views\Result\EQPGantt.cshtml" />
     <Content Include="Views\Result\LOTGantt.cshtml" />
     <Content Include="Views\Result\Utilization.cshtml" />
-    <Content Include="Views\User\Login.cshtml" />
     <Content Include="pages\plugins\daterangepicker\bower.json" />
     <Content Include="pages\plugins\daterangepicker\example\browserify\README.md" />
     <Content Include="Views\_Layout_old.cshtml" />

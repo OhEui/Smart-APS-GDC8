@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APSMVC", "APSMVC\APSMVC.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APSUtil.Http", "APSUtil\Http\APSUtil.Http.csproj", "{79342BF6-8059-4F29-B21E-846BB7F9CAD4}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupWinForm", "SetupWinForm\SetupWinForm.vdproj", "{7ACE8DB5-490A-492C-A0F1-2F0A7A78EFB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,8 @@ Global
 		{79342BF6-8059-4F29-B21E-846BB7F9CAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79342BF6-8059-4F29-B21E-846BB7F9CAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79342BF6-8059-4F29-B21E-846BB7F9CAD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ACE8DB5-490A-492C-A0F1-2F0A7A78EFB1}.Debug|Any CPU.ActiveCfg = Debug
+		{7ACE8DB5-490A-492C-A0F1-2F0A7A78EFB1}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

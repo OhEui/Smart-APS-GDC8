@@ -41,7 +41,7 @@ namespace APSMVC.Controllers
 
             if (result == null)
             {
-                return Redirect("/user/login");
+                return new HttpUnauthorizedResult();
             }
 
             var eqpIDList= comboItem.Where((i) => i.Category == "EQP_ID").ToList();
