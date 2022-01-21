@@ -17,22 +17,17 @@
 						<div class="col-2">
 							<div class="form-group">
 								<label>LOT_ID</label>
-								<div class="input-group input-group-lg">
-									<input type="search" id="lotID" name="lotID" class="form-control form-control-lg" style="height: 38px;">
-								</div>
+                                <div class="input-group input-group-lg">
+                                    @Html.TextBox(name: "lotID", value: null, new { type = "search", id = "lotID", @class="form-control form-control-lg", style="height: 38px;" })
+                                    <!--<input type="search" id="lotID" name="lotID" class="form-control form-control-lg" style="height: 38px;">-->
+                                </div>
 							</div>
 						</div>
 						<div class="col-2">
 							<div class="form-group">
 								<label>제품 ID</label>
-								@*@Html.DropDownList("productID", (IEnumerable<SelectListItem>)ViewBag.Combo, null, null)*@
-								<select class="select2" asp-items="ViewBag.Combo" id="productID" name="productID" style="width: 100%;">
-									@foreach (var p in ViewBag.Combo)
-									{
-										<option value=@p.Code>@p.CodeName</option>
-									}
-									<option></option>
-								</select>
+								@Html.DropDownList("productID", new SelectList(ViewBag.Combo, "Code", "CodeName"), null, new { @class = "select2", id = "productID" , style = "width: 100%;" })
+
 							</div>
 						</div>
 						<div class="col-14 align-self-end">
