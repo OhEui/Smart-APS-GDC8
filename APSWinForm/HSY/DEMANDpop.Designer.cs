@@ -32,6 +32,7 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DEMANDpop));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.lblExist = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.txtdate = new System.Windows.Forms.MaskedTextBox();
@@ -45,14 +46,13 @@ namespace APSWinForm
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboPID = new System.Windows.Forms.ComboBox();
-            this.cboCID = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblExist = new System.Windows.Forms.Label();
+            this.cboCID = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -96,6 +96,17 @@ namespace APSWinForm
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(355, 392);
             this.panel9.TabIndex = 42;
+            // 
+            // lblExist
+            // 
+            this.lblExist.AutoSize = true;
+            this.lblExist.ForeColor = System.Drawing.Color.Red;
+            this.lblExist.Location = new System.Drawing.Point(89, 59);
+            this.lblExist.Name = "lblExist";
+            this.lblExist.Size = new System.Drawing.Size(183, 12);
+            this.lblExist.TabIndex = 178;
+            this.lblExist.Text = "* 이미 존재하는 수요정보입니다.";
+            this.lblExist.Visible = false;
             // 
             // button3
             // 
@@ -227,16 +238,6 @@ namespace APSWinForm
             this.cboPID.Size = new System.Drawing.Size(121, 20);
             this.cboPID.TabIndex = 3;
             // 
-            // cboCID
-            // 
-            this.cboCID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboCID.FormattingEnabled = true;
-            this.cboCID.Location = new System.Drawing.Point(149, 180);
-            this.cboCID.Name = "cboCID";
-            this.cboCID.Size = new System.Drawing.Size(121, 20);
-            this.cboCID.TabIndex = 4;
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(172)))), ((int)(((byte)(199)))));
@@ -295,16 +296,12 @@ namespace APSWinForm
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // lblExist
+            // cboCID
             // 
-            this.lblExist.AutoSize = true;
-            this.lblExist.ForeColor = System.Drawing.Color.Red;
-            this.lblExist.Location = new System.Drawing.Point(89, 59);
-            this.lblExist.Name = "lblExist";
-            this.lblExist.Size = new System.Drawing.Size(183, 12);
-            this.lblExist.TabIndex = 178;
-            this.lblExist.Text = "* 이미 존재하는 수요정보입니다.";
-            this.lblExist.Visible = false;
+            this.cboCID.Location = new System.Drawing.Point(149, 179);
+            this.cboCID.Name = "cboCID";
+            this.cboCID.Size = new System.Drawing.Size(121, 21);
+            this.cboCID.TabIndex = 179;
             // 
             // DEMANDpop
             // 
@@ -352,7 +349,7 @@ namespace APSWinForm
         protected System.Windows.Forms.Button button7;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox cboPID;
-        private System.Windows.Forms.ComboBox cboCID;
         private System.Windows.Forms.Label lblExist;
+        private System.Windows.Forms.TextBox cboCID;
     }
 }
