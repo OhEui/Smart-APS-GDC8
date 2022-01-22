@@ -681,7 +681,7 @@ namespace APSWinForm
             this.IsMdiContainer = true;
             this.Location = new System.Drawing.Point(2000, 0);
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "APS";
             this.Load += new System.EventHandler(this.MainForm2_Load);
             this.menuStrip1.ResumeLayout(false);

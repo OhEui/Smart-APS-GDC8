@@ -92,7 +92,6 @@
     <Content Include="Global.asax" />
     <Content Include="pages\amCharts\css\default.css" />
     <Content Include="pages\assets\dist\css\bootstrap.min.css" />
-    <Content Include="pages\assets\dist\css\Login.css" />
     <Content Include="pages\assets\dist\js\bootstrap.bundle.min.js" />
     <Content Include="pages\assets\dist\svg\bootstrap-outline.svg" />
     <Content Include="pages\assets\dist\svg\bootstrap-solid.svg" />
@@ -364,7 +363,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResultController2.cs" />
     <Compile Include="Controllers\ResultController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -415,10 +413,10 @@
     <Content Include="Views\Result\EQPGantt.cshtml" />
     <Content Include="Views\Result\LOTGantt.cshtml" />
     <Content Include="Views\Result\Utilization.cshtml" />
-    <Content Include="Views\User\Login.cshtml" />
     <Content Include="pages\plugins\daterangepicker\bower.json" />
     <Content Include="pages\plugins\daterangepicker\example\browserify\README.md" />
     <Content Include="Views\_Layout_old.cshtml" />
+    <None Include="Properties\PublishProfiles\Team2APSResult - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

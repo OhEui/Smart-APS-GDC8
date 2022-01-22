@@ -32,6 +32,7 @@ namespace APSWinForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EQPARR_REG));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtStep = new System.Windows.Forms.TextBox();
             this.cboStep = new System.Windows.Forms.ComboBox();
@@ -89,6 +90,7 @@ namespace APSWinForm
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.panel9.Controls.Add(this.label2);
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Controls.Add(this.panel5);
             this.panel9.Controls.Add(this.panel4);
@@ -109,6 +111,17 @@ namespace APSWinForm
             this.panel9.Size = new System.Drawing.Size(370, 427);
             this.panel9.TabIndex = 42;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(66, 315);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(183, 12);
+            this.label2.TabIndex = 180;
+            this.label2.Text = "* 이미 존재하는 설비배치입니다!";
+            this.label2.Visible = false;
+            // 
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -121,7 +134,7 @@ namespace APSWinForm
             // 
             // txtStep
             // 
-            this.txtStep.Location = new System.Drawing.Point(-1, -1);
+            this.txtStep.Location = new System.Drawing.Point(-1, -2);
             this.txtStep.Name = "txtStep";
             this.txtStep.ReadOnly = true;
             this.txtStep.Size = new System.Drawing.Size(130, 21);
@@ -138,6 +151,7 @@ namespace APSWinForm
             this.cboStep.Name = "cboStep";
             this.cboStep.Size = new System.Drawing.Size(128, 20);
             this.cboStep.TabIndex = 2;
+            this.cboStep.Leave += new System.EventHandler(this.cboStep_Leave);
             // 
             // panel5
             // 
@@ -151,7 +165,7 @@ namespace APSWinForm
             // 
             // txtProcess
             // 
-            this.txtProcess.Location = new System.Drawing.Point(-1, -1);
+            this.txtProcess.Location = new System.Drawing.Point(-1, -2);
             this.txtProcess.Name = "txtProcess";
             this.txtProcess.ReadOnly = true;
             this.txtProcess.Size = new System.Drawing.Size(130, 21);
@@ -168,6 +182,7 @@ namespace APSWinForm
             this.cboProcess.Name = "cboProcess";
             this.cboProcess.Size = new System.Drawing.Size(128, 20);
             this.cboProcess.TabIndex = 2;
+            this.cboProcess.Leave += new System.EventHandler(this.cboStep_Leave);
             // 
             // panel4
             // 
@@ -181,7 +196,7 @@ namespace APSWinForm
             // 
             // txtProduct
             // 
-            this.txtProduct.Location = new System.Drawing.Point(-2, -1);
+            this.txtProduct.Location = new System.Drawing.Point(-2, -2);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.ReadOnly = true;
             this.txtProduct.Size = new System.Drawing.Size(131, 21);
@@ -198,6 +213,7 @@ namespace APSWinForm
             this.cboProduct.Name = "cboProduct";
             this.cboProduct.Size = new System.Drawing.Size(128, 20);
             this.cboProduct.TabIndex = 2;
+            this.cboProduct.Leave += new System.EventHandler(this.cboStep_Leave);
             // 
             // panel3
             // 
@@ -208,10 +224,11 @@ namespace APSWinForm
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(130, 20);
             this.panel3.TabIndex = 178;
+            this.panel3.Leave += new System.EventHandler(this.cboStep_Leave);
             // 
             // txtEQP
             // 
-            this.txtEQP.Location = new System.Drawing.Point(-1, -1);
+            this.txtEQP.Location = new System.Drawing.Point(-1, -2);
             this.txtEQP.Name = "txtEQP";
             this.txtEQP.ReadOnly = true;
             this.txtEQP.Size = new System.Drawing.Size(130, 21);
@@ -465,5 +482,6 @@ namespace APSWinForm
         private System.Windows.Forms.ComboBox cboProduct;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cboEQP;
+        private System.Windows.Forms.Label label2;
     }
 }

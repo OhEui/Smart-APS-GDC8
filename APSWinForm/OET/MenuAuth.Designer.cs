@@ -48,19 +48,22 @@ namespace APSWinForm
             this.BtnAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.XlsDown = new System.Windows.Forms.ToolStripButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dgvAuth = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitter4 = new System.Windows.Forms.Splitter();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.dgvUser = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.splitter3 = new System.Windows.Forms.Splitter();
+            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.dgvAuth = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAuth)).BeginInit();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAuth)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -74,7 +77,7 @@ namespace APSWinForm
             this.panel2.Location = new System.Drawing.Point(0, 49);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.panel2.Size = new System.Drawing.Size(960, 124);
+            this.panel2.Size = new System.Drawing.Size(1005, 124);
             this.panel2.TabIndex = 67;
             // 
             // panel1
@@ -84,7 +87,7 @@ namespace APSWinForm
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Location = new System.Drawing.Point(10, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(940, 363);
+            this.panel1.Size = new System.Drawing.Size(985, 363);
             this.panel1.TabIndex = 55;
             // 
             // panel9
@@ -99,7 +102,7 @@ namespace APSWinForm
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(10, 10);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(940, 104);
+            this.panel9.Size = new System.Drawing.Size(985, 104);
             this.panel9.TabIndex = 42;
             // 
             // txtID
@@ -143,7 +146,7 @@ namespace APSWinForm
             this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(824, 60);
+            this.btnReset.Location = new System.Drawing.Point(869, 60);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(74, 30);
             this.btnReset.TabIndex = 56;
@@ -157,7 +160,7 @@ namespace APSWinForm
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(78)))), ((int)(((byte)(106)))));
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(824, 20);
+            this.btnSearch.Location = new System.Drawing.Point(869, 20);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(74, 30);
             this.btnSearch.TabIndex = 55;
@@ -168,7 +171,7 @@ namespace APSWinForm
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(950, 10);
+            this.panel8.Location = new System.Drawing.Point(995, 10);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(10, 104);
             this.panel8.TabIndex = 41;
@@ -196,7 +199,7 @@ namespace APSWinForm
             this.XlsDown});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(960, 49);
+            this.toolStrip1.Size = new System.Drawing.Size(1005, 49);
             this.toolStrip1.TabIndex = 66;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -264,13 +267,79 @@ namespace APSWinForm
             this.XlsDown.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.XlsDown.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // panel4
+            // splitContainer1
             // 
-            this.panel4.Controls.Add(this.dgvAuth);
-            this.panel4.Location = new System.Drawing.Point(384, 179);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(346, 404);
-            this.panel4.TabIndex = 65;
+            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 173);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.splitter4);
+            this.splitContainer1.Panel1.Controls.Add(this.splitter1);
+            this.splitContainer1.Panel1.Controls.Add(this.dgvUser);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitter3);
+            this.splitContainer1.Panel2.Controls.Add(this.splitter2);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvAuth);
+            this.splitContainer1.Size = new System.Drawing.Size(960, 469);
+            this.splitContainer1.SplitterDistance = 440;
+            this.splitContainer1.TabIndex = 68;
+            // 
+            // splitter4
+            // 
+            this.splitter4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.splitter4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitter4.Location = new System.Drawing.Point(10, 459);
+            this.splitter4.Name = "splitter4";
+            this.splitter4.Size = new System.Drawing.Size(430, 10);
+            this.splitter4.TabIndex = 57;
+            this.splitter4.TabStop = false;
+            // 
+            // splitter1
+            // 
+            this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(10, 469);
+            this.splitter1.TabIndex = 54;
+            this.splitter1.TabStop = false;
+            // 
+            // dgvUser
+            // 
+            this.dgvUser.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUser.Location = new System.Drawing.Point(0, 0);
+            this.dgvUser.Name = "dgvUser";
+            this.dgvUser.RowTemplate.Height = 23;
+            this.dgvUser.Size = new System.Drawing.Size(440, 469);
+            this.dgvUser.TabIndex = 53;
+            this.dgvUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
+            // 
+            // splitter3
+            // 
+            this.splitter3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.splitter3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitter3.Location = new System.Drawing.Point(0, 459);
+            this.splitter3.Name = "splitter3";
+            this.splitter3.Size = new System.Drawing.Size(506, 10);
+            this.splitter3.TabIndex = 56;
+            this.splitter3.TabStop = false;
+            // 
+            // splitter2
+            // 
+            this.splitter2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(239)))));
+            this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter2.Location = new System.Drawing.Point(506, 0);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(10, 469);
+            this.splitter2.TabIndex = 55;
+            this.splitter2.TabStop = false;
             // 
             // dgvAuth
             // 
@@ -282,76 +351,37 @@ namespace APSWinForm
             this.dgvAuth.Name = "dgvAuth";
             this.dgvAuth.RowHeadersVisible = false;
             this.dgvAuth.RowTemplate.Height = 23;
-            this.dgvAuth.Size = new System.Drawing.Size(346, 404);
-            this.dgvAuth.TabIndex = 53;
+            this.dgvAuth.Size = new System.Drawing.Size(516, 469);
+            this.dgvAuth.TabIndex = 54;
             this.dgvAuth.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuth_CellClick);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.dgvUser);
-            this.panel3.Location = new System.Drawing.Point(10, 179);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(361, 426);
-            this.panel3.TabIndex = 64;
-            // 
-            // dgvUser
-            // 
-            this.dgvUser.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUser.Location = new System.Drawing.Point(0, 0);
-            this.dgvUser.Name = "dgvUser";
-            this.dgvUser.RowTemplate.Height = 23;
-            this.dgvUser.Size = new System.Drawing.Size(361, 426);
-            this.dgvUser.TabIndex = 52;
-            this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(960, 642);
-            this.dataGridView1.TabIndex = 63;
             // 
             // MenuAuth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 642);
+            this.ClientSize = new System.Drawing.Size(1005, 637);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "MenuAuth";
             this.Text = "권한관리";
             this.Load += new System.EventHandler(this.MenuAuth_Load);
-            this.Click += new System.EventHandler(this.MenuAuth_Load);
             this.panel2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAuth)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAuth)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvAuth;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvUser;
-        public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.ToolStrip toolStrip1;
         protected System.Windows.Forms.ToolStripLabel title;
         public System.Windows.Forms.ToolStripButton BtnDelete;
@@ -370,5 +400,12 @@ namespace APSWinForm
         protected System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label txtID;
         private System.Windows.Forms.Label txtno;
-    }
+		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.Splitter splitter4;
+		private System.Windows.Forms.Splitter splitter1;
+		private System.Windows.Forms.DataGridView dgvUser;
+		private System.Windows.Forms.Splitter splitter3;
+		private System.Windows.Forms.Splitter splitter2;
+		private System.Windows.Forms.DataGridView dgvAuth;
+	}
 }

@@ -36,7 +36,7 @@ namespace APSWinForm
             this.EQPvo = vo;
         }
 
-        
+
         //public void UpdateEquip(EQUIPVO vo)
         //{
         //    EQUIPDAC dac = new EQUIPDAC();
@@ -51,7 +51,7 @@ namespace APSWinForm
             //Siteinfo = await srv.GetListAsync("api/EQUIPMENT/Linelist", Siteinfo)
             CommonUtil.ComboBinding(cboSiteID, Lineinfo, "SITE_ID", "SITE_ID");
             CommonUtil.ComboBinding(cboLineID, Lineinfo, "LINE_ID", "LINE_ID");
-            CommonUtil.ComboBinding(cboEqpGroup, list, "STD_STEP_ID" , blankText: "선택");
+            CommonUtil.ComboBinding(cboEqpGroup, list, "STD_STEP_ID", blankText: "");
             //CommonUtil.ComboBinding(cboLineID, list, "LINE_ID", blankText: "선택");
             //CommonUtil.ComboBinding(cboSiteID, list, "SITE_ID", blankText: "선택");
             EQPlist = await srv.GetListAsync("api/EQUIPMENT/EQPlist", EQPlist);
@@ -59,11 +59,11 @@ namespace APSWinForm
         }
 
 
-        private  void EQUIPMENT_REG_Load(object sender, EventArgs e)
+        private void EQUIPMENT_REG_Load(object sender, EventArgs e)
         {
             Combobinding();
-            
-            
+
+
         }
 
         private void Modify()
@@ -80,7 +80,7 @@ namespace APSWinForm
             }
         }
 
-      
+
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
@@ -104,7 +104,7 @@ namespace APSWinForm
                     vo.user_id = "test";
                     WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", vo);
 
-                   
+
                     if (msg.IsSuccess)
                     {
                         this.DialogResult = DialogResult.OK;
@@ -149,10 +149,18 @@ namespace APSWinForm
                 lblExist.Visible = true;
                 existEQPID = false;
                 this.ActiveControl = txtEqpID;
+                btnAdd.Enabled = false;
             }
             else
+            {
                 lblExist.Visible = false;
                 existEQPID = true;
+                btnAdd.Enabled = true;
+            }
+
         }
+
+       
     }
+
 }

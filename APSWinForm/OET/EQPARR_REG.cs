@@ -85,7 +85,8 @@ namespace APSWinForm
               cboProcess.Text.Trim() != "" &&
               cboStep.Text.Trim() != "" &&
               numStep.Text.Trim() != "" &&
-              numProcess.Text.Trim() != "")
+              numProcess.Text.Trim() != ""
+              )
 
             {
                 EqpArrangeVO vo = new EqpArrangeVO();
@@ -139,6 +140,24 @@ namespace APSWinForm
                 MessageBox.Show("필수 사항을 모두 입력해주세요");
             }
         }
+
+        private void cboStep_Leave(object sender, EventArgs e)
+        {
+            var EQPARRID = EQPARRList.Find(p => p.EQP_ID == cboEQP.Text && p.PRODUCT_ID == cboProduct.Text && p.PROCESS_ID == cboProcess.Text && p.STEP_ID == cboStep.Text);
+
+            if (EQPARRID != null)
+            {
+                label2.Visible = true;
+                btnAdd.Enabled = false;
+            }
+            else
+            {
+                label2.Visible = false;
+                btnAdd.Enabled = true;
+            }
+        }
+
+        
     }
 }
 

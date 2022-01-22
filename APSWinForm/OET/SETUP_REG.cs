@@ -80,7 +80,9 @@ namespace APSWinForm
               cboSite.Text.Trim() != "" &&
               cboGroup.Text.Trim() != "" &&
               cboStep.Text.Trim() != "" &&
-              numTime.Text.Trim() != "")
+              numTime.Text.Trim() != ""&&
+                !existGroupID &&
+                !existStepID)
 
             {
                 SetupVO vo = new SetupVO();
@@ -138,14 +140,15 @@ namespace APSWinForm
             if (StepID != null)
             {
                 lblExist.Visible = true;
-                existStepID = false;
-                
-               
+                btnAdd.Enabled = false;
+
+
             }
             else
+            {
                 lblExist.Visible = false;
-            existStepID = true;
-          
+                btnAdd.Enabled = true;
+            }
         }
 
         private void cboGroup_Leave(object sender, EventArgs e)
@@ -155,13 +158,15 @@ namespace APSWinForm
             if (GroupID != null)
             {
                 lblExist2.Visible = true;
-                existGroupID = false;
-                
-                
+                btnAdd.Enabled = false;
+
+
             }
             else
+            {
                 lblExist2.Visible = false;
-                existGroupID = true;
+                btnAdd.Enabled = true;
+            }
                 
         }
     }
