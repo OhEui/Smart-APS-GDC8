@@ -11,7 +11,7 @@ namespace APSMVC.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return Redirect("/Result/EqpGantt");
+            return Redirect("/Result/Utilization");
         }
     }
 }

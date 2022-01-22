@@ -83,6 +83,10 @@ namespace APSWinForm
                 {
                     btnSystem.Visible = false;
                 }
+                else
+                {
+                    btnSystem.Visible = true;
+                }
                 Show();            
             }
             else

@@ -39,7 +39,8 @@ namespace APSServer.Models
                 cmd.CommandText = @"select a.empno,a.Id,a.Name,b.auth_name as auth_name
 from ASP_Users a
 inner join Authority b 
-on a.Auth_ID= b.AUTH_ID";
+on a.Auth_ID= b.AUTH_ID
+order by empno";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Connection.Open();

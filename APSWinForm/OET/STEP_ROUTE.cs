@@ -164,7 +164,9 @@ namespace APSWinForm
 
 		private void XlsDown_Click(object sender, EventArgs e)
 		{
-			ExcelUtil.ExportExcelToList<StepRouteVO>((List<StepRouteVO>)dgvStepRoute.DataSource);
+			bool result = ExcelUtil.ExportExcelToList<StepRouteVO>((List<StepRouteVO>)dgvStepRoute.DataSource);
+			if (result)
+				MessageBox.Show("성공적으로 저장되었습니다.");
 		}
 		#endregion
 	}

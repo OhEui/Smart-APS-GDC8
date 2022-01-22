@@ -80,7 +80,9 @@ namespace APSWinForm
               cboSite.Text.Trim() != "" &&
               cboGroup.Text.Trim() != "" &&
               cboStep.Text.Trim() != "" &&
-              numTime.Text.Trim() != "")
+              numTime.Text.Trim() != ""&&
+                !existGroupID &&
+                !existStepID)
 
             {
                 SetupVO vo = new SetupVO();
@@ -93,13 +95,7 @@ namespace APSWinForm
                     vo.TIME = Convert.ToInt32(numTime.Text.Trim());
                     vo.user_id = "test";
                     WebMessage msg = await srv.PostAsyncNone("api/SETUP_TIME/SetupNew", vo);
-                    var StepID = Setuplist.Find(p => p.LINE_ID == cboLine.Text && p.SITE_ID == cboSite.Text && p.STEP_ID == cboStep.Text);
-                    var GroupID = Setuplist.Find(p => p.LINE_ID == cboLine.Text && p.SITE_ID == cboSite.Text && p.EQP_GROUP == cboGroup.Text);
-                    if (StepID !=null && GroupID !=null)
-                    {
-                        MessageBox.Show("중복되는 데이터입니다.다른 데이터를 입력해주십시오");
-                        return;
-                    }
+                   
 
                     if (msg.IsSuccess)
                     {
@@ -144,14 +140,15 @@ namespace APSWinForm
             if (StepID != null)
             {
                 lblExist.Visible = true;
-                existStepID = false;
-                
-               
+                btnAdd.Enabled = false;
+
+
             }
             else
+            {
                 lblExist.Visible = false;
-            existStepID = true;
-          
+                btnAdd.Enabled = true;
+            }
         }
 
         private void cboGroup_Leave(object sender, EventArgs e)
@@ -161,13 +158,15 @@ namespace APSWinForm
             if (GroupID != null)
             {
                 lblExist2.Visible = true;
-                existGroupID = false;
-                
-                
+                btnAdd.Enabled = false;
+
+
             }
             else
+            {
                 lblExist2.Visible = false;
-                existGroupID = true;
+                btnAdd.Enabled = true;
+            }
                 
         }
     }

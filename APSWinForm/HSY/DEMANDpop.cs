@@ -43,7 +43,6 @@ namespace APSWinForm
         {
             list = await srv.GetListAsync("api/Common/CommonCode", list);
             CommonUtil.ComboBinding(cboPID, list, "PRODUCT_ID");
-            CommonUtil.ComboBinding(cboCID, list, "CUSTOMER_ID");
 
             Modify();
         }
@@ -56,7 +55,7 @@ namespace APSWinForm
                 txtVer.Text = dmadvo.DEMAND_VER;
                 txtQTY.Text = dmadvo.DEMAND_QTY.ToString();
                 txtdate.Text = dmadvo.DUE_DATE.ToString();
-                cboCID.SelectedValue = dmadvo.CUSTOMER_ID;
+                cboCID.Text = dmadvo.CUSTOMER_ID;
                 cboPID.SelectedValue = dmadvo.PRODUCT_ID;
             }
         }

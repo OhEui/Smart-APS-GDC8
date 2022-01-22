@@ -195,7 +195,7 @@ namespace APSWinForm
             this.Controls.Add(this.txtPW);
             this.Location = new System.Drawing.Point(2000, 500);
             this.Name = "frmLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "APS";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

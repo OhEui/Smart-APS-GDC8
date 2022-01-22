@@ -1,14 +1,15 @@
 name: Deploy ASP.NET MVC App deploy to Azure Web App
 
+
 on:
-  workflow_dispatch: # 수동으로 workflow를 실행가능
+  workflow_dispatch:
   push:
     paths:
-      - 'APSServer/**'
+      - 'APSMVC/**'
 
 env:
-  AZURE_WEBAPP_NAME: 'Team2APS'    # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: './APSServer'      # set this to the path to your web app project, defaults to the repository root
+  AZURE_WEBAPP_NAME: 'Team2APSResult'    # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: './APSMVC'      # set this to the path to your web app project, defaults to the repository root
   NUGET_VERSION: '4.7.x'           # set this to the dot net version to use
 
 jobs:
@@ -35,5 +36,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with: 
         app-name: ${{ env.AZURE_WEBAPP_NAME }} # Replace with your app name
-        publish-profile: ${{ secrets.ASPSERVERDEPLOY }} # Define secret variable in repository settings as per action documentation
+        publish-profile: ${{ secrets.ASPCHARTDEPLOY }} # Define secret variable in repository settings as per action documentation
         package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
