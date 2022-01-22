@@ -23,6 +23,8 @@ namespace APSWinForm
         {
             InitializeComponent();
             BtnAdd.Visible = BtnDelete.Visible =  XlsDown.Visible = false;
+
+
         }
 
         private void MenuAuth_Load(object sender, EventArgs e)
@@ -41,7 +43,8 @@ namespace APSWinForm
             Authlist = await srv.GetListAsync("api/Auth/GetAuth", Authlist);
             dgvAuth.DataSource = Authlist;
 
-
+            dgvAuth.ClearSelection();
+            dgvUser.ClearSelection();
         }
 
         private void DataLoad()
