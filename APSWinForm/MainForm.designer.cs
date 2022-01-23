@@ -30,8 +30,6 @@ namespace APSWinForm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.btnUserName = new System.Windows.Forms.Button();
             this.panelSystemSubMenu = new System.Windows.Forms.Panel();
@@ -63,34 +61,16 @@ namespace APSWinForm
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new TabControlZ.TabControlZ();
-            this.menuStrip1.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.panelSystemSubMenu.SuspendLayout();
             this.panelExcelSubMenu.SuspendLayout();
             this.panelResultSubMenu.SuspendLayout();
             this.panelInfoSubMenu.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(59)))), ((int)(((byte)(64)))));
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(933, 24);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.CloseAll_Click);
             // 
             // panelSideMenu
             // 
@@ -109,9 +89,9 @@ namespace APSWinForm
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panelSideMenu.Location = new System.Drawing.Point(0, 24);
+            this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(222, 743);
+            this.panelSideMenu.Size = new System.Drawing.Size(222, 811);
             this.panelSideMenu.TabIndex = 7;
             // 
             // btnUserName
@@ -126,10 +106,10 @@ namespace APSWinForm
             this.btnUserName.ForeColor = System.Drawing.Color.Silver;
             this.btnUserName.Image = global::APSWinForm.Properties.Resources.user;
             this.btnUserName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserName.Location = new System.Drawing.Point(0, 663);
+            this.btnUserName.Location = new System.Drawing.Point(0, 721);
             this.btnUserName.Name = "btnUserName";
             this.btnUserName.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnUserName.Size = new System.Drawing.Size(205, 45);
+            this.btnUserName.Size = new System.Drawing.Size(222, 45);
             this.btnUserName.TabIndex = 12;
             this.btnUserName.Text = "  UserName";
             this.btnUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,7 +127,7 @@ namespace APSWinForm
             this.panelSystemSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSystemSubMenu.Location = new System.Drawing.Point(0, 603);
             this.panelSystemSubMenu.Name = "panelSystemSubMenu";
-            this.panelSystemSubMenu.Size = new System.Drawing.Size(205, 60);
+            this.panelSystemSubMenu.Size = new System.Drawing.Size(222, 60);
             this.panelSystemSubMenu.TabIndex = 11;
             // 
             // btnAuth
@@ -162,7 +142,7 @@ namespace APSWinForm
             this.btnAuth.Location = new System.Drawing.Point(0, 30);
             this.btnAuth.Name = "btnAuth";
             this.btnAuth.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAuth.Size = new System.Drawing.Size(205, 30);
+            this.btnAuth.Size = new System.Drawing.Size(222, 30);
             this.btnAuth.TabIndex = 1;
             this.btnAuth.Text = "권한 관리";
             this.btnAuth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,7 +161,7 @@ namespace APSWinForm
             this.btnUser.Location = new System.Drawing.Point(0, 0);
             this.btnUser.Name = "btnUser";
             this.btnUser.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnUser.Size = new System.Drawing.Size(205, 30);
+            this.btnUser.Size = new System.Drawing.Size(222, 30);
             this.btnUser.TabIndex = 0;
             this.btnUser.Text = "유저 관리";
             this.btnUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -203,7 +183,7 @@ namespace APSWinForm
             this.btnSystem.Location = new System.Drawing.Point(0, 558);
             this.btnSystem.Name = "btnSystem";
             this.btnSystem.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSystem.Size = new System.Drawing.Size(205, 45);
+            this.btnSystem.Size = new System.Drawing.Size(222, 45);
             this.btnSystem.TabIndex = 10;
             this.btnSystem.Text = "  시스템 관리";
             this.btnSystem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,10 +203,10 @@ namespace APSWinForm
             this.btnExit.ForeColor = System.Drawing.Color.Silver;
             this.btnExit.Image = global::APSWinForm.Properties.Resources.exit;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 708);
+            this.btnExit.Location = new System.Drawing.Point(0, 766);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(205, 45);
+            this.btnExit.Size = new System.Drawing.Size(222, 45);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "  종료하기";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,7 +223,7 @@ namespace APSWinForm
             this.panelExcelSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelExcelSubMenu.Location = new System.Drawing.Point(0, 528);
             this.panelExcelSubMenu.Name = "panelExcelSubMenu";
-            this.panelExcelSubMenu.Size = new System.Drawing.Size(205, 30);
+            this.panelExcelSubMenu.Size = new System.Drawing.Size(222, 30);
             this.panelExcelSubMenu.TabIndex = 7;
             // 
             // btnExcelOut
@@ -258,7 +238,7 @@ namespace APSWinForm
             this.btnExcelOut.Location = new System.Drawing.Point(0, 0);
             this.btnExcelOut.Name = "btnExcelOut";
             this.btnExcelOut.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnExcelOut.Size = new System.Drawing.Size(205, 30);
+            this.btnExcelOut.Size = new System.Drawing.Size(222, 30);
             this.btnExcelOut.TabIndex = 1;
             this.btnExcelOut.Text = "엑셀 일괄 내보내기";
             this.btnExcelOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -280,7 +260,7 @@ namespace APSWinForm
             this.btnExcel.Location = new System.Drawing.Point(0, 483);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExcel.Size = new System.Drawing.Size(205, 45);
+            this.btnExcel.Size = new System.Drawing.Size(222, 45);
             this.btnExcel.TabIndex = 6;
             this.btnExcel.Text = "  EXCEL";
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -299,7 +279,7 @@ namespace APSWinForm
             this.panelResultSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelResultSubMenu.Location = new System.Drawing.Point(0, 393);
             this.panelResultSubMenu.Name = "panelResultSubMenu";
-            this.panelResultSubMenu.Size = new System.Drawing.Size(205, 90);
+            this.panelResultSubMenu.Size = new System.Drawing.Size(222, 90);
             this.panelResultSubMenu.TabIndex = 4;
             // 
             // btnUtil
@@ -314,7 +294,7 @@ namespace APSWinForm
             this.btnUtil.Location = new System.Drawing.Point(0, 60);
             this.btnUtil.Name = "btnUtil";
             this.btnUtil.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnUtil.Size = new System.Drawing.Size(205, 30);
+            this.btnUtil.Size = new System.Drawing.Size(222, 30);
             this.btnUtil.TabIndex = 2;
             this.btnUtil.Text = "가동률분석";
             this.btnUtil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -333,7 +313,7 @@ namespace APSWinForm
             this.btnEQPgant.Location = new System.Drawing.Point(0, 30);
             this.btnEQPgant.Name = "btnEQPgant";
             this.btnEQPgant.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEQPgant.Size = new System.Drawing.Size(205, 30);
+            this.btnEQPgant.Size = new System.Drawing.Size(222, 30);
             this.btnEQPgant.TabIndex = 1;
             this.btnEQPgant.Text = "EQP 간트차트";
             this.btnEQPgant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -352,7 +332,7 @@ namespace APSWinForm
             this.btnLOT.Location = new System.Drawing.Point(0, 0);
             this.btnLOT.Name = "btnLOT";
             this.btnLOT.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnLOT.Size = new System.Drawing.Size(205, 30);
+            this.btnLOT.Size = new System.Drawing.Size(222, 30);
             this.btnLOT.TabIndex = 0;
             this.btnLOT.Text = "LOT 간트차트";
             this.btnLOT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -374,7 +354,7 @@ namespace APSWinForm
             this.btnResult.Location = new System.Drawing.Point(0, 348);
             this.btnResult.Name = "btnResult";
             this.btnResult.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnResult.Size = new System.Drawing.Size(205, 45);
+            this.btnResult.Size = new System.Drawing.Size(222, 45);
             this.btnResult.TabIndex = 3;
             this.btnResult.Text = " 결과 차트 조회";
             this.btnResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -398,7 +378,7 @@ namespace APSWinForm
             this.panelInfoSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInfoSubMenu.Location = new System.Drawing.Point(0, 108);
             this.panelInfoSubMenu.Name = "panelInfoSubMenu";
-            this.panelInfoSubMenu.Size = new System.Drawing.Size(205, 240);
+            this.panelInfoSubMenu.Size = new System.Drawing.Size(222, 240);
             this.panelInfoSubMenu.TabIndex = 2;
             // 
             // btnSetup
@@ -413,7 +393,7 @@ namespace APSWinForm
             this.btnSetup.Location = new System.Drawing.Point(0, 210);
             this.btnSetup.Name = "btnSetup";
             this.btnSetup.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnSetup.Size = new System.Drawing.Size(205, 30);
+            this.btnSetup.Size = new System.Drawing.Size(222, 30);
             this.btnSetup.TabIndex = 7;
             this.btnSetup.Text = "교체준비시간관리";
             this.btnSetup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -432,7 +412,7 @@ namespace APSWinForm
             this.btnARR.Location = new System.Drawing.Point(0, 180);
             this.btnARR.Name = "btnARR";
             this.btnARR.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnARR.Size = new System.Drawing.Size(205, 30);
+            this.btnARR.Size = new System.Drawing.Size(222, 30);
             this.btnARR.TabIndex = 6;
             this.btnARR.Text = "설비배치정보관리";
             this.btnARR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -451,7 +431,7 @@ namespace APSWinForm
             this.btnEquip.Location = new System.Drawing.Point(0, 150);
             this.btnEquip.Name = "btnEquip";
             this.btnEquip.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEquip.Size = new System.Drawing.Size(205, 30);
+            this.btnEquip.Size = new System.Drawing.Size(222, 30);
             this.btnEquip.TabIndex = 5;
             this.btnEquip.Text = "설비정보관리";
             this.btnEquip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -470,7 +450,7 @@ namespace APSWinForm
             this.btnRoute.Location = new System.Drawing.Point(0, 120);
             this.btnRoute.Name = "btnRoute";
             this.btnRoute.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRoute.Size = new System.Drawing.Size(205, 30);
+            this.btnRoute.Size = new System.Drawing.Size(222, 30);
             this.btnRoute.TabIndex = 4;
             this.btnRoute.Text = "공정순서관리";
             this.btnRoute.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -489,7 +469,7 @@ namespace APSWinForm
             this.btnStdStep.Location = new System.Drawing.Point(0, 90);
             this.btnStdStep.Name = "btnStdStep";
             this.btnStdStep.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnStdStep.Size = new System.Drawing.Size(205, 30);
+            this.btnStdStep.Size = new System.Drawing.Size(222, 30);
             this.btnStdStep.TabIndex = 3;
             this.btnStdStep.Text = "표준공정정보관리";
             this.btnStdStep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -508,7 +488,7 @@ namespace APSWinForm
             this.btnLine.Location = new System.Drawing.Point(0, 60);
             this.btnLine.Name = "btnLine";
             this.btnLine.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnLine.Size = new System.Drawing.Size(205, 30);
+            this.btnLine.Size = new System.Drawing.Size(222, 30);
             this.btnLine.TabIndex = 2;
             this.btnLine.Text = "라인정보관리";
             this.btnLine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -527,7 +507,7 @@ namespace APSWinForm
             this.btnDemand.Location = new System.Drawing.Point(0, 30);
             this.btnDemand.Name = "btnDemand";
             this.btnDemand.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnDemand.Size = new System.Drawing.Size(205, 30);
+            this.btnDemand.Size = new System.Drawing.Size(222, 30);
             this.btnDemand.TabIndex = 1;
             this.btnDemand.Text = "수요정보관리";
             this.btnDemand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -546,7 +526,7 @@ namespace APSWinForm
             this.btnProduct.Location = new System.Drawing.Point(0, 0);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnProduct.Size = new System.Drawing.Size(205, 30);
+            this.btnProduct.Size = new System.Drawing.Size(222, 30);
             this.btnProduct.TabIndex = 0;
             this.btnProduct.Tag = "frmPRODUCT";
             this.btnProduct.Text = "제품정보관리";
@@ -569,7 +549,7 @@ namespace APSWinForm
             this.btnInfo.Location = new System.Drawing.Point(0, 63);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnInfo.Size = new System.Drawing.Size(205, 45);
+            this.btnInfo.Size = new System.Drawing.Size(222, 45);
             this.btnInfo.TabIndex = 1;
             this.btnInfo.Text = "  기준정보관리";
             this.btnInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -585,7 +565,7 @@ namespace APSWinForm
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(205, 63);
+            this.panelLogo.Size = new System.Drawing.Size(222, 63);
             this.panelLogo.TabIndex = 0;
             // 
             // tabPage1
@@ -648,6 +628,25 @@ namespace APSWinForm
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(59)))), ((int)(((byte)(64)))));
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(222, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1122, 24);
+            this.menuStrip1.TabIndex = 22;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
+            // 
             // tabControl1
             // 
             this.tabControl1.ActiveTabEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(212)))), ((int)(((byte)(226)))));
@@ -663,8 +662,8 @@ namespace APSWinForm
             this.tabControl1.NonActiveTabStartColor = System.Drawing.Color.SteelBlue;
             this.tabControl1.Padding = new System.Drawing.Point(22, 6);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(711, 743);
-            this.tabControl1.TabIndex = 20;
+            this.tabControl1.Size = new System.Drawing.Size(1122, 787);
+            this.tabControl1.TabIndex = 24;
             this.tabControl1.TextColor = System.Drawing.Color.Black;
             this.tabControl1.Transparent1 = 150;
             this.tabControl1.Transparent2 = 150;
@@ -674,32 +673,30 @@ namespace APSWinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 767);
+            this.ClientSize = new System.Drawing.Size(1344, 811);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.panelSideMenu);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panelSideMenu);
             this.IsMdiContainer = true;
             this.Location = new System.Drawing.Point(2000, 0);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "APS";
             this.Load += new System.EventHandler(this.MainForm2_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panelSideMenu.ResumeLayout(false);
             this.panelSideMenu.PerformLayout();
             this.panelSystemSubMenu.ResumeLayout(false);
             this.panelExcelSubMenu.ResumeLayout(false);
             this.panelResultSubMenu.ResumeLayout(false);
             this.panelInfoSubMenu.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panelSystemSubMenu;
         private System.Windows.Forms.Button btnAuth;
@@ -731,7 +728,8 @@ namespace APSWinForm
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private TabControlZ.TabControlZ tabControl1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private TabControlZ.TabControlZ tabControl1;
     }
 }
