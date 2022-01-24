@@ -8,6 +8,7 @@ namespace APSServer
     {
         public static void Register(HttpConfiguration config)
         {
+
             // Web API 구성 및 서비스
             var cors = new EnableCorsAttribute("https://localhost:44397", "*", "*");
             config.EnableCors(cors);

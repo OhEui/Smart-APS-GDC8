@@ -17,6 +17,10 @@ namespace APSServer.Controllers
     public class SampleController : ApiController
     {
         // https://localhost:44309/api/Sample/List
+        /// <summary>
+        /// POST Sample 입니다.
+        /// </summary>
+        /// <returns>return 테스트</returns>
         [HttpPost]
         [Route("List")]
         public IHttpActionResult GetList()

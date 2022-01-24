@@ -15,7 +15,6 @@ namespace APSServer.Controllers
         /// <summary>
         /// SelectAll 프로시저 호출 -> DataSet에 저장 -> Excel로 변환 -> Response에 파일 넣기
         /// </summary>
-        /// <param name="req"></param>
         /// <returns></returns>
         [HttpGet]
         [Route("Data")]
