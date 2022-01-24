@@ -13,7 +13,11 @@ namespace APSServer.Controllers
     public class DemandController : ApiController
     {
         //POST : https://localhost:44309/api/Demand/SaveDemand
-
+        /// <summary>
+        /// DEMAND 데이터를 추가하거나 수정합니다.
+        /// </summary>
+        /// <param name="demand"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("SaveDemand")]
         public IHttpActionResult SaveDemand(DemandVO demand)
@@ -37,6 +41,10 @@ namespace APSServer.Controllers
 
 
         //GET :  https://localhost:44309/api/Demand/AllList
+        /// <summary>
+        /// 모든 DEMAND 데이터를 불러옵니다.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("AllList")]
         public List<DemandVO> GetAllDemand()
@@ -70,6 +78,11 @@ namespace APSServer.Controllers
         }
 
         //GET : https://localhost:44309/api/Demand/Delete/{id}
+        /// <summary>
+        /// DEMAND 데이터를 삭제합니다.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("Delete/{id}")]
         public IHttpActionResult DeleteDemand(string id)

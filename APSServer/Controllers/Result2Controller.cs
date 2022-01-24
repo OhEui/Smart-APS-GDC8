@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using System.Web.Http.Description;
 
 namespace APSServer.Controllers
 {
@@ -16,6 +16,7 @@ namespace APSServer.Controllers
         // https://localhost:44309/api/Result/EQPGantt
         [HttpPost]
         [Route("Utilization/Data")]
+        [ResponseType(typeof(List<ResUtilizationData>))]
         public IHttpActionResult GetUtilChartData(ReqUtilizationData req)
         {
             // 차트 데이터 가져오기
@@ -35,6 +36,7 @@ namespace APSServer.Controllers
 
         [HttpGet]
         [Route("Utilization/Common")]
+        [ResponseType(typeof(ChartCommonData))]
         public IHttpActionResult GetUtilChartCommonData()
         {
             // 설비그룹, 설비ID, 제품ID 가져오기

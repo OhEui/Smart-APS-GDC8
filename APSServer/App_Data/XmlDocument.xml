@@ -481,6 +481,45 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:APSServer.Controllers.AuthController.GetAllAuth">
+            <summary>
+            권한정보를 불러옵니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:APSServer.Controllers.AuthController.GetAllUser">
+            <summary>
+            유저 리스트를 불러옵니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:APSServer.Controllers.AuthController.SaveAuth(APSVO.UserVOs)">
+            <summary>
+            설정한 유저권한을 저장합니다.
+            </summary>
+            <param name="vo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:APSServer.Controllers.DemandController.SaveDemand(APSVO.DemandVO)">
+            <summary>
+            DEMAND 데이터를 추가하거나 수정합니다.
+            </summary>
+            <param name="demand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:APSServer.Controllers.DemandController.GetAllDemand">
+            <summary>
+            모든 DEMAND 데이터를 불러옵니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:APSServer.Controllers.DemandController.DeleteDemand(System.String)">
+            <summary>
+            DEMAND 데이터를 삭제합니다.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:APSServer.Controllers.ExcelController.GetExcelData">
             <summary>
             SelectAll 프로시저 호출 -> DataSet에 저장 -> Excel로 변환 -> Response에 파일 넣기

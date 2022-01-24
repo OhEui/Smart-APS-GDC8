@@ -9,11 +9,14 @@ using System.Web.Http;
 
 namespace APSServer.Controllers
 {
-
     [RoutePrefix("api/Auth")]
     public class AuthController : ApiController
     {
         //GET : https://localhost:44309/api/Auth/GetAuth
+        /// <summary>
+        /// 권한정보를 불러옵니다.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetAuth")]
         public List<AuthVO> GetAllAuth()
@@ -25,6 +28,10 @@ namespace APSServer.Controllers
 
 
         //GET : https://localhost:44309/api/Auth/GetUser
+        /// <summary>
+        /// 유저 리스트를 불러옵니다.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetUser")]
         public List<UserVO> GetAllUser()
@@ -34,6 +41,11 @@ namespace APSServer.Controllers
         }
 
         //Post : https://localhost:44309/api/Auth/AuthSave
+        /// <summary>
+        /// 설정한 유저권한을 저장합니다.
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("AuthSave")]
         public IHttpActionResult SaveAuth(UserVOs vo)
