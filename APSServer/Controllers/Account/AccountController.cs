@@ -119,7 +119,7 @@ namespace APSServer.Controllers
             ServiceHelp service = new ServiceHelp(true);
             var request = new Dictionary<string, string>()
             {
-                { "username", model.ID } ,{ "password" , model.Password }, { "grant_type" , "password" }
+                { "username", model.ID } ,{ "password" , model.Password }, { "grant_type" , "password" } 
             };
             TokenModel responseToken = await service.PostAsyncFormRequest<TokenModel>("token", request);
 
