@@ -646,6 +646,7 @@ namespace APSWinForm
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 20);
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.CloseAll_Click);
             // 
             // tabControl1
             // 

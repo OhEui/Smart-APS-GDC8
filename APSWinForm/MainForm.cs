@@ -10,10 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using APSUtil.Http;
 using System.Diagnostics;
+using System.Configuration;
+
 namespace APSWinForm
 {
     public partial class MainForm : frmBaseIcon
     {
+        string _chartPageAddress;
 
         public MainForm()
         {
@@ -69,6 +72,7 @@ namespace APSWinForm
             this.WindowState = FormWindowState.Maximized;
             //Size = new Size(1360, 850);
             tabControl1.Visible = true;
+            _chartPageAddress = ConfigurationManager.AppSettings["ChartPageAddress"];
         }
 
         private void Login()
@@ -193,7 +197,7 @@ namespace APSWinForm
         private void btnLOT_Click(object sender, EventArgs e)
         {
             string title = "LOT 간트차트";
-            string url = "https://localhost:44397/result/LOTgantt";
+            string url = $"{_chartPageAddress}/result/LOTgantt";
             //StartWebView(title, url);
             CreateTabPages(title, new frmWebView(title, url));
             hideResultSubMenu();
@@ -201,7 +205,7 @@ namespace APSWinForm
         private void btnEQPgant_Click(object sender, EventArgs e)
         {
             string title = "EQP 간트차트";
-            string url = "https://localhost:44397/result/EQPgantt";
+            string url = $"{_chartPageAddress}/result/EQPgantt";
             //StartWebView(title, url);
             CreateTabPages(title, new frmWebView(title, url));
             hideResultSubMenu();
@@ -210,7 +214,7 @@ namespace APSWinForm
         private void btnUtil_Click(object sender, EventArgs e)
         {
             string title = "가동률 분석";
-            string url = "https://localhost:44397/result/utilization";
+            string url = $"{_chartPageAddress}/result/utilization";
             //StartWebView(title, url);
             CreateTabPages(title, new frmWebView(title, url));
             hideResultSubMenu();
