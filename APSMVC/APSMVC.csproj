@@ -366,6 +366,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryElement.cs" />
     <Compile Include="Models\EQPGanttModel.cs" />
     <Compile Include="Models\UtilizationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

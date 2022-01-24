@@ -22,12 +22,4 @@ namespace APSMVC.Models
         public DateTime Min_Date { get; set; }
         public DateTime Max_Date { get; set; }
     }
-    public class CategoryElement
-    {
-        public string category { get; set; }
-        public CategoryElement(string category)
-        {
-            this.category = category;
-        }
-    }
 }

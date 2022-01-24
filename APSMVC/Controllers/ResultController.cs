@@ -10,10 +10,6 @@ using APSVO;
 
 namespace APSMVC.Controllers
 {
-    /*
-        EQP Gantt, 가동률 분석
-        ResultController는 나중에 하나의 파일로 합칠 예정
-     */
     public partial class ResultController : Controller
     {
         public async Task<ActionResult> EQPGantt(string[] EQP_GROUP=null, string[] EQP_ID=null, string[] PRODUCT_ID=null,
@@ -133,17 +129,4 @@ namespace APSMVC.Controllers
             return View(model);
         }
     }
-
-    /*
-            if (false) 
-            {
-                string msg = "로그인이 필요합니다";
-                return Content($@"<script language='javascript' type='text/javascript'> 
-alert('{msg}'); 
-history.back();
-</script>");
-            }
-            */
-    //var test = HttpContext.Request.Headers["Authorization"];
-
 }
