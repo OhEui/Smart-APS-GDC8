@@ -66,8 +66,8 @@ namespace APSWinForm
 
         private void MainForm2_Load(object sender, EventArgs e)
         {
-            //this.WindowState = FormWindowState.Maximized;
-            Size = new Size(1360, 850);
+            this.WindowState = FormWindowState.Maximized;
+            //Size = new Size(1360, 850);
             tabControl1.Visible = true;
         }
 
