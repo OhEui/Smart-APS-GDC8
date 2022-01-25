@@ -1,5 +1,4 @@
 ﻿using APSLogger;
-using APSServer.Util;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;

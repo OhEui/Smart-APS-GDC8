@@ -17,7 +17,7 @@ namespace APSServer.Controllers
     {
         //GET : https://localhost:44309/api/SETUP_TIME/SetupList
         [HttpGet]
-        [Route("SetupList")]
+        [Route]
         public List<SetupVO> GetSetup_time()
         {
             SETUPDAC dac = new SETUPDAC();
@@ -26,7 +26,7 @@ namespace APSServer.Controllers
 
         //Post : https://localhost:44309/api/SETUP_TIME/SetupNew
         [HttpPost]
-        [Route("SetupNew")]
+        [Route("save")]
         public IHttpActionResult InsertSetup(SetupVO vo)
         {
             WebMessage msg = new WebMessage();
@@ -46,9 +46,9 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-        //Post:     https://localhost:44309/api/SETUP_TIME/DelSetup/SetupID
+        //Get :  https://localhost:44309/api/SETUP_TIME/DelSetup/SetupID
         [HttpGet]
-        [Route("DelSetup")]
+        [Route("delete")]
         public IHttpActionResult deleteSetup(string SITE_ID, string LINE_ID, string EQP_GROUP, string STEP_ID)
         {
             

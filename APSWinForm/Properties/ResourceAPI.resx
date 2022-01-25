@@ -184,13 +184,13 @@
     <comment>0: PRODUCT_ID, 1: PROCESS_ID, 2: STEP_ID, 3: EQP_ID</comment>
   </data>
   <data name="SETUP_TIME_LIST" xml:space="preserve">
-    <value>api/SETUP_TIME/SetupList</value>
+    <value>api/setup_time</value>
   </data>
   <data name="SETUP_TIME_SAVE" xml:space="preserve">
-    <value>api/SETUP_TIME/SetupNew</value>
+    <value>api/setup_time/save</value>
   </data>
   <data name="SETUP_TIME_DELETE" xml:space="preserve">
-    <value>api/SETUP_TIME/DelSetup?SITE_ID={0}&amp;LINE_ID={1}&amp;EQP_GROUP={2}&amp;STEP_ID={3}</value>
+    <value>api/setup_time/delete?SITE_ID={0}&amp;LINE_ID={1}&amp;EQP_GROUP={2}&amp;STEP_ID={3}</value>
     <comment>0: SITE_ID, 1: LINE_ID, 2: EQP_GROUP, 3: STEP_ID</comment>
   </data>
   <data name="ACCOUNT_CUR_INFO" xml:space="preserve">
