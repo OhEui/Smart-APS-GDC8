@@ -121,10 +121,10 @@
     <value>api/Demand/Delete/{0}</value>
   </data>
   <data name="DEMAND_LIST" xml:space="preserve">
-    <value>api/Demand/AllList</value>
+    <value>api/Demand/</value>
   </data>
   <data name="DEMAND_SAVE" xml:space="preserve">
-    <value>api/Demand/SaveDemand</value>
+    <value>api/Demand/save</value>
   </data>
   <data name="PRODUCT_DELETE" xml:space="preserve">
     <value>api/Product/Delete/{0}</value>

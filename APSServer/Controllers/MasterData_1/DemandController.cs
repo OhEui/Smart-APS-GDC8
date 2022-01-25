@@ -22,7 +22,7 @@ namespace APSServer.Controllers
         /// <param name="demand"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("SaveDemand")]
+        [Route("Save")]
         public IHttpActionResult SaveDemand(DemandVO demand)
         {
             WebMessage msg = new WebMessage();
@@ -49,36 +49,13 @@ namespace APSServer.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("AllList")]
+        [Route]
         public List<DemandVO> GetAllDemand()
         {
             DemandDAC db = new DemandDAC();
             return db.GetAllDemand();
         }
 
-        //GET : https://localhost:44309/api/Demand/{id}
-        [HttpGet]
-        [Route("{id}")]
-        public IHttpActionResult GetDemandInfo(string id)
-        {
-            DemandDAC db = new DemandDAC();
-            DemandVO pr = db.GetDetail(id);
-
-            Message<DemandVO> msg = new Message<DemandVO>();
-            if (pr != null)
-            {
-                msg.IsSuccess = true;
-                msg.ResultMsg = "성공적으로 조회되었습니다.";
-                msg.Data = pr;
-            }
-            else
-            {
-                msg.IsSuccess = false;
-                msg.ResultMsg = "해당하는 정보가 없습니다.";
-                msg.Data = null;
-            }
-            return Ok(msg);
-        }
 
         //GET : https://localhost:44309/api/Demand/Delete/{id}
         /// <summary>

@@ -142,7 +142,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Demand/AllList과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/Demand/과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string DEMAND_LIST {
             get {
@@ -151,7 +151,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Demand/SaveDemand과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/Demand/save과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string DEMAND_SAVE {
             get {
