@@ -121,7 +121,7 @@
     <value>api/Demand/Delete/{0}</value>
   </data>
   <data name="DEMAND_LIST" xml:space="preserve">
-    <value>api/Demand/</value>
+    <value>api/Demand</value>
   </data>
   <data name="DEMAND_SAVE" xml:space="preserve">
     <value>api/Demand/save</value>
@@ -130,10 +130,10 @@
     <value>api/Product/Delete/{0}</value>
   </data>
   <data name="PRODUCT_LIST" xml:space="preserve">
-    <value>api/Product/Products</value>
+    <value>api/Product</value>
   </data>
   <data name="PRODUCT_SAVE" xml:space="preserve">
-    <value>api/Product/SaveProduct</value>
+    <value>api/Product/Save</value>
   </data>
   <data name="LINE_INFO_LIST" xml:space="preserve">
     <value>api/LineInfo/AllList</value>

@@ -142,7 +142,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Demand/과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/Demand과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string DEMAND_LIST {
             get {
@@ -250,7 +250,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Product/Products과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/Product과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string PRODUCT_LIST {
             get {
@@ -259,7 +259,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Product/SaveProduct과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/Product/Save과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string PRODUCT_SAVE {
             get {

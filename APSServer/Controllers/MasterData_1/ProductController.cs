@@ -15,10 +15,10 @@ namespace APSServer.Controllers
     [RoutePrefix("api/Product")]
     public class ProductController : ApiController
     {
-        //POST : https://localhost:44309/api/Product/SaveProduct
+        //POST : https://localhost:44309/api/Product/Save
 
         [HttpPost]
-        [Route("SaveProduct")]
+        [Route("save")]
         public IHttpActionResult SaveProduct(ProductVO product)
         {
             WebMessage msg = new WebMessage();
@@ -39,9 +39,9 @@ namespace APSServer.Controllers
         }
 
       
-        //GET :  https://localhost:44309/api/Product/Products
+        //GET :  https://localhost:44309/api/Product/
         [HttpGet]
-        [Route("Products")]
+        [Route]
         
         //[Authorize]
         public List<ProductVO> GetAllProduct()

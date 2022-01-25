@@ -15,7 +15,7 @@ namespace APSServer.Controllers
     [RoutePrefix("api/Demand")]
     public class DemandController : ApiController
     {
-        //POST : https://localhost:44309/api/Demand/SaveDemand
+        //POST : https://localhost:44309/api/Demand/Save
         /// <summary>
         /// DEMAND 데이터를 추가하거나 수정합니다.
         /// </summary>
@@ -43,7 +43,7 @@ namespace APSServer.Controllers
         }
 
 
-        //GET :  https://localhost:44309/api/Demand/AllList
+        //GET :  https://localhost:44309/api/Demand/
         /// <summary>
         /// 모든 DEMAND 데이터를 불러옵니다.
         /// </summary>
