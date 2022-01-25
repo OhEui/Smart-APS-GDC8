@@ -12,6 +12,8 @@ using System.Web.Http;
 
 namespace APSServer.Controllers
 {
+    [Authorize]
+    [APILogger]
     [RoutePrefix("api/Result")]
     public partial class ResultController : ApiController
     {

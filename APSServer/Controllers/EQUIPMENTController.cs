@@ -1,4 +1,5 @@
-﻿using APSServer.Models;
+﻿using APSServer.Filters;
+using APSServer.Models;
 using APSVO;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ using System.Web.Http;
 
 namespace APSServer.Controllers
 {
+    [Authorize]
+    [APILogger]
     [RoutePrefix("api/EQUIPMENT")]
     public class EQUIPMENTController : ApiController
     

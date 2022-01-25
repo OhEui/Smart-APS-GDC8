@@ -6,9 +6,12 @@ using System.Net.Http;
 using System.Web.Http;
 using APSVO;
 using APSServer.Models;
+using APSServer.Filters;
 
 namespace APSServer.Controllers
 {
+    [Authorize]
+    [APILogger]
     [RoutePrefix("api/LineInfo")]
     public class LineInfoController : ApiController
     {

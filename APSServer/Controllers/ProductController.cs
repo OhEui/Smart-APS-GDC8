@@ -6,10 +6,12 @@ using System.Net.Http;
 using System.Web.Http;
 using APSVO;
 using APSServer.Models;
-
+using APSServer.Filters;
 
 namespace APSServer.Controllers
 {
+    [Authorize]
+    [APILogger]
     [RoutePrefix("api/Product")]
     public class ProductController : ApiController
     {

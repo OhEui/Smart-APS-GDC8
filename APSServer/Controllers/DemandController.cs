@@ -4,11 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using APSServer.Filters;
 using APSServer.Models;
 using APSVO;
 
 namespace APSServer.Controllers
 {
+    [Authorize]
+    [APILogger]
     [RoutePrefix("api/Demand")]
     public class DemandController : ApiController
     {
