@@ -145,23 +145,23 @@
     <value>api/line_info/delete/{0}</value>
   </data>
   <data name="STEP_ROUTE_LIST" xml:space="preserve">
-    <value>api/Step/getStepRouteList</value>
+    <value>api/step_route</value>
   </data>
   <data name="STEP_ROUTE_SAVE" xml:space="preserve">
-    <value>api/Step/saveStepRoute</value>
+    <value>api/step_route/save</value>
   </data>
   <data name="STEP_ROUTE_DELETE" xml:space="preserve">
-    <value>api/Step/DelStepRoute?PROCESS_ID={0}&amp;STEP_ID={1}</value>
+    <value>api/step_route/delete?PROCESS_ID={0}&amp;STEP_ID={1}</value>
     <comment>0: PROCESS_ID, 1: STEP_ID</comment>
   </data>
   <data name="STD_STEP_INFO_LIST" xml:space="preserve">
-    <value>api/Step/getStepInfoList</value>
+    <value>api/std_step_info</value>
   </data>
   <data name="STD_STEP_INFO_SAVE" xml:space="preserve">
-    <value>api/Step/saveStdStep</value>
+    <value>api/std_step_info/save</value>
   </data>
   <data name="STD_STEP_INFO_DELETE" xml:space="preserve">
-    <value>api/Step/DelStepInfo/{0}</value>
+    <value>api/std_step_info/delete/{0}</value>
   </data>
   <data name="EQUIPMENT_LIST" xml:space="preserve">
     <value>api/EQUIPMENT/EQPlist</value>

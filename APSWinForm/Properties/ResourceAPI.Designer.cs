@@ -358,7 +358,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Step/DelStepInfo/{0}과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/std_step_info/delete/{0}과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string STD_STEP_INFO_DELETE {
             get {
@@ -367,7 +367,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Step/getStepInfoList과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/std_step_info과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string STD_STEP_INFO_LIST {
             get {
@@ -376,7 +376,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Step/saveStdStep과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/std_step_info/save과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string STD_STEP_INFO_SAVE {
             get {
@@ -385,7 +385,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Step/DelStepRoute?PROCESS_ID={0}&amp;STEP_ID={1}과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/step_route/delete?PROCESS_ID={0}&amp;STEP_ID={1}과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string STEP_ROUTE_DELETE {
             get {
@@ -394,7 +394,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Step/getStepRouteList과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/step_route과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string STEP_ROUTE_LIST {
             get {
@@ -403,7 +403,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Step/saveStepRoute과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/step_route/save과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string STEP_ROUTE_SAVE {
             get {
