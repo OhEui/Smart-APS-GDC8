@@ -14,6 +14,9 @@ namespace APSWinForm
     /// </summary>
     public sealed class DBInfoStorage
     {
+        #region API
+        readonly string APIUrl = Properties.ResourceAPI.DATA_TABLE_CONN;
+        #endregion
         private static readonly Lazy<Task<DBInfoStorage>> _instance =
             new Lazy<Task<DBInfoStorage>>(() => Task.Run(Create), isThreadSafe: true);
 
@@ -26,7 +29,7 @@ namespace APSWinForm
             var newInstance = new DBInfoStorage();
 
             // API 호출 후 _info에 저장
-            string path = "api/Data/Conn";
+            string path = APIUrl;
 
             ServiceHelp srv = new ServiceHelp();
             var data = await srv.GetListAsync<List<DeleteMetaDataVO>>(path);

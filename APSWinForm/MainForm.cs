@@ -16,6 +16,10 @@ namespace APSWinForm
 {
     public partial class MainForm : frmBaseIcon
     {
+        #region API
+        readonly string ExcelAPIUrl = Properties.ResourceAPI.DATA_LIST;
+        #endregion
+
         string _chartPageAddress;
 
         public MainForm()
@@ -272,7 +276,7 @@ namespace APSWinForm
         {
             string resultMsg;
             string msgTitle = "엑셀 내보내기";
-            string path = "api/Data/Conn";
+            string path = ExcelAPIUrl;
             string saveFileName;
 
             if (fileNameFullPath == null) 
