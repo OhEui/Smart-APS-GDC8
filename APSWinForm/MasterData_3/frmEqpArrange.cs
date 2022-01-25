@@ -15,6 +15,13 @@ namespace APSWinForm
 {
     public partial class EQP_ARRANGE : frmBaseIcon
     {
+        #region API
+        readonly string EQP_ARRANGE_LIST = Properties.ResourceAPI.EQP_ARRANGE_LIST;
+        readonly string EQP_ARRANGE_DELETE = Properties.ResourceAPI.EQP_ARRANGE_DELETE;
+        string DeleteUrl(string productID, string processID, string stepID, string eqpID) =>
+            string.Format(EQP_ARRANGE_DELETE, productID, processID, stepID, eqpID);
+        #endregion
+
         List<EqpArrangeVO> ARRList= null;
         ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> ProductList = null;
@@ -62,7 +69,7 @@ namespace APSWinForm
         private async void dgvLoad()
         {
             dgvEQP.DataSource = null;
-            ARRList = await srv.GetListAsync("api/EQUIPMENT/ARRlist", ARRList);
+            ARRList = await srv.GetListAsync(EQP_ARRANGE_LIST, ARRList);
             dgvEQP.DataSource = ARRList;
         }
         private void DataLoad()
@@ -165,8 +172,7 @@ namespace APSWinForm
     ?? $"{curProduct}/ {curStep} / {curEQP}항목을 삭제 하시겠습니까?";
                 if (MessageBox.Show(deleteMsg, "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    string DeleteStr = $"api/EQUIPMENT/DelEQPARR?PRODUCT_ID={curProduct}&PROCESS_ID={curProcess}&STEP_ID={curStep}&EQP_ID={curEQP}";
-                    //WebMessage msg = await srv.GetAsync($"api/EQUIPMENT/DelEQPARR/{EQPARRID}}");
+                    string DeleteStr = DeleteUrl(curProduct, curProcess, curStep, curEQP);
                     WebMessage msg = await srv.GetAsync(DeleteStr);
 
                     if (msg.IsSuccess)

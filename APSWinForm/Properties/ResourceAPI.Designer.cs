@@ -160,7 +160,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/EQUIPMENT/DelEQPARR과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/EQUIPMENT/DelEQPARR?PRODUCT_ID={0}&amp;PROCESS_ID={1}&amp;STEP_ID={2}&amp;EQP_ID={3}과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string EQP_ARRANGE_DELETE {
             get {

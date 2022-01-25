@@ -15,6 +15,11 @@ namespace APSWinForm
 {
     public partial class EQPARR_REG : frmBaseIcon
     {
+        #region API
+        readonly string EQP_ARRANGE_LIST = Properties.ResourceAPI.EQP_ARRANGE_LIST;
+        readonly string EQP_ARRANGE_SAVE = Properties.ResourceAPI.EQP_ARRANGE_SAVE;
+        #endregion
+
         ServiceHelp srv = new ServiceHelp();
         EqpArrangeVO EQPArrvo;
         // List<EqpArrangeVO> ARRList = null;
@@ -51,7 +56,7 @@ namespace APSWinForm
             CommonUtil.ComboBinding(cboProcess, ProcessList, "PROCESS_ID", blankText: "");
             CommonUtil.ComboBinding(cboStep, ProcessList, "STD_STEP_ID", blankText: "");
             CommonUtil.ComboBinding(cboEQP, EQPList, "EQP_ID", "EQP_MODEL", "");
-            EQPARRList = await srv.GetListAsync("api/EQUIPMENT/ARRlist", EQPARRList);
+            EQPARRList = await srv.GetListAsync(EQP_ARRANGE_LIST, EQPARRList);
             Modify();
 
         }
@@ -102,7 +107,7 @@ namespace APSWinForm
 
                     
 
-                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPArrnew", vo);
+                    WebMessage msg = await srv.PostAsyncNone(EQP_ARRANGE_SAVE, vo);
 
 
 
@@ -123,7 +128,7 @@ namespace APSWinForm
                     newvo.TACT_TIME = Convert.ToInt32(numStep.Text.Trim());
                     newvo.PROC_TIME = Convert.ToInt32(numProcess.Text.Trim());
                     newvo.user_id = "test";
-                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPArrnew", newvo);
+                    WebMessage msg = await srv.PostAsyncNone(EQP_ARRANGE_SAVE, newvo);
 
                    
                     if (msg.IsSuccess)

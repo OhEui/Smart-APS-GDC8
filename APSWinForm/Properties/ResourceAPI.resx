@@ -171,6 +171,7 @@
   </data>
   <data name="EQUIPMENT_DELETE" xml:space="preserve">
     <value>api/EQUIPMENT/DelEQP/{0}</value>
+    <comment>0: EQP_ID</comment>
   </data>
   <data name="EQP_ARRANGE_LIST" xml:space="preserve">
     <value>api/EQUIPMENT/ARRlist</value>
@@ -179,7 +180,8 @@
     <value>api/EQUIPMENT/EQPArrnew</value>
   </data>
   <data name="EQP_ARRANGE_DELETE" xml:space="preserve">
-    <value>api/EQUIPMENT/DelEQPARR</value>
+    <value>api/EQUIPMENT/DelEQPARR?PRODUCT_ID={0}&amp;PROCESS_ID={1}&amp;STEP_ID={2}&amp;EQP_ID={3}</value>
+    <comment>0: PRODUCT_ID, 1: PROCESS_ID, 2: STEP_ID, 3: EQP_ID</comment>
   </data>
   <data name="SETUP_TIME_LIST" xml:space="preserve">
     <value>api/SETUP_TIME/SetupList</value>
