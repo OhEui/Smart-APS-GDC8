@@ -136,13 +136,13 @@
     <value>api/Product/Save</value>
   </data>
   <data name="LINE_INFO_LIST" xml:space="preserve">
-    <value>api/LineInfo/AllList</value>
+    <value>api/line_info</value>
   </data>
   <data name="LINE_INFO_SAVE" xml:space="preserve">
-    <value>api/LineInfo/SaveLineInfo</value>
+    <value>api/line_info/save</value>
   </data>
   <data name="LINE_INFO_DELETE" xml:space="preserve">
-    <value>api/LineInfo/Delete/{0}</value>
+    <value>api/line_info/delete/{0}</value>
   </data>
   <data name="STEP_ROUTE_LIST" xml:space="preserve">
     <value>api/Step/getStepRouteList</value>

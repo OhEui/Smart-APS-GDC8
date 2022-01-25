@@ -12,13 +12,12 @@ namespace APSServer.Controllers
 {
     [Authorize]
     [APILogger]
-    [RoutePrefix("api/LineInfo")]
+    [RoutePrefix("api/Line_Info")]
     public class LineInfoController : ApiController
     {
-        //POST : https://localhost:44309/api/LineInfo/SaveLineInfo
-
+        //POST : https://localhost:44309/api/Line_Info/Save
         [HttpPost]
-        [Route("SaveLineInfo")]
+        [Route("Save")]
         public IHttpActionResult SaveLineInfo(Line_Info_VO line_Info)
         {
             WebMessage msg = new WebMessage();
@@ -39,9 +38,9 @@ namespace APSServer.Controllers
         }
 
 
-        //GET :  https://localhost:44309/api/LineInfo/AllList
+        //GET :  https://localhost:44309/api/Line_Info/
         [HttpGet]
-        [Route("AllList")]
+        [Route]
         public List<Line_Info_VO> GetAllLineInfo()
         {
             LineInfoDAC db = new LineInfoDAC();
@@ -72,7 +71,7 @@ namespace APSServer.Controllers
             return Ok(msg);
         }
 
-        //GET : https://localhost:44309/api/LineInfo/Delete/{id}
+        //GET : https://localhost:44309/api/Line_Info/Delete/{id}
         [HttpGet]
         [Route("Delete/{id}")]
         public IHttpActionResult DeleteLineInfo(string id)

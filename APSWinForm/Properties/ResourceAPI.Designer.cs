@@ -214,7 +214,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/LineInfo/Delete/{0}과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/line_info/delete/{0}과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string LINE_INFO_DELETE {
             get {
@@ -223,7 +223,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/LineInfo/AllList과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/line_info과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string LINE_INFO_LIST {
             get {
@@ -232,7 +232,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/LineInfo/SaveLineInfo과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/line_info/save과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string LINE_INFO_SAVE {
             get {
