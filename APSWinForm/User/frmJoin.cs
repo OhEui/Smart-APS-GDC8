@@ -16,7 +16,10 @@ namespace APSWinForm
 {
     public partial class frmJoin : frmBaseIcon
     {
+        #region API
+        readonly string ACCOUNT_REGISTER = Properties.ResourceAPI.ACCOUNT_REGISTER;
 
+        #endregion
 
         public frmJoin()
         {
@@ -38,7 +41,7 @@ namespace APSWinForm
             };
 
             ServiceHelp srv = new ServiceHelp();
-            string path = "api/Account/Register";
+            string path = ACCOUNT_REGISTER;
             var result = await srv.PostAsync<RegisterVO, ModelMessage>(path, req);
             if (srv.IsSuccessStatusCode)
             {

@@ -15,6 +15,11 @@ namespace APSWinForm
 {
     public partial class frmLogin : frmBaseIcon
     {
+        #region API
+        readonly string ACCOUNT_LOGIN = Properties.ResourceAPI.ACCOUNT_LOGIN;
+        readonly string ACCOUNT_CUR_INFO = Properties.ResourceAPI.ACCOUNT_CUR_INFO;
+        #endregion
+
         public frmLogin()
         {
             InitializeComponent();
@@ -38,7 +43,7 @@ namespace APSWinForm
             // access_token 가져오기
             using (ServiceHelp srv = new ServiceHelp()) 
             {
-                resToken = await srv.PostAsync<ReqUserLogin, WebMessage<TokenModel>>("api/Account/Login", reqData);
+                resToken = await srv.PostAsync<ReqUserLogin, WebMessage<TokenModel>>(ACCOUNT_LOGIN, reqData);
                 if (resToken != null && resToken.IsSuccess)
                 {
                     if (ckLogin.Checked) // 로그인 OK 버튼 실행할 때 저장
@@ -57,7 +62,7 @@ namespace APSWinForm
 
             using (ServiceHelp srv = new ServiceHelp()) 
             {
-                resUserInfo = await srv.GetListAsync("api/Account/UserInfo", new UserInfo());
+                resUserInfo = await srv.GetListAsync(ACCOUNT_CUR_INFO, new UserInfo());
                 if (resUserInfo != null)
                 {
                     UserInfoStorage.Current = resUserInfo;

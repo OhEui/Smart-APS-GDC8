@@ -29,7 +29,7 @@ namespace APSWinForm
             var newInstance = new DBInfoStorage();
 
             // API 호출 후 _info에 저장
-            string path = APIUrl;
+            string path = newInstance.APIUrl;
 
             ServiceHelp srv = new ServiceHelp();
             var data = await srv.GetListAsync<List<DeleteMetaDataVO>>(path);
