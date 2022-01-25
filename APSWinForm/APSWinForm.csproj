@@ -101,10 +101,10 @@
     <Compile Include="Controls\PeriodUserControl.designer.cs">
       <DependentUpon>PeriodUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForm2.cs">
+    <Compile Include="BaseForm\BaseForm2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseForm2.Designer.cs">
+    <Compile Include="BaseForm\BaseForm2.Designer.cs">
       <DependentUpon>BaseForm2.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForm\frmBaseIcon.cs">
@@ -130,17 +130,17 @@
     <Compile Include="WebView\frmWebView.Designer.cs">
       <DependentUpon>frmWebView.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSY\DEMANDpop.cs">
+    <Compile Include="MasterData_1\frmDemandPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSY\DEMANDpop.Designer.cs">
-      <DependentUpon>DEMANDpop.cs</DependentUpon>
+    <Compile Include="MasterData_1\frmDemandPop.Designer.cs">
+      <DependentUpon>frmDemandPop.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSY\frmDEMAND.cs">
+    <Compile Include="MasterData_1\frmDemand.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSY\frmDEMAND.Designer.cs">
-      <DependentUpon>frmDEMAND.cs</DependentUpon>
+    <Compile Include="MasterData_1\frmDemand.Designer.cs">
+      <DependentUpon>frmDemand.cs</DependentUpon>
     </Compile>
     <Compile Include="User\frmIDCheck.cs">
       <SubType>Form</SubType>
@@ -154,10 +154,10 @@
     <Compile Include="User\frmJoin.designer.cs">
       <DependentUpon>frmJoin.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSY\frmLineInfo.cs">
+    <Compile Include="MasterData_1\frmLineInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSY\frmLineInfo.Designer.cs">
+    <Compile Include="MasterData_1\frmLineInfo.Designer.cs">
       <DependentUpon>frmLineInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="User\frmLogin.cs">
@@ -181,23 +181,23 @@
     <Compile Include="Controls\CapitalTextBox.Designer.cs">
       <DependentUpon>CapitalTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSY\frmPRODUCT.cs">
+    <Compile Include="MasterData_1\frmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSY\frmPRODUCT.Designer.cs">
-      <DependentUpon>frmPRODUCT.cs</DependentUpon>
+    <Compile Include="MasterData_1\frmProduct.Designer.cs">
+      <DependentUpon>frmProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSY\LineInfopop.cs">
+    <Compile Include="MasterData_1\frmLineInfoPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSY\LineInfopop.Designer.cs">
-      <DependentUpon>LineInfopop.cs</DependentUpon>
+    <Compile Include="MasterData_1\frmLineInfoPop.Designer.cs">
+      <DependentUpon>frmLineInfoPop.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSY\Productpop.cs">
+    <Compile Include="MasterData_1\frmProductPop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSY\Productpop.Designer.cs">
-      <DependentUpon>Productpop.cs</DependentUpon>
+    <Compile Include="MasterData_1\frmProductPop.Designer.cs">
+      <DependentUpon>frmProductPop.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\NumTextBox.cs">
       <SubType>Component</SubType>
@@ -289,10 +289,10 @@
     <Compile Include="Util\CommonUtil.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\ExcelUtil.cs" />
-    <Compile Include="Util\TabControlZ.cs">
+    <Compile Include="Controls\TabControlZ.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="BaseForm2.resx">
+    <EmbeddedResource Include="BaseForm\BaseForm2.resx">
       <DependentUpon>BaseForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\BaseFormSample.resx">
@@ -308,16 +308,16 @@
     <EmbeddedResource Include="Controls\PeriodUserControl.resx">
       <DependentUpon>PeriodUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSY\DEMANDpop.resx">
-      <DependentUpon>DEMANDpop.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_1\frmDemandPop.resx">
+      <DependentUpon>frmDemandPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSY\frmDEMAND.resx">
-      <DependentUpon>frmDEMAND.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_1\frmDemand.resx">
+      <DependentUpon>frmDemand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\frmJoin.resx">
       <DependentUpon>frmJoin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSY\frmLineInfo.resx">
+    <EmbeddedResource Include="MasterData_1\frmLineInfo.resx">
       <DependentUpon>frmLineInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\frmLogin.resx">
@@ -326,14 +326,14 @@
     <EmbeddedResource Include="User\frmPassWord.resx">
       <DependentUpon>frmPassWord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSY\frmPRODUCT.resx">
-      <DependentUpon>frmPRODUCT.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_1\frmProduct.resx">
+      <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSY\LineInfopop.resx">
-      <DependentUpon>LineInfopop.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_1\frmLineInfoPop.resx">
+      <DependentUpon>frmLineInfoPop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSY\Productpop.resx">
-      <DependentUpon>Productpop.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_1\frmProductPop.resx">
+      <DependentUpon>frmProductPop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\NumTextBox.resx">
       <DependentUpon>NumTextBox.cs</DependentUpon>
