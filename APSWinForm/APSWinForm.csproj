@@ -211,29 +211,29 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\EQPARR_REG.cs">
+    <Compile Include="MasterData_3\frmEqpArrangeReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\EQPARR_REG.Designer.cs">
-      <DependentUpon>EQPARR_REG.cs</DependentUpon>
+    <Compile Include="MasterData_3\frmEqpArrangeReg.Designer.cs">
+      <DependentUpon>frmEqpArrangeReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\EQP_ARRANGE.cs">
+    <Compile Include="MasterData_3\frmEqpArrange.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\EQP_ARRANGE.Designer.cs">
-      <DependentUpon>EQP_ARRANGE.cs</DependentUpon>
+    <Compile Include="MasterData_3\frmEqpArrange.Designer.cs">
+      <DependentUpon>frmEqpArrange.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\EQUIPMENT.cs">
+    <Compile Include="MasterData_3\frmEquipment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\EQUIPMENT.Designer.cs">
-      <DependentUpon>EQUIPMENT.cs</DependentUpon>
+    <Compile Include="MasterData_3\frmEquipment.Designer.cs">
+      <DependentUpon>frmEquipment.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\EQUIPMENT_REG.cs">
+    <Compile Include="MasterData_3\frmEquipmentReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\EQUIPMENT_REG.Designer.cs">
-      <DependentUpon>EQUIPMENT_REG.cs</DependentUpon>
+    <Compile Include="MasterData_3\frmEquipmentReg.Designer.cs">
+      <DependentUpon>frmEquipmentReg.cs</DependentUpon>
     </Compile>
     <Compile Include="User\frmUserInfo.cs">
       <SubType>Form</SubType>
@@ -247,17 +247,17 @@
     <Compile Include="User\MenuAuth.Designer.cs">
       <DependentUpon>MenuAuth.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\SETUP_REG.cs">
+    <Compile Include="MasterData_3\frmSetupTimeReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\SETUP_REG.Designer.cs">
-      <DependentUpon>SETUP_REG.cs</DependentUpon>
+    <Compile Include="MasterData_3\frmSetupTimeReg.Designer.cs">
+      <DependentUpon>frmSetupTimeReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\SETUP_TIME.cs">
+    <Compile Include="MasterData_3\frmSetupTime.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\SETUP_TIME.Designer.cs">
-      <DependentUpon>SETUP_TIME.cs</DependentUpon>
+    <Compile Include="MasterData_3\frmSetupTime.Designer.cs">
+      <DependentUpon>frmSetupTime.cs</DependentUpon>
     </Compile>
     <Compile Include="MasterData_2\frmStdStepInfoReg.cs">
       <SubType>Form</SubType>
@@ -341,17 +341,17 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\EQPARR_REG.resx">
-      <DependentUpon>EQPARR_REG.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_3\frmEqpArrangeReg.resx">
+      <DependentUpon>frmEqpArrangeReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\EQP_ARRANGE.resx">
-      <DependentUpon>EQP_ARRANGE.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_3\frmEqpArrange.resx">
+      <DependentUpon>frmEqpArrange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\EQUIPMENT.resx">
-      <DependentUpon>EQUIPMENT.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_3\frmEquipment.resx">
+      <DependentUpon>frmEquipment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\EQUIPMENT_REG.resx">
-      <DependentUpon>EQUIPMENT_REG.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_3\frmEquipmentReg.resx">
+      <DependentUpon>frmEquipmentReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\frmUserInfo.resx">
       <DependentUpon>frmUserInfo.cs</DependentUpon>
@@ -359,11 +359,11 @@
     <EmbeddedResource Include="User\MenuAuth.resx">
       <DependentUpon>MenuAuth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\SETUP_REG.resx">
-      <DependentUpon>SETUP_REG.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_3\frmSetupTimeReg.resx">
+      <DependentUpon>frmSetupTimeReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\SETUP_TIME.resx">
-      <DependentUpon>SETUP_TIME.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_3\frmSetupTime.resx">
+      <DependentUpon>frmSetupTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterData_2\frmStdStepInfoReg.resx">
       <DependentUpon>frmStdStepInfoReg.cs</DependentUpon>
