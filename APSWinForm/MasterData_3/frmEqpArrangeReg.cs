@@ -57,7 +57,7 @@ namespace APSWinForm
             CommonUtil.ComboBinding(cboProduct, ProductList, "PRODUCT_ID", blankText: "");
             CommonUtil.ComboBinding(cboProcess, ProcessList, "PROCESS_ID", blankText: "");
             CommonUtil.ComboBinding(cboStep, ProcessList, "STD_STEP_ID", blankText: "");
-            CommonUtil.ComboBinding(cboEQP, EQPList, "EQP_ID", "EQP_MODEL", "");
+            CommonUtil.ComboBinding(cboEQP, EQPList, "EQP_ID", "EQP_ID", "");
             EQPARRList = await srv.GetListAsync(EQP_ARRANGE_LIST, EQPARRList);
             Modify();
 

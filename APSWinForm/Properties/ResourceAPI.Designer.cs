@@ -160,7 +160,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/EQUIPMENT/DelEQPARR?PRODUCT_ID={0}&amp;PROCESS_ID={1}&amp;STEP_ID={2}&amp;EQP_ID={3}과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/eqp_arrange/delete?PRODUCT_ID={0}&amp;PROCESS_ID={1}&amp;STEP_ID={2}&amp;EQP_ID={3}과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string EQP_ARRANGE_DELETE {
             get {
@@ -169,7 +169,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/EQUIPMENT/ARRlist과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/eqp_arrange과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string EQP_ARRANGE_LIST {
             get {
@@ -178,7 +178,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/EQUIPMENT/EQPArrnew과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/eqp_arrange/save과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string EQP_ARRANGE_SAVE {
             get {
@@ -187,7 +187,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/EQUIPMENT/DelEQP/{0}과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/equipment/delete/{0}과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string EQUIPMENT_DELETE {
             get {
@@ -196,7 +196,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/EQUIPMENT/EQPlist과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/equipment과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string EQUIPMENT_LIST {
             get {
@@ -205,7 +205,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/EQUIPMENT/EQPnew과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/equipment/save과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string EQUIPMENT_SAVE {
             get {

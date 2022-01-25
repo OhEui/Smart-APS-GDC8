@@ -164,23 +164,23 @@
     <value>api/std_step_info/delete/{0}</value>
   </data>
   <data name="EQUIPMENT_LIST" xml:space="preserve">
-    <value>api/EQUIPMENT/EQPlist</value>
+    <value>api/equipment</value>
   </data>
   <data name="EQUIPMENT_SAVE" xml:space="preserve">
-    <value>api/EQUIPMENT/EQPnew</value>
+    <value>api/equipment/save</value>
   </data>
   <data name="EQUIPMENT_DELETE" xml:space="preserve">
-    <value>api/EQUIPMENT/DelEQP/{0}</value>
+    <value>api/equipment/delete/{0}</value>
     <comment>0: EQP_ID</comment>
   </data>
   <data name="EQP_ARRANGE_LIST" xml:space="preserve">
-    <value>api/EQUIPMENT/ARRlist</value>
+    <value>api/eqp_arrange</value>
   </data>
   <data name="EQP_ARRANGE_SAVE" xml:space="preserve">
-    <value>api/EQUIPMENT/EQPArrnew</value>
+    <value>api/eqp_arrange/save</value>
   </data>
   <data name="EQP_ARRANGE_DELETE" xml:space="preserve">
-    <value>api/EQUIPMENT/DelEQPARR?PRODUCT_ID={0}&amp;PROCESS_ID={1}&amp;STEP_ID={2}&amp;EQP_ID={3}</value>
+    <value>api/eqp_arrange/delete?PRODUCT_ID={0}&amp;PROCESS_ID={1}&amp;STEP_ID={2}&amp;EQP_ID={3}</value>
     <comment>0: PRODUCT_ID, 1: PROCESS_ID, 2: STEP_ID, 3: EQP_ID</comment>
   </data>
   <data name="SETUP_TIME_LIST" xml:space="preserve">
