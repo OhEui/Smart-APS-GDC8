@@ -1,4 +1,5 @@
-﻿using APSServer.Util;
+﻿using APSLogger;
+using APSServer.Util;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
@@ -21,7 +22,18 @@ namespace APSServer.Filters
             var user = request.GetRequestContext().Principal;
             
             string userID = userManager.FindById(user.Identity.GetUserId()).UserName;
-            Logger.APILogger(userID, request);
+            APILogger(userID, request);
+        }
+
+        public void APILogger(string userID, HttpRequestMessage reqMessage)
+        {
+            string method = reqMessage.Method.ToString();
+            string path = reqMessage.RequestUri.AbsolutePath;
+
+            string logStr = $"userID:{userID}\t{method}\t{path}";
+
+            LoggingUtility logger = new LoggingUtility("apiLogger");
+            logger.WriteInfo(logStr);
         }
     }
 }
