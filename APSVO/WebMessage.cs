@@ -23,4 +23,9 @@ namespace APSVO
         public string ResultMsg { get; set; }
         public T Data { get; set; }
     }
+    public class ModelMessage
+    {
+        public string Message { get; set; }
+        public Dictionary<string, IList<string>> ModelState { get; set; }
+    }
 }

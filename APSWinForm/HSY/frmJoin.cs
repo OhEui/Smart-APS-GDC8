@@ -26,60 +26,20 @@ namespace APSWinForm
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            //입력 유효성 체크
-            StringBuilder sb = new StringBuilder();
-            if (txtID.Text.Length < 6)
-            {
-                sb.AppendLine("- ID를 입력하세요.");
-            }
-            if (txtPW.Text.Length < 8)
-            {
-                sb.AppendLine("- 비밀번호를 입력하세요");
-            }
-            if (txtPW2.Text != txtPW.Text)
-            {
-                sb.AppendLine("- 비밀번호가 같지 않습니다. 다시 입력하세요.");
-            }
-            if (txtName.Text.Length < 2)
-            {
-                sb.AppendLine("- 이름을 입력하세요.");
-            }
-            if (txtPhone.Text.Length < 11)
-            {
-                sb.AppendLine("- 전화번호를 입력하세요.");
-            }
-            if (txtEmail.Text.Length < 6)
-            {
-                sb.AppendLine("- 이메일을 입력하세요.");
-            }
-            if (cbEmail.Text.Length < 7)
-            {
-                sb.AppendLine("- E-mail 주소를 선택하세요.");
-            }
-            if (txtBirth.Text.Length < 8)
-            {
-                sb.AppendLine("- 생년월일을 입력하세요.");
-            }
-            if (sb.ToString().Length > 1)
-            {
-                MessageBox.Show(sb.ToString());
-                return;
-            }
-
             var req = new RegisterVO()
             { 
-                ID = $"{txtID}",
-                Email = $@"{txtEmail}@{cbEmail}",
-                Password = $"{txtPW}",
-                ConfirmPassword = $"{txtPW2}",
-                Phone = $"{txtPhone}",
-                Name = $"{txtName}",
-                Birthday = Convert.ToDateTime(txtBirth)
+                ID = txtID.Text,
+                Email = $@"{txtEmail.Text}@{cbEmail.Text}",
+                Password = txtPW.Text,
+                ConfirmPassword = txtPW2.Text,
+                Phone = txtPhone.Text,
+                Name = txtName.Text,
+                Birthday = Convert.ToDateTime(txtBirth.Text)
             };
 
             ServiceHelp srv = new ServiceHelp();
             string path = "api/Account/Register";
-            var result = await srv.PostAsync<RegisterVO, ModelStateDictionary>(path, req);
+            var result = await srv.PostAsync<RegisterVO, ModelMessage>(path, req);
             if (srv.IsSuccessStatusCode)
             {
                 MessageBox.Show("회원가입에 성공하였습니다.");
@@ -88,10 +48,11 @@ namespace APSWinForm
             else
             {
                 StringBuilder errStr = new StringBuilder();
-                var allErrors = result.Values.SelectMany(v => v.Errors.Select(b => b.ErrorMessage));
-                if (allErrors == null)
+                List<string> lst = new List<string>();
+                result.ModelState.Values.ToList().ForEach(i => lst.AddRange(i));
+                if (lst.Count <= 0)
                     return;
-                allErrors.ToList().ForEach((i) => errStr.AppendLine(i));
+                lst.ForEach((i) => errStr.AppendLine(i));
                 MessageBox.Show(errStr.ToString());
             }
 
