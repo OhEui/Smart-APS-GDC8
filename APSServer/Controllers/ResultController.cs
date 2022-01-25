@@ -1,4 +1,5 @@
 ﻿
+using APSServer.Filters;
 using APSServer.Models;
 
 using APSVO;
@@ -16,7 +17,7 @@ namespace APSServer.Controllers
     {
         // https://localhost:44309/api/Result/EQPGantt
         [HttpPost]
-        [Route("EQPGantt/Data")][Authorize]
+        [Route("EQPGantt/Data")][Authorize][APILogger]
         public IHttpActionResult GetEQPGanttChartData(ReqEQPGantt req)
         {
             // 차트 데이터 가져오기

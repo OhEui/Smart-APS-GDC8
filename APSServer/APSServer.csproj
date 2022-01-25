@@ -211,6 +211,7 @@
     <Compile Include="Controllers\SetUpController.cs" />
     <Compile Include="Controllers\StepController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Filters\LogActionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,6 +239,7 @@
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Util\Helper.cs" />
+    <Compile Include="Util\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -284,6 +286,10 @@
     <ProjectReference Include="..\APSUtil\Http\APSUtil.Http.csproj">
       <Project>{79342bf6-8059-4f29-b21e-846bb7f9cad4}</Project>
       <Name>APSUtil.Http</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APSUtil\Logger\APSUtil.Logger.csproj">
+      <Project>{3647bcb9-bc2a-4bc1-aad5-048c9a036a15}</Project>
+      <Name>APSUtil.Logger</Name>
     </ProjectReference>
     <ProjectReference Include="..\APSVO\APSVO.csproj">
       <Project>{0b74b488-1a0a-43ea-a635-af727722bdc7}</Project>
