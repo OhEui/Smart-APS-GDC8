@@ -14,6 +14,11 @@ namespace APSWinForm
 {
 	public partial class STEPROUTE_REG : frmBaseIcon
 	{
+		#region API
+		readonly string STEP_ROUTE_LIST = Properties.ResourceAPI.STEP_ROUTE_LIST;
+		readonly string STEP_ROUTE_SAVE = Properties.ResourceAPI.STEP_ROUTE_SAVE;
+		#endregion
+
 		ServiceHelp srv = new ServiceHelp();
 		List<StepRouteVO> stepRouteList = null;
 		StepRouteVO modStepRoute = null;
@@ -42,7 +47,7 @@ namespace APSWinForm
 			DataGridViewUtil.AddGridTextColumn(dgvStepRoute, Properties.Resources.STEP_TAT, "STEP_TAT", align: DataGridViewContentAlignment.MiddleCenter, colWidth: 80);
 			dgvStepRoute.RowHeadersVisible = false;
 
-			stepRouteList = await srv.GetListAsync("api/Step/getStepRouteList", stepRouteList);
+			stepRouteList = await srv.GetListAsync(STEP_ROUTE_LIST, stepRouteList);
 			SetComboBox();
 
 			
@@ -123,12 +128,12 @@ namespace APSWinForm
 				};
 			}
 
-			WebMessage msg = await srv.PostAsyncNone("api/Step/saveStepRoute", newStep);
+			WebMessage msg = await srv.PostAsyncNone(STEP_ROUTE_SAVE, newStep);
 
 			if (msg.IsSuccess)
 			{
 				//this.DialogResult = DialogResult.OK;
-				stepRouteList = await srv.GetListAsync("api/Step/getStepRouteList", stepRouteList);
+				stepRouteList = await srv.GetListAsync(STEP_ROUTE_LIST, stepRouteList);
 			}
 
 			if(MessageBox.Show(msg.ResultMessage+"\n계속하시겠습니까?", "수정/추가", MessageBoxButtons.YesNo) == DialogResult.Yes)

@@ -385,7 +385,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/Step/DelStepRoute과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/Step/DelStepRoute?PROCESS_ID={0}&amp;STEP_ID={1}과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string STEP_ROUTE_DELETE {
             get {

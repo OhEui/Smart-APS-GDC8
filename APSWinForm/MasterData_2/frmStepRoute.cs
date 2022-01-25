@@ -15,6 +15,13 @@ namespace APSWinForm
 {
 	public partial class STEP_ROUTE : frmBaseIcon
 	{
+		#region API
+		readonly string STEP_ROUTE_LIST = Properties.ResourceAPI.STEP_ROUTE_LIST;
+		readonly string STEP_ROUTE_DELETE = Properties.ResourceAPI.STEP_ROUTE_DELETE;
+		string DeleteUrl(string processID, string stepID) => 
+			string.Format(STEP_ROUTE_DELETE, processID, stepID);
+		#endregion
+
 		ServiceHelp srv = new ServiceHelp();
 		List<StepRouteVO> stepRouteList = null;
 
@@ -43,7 +50,7 @@ namespace APSWinForm
 
 		private async void LoadData()
 		{
-			stepRouteList = await srv.GetListAsync("api/Step/getStepRouteList", stepRouteList);
+			stepRouteList = await srv.GetListAsync(STEP_ROUTE_LIST, stepRouteList);
 
 			dgvStepRoute.DataSource = null;
 			dgvStepRoute.DataSource = stepRouteList;
@@ -150,9 +157,9 @@ namespace APSWinForm
 			if (msgResullt == DialogResult.Cancel) return;
 			else
 			{
-				string paramStr = $"api/Step/DelStepRoute?PROCESS_ID={curProcID}&STEP_ID={curStepID}";
+				//string paramStr = $"api/Step/DelStepRoute?PROCESS_ID={curProcID}&STEP_ID={curStepID}";
 				//WebMessage msg = await srv.GetAsync($"api/Step/DelStepRoute/{curStepRoute}");
-				WebMessage msg = await srv.GetAsync(paramStr);
+				WebMessage msg = await srv.GetAsync(DeleteUrl(curProcID,curStepID));
 
 				if (msg.IsSuccess)
 				{

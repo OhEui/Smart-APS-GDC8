@@ -151,7 +151,8 @@
     <value>api/Step/saveStepRoute</value>
   </data>
   <data name="STEP_ROUTE_DELETE" xml:space="preserve">
-    <value>api/Step/DelStepRoute</value>
+    <value>api/Step/DelStepRoute?PROCESS_ID={0}&amp;STEP_ID={1}</value>
+    <comment>0: PROCESS_ID, 1: STEP_ID</comment>
   </data>
   <data name="STD_STEP_INFO_LIST" xml:space="preserve">
     <value>api/Step/getStepInfoList</value>
