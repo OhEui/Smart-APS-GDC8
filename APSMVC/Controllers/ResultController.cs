@@ -18,8 +18,13 @@ namespace APSMVC.Controllers
             var access_token = Request.Headers["authorization"];
             ServiceHelp srv = new ServiceHelp(true, access_token);
             ChartCommonData commonData = await srv.GetListAsync<ChartCommonData>($"api/Result/EQPGantt/Common", null); // 설비그룹, 설비ID, 제품ID 가져오기
-            List<ComboItemVO> comboItem = commonData.ComboItemList;
+            if (commonData == null)
+            {
+                return new HttpUnauthorizedResult();
+            }
 
+
+            List<ComboItemVO> comboItem = commonData.ComboItemList;
             string result = await srv.PostJsonStringAsync($"api/Result/EQPGantt/Data", new ReqEQPGantt() 
             {
                 EQP_GROUP = EQP_GROUP,
@@ -28,11 +33,6 @@ namespace APSMVC.Controllers
                 Start_Date = Start_Date ?? commonData.Start_Date,
                 End_Date = End_Date ?? commonData.End_Date
             });  // 차트 데이터 가져오기
-
-            if (result == null)
-            {
-                return new HttpUnauthorizedResult();
-            }
 
             var eqpIDList= comboItem.Where((i) => i.Category == "EQP_ID").ToList();
             var eqpGroupList = comboItem.Where((i) => i.Category == "EQP_GROUP").ToList();
@@ -75,6 +75,11 @@ namespace APSMVC.Controllers
             var access_token = Request.Headers["authorization"];
             ServiceHelp srv = new ServiceHelp(true, access_token);
             ChartCommonData commonData = await srv.GetListAsync<ChartCommonData>($"api/Result/Utilization/Common", null); // 설비그룹, 설비ID, 제품ID 가져오기
+            if (commonData == null)
+            {
+                return new HttpUnauthorizedResult();
+            }
+
             List<ComboItemVO> comboItem = commonData.ComboItemList;
 
             var result = 
@@ -83,11 +88,6 @@ namespace APSMVC.Controllers
                 MachineState = MACHINE_STATE,
                 VersionNo = VERSION_NO
             });  // 차트 데이터 가져오기
-
-            if (result == null)
-            {
-                return new HttpUnauthorizedResult();
-            }
 
             var chartData = result;
             var mslist = comboItem.Where((i) => i.Category == "MACHINE_STATE").ToList();

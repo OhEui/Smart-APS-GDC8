@@ -20,16 +20,20 @@ namespace APSMVC.Controllers
             var access_token = Request.Headers["authorization"];
             ServiceHelp srv = new ServiceHelp(true, access_token);
 
-            var resUserInfo = await srv.GetListAsync("api/Account/UserInfo", new UserInfo());
-            if (resUserInfo != null)
-                ViewBag.UserName = resUserInfo.Name;
 
             List<ComboItemVO> comboItem = null;
             //List<ChartData> list = null;
 
             string result = await srv.GetJsonStringAsync($"api/Result/getLOTList?productID={productID}&lotID={lotID}");
+            if (result == null)
+            {
+                return new HttpUnauthorizedResult();
+            }
+
+
             string cate = await srv.GetJsonStringAsync($"api/Result/getLOTCategory?productID={productID}&lotID={lotID}");
             comboItem = await srv.GetListAsync("api/Result/getComboList", comboItem);
+
 
             comboItem.Insert(0, new ComboItemVO { Code = "", CodeName = "전체" });
 
