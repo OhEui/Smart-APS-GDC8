@@ -15,6 +15,12 @@ namespace APSWinForm
 {
 	public partial class STD_STEP_INFO : frmBaseIcon
 	{
+		#region API
+		readonly string STD_STEP_INFO_LIST = Properties.ResourceAPI.STD_STEP_INFO_LIST;
+		readonly string STD_STEP_INFO_DELETE = Properties.ResourceAPI.STD_STEP_INFO_DELETE;
+		string DeleteUrl(string id) => string.Format(STD_STEP_INFO_DELETE, id);
+		#endregion
+
 		ServiceHelp srv = new ServiceHelp();
 		List<STD_STEP_VO> stepList = null;
 
@@ -42,7 +48,7 @@ namespace APSWinForm
 
 		public async void LoadData()
 		{
-			stepList = await srv.GetListAsync("api/Step/getStepInfoList", stepList);
+			stepList = await srv.GetListAsync(STD_STEP_INFO_LIST, stepList);
 
 			dgvStepInfoList.DataSource = null;
 			dgvStepInfoList.DataSource = stepList;
@@ -116,7 +122,7 @@ namespace APSWinForm
 			if (msgResullt == DialogResult.Cancel) return;
 			else
 			{
-				WebMessage msg = await srv.GetAsync($"api/Step/DelStepInfo/{curStep}");
+				WebMessage msg = await srv.GetAsync(DeleteUrl(curStep));
 
 				if (msg.IsSuccess)
 				{

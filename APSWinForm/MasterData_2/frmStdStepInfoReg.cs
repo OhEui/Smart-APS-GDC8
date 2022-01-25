@@ -15,6 +15,11 @@ namespace APSWinForm
 {
 	public partial class STDSTEP_REG : frmBaseIcon
 	{
+		#region API
+		readonly string STD_STEP_INFO_LIST = Properties.ResourceAPI.STD_STEP_INFO_LIST;
+		readonly string STD_STEP_INFO_SAVE = Properties.ResourceAPI.STD_STEP_INFO_SAVE;
+		#endregion
+
 		ServiceHelp srv = new ServiceHelp();
 		List<STD_STEP_VO> stepList;
 		bool existStepID = false;
@@ -41,7 +46,7 @@ namespace APSWinForm
 
 		private async void STDSTEP_REG_Load(object sender, EventArgs e)
 		{
-			stepList = await srv.GetListAsync("api/Step/getStepInfoList", stepList);
+			stepList = await srv.GetListAsync(STD_STEP_INFO_LIST, stepList);
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
@@ -69,7 +74,7 @@ namespace APSWinForm
 				user_id = UserInfoStorage.Current.ID
 			};
 
-			WebMessage msg = await srv.PostAsyncNone("api/Step/saveStdStep", newStep);
+			WebMessage msg = await srv.PostAsyncNone(STD_STEP_INFO_SAVE, newStep);
 
 			if (msg.IsSuccess)
 			{
