@@ -18,6 +18,9 @@ namespace APSWinForm
         #region API
         readonly string EQP_ARRANGE_LIST = Properties.ResourceAPI.EQP_ARRANGE_LIST;
         readonly string EQP_ARRANGE_DELETE = Properties.ResourceAPI.EQP_ARRANGE_DELETE;
+
+        readonly string EQUIPMENT_LIST = Properties.ResourceAPI.EQUIPMENT_LIST;
+
         string DeleteUrl(string productID, string processID, string stepID, string eqpID) =>
             string.Format(EQP_ARRANGE_DELETE, productID, processID, stepID, eqpID);
         #endregion
@@ -58,7 +61,7 @@ namespace APSWinForm
             
             ProductList = await srv.GetListAsync("api/Common/CommonCode", ProductList);
             ProcessList = await srv.GetListAsync("api/Common/CommonCode", ProcessList);
-            EQPList = await srv.GetListAsync("api/EQUIPMENT/EQPlist", EQPList);
+            EQPList = await srv.GetListAsync(EQUIPMENT_LIST, EQPList);
             CommonUtil.ComboBinding(cboProduct, ProductList, "PRODUCT_ID", blankText: "");
             CommonUtil.ComboBinding(cboProcess, ProcessList, "PROCESS_ID", blankText: "");
             CommonUtil.ComboBinding(cboEQP, EQPList, "EQP_ID", "EQP_MODEL", "");

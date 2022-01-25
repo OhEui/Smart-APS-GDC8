@@ -15,16 +15,21 @@ namespace APSWinForm
 {
     public partial class EQUIPMENT_REG : frmBaseIcon
     {
+        #region API
+        readonly string EQUIPMENT_LIST = Properties.ResourceAPI.EQUIPMENT_LIST;
+        readonly string EQUIPMENT_SAVE = Properties.ResourceAPI.EQUIPMENT_SAVE;
+        #endregion
+
         ServiceHelp srv = new ServiceHelp();
         EQUIPVO EQPvo;
         List<ComboItemVO> list;
         List<LineVO> Lineinfo;
         List<EQUIPVO> EQPlist;
-        bool existEQPID = false;
+        //bool existEQPID = false;
         public EQUIPMENT_REG()
         {
             InitializeComponent();
-            existEQPID = true;
+            //existEQPID = true;
             txtEqpID.ImeMode = ImeMode.Disable;
             txtEqpID.CharacterCasing = CharacterCasing.Upper;
             this.MaximizeBox = false;
@@ -54,7 +59,7 @@ namespace APSWinForm
             CommonUtil.ComboBinding(cboEqpGroup, list, "STD_STEP_ID", blankText: "");
             //CommonUtil.ComboBinding(cboLineID, list, "LINE_ID", blankText: "선택");
             //CommonUtil.ComboBinding(cboSiteID, list, "SITE_ID", blankText: "선택");
-            EQPlist = await srv.GetListAsync("api/EQUIPMENT/EQPlist", EQPlist);
+            EQPlist = await srv.GetListAsync(EQUIPMENT_LIST, EQPlist);
             Modify();
         }
 
@@ -102,7 +107,7 @@ namespace APSWinForm
                     vo.LINE_ID = cboLineID.SelectedValue.ToString();
                     vo.SITE_ID = cboSiteID.SelectedValue.ToString();
                     vo.user_id = "test";
-                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", vo);
+                    WebMessage msg = await srv.PostAsyncNone(EQUIPMENT_SAVE, vo);
 
 
                     if (msg.IsSuccess)
@@ -122,7 +127,7 @@ namespace APSWinForm
                     newvo.SITE_ID = cboSiteID.SelectedValue.ToString();
                     newvo.user_id = "test";
 
-                    WebMessage msg = await srv.PostAsyncNone("api/EQUIPMENT/EQPnew", newvo);
+                    WebMessage msg = await srv.PostAsyncNone(EQUIPMENT_SAVE, newvo);
 
 
                     if (msg.IsSuccess)
@@ -147,14 +152,14 @@ namespace APSWinForm
             if (EQPID != null)
             {
                 lblExist.Visible = true;
-                existEQPID = false;
+                //existEQPID = false;
                 this.ActiveControl = txtEqpID;
                 btnAdd.Enabled = false;
             }
             else
             {
                 lblExist.Visible = false;
-                existEQPID = true;
+                //existEQPID = true;
                 btnAdd.Enabled = true;
             }
 

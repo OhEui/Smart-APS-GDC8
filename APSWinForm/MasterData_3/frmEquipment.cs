@@ -15,6 +15,13 @@ namespace APSWinForm
 {
     public partial class EQUIPMENT : frmBaseIcon
     {
+        #region API
+        readonly string EQUIPMENT_LIST = Properties.ResourceAPI.EQUIPMENT_LIST;
+        readonly string EQUIPMENT_DELETE = Properties.ResourceAPI.EQUIPMENT_DELETE;
+        string DeleteUrl(string eqpID) => string.Format(EQUIPMENT_DELETE, eqpID);
+        #endregion
+
+
         List<EQUIPVO> EQPlist = null;
         ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> list = null;
@@ -58,7 +65,7 @@ namespace APSWinForm
         private async void dgvLoad()
         {
             dgvEQP.DataSource = null;
-            EQPlist = await srv.GetListAsync("api/EQUIPMENT/EQPlist", EQPlist);
+            EQPlist = await srv.GetListAsync(EQUIPMENT_LIST, EQPlist);
             dgvEQP.DataSource = EQPlist;
 
            
@@ -137,7 +144,7 @@ namespace APSWinForm
                 if (MessageBox.Show($"{cur}항목을 삭제 하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
 
-                    WebMessage msg = await srv.GetAsync($"api/EQUIPMENT/DelEQP/{cur}");
+                    WebMessage msg = await srv.GetAsync(DeleteUrl(cur));
 
                     if (msg.IsSuccess)
                     {
