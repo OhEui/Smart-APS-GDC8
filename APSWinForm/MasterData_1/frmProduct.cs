@@ -15,6 +15,12 @@ namespace APSWinForm
 {
     public partial class frmPRODUCT : frmBaseIcon
     {
+        #region API
+        readonly string PRODUCT_LIST = Properties.ResourceAPI.PRODUCT_LIST;
+        readonly string PRODUCT_DELETE = Properties.ResourceAPI.PRODUCT_DELETE;
+        string DeleteUrl(string id) => string.Format(PRODUCT_DELETE, id);
+        #endregion
+
         ServiceHelp srv = new ServiceHelp();
         List<ProductVO> list = null;
 
@@ -29,7 +35,7 @@ namespace APSWinForm
 
         private async void LoadData()
         {
-            list = await srv.GetListAsync("api/Product/Products", list);
+            list = await srv.GetListAsync(PRODUCT_LIST, list);
             dgvPR.DataSource = list;
         }
 
@@ -90,7 +96,7 @@ namespace APSWinForm
 
             if (MessageBox.Show("       정말 삭제하시겠습니까?", "제품삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                APSVO.WebMessage msg = await srv.GetAsync($"api/Product/Delete/{prodID}");
+                APSVO.WebMessage msg = await srv.GetAsync(DeleteUrl(prodID));
                 if (msg.IsSuccess)
                 {
                     LoadData();

@@ -14,6 +14,11 @@ namespace APSWinForm
 {
     public partial class Productpop : frmBaseIcon
     {
+        #region API
+        readonly string PRODUCT_LIST = Properties.ResourceAPI.PRODUCT_LIST;
+        readonly string PRODUCT_SAVE = Properties.ResourceAPI.PRODUCT_SAVE;
+        #endregion
+
         ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> list;
         ProductVO prodvo;
@@ -77,7 +82,7 @@ namespace APSWinForm
                 user_id = "test"
             };
 
-            WebMessage msg = await srv.PostAsyncNone("api/Product/SaveProduct", newStep);
+            WebMessage msg = await srv.PostAsyncNone(PRODUCT_SAVE, newStep);
 
             if (msg.IsSuccess)
             {
@@ -91,7 +96,7 @@ namespace APSWinForm
         private async void Productpop_Load(object sender, EventArgs e)
         {
             Combobinding();
-            prvo = await srv.GetListAsync("api/Product/Products", prvo);
+            prvo = await srv.GetListAsync(PRODUCT_LIST, prvo);
         }
 
 
