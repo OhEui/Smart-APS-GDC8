@@ -201,9 +201,8 @@
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\DemandController.cs" />
     <Compile Include="Controllers\EQUIPMENTController.cs" />
-    <Compile Include="Controllers\Util\ExcelController.cs" />
+    <Compile Include="Controllers\Util\DataController.cs" />
     <Compile Include="Controllers\LineInfoController.cs" />
-    <Compile Include="Controllers\Util\MetaDataController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\Result2Controller.cs" />
     <Compile Include="Controllers\ResultController.cs" />

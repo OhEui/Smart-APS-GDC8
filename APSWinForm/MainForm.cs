@@ -272,7 +272,7 @@ namespace APSWinForm
         {
             string resultMsg;
             string msgTitle = "엑셀 내보내기";
-            string path = "api/Excel/Data";
+            string path = "api/Data/Conn";
             string saveFileName;
 
             if (fileNameFullPath == null) 

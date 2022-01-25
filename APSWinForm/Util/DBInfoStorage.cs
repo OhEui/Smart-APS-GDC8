@@ -26,7 +26,7 @@ namespace APSWinForm
             var newInstance = new DBInfoStorage();
 
             // API 호출 후 _info에 저장
-            string path = "api/MetaData/Delete";
+            string path = "api/Data/Conn";
 
             ServiceHelp srv = new ServiceHelp();
             var data = await srv.GetListAsync<List<DeleteMetaDataVO>>(path);

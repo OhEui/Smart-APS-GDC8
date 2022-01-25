@@ -520,7 +520,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:APSServer.Controllers.ExcelController.GetExcelData">
+        <member name="M:APSServer.Controllers.DataController.GetAllData">
             <summary>
             SelectAll 프로시저 호출 -> DataSet에 저장 -> Excel로 변환 -> Response에 파일 넣기
             </summary>
