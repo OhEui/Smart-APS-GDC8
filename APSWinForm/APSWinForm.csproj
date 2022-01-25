@@ -113,6 +113,11 @@
     <Compile Include="BaseForm\frmBaseIcon.Designer.cs">
       <DependentUpon>frmBaseIcon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\ResourceAPI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceAPI.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -372,6 +377,10 @@
     <EmbeddedResource Include="OET\STEP_ROUTE.resx">
       <DependentUpon>STEP_ROUTE.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\ResourceAPI.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceAPI.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
