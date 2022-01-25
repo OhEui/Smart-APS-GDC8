@@ -14,6 +14,13 @@ namespace APSWinForm
 {
     public partial class SETUP_TIME : frmBaseIcon
     {
+        #region API
+        readonly string SETUP_TIME_LIST = Properties.ResourceAPI.SETUP_TIME_LIST;
+        readonly string SETUP_TIME_DELETE = Properties.ResourceAPI.SETUP_TIME_DELETE;
+        string DeleteUrl(string siteID, string lineID, string eqpGroup, string stepID) =>
+            string.Format(SETUP_TIME_DELETE, siteID, lineID, eqpGroup, stepID);
+        #endregion
+
         List<SetupVO> SetupList;
         ServiceHelp srv = new ServiceHelp();
         List<LineVO> Lineinfo;
@@ -58,7 +65,7 @@ namespace APSWinForm
         private async void dgvLoad()
         {
             dgvSetup.DataSource = null;
-            SetupList = await srv.GetListAsync("api/SETUP_TIME/SetupList", SetupList);
+            SetupList = await srv.GetListAsync(SETUP_TIME_LIST, SetupList);
             dgvSetup.DataSource = SetupList;
         }
 
@@ -158,8 +165,7 @@ namespace APSWinForm
                     ?? $"{curSite}/ {curLine} / {curEQPGroup} / {curStep} 항목을 삭제 하시겠습니까?";
                 if (MessageBox.Show($"{curSite}/ {curLine} / {curEQPGroup} / {curStep} 항목을 삭제 하시겠습니까?", "삭제 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    string DeleteStr = $"api/SETUP_TIME/DelSetup?SITE_ID={curSite}&LINE_ID={curLine}&EQP_GROUP={curEQPGroup}&STEP_ID={curStep}";
-                    
+                    string DeleteStr = DeleteUrl(curSite, curLine, curEQPGroup, curStep);
                     WebMessage msg = await srv.GetAsync(DeleteStr);
 
                     if (msg.IsSuccess)

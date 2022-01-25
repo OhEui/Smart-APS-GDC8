@@ -15,6 +15,11 @@ namespace APSWinForm
 {
     public partial class SETUP_REG : frmBaseIcon
     {
+        #region API
+        readonly string SETUP_TIME_LIST = Properties.ResourceAPI.SETUP_TIME_LIST;
+        readonly string SETUP_TIME_SAVE = Properties.ResourceAPI.SETUP_TIME_SAVE;
+        #endregion
+
         SetupVO SetupVO;
         ServiceHelp srv = new ServiceHelp();
         List<LineVO> Lineinfo;
@@ -45,7 +50,7 @@ namespace APSWinForm
             CommonUtil.ComboBinding(cboLine, Lineinfo, "LINE_ID", "LINE_ID");
             CommonUtil.ComboBinding(cboSite, Lineinfo, "SITE_ID", "SITE_ID");
             Modify();
-            Setuplist = await srv.GetListAsync("api/SETUP_TIME/SetupList", Setuplist);
+            Setuplist = await srv.GetListAsync(SETUP_TIME_LIST, Setuplist);
         }
         private void Modify()
         {
@@ -94,7 +99,7 @@ namespace APSWinForm
                     vo.STEP_ID = cboStep.Text.Trim();
                     vo.TIME = Convert.ToInt32(numTime.Text.Trim());
                     vo.user_id = "test";
-                    WebMessage msg = await srv.PostAsyncNone("api/SETUP_TIME/SetupNew", vo);
+                    WebMessage msg = await srv.PostAsyncNone(SETUP_TIME_SAVE, vo);
                    
 
                     if (msg.IsSuccess)
@@ -113,7 +118,7 @@ namespace APSWinForm
                     newvo.STEP_ID = cboStep.Text.Trim();
                     newvo.TIME = Convert.ToInt32(numTime.Text.Trim());
                     newvo.user_id = "test";
-                    WebMessage msg = await srv.PostAsyncNone("api/SETUP_TIME/SetupNew", newvo);
+                    WebMessage msg = await srv.PostAsyncNone(SETUP_TIME_SAVE, newvo);
 
                         
                     if (msg.IsSuccess)

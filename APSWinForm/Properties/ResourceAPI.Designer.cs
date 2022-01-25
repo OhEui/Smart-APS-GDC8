@@ -331,7 +331,7 @@ namespace APSWinForm.Properties {
         }
         
         /// <summary>
-        ///   api/SETUP_TIME/DelSetup과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   api/SETUP_TIME/DelSetup?SITE_ID={0}&amp;LINE_ID={1}&amp;EQP_GROUP={2}&amp;STEP_ID={3}과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string SETUP_TIME_DELETE {
             get {
