@@ -14,6 +14,11 @@ namespace APSWinForm
 {
     public partial class MenuAuth : frmBaseIcon
     {
+        #region API
+        readonly string AUTH_LIST = Properties.ResourceAPI.AUTH_LIST;
+        readonly string AUTH_SAVE = Properties.ResourceAPI.AUTH_SAVE;
+        #endregion
+
         List<AuthVO> Authlist = null;
         ServiceHelp srv = new ServiceHelp();
         List<UserVO> Userlist = null;
@@ -40,7 +45,7 @@ namespace APSWinForm
             dgvUser.DataSource = Userlist;
 
             dgvAuth.DataSource = null;
-            Authlist = await srv.GetListAsync("api/Auth/GetAuth", Authlist);
+            Authlist = await srv.GetListAsync(AUTH_LIST, Authlist);
             dgvAuth.DataSource = Authlist;
 
             dgvAuth.ClearSelection();
@@ -122,7 +127,7 @@ namespace APSWinForm
                 vo.Id = txtID.Text;
                 vo.Auth_ID = Convert.ToInt32(txtno.Text);
 
-                WebMessage msg = await srv.PostAsyncNone("api/Auth/AuthSave", vo);
+                WebMessage msg = await srv.PostAsyncNone(AUTH_SAVE, vo);
 
 
                 if (msg.IsSuccess)
