@@ -130,11 +130,11 @@
     <Compile Include="WebView\frmWebView.Designer.cs">
       <DependentUpon>frmWebView.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasterData_1\frmDemandPop.cs">
+    <Compile Include="MasterData_1\frmDemandReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterData_1\frmDemandPop.Designer.cs">
-      <DependentUpon>frmDemandPop.cs</DependentUpon>
+    <Compile Include="MasterData_1\frmDemandReg.Designer.cs">
+      <DependentUpon>frmDemandReg.cs</DependentUpon>
     </Compile>
     <Compile Include="MasterData_1\frmDemand.cs">
       <SubType>Form</SubType>
@@ -187,17 +187,17 @@
     <Compile Include="MasterData_1\frmProduct.Designer.cs">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasterData_1\frmLineInfoPop.cs">
+    <Compile Include="MasterData_1\frmLineInfoReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterData_1\frmLineInfoPop.Designer.cs">
-      <DependentUpon>frmLineInfoPop.cs</DependentUpon>
+    <Compile Include="MasterData_1\frmLineInfoReg.Designer.cs">
+      <DependentUpon>frmLineInfoReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="MasterData_1\frmProductPop.cs">
+    <Compile Include="MasterData_1\frmProductReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterData_1\frmProductPop.Designer.cs">
-      <DependentUpon>frmProductPop.cs</DependentUpon>
+    <Compile Include="MasterData_1\frmProductReg.Designer.cs">
+      <DependentUpon>frmProductReg.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\NumTextBox.cs">
       <SubType>Component</SubType>
@@ -235,16 +235,16 @@
     <Compile Include="OET\EQUIPMENT_REG.Designer.cs">
       <DependentUpon>EQUIPMENT_REG.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\frmUserInfo.cs">
+    <Compile Include="User\frmUserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\frmUserInfo.Designer.cs">
+    <Compile Include="User\frmUserInfo.Designer.cs">
       <DependentUpon>frmUserInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\MenuAuth.cs">
+    <Compile Include="User\MenuAuth.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\MenuAuth.Designer.cs">
+    <Compile Include="User\MenuAuth.Designer.cs">
       <DependentUpon>MenuAuth.cs</DependentUpon>
     </Compile>
     <Compile Include="OET\SETUP_REG.cs">
@@ -259,29 +259,29 @@
     <Compile Include="OET\SETUP_TIME.Designer.cs">
       <DependentUpon>SETUP_TIME.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\STDSTEP_REG.cs">
+    <Compile Include="MasterData_2\frmStdStepInfoReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\STDSTEP_REG.Designer.cs">
-      <DependentUpon>STDSTEP_REG.cs</DependentUpon>
+    <Compile Include="MasterData_2\frmStdStepInfoReg.Designer.cs">
+      <DependentUpon>frmStdStepInfoReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\STD_STEP_INFO.cs">
+    <Compile Include="MasterData_2\frmStdStepInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\STD_STEP_INFO.Designer.cs">
-      <DependentUpon>STD_STEP_INFO.cs</DependentUpon>
+    <Compile Include="MasterData_2\frmStdStepInfo.Designer.cs">
+      <DependentUpon>frmStdStepInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\STEPROUTE_REG.cs">
+    <Compile Include="MasterData_2\frmStepRouteReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\STEPROUTE_REG.Designer.cs">
-      <DependentUpon>STEPROUTE_REG.cs</DependentUpon>
+    <Compile Include="MasterData_2\frmStepRouteReg.Designer.cs">
+      <DependentUpon>frmStepRouteReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="OET\STEP_ROUTE.cs">
+    <Compile Include="MasterData_2\frmStepRoute.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OET\STEP_ROUTE.Designer.cs">
-      <DependentUpon>STEP_ROUTE.cs</DependentUpon>
+    <Compile Include="MasterData_2\frmStepRoute.Designer.cs">
+      <DependentUpon>frmStepRoute.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -308,8 +308,8 @@
     <EmbeddedResource Include="Controls\PeriodUserControl.resx">
       <DependentUpon>PeriodUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MasterData_1\frmDemandPop.resx">
-      <DependentUpon>frmDemandPop.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_1\frmDemandReg.resx">
+      <DependentUpon>frmDemandReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterData_1\frmDemand.resx">
       <DependentUpon>frmDemand.cs</DependentUpon>
@@ -329,11 +329,11 @@
     <EmbeddedResource Include="MasterData_1\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MasterData_1\frmLineInfoPop.resx">
-      <DependentUpon>frmLineInfoPop.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_1\frmLineInfoReg.resx">
+      <DependentUpon>frmLineInfoReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MasterData_1\frmProductPop.resx">
-      <DependentUpon>frmProductPop.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_1\frmProductReg.resx">
+      <DependentUpon>frmProductReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\NumTextBox.resx">
       <DependentUpon>NumTextBox.cs</DependentUpon>
@@ -353,10 +353,10 @@
     <EmbeddedResource Include="OET\EQUIPMENT_REG.resx">
       <DependentUpon>EQUIPMENT_REG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\frmUserInfo.resx">
+    <EmbeddedResource Include="User\frmUserInfo.resx">
       <DependentUpon>frmUserInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\MenuAuth.resx">
+    <EmbeddedResource Include="User\MenuAuth.resx">
       <DependentUpon>MenuAuth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OET\SETUP_REG.resx">
@@ -365,17 +365,17 @@
     <EmbeddedResource Include="OET\SETUP_TIME.resx">
       <DependentUpon>SETUP_TIME.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\STDSTEP_REG.resx">
-      <DependentUpon>STDSTEP_REG.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_2\frmStdStepInfoReg.resx">
+      <DependentUpon>frmStdStepInfoReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\STD_STEP_INFO.resx">
-      <DependentUpon>STD_STEP_INFO.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_2\frmStdStepInfo.resx">
+      <DependentUpon>frmStdStepInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\STEPROUTE_REG.resx">
-      <DependentUpon>STEPROUTE_REG.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_2\frmStepRouteReg.resx">
+      <DependentUpon>frmStepRouteReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OET\STEP_ROUTE.resx">
-      <DependentUpon>STEP_ROUTE.cs</DependentUpon>
+    <EmbeddedResource Include="MasterData_2\frmStepRoute.resx">
+      <DependentUpon>frmStepRoute.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\ResourceAPI.resx">
