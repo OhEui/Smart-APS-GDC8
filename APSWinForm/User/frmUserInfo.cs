@@ -14,6 +14,16 @@ namespace APSWinForm
 {
     public partial class frmUserInfo : frmBaseIcon
     {
+        #region API
+        readonly string USER_INFO_BY_ID = Properties.ResourceAPI.USER_INFO_BY_ID;
+        readonly string USER_INFO_DELETE = Properties.ResourceAPI.USER_INFO_DELETE;
+        readonly string USER_INFO_LIST = Properties.ResourceAPI.USER_INFO_LIST;
+        readonly string USER_INFO_UPDATE = Properties.ResourceAPI.USER_INFO_UPDATE;
+
+        string GetInfoUrl(string id) => string.Format(USER_INFO_BY_ID, id);
+        string DeleteUrl(string id) => string.Format(USER_INFO_DELETE, id);
+        #endregion
+
         ServiceHelp srv = new ServiceHelp();
         List<UserInfoVO> list = null;
 
@@ -24,7 +34,7 @@ namespace APSWinForm
 
         private async void LoadData()
         {
-            list = await srv.GetListAsync("api/UserInfo/AllList", list);
+            list = await srv.GetListAsync(USER_INFO_LIST, list);
             dgvUI.DataSource = list;
         }
 
@@ -61,7 +71,7 @@ namespace APSWinForm
                 Birthday = DateTime.Parse(txtB.Text)
             };
 
-            APSVO.WebMessage msg = await srv.PostAsyncNone("api/UserInfo/UserInfoUpdate", user);
+            APSVO.WebMessage msg = await srv.PostAsyncNone(USER_INFO_UPDATE, user);
             if (msg.IsSuccess)
             {
                 LoadData();
@@ -82,7 +92,7 @@ namespace APSWinForm
 
             if (MessageBox.Show("       정말 삭제하시겠습니까?", "유저삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                APSVO.WebMessage msg = await srv.GetAsync($"api/UserInfo/Delete/{prodID}");
+                APSVO.WebMessage msg = await srv.GetAsync(DeleteUrl(prodID));
                 if (msg.IsSuccess)
                 {
                     LoadData();
@@ -97,7 +107,7 @@ namespace APSWinForm
 
             string userID = dgvUI[0, e.RowIndex].Value.ToString();
             UserInfoVO user = null;
-            user = await srv.GetAsync($"api/UserInfo/{userID}", user);
+            user = await srv.GetAsync(GetInfoUrl(userID), user);
             if (user != null)
             {
                 txtName.Text = user.Name;
