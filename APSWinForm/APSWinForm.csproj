@@ -142,16 +142,16 @@
     <Compile Include="HSY\frmDEMAND.Designer.cs">
       <DependentUpon>frmDEMAND.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSY\frmIDCheck.cs">
+    <Compile Include="User\frmIDCheck.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSY\frmIDCheck.Designer.cs">
+    <Compile Include="User\frmIDCheck.Designer.cs">
       <DependentUpon>frmIDCheck.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSY\frmJoin.cs">
+    <Compile Include="User\frmJoin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSY\frmJoin.designer.cs">
+    <Compile Include="User\frmJoin.designer.cs">
       <DependentUpon>frmJoin.cs</DependentUpon>
     </Compile>
     <Compile Include="HSY\frmLineInfo.cs">
@@ -160,16 +160,16 @@
     <Compile Include="HSY\frmLineInfo.Designer.cs">
       <DependentUpon>frmLineInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSY\frmLogin.cs">
+    <Compile Include="User\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSY\frmLogin.designer.cs">
+    <Compile Include="User\frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="HSY\frmPassWord.cs">
+    <Compile Include="User\frmPassWord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HSY\frmPassWord.Designer.cs">
+    <Compile Include="User\frmPassWord.Designer.cs">
       <DependentUpon>frmPassWord.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForm\frmpopup.Designer.cs">
@@ -314,16 +314,16 @@
     <EmbeddedResource Include="HSY\frmDEMAND.resx">
       <DependentUpon>frmDEMAND.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSY\frmJoin.resx">
+    <EmbeddedResource Include="User\frmJoin.resx">
       <DependentUpon>frmJoin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSY\frmLineInfo.resx">
       <DependentUpon>frmLineInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSY\frmLogin.resx">
+    <EmbeddedResource Include="User\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HSY\frmPassWord.resx">
+    <EmbeddedResource Include="User\frmPassWord.resx">
       <DependentUpon>frmPassWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HSY\frmPRODUCT.resx">
