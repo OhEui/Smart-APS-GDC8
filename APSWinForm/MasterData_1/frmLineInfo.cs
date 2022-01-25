@@ -14,6 +14,12 @@ namespace APSWinForm
 {
     public partial class frmLineInfo : frmBaseIcon
     {
+        #region API
+        readonly string LINE_INFO_LIST = Properties.ResourceAPI.LINE_INFO_LIST;
+        readonly string LINE_INFO_DELETE = Properties.ResourceAPI.LINE_INFO_DELETE;
+
+        string DeleteUrl(string id) => string.Format(LINE_INFO_DELETE, id);
+        #endregion
         ServiceHelp srv = new ServiceHelp();
         List<Line_Info_VO> list = null;
 
@@ -28,7 +34,7 @@ namespace APSWinForm
 
         private async void LoadData()
         {
-            list = await srv.GetListAsync("api/LineInfo/AllList", list);
+            list = await srv.GetListAsync(LINE_INFO_LIST, list);
             dgvLI.DataSource = list;
         }
 
@@ -87,7 +93,7 @@ namespace APSWinForm
 
             if (MessageBox.Show("        정말 삭제하시겠습니까?", "라인삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                APSVO.WebMessage msg = await srv.GetAsync($"api/LineInfo/Delete/{lineID}");
+                APSVO.WebMessage msg = await srv.GetAsync(DeleteUrl(lineID));
                 if (msg.IsSuccess)
                 {
                     LoadData();

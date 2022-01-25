@@ -18,7 +18,7 @@ namespace APSWinForm
         readonly string DEMAND_LIST = Properties.ResourceAPI.DEMAND_LIST;
         readonly string DEMAND_DELETE = Properties.ResourceAPI.DEMAND_DELETE;
 
-        string Demand_Delete(string id) => string.Format(DEMAND_DELETE, id);
+        string DeleteUrl(string id) => string.Format(DEMAND_DELETE, id);
         #endregion
 
         ServiceHelp srv = new ServiceHelp();
@@ -99,7 +99,7 @@ namespace APSWinForm
 
             if (MessageBox.Show("        정말 삭제하시겠습니까?", "제품삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                APSVO.WebMessage msg = await srv.GetAsync(Demand_Delete(demdID));
+                APSVO.WebMessage msg = await srv.GetAsync(DeleteUrl(demdID));
                 if (msg.IsSuccess)
                 {
                     LoadData();

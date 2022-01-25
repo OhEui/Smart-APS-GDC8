@@ -15,6 +15,7 @@ namespace APSWinForm
     public partial class DEMANDpop : frmBaseIcon
     {
         #region API
+        readonly string DEMAND_LIST = Properties.ResourceAPI.DEMAND_LIST;
         readonly string DEMAND_SAVE = Properties.ResourceAPI.DEMAND_SAVE;
         #endregion
 
@@ -95,7 +96,7 @@ namespace APSWinForm
         private async void DEMANDpop_Load(object sender, EventArgs e)
         {
             Combobinding();
-            list = await srv.GetListAsync("api/Demand/AllList", list);
+            list = await srv.GetListAsync(DEMAND_LIST, list);
         }
 
 

@@ -14,6 +14,11 @@ namespace APSWinForm
 {
     public partial class LineInfopop : frmBaseIcon
     {
+        #region API
+        readonly string LINE_INFO_LIST = Properties.ResourceAPI.LINE_INFO_LIST;
+        readonly string LINE_INFO_SAVE = Properties.ResourceAPI.LINE_INFO_SAVE;
+        #endregion
+
         ServiceHelp srv = new ServiceHelp();
         List<Line_Info_VO> list;
         bool existLID = false;
@@ -65,7 +70,7 @@ namespace APSWinForm
                 user_id = "test"
             };
 
-            WebMessage wmsg = await srv.PostAsyncNone("api/LineInfo/SaveLineInfo", lineinfovo);
+            WebMessage wmsg = await srv.PostAsyncNone(LINE_INFO_SAVE, lineinfovo);
 
             if (wmsg.IsSuccess)
             {
@@ -77,7 +82,7 @@ namespace APSWinForm
 
         private async void LineInfopop_Load(object sender, EventArgs e)
         {
-            list = await srv.GetListAsync("api/LineInfo/AllList", list);
+            list = await srv.GetListAsync(LINE_INFO_LIST, list);
             Modify();
         }
 
