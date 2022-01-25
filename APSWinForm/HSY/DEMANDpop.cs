@@ -14,10 +14,14 @@ namespace APSWinForm
 {
     public partial class DEMANDpop : frmBaseIcon
     {
+        #region API
+        readonly string DEMAND_SAVE = Properties.ResourceAPI.DEMAND_SAVE;
+        #endregion
+
         ServiceHelp srv = new ServiceHelp();
         List<ComboItemVO> list;
         DemandVO dmadvo;
-        List<DemandVO> prvo;
+        //List<DemandVO> prvo;
         bool existDDID = false;
 
         public DEMANDpop()
@@ -78,7 +82,7 @@ namespace APSWinForm
                 user_id = "test"
             };
 
-            WebMessage wmsg = await srv.PostAsyncNone("api/Demand/SaveDemand", demandVO);
+            WebMessage wmsg = await srv.PostAsyncNone(DEMAND_SAVE, demandVO);
 
             if (wmsg.IsSuccess)
             {
@@ -109,7 +113,7 @@ namespace APSWinForm
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
+        /*
         private void txtID_Leave(object sender, EventArgs e)
         {
             var ProdID = prvo.Find(p => p.DEMAND_ID == txtID.Text);
@@ -124,7 +128,7 @@ namespace APSWinForm
 
                 existDDID = true;
         }
-
+        */
         public bool isNotWhiteSpace()
         {
             //유효성 검사
