@@ -68,6 +68,7 @@ namespace APSUtil.Http
             {
                 using (HttpResponseMessage response = await client.GetAsync(path))
                 {
+                    IsSuccessStatusCode = response.IsSuccessStatusCode;
                     if (response.IsSuccessStatusCode)
                     {
                         list = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());

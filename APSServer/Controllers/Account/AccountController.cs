@@ -85,14 +85,6 @@ namespace APSServer.Controllers
             {
                 return Content(System.Net.HttpStatusCode.NotFound, result);
             }
-            /*
-            return new UserInfoViewModel
-            {
-                Email = User.Identity.GetUserName(),
-                HasRegistered = externalLogin == null,
-                LoginProvider = externalLogin?.LoginProvider
-            };
-            */
         }
 
         private UserInfo GetCurrentUser()
@@ -109,6 +101,25 @@ namespace APSServer.Controllers
                 Phone = newUser.Phone,
                 Auth_ID= newUser.Auth_ID
             };
+        }
+        // Get api/Account/CheckID
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("CheckID")]
+        public async Task<IHttpActionResult> CheckID(string id)
+        {
+            ApplicationUser user = await UserManager.FindByNameAsync(id);
+
+            bool bResult = user == null;
+
+            if (bResult)
+            {
+                return Ok();
+            }
+            else 
+            {
+                return NotFound();
+            }
         }
 
         // POST api/Account/Login

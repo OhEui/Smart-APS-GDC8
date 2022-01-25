@@ -63,10 +63,10 @@ namespace APSWinForm
 
         private async void button3_Click(object sender, EventArgs e)
         {
-            string path = "api/Account/CheckID";
+            string path = $"api/Account/CheckID?id={txtID.Text}";
             ServiceHelp srv = new ServiceHelp();
-            bool bResult = await srv.GetListAsync<bool>(path);
-            if (bResult)
+            var _ = await srv.GetListAsync(path, new object());
+            if (srv.IsSuccessStatusCode)
             {
                 MessageBox.Show("사용 가능한 ID입니다.");
             }
@@ -74,22 +74,6 @@ namespace APSWinForm
             {
                 MessageBox.Show("사용중인 ID입니다.");
             }
-
-            /*
-             * 
-             * 
-            txtID.Text = txtID.Text.Replace(" ", "");
-            bool check = dac.IDCheck(txtID.Text);
-            if (!check)
-            {
-                txtID.ReadOnly = true;
-                MessageBox.Show("가능한 아이디 입니다.");
-            }
-            else
-            {
-                MessageBox.Show("중복된 아이디 입니다.");
-            }
-            */
         }
     }
 }

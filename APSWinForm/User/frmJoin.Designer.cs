@@ -170,9 +170,9 @@ namespace APSWinForm
             // 
             this.txtPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPW.Location = new System.Drawing.Point(130, 194);
-            this.txtPW.Multiline = true;
             this.txtPW.Name = "txtPW";
-            this.txtPW.Size = new System.Drawing.Size(169, 29);
+            this.txtPW.PasswordChar = '*';
+            this.txtPW.Size = new System.Drawing.Size(169, 26);
             this.txtPW.TabIndex = 2;
             this.txtPW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -190,9 +190,9 @@ namespace APSWinForm
             // 
             this.txtPW2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPW2.Location = new System.Drawing.Point(130, 241);
-            this.txtPW2.Multiline = true;
             this.txtPW2.Name = "txtPW2";
-            this.txtPW2.Size = new System.Drawing.Size(169, 29);
+            this.txtPW2.PasswordChar = '*';
+            this.txtPW2.Size = new System.Drawing.Size(169, 26);
             this.txtPW2.TabIndex = 3;
             this.txtPW2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
