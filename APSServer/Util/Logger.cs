@@ -10,7 +10,7 @@ namespace APSServer.Util
             string method = reqMessage.Method.ToString();
             string path = reqMessage.RequestUri.AbsolutePath;
 
-            string logStr = $"user:{userID} {path} {method}";
+            string logStr = $"userID:{userID}\t{method}\t{path}";
 
             LoggingUtility logger = new LoggingUtility("apiLogger");
             logger.WriteInfo(logStr);
