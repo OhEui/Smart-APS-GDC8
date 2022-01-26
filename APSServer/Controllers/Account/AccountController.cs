@@ -435,7 +435,7 @@ namespace APSServer.Controllers
                 UserName = model.ID,
                 Name = model.Name,
                 Email = model.Email,
-                EmpNo = 1,
+              ///  EmpNo = 3,
                 Phone = model.Phone,
                 Birthday = model.Birthday,
                 Auth_ID = 3
