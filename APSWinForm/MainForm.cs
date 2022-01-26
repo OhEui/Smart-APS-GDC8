@@ -97,7 +97,7 @@ namespace APSWinForm
             }
             else
             {
-                Application.Exit();
+                Environment.Exit(0);
             }
         }
 
