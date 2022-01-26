@@ -437,7 +437,8 @@ namespace APSServer.Controllers
                 Email = model.Email,
                 EmpNo = 1,
                 Phone = model.Phone,
-                Birthday = model.Birthday
+                Birthday = model.Birthday,
+                Auth_ID = 3
             };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
