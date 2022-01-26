@@ -302,6 +302,7 @@ namespace APSWinForm
             this.dgvUser.RowTemplate.Height = 23;
             this.dgvUser.Size = new System.Drawing.Size(448, 454);
             this.dgvUser.TabIndex = 58;
+            this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
             // 
             // splitter4
             // 
@@ -354,6 +355,7 @@ namespace APSWinForm
             this.dgvAuth.RowTemplate.Height = 23;
             this.dgvAuth.Size = new System.Drawing.Size(542, 464);
             this.dgvAuth.TabIndex = 54;
+            this.dgvAuth.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuth_CellClick);
             // 
             // MenuAuth
             // 
